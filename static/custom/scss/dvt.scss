@@ -1,0 +1,61 @@
+@import 'common.scss';
+
+
+/******
+*
+*  Components
+*
+******/
+// @import 'inputs/range.scss';
+@import "../../system/components/angular-tooltips/dist/angular-tooltips.min.css";
+@import '../modules/horizontal/directives/search/search.scss';
+@import "../../system/components/font-awesome/css/font-awesome.min.css";
+@import '../css/mapglyphs/mapglyphs.css';
+@import 'maps/maps.scss';
+
+/*****  HORIZONTAL  ****/
+
+/* Menu */
+@import '../modules/horizontal/directives/main-menu/menu.scss';
+
+/* Home */
+@import '../modules/vertical/home/home.scss';
+
+/* Footer */
+@import '../modules/horizontal/directives/footer/footer.scss';
+
+
+/*****  VERTICAL  ****/
+@import 'responsive.scss';
+@import 'print.scss';
+
+/* About the estimates */
+@import '../modules/vertical/about-tool/about-tool.scss';
+
+
+
+
+/****** GENERAL *******/
+@mixin no-padding($side) {
+  @if $side == 'all' {
+    .no-padding {
+      padding: 0 !important;
+    }
+  } @else {
+    .no-padding-#{$side} {
+      padding-#{$side}: 0 !important;
+    }
+  }
+}
+
+@include no-padding("left");
+@include no-padding("right");
+@include no-padding("top");
+@include no-padding("bottom");
+@include no-padding("all");
+
+
+/*****  VERTICAL  ****/
+
+
+

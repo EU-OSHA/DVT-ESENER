@@ -1,0 +1,137 @@
+/** Default sizes of mapglyphs
+.mg-2x {
+  font-size: 2em;
+}
+.mg-3x {
+  font-size: 3em;
+}
+.mg-4x {
+  font-size: 4em;
+}
+.mg-5x {
+  font-size: 6em;
+}
+.mg-6x {
+  font-size: 8em;
+}
+**/
+
+.mg-7x {
+  font-size: 10em;
+}
+.mg-8x {
+  font-size: 12em;
+}
+.mg-10x {
+  font-size: 13em;
+}
+.mg-11x {
+  font-size: 14em;
+}
+.mg-12x {
+  font-size: 15em;
+}
+
+.map-gb:before {
+  content: "\e687";
+}
+
+@media only screen and (min-width : 376px) and (max-width : 667px) {
+  .mg-xs-2x {
+    font-size: 2em;
+  }
+  .mg-xs-3x {
+    font-size: 3em;
+  }
+  .mg-xs-4x {
+    font-size: 4em;
+  }
+  .mg-xs-5x {
+    font-size: 6em;
+  }
+  .mg-xs-6x {
+    font-size: 8em;
+  }
+  .mg-xs-7x {
+    font-size: 10em;
+  }
+  .mg-xs-8x {
+    font-size: 12em;
+  }
+  .mg-xs-10x {
+    font-size: 13em;
+  }
+  .mg-xs-11x {
+    font-size: 14em;
+  }
+  .mg-xs-12x {
+    font-size: 15em;
+  }
+}
+
+
+@media only screen and (max-width : 667px) {
+  .mg-sm-2x {
+    font-size: 2em;
+  }
+  .mg-sm-3x {
+    font-size: 3em;
+  }
+  .mg-sm-4x {
+    font-size: 4em;
+  }
+  .mg-sm-5x {
+    font-size: 6em;
+  }
+  .mg-sm-6x {
+    font-size: 8em;
+  }
+  .mg-sm-7x {
+    font-size: 10em;
+  }
+  .mg-sm-8x {
+    font-size: 12em;
+  }
+  .mg-sm-10x {
+    font-size: 13em;
+  }
+  .mg-sm-11x {
+    font-size: 14em;
+  }
+  .mg-sm-12x {
+    font-size: 15em;
+  }
+}
+
+@media only screen  and (min-width : 668px) and (max-width : 1279px) {
+  .mg-md-2x {
+    font-size: 2em;
+  }
+  .mg-md-3x {
+    font-size: 3em;
+  }
+  .mg-md-4x {
+    font-size: 4em;
+  }
+  .mg-md-5x {
+    font-size: 6em;
+  }
+  .mg-md-6x {
+    font-size: 8em;
+  }
+  .mg-md-7x {
+    font-size: 10em;
+  }
+  .mg-md-8x {
+    font-size: 12em;
+  }
+  .mg-md-10x {
+    font-size: 13em;
+  }
+  .mg-md-11x {
+    font-size: 14em;
+  }
+  .mg-md-12x {
+    font-size: 15em;
+  }
+}
