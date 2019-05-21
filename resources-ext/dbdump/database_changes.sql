@@ -15,13 +15,50 @@ VALUES(
 	"XK", @maxLiteralId, 0, "Kosovo"
 );
 
+-- Insert EU27 as Country
+SET @europeanUnionLiteralID = (SELECT literal_id FROM nuts WHERE country_code="EU28");
+INSERT INTO nuts (country_code, literal_id, level, name) VALUES ("EU27", @europeanUnionLiteralID, 0, "European Union 27");
+
 -- Update the country_code for Montenegro
 UPDATE nuts SET country_code="ME" WHERE NAME="Montenegro";
+
+-- Add the Answer for DK/NA
+SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
+INSERT INTO literal (id, chart_id, section_id, type)  VALUES (@maxLiteralId, NULL, NULL, "SPLIT_ANSWER_NAME");
+INSERT INTO translation (literal_id, language, is_default, text) VALUE (@maxLiteralId, "EN", 1, "DK/ NA");
+INSERT INTO split_answer (literal_id) VALUES(@maxLiteralId);
+
+-- Create the new dataset and link the esener indicators to their datasets
+INSERT INTO dataset (name, source, date_from, date_to) VALUES ("ESENER_DATA", "ESENER", "2009-01-01", null);
 
 
 -- |-------------------------------------------------------------------|
 -- |              LOAD ESENER CATEGORIES                               |
 -- |-------------------------------------------------------------------|
+DROP TABLE IF EXISTS `esener_category`;
+CREATE TABLE IF NOT EXISTS `esener_category` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `category` varchar(15) DEFAULT NULL,
+  `level` int(11) NOT NULL,
+  `father_id` int(11) DEFAULT NULL,
+  `name_1_literal_id` int(11) DEFAULT NULL,
+  `name_2_literal_id` int(11) DEFAULT NULL,
+  `name_3_literal_id` int(11) DEFAULT NULL,
+  `bottom_text_literal_id` int(11) DEFAULT NULL,
+  `year` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `esener_category_father_id` (`father_id`),
+  KEY `esener_category_name_1_literal_id` (`name_1_literal_id`),
+  KEY `esener_category_name_2_literal_id` (`name_2_literal_id`),
+  KEY `esener_category_name_3_literal_id` (`name_3_literal_id`),
+  KEY `esener_category_bottom_text` (`bottom_text_literal_id`),
+  CONSTRAINT `esener_category_bottom_text` FOREIGN KEY (`bottom_text_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `esener_category_father_id` FOREIGN KEY (`father_id`) REFERENCES `esener_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `esener_category_name_1_literal_id` FOREIGN KEY (`name_1_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `esener_category_name_2_literal_id` FOREIGN KEY (`name_2_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `esener_category_name_3_literal_id` FOREIGN KEY (`name_3_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 SET @maxID_1 = IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1,100001);
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@maxID_1, NULL, NULL, "ESENER_CATEGORY");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@maxID_1, "EN", 1, "OSH Management");
@@ -3353,9 +3390,331 @@ INSERT INTO esener_category (category, level,father_id, name_1_literal_id, name_
 -- |          END LOAD ESENER CATEGORIES                               |
 -- |-------------------------------------------------------------------|
 
+-- Insert Relationship between indicators and datasets
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2009-01-01");
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM152");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM153");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM154");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM155");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM158");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM159");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM161");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM170");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM175");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM150_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM150_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM150_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM150_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM150_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM173_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM173_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM173_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM173_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM173_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM173_6");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM173_7");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM173_8");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM200_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM200_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM200_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM200_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM200_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM200_6");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM200_7");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM250");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM251");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM252");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM256");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM259");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM260");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM202_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM202_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM202_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM202_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM202_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM202_6");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM202_7");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM202_8");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM202_9");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM202_10");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM253_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM253_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM253_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM253_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM253_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM253_6");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM300");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM302");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM303a");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM171_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM171_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM171_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM171_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM171_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM171_6");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM172_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM172_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM172_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM172_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM172_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM172_6");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM350");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM351");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM355all");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="MM358");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+
+SET @datasetId = (SELECT id FROM dataset WHERE source="ESENER" AND date_from="2014-01-01");
+
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q150_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q150_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q150_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q150_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q150_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q155");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q156");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q158_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q158_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q158_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q158_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q200_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q200_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q200_6");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q200_7");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q200_8");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q200_9");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_6");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_7");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_8");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_9");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q252_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q252_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q252_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q252_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q252_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q252_6");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q254gr");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q255");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q256_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q256_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q256_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q256_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q256_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q259");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q261_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q261_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q261_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q261_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q308_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q308_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q308_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q308_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q356_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q356_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q356_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q356_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q356_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_10");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_11");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_12");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_13");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_14");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q202_15");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q303_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q303_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q303_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q307");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q264_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q264_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q264_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q264_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q264_6");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q265_1");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q265_2");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q265_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q265_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q265_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q265_6");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q265_7");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q304");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q306a_3");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q306a_4");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q306a_5");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q306a_6");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+SET @indicatorId = (SELECT id FROM indicator WHERE name="Q258b");
+INSERT INTO indicators_in_dataset (indicator_id, dataset_id) VALUES (@indicatorId, @datasetId);
+
 -- |-------------------------------------------------------------------|
 -- |              LOAD ESENER 1 QUALITATIVE DATA                       |
 -- |-------------------------------------------------------------------|
+DROP TABLE IF EXISTS `esener_answer_order`;
+CREATE TABLE IF NOT EXISTS `esener_answer_order` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `order_position` int(11) NOT NULL,
+  `indicator_id` int(11) NOT NULL,
+  `answer_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `esener_answer_order_indicator_id` (`indicator_id`),
+  KEY `esener_answer_order_answer_id` (`answer_id`),
+  CONSTRAINT `esener_answer_order_answer_id` FOREIGN KEY (`answer_id`) REFERENCES `split_answer` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `esener_answer_order_indicator_id` FOREIGN KEY (`indicator_id`) REFERENCES `indicator` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- esener_qualitative.sql
 
 SET @maxLiteralId = (SELECT MAX(id)+1 FROM literal WHERE id<10000);
@@ -20083,41 +20442,41 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Управление на БЗР");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Управление на БЗР");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Психосоциални рискове и тяхното управление");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Психосоциални рискове и тяхното управление");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Стимули и пречки");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Стимули и пречки");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Участие на работниците и служителите");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Участие на работниците и служителите");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Řízení BOZP");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Řízení BOZP");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM150_2");
@@ -21270,49 +21629,49 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Psychosociální rizika a jejich řízení");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Psychosociální rizika a jejich řízení");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Motivační faktory a překážky");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Motivační faktory a překážky");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Účast zaměstnanců");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Účast zaměstnanců");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Håndtering af arbejdsmiljø");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Håndtering af arbejdsmiljø");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Psykosociale risici og håndtering heraf");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Psykosociale risici og håndtering heraf");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Incitamenter og barrierer");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Incitamenter og barrierer");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
@@ -22261,49 +22620,49 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Medarbejderdeltagelse");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Medarbejderdeltagelse");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Sicherheits- und Gesundheitsschutzmanagement");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Sicherheits- und Gesundheitsschutzmanagement");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Psychosoziale Risiken und ihr Management");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Psychosoziale Risiken und ihr Management");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Antriebskräfte und Hemmnisse");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Antriebskräfte und Hemmnisse");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Arbeitnehmerbeteiligung");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Arbeitnehmerbeteiligung");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Διαχείριση ΕΑΥ");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Διαχείριση ΕΑΥ");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_5");
@@ -23207,41 +23566,41 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ψυχοκοινωνικοί κίνδυνοι και η διαχείρισή τους");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ψυχοκοινωνικοί κίνδυνοι και η διαχείρισή τους");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ευνοϊκοί και ανασταλτικοί παράγοντες");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ευνοϊκοί και ανασταλτικοί παράγοντες");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Συμμετοχή των εργαζομένων");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Συμμετοχή των εργαζομένων");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Gestión de la SST");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Gestión de la SST");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Riesgos psicosociales y su gestión");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Riesgos psicosociales y su gestión");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
@@ -24494,49 +24853,49 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Factores impulsores y obstáculos");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Factores impulsores y obstáculos");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Participación de los trabajadores");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Participación de los trabajadores");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötervishoiu ja tööohutuse juhtimine");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötervishoiu ja tööohutuse juhtimine");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Psühhosotsiaalsed riskid ja nende ohjamine");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Psühhosotsiaalsed riskid ja nende ohjamine");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Ajendid ja tõkked");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Ajendid ja tõkked");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötaja osalus");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötaja osalus");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM150_5");
@@ -25413,49 +25772,49 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Työsuojelun hallinta");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Työsuojelun hallinta");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Psykososiaaliset riskit ja niiden hallinta");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Psykososiaaliset riskit ja niiden hallinta");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Edistäjät ja esteet");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Edistäjät ja esteet");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Työntekijöiden osallistuminen");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Työntekijöiden osallistuminen");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Gestion de la santé et de la sécurité sur le lieu de travail");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Gestion de la santé et de la sécurité sur le lieu de travail");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Les risques psychosociaux et leur gestion");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Les risques psychosociaux et leur gestion");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_4");
@@ -26658,49 +27017,49 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Motivations et obstacles");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Motivations et obstacles");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Participation des travailleurs");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Participation des travailleurs");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Upravljanje sigurnošću i zdravljem na radu");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Upravljanje sigurnošću i zdravljem na radu");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Psihosocijalni rizici i upravljanje takvim rizicima");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Psihosocijalni rizici i upravljanje takvim rizicima");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Poticaji i prepreke");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Poticaji i prepreke");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Sudjelovanje radnika");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Sudjelovanje radnika");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_5"));
@@ -27654,49 +28013,49 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "A munkahelyi biztonság és egészségvédelem kezelése");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "A munkahelyi biztonság és egészségvédelem kezelése");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Pszichoszociális kockázatok és kezelésük");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Pszichoszociális kockázatok és kezelésük");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Indítékok és korlátok");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Indítékok és korlátok");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Munkavállalói részvétel");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Munkavállalói részvétel");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Gestione della SSL");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Gestione della SSL");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Rischi psicosociali e loro gestione");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Rischi psicosociali e loro gestione");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
@@ -28926,49 +29285,49 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Incentivi e ostacoli");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Incentivi e ostacoli");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Partecipazione dei dipendenti");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Partecipazione dei dipendenti");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "DSS valdymas");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "DSS valdymas");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Psichosocialinė rizika ir jos valdymas");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Psichosocialinė rizika ir jos valdymas");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Paskatos ir kliūtys");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Paskatos ir kliūtys");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Darbuotojų dalyvavimas");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Darbuotojų dalyvavimas");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM173_4");
@@ -29349,353 +29708,353 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "DDVA pārvaldība");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "DDVA pārvaldība");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Psihosociālie riski un to pārvaldība");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Psihosociālie riski un to pārvaldība");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Virzītājfaktori un šķēršļi");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Virzītājfaktori un šķēršļi");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Darbinieku līdzdalība");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Darbinieku līdzdalība");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Ġestjoni tal-OSH");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Ġestjoni tal-OSH");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Riskji psikosoċjali u l-kontroll tagħhom");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Riskji psikosoċjali u l-kontroll tagħhom");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Motivaturi u ostakli");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Motivaturi u ostakli");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Il-parteċipazzjoni tal-impjegati");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Il-parteċipazzjoni tal-impjegati");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Beheer van veiligheid en gezondheid op het werk");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Beheer van veiligheid en gezondheid op het werk");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Psychosociale risico’s en het beheer ervan");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Psychosociale risico’s en het beheer ervan");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Prikkels en knelpunten");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Prikkels en knelpunten");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Medezeggenschap");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Medezeggenschap");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "HMS-styring");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "HMS-styring");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Psykososiale risikoer og håndtering av disse");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Psykososiale risikoer og håndtering av disse");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Pådrivere og hindringer");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Pådrivere og hindringer");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Arbeidstakermedvirkning");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Arbeidstakermedvirkning");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Zarządzanie BHP");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Zarządzanie BHP");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Ryzyko psychospołeczne i zarządzanie nim");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Ryzyko psychospołeczne i zarządzanie nim");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czynniki motywujące i bariery");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czynniki motywujące i bariery");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Udział pracowników");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Udział pracowników");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Gestão da SST");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Gestão da SST");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Gestão dos fatores de risco psicossocial");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Gestão dos fatores de risco psicossocial");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Impulsionadores e obstáculos");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Impulsionadores e obstáculos");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Participação dos trabalhadores");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Participação dos trabalhadores");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Gestionarea SSM");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Gestionarea SSM");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Riscurile psihosociale și gestionarea acestora");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Riscurile psihosociale și gestionarea acestora");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Factori de stimulare și impedimente");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Factori de stimulare și impedimente");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Participarea angajaților");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Participarea angajaților");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Riadenie BOZP");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Riadenie BOZP");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Psychosociálne riziká a ich riadenie");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Psychosociálne riziká a ich riadenie");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Stimuly a prekážky");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Stimuly a prekážky");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Účasť zamestnancov");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Účasť zamestnancov");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Upravljanje varnosti in zdravja pri delu");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Upravljanje varnosti in zdravja pri delu");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Psihosocialna tveganja in njihovo upravljanje");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Psihosocialna tveganja in njihovo upravljanje");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Spodbude in ovire");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Spodbude in ovire");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Sodelovanje zaposlenih");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Sodelovanje zaposlenih");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Arbetsmiljöstyrning");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Arbetsmiljöstyrning");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Psykosociala risker och hantering av dem");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Psykosociala risker och hantering av dem");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Drivkrafter och hinder");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Drivkrafter och hinder");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Arbetstagarinflytande");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Arbetstagarinflytande");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İSG Yönetimi");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İSG Yönetimi");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Psikososyal riskler ve bunların yönetimi");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Psikososyal riskler ve bunların yönetimi");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Dinamikler ve engeller");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Dinamikler ve engeller");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Çalışan katılımı");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@cetagoryId);
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Çalışan katılımı");
 -- |-------------------------------------------------------------------|
 -- |          END LOAD ESENER 1 QUALITATIVE DATA                       |
