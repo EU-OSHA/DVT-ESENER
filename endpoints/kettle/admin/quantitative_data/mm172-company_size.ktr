@@ -112,7 +112,7 @@
   <hop> <from>Check if value null</from><to>Profile Exists&#x3f;</to><enabled>Y</enabled> </hop>
   <hop> <from>Get Profile Count</from><to>Check if value null</to><enabled>Y</enabled> </hop>
   <hop> <from>Get Value Count</from><to>Value exists&#x3f;</to><enabled>Y</enabled> </hop>
-  <hop> <from>MM 170 CS In</from><to>Normalize Rows 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>MM 172 CS In</from><to>Normalize Rows 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value</from><to>Write SQL Sentences</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value 2</from><to>Write SQL Sentences 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Modified Java Script Value 4</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
@@ -248,7 +248,7 @@
     </step>
 
   <step>
-    <name>MM 170 CS In</name>
+    <name>MM 172 CS In</name>
     <type>ExcelInput</type>
     <description/>
     <distribute>Y</distribute>
@@ -274,7 +274,7 @@
     <accept_field/>
     <accept_stepname/>
     <file>
-      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;resources&#x5c;origin&#x5c;MM170.xlsx</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;resources&#x5c;origin&#x5c;MM172.xlsx</name>
       <filemask/>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -380,7 +380,32 @@
     </fields>
     <sheets>
       <sheet>
-        <name>Sheet1</name>
+        <name>MM172.1</name>
+        <startrow>1</startrow>
+        <startcol>0</startcol>
+        </sheet>
+      <sheet>
+        <name>MM172.2</name>
+        <startrow>1</startrow>
+        <startcol>0</startcol>
+        </sheet>
+      <sheet>
+        <name>MM172.3</name>
+        <startrow>1</startrow>
+        <startcol>0</startcol>
+        </sheet>
+      <sheet>
+        <name>MM172.4</name>
+        <startrow>1</startrow>
+        <startcol>0</startcol>
+        </sheet>
+      <sheet>
+        <name>MM172.5</name>
+        <startrow>1</startrow>
+        <startcol>0</startcol>
+        </sheet>
+      <sheet>
+        <name>MM172.6</name>
         <startrow>1</startrow>
         <startcol>0</startcol>
         </sheet>
