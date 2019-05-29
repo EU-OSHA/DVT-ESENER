@@ -29,12 +29,11 @@
 @media (max-width: 1080px) {
   .bar-main-menu{
     #main-menu{
-    	padding: 0;
+    	//padding: 0;
 			.nav {
 				> li {
 					> a{
-						padding-left:8px;
-						padding-right:8px;
+
 					}
 				}
 			}
@@ -47,8 +46,8 @@
   .navbar-nav {
     >li {
 	    >a {
-	        padding-left: 8px;
-	        padding-right: 8px;
+	       // padding-left: 8px;
+	       // padding-right: 8px;
 	    }
     }
   }
@@ -82,7 +81,7 @@
 @media (max-width: 1023px) {
 	
 	body{
-	  padding-top:9rem;
+	  padding-top:0rem;
 	}
 	.tablet-show{
 		display: block;
@@ -95,7 +94,8 @@
 	  display: flex;
 	  justify-content: flex-end;
 	  flex-direction: row;
-	    height: 90px;
+	  height:10.5rem;
+	  padding:0; 
 		.bar-main-menu {
 	    .navbar-header {
 	        float: none;
@@ -148,10 +148,14 @@
 					  height: 90px;
 				}
 			}
+			.nav--tools--menu{
+			  flex-direction: row;
+			  justify-content: flex-end;
+			  position: initial;
+			}
 			.menu-tools-top{
 				width: auto;
 				padding: 1.5rem 0;
-				flex-grow: 2;
 				float: none;
 				background: $white;
 				height: 90px;
@@ -219,13 +223,18 @@
 		.bar-main-menu {
 		  display: block;
 		  width: auto;
-		  padding: 1.5rem 0;
+		  padding: 2rem 0;
 	    margin: 0;
 			.navbar-nav{
 				  box-shadow: 0 6px 0 0px #f6a400 !important;
 					> li{
 						padding: 0.5rem 1.5rem;
 						background:$white;
+						&:nth-child(1){
+							a{
+								padding-left: 3rem !important;
+							}
+						}
 						&:hover{
 							box-shadow: none !important;							
 					}
@@ -243,7 +252,7 @@
 	    &.exposed{
 				display: block;
 				width: auto;
-				padding: 1.5rem 0;
+				padding: 2rem 0;
 				margin: 0;
 				position: initial;
 				left: 0;
@@ -673,7 +682,7 @@ and (orientation : portrait) {
 @media only screen 
 and (max-width :767px)  { 
 	body{
-		padding-top: 9rem;
+		//padding-top: 9rem;
 	}
 	.home-cover{
 		top: 0rem;
@@ -706,11 +715,33 @@ and (max-width :767px)  {
 	.section--page {
 	  padding: 3rem 2rem;
 	}
-	.advice--block {
-	  padding: 3rem 0;
-	  top: 0;
-	}
+	.grid-2{
+	  padding: 2rem 0;
+	  display: flex;
+	  flex-direction: column;
+	  .col-img{
+	  	order: 1;
+	    a{
+	      img{
+	        &:hover{
+	        }
+	      }     
+	    }
+	  }
+	  .col-content{
+	  	order: 2;
+	    .title--section{
 
+	    }
+	    h2.title--section{
+	      font-size: 3rem;
+	      padding-top: 2rem;
+	    }
+	    .carousel--home{
+				margin: 2rem 0;
+	    }
+	  }
+	}
 	/** WIDTH CARDS  **/
 		.xxs-w1{
 			.card--block{
@@ -901,7 +932,7 @@ and (max-width :767px)  {
 
 			}
 			.menu-tools-top{
-				padding: 3.5rem 0 0;
+				//padding: 3.5rem 0 0;
 				.menu-tools-top--items {
 					.search--block{
 						.search--form{
@@ -923,7 +954,7 @@ and (max-width :767px)  {
   		z-index: 1000;
   		background:$white;
 			.navbar-toggle{
-				margin: 2.7rem 1rem 0 1rem;
+				//margin: 2.7rem 1rem 0 1rem;
 			}
   	}
 	}

@@ -1,7 +1,7 @@
 <header>
     <section class="bar-header container-fluid">
         <div class="header--top">
-            <div class="eu-osha-logo">
+            <div class="eu-osha-logo col-xs-4 col-md-4">
                 <a href="https://osha.europa.eu" role="link" title="{{i18n_literals.L363}}" tabindex="0">
                     <picture>
                       <source 
@@ -11,95 +11,96 @@
                     </picture>
                 </a>
             </div>
-            <!-- nav tools top -->
-            <nav class="menu-tools-top">
-                <ul class="menu-tools-top--items list-inline">
-                    <li class="search--block">
-                        <i class="fa fa-search icon-glass-tablet tablet-show" aria-hidden="true"></i>
-                        <form action="" class="search--form">
-                            <div class="form-group has-feedback">
-                                <label for="search" class="sr-only" data-ng-bind="i18n_literals.L378"></label>
-                                <input type="text" class="form-control" name="search" id="search" placeholder="{{i18n_literals.L378}}">
-                                <i class="fa fa-search form-control-feedback" aria-hidden="true"></i>
+
+            <div class="nav--tools--menu col-xs-8 col-md-8">
+                <!-- nav tools top -->
+                <nav class="menu-tools-top">
+                    <ul class="menu-tools-top--items list-inline">
+                        <li class="lang--block">
+                            <form action="" class="lang--form">
+                                <label for="search" class="sr-only">Language</label>
+                                <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select"><option value="bg">Български</option><option value="cs">Čeština</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="et">Eesti</option><option value="el">Ελληνικά</option><option value="en" selected="selected">English</option><option value="es">Español</option><option value="fr">Français</option><option value="hr">Hrvatski</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="lv">Latviešu</option><option value="lt">Lietuvių</option><option value="hu">Magyar</option><option value="mt">Malti</option><option value="nl">Nederlands</option><option value="no">Norsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="ro">Română</option><option value="sk">Slovenčina</option><option value="sl">Slovenščina</option><option value="fi">Suomi</option><option value="sv">Svenska</option></select>
+                            </form>
+                        </li> 
+                        <li class="print--block"><a href="javascript:"  title="{{i18n_literals.L364}}" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i><label for="search" class="sr-only" data-ng-bind="i18n_literals.L364"></label></a></li>
+                        <li class="zoom--text">
+                            <span class="a_small"><a onclick="zoomSmall()" title="{{i18n_literals.L365}}">a</a></span>
+                            <span class="a_medium"><a onclick="zoomMedium()" title="{{i18n_literals.L366}}">a</a></span>
+                            <span class="a_big"><a onclick="zoomBig()" title="{{i18n_literals.L367}}">a</a></span>
+                        </li>
+                       <!--
+                        <li id="google_translate_element_wrapper">
+                            <div id="google_translate_element"  title="{{i18n_literals.L368}}"></div>
+                            <span class="google_translate_span">(machine translation)</span>
+                            <span class="gtranslator-info">Info-icon</span>
+                            <div id="gTranslate-modal" class="gtranslator-msg" style="display:none" data-ng-bind-html="i18n_literals.L22081">    
                             </div>
-                        </form>
-                    </li>                
-                    <li class="zoom--text">
-                        <span class="a_small"><a onclick="zoomSmall()" title="{{i18n_literals.L365}}">a</a></span>
-                        <span class="a_medium"><a onclick="zoomMedium()" title="{{i18n_literals.L366}}">a</a></span>
-                        <span class="a_big"><a onclick="zoomBig()" title="{{i18n_literals.L367}}">a</a></span>
-                    </li>
-                    <li class="print--block"><a href="javascript:"  title="{{i18n_literals.L364}}" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i><label for="search" class="sr-only" data-ng-bind="i18n_literals.L364"></label></a></li>
-                    <li id="google_translate_element_wrapper">
-                        <div id="google_translate_element"  title="{{i18n_literals.L368}}"></div>
-                        <span class="google_translate_span">(machine translation)</span>
-                        <span class="gtranslator-info">Info-icon</span>
-                        <div id="gTranslate-modal" class="gtranslator-msg" style="display:none" data-ng-bind-html="i18n_literals.L22081">    
-                        </div>
-                    </li>
-                </ul>
-            </nav>
-            <!-- /. nav tools top -->
-        </div>
+                        </li>
+                    -->
+                    </ul>
+                </nav>
+                <!-- /. nav tools top -->
 
-        <!-- main menu -->
-        <nav class="bar-main-menu navbar">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar bar1"></span>
-                    <span class="icon-bar bar2"></span>
-                    <span class="icon-bar bar3"></span>
-                </button>
-            </div>
+                <!-- main menu -->
+                <nav class="bar-main-menu navbar">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-menu" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar bar1"></span>
+                            <span class="icon-bar bar2"></span>
+                            <span class="icon-bar bar3"></span>
+                        </button>
+                    </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="main-menu">
-                <ul class="nav navbar-nav">
-                    <li class="dropdown" ng-repeat="level0 in structure">
-                        <a ng-if='level0.levels && level0.target' class="dropdown-toggle" data-toggle="dropdown" role="button"
-                           aria-haspopup="true" target="_self" aria-expanded="false" tabindex="{{level0.tabindex}}">
-                            <span ng-class="isCurrentSection('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
-                            <i class="fa fa-caret-down" aria-hidden="true"></i>
-                        </a>
-                        <a ng-if='level0.levels && level0.sref' ui-sref= '{{ level0.sref}}'
-                           class="dropdown-toggle {{level0.class}}"
-                           data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="{{level0.tabindex}}">
-                            <span ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
-                            <i class="fa fa-caret-down" aria-hidden="true"></i>
-                        </a>
-                        <a ng-if='!level0.levels && level0.sref' ui-sref='{{ level0.sref}}' accesskey="{{level0.accesskey}}" tabindex="{{level0.tabindex}}">
-                            <span ng-if="level0.id == 'home'" ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
-                            <span ng-if="level0.id != 'home'" ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
-                        </a>
-                        <ul class="dropdown-menu" ng-if="level0.levels">
-                            <!--
-                            <li ng-repeat="level1 in level0.levels">
-                                <a ng-if="level1.target" target="{{level1.target}}" id="{{level1.id }}" >
-                                    <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="i18n_literals[level1.name]"></span>
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="main-menu">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown" ng-repeat="level0 in structure">
+                                <a ng-if='level0.levels && level0.target' class="dropdown-toggle" data-toggle="dropdown" role="button"
+                                   aria-haspopup="true" target="_self" aria-expanded="false" tabindex="{{level0.tabindex}}">
+                                    <span ng-class="isCurrentSection('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
+                                    <i class="fa fa-caret-down" aria-hidden="true"></i>
                                 </a>
-                            </li>
-                        -->
-                            <li ng-repeat="level1 in level0.levels">
-                                <a ng-if="level1.sref" ui-sref='{{ level1.sref }}' id='{{ level1.id }}' accesskey="{{level1.accesskey}}">
-                                    <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="i18n_literals[level1.name]"></span>
+                                <a ng-if='level0.levels && level0.sref' ui-sref= '{{ level0.sref}}'
+                                   class="dropdown-toggle {{level0.class}}"
+                                   data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="{{level0.tabindex}}">
+                                    <span ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
+                                    <i class="fa fa-caret-down" aria-hidden="true"></i>
                                 </a>
+                                <a ng-if='!level0.levels && level0.sref' ui-sref='{{ level0.sref}}' accesskey="{{level0.accesskey}}" tabindex="{{level0.tabindex}}">
+                                    <span ng-if="level0.id == 'home'" ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
+                                    <span ng-if="level0.id != 'home'" ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
+                                </a>
+                                <ul class="dropdown-menu" ng-if="level0.levels">
+                                    <!--
+                                    <li ng-repeat="level1 in level0.levels">
+                                        <a ng-if="level1.target" target="{{level1.target}}" id="{{level1.id }}" >
+                                            <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="i18n_literals[level1.name]"></span>
+                                        </a>
+                                    </li>
+                                -->
+                                    <li ng-repeat="level1 in level0.levels">
+                                        <a ng-if="level1.sref" ui-sref='{{ level1.sref }}' id='{{ level1.id }}' accesskey="{{level1.accesskey}}">
+                                            <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="i18n_literals[level1.name]"></span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
-                    </li>
-                </ul>
-            </div>
+                    </div>
 
-            <pre ng-show="false">{{  structure | json }}</pre>
-        </nav>
-        <!-- /. main menu -->
+                    <pre ng-show="false">{{  structure | json }}</pre>
+                </nav>
+                <!-- /. main menu -->                
+            </div>
+        </div>
+
+
     </section>
     <section class="home-cover" title="{{i18n_literals.L385}}" data-ng-click="goto('home')" >
       <div class="container">
-          <h1 data-ng-if="isHome" class="main-title" data-ng-bind="i18n_literals.L22020"></h1>
-          <p data-ng-if="!isHome" class="main-title" data-ng-bind="i18n_literals.L22020"></h1>
-          <p class="lead-title" data-ng-bind="i18n_literals.L22024"></p>
+          <h1 data-ng-if="isHome" class="main-title sr-only" data-ng-bind="i18n_literals.L22020"></h1>
       </div>
     </section>
 

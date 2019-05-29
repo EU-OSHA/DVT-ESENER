@@ -1,31 +1,26 @@
 .home-cover {
-    background: url(../img/home-header-bg.png) center top no-repeat #529fa2;
-    min-height:15.6rem;
-    height: auto;
-    background-size: cover;
+    background: url(../img/home-header-bg.png) left top no-repeat;
+    height: 20.5rem;
     clear: both;
-    border-top:6px solid #C7E2E3;
-    position: relative;
-    cursor: pointer;
     .main-title{
+      position: absolute;
+      top: -500rem;
+      left: -500rem;
       font-weight: 500;
-      font-size: 3.8rem;
-      width: auto;
+      font-size: 4.6rem;
+      width: 27.5rem;
       padding-top: 2rem;
-      padding-left:1.5rem;
-      margin-bottom: 1rem;
-      color: $white;
-      line-height:3.6rem;
+      padding-left: 6rem;
+      color: #FFF;
+      line-height: 3.6rem;
       width: 100%;
-      font-family: "Oswald", sans-serif;
-      margin-top: 2rem;
     }
     .lead-title{
       font-family: Oswald-Light,sans-serif;
       color: $white;
       padding-top: 0rem;
       padding-left:1.5rem;
-      font-size: 2.4rem;
+      font-size: 2.6rem;
     }
 }
 
