@@ -149,8 +149,11 @@
     requirePaths['vertical/home/HomeController'] = verticalModules + '/home/HomeController' + suffix;
     requirePaths['vertical/home/i18n'] = verticalModules + '/home/HP-i18n' + suffix + '.json';
 
-    /* GENERIC INFORMATION */
-    requirePaths['vertical/generic-information/generic-information-module'] = verticalModules + '/generic-information/generic-information-module' + suffix;
+    /* SURVEY */
+    requirePaths['vertical/survey/survey-module'] = verticalModules + '/survey/survey-module' + suffix;
+
+    /* ESENER 2009 OVERVIEW */
+    requirePaths['vertical/esener2009-overview/Esener2009OverviewController'] = verticalModules + '/survey/esener2009-overview/Esener2009OverviewController' + suffix;
 
     /*STEERING OF OSH*/
     requirePaths['vertical/osh-steering/osh-steering-module'] = verticalModules + '/osh-steering/osh-steering-module' + suffix;

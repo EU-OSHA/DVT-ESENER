@@ -39,6 +39,12 @@
       color: #57575a;
       width: auto;
     }
+    .copyright a {
+      color: #57575a;
+      &:hover{
+        color: $white !important;
+      }
+    }
     .footer-nav-accessibility {
       margin:0.8rem 0 0;
       li {

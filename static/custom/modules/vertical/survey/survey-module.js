@@ -12,7 +12,7 @@ define(function (require) {
      * @requires ui.router
      * @requires configModule
      */
-    var module = angular.module('home', ['ui.router', 'ui.router.metatags', configModule.name]);
+    var module = angular.module('survey', ['ui.router', 'ui.router.metatags', configModule.name]);
 
     /* List of states of the  module */
     module.config(function ($stateProvider, configService, $urlRouterProvider, $controllerProvider, $uiViewScrollProvider) {
@@ -22,14 +22,13 @@ define(function (require) {
 
         $uiViewScrollProvider.useAnchorScroll();
 
-        $urlRouterProvider.when('', '/');
-        $stateProvider.state('home', {
-            url: "/",
+        $stateProvider.state('esener2009-overview', {
+            url: "/survey/esener2009-overview",
             views: {
                 "content-main": {
-                    templateUrl: configService.getVerticalTplPath("home", "home"),
-                    controller: 'HomeController',
-                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/home/HomeController', 'home', 'HomeController')
+                    templateUrl: configService.getVerticalTplPath("survey/esener2009-overview", "esener2009-overview"),
+                    controller: 'Esener2009OverviewController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/esener2009-overview/Esener2009OverviewController', 'esener2009-overview', 'Esener2009OverviewController')
                 }
             },
             metaTags: {
@@ -37,6 +36,7 @@ define(function (require) {
                 //description: i18n.L4,
             }
         });
+
     });
 
     return module;
