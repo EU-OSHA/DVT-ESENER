@@ -1,0 +1,1587 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transformation>
+  <info>
+    <name>literals_from_access</name>
+    <description/>
+    <extended_description/>
+    <trans_version/>
+    <trans_type>Normal</trans_type>
+    <trans_status>0</trans_status>
+    <directory>&#x2f;</directory>
+    <parameters>
+        <parameter>
+            <name>access_file</name>
+            <default_value>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;resources&#x2f;origin&#x2f;EU-OSHA_DVILO_Dataset.accdb</default_value>
+            <description/>
+        </parameter>
+    </parameters>
+    <log>
+<trans-log-table><connection/>
+<schema/>
+<table/>
+<size_limit_lines/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STATUS</id><enabled>Y</enabled><name>STATUS</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name><subject/></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name><subject/></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name><subject/></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name><subject/></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name><subject/></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name><subject/></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>STARTDATE</id><enabled>Y</enabled><name>STARTDATE</name></field><field><id>ENDDATE</id><enabled>Y</enabled><name>ENDDATE</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>DEPDATE</id><enabled>Y</enabled><name>DEPDATE</name></field><field><id>REPLAYDATE</id><enabled>Y</enabled><name>REPLAYDATE</name></field><field><id>LOG_FIELD</id><enabled>Y</enabled><name>LOG_FIELD</name></field><field><id>EXECUTING_SERVER</id><enabled>N</enabled><name>EXECUTING_SERVER</name></field><field><id>EXECUTING_USER</id><enabled>N</enabled><name>EXECUTING_USER</name></field><field><id>CLIENT</id><enabled>N</enabled><name>CLIENT</name></field></trans-log-table>
+<perf-log-table><connection/>
+<schema/>
+<table/>
+<interval/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>SEQ_NR</id><enabled>Y</enabled><name>SEQ_NR</name></field><field><id>LOGDATE</id><enabled>Y</enabled><name>LOGDATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>INPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>INPUT_BUFFER_ROWS</name></field><field><id>OUTPUT_BUFFER_ROWS</id><enabled>Y</enabled><name>OUTPUT_BUFFER_ROWS</name></field></perf-log-table>
+<channel-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>LOGGING_OBJECT_TYPE</id><enabled>Y</enabled><name>LOGGING_OBJECT_TYPE</name></field><field><id>OBJECT_NAME</id><enabled>Y</enabled><name>OBJECT_NAME</name></field><field><id>OBJECT_COPY</id><enabled>Y</enabled><name>OBJECT_COPY</name></field><field><id>REPOSITORY_DIRECTORY</id><enabled>Y</enabled><name>REPOSITORY_DIRECTORY</name></field><field><id>FILENAME</id><enabled>Y</enabled><name>FILENAME</name></field><field><id>OBJECT_ID</id><enabled>Y</enabled><name>OBJECT_ID</name></field><field><id>OBJECT_REVISION</id><enabled>Y</enabled><name>OBJECT_REVISION</name></field><field><id>PARENT_CHANNEL_ID</id><enabled>Y</enabled><name>PARENT_CHANNEL_ID</name></field><field><id>ROOT_CHANNEL_ID</id><enabled>Y</enabled><name>ROOT_CHANNEL_ID</name></field></channel-log-table>
+<step-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>TRANSNAME</id><enabled>Y</enabled><name>TRANSNAME</name></field><field><id>STEPNAME</id><enabled>Y</enabled><name>STEPNAME</name></field><field><id>STEP_COPY</id><enabled>Y</enabled><name>STEP_COPY</name></field><field><id>LINES_READ</id><enabled>Y</enabled><name>LINES_READ</name></field><field><id>LINES_WRITTEN</id><enabled>Y</enabled><name>LINES_WRITTEN</name></field><field><id>LINES_UPDATED</id><enabled>Y</enabled><name>LINES_UPDATED</name></field><field><id>LINES_INPUT</id><enabled>Y</enabled><name>LINES_INPUT</name></field><field><id>LINES_OUTPUT</id><enabled>Y</enabled><name>LINES_OUTPUT</name></field><field><id>LINES_REJECTED</id><enabled>Y</enabled><name>LINES_REJECTED</name></field><field><id>ERRORS</id><enabled>Y</enabled><name>ERRORS</name></field><field><id>LOG_FIELD</id><enabled>N</enabled><name>LOG_FIELD</name></field></step-log-table>
+<metrics-log-table><connection/>
+<schema/>
+<table/>
+<timeout_days/>
+<field><id>ID_BATCH</id><enabled>Y</enabled><name>ID_BATCH</name></field><field><id>CHANNEL_ID</id><enabled>Y</enabled><name>CHANNEL_ID</name></field><field><id>LOG_DATE</id><enabled>Y</enabled><name>LOG_DATE</name></field><field><id>METRICS_DATE</id><enabled>Y</enabled><name>METRICS_DATE</name></field><field><id>METRICS_CODE</id><enabled>Y</enabled><name>METRICS_CODE</name></field><field><id>METRICS_DESCRIPTION</id><enabled>Y</enabled><name>METRICS_DESCRIPTION</name></field><field><id>METRICS_SUBJECT</id><enabled>Y</enabled><name>METRICS_SUBJECT</name></field><field><id>METRICS_TYPE</id><enabled>Y</enabled><name>METRICS_TYPE</name></field><field><id>METRICS_VALUE</id><enabled>Y</enabled><name>METRICS_VALUE</name></field></metrics-log-table>
+    </log>
+    <maxdate>
+      <connection/>
+      <table/>
+      <field/>
+      <offset>0.0</offset>
+      <maxdiff>0.0</maxdiff>
+    </maxdate>
+    <size_rowset>10000</size_rowset>
+    <sleep_time_empty>50</sleep_time_empty>
+    <sleep_time_full>50</sleep_time_full>
+    <unique_connections>N</unique_connections>
+    <feedback_shown>Y</feedback_shown>
+    <feedback_size>50000</feedback_size>
+    <using_thread_priorities>Y</using_thread_priorities>
+    <shared_objects_file/>
+    <capture_step_performance>N</capture_step_performance>
+    <step_performance_capturing_delay>1000</step_performance_capturing_delay>
+    <step_performance_capturing_size_limit>100</step_performance_capturing_size_limit>
+    <dependencies>
+    </dependencies>
+    <partitionschemas>
+    </partitionschemas>
+    <slaveservers>
+    </slaveservers>
+    <clusterschemas>
+    </clusterschemas>
+  <created_user>-</created_user>
+  <created_date>2017&#x2f;05&#x2f;02 12&#x3a;54&#x3a;01.729</created_date>
+  <modified_user>-</modified_user>
+  <modified_date>2017&#x2f;05&#x2f;02 12&#x3a;54&#x3a;01.729</modified_date>
+    <key_for_session_key>H4sIAAAAAAAAAAMAAAAAAAAAAAA&#x3d;</key_for_session_key>
+    <is_key_private>N</is_key_private>
+  </info>
+  <notepads>
+  </notepads>
+  <connection>
+    <name>osha_dvt</name>
+    <server/>
+    <type>MYSQL</type>
+    <access>JNDI</access>
+    <database>osha_dvt</database>
+    <port>1521</port>
+    <username/>
+    <password>Encrypted </password>
+    <servername/>
+    <data_tablespace/>
+    <index_tablespace/>
+    <attributes>
+      <attribute><code>EXTRA_OPTION_MYSQL.defaultFetchSize</code><attribute>500</attribute></attribute>
+      <attribute><code>EXTRA_OPTION_MYSQL.useCursorFetch</code><attribute>true</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_LOWERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>FORCE_IDENTIFIERS_TO_UPPERCASE</code><attribute>N</attribute></attribute>
+      <attribute><code>IS_CLUSTERED</code><attribute>N</attribute></attribute>
+      <attribute><code>PORT_NUMBER</code><attribute>1521</attribute></attribute>
+      <attribute><code>PRESERVE_RESERVED_WORD_CASE</code><attribute>N</attribute></attribute>
+      <attribute><code>QUOTE_ALL_FIELDS</code><attribute>N</attribute></attribute>
+      <attribute><code>STREAM_RESULTS</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_BOOLEAN_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>SUPPORTS_TIMESTAMP_DATA_TYPE</code><attribute>Y</attribute></attribute>
+      <attribute><code>USE_POOLING</code><attribute>N</attribute></attribute>
+    </attributes>
+  </connection>
+  <order>
+  <hop> <from>Literals In</from><to>Is Common</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get commonLiteralCount</from><to>Literal Exists</to><enabled>Y</enabled> </hop>
+  <hop> <from>Literal Exists</from><to>Modified Java Script Value 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 2</from><to>Text file output 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 5</from><to>Text file output 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Is Common</from><to>Get commonLiteralCount</to><enabled>Y</enabled> </hop>
+  <hop> <from>Is Common</from><to>Get sectionCount</to><enabled>Y</enabled> </hop>
+  <hop> <from>Get sectionCount</from><to>Modified Java Script Value 6</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 6</from><to>Text file output 5</to><enabled>Y</enabled> </hop>
+  <hop> <from>Literal Exists</from><to>Row Normaliser</to><enabled>Y</enabled> </hop>
+  <hop> <from>get translationCount</from><to>Filter rows</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows</from><to>Modified Java Script Value 4</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 4</from><to>Text file output 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Text file output 5</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
+  <hop> <from>Blocking Step</from><to>Replace in string</to><enabled>Y</enabled> </hop>
+  <hop> <from>Replace in string</from><to>Modified Java Script Value 5</to><enabled>Y</enabled> </hop>
+  <hop> <from>Row Normaliser</from><to>Filter rows 2</to><enabled>Y</enabled> </hop>
+  <hop> <from>Filter rows 2</from><to>get translationCount</to><enabled>Y</enabled> </hop>
+  </order>
+  <step>
+    <name>Blocking Step</name>
+    <type>BlockingStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <pass_all_rows>Y</pass_all_rows>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>block</prefix>
+      <cache_size>5000</cache_size>
+      <compress>Y</compress>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>688</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Modified Java Script Value 4</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>translationCount</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Integer</type><text>0</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1056</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter rows 2</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>get translationCount</send_true_to>
+<send_false_to/>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>Text</leftvalue>
+ <function>IS NOT NULL</function>
+ <rightvalue/>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>800</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get commonLiteralCount</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>osha_dvt</connection>
+    <execute_each_row>Y</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>Y</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>SELECT &#x2a;&#xd;&#xa;FROM literal l&#xd;&#xa;INNER JOIN translation t ON l.id&#x3d;t.literal_id&#xd;&#xa;WHERE t.text&#x3d;&#x22;&#x3f;&#x22; AND t.language&#x3d;&#x22;EN&#x22; AND l.id&#x3c;10000&#x3b;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field>literalCount</read_field>
+    <arguments>
+       <argument><name>EN</name></argument>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>432</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get sectionCount</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>osha_dvt</connection>
+    <execute_each_row>Y</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>Y</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>SET &#x40;toolId &#x3d; &#x28;SELECT id FROM tool WHERE name&#x3d;&#x22;osha_dvt_esener&#x22;&#x29;&#x3b;&#xd;&#xa;SELECT &#x2a; FROM section WHERE tool_id&#x3d;&#x40;toolId AND name&#x3d;&#x22;&#x3f;&#x22;&#x3b;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field>sectionCount</read_field>
+    <arguments>
+       <argument><name>SECTION</name></argument>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>288</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Is Common</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Get commonLiteralCount</send_true_to>
+<send_false_to>Get sectionCount</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>IS_COMMON</leftvalue>
+ <function>&#x3d;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Boolean</type><text>Y</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>288</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Literal Exists</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Row Normaliser</send_true_to>
+<send_false_to>Modified Java Script Value 2</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <leftvalue>literalCount</leftvalue>
+ <function>&#x3e;</function>
+ <rightvalue/>
+ <value><name>constant</name><type>Integer</type><text>0</text><length>-1</length><precision>0</precision><isnull>N</isnull><mask>&#x23;&#x3b;-&#x23;</mask></value> </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>560</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Literals In</name>
+    <type>AccessInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <include>N</include>
+    <include_field/>
+    <tablename>N</tablename>
+    <filename_Field/>
+    <tablename_field/>
+    <rownum>N</rownum>
+    <isaddresult>Y</isaddresult>
+    <filefield>N</filefield>
+    <rownum_field/>
+    <resetrownumber>N</resetrownumber>
+    <table_name>LITERAL</table_name>
+    <file>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;resources&#x5c;origin&#x5c;EU-OSHA_ESENER_Literals.accdb</name>
+      <filemask/>
+      <exclude_filemask/>
+      <file_required>N</file_required>
+      <include_subfolders>N</include_subfolders>
+    </file>
+    <fields>
+      <field>
+        <name>LITERAL_ID</name>
+        <attribut>LITERAL_ID</attribut>
+        <type>Integer</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>LITERAL_TYPE</name>
+        <attribut>LITERAL_TYPE</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SECTION</name>
+        <attribut>SECTION</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>IS_COMMON</name>
+        <attribut>IS_COMMON</attribut>
+        <type>Boolean</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>EN</name>
+        <attribut>EN</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>IS_TRANSLATED</name>
+        <attribut>IS_TRANSLATED</attribut>
+        <type>Boolean</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>BG</name>
+        <attribut>BG</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>CS</name>
+        <attribut>CS</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>DA</name>
+        <attribut>DA</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>DE</name>
+        <attribut>DE</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ET</name>
+        <attribut>ET</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>EL</name>
+        <attribut>EL</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>ES</name>
+        <attribut>ES</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>FR</name>
+        <attribut>FR</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>HR</name>
+        <attribut>HR</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>IS</name>
+        <attribut>IS</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>IT</name>
+        <attribut>IT</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>LV</name>
+        <attribut>LV</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>LT</name>
+        <attribut>LT</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>HU</name>
+        <attribut>HU</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>MT</name>
+        <attribut>MT</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>NL</name>
+        <attribut>NL</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>NO</name>
+        <attribut>NO</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>PL</name>
+        <attribut>PL</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>PT</name>
+        <attribut>PT</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>RO</name>
+        <attribut>RO</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SK</name>
+        <attribut>SK</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SL</name>
+        <attribut>SL</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>FI</name>
+        <attribut>FI</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>SV</name>
+        <attribut>SV</attribut>
+        <type>String</type>
+        <format/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <currency/>
+        <decimal/>
+        <group/>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+    </fields>
+    <limit>0</limit>
+    <shortFileFieldName/>
+    <pathFieldName/>
+    <hiddenFieldName/>
+    <lastModificationTimeFieldName/>
+    <uriNameFieldName/>
+    <rootUriNameFieldName/>
+    <extensionFieldName/>
+    <sizeFieldName/>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>192</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var query &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;literalId&#x3d;&#x28;SELECT &#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3c; 10000&#x29;&#x2b;1&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;literalId, null, null, &#x22;&#x27;&#x2b;LITERAL_TYPE&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;EN&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;if &#x28;BG &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;BG&#x22;, 0, &#x22;&#x27;&#x2b;BG&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;CS &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, CS&#x22;, 0, &#x22;&#x27;&#x2b;CS&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;DA &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;DA&#x22;, 0, &#x22;&#x27;&#x2b;DA&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;DE &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;DE&#x22;, 0, &#x22;&#x27;&#x2b;DE&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;ET &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;ET&#x22;, 0, &#x22;&#x27;&#x2b;ET&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;EL &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;EL&#x22;, 0, &#x22;&#x27;&#x2b;EL&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;ES &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;ES&#x22;, 0, &#x22;&#x27;&#x2b;ES&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;FR &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;FR&#x22;, 0, &#x22;&#x27;&#x2b;FR&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;HR &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;HR&#x22;, 0, &#x22;&#x27;&#x2b;HR&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;IS &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;IS&#x22;, 0, &#x22;&#x27;&#x2b;IS&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;IT &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;IT&#x22;, 0, &#x22;&#x27;&#x2b;IT&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;LV &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;LV&#x22;, 0, &#x22;&#x27;&#x2b;LV&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;LT &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;LT&#x22;, 0, &#x22;&#x27;&#x2b;LT&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;HU &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;HU&#x22;, 0, &#x22;&#x27;&#x2b;HU&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;MT &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;MT&#x22;, 0, &#x22;&#x27;&#x2b;MT&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;NL &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;NL&#x22;, 0, &#x22;&#x27;&#x2b;NL&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;NO &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;NO&#x22;, 0, &#x22;&#x27;&#x2b;NO&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;PL &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;PL&#x22;, 0, &#x22;&#x27;&#x2b;PL&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;PT &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;PT&#x22;, 0, &#x22;&#x27;&#x2b;PT&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;RO &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;RO&#x22;, 0, &#x22;&#x27;&#x2b;RO&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;SK &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;SK&#x22;, 0, &#x22;&#x27;&#x2b;SK&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;SL &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;SL&#x22;, 0, &#x22;&#x27;&#x2b;SL&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;FI &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;FI&#x22;, 0, &#x22;&#x27;&#x2b;FI&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;SV &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;SV&#x22;, 0, &#x22;&#x27;&#x2b;SV&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
+        <rename>query</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>560</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 4</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var query &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;literalId&#x3d;&#x28;SELECT &#x28;SELECT literal_id FROM translation WHERE language&#x3d;&#x22;EN&#x22; AND text&#x3d;&#x22;&#x27;&#x2b;EN&#x2b;&#x27;&#x22; AND literal_id&#x3c;10000&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;&#x27;&#x2b;Language&#x2b;&#x27;&#x22;, 0, &#x22;&#x27;&#x2b;Text&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
+        <rename>query</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1184</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 5</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var query &#x3d; &#x22;&#x22;&#x3b; &#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;literalId&#x3d;&#x28;SELECT IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1, 100001&#x29;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;toolId&#x3d;&#x28;SELECT id FROM tool WHERE name&#x3d;&#x22;osha_dvt_esener&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;sectionId&#x3d;&#x28;SELECT id FROM section WHERE tool_id&#x3d;&#x40;toolId AND name&#x3d;&#x22;&#x27;&#x2b;SECTION&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;literalId, null, &#x40;sectionId, &#x22;&#x27;&#x2b;LITERAL_TYPE&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;ENEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;if &#x28;BG &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;BG&#x22;, 0, &#x22;&#x27;&#x2b;BGEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;CS &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;CS&#x22;, 0, &#x22;&#x27;&#x2b;CSEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;DA &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;DA&#x22;, 0, &#x22;&#x27;&#x2b;DAEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;DE &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;DE&#x22;, 0, &#x22;&#x27;&#x2b;DEEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;ET &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;ET&#x22;, 0, &#x22;&#x27;&#x2b;ETEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;EL &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;EL&#x22;, 0, &#x22;&#x27;&#x2b;ELEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;ES &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;ES&#x22;, 0, &#x22;&#x27;&#x2b;ESEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;FR &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;FR&#x22;, 0, &#x22;&#x27;&#x2b;FREscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;HR &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;HR&#x22;, 0, &#x22;&#x27;&#x2b;HREscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;IS &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;IS&#x22;, 0, &#x22;&#x27;&#x2b;ISEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;IT &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;IT&#x22;, 0, &#x22;&#x27;&#x2b;ITEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;LV &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;LV&#x22;, 0, &#x22;&#x27;&#x2b;LVEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;LT &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;LT&#x22;, 0, &#x22;&#x27;&#x2b;LTEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;HU &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;HU&#x22;, 0, &#x22;&#x27;&#x2b;HUEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;MT &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;MT&#x22;, 0, &#x22;&#x27;&#x2b;MTEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;NL &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;NL&#x22;, 0, &#x22;&#x27;&#x2b;NLEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;NO &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;NO&#x22;, 0, &#x22;&#x27;&#x2b;NOEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;PL &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;PL&#x22;, 0, &#x22;&#x27;&#x2b;PLEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;PT &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;PT&#x22;, 0, &#x22;&#x27;&#x2b;PTEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;RO &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;RO&#x22;, 0, &#x22;&#x27;&#x2b;ROEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;SK &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;SK&#x22;, 0, &#x22;&#x27;&#x2b;SKEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;SL &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;SL&#x22;, 0, &#x22;&#x27;&#x2b;SLEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;FI &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;FI&#x22;, 0, &#x22;&#x27;&#x2b;FIEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;SV &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;SV&#x22;, 0, &#x22;&#x27;&#x2b;SVEscaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#x7d;</jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>escapeSQL_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Returns escaped String&#xa;&#x2f;&#x2f; &#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; &#x22;escapeSQL&#x22;&#x28;var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; var - The Variable to escape.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; 2007-09-11&#xa;&#x2f;&#x2f;&#xa;var str1 &#x3d; &#x22;SELECT &#x2a; FROM CUSTOMER WHERE NAME&#x3d;&#x27;&#x22; &#x2b; escapeSQL&#x28;&#x22;McHale&#x27;s Navy&#x22;&#x29; &#x2b; &#x22;&#x27;&#x22;&#x3b;    &#xa;&#x2f;&#x2f;At present, this method only turns single-quotes into doubled single-quotes&#xa;&#x2f;&#x2f; &#x28;&#x22;McHale&#x27;s Navy&#x22; &#x3d;&#x3e; &#x22;McHale&#x27;&#x27;s Navy&#x22;&#xa;Alert&#x28;str1&#x29;&#x3b;&#xa;      </jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>escapeHtml_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Returns escaped String&#xa;		&#x2f;&#x2f; &#xa;		&#x2f;&#x2f; Usage&#x3a;&#xa;		&#x2f;&#x2f; &#x22;escapeHtml&#x22;&#x28;var&#x29;&#x3b;&#xa;		&#x2f;&#x2f; 1&#x3a; var - The Variable to escape.&#xa;		&#x2f;&#x2f;&#xa;		&#x2f;&#x2f; 2007-09-11&#xa;		&#x2f;&#x2f;&#xa;&#xa;      </jsScript_script>
+      </jsScript>      <jsScript>        <jsScript_type>-1</jsScript_type>
+        <jsScript_name>str2RegExp_Sample</jsScript_name>
+        <jsScript_script>&#x2f;&#x2f; Split&#x27;s a String with a Regular Expression to an Array.&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; Usage&#x3a;&#xa;&#x2f;&#x2f; replace&#x28;var, var, var&#x29;&#x3b;&#xa;&#x2f;&#x2f; 1&#x3a; String - The Variable with the Content&#xa;&#x2f;&#x2f; 2&#x3a; String - The Regular Expression to apply&#xa;&#x2f;&#x2f;&#xa;&#x2f;&#x2f; 2006-11-15&#xa;&#x2f;&#x2f;&#xa;var strToMatch &#x3d; &#x22;info&#x40;proconis.de&#x22;&#x3b;&#xa;var strReg &#x3d; &#x22;&#x5e;&#x28;&#x5c;&#x5c;w&#x2b;&#x29;&#x40;&#x28;&#x5b;a-zA-Z_&#x5d;&#x2b;&#x3f;&#x29;&#x5c;&#x5c;.&#x28;&#x5b;a-zA-Z&#x5d;&#x7b;2,3&#x7d;&#x29;&#x24;&#x22;&#x3b;&#xa;var xArr &#x3d;  str2RegExp&#x28;strToMatch, strReg&#x29;&#x3b;&#xa;if &#x28; xArr &#x21;&#x3d; null &#x29; &#x7b;&#xa;    for&#x28;i&#x3d;0&#x3b;i&#x3c;xArr.length&#x3b;i&#x2b;&#x2b;&#x29; &#x7b;&#xa;	    Alert&#x28;xArr&#x5b;i&#x5d;&#x29;&#x3b;&#xa;	&#x7d;&#xa;&#x7d;&#xa;else &#x7b;&#xa;    Alert&#x28;&#x22;no match&#x22;&#x29;&#x3b;&#xa;&#x7d;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
+        <rename>query</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>928</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 6</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>if &#x28;insertedSections &#x3d;&#x3d; null &#x7c;&#x7c; insertedSections &#x3d;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	var insertedSections &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;if &#x28;SECTION &#x21;&#x3d; null &#x26;&#x26; insertedSections.indexOf&#x28;SECTION&#x29; &#x3d;&#x3d; -1&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	var sectionQuery &#x3d; &#x22;&#x22;&#x3b;&#xd;&#xa;	sectionQuery &#x3d; sectionQuery &#x2b; &#x27;SET &#x40;toolId &#x3d; &#x28;SELECT id FROM tool WHERE name&#x3d;&#x22;osha_dvt_esener&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	sectionQuery &#x3d; sectionQuery &#x2b; &#x27;INSERT INTO section &#x28;tool_id, name&#x29; VALUES &#x28;&#x40;toolId, &#x22;&#x27;&#x2b;SECTION&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	sectionQuery &#x3d; sectionQuery &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	insertedSections &#x3d; insertedSections &#x2b; SECTION &#x2b; &#x22; - &#x22;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else&#xd;&#xa;&#x7b;&#xd;&#xa;	sectionQuery &#x3d; null&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>sectionQuery</name>
+        <rename>sectionQuery</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>432</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>EN</in_stream_name>
+        <out_stream_name>ENEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>BG</in_stream_name>
+        <out_stream_name>BGEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>CS</in_stream_name>
+        <out_stream_name>CSEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>DA</in_stream_name>
+        <out_stream_name>DAEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>DE</in_stream_name>
+        <out_stream_name>DEEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ET</in_stream_name>
+        <out_stream_name>ETEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>EL</in_stream_name>
+        <out_stream_name>ELEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>ES</in_stream_name>
+        <out_stream_name>ESEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>FR</in_stream_name>
+        <out_stream_name>FREscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>HR</in_stream_name>
+        <out_stream_name>HREscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>IS</in_stream_name>
+        <out_stream_name>ISEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>IT</in_stream_name>
+        <out_stream_name>ITEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>LV</in_stream_name>
+        <out_stream_name>LVEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>LT</in_stream_name>
+        <out_stream_name>LTEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>HU</in_stream_name>
+        <out_stream_name>HUEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>MT</in_stream_name>
+        <out_stream_name>MTEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>NL</in_stream_name>
+        <out_stream_name>NLEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>NO</in_stream_name>
+        <out_stream_name>NOEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>PL</in_stream_name>
+        <out_stream_name>PLEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>PT</in_stream_name>
+        <out_stream_name>PTEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>RO</in_stream_name>
+        <out_stream_name>ROEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>SK</in_stream_name>
+        <out_stream_name>SKEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>SL</in_stream_name>
+        <out_stream_name>SLEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>FI</in_stream_name>
+        <out_stream_name>FIEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+      <field>
+        <in_stream_name>SV</in_stream_name>
+        <out_stream_name>SVEscaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>800</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Row Normaliser</name>
+    <type>Normaliser</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+   <typefield>Language</typefield>
+    <fields>      <field>        <name>BG</name>
+        <value>BG</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>CS</name>
+        <value>CS</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>DA</name>
+        <value>DA</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>DE</name>
+        <value>DE</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>ET</name>
+        <value>ET</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>EL</name>
+        <value>EL</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>ES</name>
+        <value>ES</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>FR</name>
+        <value>FR</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>HR</name>
+        <value>HR</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>IS</name>
+        <value>IS</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>IT</name>
+        <value>IT</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>LV</name>
+        <value>LV</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>LT</name>
+        <value>LT</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>HU</name>
+        <value>HU</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>MT</name>
+        <value>MT</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>NL</name>
+        <value>NL</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>NO</name>
+        <value>NO</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>PL</name>
+        <value>PL</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>PT</name>
+        <value>PT</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>RO</name>
+        <value>RO</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>SK</name>
+        <value>SK</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>SL</name>
+        <value>SL</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>FI</name>
+        <value>FI</value>
+        <norm>Text</norm>
+        </field>      <field>        <name>SV</name>
+        <value>SV</value>
+        <norm>Text</norm>
+        </field>      </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>688</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file output 2</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator/>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>UNIX</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>N</create_parent_folder>
+    <file>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;output&#x2f;access_common_literals</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>sql</extention>
+      <append>Y</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>query</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>688</xloc>
+      <yloc>144</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file output 3</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator/>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>UNIX</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>N</create_parent_folder>
+    <file>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;output&#x2f;access_common_literals</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>sql</extention>
+      <append>Y</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>query</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1312</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file output 4</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator/>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>UNIX</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>N</create_parent_folder>
+    <file>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;output&#x2f;access_literals</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>sql</extention>
+      <append>Y</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>query</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1056</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Text file output 5</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator/>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>UNIX</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>N</create_parent_folder>
+    <file>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;output&#x2f;access_literals</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>sql</extention>
+      <append>Y</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>sectionQuery</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>560</xloc>
+      <yloc>256</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>get translationCount</name>
+    <type>ExecSQL</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <connection>osha_dvt</connection>
+    <execute_each_row>Y</execute_each_row>
+    <single_statement>N</single_statement>
+    <replace_variables>Y</replace_variables>
+    <quoteString>N</quoteString>
+    <sql>SET &#x40;literalId&#x3d;&#x28;SELECT literal_id FROM translation WHERE language&#x3d;&#x22;EN&#x22; AND text&#x3d;&#x22;&#x3f;&#x22; AND literal_id&#x3c;10000&#x29;&#x3b;&#xd;&#xa;SELECT &#x2a; FROM translation WHERE literal_id&#x3d;&#x40;literalId AND language&#x3d;&#x22;&#x3f;&#x22;&#x3b;</sql>
+    <set_params>N</set_params>
+    <insert_field/>
+    <update_field/>
+    <delete_field/>
+    <read_field>translationCount</read_field>
+    <arguments>
+       <argument><name>EN</name></argument>
+       <argument><name>Language</name></argument>
+    </arguments>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>928</xloc>
+      <yloc>48</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step_error_handling>
+  </step_error_handling>
+   <slave-step-copy-partition-distribution>
+</slave-step-copy-partition-distribution>
+   <slave_transformation>N</slave_transformation>
+
+</transformation>

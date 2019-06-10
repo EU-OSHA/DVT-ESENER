@@ -78,8 +78,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>80</xloc>
-      <yloc>112</yloc>
+      <xloc>64</xloc>
+      <yloc>32</yloc>
       </entry>
     <entry>
       <name>Read Answer Order</name>
@@ -111,8 +111,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>752</xloc>
-      <yloc>112</yloc>
+      <xloc>592</xloc>
+      <yloc>224</yloc>
       </entry>
     <entry>
       <name>Create Answer Order Table</name>
@@ -127,47 +127,47 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>224</xloc>
-      <yloc>112</yloc>
+      <xloc>64</xloc>
+      <yloc>128</yloc>
       </entry>
     <entry>
       <name>File Exists</name>
       <description/>
       <type>FILE_EXISTS</type>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;esener_qualitative.sql</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;answers_esener1.sql</filename>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>352</xloc>
-      <yloc>112</yloc>
+      <xloc>64</xloc>
+      <yloc>224</yloc>
       </entry>
     <entry>
       <name>Delete file</name>
       <description/>
       <type>DELETE_FILE</type>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;esener_qualitative.sql</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;answers_esener1.sql</filename>
       <fail_if_file_not_exists>Y</fail_if_file_not_exists>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>432</xloc>
-      <yloc>176</yloc>
+      <xloc>64</xloc>
+      <yloc>320</yloc>
       </entry>
     <entry>
       <name>Create file</name>
       <description/>
       <type>CREATE_FILE</type>
-      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;esener_qualitative.sql</filename>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;answers_esener1.sql</filename>
       <fail_if_file_exists>Y</fail_if_file_exists>
       <add_filename_result>N</add_filename_result>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>512</xloc>
-      <yloc>112</yloc>
+      <xloc>208</xloc>
+      <yloc>224</yloc>
       </entry>
     <entry>
-      <name>Insert Misssing Answers</name>
+      <name>Insert Missing Answers</name>
       <description/>
       <type>TRANS</type>
       <specification_method>filename</specification_method>
@@ -196,8 +196,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>624</xloc>
-      <yloc>112</yloc>
+      <xloc>320</xloc>
+      <yloc>224</yloc>
       </entry>
     <entry>
       <name>Insert Answer Translations</name>
@@ -229,8 +229,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>880</xloc>
-      <yloc>112</yloc>
+      <xloc>704</xloc>
+      <yloc>224</yloc>
       </entry>
     <entry>
       <name>Insert Country Translations</name>
@@ -262,8 +262,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1040</xloc>
-      <yloc>112</yloc>
+      <xloc>832</xloc>
+      <yloc>336</yloc>
       </entry>
     <entry>
       <name>Insert Missing Splits</name>
@@ -295,8 +295,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1184</xloc>
-      <yloc>112</yloc>
+      <xloc>1056</xloc>
+      <yloc>432</yloc>
       </entry>
     <entry>
       <name>Insert Splits Translations</name>
@@ -328,8 +328,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1312</xloc>
-      <yloc>112</yloc>
+      <xloc>1328</xloc>
+      <yloc>432</yloc>
       </entry>
     <entry>
       <name>Insert Missing Literals</name>
@@ -361,8 +361,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1440</xloc>
-      <yloc>112</yloc>
+      <xloc>1472</xloc>
+      <yloc>528</yloc>
       </entry>
     <entry>
       <name>Insert Esener Translations</name>
@@ -394,8 +394,164 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>1440</xloc>
-      <yloc>208</yloc>
+      <xloc>1472</xloc>
+      <yloc>720</yloc>
+      </entry>
+    <entry>
+      <name>File Exists 2</name>
+      <description/>
+      <type>FILE_EXISTS</type>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;countries_esener1.sql</filename>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>336</yloc>
+      </entry>
+    <entry>
+      <name>Delete file 2</name>
+      <description/>
+      <type>DELETE_FILE</type>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;countries_esener1.sql</filename>
+      <fail_if_file_not_exists>Y</fail_if_file_not_exists>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>592</xloc>
+      <yloc>432</yloc>
+      </entry>
+    <entry>
+      <name>Create file 2</name>
+      <description/>
+      <type>CREATE_FILE</type>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;countries_esener1.sql</filename>
+      <fail_if_file_exists>Y</fail_if_file_exists>
+      <add_filename_result>N</add_filename_result>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>704</xloc>
+      <yloc>336</yloc>
+      </entry>
+    <entry>
+      <name>File Exists 2 2</name>
+      <description/>
+      <type>FILE_EXISTS</type>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;splits_esener1.sql</filename>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>832</xloc>
+      <yloc>432</yloc>
+      </entry>
+    <entry>
+      <name>Delete file 2 2</name>
+      <description/>
+      <type>DELETE_FILE</type>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;splits_esener1.sql</filename>
+      <fail_if_file_not_exists>Y</fail_if_file_not_exists>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>832</xloc>
+      <yloc>528</yloc>
+      </entry>
+    <entry>
+      <name>Create file 2 2</name>
+      <description/>
+      <type>CREATE_FILE</type>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;splits_esener1.sql</filename>
+      <fail_if_file_exists>Y</fail_if_file_exists>
+      <add_filename_result>N</add_filename_result>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>944</xloc>
+      <yloc>432</yloc>
+      </entry>
+    <entry>
+      <name>File Exists 3</name>
+      <description/>
+      <type>FILE_EXISTS</type>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;literals_esener1.sql</filename>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1184</xloc>
+      <yloc>528</yloc>
+      </entry>
+    <entry>
+      <name>Delete file 3</name>
+      <description/>
+      <type>DELETE_FILE</type>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;literals_esener1.sql</filename>
+      <fail_if_file_not_exists>Y</fail_if_file_not_exists>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1184</xloc>
+      <yloc>624</yloc>
+      </entry>
+    <entry>
+      <name>Create file 3</name>
+      <description/>
+      <type>CREATE_FILE</type>
+      <filename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;literals_esener1.sql</filename>
+      <fail_if_file_exists>Y</fail_if_file_exists>
+      <add_filename_result>N</add_filename_result>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1328</xloc>
+      <yloc>528</yloc>
+      </entry>
+    <entry>
+      <name>Insert Missing Answers SQL</name>
+      <description/>
+      <type>SQL</type>
+      <sql/>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>T</sqlfromfile>
+      <sqlfilename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;answers_esener1.sql</sqlfilename>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>osha_dvt</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>464</xloc>
+      <yloc>224</yloc>
+      </entry>
+    <entry>
+      <name>Insert Missing Splits SQL</name>
+      <description/>
+      <type>SQL</type>
+      <sql/>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>T</sqlfromfile>
+      <sqlfilename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;splits_esener1.sql</sqlfilename>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>osha_dvt</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1184</xloc>
+      <yloc>432</yloc>
+      </entry>
+    <entry>
+      <name>Insert Missing Literals SQL</name>
+      <description/>
+      <type>SQL</type>
+      <sql/>
+      <useVariableSubstitution>F</useVariableSubstitution>
+      <sqlfromfile>T</sqlfromfile>
+      <sqlfilename>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x2f;output&#x2f;literals_esener1.sql</sqlfilename>
+      <sendOneStatement>F</sendOneStatement>
+      <connection>osha_dvt</connection>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>1472</xloc>
+      <yloc>624</yloc>
       </entry>
   </entries>
   <hops>
@@ -446,16 +602,7 @@
     </hop>
     <hop>
       <from>Create file</from>
-      <to>Insert Misssing Answers</to>
-      <from_nr>0</from_nr>
-      <to_nr>0</to_nr>
-      <enabled>Y</enabled>
-      <evaluation>Y</evaluation>
-      <unconditional>N</unconditional>
-    </hop>
-    <hop>
-      <from>Insert Misssing Answers</from>
-      <to>Read Answer Order</to>
+      <to>Insert Missing Answers</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -473,6 +620,42 @@
     </hop>
     <hop>
       <from>Insert Answer Translations</from>
+      <to>File Exists 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>File Exists 2</from>
+      <to>Delete file 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>File Exists 2</from>
+      <to>Create file 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete file 2</from>
+      <to>Create file 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Create file 2</from>
       <to>Insert Country Translations</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -482,6 +665,105 @@
     </hop>
     <hop>
       <from>Insert Country Translations</from>
+      <to>File Exists 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>File Exists 2 2</from>
+      <to>Delete file 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete file 2 2</from>
+      <to>Create file 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>File Exists 2 2</from>
+      <to>Create file 2 2</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Insert Splits Translations</from>
+      <to>File Exists 3</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>File Exists 3</from>
+      <to>Delete file 3</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Delete file 3</from>
+      <to>Create file 3</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>File Exists 3</from>
+      <to>Create file 3</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Create file 3</from>
+      <to>Insert Missing Literals</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Insert Missing Answers</from>
+      <to>Insert Missing Answers SQL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Insert Missing Answers SQL</from>
+      <to>Read Answer Order</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Create file 2 2</from>
       <to>Insert Missing Splits</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -491,6 +773,15 @@
     </hop>
     <hop>
       <from>Insert Missing Splits</from>
+      <to>Insert Missing Splits SQL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>Insert Missing Splits SQL</from>
       <to>Insert Splits Translations</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
@@ -499,8 +790,8 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Insert Splits Translations</from>
-      <to>Insert Missing Literals</to>
+      <from>Insert Missing Literals</from>
+      <to>Insert Missing Literals SQL</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -508,7 +799,7 @@
       <unconditional>N</unconditional>
     </hop>
     <hop>
-      <from>Insert Missing Literals</from>
+      <from>Insert Missing Literals SQL</from>
       <to>Insert Esener Translations</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
