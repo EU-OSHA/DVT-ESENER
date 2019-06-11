@@ -21,8 +21,11 @@
 /* Home */
 @import '../modules/vertical/home/home.scss';
 
-/* esener 2009 overview */
-@import '../modules/vertical/survey/esener2009-overview/esener2009-overview.scss';
+/* esener overview */
+@import '../modules/vertical/survey/overview/overview.scss';
+
+/* esener data visualisation */
+@import '../modules/vertical/survey/datavisualisation/datavisualisation.scss';
 
 /* Footer */
 @import '../modules/horizontal/directives/footer/footer.scss';

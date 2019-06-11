@@ -62,6 +62,6 @@
         </section>
     </section>
 
-    <p class="text-center"><a ui-sref="detailpage({pIndicator: pIndicator, pTopic: pTopic, pChart: pChart})" class="btn-default btn-main-color"><span>GO!</span></a></p>
+    <p class="text-center"><button ng-disabled="pTopic == '' && pChart == ''" data-ng-class="{'disabled':pTopic == '' && pChart == ''}" ui-sref="detailpage({pIndicator: pIndicator, pTopic: pTopic, pChart: pChart})" class="btn-default btn-main-color"><span>GO!</span></button></p>
 
 </dvt-dashboard>

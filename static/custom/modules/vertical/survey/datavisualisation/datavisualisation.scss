@@ -8,6 +8,13 @@
   background: #529FA2;
 }
 
+.disabled{
+    opacity: 0.4;
+    cursor: not-allowed;
+    border: 1px dotted $gray;
+    color: $gray;
+  }
+
 @media (max-width: 990px) {
 
   .overview-page{
