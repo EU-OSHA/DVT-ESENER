@@ -42,10 +42,8 @@ define(function (require) {
             transclude: true,
             replace: true,
             scope: {},
-            controller: ['$rootScope', '$scope', '$state', '$window' , 'configService', '$http', '$log','dataService', '$compile', '$sce',
-                function ($rootScope, $scope, $state, $window, configService, $http, $log, dataService, $compile, $sce) {
-
-
+            controller: ['$rootScope', '$scope', '$state', '$window' , 'configService', '$http', '$log','dataService', '$compile', '$sce', '$stateParams',
+                function ($rootScope, $scope, $state, $window, configService, $http, $log, dataService, $compile, $sce, $stateParams) {
                     // Load google translate element
                     new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 
@@ -144,11 +142,16 @@ define(function (require) {
                             $log.debug('Loading $viewContentLoading');
                             var path = $location.path();
                             $log.debug(path);
-                            $log.warn($state.current.name);
+                            $log.debug($state.current.name);
+
+                            $scope.pIndicator = $stateParams.pIndicator;
+                            $scope.currentName = $state.current.name;
+                            $log.warn($scope.currentName);
 
                             var cadena = "";
+                            var params = $state.params.pIndicator;
                             
-                            $scope.breadCrumb = breadCrumbStructure[$state.current.name];
+                            $scope.breadCrumb = (params == null)?breadCrumbStructure[$state.current.name]:breadCrumbStructure[$state.current.name+params];
                             $scope.titleHeader = $scope.i18n_literals.L22020;
 
                             if ($state.current.name == 'home') {
@@ -158,7 +161,7 @@ define(function (require) {
                                 var pathURL = path.split("/");
                                 $scope.isHome = false;
                                 var setBreadCrumbs=function() {
-                                    var _link = $compile(breadCrumbStructure[$state.current.name])($scope);
+                                    var _link = $compile((params == null)?breadCrumbStructure[$state.current.name]:breadCrumbStructure[$state.current.name+params])($scope);
                                     var breadcrumb = "";
                                     for (var i = 0; i < _link.size(); i++)
                                     {

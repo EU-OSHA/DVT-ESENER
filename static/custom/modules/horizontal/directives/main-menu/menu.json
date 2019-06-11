@@ -13,14 +13,14 @@
         "tabindex":"2",
         "levels":[
             {
-                "id":"esener2009-overview",
+                "id":"overview",
                 "name":"L22002",
-                "sref":"esener2009-overview",
+                "sref":"overview({pIndicator: 'esener2009'})",
                 "accesskey":"C"
             },{
-                "id":"esener2014-overview",
+                "id":"overview",
                 "name":"L22003",
-                "sref":"esener2014-overview",
+                "sref":"overview({pIndicator: 'esener2014'})",
                 "accesskey":"C"
             }
         ]

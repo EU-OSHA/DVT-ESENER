@@ -152,11 +152,12 @@
     /* SURVEY */
     requirePaths['vertical/survey/survey-module'] = verticalModules + '/survey/survey-module' + suffix;
 
-    /* ESENER 2009 OVERVIEW */
-    requirePaths['vertical/esener2009-overview/Esener2009OverviewController'] = verticalModules + '/survey/esener2009-overview/Esener2009OverviewController' + suffix;
+    /* ESENER OVERVIEW */
+    requirePaths['vertical/overview/OverviewController'] = verticalModules + '/survey/overview/OverviewController' + suffix;
 
-    /*STEERING OF OSH*/
-    requirePaths['vertical/osh-steering/osh-steering-module'] = verticalModules + '/osh-steering/osh-steering-module' + suffix;
+    /* ESENER DATA VISUALISATION */
+    requirePaths['vertical/datavisualisation/DataVisualisationController'] = verticalModules + '/survey/datavisualisation/DataVisualisationController' + suffix;
+    
 
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;

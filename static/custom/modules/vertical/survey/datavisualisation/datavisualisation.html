@@ -1,0 +1,67 @@
+<!-- home.html -->
+<dvt-dashboard promises="promises" parameters="dashboard.parameters" class="datavisualisation-page">
+
+    <!-- Step 1 -->
+    <section class="container">
+        <h1 class="text-center main-color">Step 1</h1>
+        <p class="text-center title--section">Select a topic.</p>
+        <section class="container-fluid">
+            <div class="container grid-2">
+                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
+                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center">OSH Management</p>
+                </div>
+                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
+                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center">Psychosocial risks and their management</p>
+                </div>
+                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
+                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center">Drivers and barriers</p>
+                </div>
+                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
+                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center">Worker participation</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- Step 2 -->
+    <section class="container">
+        <h1 class="text-center main-color">Step 2</h1>
+        <p class="text-center title--section">Select a chart.</p>
+        <section class="container-fluid">
+            <div class="container grid-2">
+                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
+                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center">European map</p>
+                    <p class="text-center">The European map visualisation illustrates in a map the values of the answers per country.</p>
+                </div>
+                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
+                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center">European bar chart</p>
+                    <p class="text-center">The European bar chart visualisation illustrates the values of all answers per country in a vertical stacked bar chart. The European Union average is also provided for comparative reasons in the left hand side of the graph.</p>
+                </div>
+                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
+                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center">National bar chart</p>
+                    <p class="text-center">The National bar chart visualisation illustrates the values of all answers per selected country and subset. The average among all subsets per answer is also provided at the end</p>
+                </div>
+                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
+                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center">National comparisons</p>
+                    <p class="text-center">The National comparisons visualisation presents a comparative overview for the values of all answers between two selected countries.</p>
+                </div>
+                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
+                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center">Pie chart</p>
+                    <p class="text-center">The pie chart visualisation illustrates the values of all answers per country in a pie chart</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <p class="text-center"><a ui-sref="detailpage({pIndicator: pIndicator, pTopic: pTopic, pChart: pChart})" class="btn-default btn-main-color"><span>GO!</span></a></p>
+
+</dvt-dashboard>

@@ -22,21 +22,47 @@ define(function (require) {
 
         $uiViewScrollProvider.useAnchorScroll();
 
-        $stateProvider.state('esener2009-overview', {
-            url: "/survey/esener2009-overview",
+        $stateProvider.state('overview', {
+            url: "/survey/overview/:pIndicator",
+            params: {
+                pIndicator: {
+                    value: 'esener2009',
+                    squash: 'esener2009'
+                }
+            },
             views: {
                 "content-main": {
-                    templateUrl: configService.getVerticalTplPath("survey/esener2009-overview", "esener2009-overview"),
-                    controller: 'Esener2009OverviewController',
-                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/esener2009-overview/Esener2009OverviewController', 'esener2009-overview', 'Esener2009OverviewController')
+                    templateUrl: configService.getVerticalTplPath("survey/overview", "overview"),
+                    controller: 'OverviewController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/overview/OverviewController', 'overview', 'OverviewController')
                 }
             },
             metaTags: {
-                title: "ESENER | Home",
+                title: "Overview | ESENER",
                 //description: i18n.L4,
             }
         });
 
+        $stateProvider.state('datavisualisation', {
+            url: "/survey/datavisualisation/:pIndicator",
+            params: {
+                pIndicator: {
+                    value: 'esener2009',
+                    squash: 'esener2009'
+                }
+            },
+            views: {
+                "content-main": {
+                    templateUrl: configService.getVerticalTplPath("survey/datavisualisation", "datavisualisation"),
+                    controller: 'DataVisualisationController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/datavisualisation/DataVisualisationController', 'datavisualisation', 'DataVisualisationController')
+                }
+            },
+            metaTags: {
+                title: "Data Visualisation | ESENER",
+                //description: i18n.L4,
+            }
+        });
     });
 
     return module;

@@ -17,8 +17,8 @@ define(function (require) {
         var i18n = configService.getLiterals();
         $scope.i18n = i18n;
 
-        //$log.warn($state.current.name);
-        $scope.pIndicator = $state.current.name;
+        $scope.pIndicator = $stateParams.pIndicator;
+        $scope.currentName = $state.current.name;
 
         $scope.status = 'ready';
     }
