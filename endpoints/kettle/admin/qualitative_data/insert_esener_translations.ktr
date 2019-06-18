@@ -487,13 +487,14 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SELECT &#x2a;&#xd;&#xa;FROM literal l &#xd;&#xa;INNER JOIN translation t&#xd;&#xa;ON t.literal_id &#x3d; l.id&#xd;&#xa;WHERE l.type &#x3d; &#x22;ESENER_LITERAL&#x22;&#xd;&#xa;AND t.text&#x3d;&#x22;&#x3f;&#x22; AND t.language&#x3d;&#x22;EN&#x22;&#x3b;</sql>
+    <sql>SELECT &#x2a;&#xd;&#xa;FROM literal l &#xd;&#xa;INNER JOIN translation t&#xd;&#xa;ON t.literal_id &#x3d; l.id&#xd;&#xa;WHERE l.type &#x3d; &#x22;ESENER_01_LITERAL_&#x3f;&#x22;&#xd;&#xa;AND t.text&#x3d;&#x22;&#x3f;&#x22; AND t.language&#x3d;&#x22;EN&#x22;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
     <delete_field/>
     <read_field>literalCount</read_field>
     <arguments>
+       <argument><name>Value</name></argument>
        <argument><name>EN</name></argument>
     </arguments>
      <cluster_schema/>
@@ -673,7 +674,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var query &#x3d; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;literalId&#x3d;&#x28;SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id &#x3d; l.id WHERE l.type&#x3d;&#x22;ESENER_LITERAL&#x22; AND t.language&#x3d;&#x22;EN&#x22; AND t.text&#x3d;&#x22;&#x27;&#x2b;EN&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;&#x27;&#x2b;Language&#x2b;&#x27;&#x22;, 0, &#x22;&#x27;&#x2b;Text&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var query &#x3d; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;SET &#x40;literalId&#x3d;&#x28;SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id &#x3d; l.id WHERE l.type&#x3d;&#x22;ESENER_01_LITERAL_&#x27;&#x2b;Value&#x2b;&#x27;&#x22; AND t.language&#x3d;&#x22;EN&#x22; AND t.text&#x3d;&#x22;&#x27;&#x2b;EN&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;literalId, &#x22;&#x27;&#x2b;Language&#x2b;&#x27;&#x22;, 0, &#x22;&#x27;&#x2b;Text&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
         <rename>query</rename>
         <type>String</type>
@@ -805,7 +806,7 @@
     <fileNameField/>
     <create_parent_folder>N</create_parent_folder>
     <file>
-      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;output&#x5c;esener_qualitative</name>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x5c;output&#x5c;literals_esener1</name>
       <is_command>N</is_command>
       <servlet_output>N</servlet_output>
       <do_not_open_new_file_init>N</do_not_open_new_file_init>
@@ -889,7 +890,7 @@
     <single_statement>N</single_statement>
     <replace_variables>Y</replace_variables>
     <quoteString>N</quoteString>
-    <sql>SELECT &#x2a;&#xd;&#xa;FROM translation&#xd;&#xa;WHERE language&#x3d;&#x22;&#x3f;&#x22; &#xd;&#xa;AND literal_id&#x3d;&#x28;SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id &#x3d; l.id WHERE l.type&#x3d;&#x22;ESENER_LITERAL&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND t.language&#x3d;&#x22;EN&#x22;&#x29;&#x3b;</sql>
+    <sql>SELECT &#x2a;&#xd;&#xa;FROM translation&#xd;&#xa;WHERE language&#x3d;&#x22;&#x3f;&#x22; &#xd;&#xa;AND literal_id&#x3d;&#x28;SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id &#x3d; l.id WHERE l.type&#x3d;&#x22;ESENER_01_LITERAL_&#x3f;&#x22; AND t.text&#x3d;&#x22;&#x3f;&#x22; AND t.language&#x3d;&#x22;EN&#x22;&#x29;&#x3b;</sql>
     <set_params>N</set_params>
     <insert_field/>
     <update_field/>
@@ -897,6 +898,7 @@
     <read_field>translationsCount</read_field>
     <arguments>
        <argument><name>Language</name></argument>
+       <argument><name>Value</name></argument>
        <argument><name>EN</name></argument>
     </arguments>
      <cluster_schema/>
