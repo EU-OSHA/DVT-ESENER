@@ -9,15 +9,22 @@ CREATE TABLE IF NOT EXISTS `esener_category` (
   `name_3_literal_id` int(11) DEFAULT NULL,
   `bottom_text_literal_id` int(11) DEFAULT NULL,
   `year` int(11) NOT NULL,
+  `category_order` int(11) DEFAULT NULL,
+  `previous_id` int(11) DEFAULT NULL,
+  `next_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `esener_category_father_id` (`father_id`),
   KEY `esener_category_name_1_literal_id` (`name_1_literal_id`),
   KEY `esener_category_name_2_literal_id` (`name_2_literal_id`),
   KEY `esener_category_name_3_literal_id` (`name_3_literal_id`),
   KEY `esener_category_bottom_text` (`bottom_text_literal_id`),
+  KEY `esener_category_previous_id` (`previous_id`),
+  KEY `esener_category_next_id` (`next_id`),
   CONSTRAINT `esener_category_bottom_text` FOREIGN KEY (`bottom_text_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `esener_category_father_id` FOREIGN KEY (`father_id`) REFERENCES `esener_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `esener_category_name_1_literal_id` FOREIGN KEY (`name_1_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `esener_category_name_2_literal_id` FOREIGN KEY (`name_2_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `esener_category_name_3_literal_id` FOREIGN KEY (`name_3_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `esener_category_name_3_literal_id` FOREIGN KEY (`name_3_literal_id`) REFERENCES `literal` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `esener_category_next_id` FOREIGN KEY (`next_id`) REFERENCES `esener_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT `esener_category_previous_id` FOREIGN KEY (`previous_id`) REFERENCES `esener_category` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;

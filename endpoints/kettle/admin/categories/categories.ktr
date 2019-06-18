@@ -118,7 +118,35 @@
   <hop> <from>Generate Indicator Insert code</from><to>Text file output 2</to><enabled>Y</enabled> </hop>
   <hop> <from>Categories IN</from><to>Replace in string</to><enabled>Y</enabled> </hop>
   <hop> <from>Replace in string</from><to>Category is null &#x28;if null is not an indicator&#x29;</to><enabled>Y</enabled> </hop>
+  <hop> <from>Text file output 3</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
+  <hop> <from>Text file output 2</from><to>Blocking Step</to><enabled>Y</enabled> </hop>
+  <hop> <from>Blocking Step</from><to>Modified Java Script Value 3</to><enabled>Y</enabled> </hop>
+  <hop> <from>Modified Java Script Value 3</from><to>Text file output 2 2</to><enabled>Y</enabled> </hop>
   </order>
+  <step>
+    <name>Blocking Step</name>
+    <type>BlockingStep</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+      <pass_all_rows>Y</pass_all_rows>
+      <directory>&#x25;&#x25;java.io.tmpdir&#x25;&#x25;</directory>
+      <prefix>block</prefix>
+      <cache_size>5000</cache_size>
+      <compress>Y</compress>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>944</xloc>
+      <yloc>432</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
   <step>
     <name>Categories IN</name>
     <type>ExcelInput</type>
@@ -167,7 +195,7 @@
       </field>
       <field>
         <name>Level</name>
-        <type>Integer</type>
+        <type>Number</type>
         <length>-1</length>
         <precision>-1</precision>
         <trim_type>none</trim_type>
@@ -249,18 +277,44 @@
         <decimal/>
         <group/>
       </field>
+      <field>
+        <name>Order</name>
+        <type>Number</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Previous_ID</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
+      <field>
+        <name>Next_ID</name>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+      </field>
     </fields>
     <sheets>
-      <sheet>
-        <name>ESENER-1 &#x28;2009&#x29;</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-        </sheet>
-      <sheet>
-        <name>ESENER-2 &#x28;2014&#x29;</name>
-        <startrow>0</startrow>
-        <startcol>0</startcol>
-        </sheet>
       <sheet>
         <name>2009</name>
         <startrow>0</startrow>
@@ -342,7 +396,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;SET &#x40;maxId &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3c; 10000&#x29;&#x2b;1,1&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27;VALUES &#x28;&#x40;maxId, NULL, NULL, &#x22;INDICATOR_NAME&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27;VALUES &#x28;&#x40;maxId, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_3&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO indicator &#x28;name, literal_id&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27;VALUES &#x28;&#x22;&#x27;&#x2b;ID&#x2b;&#x27;&#x22;, &#x40;maxId&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Get the Father ID&#xd;&#xa;var fatherSelected &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Father_2_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_2_ID &#x21;&#x3d; null &#x26;&#x26; Father_1_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_1_ID &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;fatherID &#x3d; &#x28;SELECT c.id FROM esener_category c INNER JOIN translation t ON c.name_1_literal_id&#x3d;t.literal_id INNER JOIN esener_category c1 ON c.father_id&#x3d;c1.id INNER JOIN translation t1 ON c1.name_1_literal_id&#x3d;t1.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;Father_2_ID&#x2b;&#x27;&#x22; AND c.year&#x3d;&#x27;&#x2b;Year&#x2b;&#x27; AND t1.text&#x3d;&#x22;&#x27;&#x2b;Father_1_ID&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;	fatherSelected &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else if &#x28;Father_1_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_1_ID &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;fatherID &#x3d; &#x28;SELECT c.id FROM esener_category c INNER JOIN translation t ON c.name_1_literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;Father_1_ID&#x2b;&#x27;&#x22; AND c.year&#x3d;&#x27;&#x2b;Year&#x2b;&#x27;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;	fatherSelected &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_1 literal &#x28;if necessary&#x29;&#xd;&#xa;var name1Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_1 &#x21;&#x3d; undefined &#x26;&#x26; Name_1 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_1 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_1, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_1, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_1&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name1Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_2 literal &#x28;if necessary&#x29;&#xd;&#xa;var name2Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_2 &#x21;&#x3d; undefined &#x26;&#x26; Name_2 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_2 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_2, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_2, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_2&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name2Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_3 literal &#x28;if necessary&#x29;&#xd;&#xa;var name3Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_3 &#x21;&#x3d; undefined &#x26;&#x26; Name_3 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_3 &#x3d; &#x28;SELECT literal_id FROM indicator WHERE name&#x3d;&#x22;&#x27;&#x2b;ID&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name3Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#x2f;&#x2f; Insert the Bottom_Text literal &#x28;if necessary&#x29;&#xd;&#xa;var bottomTextAdded &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Bottom_Text &#x21;&#x3d; undefined &#x26;&#x26; Bottom_Text &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_4 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_4, NULL, NULL, &#x22;ESENER_CATEGORY_BOTTOM_TEXT&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_4, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Bottom_Text_Escaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	bottomTextAdded &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var insertQueryForm &#x3d; &#x27;INSERT INTO esener_category &#x28;category, level,&#x27;&#x3b;&#xd;&#xa;var insertQueryValues &#x3d; &#x27;VALUES &#x28;&#x22;&#x27;&#x2b;ID&#x2b;&#x27;&#x22;, &#x27;&#x2b;Level&#x2b;&#x27;, &#x27;&#x3b;&#xd;&#xa;if &#x28;fatherSelected&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;father_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;fatherID, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name1Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_1_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_1, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name2Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_2_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_2, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name3Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_3_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_3, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;bottomTextAdded&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;bottom_text_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_4, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;year&#x29; &#x27;&#x3b;&#xd;&#xa;insertQueryValues &#x3d; insertQueryValues &#x2b; Year &#x2b; &#x27;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; insertQueryForm &#x2b; insertQueryValues &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;SET &#x40;maxId &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3c; 10000&#x29;&#x2b;1,1&#x29;&#x3b;&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27;VALUES &#x28;&#x40;maxId, NULL, NULL, &#x22;INDICATOR_NAME&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27;VALUES &#x28;&#x40;maxId, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_3&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; &#x27;INSERT INTO indicator &#x28;name, literal_id&#x29; &#x27;&#xd;&#xa;				&#x2b; &#x27;VALUES &#x28;&#x22;&#x27;&#x2b;ID&#x2b;&#x27;&#x22;, &#x40;maxId&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Get the Father ID&#xd;&#xa;var fatherSelected &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Father_2_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_2_ID &#x21;&#x3d; null &#x26;&#x26; Father_1_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_1_ID &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;fatherID &#x3d; &#x28;SELECT c.id FROM esener_category c INNER JOIN translation t ON c.name_1_literal_id&#x3d;t.literal_id INNER JOIN esener_category c1 ON c.father_id&#x3d;c1.id INNER JOIN translation t1 ON c1.name_1_literal_id&#x3d;t1.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;Father_2_ID&#x2b;&#x27;&#x22; AND c.year&#x3d;&#x27;&#x2b;Year&#x2b;&#x27; AND t1.text&#x3d;&#x22;&#x27;&#x2b;Father_1_ID&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;	fatherSelected &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else if &#x28;Father_1_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_1_ID &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;fatherID &#x3d; &#x28;SELECT c.id FROM esener_category c INNER JOIN translation t ON c.name_1_literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;Father_1_ID&#x2b;&#x27;&#x22; AND c.year&#x3d;&#x27;&#x2b;Year&#x2b;&#x27;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;	fatherSelected &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_1 literal &#x28;if necessary&#x29;&#xd;&#xa;var name1Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_1 &#x21;&#x3d; undefined &#x26;&#x26; Name_1 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_1 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_1, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_1, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_1&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name1Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_2 literal &#x28;if necessary&#x29;&#xd;&#xa;var name2Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_2 &#x21;&#x3d; undefined &#x26;&#x26; Name_2 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_2 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_2, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_2, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_2&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name2Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_3 literal &#x28;if necessary&#x29;&#xd;&#xa;var name3Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_3 &#x21;&#x3d; undefined &#x26;&#x26; Name_3 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_3 &#x3d; &#x28;SELECT literal_id FROM indicator WHERE name&#x3d;&#x22;&#x27;&#x2b;ID&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name3Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#x2f;&#x2f; Insert the Bottom_Text literal &#x28;if necessary&#x29;&#xd;&#xa;var bottomTextAdded &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Bottom_Text &#x21;&#x3d; undefined &#x26;&#x26; Bottom_Text &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_4 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_4, NULL, NULL, &#x22;ESENER_CATEGORY_BOTTOM_TEXT&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_4, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Bottom_Text_Escaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	bottomTextAdded &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var insertQueryForm &#x3d; &#x27;INSERT INTO esener_category &#x28;category, level,&#x27;&#x3b;&#xd;&#xa;var insertQueryValues &#x3d; &#x27;VALUES &#x28;&#x22;&#x27;&#x2b;ID&#x2b;&#x27;&#x22;, &#x27;&#x2b;Level&#x2b;&#x27;, &#x27;&#x3b;&#xd;&#xa;if &#x28;fatherSelected&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;father_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;fatherID, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name1Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_1_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_1, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name2Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_2_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_2, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name3Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_3_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_3, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;bottomTextAdded&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;bottom_text_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_4, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;year, &#x27;&#x3b;&#xd;&#xa;insertQueryValues &#x3d; insertQueryValues &#x2b; Year &#x2b; &#x27;, &#x27;&#x3b;&#xd;&#xa;insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;category_order&#x29; &#x27;&#x3b;&#xd;&#xa;insertQueryValues &#x3d; insertQueryValues &#x2b; Order &#x2b; &#x27;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; insertQueryForm &#x2b; insertQueryValues &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
         <rename>query</rename>
         <type>String</type>
@@ -434,7 +488,7 @@
     <optimizationLevel>9</optimizationLevel>
     <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
         <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Get the Father ID&#xd;&#xa;var fatherSelected &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Father_2_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_2_ID &#x21;&#x3d; null &#x26;&#x26; Father_1_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_1_ID &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;fatherID &#x3d; &#x28;SELECT c.id FROM esener_category c INNER JOIN translation t ON c.name_1_literal_id&#x3d;t.literal_id INNER JOIN esener_category c1 ON c.father_id&#x3d;c1.id INNER JOIN translation t1 ON c1.name_1_literal_id&#x3d;t1.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;Father_2_ID&#x2b;&#x27;&#x22; AND c.year&#x3d;&#x27;&#x2b;Year&#x2b;&#x27; AND t1.text&#x3d;&#x22;&#x27;&#x2b;Father_1_ID&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;	fatherSelected &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else if &#x28;Father_1_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_1_ID &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;fatherID &#x3d; &#x28;SELECT c.id FROM esener_category c INNER JOIN translation t ON c.name_1_literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;Father_1_ID&#x2b;&#x27;&#x22; AND c.year&#x3d;&#x27;&#x2b;Year&#x2b;&#x27;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;	fatherSelected &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_1 literal &#x28;if necessary&#x29;&#xd;&#xa;var name1Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_1 &#x21;&#x3d; undefined &#x26;&#x26; Name_1 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_1 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_1, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_1, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_1&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name1Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_2 literal &#x28;if necessary&#x29;&#xd;&#xa;var name2Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_2 &#x21;&#x3d; undefined &#x26;&#x26; Name_2 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_2 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_2, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_2, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_2&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name2Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_3 literal &#x28;if necessary&#x29;&#xd;&#xa;var name3Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_3 &#x21;&#x3d; undefined &#x26;&#x26; Name_3 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_3 &#x3d; &#x28;SELECT literal_id FROM indicator WHERE name&#x3d;&#x22;&#x27;&#x2b;ID&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name3Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#x2f;&#x2f; Insert the Bottom_Text literal &#x28;if necessary&#x29;&#xd;&#xa;var bottomTextAdded &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Bottom_Text &#x21;&#x3d; undefined &#x26;&#x26; Bottom_Text &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_4 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_4, NULL, NULL, &#x22;ESENER_CATEGORY_BOTTOM_TEXT&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_4, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Bottom_Text_Escaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	bottomTextAdded &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var insertQueryForm &#x3d; &#x27;INSERT INTO esener_category &#x28;category, level,&#x27;&#x3b;&#xd;&#xa;var insertQueryValues &#x3d; &#x27;VALUES &#x28;&#x22;&#x27;&#x2b;ID&#x2b;&#x27;&#x22;, &#x27;&#x2b;Level&#x2b;&#x27;, &#x27;&#x3b;&#xd;&#xa;if &#x28;fatherSelected&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;father_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;fatherID, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name1Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_1_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_1, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name2Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_2_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_2, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name3Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_3_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_3, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;bottomTextAdded&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;bottom_text_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_4, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;year&#x29; &#x27;&#x3b;&#xd;&#xa;insertQueryValues &#x3d; insertQueryValues &#x2b; Year &#x2b; &#x27;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; insertQueryForm &#x2b; insertQueryValues &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Get the Father ID&#xd;&#xa;var fatherSelected &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Father_2_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_2_ID &#x21;&#x3d; null &#x26;&#x26; Father_1_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_1_ID &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;fatherID &#x3d; &#x28;SELECT c.id FROM esener_category c INNER JOIN translation t ON c.name_1_literal_id&#x3d;t.literal_id INNER JOIN esener_category c1 ON c.father_id&#x3d;c1.id INNER JOIN translation t1 ON c1.name_1_literal_id&#x3d;t1.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;Father_2_ID&#x2b;&#x27;&#x22; AND c.year&#x3d;&#x27;&#x2b;Year&#x2b;&#x27; AND t1.text&#x3d;&#x22;&#x27;&#x2b;Father_1_ID&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;	fatherSelected &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else if &#x28;Father_1_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_1_ID &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;fatherID &#x3d; &#x28;SELECT c.id FROM esener_category c INNER JOIN translation t ON c.name_1_literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;Father_1_ID&#x2b;&#x27;&#x22; AND c.year&#x3d;&#x27;&#x2b;Year&#x2b;&#x27;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;	fatherSelected &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_1 literal &#x28;if necessary&#x29;&#xd;&#xa;var name1Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_1 &#x21;&#x3d; undefined &#x26;&#x26; Name_1 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_1 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_1, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_1, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_1&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name1Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_2 literal &#x28;if necessary&#x29;&#xd;&#xa;var name2Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_2 &#x21;&#x3d; undefined &#x26;&#x26; Name_2 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_2 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_2, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_2, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_2&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name2Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_3 literal &#x28;if necessary&#x29;&#xd;&#xa;var name3Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_3 &#x21;&#x3d; undefined &#x26;&#x26; Name_3 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_3 &#x3d; &#x28;SELECT literal_id FROM indicator WHERE name&#x3d;&#x22;&#x27;&#x2b;ID&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name3Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#x2f;&#x2f; Insert the Bottom_Text literal &#x28;if necessary&#x29;&#xd;&#xa;var bottomTextAdded &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Bottom_Text &#x21;&#x3d; undefined &#x26;&#x26; Bottom_Text &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_4 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_4, NULL, NULL, &#x22;ESENER_CATEGORY_BOTTOM_TEXT&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_4, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Bottom_Text_Escaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	bottomTextAdded &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var insertQueryForm &#x3d; &#x27;INSERT INTO esener_category &#x28;category, level,&#x27;&#x3b;&#xd;&#xa;var insertQueryValues &#x3d; &#x27;VALUES &#x28;&#x22;&#x27;&#x2b;ID&#x2b;&#x27;&#x22;, &#x27;&#x2b;Level&#x2b;&#x27;, &#x27;&#x3b;&#xd;&#xa;if &#x28;fatherSelected&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;father_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;fatherID, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name1Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_1_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_1, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name2Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_2_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_2, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name3Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_3_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_3, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;bottomTextAdded&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;bottom_text_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_4, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;year, &#x27;&#x3b;&#xd;&#xa;insertQueryValues &#x3d; insertQueryValues &#x2b; Year &#x2b; &#x27;, &#x27;&#x3b;&#xd;&#xa;insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;category_order&#x29; &#x27;&#x3b;&#xd;&#xa;insertQueryValues &#x3d; insertQueryValues &#x2b; Order &#x2b; &#x27;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; insertQueryForm &#x2b; insertQueryValues &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
       </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
         <rename>query</rename>
         <type>String</type>
@@ -444,6 +498,98 @@
       </field>    </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>944</xloc>
+      <yloc>208</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 2</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Get the Father ID&#xd;&#xa;var fatherSelected &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Father_2_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_2_ID &#x21;&#x3d; null &#x26;&#x26; Father_1_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_1_ID &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;fatherID &#x3d; &#x28;SELECT c.id FROM esener_category c INNER JOIN translation t ON c.name_1_literal_id&#x3d;t.literal_id INNER JOIN esener_category c1 ON c.father_id&#x3d;c1.id INNER JOIN translation t1 ON c1.name_1_literal_id&#x3d;t1.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;Father_2_ID&#x2b;&#x27;&#x22; AND c.year&#x3d;&#x27;&#x2b;Year&#x2b;&#x27; AND t1.text&#x3d;&#x22;&#x27;&#x2b;Father_1_ID&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;	fatherSelected &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else if &#x28;Father_1_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_1_ID &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;fatherID &#x3d; &#x28;SELECT c.id FROM esener_category c INNER JOIN translation t ON c.name_1_literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;Father_1_ID&#x2b;&#x27;&#x22; AND c.year&#x3d;&#x27;&#x2b;Year&#x2b;&#x27;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;	fatherSelected &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_1 literal &#x28;if necessary&#x29;&#xd;&#xa;var name1Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_1 &#x21;&#x3d; undefined &#x26;&#x26; Name_1 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_1 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_1, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_1, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_1&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name1Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_2 literal &#x28;if necessary&#x29;&#xd;&#xa;var name2Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_2 &#x21;&#x3d; undefined &#x26;&#x26; Name_2 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_2 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_2, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_2, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_2&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name2Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_3 literal &#x28;if necessary&#x29;&#xd;&#xa;var name3Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_3 &#x21;&#x3d; undefined &#x26;&#x26; Name_3 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_3 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_3, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_3, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_3&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name3Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#x2f;&#x2f; Insert the Bottom_Text literal &#x28;if necessary&#x29;&#xd;&#xa;var bottomTextAdded &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Bottom_Text &#x21;&#x3d; undefined &#x26;&#x26; Bottom_Text &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_4 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_4, NULL, NULL, &#x22;ESENER_CATEGORY_BOTTOM_TEXT&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_4, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Bottom_Text_Escaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	bottomTextAdded &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var insertQueryForm &#x3d; &#x27;INSERT INTO esener_category &#x28;level,&#x27;&#x3b;&#xd;&#xa;var insertQueryValues &#x3d; &#x27;VALUES &#x28;&#x27;&#x2b;Level&#x2b;&#x27;, &#x27;&#x3b;&#xd;&#xa;if &#x28;fatherSelected&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;father_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;fatherID, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name1Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_1_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_1, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name2Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_2_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_2, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name3Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_3_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_3, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;bottomTextAdded&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;bottom_text_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_4, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;year, &#x27;&#x3b;&#xd;&#xa;insertQueryValues &#x3d; insertQueryValues &#x2b; Year &#x2b; &#x27;, &#x27;&#x3b;&#xd;&#xa;insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;category_order&#x29; &#x27;&#x3b;&#xd;&#xa;insertQueryValues &#x3d; insertQueryValues &#x2b; Order &#x2b; &#x27;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; insertQueryForm &#x2b; insertQueryValues &#x2b; &#x27;&#x5c;n&#x27;&#x3b;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
+        <rename>query</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>400</xloc>
+      <yloc>320</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Modified Java Script Value 3</name>
+    <type>ScriptValueMod</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <compatible>N</compatible>
+    <optimizationLevel>9</optimizationLevel>
+    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
+        <jsScript_name>Script 1</jsScript_name>
+        <jsScript_script>var query_2 &#x3d; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;var insertPrevious &#x3d; false&#x3b;&#xd;&#xa;var insertNext &#x3d; false&#x3b;&#xd;&#xa;&#xd;&#xa;if &#x28;Previous_ID &#x21;&#x3d; null &#x26;&#x26; Previous_ID &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query_2 &#x3d; query_2 &#x2b; &#x27;SET &#x40;previousID &#x3d; &#x28;SELECT id FROM esener_category WHERE category&#x3d;&#x22;&#x27;&#x2b;Previous_ID&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	insertPrevious &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;if &#x28;Next_ID &#x21;&#x3d; null &#x26;&#x26; Next_ID &#x21;&#x3d; undefined&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query_2 &#x3d; query_2 &#x2b; &#x27;SET &#x40;nextID &#x3d; &#x28;SELECT id FROM esener_category WHERE category&#x3d;&#x22;&#x27;&#x2b;Next_ID&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x2b;&#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	insertNext &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;if &#x28;insertPrevious &#x7c;&#x7c; insertNext&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	var updateQuery &#x3d; &#x27;UPDATE esener_category SET &#x27;&#x3b;&#xd;&#xa;	if &#x28;insertPrevious&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		updateQuery &#x3d; updateQuery &#x2b; &#x27;previous_id&#x3d;&#x40;previousID&#x27;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;	if &#x28;insertPrevious &#x26;&#x26; insertNext&#x29;&#xd;&#xa;	&#x7b;&#xd;&#xa;		updateQuery &#x3d; updateQuery &#x2b; &#x27;, &#x27;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;	if &#x28;insertNext&#x29;	&#xd;&#xa;	&#x7b;&#xd;&#xa;		updateQuery &#x3d; updateQuery &#x2b; &#x27;next_id&#x3d;&#x40;previousID&#x27;&#x3b;&#xd;&#xa;	&#x7d;&#xd;&#xa;	updateQuery &#x3d; updateQuery &#x2b; &#x27; WHERE category&#x3d;&#x22;&#x27;&#x2b;ID&#x2b;&#x27;&#x22;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query_2 &#x3d; query_2 &#x2b; updateQuery&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;</jsScript_script>
+      </jsScript>    </jsScripts>    <fields>      <field>        <name>query_2</name>
+        <rename>query_2</rename>
+        <type>String</type>
+        <length>-1</length>
+        <precision>-1</precision>
+        <replace>N</replace>
+      </field>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1104</xloc>
+      <yloc>432</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Replace in string</name>
+    <type>ReplaceString</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+      <field>
+        <in_stream_name>Bottom_Text</in_stream_name>
+        <out_stream_name>Bottom_Text_Escaped</out_stream_name>
+        <use_regex>no</use_regex>
+        <replace_string>&#x22;</replace_string>
+        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
+        <set_empty_string>N</set_empty_string>
+        <replace_field_by_string/>
+        <whole_word>no</whole_word>
+        <case_sensitive>no</case_sensitive>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>224</xloc>
       <yloc>208</yloc>
       <draw>Y</draw>
       </GUI>
@@ -578,6 +724,70 @@
     </step>
 
   <step>
+    <name>Text file output 2 2</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <separator/>
+    <enclosure/>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>N</header>
+    <footer>N</footer>
+    <format>UNIX</format>
+    <compression>None</compression>
+    <encoding>UTF-8</encoding>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>N</create_parent_folder>
+    <file>
+      <name>&#x24;&#x7b;Internal.Transformation.Filename.Directory&#x7d;&#x2f;output&#x2f;esener_categories</name>
+      <is_command>N</is_command>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>sql</extention>
+      <append>Y</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery>0</splitevery>
+    </file>
+    <fields>
+      <field>
+        <name>query_2</name>
+        <type>None</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif/>
+        <trim_type>none</trim_type>
+        <length>-1</length>
+        <precision>-1</precision>
+      </field>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>1280</xloc>
+      <yloc>432</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Text file output 3</name>
     <type>TextFileOutput</type>
     <description/>
@@ -637,68 +847,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>944</xloc>
       <yloc>320</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Modified Java Script Value 2</name>
-    <type>ScriptValueMod</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <compatible>N</compatible>
-    <optimizationLevel>9</optimizationLevel>
-    <jsScripts>      <jsScript>        <jsScript_type>0</jsScript_type>
-        <jsScript_name>Script 1</jsScript_name>
-        <jsScript_script>var query &#x3d; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Get the Father ID&#xd;&#xa;var fatherSelected &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Father_2_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_2_ID &#x21;&#x3d; null &#x26;&#x26; Father_1_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_1_ID &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;fatherID &#x3d; &#x28;SELECT c.id FROM esener_category c INNER JOIN translation t ON c.name_1_literal_id&#x3d;t.literal_id INNER JOIN esener_category c1 ON c.father_id&#x3d;c1.id INNER JOIN translation t1 ON c1.name_1_literal_id&#x3d;t1.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;Father_2_ID&#x2b;&#x27;&#x22; AND c.year&#x3d;&#x27;&#x2b;Year&#x2b;&#x27; AND t1.text&#x3d;&#x22;&#x27;&#x2b;Father_1_ID&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;	fatherSelected &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;else if &#x28;Father_1_ID &#x21;&#x3d; undefined &#x26;&#x26; Father_1_ID &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;fatherID &#x3d; &#x28;SELECT c.id FROM esener_category c INNER JOIN translation t ON c.name_1_literal_id&#x3d;t.literal_id WHERE t.text&#x3d;&#x22;&#x27;&#x2b;Father_1_ID&#x2b;&#x27;&#x22; AND c.year&#x3d;&#x27;&#x2b;Year&#x2b;&#x27;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x22;&#x5c;n&#x22;&#x3b;&#xd;&#xa;	fatherSelected &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_1 literal &#x28;if necessary&#x29;&#xd;&#xa;var name1Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_1 &#x21;&#x3d; undefined &#x26;&#x26; Name_1 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_1 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_1, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_1, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_1&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name1Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_2 literal &#x28;if necessary&#x29;&#xd;&#xa;var name2Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_2 &#x21;&#x3d; undefined &#x26;&#x26; Name_2 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_2 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_2, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_2, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_2&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name2Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;&#x2f;&#x2f; Insert the Name_3 literal &#x28;if necessary&#x29;&#xd;&#xa;var name3Added &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Name_3 &#x21;&#x3d; undefined &#x26;&#x26; Name_3 &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_3 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_3, NULL, NULL, &#x22;ESENER_CATEGORY&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_3, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Name_3&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	name3Added &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#x2f;&#x2f; Insert the Bottom_Text literal &#x28;if necessary&#x29;&#xd;&#xa;var bottomTextAdded &#x3d; false&#x3b;&#xd;&#xa;if &#x28;Bottom_Text &#x21;&#x3d; undefined &#x26;&#x26; Bottom_Text &#x21;&#x3d; null&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;SET &#x40;maxID_4 &#x3d; IFNULL&#x28;&#x28;SELECT MAX&#x28;l.id&#x29; AS maxID FROM literal l WHERE l.id &#x3e; 100000&#x29;&#x2b;1,100001&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO literal &#x28;id, chart_id, section_id, type&#x29; VALUES &#x28;&#x40;maxID_4, NULL, NULL, &#x22;ESENER_CATEGORY_BOTTOM_TEXT&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	query &#x3d; query &#x2b; &#x27;INSERT INTO translation &#x28;literal_id, language, is_default, text&#x29; VALUES &#x28;&#x40;maxID_4, &#x22;EN&#x22;, 1, &#x22;&#x27;&#x2b;Bottom_Text_Escaped&#x2b;&#x27;&#x22;&#x29;&#x3b;&#x27; &#x2b; &#x27;&#x5c;n&#x27;&#x3b;&#xd;&#xa;	bottomTextAdded &#x3d; true&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;&#xd;&#xa;var insertQueryForm &#x3d; &#x27;INSERT INTO esener_category &#x28;level,&#x27;&#x3b;&#xd;&#xa;var insertQueryValues &#x3d; &#x27;VALUES &#x28;&#x27;&#x2b;Level&#x2b;&#x27;, &#x27;&#x3b;&#xd;&#xa;if &#x28;fatherSelected&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;father_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;fatherID, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name1Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_1_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_1, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name2Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_2_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_2, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;name3Added&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;name_3_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_3, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;if &#x28;bottomTextAdded&#x29;&#xd;&#xa;&#x7b;&#xd;&#xa;	insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;bottom_text_literal_id, &#x27;&#x3b;&#xd;&#xa;	insertQueryValues &#x3d; insertQueryValues &#x2b; &#x27;&#x40;maxID_4, &#x27;&#x3b;&#xd;&#xa;&#x7d;&#xd;&#xa;insertQueryForm &#x3d; insertQueryForm &#x2b; &#x27;year&#x29; &#x27;&#x3b;&#xd;&#xa;insertQueryValues &#x3d; insertQueryValues &#x2b; Year &#x2b; &#x27;&#x29;&#x3b;&#x27;&#x3b;&#xd;&#xa;&#xd;&#xa;query &#x3d; query &#x2b; insertQueryForm &#x2b; insertQueryValues &#x2b; &#x27;&#x5c;n&#x27;&#x3b;</jsScript_script>
-      </jsScript>    </jsScripts>    <fields>      <field>        <name>query</name>
-        <rename>query</rename>
-        <type>String</type>
-        <length>-1</length>
-        <precision>-1</precision>
-        <replace>N</replace>
-      </field>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>400</xloc>
-      <yloc>320</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Replace in string</name>
-    <type>ReplaceString</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <in_stream_name>Bottom_Text</in_stream_name>
-        <out_stream_name>Bottom_Text_Escaped</out_stream_name>
-        <use_regex>no</use_regex>
-        <replace_string>&#x22;</replace_string>
-        <replace_by_string>&#x5c;&#x5c;&#x22;</replace_by_string>
-        <set_empty_string>N</set_empty_string>
-        <replace_field_by_string/>
-        <whole_word>no</whole_word>
-        <case_sensitive>no</case_sensitive>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>224</xloc>
-      <yloc>208</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

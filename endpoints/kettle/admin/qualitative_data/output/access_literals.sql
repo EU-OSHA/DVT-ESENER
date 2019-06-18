@@ -1,47 +1,12 @@
-SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_esener");
-INSERT INTO section (tool_id, name) VALUES (@toolId, "HOMEPAGE");
-
-
-
-
-
-
-
-
 
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_esener");
-INSERT INTO section (tool_id, name) VALUES (@toolId, "OVERVIEW_PAGE");
+INSERT INTO section (tool_id, name) VALUES (@toolId, "DASHBOARD_DETAIL");
 
 
 
 
 
-
-
-
-
-
-
-
-SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_esener");
-INSERT INTO section (tool_id, name) VALUES (@toolId, "LANDING_PAGE");
-
-
-
-
-
-
-SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_esener");
-INSERT INTO section (tool_id, name) VALUES (@toolId, "DATA_VISUALISATION");
-
-
-
-
-
-
-
-
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="HOMEPAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "ESENER_GENERAL_INFORMATION");
@@ -71,7 +36,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Euroopan työterveys- ja työturvallisuusviraston ESENER-tutkimus (kyselytutkimus Euroopan yrityksille uusista ja kehittyvistä riskeistä) on kattava kyselytutkimus, jossa tarkastellaan, miten työterveys- ja työturvallisuusriskejä käytännössä hallitaan työpaikoilla Euroopassa.");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "EU-Oshas europeiska företagsundersökning om nya och framväxande risker (Esener) är en omfattande undersökning som kartlägger hur europeiska arbetsplatser hanterar arbetsmiljörisker i praktiken.");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="HOMEPAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "ESENER_GENERAL_INFORMATION");
@@ -105,7 +70,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<div>Tuhansia yrityksiä ja organisaatioita eri puolilta Eurooppaa pyydetään vastaamaan kyselyyn, joka käsittelee</div><div><ul><li>yleisiä työpaikkojen terveys- ja turvallisuusriskejä sekä niiden hallintaa</li><li><a href=\"https://osha.europa.eu/fi/themes/psychosocial-risks-and-stress\">psykososiaalisia riskejä</a>, kuten stressiä, kiusaamista ja häirintää</li><li>työsuojelua edistäviä tekijöitä ja sen esteitä</li><li><a href=\"https://osha.europa.eu/fi/themes/leadership-and-worker-participation\">työntekijöiden osallistumista</a>&nbsp;työsuojelun käytäntöihin.</li></ul></div>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<div>Tusentals företag och organisationer runt om i Europa har uppmanats att svara på ett frågeformulär om</div><div><ul><li>allmänna arbetsmiljörisker och hur de hanteras.</li><li><a href=\"https://osha.europa.eu/sv/themes/psychosocial-risks-and-stress\">Psykosociala risker</a>&nbsp;som stress, mobbning och trakasserier</li><li>Drivkrafter och hinder för hantering av arbetsmiljön.</li><li><a href=\"https://osha.europa.eu/sv/themes/leadership-and-worker-participation\">Arbetstagarmedverkan</a>&nbsp;i praxis för arbetsmiljöfrågor</li></ul></div>");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="HOMEPAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "ESENER_GENERAL_INFORMATION");
@@ -135,7 +100,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Haastatteluista saatavia tuloksia täydentävät sekundaarianalyysit, joihin kuuluu sarja perusteellisia tutkimuksia erityisistä aiheista. Näissä tutkimuksissa sovelletaan sekä kvantitatiivisia että kvalitatiivisia menetelmiä, jotta saataisiin parempi käsitys kyselytutkimuksen keskeisimmistä tuloksista.");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Resultaten från dessa intervjuer kompletteras av sekundäranalyser som omfattar ingående studier med inriktning på särskilda ämnen. Kvantitativa och kvalitativa forskningsmetoder tillämpas i dessa studier för bättre förståelse av de viktigaste resultaten från undersökningen.");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="HOMEPAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "ESENER_2009_INFORMATION");
@@ -165,7 +130,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Ensimmäinen ESENER-tutkimus tehtiin vuonna 2009, ja siihen sisältyi lähes 36 000 johtajille ja työsuojeluedustajille tehtyä haastattelua. Kaikki EU:n jäsenvaltiot olivat mukana tutkimuksessa, samoin kuin Turkki, Norja ja Sveitsi. Maita oli kaikkiaan 31. Haastatellut työskentelivät yksityisen ja julkisen sektorin organisaatioissa, joissa oli vähintään 10 työntekijää.");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Den första Esenerundersökningen genomfördes 2009 och omfattade nära 36 000 intervjuer med chefer och skyddsombud. Alla EU:s medlemsstater samt Turkiet, Norge och Schweiz omfattades – allt som allt 31 länder. Intervjupersonerna arbetade vid både privata och offentliga företag med minst tio anställda.");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="HOMEPAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "ESENER_2014_INFORMATION");
@@ -195,55 +160,127 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Kenttätyö ESENER-tutkimuksen toista aaltoa varten toteutettiin vuonna 2014 kesällä ja syksyllä. Kysely tarjoaa korvaamattoman arvokkaan tilannekatsauksen siihen, miten työpaikkojen riskejä, erityisesti uusia ja kehittyviä riskejä, hallitaan eri puolilla Eurooppaa.");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Fältarbetet i den andra omgången av Esener genomfördes under sommaren och hösten 2014. Undersökningen ger en ovärderlig och aktuell ögonblicksbild av hur arbetsmiljörisker, särskilt nya och framväxande risker, hanteras runtom i Europa.");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="HOMEPAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Menu_title");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Survey");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="HOMEPAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Menu_item");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "ESENER 2009");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "ESENER 2009");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="HOMEPAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Menu_item");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "ESENER 2014");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "ESENER 2014");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Tab_item");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "OVERVIEW");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Tab_item");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "DATA VISUALISATION");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Section_Title");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Publications");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Публикации");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Publikace");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Publikationer");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Publikationen");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Väljaanded");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Εκδόσεις");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Publicaciones");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Publications");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Publikacije");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "Útgáfustarf");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Pubblicazioni");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Publikācijas");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Leidiniai");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Kiadványok");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Pubblikazzjonijiet");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Publicaties");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Publikasjoner");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Publikacje");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Publicações");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Publicații");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Publikácie");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Publikacije");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Julkaisut");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Publikationer");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Publication_Group1_Title_ESENER");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Available publications");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Publication_Group2_Title");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Available secondary analyses");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Publication_Group1_ESENER2009");
@@ -275,7 +312,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<ul type=\"disc\"><li>Kyselytutkimus Euroopan yrityksille uusista ja kehittyvistä riskeistä (ESENER) – Työsuojelun hallinta (2010):&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener1_osh_management/view\">yhteenvetokertomus</a>&nbsp;<em>englanniksi&nbsp;</em>ja&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">tiivistelmä</a>&nbsp;<em>24 kielellä</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpoint-yhteenveto</a>&nbsp;vuonna 2009 saaduista tuloksista</li><li>ESENER-2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>ESENER 2009 -tietoaineistoon pääsee seuraavien kautta:&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/?q=esener\" target=\"_blank\">Essexin yliopiston Britannian tietoarkisto (UKDA)<span class=\"osha_target_external_link\">&nbsp;</span></a><span>&nbsp;ja&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<ul type=\"disc\"><li>Den europeiska företagsundersökningen om nya och framväxande risker (Esener) – Hantering av arbetsmiljöfrågor (2010):&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/esener1_osh_management/view\">Översiktsrapport</a>&nbsp;<em>på engelska&nbsp;</em>och&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">sammanfattning</a>&nbsp;<em>på 24 språk</em>.</li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpointpresentation</a>&nbsp;med en översikt av resultaten från 2009.</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Datauppsättningen från Esener 2009 kan nås via&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/?q=esener\" target=\"_blank\">UK Data Archive (UKDA) of the University of Essex<span class=\"osha_target_external_link\">&nbsp;</span></a><span>&nbsp;och&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Publication_Group2_ESENER2009");
@@ -312,7 +349,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<ul type=\"disc\"><li>ESENER-tutkimuksen kvalitatiivinen tutkimuksen jälkeinen arviointi (2014):&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/qualitative-post-test-evaluation-of-esener-overview-report/view\">yhteenvetokertomus</a>&nbsp;ja&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/qualitative-post-test-evaluation-of-esener-substantive-findings/view\">merkittävät havainnot</a>&nbsp;<em>englanniksi</em></li><li>Analyysi työpaikan työterveys- ja työturvallisuuskäytännöt määrittävistä tekijöistä valituissa EU:n jäsenvaltioissa (2013):&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/analysis-determinants-workplace-OSH-in-EU/view/\">yhteenvetokertomus</a>&nbsp;<em>englanniksi,&nbsp;</em><a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/summary-analysis-determinants-workplace-OSH-in-EU/view\">tiivistelmä</a>&nbsp;<em>8 kielellä ja&nbsp;</em><a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/annex-analysis-determinants-workplace-OSH-in-EU/view/\">liite</a><em>&nbsp;englanniksi</em></li><li>Tiivistelmä neljästä toissijaista analyysiä koskevasta raportista: Työterveys- ja työturvallisuusasioihin, psykososiaalisiin riskeihin ja työntekijöiden osallistumiseen liittyvät järjestelyt työpaikoilla ESENER-tutkimuksen (2012) perusteella:&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener-summary/view\">tiivistelmä</a>&nbsp;<em>24 kielellä</em></li><li>Työntekijöiden edustus ja kuuleminen työsuojelussa – Analyysi ESENER-tutkimuksen havainnoista (2012):&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener_workers-involvement/view\">yhteenvetokertomus</a>&nbsp;<em>englanniksi&nbsp;</em>ja&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener_workers-involvement_annexes/view\">teknisen raportin liitteet 1 ja 2</a>&nbsp;<em>englanniksi</em></li><li>Työterveyden ja -turvallisuuden hallinta – Analyysi ESENER-tutkimuksen havainnoista (2012):&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/management-of-occupational-safety-and-health-analysis-of-data-from-the-esener/view\">yhteenvetokertomus</a>&nbsp;ja&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener_management_annexes/view\">teknisen raportin liitteet 1 ja 2</a>&nbsp;<em>englanniksi</em></li><li>Psykososiaalisten riskien hallintaa työpaikoilla – Analyysi ESENER-tutkimuksen havainnoista (2012):&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/management-psychosocial-risks-esener/view\">yhteenvetokertomus</a>&nbsp;ja&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/management-psychosocial-risks-esener-annexes/view\">teknisen raportin liitteet 1 ja 2</a>&nbsp;<em>englanniksi</em></li><li>Psykososiaalisten riskien hallintaa edistävät tekijät ja haittaavat esteet – Analyysi ESENER-tutkimuksen havainnoista (2012):&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/drivers-barriers-psychosocial-risk-management-esener/view\">yhteenvetokertomus</a><em>&nbsp;englanniksi</em></li></ul>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<ul type=\"disc\"><li>Kvalitativ utvärdering i efterhand av Esenerundersökningen (2014):&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/qualitative-post-test-evaluation-of-esener-overview-report/view\">Översiktsrapport</a>&nbsp;och&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/qualitative-post-test-evaluation-of-esener-substantive-findings/view\">viktiga resultat</a>&nbsp;<em>på engelska</em>.</li><li>Analys av faktorer som påverkar arbetsmiljöpraxis i ett urval av EU:s medlemsländer (2013):&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/analysis-determinants-workplace-OSH-in-EU/view/\">Översiktsrapport</a>&nbsp;<em>på engelska,&nbsp;</em><a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/summary-analysis-determinants-workplace-OSH-in-EU/view\">sammanfattning</a>&nbsp;<em>på åtta språk, samt&nbsp;</em><a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/annex-analysis-determinants-workplace-OSH-in-EU/view/\">bilaga</a><em>&nbsp;på engelska</em>.</li><li>En sammanfattning av fyra rapporter om sekundära analyser: Ökad förståelse av arbetsmiljöstyrning, psykosociala risker och arbetstagarnas medverkan genom Esener (2012):&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/esener-summary/view\">Sammanfattning</a>&nbsp;<em>på 24 språk</em>.</li><li>Arbetstagarnas medverkan och samråd om arbetsmiljö – en analys av resultaten från Esener (2012):&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/esener_workers-involvement/view\">Översiktsrapport</a>&nbsp;<em>på engelska&nbsp;</em>och&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/esener_workers-involvement_annexes/view\">teknisk rapport, bilagorna 1 och 2</a>&nbsp;<em>på engelska.</em></li><li>Hantering av arbetsmiljöfrågor – en analys av resultaten från Esener (2012):&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/management-of-occupational-safety-and-health-analysis-of-data-from-the-esener/view\">Översiktsrapport</a>&nbsp;och&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/esener_management_annexes/view\">teknisk rapport, bilagorna 1 och 2</a>&nbsp;<em>på engelska</em>.</li><li>Hantering av psykosociala risker på arbetet – en analys av resultaten från Esener (2012):&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/management-psychosocial-risks-esener/view\">Översiktsrapport</a>&nbsp;och&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/management-psychosocial-risks-esener-annexes/view\">teknisk rapport, bilagorna 1 och 2</a>&nbsp;<em>på engelska</em>.</li><li>Drivkrafter och hinder för hantering av psykosociala risker – en analys av resultaten från Esener (2012):&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/drivers-barriers-psychosocial-risk-management-esener/view\">Översiktsrapport</a><em>&nbsp;på engelska</em>.</li></ul>");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "ESENER_2014_INFORMATION");
@@ -349,7 +386,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<p>Kenttätyö ESENER-tutkimuksen toista aaltoa varten toteutettiin vuonna 2014 kesällä ja syksyllä. Kysely tarjoaa korvaamattoman arvokkaan tilannekatsauksen siihen, miten työpaikkojen riskejä, erityisesti uusia ja kehittyviä riskejä, hallitaan eri puolilla Eurooppaa.</p><p>Keskittyminen uusiin ja kehittyviin riskeihin tarkoittaa, että vastauksista saadaan lisävalaistusta aiemmin tutkimattomiin ja aina vain tärkeämpiin työsuojelun aloihin, kuten psykososiaalisiin riskeihin, jotka aiheuttavat koko ajan enemmän huolta eurooppalaisilla työpaikoilla.</p><p>Vuoden 2014 kysely on ensimmäistäkin kyselyä yksityiskohtaisempi ja kattavampi, ja otosten koot ovat kasvaneet puolella. Kolmessa maassa myös kansallisia otoksia on lisätty.&nbsp;<strong>ESENER-2-tutkimukseen sisältyvät nyt ensimmäistä kertaa 5–10 työntekijän mikroyritykset</strong>&nbsp;ja maatalousyritykset.&nbsp;<strong>Viisi uutta maata</strong>&nbsp;– Albania, Islanti, Pohjois-Makedonia, Montenegro ja Serbia – on tullut mukaan niiden 31 maan lisäksi, jotka olivat mukana vuonna 2009.</p><p>Käsiteltyjä aiheita olivat esimerkiksi seuraavat:</p><ul><li><span>tuki- ja liikuntaelinsairaudet</span></li><li><span>työsuojelun järjestäminen</span></li><li><span>työntekijöiden osallistumista työsuojeluun koskevat toimintamallit</span></li></ul>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<p>Fältarbetet i den andra omgången av Esener genomfördes under sommaren och hösten 2014. Undersökningen ger en ovärderlig och aktuell ögonblicksbild av hur arbetsmiljörisker, särskilt nya och framväxande risker, hanteras runtom i Europa.</p><p>Inriktningen på nya och framväxande risker innebär att svaren belyser relativt outforskade men allt viktigare arbetsmiljöfrågor, t.ex. psykosociala risker som är ett växande problem på arbetsplatserna i Europa.</p><p>Undersökningen från 2014 är ännu mer detaljerad och omfattande än den första i och med att urvalsstorleken ökade med hälften, och de nationella urvalen har dessutom ökat ytterligare i tre länder.&nbsp;<strong>Esener-2 omfattar för första gången även mikroföretag med mellan 5 och 10&nbsp;anställda</strong>&nbsp;och jordbruksföretag.&nbsp;<strong>Fem nya länder</strong>&nbsp;– Albanien, Island, Nordmakedonien, Montenegro och Serbien – har lagts till utöver de 31&nbsp;länder som omfattades av undersökningen 2009.</p><p>Några av de ämnen som omfattas är följande:</p><ul><li><span>Belastningsbesvär.</span></li><li><span>Organisering av arbetsmiljöarbetet.</span></li><li><span>Arbetstagarmedverkan i hanteringen av arbetsmiljöfrågor.</span></li></ul>");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Publication_Group_Intro_ESENER2014");
@@ -379,7 +416,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Kansallisen ja Euroopan tason päätöksentekijät ja tutkijat saavat ESENER-kyselytutkimuksesta tarpeellista tietoa. EU:n tasolla ei ole muuta tietolähdettä työsuojelun käsittelemisestä yrityksissä. ESENER-kyselytutkimus on avainasemassa autettaessa Euroopan työterveys- ja työturvallisuusvirastoa tarjoamaan maiden välistä vertailukelpoista tietoa, jolla voidaan edistää työsuojelua koskevaa päätöksentekoa.");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Esener förser beslutsfattare och forskare på nationell nivå och på EU-nivå med välbehövliga uppgifter. På EU-nivå finns det ingen annan källa till information om hur arbetsmiljöfrågor hanteras i företagen. Esener spelar en central roll i EU-Oshas arbete för att tillhandahålla internationellt jämförbara uppgifter som kan bidra till utformningen av arbetsmiljöpolitiken.");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Publication_Group1_ESENER2014");
@@ -413,7 +450,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2&nbsp;</a><a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener1_osh_management/view\">yhteenvetokertomus</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Kertomus alustavista tuloksista</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Tiivistelmä</a></span></li><li>ESENER-2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>ESENER 2014 -tietoaineistoon pääsee seuraavien kautta:&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Essexin yliopiston Britannian tietoarkisto (UKDA)<span class=\"osha_target_external_link\">&nbsp;</span></a><span>&nbsp;ja&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Översiktsrapport</a></span></span></li><li><a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>En första resultatrapport</span></a></li><li><span><a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Sammanfattning</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>Datauppsättningen från Esener 2014 kan nås via&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Archive (UKDA) of the University of Essex<span class=\"osha_target_external_link\">&nbsp;</span></a><span>&nbsp;och&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Publication_Group2_ESENER2014");
@@ -449,75 +486,99 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<ul><li>Työntekijöiden osallistuminen työsuojelun hallintaan −&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/worker-participation-management-occupational-safety-health/view\">raportti</a>,&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/l_en?text=Country%20report%20Worker%20participation%20in%20the%20management%20of%20occupational%20safety%20and%20health%20%E2%80%94%20qualitative%20evidence%20from%20ESENER-2&amp;sort_by=search_api_relevance&amp;direction=desc\">maakohtaiset raportit</a>,&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/worker-participation-management-occupational-safety-and-health/view\">yhteenveto</a>(2017)</li><li>Yhteinen analyysi ESENER-2:sta, vuoden 2013 työvoimatutkimuksen työtapaturmien ja muiden työhön liittyvien terveysongelmien ad hoc -moduulista sekä 6:nnesta Euroopan työolotutkimuksesta −&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/health-and-safety-risks-workplace-joint-analysis-three-major/view\">raportti</a>,&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/executive-summary-health-and-safety-risks-workplace-joint/view\">yhteenveto</a>&nbsp;(2017)</li><li>Psykososiaalisten riskien hallinta −&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/management-psychosocial-risks-european-workplaces-evidence/view\">raportti</a>,&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/executive-summary-management-psychosocial-risks-european/view\">yhteenveto&nbsp;</a>(2018)</li><li>Työsuojelun hallinta −&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/management-occupational-health-and-safety-european-workplaces/view\">raportti</a>,&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/executive-summary-management-occupational-health-and-safety/view\">yhteenveto</a>&nbsp;(2018)</li><li>Tutkimuspopulaation laajenemista koskeva tekninen arviointi −&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/technical-assessment-expansion-second-european-survey/view\">raportti</a>&nbsp;(2018)</li><li>ESENER-2:n ja sen seurantahankkeiden arviointi −&nbsp;<a href=\"https://osha.europa.eu/en/tools-and-publications/publications/ex-post-evaluation-second-european-survey-enterprises-new-and/view\">raportti</a>&nbsp;(2018).</li></ul>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<ul><li>Arbetstagarmedverkan i arbetsmiljöarbetet –&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/worker-participation-management-occupational-safety-health/view\">översiktsrapport</a>,&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/l_en?text=Country%20report%20Worker%20participation%20in%20the%20management%20of%20occupational%20safety%20and%20health%20%E2%80%94%20qualitative%20evidence%20from%20ESENER-2&amp;sort_by=search_api_relevance&amp;direction=desc\">landsrapporter</a>,&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/worker-participation-management-occupational-safety-and-health/view\">sammanfattande rapport</a>&nbsp;(2017)</li><li>Gemensam analys av Esener-2, ad-hoc-modulen i arbetskraftsundersökningen 2013 om arbetsolyckor och andra arbetsrelaterade problem samt sjätte undersökningen om arbetsvillkor i Europa –&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/executive-summary-health-and-safety-risks-workplace-joint/view\">översiktsrapport</a>,&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/health-and-safety-risks-workplace-joint-analysis-three-major/view\">sammanfattande rapport</a>&nbsp;(2017)</li><li>Hantering av psykosociala risker –&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/management-psychosocial-risks-european-workplaces-evidence/view\">översiktsrapport</a>,&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/executive-summary-management-psychosocial-risks-european/view\">sammanfattande rapport</a>&nbsp;(2018)</li><li>Hantering av arbetsmiljön –&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/management-occupational-health-and-safety-european-workplaces/view\">översiktsrapport</a>,&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/executive-summary-management-occupational-health-and-safety/view\">sammanfattande rapport</a>&nbsp;(2018)</li><li>En teknisk bedömning av den utökade undersökningspopulationen –&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/technical-assessment-expansion-second-european-survey/view\">översiktsrapport&nbsp;</a>(2018)</li><li>En utvärdering av Esener-2 och uppföljningsprojekt till den –&nbsp;<a href=\"https://osha.europa.eu/en/tools-and-publications/publications/ex-post-evaluation-second-european-survey-enterprises-new-and/view\">översiktsrapport</a>&nbsp;(2018).</li></ul>");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="LANDING_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "BUTTON");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "GO");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "GO!");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
+SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
+SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="LANDING_PAGE");
+INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Section_literal");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "STEP 1");
+
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="LANDING_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Section_literal");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "STEP 2");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="LANDING_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Section_literal");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Select a topic.");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="LANDING_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Section_literal");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Select a chart.");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="LANDING_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "SECTION_LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "The pie chart visualisation illustrates the values of all answers per country in a pie chart.");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="DATA_VISUALISATION");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "SECTION_LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Select");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="DATA_VISUALISATION");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "SECTION_LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "or");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="DATA_VISUALISATION");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Share");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="DATA_VISUALISATION");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "BUTTON");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Export data");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="DATA_VISUALISATION");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "BUTTON_LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Sort by");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="DATA_VISUALISATION");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "BUTTON_LITERAL");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Country code");
 
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 100000)+1, 100001));
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
-SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="LANDING_PAGE");
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Section_literal");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "STEP 1");
+SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="DASHBOARD_DETAIL");
+INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "NATIONA_VERSIONS_SELECTOR");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "This item is available in other national versions");
+
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
+SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
+SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
+INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "BUTTON_LITERAL");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Pie chart");
+
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
+SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
+SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="DATA_VISUALISATION");
+INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "SECTION_LITERAL");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Worker participation");
+
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
+SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
+SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="HOMEPAGE");
+INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "HEADER");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Smaller text");
 
