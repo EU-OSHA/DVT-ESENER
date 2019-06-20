@@ -158,6 +158,8 @@
     /* ESENER DATA VISUALISATION */
     requirePaths['vertical/datavisualisation/DataVisualisationController'] = verticalModules + '/survey/datavisualisation/DataVisualisationController' + suffix;
     
+    /* ESENER DETAIL PAGE */
+    requirePaths['vertical/detailpage/DetailPageController'] = verticalModules + '/survey/detailpage/DetailPageController' + suffix;
 
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;

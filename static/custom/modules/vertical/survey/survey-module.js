@@ -63,6 +63,39 @@ define(function (require) {
                 //description: i18n.L4,
             }
         });
+
+        $stateProvider.state('detailpage', {
+            url: "/:pLanguage/survey/detailpage/:pIndicator/:pTopic/:pChart",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pIndicator: {
+                    value: 'esener2009',
+                    squash: 'esener2009'
+                },
+                pTopic: {
+                    value: 'osh-management',
+                    squash: 'osh-management'
+                },
+                pChart: {
+                    value: 'european-map',
+                    squash: 'european-map'
+                }
+            },
+            views: {
+                "content-main": {
+                    templateUrl: configService.getVerticalTplPath("survey/detailpage", "detailpage"),
+                    controller: 'DetailPageController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/detailpage/DetailPageController', 'detailpage', 'DetailPageController')
+                }
+            },
+            metaTags: {
+                title: "Data Visualisation | ESENER",
+                //description: i18n.L4,
+            }
+        });
     });
 
     return module;
