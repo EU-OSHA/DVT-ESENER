@@ -19,7 +19,33 @@
                         <li class="lang--block">
                             <form action="" class="lang--form">
                                 <label for="search" class="sr-only">Language</label>
-                                <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select"><option value="bg">Български</option><option value="cs">Čeština</option><option value="da">Dansk</option><option value="de">Deutsch</option><option value="et">Eesti</option><option value="el">Ελληνικά</option><option value="en" selected="selected">English</option><option value="es">Español</option><option value="fr">Français</option><option value="hr">Hrvatski</option><option value="is">Íslenska</option><option value="it">Italiano</option><option value="lv">Latviešu</option><option value="lt">Lietuvių</option><option value="hu">Magyar</option><option value="mt">Malti</option><option value="nl">Nederlands</option><option value="no">Norsk</option><option value="pl">Polski</option><option value="pt">Português</option><option value="ro">Română</option><option value="sk">Slovenčina</option><option value="sl">Slovenščina</option><option value="fi">Suomi</option><option value="sv">Svenska</option></select>
+                                <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-model="pLanguage" data-ng-change="changeLanguage()">
+                                    <option value="bg">Български</option>
+                                    <option value="cs">Čeština</option>
+                                    <option value="da">Dansk</option>
+                                    <option value="de">Deutsch</option>
+                                    <option value="et">Eesti</option>
+                                    <option value="el">Ελληνικά</option>
+                                    <option value="en">English</option>
+                                    <option value="es">Español</option>
+                                    <option value="fr">Français</option>
+                                    <option value="hr">Hrvatski</option>
+                                    <option value="is">Íslenska</option>
+                                    <option value="it">Italiano</option>
+                                    <option value="lv">Latviešu</option>
+                                    <option value="lt">Lietuvių</option>
+                                    <option value="hu">Magyar</option>
+                                    <option value="mt">Malti</option>
+                                    <option value="nl">Nederlands</option>
+                                    <option value="no">Norsk</option>
+                                    <option value="pl">Polski</option>
+                                    <option value="pt">Português</option>
+                                    <option value="ro">Română</option>
+                                    <option value="sk">Slovenčina</option>
+                                    <option value="sl">Slovenščina</option>
+                                    <option value="fi">Suomi</option>
+                                    <option value="sv">Svenska</option>
+                                </select>
                             </form>
                         </li> 
                         <li class="print--block"><a href="javascript:"  title="{{i18n_literals.L364}}" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i><label for="search" class="sr-only" data-ng-bind="i18n_literals.L364"></label></a></li>
@@ -159,8 +185,8 @@
                 <li data-ng-class="{'active' : 'overview' == currentName }" class="submenu--item">
                   <a href="" ui-sref="overview({pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'overview' == currentName }">OVERVIEW</a>
                 </li>
-                <li data-ng-class="{'active' : 'datavisualisation' == currentName }" class="submenu--item">
-                  <a href="" ui-sref="datavisualisation({pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'datavisualisation' == currentName }" >DATA VISUALISATION</a>
+                <li data-ng-class="{'active' : 'datavisualisation' == currentName || 'detailpage' == currentName }" class="submenu--item">
+                  <a href="" ui-sref="datavisualisation({pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'datavisualisation' == currentName || 'detailpage' == currentName }" >DATA VISUALISATION</a>
                 </li>
                 <!--<li data-ng-class="{'active' : 'comparisons' == currentName }" class="submenu--item">
                   <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'comparisons' == currentName }" >COMPARISONS</a>

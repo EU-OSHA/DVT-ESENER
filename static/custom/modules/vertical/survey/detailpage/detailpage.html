@@ -15,13 +15,26 @@
                 </div>
             </form>
         </div>
+
+        <!-- Question Hierarchy -->
         <div>
-            <p >OSH Management</p>
-            <p >Psychosocial risks and their management</p>
-            <p >Drivers and barriers</p>
-            <p >Employee participation</p>
-            <p >Download questionnaire</p>
-        </div>        
+            <ul data-ng-repeat="question in questions">
+                <li data-ng-if="question.father_id == null">
+                    <span><a href data-ng-bind="i18n['L'+question.name_1]" ng-click="openAccordion($index)"></a></span>
+                    <ul data-ng-repeat="questionLevel2 in levelQuestions(2)">
+                        <li data-ng-if="questionLevel2.level == 2 && questionLevel2.father_id == question.id">
+                            <span data-ng-bind="i18n['L'+questionLevel2.name_1]"></span>
+                            <ul data-ng-repeat="questionLevel3 in levelQuestions(3)">
+                                <li data-ng-if="questionLevel3.level == 3 && questionLevel3.father_id == questionLevel2.id">
+                                    <span data-ng-bind="i18n['L'+questionLevel3.name_1]"></span>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
     </div>
     <!-- Main section -->
     <div class="col-sm-8 col-xs-12  col-md-8 col-content">
@@ -29,10 +42,10 @@
         <div class="col-sm-12 col-xs-12  col-md-12 col-content">
             <!-- Title and introduction -->
             <div class="col-sm-9 col-xs-12  col-md-9 col-content">
-                <h3 data-ng-if="pIndicator == 'esener2009'" class="title--section second-color">ESENER 2009</h3>
-                <h3 data-ng-if="pIndicator == 'esener2014'" class="title--section second-color">ESENER 2014</h3>
+                <h3 data-ng-if="pIndicator == 'esener2009'" class="title--section second-color" data-ng-bind="i18n.L101007"></h3>
+                <h3 data-ng-if="pIndicator == 'esener2014'" class="title--section second-color" data-ng-bind="i18n.L101008"></h3>
                 <!-- Breadcrumb -->
-                <p>OSH Management / Risk factors present in the establishment: Tiring and painful positions.</p>
+                <p data-ng-bind="breadcrumb"></p>
             </div>
 
             <!-- Country select -->

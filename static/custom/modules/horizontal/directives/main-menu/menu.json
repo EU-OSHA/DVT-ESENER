@@ -8,18 +8,18 @@
     },
     {
         "id": "survey",
-        "name":"L22001",
+        "name":"L101006",
         "target":"_self",
         "tabindex":"2",
         "levels":[
             {
                 "id":"overview",
-                "name":"L22002",
+                "name":"L101007",
                 "sref":"overview({pIndicator: 'esener2009'})",
                 "accesskey":"C"
             },{
                 "id":"overview",
-                "name":"L22003",
+                "name":"L101008",
                 "sref":"overview({pIndicator: 'esener2014'})",
                 "accesskey":"C"
             }
@@ -28,7 +28,7 @@
     },
     {
         "id": "about-tool",
-        "name":"L22019",
+        "name":"L484",
         "sref": "about-tool",
         "accesskey": "T",
         "tabindex":"4"

@@ -22,10 +22,11 @@ define(function (require) {
     var horizontalPathDiretive = horizontalPath + "directives/";
 
     var i18n = require('json!horizontal/model/literals');
+    var i18nES = require('json!horizontal/model/literals/ES');
     var datasets = require('json!horizontal/model/datasets');
 
     /*gtranslator info*/
-    setTimeout (function() {
+    /*setTimeout (function() {
         var gtranslatorinfo = $(".gtranslator-info");
         var gtranslatorinfo = gtranslatorinfo.offset();
 
@@ -43,7 +44,7 @@ define(function (require) {
         $("#gTranslate-modal").mouseleave(function(){
             $("#gTranslate-modal").fadeOut('fast');
         });
-    }, 1000);
+    }, 1000);*/
     
     /*end gtranslator*/
 
@@ -334,6 +335,23 @@ define(function (require) {
          */
         getLiterals: function () {
             return i18n;
+        },
+
+        // ----------------------------------
+        //  literals - i18n
+        // ----------------------------------
+
+        /**
+         * @ngdoc method
+         * @name dvt.configModule.configService#getLiterals
+         * @param {string} carl is awesome
+         * @methodOf dvt.configModule.configService
+         * @description
+         * Get the Literals list
+         */
+        getSpecificLanguageLiterals: function (language) {
+            //var languageUpper = language.toUpperCase();
+            return i18nES;
         },
 
         // ----------------------------------

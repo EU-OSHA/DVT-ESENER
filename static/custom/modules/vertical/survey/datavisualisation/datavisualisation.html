@@ -3,25 +3,25 @@
 
     <!-- Step 1 -->
     <section class="container">
-        <h1 class="text-center main-color">Step 1</h1>
-        <p class="text-center title--section">Select a topic.</p>
+        <h1 class="text-center main-color" data-ng-bind="i18n.L101021"></h1>
+        <p class="text-center title--section" data-ng-bind="i18n.L101023"></p>
         <section class="container-fluid">
             <div class="container grid-2">
                 <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center">OSH Management</p>
+                    <a class="btn-default" href data-ng-click="changeTopic('osh-management')"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center" data-ng-bind="i18n.L100001"></p>
                 </div>
                 <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center">Psychosocial risks and their management</p>
+                    <a class="btn-default" href data-ng-click="changeTopic('psychosocial-risks')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center" data-ng-bind="i18n.L100009"></p>
                 </div>
                 <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center">Drivers and barriers</p>
+                    <a class="btn-default" href data-ng-click="changeTopic('drivers-and-barriers')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center" data-ng-bind="i18n.L100015"></p>
                 </div>
                 <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center">Worker participation</p>
+                    <a class="btn-default" href data-ng-click="changeTopic('worker-participation')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center" data-ng-bind="i18n.L101034"></p>
                 </div>
             </div>
         </section>
@@ -29,39 +29,44 @@
 
     <!-- Step 2 -->
     <section class="container">
-        <h1 class="text-center main-color">Step 2</h1>
-        <p class="text-center title--section">Select a chart.</p>
+        <h1 class="text-center main-color" data-ng-bind="i18n.L100022"></h1>
+        <p class="text-center title--section" data-ng-bind="i18n.L100024"></p>
         <section class="container-fluid">
             <div class="container grid-2">
+                <!-- European map -->
                 <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center">European map</p>
-                    <p class="text-center">The European map visualisation illustrates in a map the values of the answers per country.</p>
+                    <a class="btn-default" href data-ng-click="changeChart('european-map')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center" data-ng-bind="i18n.L100623"></p>
+                    <p class="text-center" data-ng-bind="i18n.L100614"></p>
                 </div>
+                <!-- European bar chart -->
                 <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center">European bar chart</p>
-                    <p class="text-center">The European bar chart visualisation illustrates the values of all answers per country in a vertical stacked bar chart. The European Union average is also provided for comparative reasons in the left hand side of the graph.</p>
+                    <a class="btn-default" href data-ng-click="changeChart('european-bar-chart')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center" data-ng-bind="i18n.L100622"></p>
+                    <p class="text-center" data-ng-bind="i18n.L100612"></p>
                 </div>
+                <!-- National bar chart -->
                 <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center">National bar chart</p>
-                    <p class="text-center">The National bar chart visualisation illustrates the values of all answers per selected country and subset. The average among all subsets per answer is also provided at the end</p>
+                    <a class="btn-default" href data-ng-click="changeChart('national-bar-chart')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center" data-ng-bind="i18n.L100624"></p>
+                    <p class="text-center" data-ng-bind="i18n.L100616"></p>
                 </div>
+                <!-- National comparisons -->
                 <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center">National comparisons</p>
-                    <p class="text-center">The National comparisons visualisation presents a comparative overview for the values of all answers between two selected countries.</p>
+                    <a class="btn-default" href data-ng-click="changeChart('national-comparisons')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center" data-ng-bind="i18n.L100621"></p>
+                    <p class="text-center" data-ng-bind="i18n.L100610"></p>
                 </div>
+                <!-- Pie chart -->
                 <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center">Pie chart</p>
-                    <p class="text-center">The pie chart visualisation illustrates the values of all answers per country in a pie chart</p>
+                    <a class="btn-default" href data-ng-click="changeChart('pie-chart')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
+                    <p class="text-center" data-ng-bind="i18n.L101033"></p>
+                    <p class="text-center" data-ng-bind="i18n.L101025"></p>
                 </div>
             </div>
         </section>
     </section>
 
-    <p class="text-center"><button ng-disabled="pTopic == '' && pChart == ''" data-ng-class="{'disabled':pTopic == '' && pChart == ''}" ui-sref="detailpage({pIndicator: pIndicator, pTopic: pTopic, pChart: pChart})" class="btn-default btn-main-color"><span>GO!</span></button></p>
+    <p class="text-center"><button ng-disabled="(pTopic == '' || pChart == '')" data-ng-class="{'disabled':(pTopic == '' || pChart == '')}" ui-sref="detailpage({pIndicator: pIndicator, pTopic: pTopic, pChart: pChart})" class="btn-default btn-main-color"><span data-ng-bind="i18n.L101020"></span></button></p>
 
 </dvt-dashboard>

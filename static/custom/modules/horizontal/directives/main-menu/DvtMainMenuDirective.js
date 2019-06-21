@@ -45,7 +45,17 @@ define(function (require) {
             controller: ['$rootScope', '$scope', '$state', '$window' , 'configService', '$http', '$log','dataService', '$compile', '$sce', '$stateParams',
                 function ($rootScope, $scope, $state, $window, configService, $http, $log, dataService, $compile, $sce, $stateParams) {
                     // Load google translate element
-                    new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+                    //new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+
+                    
+
+                    $scope.changeLanguage = function(){
+                        if ($state.current.name !== undefined) {
+                            $state.go($state.current.name, {
+                                pLanguage: $scope.pLanguage
+                            }, {reload: true});
+                        }
+                    }
 
                     /** HEADER SHOW HIDE **/
                     var prevScrollpos = $window.pageYOffset;
@@ -144,9 +154,12 @@ define(function (require) {
                             $log.debug(path);
                             $log.debug($state.current.name);
 
+                            $scope.pLanguage = $stateParams.pLanguage;
+                            //$log.warn($stateParams.pLanguage);
+
                             $scope.pIndicator = $stateParams.pIndicator;
                             $scope.currentName = $state.current.name;
-                            $log.warn($scope.currentName);
+                            //$log.warn($scope.currentName);
 
                             var cadena = "";
                             var params = $state.params.pIndicator;

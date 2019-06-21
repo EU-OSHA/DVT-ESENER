@@ -24,7 +24,13 @@ define(function (require) {
 
         $urlRouterProvider.when('', '/');
         $stateProvider.state('home', {
-            url: "/",
+            url: "/:pLanguage",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                }
+            },
             views: {
                 "content-main": {
                     templateUrl: configService.getVerticalTplPath("home", "home"),

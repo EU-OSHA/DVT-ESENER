@@ -23,8 +23,12 @@ define(function (require) {
         $uiViewScrollProvider.useAnchorScroll();
 
         $stateProvider.state('overview', {
-            url: "/survey/overview/:pIndicator",
+            url: "/:pLanguage/survey/overview/:pIndicator",
             params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                },
                 pIndicator: {
                     value: 'esener2009',
                     squash: 'esener2009'
@@ -44,8 +48,12 @@ define(function (require) {
         });
 
         $stateProvider.state('datavisualisation', {
-            url: "/survey/datavisualisation/:pIndicator",
+            url: "/:pLanguage/survey/datavisualisation/:pIndicator",
             params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                },
                 pIndicator: {
                     value: 'esener2009',
                     squash: 'esener2009'

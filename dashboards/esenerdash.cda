@@ -1,25 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CDADescriptor>
-   <DataSources>
-      <Connection id="dvt_conn" type="sql.jndi">
-         <Jndi>jdbcEuOshaBarometer</Jndi>
-      </Connection>
-   </DataSources>
+  <DataSources>
+    <Connection id="dvt_conn" type="sql.jndi">
+      <Jndi>jdbcEuOshaBarometer</Jndi>
+    </Connection>
+  </DataSources>
 
-   <!-- Get data by Indicator -->
-   <DataAccess access="public" connection="dvt_conn" id="getIndicatorData" type="sql">
-       <Cache duration="3600" enabled="true"/>
-       <Columns/>
-       <Parameters>
-           <Parameter default="1" name="pIndicator" type="Numeric" />
-       </Parameters>
-       <Query>SELECT i.INDICATOR_NAME as Indicator, IFNULL(f.COUNTRY,f.REGION) AS Country, f.MEASURE AS Value
-           FROM figure f
-           INNER JOIN indicator i
-           ON i.INDICATOR_ID = f.INDICATOR_ID
-           WHERE f.INDICATOR_ID = ${pIndicator}
-           ORDER BY Measure ASC
-       </Query>
-   </DataAccess>
+  <!-- Get data by Indicator -->
+  <DataAccess access="public" connection="dvt_conn" id="getIndicatorData" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="1" name="pIndicator" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT i.INDICATOR_NAME as Indicator, IFNULL(f.COUNTRY,f.REGION) AS Country, f.MEASURE AS Value
+      FROM figure f
+      INNER JOIN indicator i
+      ON i.INDICATOR_ID = f.INDICATOR_ID
+      WHERE f.INDICATOR_ID = ${pIndicator}
+      ORDER BY Measure ASC
+    </Query>
+  </DataAccess>
+
+  <!-- Get all questions -->
+  <DataAccess access="public" connection="dvt_conn" id="getAllQuestions" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="2009" name="pYear" type="Numeric" />
+    </Parameters>
+    <Query>
+      SELECT DISTINCT(ec.id),
+        ec.category,
+        ec.level,
+        ec.father_id,
+        ec.name_1_literal_id AS name_1,
+        ec.name_2_literal_id AS name_2,
+        ec.name_3_literal_id AS name_3,
+        ec.bottom_text_literal_id AS bottom_text,
+        ec.category_order,
+        ec.previous_id,
+        ec.next_id
+      FROM esener_category ec
+      WHERE ec.year = ${pYear}
+      ORDER BY ec.category_order ASC;
+    </Query>
+  </DataAccess>
+
+  <!-- Get all questions -->
+  <DataAccess access="public" connection="dvt_conn" id="getQuestionData" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="2009" name="pYear" type="Numeric" />
+      <Parameter default="2009" name="pTopic" type="Numeric" />
+    </Parameters>
+    <Query>
+
+    </Query>
+  </DataAccess>
 
 </CDADescriptor>

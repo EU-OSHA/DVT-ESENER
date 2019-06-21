@@ -105,6 +105,7 @@
     /* MODEL */
     /* LITERALS */
     requirePaths['horizontal/model/literals'] = horizontalModules + '/model/Literals' + suffix + '.json';
+    requirePaths['horizontal/model/literals/ES'] = horizontalModules + '/model/Literals_ES' + suffix + '.json' ;
 
     /* DATASETS */ 
     requirePaths['horizontal/model/datasets'] = horizontalModules + '/model/Datasets' + suffix + '.json';

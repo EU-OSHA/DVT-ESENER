@@ -15,6 +15,20 @@ define(function () {
 
         return {
 
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getAllQuestions
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns all questions with the level hierarchy
+             */
+            getAllQuestions: function (pYear) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getAllQuestions" + "&parampYear=" + pYear;
+                $log.debug('getAllQuestions url:' + url);
+                return promise(url);
+            },
+
             /**
              * @ngdoc method
              * @name dvt.configModule.DataService#getAllCountries
