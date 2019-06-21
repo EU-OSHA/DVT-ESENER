@@ -2725,346 +2725,346 @@ INSERT INTO esener_category (category, level,father_id, name_1_literal_id, name_
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM150_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM153");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM152";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM152";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM152");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM154");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM153";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM153";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM153");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM155");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM154";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM154";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM154");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM158");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM155";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM155";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM155");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM159");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM158";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM158";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM158");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM161");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM159";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM159";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM159");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM170");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM161";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM161";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM161");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM173_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM170";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM170";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM173_8");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM200_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM175";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM175";
 
 
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM150_2");
-UPDATE esener_category SET next_id=@previousID WHERE category="MM150_1";
+UPDATE esener_category SET next_id=@nextID WHERE category="MM150_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM150_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM150_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM150_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM150_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM150_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM150_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM150_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM150_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM150_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM150_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM150_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM150_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM150_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM152");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM150_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM150_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM170");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM173_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM173_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM173_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM173_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM173_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM173_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM173_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM173_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM173_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM173_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM173_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM173_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM173_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM173_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM173_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM173_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM173_6");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM173_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM173_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM173_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM173_7");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM173_6";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM173_6";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM173_6");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM173_8");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM173_7";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM173_7";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM173_8");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM175");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM173_8";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM173_8";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM175");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM200_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM200_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM200_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM200_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM200_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM200_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM200_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM200_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM200_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM200_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM200_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM200_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM200_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM200_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM200_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM200_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM200_6");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM200_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM200_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM200_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM200_7");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM200_6";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM200_6";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM200_6");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM202_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM200_7";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM200_7";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM202_10");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM251");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM250";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM250";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM250");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM252");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM251";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM251";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM251");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM253_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM252";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM252";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM253_6");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM259");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM256";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM256";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM256");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM260");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM259";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM259";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM259");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM171_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM260";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM260";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM200_7");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM202_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM202_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM202_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM202_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM202_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM202_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM202_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM202_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM202_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM202_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM202_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM202_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM202_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM202_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM202_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM202_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM202_6");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM202_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM202_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM202_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM202_7");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM202_6";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM202_6";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM202_6");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM202_8");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM202_7";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM202_7";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM202_7");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM202_9");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM202_8";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM202_8";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM202_8");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM202_10");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM202_9";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM202_9";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM202_9");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM250");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM202_10";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM202_10";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM252");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM253_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM253_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM253_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM253_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM253_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM253_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM253_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM253_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM253_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM253_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM253_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM253_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM253_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM253_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM253_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM253_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM253_6");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM253_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM253_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM253_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM256");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM253_6";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM253_6";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM172_6");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM302");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM300";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM300";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM300");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM303a");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM302";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM302";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM302");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM350");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM303a";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM303a";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM260");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM171_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM171_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM171_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM171_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM171_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM171_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM171_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM171_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM171_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM171_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM171_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM171_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM171_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM171_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM171_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM171_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM171_6");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM171_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM171_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM171_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM172_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM171_6";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM171_6";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM171_6");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM172_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM172_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM172_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM172_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM172_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM172_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM172_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM172_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM172_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM172_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM172_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM172_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM172_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM172_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM172_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM172_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM172_6");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM172_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM172_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM172_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM300");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM172_6";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM172_6";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM303a");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM351");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM350";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM350";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM350");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM355all");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM351";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM351";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM351");
 SET @nextID = (SELECT id FROM esener_category WHERE category="MM358");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="MM355all";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="MM355all";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="MM355all");
@@ -3072,537 +3072,537 @@ UPDATE esener_category SET previous_id=@previousID WHERE category="MM358";
 
 
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q150_2");
-UPDATE esener_category SET next_id=@previousID WHERE category="Q150_1";
+UPDATE esener_category SET next_id=@nextID WHERE category="Q150_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q150_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q150_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q150_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q150_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q150_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q150_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q150_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q150_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q150_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q150_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q150_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q150_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q150_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q155");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q150_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q150_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q150_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q156");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q155";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q155";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q155");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q158_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q156";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q156";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q156");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q158_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q158_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q158_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q158_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q158_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q158_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q158_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q158_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q158_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q158_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q158_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q158_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q160");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q158_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q158_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q158_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q165");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q160";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q160";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q160");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q200_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q165";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q165";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q165");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q200_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q200_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q200_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q200_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q200_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q200_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q200_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q200_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q200_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q200_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q200_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q200_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q200_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q200_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q200_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q200_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q200_6");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q200_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q200_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q200_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q200_7");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q200_6";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q200_6";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q200_6");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q200_8");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q200_7";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q200_7";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q200_7");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q200_9");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q200_8";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q200_8";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q200_8");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q200_9";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q200_9";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q200_9");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_6");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_7");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_6";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_6";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_6");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_8");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_7";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_7";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_7");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_9");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_8";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_8";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_8");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q250");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_9";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_9";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_9");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q251");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q250";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q250";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q250");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q252_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q251";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q251";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q251");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q252_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q252_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q252_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q252_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q252_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q252_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q252_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q252_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q252_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q252_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q252_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q252_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q252_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q252_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q252_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q252_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q252_6");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q252_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q252_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q252_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q254gr");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q252_6";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q252_6";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q252_6");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q255");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q254gr";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q254gr";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q254gr");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q256_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q255";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q255";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q255");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q256_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q256_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q256_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q256_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q256_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q256_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q256_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q256_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q256_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q256_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q256_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q256_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q256_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q256_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q256_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q256_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q259");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q256_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q256_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q256_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q261_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q259";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q259";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q259");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q261_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q261_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q261_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q261_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q261_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q261_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q261_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q261_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q261_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q261_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q261_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q261_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q308_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q261_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q261_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q261_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q308_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q308_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q308_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q308_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q308_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q308_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q308_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q308_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q308_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q308_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q308_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q308_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q356_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q308_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q308_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q308_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q356_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q356_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q356_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q356_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q356_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q356_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q356_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q356_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q356_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q356_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q356_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q356_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q356_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q356_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q356_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q356_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q201_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q356_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q356_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q356_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q201_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q201_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q201_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q201_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q201_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q201_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q201_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q201_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q201_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q201_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q201_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q201_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q201_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q201_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q201_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q201_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q201_6");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q201_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q201_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q201_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q201_7");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q201_6";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q201_6";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q201_6");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_10");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q201_7";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q201_7";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q201_7");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_11");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_10";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_10";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_10");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_12");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_11";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_11";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_11");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_13");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_12";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_12";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_12");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_14");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_13";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_13";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_13");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q202_15");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_14";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_14";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_14");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q300");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q202_15";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q202_15";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q202_15");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q301");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q300";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q300";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q300");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q302");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q301";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q301";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q301");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q303_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q302";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q302";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q302");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q303_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q303_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q303_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q303_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q303_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q303_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q303_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q303_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q303_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q303_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q303_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q303_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q307");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q303_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q303_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q303_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q264_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q307";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q307";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q307");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q264_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q264_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q264_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q264_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q264_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q264_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q264_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q264_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q264_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q264_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q264_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q264_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q264_6");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q264_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q264_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q264_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q265_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q264_6";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q264_6";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q264_6");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q265_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q265_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q265_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q265_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q65_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q265_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q265_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q265_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q265_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q265_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q265_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q265_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q265_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q265_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q265_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q265_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q265_6");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q265_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q265_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q265_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q265_7");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q265_6";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q265_6";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q265_6");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q304");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q265_7";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q265_7";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q265_7");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q306a_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q304";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q304";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q304");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q306a_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q306a_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q306a_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q306a_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q306a_5");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q306a_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q306a_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q306a_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q306a_6");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q306a_5";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q306a_5";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q306a_5");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q166_1");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q306a_6";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q306a_6";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q306a_6");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q166_2");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q166_1";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q166_1";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q166_1");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q166_3");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q166_2";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q166_2";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q166_2");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q166_4");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q166_3";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q166_3";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q166_3");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q258b");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q166_4";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q166_4";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q166_4");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q305");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q258b";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q258b";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q258b");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q350");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q305";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q305";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q305");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q351");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q350";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q350";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q350");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q354");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q351";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q351";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q351");
 SET @nextID = (SELECT id FROM esener_category WHERE category="Q358");
-UPDATE esener_category SET previous_id=@previousID, next_id=@previousID WHERE category="Q354";
+UPDATE esener_category SET previous_id=@previousID, next_id=@nextID WHERE category="Q354";
 
 
 SET @previousID = (SELECT id FROM esener_category WHERE category="Q354");
