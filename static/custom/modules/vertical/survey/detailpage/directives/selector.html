@@ -1,0 +1,181 @@
+<div class="col-sm-12 col-xs-12  col-md-12 col-content">            
+	<!-- Title and introduction -->
+    <div class="col-sm-9 col-xs-12  col-md-9 col-content">
+        <h3 data-ng-if="dataset == 'esener2009'" class="title--section second-color" data-ng-bind="i18n.L101007"></h3>
+        <h3 data-ng-if="dataset == 'esener2014'" class="title--section second-color" data-ng-bind="i18n.L101008"></h3>
+
+        <!-- Breadcrumb -->        
+		<p data-ng-bind="question.breadcrumb"></p>
+    </div>
+
+    <!-- Country select -->
+    <div class="col-sm-3 col-xs-12  col-md-3 col-content">
+        <form action="" class="compare--block--form">
+            <label for="search" class="sr-only" data-ng-bind="i18n.L101032"></label>
+            <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-if="dataset == 'esener2009'">
+                    <!-- Select esener 2009 languages -->
+                    <option value="bg">Български</option> <!-- Bulgary -->
+                    <option value="cs">Čeština</option>
+                    <option value="da">Dansk</option>
+                    <option value="de">Deutsch</option>
+                    <option value="et">Eesti</option>
+                    <option value="el">Ελληνικά</option>
+                    <option value="en" selected="selected">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="it">Italiano</option>
+                    <option value="lv">Latviešu</option>
+                    <option value="lt">Lietuvių</option>
+                    <option value="hu">Magyar</option>
+                    <option value="mt">Malti</option>
+                    <option value="nl">Nederlands</option>
+                    <option value="no">Norsk</option>
+                    <option value="pl">Polski</option>
+                    <option value="pt">Português</option>
+                    <option value="ro">Română</option>
+                    <option value="sk">Slovenčina</option>
+                    <option value="sl">Slovenščina</option>
+                    <option value="fi">Suomi</option>
+                    <!--<option value="tr">Türkçe</option>-->
+            </select>
+            <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-if="dataset == 'esener2014'">
+                <!-- Select esener 2014 languages -->
+                <option value="al">Albania (AL)</option>
+                <option value="at">Austria (AT)</option>
+                <option value="fr">Belgium (FR)</option>
+                <option value="nl">Belgium (NL)</option>
+                <option value="bg">Bulgaria (BG)</option>
+                <option value="cy">Croatia (CY)</option>
+                <option value="cz">Cyprus (CZ)</option>
+                <option value="dk">Denmark (DK)</option>
+                <option value="ee">Estonia (EE)</option>
+                <option value="ru">Estonia (RU)</option>
+                <option value="fi">Finland (FI)</option>
+                <option value="se">Finland (SE)</option>                    
+                <option value="fr">France (FR)</option>                        
+                <option value="al">FYROM (AL)</option>
+                <option value="mk">FYROM (MK)</option>
+                <option value="de">Germany (DE)</option>
+                <option value="el">Greece (EL)</option>
+                <option value="is">Iceland (IS)</option>
+                <option value="ie">Ireland (IE)</option>
+                <option value="it">Italy (IT)</option>
+                <option value="hu">Hungary (HU)</option>
+                <option value="lv">Latvia (LV)</option>
+                <option value="ru">Latvia (RU)</option>
+                <option value="lt">Lithuania (LT)</option>
+                <option value="ru">Lithuania (RU)</option>
+                <option value="de">Luxembourg (DE)</option>
+                <option value="fr">Luxembourg (FR)</option>
+                <option value="lu">Luxembourg (LU)</option>
+                <option value="en">Malta (EN)</option>
+                <option value="mt">Malta (MT)</option>
+                <option value="me">Montenegro (ME)</option>
+                <option value="nl">Nederlands (NL)</option>
+                <option value="no">Norway (NO)</option>
+                <option value="pl">Poland (PL)</option>
+                <option value="pt">Portugal (PT)</option>
+                <option value="ro">Romania (RO)</option>
+                <option value="rs">Serbia (RS)</option>
+                <option value="sk">Slovakia (SK)</option>
+                <option value="sl">Slovenia (SL)</option>
+                <option value="es">Spain (ES)</option>
+                <option value="se">Sweden (SE)</option>
+                <option value="de">Switzerland (DE)</option>
+                <option value="fr">Switzerland (FR)</option>
+                <option value="it">Switzerland (IT)</option>
+                <option value="tr">Turkey (TR)</option>
+                <option value="en" selected="selected">United Kingdom (UK)</option>
+            </select>
+        </form>
+    </div>
+
+    <!-- Chart section and indicator selection -->
+    <div class="col-sm-12 col-xs-12  col-md-12 col-content">
+        <!-- Question title -->
+        <h3 class="title--section main-color" data-ng-bind="question.name"></h3>
+        <p data-ng-bind-html="question.description"></p>        
+
+        <div data-ng-if="chart=='european-map' || chart=='european-bar-chart'">
+			<p>
+	        	<span  data-ng-bind="i18n.L101026"></span> 
+	        	<span  data-ng-bind="i18n.L100573"></span> 
+	        	<span  data-ng-bind="i18n.L101027"></span> 
+	        	<span  data-ng-bind="i18n.L100574"></span> 
+	        </p>
+
+            <form class="row block--filter--wrapper">
+                <!-- Activity sector -->
+                <div class="filter-text">
+                    <select id="datafor" class="">
+                        <option data-ng-repeat='sector in activitySectors' value="sector[0]" data-ng-bind="i18n['L'+sector[1]]" data-ng-selected="$first"></option>
+                    </select>
+                </div><span></span>
+                <!-- Establishment size -->
+                <div class="filter-text">
+                    <select id="datafor" class="">
+                        <option data-ng-repeat='size in establishmentSizes' value="size[0]" data-ng-bind="i18n['L'+size[1]]" data-ng-selected="$first"></option>
+                    </select>
+                </div>
+                <!-- Country -->
+                <div class="filter-text">
+                    <select id="datafor" class="" disabled>                 	
+                    	<option value="" data-ng-bind="i18n.L100589" data-ng-selected="true" disabled></option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <div data-ng-if="chart=='national-bar-chart'">
+			<form class="row block--filter--wrapper">
+                <!-- Activity sector -->
+                <div class="filter-text">
+                    <button data-ng-bind="i18n.L100573"></button>
+                </div>
+	        	<span data-ng-bind="i18n.L101027"></span> 
+                <!-- Establishment size -->
+                <div class="filter-text">
+                    <button data-ng-bind="i18n.L100574"></button>
+                </div>
+                <!-- Country -->
+                <div class="filter-text">
+                    <select id="datafor" class="">                 	
+                    	<option value="" data-ng-bind="i18n.L100589" data-ng-selected="true"></option> 
+                        <option data-ng-repeat='country in countries' value="country[0]" data-ng-bind="i18n['L'+country[1]]"></option>
+                    </select>
+                </div>
+            </form>
+        </div>
+
+        <hr>
+
+        <!-- Select split answers -->
+        <div>
+            <form class="row block--filter--wrapper">
+                <!-- Answer -->
+                <div class="filter-text">
+                    <select id="datafor" class="" ng-model="pAnswer" ng-selected="pCountry" ng-change="countryChange()">
+                    	<option data-ng-repeat='answer in answers' value="answer[0]" data-ng-bind="i18n['L'+answer[1]]" data-ng-selected="$first"></option>
+                    </select>
+                </div>
+                <!-- Chart selection -->
+                <div class="filter-text">
+                    <a href data-ng-bind="i18n.L100623"></a>
+                    <a href data-ng-bind="i18n.L100622"></a>
+                    <a href data-ng-bind="i18n.L100624"></a>
+                    <a href data-ng-bind="i18n.L100621"></a>
+                    <a href data-ng-bind="i18n.L101033"></a>
+                    <a href data-ng-bind="i18n.L100679" data-ng-if="chart=='european-map' || chart=='european-bar-chart'"></a>
+                </div>
+            </form>
+        </div>
+
+        
+    </div>
+
+
+	<a href="#" data-ng-bind="question.previous"></a>
+	<a href="#" data-ng-bind="question.next"></a>
+	
+	
+</div>
