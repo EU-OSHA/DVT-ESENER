@@ -68,6 +68,9 @@ define(function () {
                 return promise(url);
             },
 
+
+          
+
             /**
              * @ngdoc method
              * @name dvt.configModule.DataService#getQuestionSelectorData
@@ -278,6 +281,33 @@ define(function () {
 
                 $log.debug('getSearchTerm url: ' + url);
                 
+                return promise(url);
+            },
+/*******************************************************************************/
+            getAllCountries: function () {
+                    var url = configService.getEsernerDataPath() + "&dataAccessId=getAllCountries";
+                    $log.debug('getAllCountries url:' + url);
+                    return promise(url);
+                },
+
+            get2014ActivitySector: function () {
+                var url = configService.getEsernerDataPath() + "&dataAccessId=get2014ActivitySector";
+                $log.debug('getActivitySectorList url:' + url);
+                return promise(url);
+            }, 
+            get2009ActivitySector: function () {
+                var url = configService.getEsernerDataPath() + "&dataAccessId=get2009ActivitySector";
+                $log.debug('getActivitySectorList url:' + url);
+                return promise(url);
+            },
+             get2014CompanySize: function () {
+                var url = configService.getEsernerDataPath() + "&dataAccessId=get2014CompanySize";
+                $log.debug('getCompanySizeData url:' + url);
+                return promise(url);
+            },
+            get2009CompanySize: function () {
+                var url = configService.getEsernerDataPath() + "&dataAccessId=get2009CompanySize";
+                $log.debug('getCompanySizeData url:' + url);
                 return promise(url);
             },
 

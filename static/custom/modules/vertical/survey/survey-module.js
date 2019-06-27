@@ -127,6 +127,7 @@ define(function (require) {
     });
 
     module.directive('selector', require('vertical/detailpage/selector'));
-
+    module.factory('DetailPageService',require('vertical/detailpage/services/DetailPageService'));
+    
     return module;
 });

@@ -89,9 +89,11 @@ define(function (require) {
          * @description
          * My Description rules
          */
-        getCountriesDataPath:function() {
-            return dataPath + configuration.paths.data.cda.countryCard;
+        getEsernerDataPath:function() {
+            return dataPath + configuration.paths.data.cda.esener;
         },
+
+
 
         /**
          * @ngdoc method
@@ -312,7 +314,7 @@ define(function (require) {
 
         /**
          * @ngdoc method
-         * @name dvt.configModule.configService#getDvtDataPath
+         * @name dvt.configModule.configService#getEsenerCda
          * @methodOf dvt.configModule.configService
          * @description
          * Get the relative path for the cda

@@ -162,6 +162,7 @@
     /* ESENER DETAIL PAGE */
     requirePaths['vertical/detailpage/DetailPageController'] = verticalModules + '/survey/detailpage/DetailPageController' + suffix;
     requirePaths['vertical/detailpage/selector'] = verticalModules + '/survey/detailpage/directives/SelectorDirective' + suffix;
+    requirePaths['vertical/detailpage/services/DetailPageService'] = verticalModules + '/survey/detailpage/services/DetailPageService'+suffix;
 
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;

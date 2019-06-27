@@ -192,4 +192,110 @@
       ORDER BY a.id ASC;
     </Query>
   </DataAccess>
+<DataAccess access="public" connection="dvt_conn" id="getAllCountries" type="sql">
+      <Cache duration="3600" enabled="true" />
+      <Columns />
+      <Query>
+        SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+        FROM strategies_page sp
+        INNER JOIN nuts n
+        ON n.id = sp.nuts_id
+        ORDER BY country_code ASC
+      </Query>
+  </DataAccess>
+
+<DataAccess access="public" connection="dvt_conn" id="get2014ActivitySector" type="sql">
+      <Cache duration="3600" enabled="true" />
+      <Columns />
+      <Query>
+        SELECT  a.literal_id , a.id
+        FROM split_activity_sector a
+        WHERE 
+        a.id IN(14,3,4,18,6,7)
+        ORDER BY  FIELD(a.id,14,3,4,18,6,7)
+      </Query>
+  </DataAccess>
+
+  <DataAccess access="public" connection="dvt_conn" id="get2009ActivitySector" type="sql">
+      <Cache duration="3600" enabled="true" />
+      <Columns />
+      <Query>
+        SELECT  a.literal_id , a.id
+        FROM split_activity_sector a
+        WHERE 
+        a.id IN(14,15,16,17)
+        ORDER BY  a.id  ASC
+      </Query>
+  </DataAccess>
+
+  <DataAccess access="public" connection="dvt_conn" id="get2014CompanySize" type="sql">
+      <Cache duration="3600" enabled="true" />
+      <Columns />
+      <Query>
+        SELECT  a.literal_id ,a.id
+        FROM split_company_size a
+        WHERE a.id IN  (11,7,8,14,10)
+        ORDER BY FIELD(a.id,11,7,8,14,10)
+      </Query>
+  </DataAccess>
+  <DataAccess access="public" connection="dvt_conn" id="get2009CompanySize" type="sql">
+      <Cache duration="3600" enabled="true" />
+      <Columns />
+      <Query>
+        SELECT  a.literal_id ,a.id
+        FROM split_company_size a
+        WHERE a.id IN  (11,12,13,14,15)
+        ORDER BY a.id
+      </Query>
+  </DataAccess>
+
+   <DataAccess access="public" connection="dvt_conn" id="getEuropeanBarCharActivitiSector" type="sql">
+       <Cache duration="3600" enabled="true"/>
+       <Columns/>
+       <Parameters>
+          <Parameter default="15" name="pDataset" type="Numeric"/>
+          <Parameter default="110" name="pIndicator" type="Numeric"/>
+          <Parameter default="14" name="pActivitySector" type="Numeric"/>
+        <!--esta consulta solo es para Tiring or painful position (de momento)-->
+       </Parameters>
+       <Query>
+         SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
+      FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
+      WHERE n.id = p.nuts_id
+      AND  v.indicator_id =${pIndicator}
+      AND v.profile_id = p.id
+      AND p.answer_id=sa.id
+      AND t.literal_id =sa.literal_id
+      AND p.activity_sector_id= ${pActivitySector}
+      AND t.language = 'EN'
+      AND d.id = v.dataset_id
+      AND d.id = ${pDataset}
+      ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+       </Query>
+   </DataAccess> 
+
+<DataAccess access="public" connection="dvt_conn" id="getEuropeanBarCharCompanySize" type="sql">
+       <Cache duration="3600" enabled="true"/>
+       <Columns/>
+       <Parameters>
+          <Parameter default="15" name="pDataset" type="Numeric"/>
+          <Parameter default="110" name="pIndicator" type="Numeric"/>
+          <Parameter default="11" name="pCompanySize" type="Numeric"/>
+        <!--esta consulta solo es para Tiring or painful position (de momento)-->
+       </Parameters>
+       <Query>
+         SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
+      FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
+      WHERE n.id = p.nuts_id
+      AND  v.indicator_id =${pIndicator}
+      AND v.profile_id = p.id
+      AND p.answer_id=sa.id
+      AND t.literal_id =sa.literal_id
+      AND p.company_size_id= ${pCompanySize}
+      AND t.language = 'EN'
+      AND d.id = v.dataset_id
+      AND d.id = ${pDataset}
+      ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
+       </Query>
+   </DataAccess> 
 </CDADescriptor>

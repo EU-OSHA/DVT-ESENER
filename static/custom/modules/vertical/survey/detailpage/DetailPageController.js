@@ -1,6 +1,6 @@
 /**
  * @ngdoc controller
- * @name dvt.home.controller:homeController
+ * @name dvt.detailpage.controller:homeController
  * @requires $scope
  * @requires $stateParams
  * @requires $state
@@ -11,24 +11,26 @@
 define(function (require) {
     'use strict';
 
-    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, dataService, $rootScope, mapProvider) {
-
+    function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, DetailPageService, dvtUtils,$rootScope) {
         //$scope.pLanguage = $stateParams.pLanguage;
         $scope.pLocale = $stateParams.pLocale;
 
-        // Literals / i18n
-        //var i18n = configService.getLiterals();
-
-        var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($scope.pLocale);
-        $scope.i18n = i18n;
-
-         // Datasets
+        // Datasets, 
         $scope.datasetList = configService.getDatasets();
         $scope.datasetESENER2009 = $scope.datasetList.ESENER2009;
         $scope.datasetESENER2014 = $scope.datasetList.ESENER2014;
 
         $scope.actualDataset = ($stateParams.pIndicator == 2009)?$scope.datasetESENER2009:$scope.datasetESENER2014;
 
+        $scope.pLanguage = $stateParams.pLanguage;
+        $scope.cdaEsernerDash = configService.getEsenerCda();
+
+        // Literals / i18n
+        //var i18n = configService.getLiterals();
+
+        var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($scope.pLocale);
+        $scope.i18n = i18n;
+        
         //Parameters
         $scope.pIndicator = $stateParams.pIndicator; //Year
         $scope.pTopic = $stateParams.pTopic; //Category
@@ -37,9 +39,132 @@ define(function (require) {
         $scope.pCompanyFilter = $stateParams.pCompanyFilter; //Company size
         $scope.pActivityFilter = $stateParams.pActivityFilter; //Activity sector
         $scope.answer = $stateParams.pAnswer; //Answer
+        $scope.selectedIndicator = $stateParams.pIndicator;
+        $scope.selectedSubIndicator = $stateParams.pSubIndicator;
 
-        //$log.warn($stateParams);
-        //$log.warn($scope.pQuestion);
+        $scope.pCountry ='AT';
+        $scope.pCompanySize = $stateParams.pCompanySize;
+        $scope.pActivitySector =$stateParams.pActivitySector;
+        $scope.pSelector = $stateParams.pSelector;
+
+        
+        $scope.countriesDataFor = [];
+        $scope.activitySectorFor =[];
+        $scope.companySizeFor =[];
+        $scope.i18n = i18n;
+
+         if ($rootScope.data != undefined)
+    {
+      $rootScope.data.indicator = $scope.selectedIndicator;
+      $rootScope.data.subIndicator = $scope.selectedSubIndicator;
+    }
+
+ /******************************************************************************|
+ |                                DATA LOAD                                     |
+ |******************************************************************************/
+
+      dataService.getAllCountries().then(function (data) {
+        data.data.resultset.map(function (elem) {
+          var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+          if(elem[1] != $scope.pCountry2){
+              $scope.countriesDataFor.push({
+              country: elem[0],
+              country_code: elem[1]
+            });
+          } });
+        $scope.countriesDataFor.sort(function(a, b){
+          var codeA = a.country_code;
+          var codeB = b.country_code;
+          if (codeA < codeB) {
+            return -1;
+          }
+          if (codeA > codeB) {
+            return 1;
+          }
+
+          //  be equal
+          return 0;
+        });
+       
+      }).catch(function (err) {
+          throw err;
+      });
+
+    if($scope.pIndicator=='esener2014'){
+      dataService.get2014ActivitySector().then(function(data){
+        data.data.resultset.map(function(elem){
+        var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+        $scope.activitySectorFor.push({
+           literal: elem[0],
+            id: elem[1]
+          });
+        });
+      });
+      dataService.get2014CompanySize().then(function(data){
+        data.data.resultset.map(function(elem){
+        var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+        $scope.companySizeFor.push({
+          literal: elem[0],
+          id: elem[1]
+         });
+        });
+      });
+    }else{
+        dataService.get2009ActivitySector().then(function(data){
+          data.data.resultset.map(function(elem){
+          var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+          $scope.activitySectorFor.push({
+             literal: elem[0],
+              id: elem[1]
+            });
+          });
+       });
+        dataService.get2009CompanySize().then(function(data){
+         data.data.resultset.map(function(elem){
+          var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+          $scope.companySizeFor.push({
+            literal: elem[0],
+            id: elem[1]
+          });
+          });
+        });
+    }
+
+      
+
+
+
+/***********************END DATA LOAD***********************/
+
+      //----------------------------------storiers-----------------
+        $scope.stories = [
+      //0 - General plot for OSH Culture
+      { 
+        color1: dvtUtils.getColorCountry(1),
+        color2: dvtUtils.getColorCountry(22),
+        color3: dvtUtils.getColorCountry(2),
+        plots: DetailPageService.getGeneralEuropeanBarCharPlot(),
+        dimensions: {
+          value: {
+            format: {
+              number: "0.#",
+              percent: "#%"
+            }
+          }
+        }
+      }];
+      //---------------------parameters---------------------------------
+    $scope.dashboard = {
+        parameters: {
+          "pActivitySector": $scope.pActivitySector,
+           "pCompanySize" : $scope.pCompanySize,
+           "pSelector": $scope.pSelector,
+           "pChart": $scope.pChart,
+           "pTopic": $scope.pTopic
+        }
+    };
+       
+        $scope.currentName = $state.current.name;
 
         $scope.questions = []; //Question menu
         $scope.selectedQuestionValues = []; //Data of selected question
@@ -205,10 +330,29 @@ define(function (require) {
 
         /********************************************* END FILTERS ************************************************/
     
-        $scope.status = 'ready';
-
+        $scope.OptionChange = function () {
+         if ($state.current.name !== undefined) {
+          $state.go($state.current.name, {
+            pCountry: $scope.pCountry,
+            pCompanySize: $scope.pCompanySize,
+            pActivitySector: $scope.pActivitySector,
+            pSelector:$scope.pSelector
+          });
+        }
+       }
+         $scope.changeChart = function(chart){
+            $scope.pChart = chart;
+            if ($state.current.name !== undefined) {
+          $state.go($state.current.name, {
+            pChart:  $scope.pChart,
+            pTopic: $scope.pTopic
+          });
+        }
+      }
     }
 
-    controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log', 'dataService', '$rootScope', 'mapProvider'];
+    controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'DetailPageService','dvtUtils','$rootScope'];
     return controller;
 });
+
+ 

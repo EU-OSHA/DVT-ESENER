@@ -48,6 +48,14 @@ define(function (require) {
             $scope.pChart = chart;
         }
 
+        $scope.changeTopic = function(topic){
+            $scope.pTopic = topic;
+        }
+
+        $scope.changeChart = function(chart){
+            $scope.pChart = chart;
+        }
+
         $scope.status = 'ready';
     }
 

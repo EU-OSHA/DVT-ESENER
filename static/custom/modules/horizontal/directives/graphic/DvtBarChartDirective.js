@@ -700,7 +700,7 @@ define(function (require) {
                 //Labels
                 if(!!attributes.multipleLabelColors){
                     var pCountry1 = definition.parameters[1][1];
-                    var pCountry2 = definition.parameters[2][1];
+                    var pCountry2 = definition.parameters[1][1];
 
                     definition.chartDefinition.baseAxisLabel_textStyle= function (){
                         if(this.scene.vars.tick.label == 'EU28'){
