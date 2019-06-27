@@ -90,6 +90,9 @@ define(function (require) {
                 pChart: {
                     value: 'european-map',
                     squash: 'european-map'
+                },
+                pQuestion: {
+                    value: 'MM161'
                 }
             },
             views: {
@@ -105,6 +108,8 @@ define(function (require) {
             }
         });
     });
+
+    module.directive('selector', require('vertical/detailpage/selector'));
 
     return module;
 });

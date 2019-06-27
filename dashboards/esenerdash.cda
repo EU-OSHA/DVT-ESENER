@@ -61,4 +61,91 @@
     </Query>
   </DataAccess>
 
+  <!-- Get the information for the current category selected and the previous and next one for the question selector -->
+  <DataAccess access="public" connection="dvt_conn" id="getQuestionSelectorData" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="MM161" name="pQuestion" type="String" />
+    </Parameters>
+    <Query>
+      SELECT ec.LEVEL AS LEVEL, ec3.category AS previousID, ec3.name_3_literal_id AS previousName, ec.name_2_literal_id AS NAME2, ec.name_3_literal_id AS NAME3, ec.bottom_text_literal_id AS bottomText, ec4.category AS nextID, ec4.name_3_literal_id AS nextName, ec1.name_2_literal_id AS father, ec2.name_2_literal_id AS grandfather  
+      FROM esener_category ec
+      INNER JOIN esener_category ec1 ON ec.father_id = ec1.id
+      LEFT JOIN esener_category ec2 ON ec1.father_id=ec2.id
+      LEFT JOIN esener_category ec3 ON ec.previous_id=ec3.id
+      LEFT JOIN esener_category ec4 ON ec.next_id=ec4.id
+      WHERE ec.category=${pQuestion};
+    </Query>
+  </DataAccess>
+
+  <!-- Get the answer order  -->
+  <DataAccess access="public" connection="dvt_conn" id="getQuestionAnswerOrder" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="MM161" name="pQuestion" type="String" />
+    </Parameters>
+    <Query>
+      SELECT a.id AS id, a.literal_id AS literal
+      FROM esener_answer_order ao
+      INNER JOIN indicator i ON i.id=ao.indicator_id
+      INNER JOIN split_answer a ON ao.answer_id=a.id
+      WHERE i.name=${pQuestion}
+      ORDER BY order_position ASC;
+    </Query>
+  </DataAccess>
+
+  <!-- Get the countries for the filter  -->
+  <DataAccess access="public" connection="dvt_conn" id="getCountriesSelect" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="MM161" name="pQuestion" type="String" />
+    </Parameters>
+    <Query>
+      SELECT DISTINCT(n.country_code), n.literal_id FROM nuts n
+      INNER JOIN profile p ON n.id=p.nuts_id
+      INNER JOIN value v ON p.id=v.profile_id
+      INNER JOIN indicator i ON v.indicator_id=i.id
+      WHERE i.name=${pQuestion}
+      ORDER BY n.country_code ASC;
+    </Query>
+  </DataAccess>
+
+  <!-- Get the establishments sizes for the filter  -->
+  <DataAccess access="public" connection="dvt_conn" id="getEstablishmentSizesSelect" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="MM161" name="pQuestion" type="String" />
+    </Parameters>
+    <Query>
+      SELECT DISTINCT(cs.id), cs.literal_id 
+      FROM split_company_size cs
+      INNER JOIN profile p ON cs.id=p.company_size_id
+      INNER JOIN value v ON p.id=v.profile_id
+      INNER JOIN indicator i ON v.indicator_id=i.id
+      WHERE i.name=${pQuestion}
+      ORDER BY cs.id ASC;
+    </Query>
+  </DataAccess>
+
+  <!-- Get the activity sectors for the filter  -->
+  <DataAccess access="public" connection="dvt_conn" id="getActivitySectorsSelect" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="MM161" name="pQuestion" type="String" />
+    </Parameters>
+    <Query>
+      SELECT DISTINCT(a.id), a.literal_id 
+      FROM split_activity_sector a
+      INNER JOIN profile p ON a.id=p.activity_sector_id
+      INNER JOIN value v ON p.id=v.profile_id
+      INNER JOIN indicator i ON v.indicator_id=i.id
+      WHERE i.name=${pQuestion}
+      ORDER BY a.id ASC;
+    </Query>
+  </DataAccess>
 </CDADescriptor>

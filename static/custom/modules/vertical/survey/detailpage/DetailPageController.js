@@ -24,6 +24,7 @@ define(function (require) {
         $scope.pTopic = $stateParams.pTopic;
         $scope.pChart = $stateParams.pChart;
         $scope.currentName = $state.current.name;
+        $scope.pQuestion = $stateParams.pQuestion;
 
         $scope.questions = [];
 
@@ -52,7 +53,6 @@ define(function (require) {
                         next_id: elem[10]
                     });
                 });
-                $log.warn($scope.questions);
             }).catch(function (err) {
                 throw err;
             });

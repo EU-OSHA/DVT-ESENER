@@ -9,12 +9,78 @@
 define(function () {
 
     var DataService = function ($q, $http, $log, configService) {
-            function promise(url) {
-                return $http.get(url);
-            }
+            
+        var promise = function(url) {
+            return $http.get(url);
+        }
 
         return {
 
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getActivitySectorsSelect
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns the activity sectors list for the select combo
+             */
+            getActivitySectorsSelect: function (pQuestion) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getActivitySectorsSelect" + "&parampQuestion=" + pQuestion;
+                $log.debug('getActivitySectorsSelect url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getEstablishmentSizesSelect
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns the establishment sizes list for the select combo
+             */
+            getEstablishmentSizesSelect: function (pQuestion) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getEstablishmentSizesSelect" + "&parampQuestion=" + pQuestion;
+                $log.debug('getEstablishmentSizesSelect url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getCountriesSelect
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns the countries list for the select combo
+             */
+            getCountriesSelect: function (pQuestion) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getCountriesSelect" + "&parampQuestion=" + pQuestion;
+                $log.debug('getCountriesSelect url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getQuestionAnswerOrder
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns the order in which the answers are painted on the select component
+             */
+            getQuestionAnswerOrder: function (pQuestion) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getQuestionAnswerOrder" + "&parampQuestion=" + pQuestion;
+                $log.debug('getQuestionAnswerOrder url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getQuestionSelectorData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns the data necessary for the question selector
+             */
+            getQuestionSelectorData: function (pQuestion) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getQuestionSelectorData" + "&parampQuestion=" + pQuestion;
+                $log.debug('getQuestionSelectorData url:' + url);
+                return promise(url);
+            },
 
             /**
              * @ngdoc method
