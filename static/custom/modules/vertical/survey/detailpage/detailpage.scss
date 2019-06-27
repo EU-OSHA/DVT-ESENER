@@ -8,6 +8,17 @@
   background: #529FA2;
 }
 
+.selected {
+  font-weight: bold;
+}
+
+.disabled{
+  opacity: 0.4;
+  cursor: not-allowed;
+  border: 1px dotted $gray;
+  color: $gray;
+}
+
 .compare--block .compare--list {
     display: flex;
     justify-content: space-between;

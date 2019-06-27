@@ -30,8 +30,8 @@ define(function (require) {
                     squash: 'en'
                 },
                 pIndicator: {
-                    value: 'esener2009',
-                    squash: 'esener2009'
+                    value: '2009',
+                    squash: '2009'
                 }
             },
             views: {
@@ -55,8 +55,8 @@ define(function (require) {
                     squash: 'en'
                 },
                 pIndicator: {
-                    value: 'esener2009',
-                    squash: 'esener2009'
+                    value: '2009',
+                    squash: '2009'
                 }
             },
             views: {
@@ -73,15 +73,15 @@ define(function (require) {
         });
 
         $stateProvider.state('detailpage', {
-            url: "/:pLanguage/survey/detailpage/:pIndicator/:pTopic/:pChart",
+            url: "/:pLanguage/survey/detailpage/:pIndicator/:pTopic/:pChart/:pLocale",
             params: {
                 pLanguage: {
                     value: 'en',
                     squash: 'en'
                 },
                 pIndicator: {
-                    value: 'esener2009',
-                    squash: 'esener2009'
+                    value: '2009',
+                    squash: '2009'
                 },
                 pTopic: {
                     value: 'osh-management',
@@ -91,8 +91,25 @@ define(function (require) {
                     value: 'european-map',
                     squash: 'european-map'
                 },
+                pLocale: {
+                    value: 'en',
+                    squash: 'en'
+                },
                 pQuestion: {
-                    value: 'MM161'
+                    value: 'MM161',
+                    squash: true
+                },
+                pAnswer: {
+                    value: '1',
+                    squash: true
+                },
+                pActivityFilter: {
+                    value: '8',
+                    squash: true
+                },
+                pCompanyFilter: {
+                    value: '6',
+                    squash: true
                 }
             },
             views: {

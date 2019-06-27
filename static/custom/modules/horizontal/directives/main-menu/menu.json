@@ -15,12 +15,12 @@
             {
                 "id":"overview",
                 "name":"L101007",
-                "sref":"overview({pIndicator: 'esener2009'})",
+                "sref":"overview({pIndicator: '2009'})",
                 "accesskey":"C"
             },{
                 "id":"overview",
                 "name":"L101008",
-                "sref":"overview({pIndicator: 'esener2014'})",
+                "sref":"overview({pIndicator: '2014'})",
                 "accesskey":"C"
             }
         ]

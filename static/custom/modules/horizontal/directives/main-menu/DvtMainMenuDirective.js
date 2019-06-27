@@ -52,7 +52,8 @@ define(function (require) {
                     $scope.changeLanguage = function(){
                         if ($state.current.name !== undefined) {
                             $state.go($state.current.name, {
-                                pLanguage: $scope.pLanguage
+                                pLanguage: $scope.pLanguage,
+                                pLocale: $scope.pLanguage
                             }, {reload: true});
                         }
                     }

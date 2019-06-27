@@ -36,28 +36,72 @@
         ec.level,
         ec.father_id,
         ec.name_1_literal_id AS name_1,
-        ec.name_2_literal_id AS name_2,
-        ec.name_3_literal_id AS name_3,
-        ec.bottom_text_literal_id AS bottom_text,
-        ec.category_order,
-        ec.previous_id,
-        ec.next_id
-      FROM esener_category ec
+        IF(ec.category IS NOT NULL, i.id, NULL) as indicator_id
+      FROM esener_category ec, indicator i
       WHERE ec.year = ${pYear}
+      AND (ec.category IS NULL OR ec.category = i.name)
       ORDER BY ec.category_order ASC;
     </Query>
   </DataAccess>
 
-  <!-- Get all questions -->
+  <!-- Get data of a particular question -->
   <DataAccess access="public" connection="dvt_conn" id="getQuestionData" type="sql">
     <Cache duration="3600" enabled="true"/>
     <Columns/>
     <Parameters>
       <Parameter default="2009" name="pYear" type="Numeric" />
-      <Parameter default="2009" name="pTopic" type="Numeric" />
+      <Parameter default="MM161" name="pQuestion" type="String" />
+      <Parameter default="1" name="pAnswer" type="String" />
+      <Parameter default="16" name="pDataset" type="String" />
+      <Parameter default="activity-sector" name="pSectorSize" type="String" />
+      <Parameter default="8" name="pActivityFilter" type="String" />
+      <Parameter default="6" name="pCompanyFilter" type="String" />
     </Parameters>
     <Query>
+      SELECT DISTINCT(ec.id),
+      ec.category,
+      ec.level,
+      ec.father_id,
+      ec2.name_1_literal_id AS father_name,
+      ec.name_1_literal_id AS name_1,
+      ec.bottom_text_literal_id AS bottom_text,
+      i.id as indicator_id,
+      n.country_code as country_code,
+      n.literal_id as country_name,
+      (ROUND(v.value*100,2)) as value, sa.id as answer, 
+      IF(p.activity_sector_id IS NOT NULL, p.activity_sector_id, null) as activity_sector, 
+      IF(p.company_size_id IS NOT NULL, p.company_size_id, null) as company_size
+      FROM esener_category ec, esener_category ec2, indicator i, profile p, value v, split_answer sa, translation t, nuts n
+      WHERE ec.year = ${pYear}
+      AND ec.category = ${pQuestion}
+      AND ec.category = i.name
+      AND i.id = v.indicator_id
+      AND v.profile_id = p.id
+      AND p.nuts_id = n.id
+      AND p.answer_id = sa.id
+      AND sa.id = ${pAnswer}
+      AND v.dataset_id = ${pDataset}
+      AND sa.literal_id = t.literal_id
+      AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+      AND ec.father_id = ec2.id 
+      ORDER BY n.country_code ASC;
+    </Query>
+  </DataAccess>
 
+  <!-- Get possible answers of an indicator -->
+  <DataAccess access="public" connection="dvt_conn" id="getAnswersOfIndicatorData" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="MM161" name="pQuestion" type="String" />
+    </Parameters>
+    <Query>
+      SELECT eao.indicator_id, eao.answer_id, sa.literal_id
+      FROM esener_answer_order eao, split_answer sa, indicator i
+      WHERE i.name = ${pQuestion}
+      AND eao.indicator_id = i.id
+      AND eao.answer_id = sa.id
+      ORDER BY eao.order_position ASC
     </Query>
   </DataAccess>
 

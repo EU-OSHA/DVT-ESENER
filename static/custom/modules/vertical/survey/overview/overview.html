@@ -4,11 +4,11 @@
 <!--<section class="container-fluid">
     <div class="container submenu--block">
       <ul class="submenu--items--wrapper">
-        <li data-ng-class="{'active' : 'esener2009' == pIndicator }" class="submenu--item">
-          <a href ui-sref="overview({pIndicator: 'esener2009'})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'esener2009' == pIndicator }" >ESENER 2009</a>
+        <li data-ng-class="{'active' : '2009' == pIndicator }" class="submenu--item">
+          <a href ui-sref="overview({pIndicator: '2009'})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : '2009' == pIndicator }" >ESENER 2009</a>
         </li>
-        <li data-ng-class="{'active' : 'esener2014' == pIndicator }" class="submenu--item">
-          <a href ui-sref="overview({pIndicator: 'esener2014'})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'esener2014' == pIndicator }" >ESENER 2014</a>
+        <li data-ng-class="{'active' : '2014' == pIndicator }" class="submenu--item">
+          <a href ui-sref="overview({pIndicator: '2014'})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : '2014' == pIndicator }" >ESENER 2014</a>
         </li>
         <li data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
           <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : indicator.anchor == pIndicator }" >ESENER 2019</a>
@@ -37,7 +37,7 @@
 </section>-->
 
 <!-- General information 2009 -->
-<section class="container-fluid" ng-if="pIndicator == 'esener2009'">
+<section class="container-fluid" ng-if="pIndicator == '2009'">
     <div class="container grid-2">
         <div class="col-sm-6 col-xs-12  col-md-6 col-img">
             <a href=""> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2009.png"> </a>
@@ -50,7 +50,7 @@
 </section>
 
 <!-- Accordions section 2009 -->
-<section class="container-fluid" ng-if="pIndicator == 'esener2009'">
+<section class="container-fluid" ng-if="pIndicator == '2009'">
     <h1 class="text-center" data-ng-bind-html="i18n.L101011"></h1>
     <!-- First accordion -->
     <div class="container grid-2">
@@ -74,7 +74,7 @@
 </section>
 
 <!-- General information 2014 -->
-<section class="container-fluid" ng-if="pIndicator == 'esener2014'">
+<section class="container-fluid" ng-if="pIndicator == '2014'">
     <div class="container grid-2">
         <div class="col-sm-6 col-xs-12  col-md-6 col-img">
             <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
@@ -93,7 +93,7 @@
 </section>
 
 <!-- Accordions section 2014 -->
-<section class="container-fluid" ng-if="pIndicator == 'esener2014'">
+<section class="container-fluid" ng-if="pIndicator == '2014'">
     <h1 class="text-center" data-ng-bind="i18n.L101011"></h1>
     <!-- First accordion -->
     <div class="container grid-2">

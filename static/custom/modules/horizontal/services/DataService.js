@@ -16,7 +16,6 @@ define(function () {
 
         return {
 
-
             /**
              * @ngdoc method
              * @name dvt.configModule.DataService#getActivitySectorsSelect
@@ -90,161 +89,42 @@ define(function () {
              * Returns all questions with the level hierarchy
              */
             getAllQuestions: function (pYear) {
-                var url = configService.getEsenerDataPath() + "&dataAccessId=getAllQuestions" + "&parampYear=" + pYear;
+                var year = parseInt(pYear);
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getAllQuestions" + "&parampYear=" + year;
                 $log.debug('getAllQuestions url:' + url);
                 return promise(url);
             },
 
             /**
              * @ngdoc method
-             * @name dvt.configModule.DataService#getAllCountries
+             * @name dvt.configModule.DataService#getQuestionData
              * @methodOf dvt.configModule.DataService
              * @description
-             * My Description rules
+             * Returns data of a particular question
              */
-            getCountriesRegion: function () {
-                var url = configService.getPilotDataPath() + "&dataAccessId=getCountriesRegion";
-                $log.debug('getCountriesRegion url:' + url);
+            getQuestionData: function (pYear, pQuestion, pAnswer, pDataset, pSectorSize, pActivityFilter, pCompanyFilter) {
+                var year = parseInt(pYear);
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getQuestionData" + "&parampYear=" + year + "&parampQuestion=" + pQuestion 
+                + "&parampAnswer=" + pAnswer + "&parampDataset=" + pDataset + "&parampSectorSize=" + pSectorSize + "&parampActivityFilter=" + pActivityFilter
+                + "&parampCompanyFilter=" + pCompanyFilter;
+                $log.debug('getQuestionData url:' + url);
                 return promise(url);
             },
 
             /**
              * @ngdoc method
-             * @name dvt.configModule.DataService#getGlossaryTerms
+             * @name dvt.configModule.DataService#getAnswersOfIndicatorData
              * @methodOf dvt.configModule.DataService
              * @description
-             * Country Approaches Tab1 Group Description Policies
+             * Returns split answers of an indicator
              */
-            getGlossaryTerms: function(term) {
-                var term = !term ? ".*" : ".*" + term;
-
-                var url = configService.getPilotDataPath() + "&dataAccessId=getGlossaryTerms" + "&parampTerm=" + term;
-                $log.debug('getGlossaryTerms url: ' + url);
+            getAnswersOfIndicatorData: function (pQuestion) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getAnswersOfIndicatorData" + "&parampQuestion=" + pQuestion;
+                $log.debug('getAnswersOfIndicatorData url:' + url);
                 return promise(url);
             },
 
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getGlossaryTermsTitle
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Country Approaches Tab1 Group Description Policies
-             */
-            getGlossaryTermsTitle: function(term) {
-                var term = !term ? ".*" : ".*" + term;
-
-                var url = configService.getPilotDataPath() + "&dataAccessId=getGlossaryTermsTitle" + "&parampTerm=" + term;
-                $log.debug('getGlossaryTermsTitle url: ' + url);
-                return promise(url);
-            },
-
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getAllCountries
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * My Description rules
-             */
-            getAllCountries: function () {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getAllCountries";
-                $log.debug('getCountryList url:' + url);
-                return promise(url);
-            },
-
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getStrategiesCountryList
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * My Description rules
-             */
-            getStrategiesCountryList: function () {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getStrategiesCountryList";
-                $log.debug('getStrategiesCountryList url:' + url);
-                return promise(url);
-            },
-
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getStrategiesCountryCode
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Retrieve from the Database the Country Codes of the countries with Strategies Data
-             */
-            getStrategiesCountryCode: function () {
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getStrategiesCountryCode";
-                $log.debug('getStrategiesCountryCode url:' + url);
-                return promise(url);
-            },
-
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getMatrixCountries
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * My Description rules
-             */
-            getMatrixCountries: function () {
-                //var url = configService.getBarometerDataPath() + "&dataAccessId=getMatrixCountries";
-                var url = configService.getInfosystemDataPath() + "&dataAccessId=getMatrixCountries";
-                $log.debug('getMatrixCountries url:' + url);
-                return promise(url);
-            },
-
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getSearchListChallenges
-             * @param {string} policy text to match with policy name o policy description
-             * @param {string} classifications classifications filters
-             * @param {string} countries countries filters
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Policies list data accesss services
-             *
-             */
-            getSearchListChallenges: function ( challenges, countries) {
-                var block1,block2,block3,block4;
-
-                if (challenges.filter1==1){
-                  block1 = 1;
-                }else {
-                  block1 = 2;
-                }
-                if (challenges.filter2==1){
-                  block2 = 1;
-                }else {
-                  block2 = 2;
-                }
-                if (challenges.filter3==1){
-                  block3 = 1;
-                }else {
-                  block3 = 2;
-                }
-
-
-                var block4 = countries.length <= 0 ? ".*" : countries.join("|");
-
-                var url = configService.getBarometerDataPath() + "&dataAccessId=getSearchListChallenges" + "&paramchallenge1=" + block1 +"&paramchallenge2=" + block2 +"&paramchallenge3=" + block3 + "&paramcountries=" + block4;
-
-                $log.debug('getSearchListChallenges url: ' + url);
-                return promise(url);
-            },
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getAllMatrix
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * My Description rules
-             */
-            getAllMatrix: function () {
-                //var url = configService.getBarometerDataPath() + "&dataAccessId=getAllMatrix";
-                var url = configService.getInfosystemDataPath() + "&dataAccessId=getAllMatrix";
-                $log.debug('getAllMatrix url:' + url);
-
-                return promise(url);
-            },
-
-            /* HOME */
+            /***************************************** HOME *******************************************/
 
             getStrategiesCountries: function(){
                 var url = configService.getBarometerDataPath() + "&dataAccessId=getStrategiesCountries";
@@ -267,9 +147,9 @@ define(function () {
                 return promise(url);
             },
 
-            /* END HOME */
+            /**************************************** END HOME *********************************************/
 
-            /* OSH AUTHORITIES */
+            /*********************************** OSH AUTHORITIES *****************************************/
 
             /**
              * @ngdoc method
@@ -401,7 +281,7 @@ define(function () {
                 return promise(url);
             },
 
-            /* END OSH AUTHORITIES*/
+            /******************************* END OSH AUTHORITIES**********************************/
 
 
             /********************** ECONOMIC AND SECTOR PROFILES ******************************/

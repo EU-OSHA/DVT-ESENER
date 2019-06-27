@@ -18,29 +18,88 @@
 
         <!-- Question Hierarchy -->
         <div>
+            <!-- First level -->
             <ul data-ng-repeat="question in questions">
                 <li data-ng-if="question.father_id == null">
-                    <span><a href data-ng-bind="i18n['L'+question.name_1]" ng-click="openAccordion($index)"></a></span>
+                    <span><a href data-ng-bind="i18n['L'+question.name_1]" data-ng-click="openAccordion($index)" data-ng-class="{'open': pTopic == question.anchor}"></a>V</span>
+                    <!-- Second level -->
                     <ul data-ng-repeat="questionLevel2 in levelQuestions(2)">
                         <li data-ng-if="questionLevel2.level == 2 && questionLevel2.father_id == question.id">
-                            <span data-ng-bind="i18n['L'+questionLevel2.name_1]"></span>
+                            <span>
+                                <a data-ng-bind="i18n['L'+questionLevel2.name_1]" href data-ng-click="changeToQuestion(questionLevel2)" data-ng-class="{'selected': questionLevel2.id == selectedQuestionValues[0].id}"></a>
+                                <span data-ng-if="questionLevel2.category == null">V</span>
+                            </span>
+                            <!-- Third level -->
                             <ul data-ng-repeat="questionLevel3 in levelQuestions(3)">
                                 <li data-ng-if="questionLevel3.level == 3 && questionLevel3.father_id == questionLevel2.id">
-                                    <span data-ng-bind="i18n['L'+questionLevel3.name_1]"></span>
+                                    <span>
+                                        <a data-ng-bind="i18n['L'+questionLevel3.name_1]" href data-ng-click="changeToQuestion(questionLevel3)" data-ng-class="{'selected': questionLevel3.id == selectedQuestionValues[0].id}"></a>
+                                    </span>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                 </li>
             </ul>
+            <ul>
+                <li id="surveyMenuItem" class="active-trail finalquestion"><a href="/DVS/import/questionnaire/{{pLanguage}}_QUESTIONNAIRE.rar" target="_blank" data-ng-bind="i18n.L100625"></a></li>
+            </ul>
         </div>
-
     </div>
+
     <!-- Main section -->
     <div class="col-sm-8 col-xs-12  col-md-8 col-content">
 
         <selector indicator="{{pQuestion}}" ng-model="pQuestion"></selector>
-        
+
+        <!-- Data content -->
+        <div>
+            <!--<p ng-repeat="value in selectedQuestionValues">
+                <span data-ng-bind="value.country_code"></span>: <span data-ng-bind="value.answer"></span>
+            </p>-->
+            <section class="survey--map--block">
+                <div class="map--block center-text container">
+                  <dvt-map ng-cloak
+                    country-key="EU" promise="dataPromises"
+                    country="EU" use-viewbox="true" x="0" y="0"
+                    css-class="dvt--map--block" is-colored="1" hover="true"
+                    group-list="groupList"
+                    group-color="groupColor"
+                    data="data">
+                  </dvt-map> 
+                </div>
+                <!--<div class="map--gauss--block container">
+                  <dvt-bar-chart
+                    data-ng-cloak
+                    query="getGaussChartValues" cda="{{::cdaGenericInformation }}"
+                    width="200" height="200" type="lines"
+                    orientation="vertical" axis-fixed-min="0"
+                    listen-to="[minMaxValues.min_value, minMaxValues.max_value, minMaxValues.range_value]"
+                    axis-fixed-max="20" step="{{step.chart1}}"
+                    params="[['pDataset', datasetEurostat], ['pIndicator',pIndicator], ['pSubIndicator',pSubIndicator], 
+                    ['pMinValue', minMaxValues.min_value], ['pMaxValue', minMaxValues.max_value], ['pRange', minMaxValues.range_value]]"
+                    color-role="category" colors="[stories[0].color1]" id="5"
+                    axis-label-font="14px 'OpenSans-bold'"
+                    plots="stories[0].plots"
+                    values-visible="false"
+                    values-font="14px 'OpenSans-bold'"
+                    hoverable="false"
+                    ortho-axis-grid="false"
+                    ortho-axis-visible="false"
+                    dimensions="stories[0].dimensions"
+                    multiple-label-colors="true"
+                    base-axis-label-text-baseline="top"
+                    axis-color="true"
+                    panel-color="transparent"
+                    legend="false"
+                    is-maximized="true"
+                    tooltip-enabled="false"
+                    clickable="false" 
+                    base-axis-size="25"
+                  ></dvt-bar-chart> 
+                </div>-->
+            </section>
+        </div>
     </div>
 </section>
 
