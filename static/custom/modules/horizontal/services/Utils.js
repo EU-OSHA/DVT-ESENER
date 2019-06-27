@@ -255,32 +255,36 @@ define(function (require) {
                 return colors.chartSecondaryColor;
              },
 
-            getRangeColors: function(value, minValue, maxValue, range, country) {
+            getRangeColors: function(values, minValue, maxValue, range, answerId) {
                 /* value < minValue + range ||  value > minValue + range && value < maxValue - range*2 || 
                 value > minValue + range*2 && value < maxValue - range || value > maxValue - range
                 */
+                var value = 0;
 
-                if(country == 'IS' || country == 'NO' || country == 'CH'){ //Island, Norway and Switzerland
-                    if(value <= minValue+range){
-                        return 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes-1.png)';
-                    }else if((value > minValue+range) && (value <= maxValue-range*2)){
-                        return 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes-2.png)';
-                    }else if((value > minValue+range*2) && (value < maxValue-range)){
-                        return 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes-3.png)';
-                    }else if(value >= maxValue-range){
-                        return 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.png)';
-                    }
-                }else{
-                    if(value <= minValue+range){
-                        return colors.rangeColors.range1;
-                    }else if((value > minValue+range) && (value <= maxValue-range*2)){
-                        return colors.rangeColors.range2;
-                    }else if((value > minValue+range*2) && (value < maxValue-range)){
-                        return colors.rangeColors.range3;
-                    }else if(value >= maxValue-range){
-                        return colors.rangeColors.range4;
+                for(index in values){
+                    if(values[index].id = answerId){
+                        value = values[index].value;
+                        if(value <= minValue+range){
+                            return colors.rangeColors.range1;
+                        }else if((value > minValue+range) && (value <= maxValue-range*2)){
+                            return colors.rangeColors.range2;
+                        }else if((value > minValue+range*2) && (value < maxValue-range)){
+                            return colors.rangeColors.range3;
+                        }else if(value >= maxValue-range){
+                            return colors.rangeColors.range4;
+                        }
                     }
                 }
+
+                /*if(values <= minValue+range){
+                    return colors.rangeColors.range1;
+                }else if((values > minValue+range) && (values <= maxValue-range*2)){
+                    return colors.rangeColors.range2;
+                }else if((values > minValue+range*2) && (values < maxValue-range)){
+                    return colors.rangeColors.range3;
+                }else if(values >= maxValue-range){
+                    return colors.rangeColors.range4;
+                }*/
             },
 
             getOpacityCountries: function(value, minValue, maxValue, range, country) {

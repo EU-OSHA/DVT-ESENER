@@ -14,6 +14,7 @@ define(function (require) {
     function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, DetailPageService, dvtUtils,$rootScope) {
         //$scope.pLanguage = $stateParams.pLanguage;
         $scope.pLocale = $stateParams.pLocale;
+        $scope.cda = configService.getEsenerCda();
 
         // Datasets, 
         $scope.datasetList = configService.getDatasets();
@@ -180,12 +181,15 @@ define(function (require) {
         $scope.searchText = '';
 
         /* Map parameters */
-        $scope.data = [];
+        $scope.data = {
+            questionData: []
+        };
         $scope.promises = {
             promiseShape: mapProvider.getEuropeShape()
         };
         $scope.dataPromises = [
           mapProvider.getEuropeShape(),
+          dataService.getMapData()
           /*dataService.getMedianAgeData($scope.datasetEurostat),
           dataService.getAgeingWorkersData($scope.datasetEurostat),
           dataService.getTotalEmploymentData($scope.datasetEurostat),
@@ -193,6 +197,44 @@ define(function (require) {
           dataService.getFemaleEmploymentData($scope.datasetEurostat)*/
         ];
 
+        $scope.minMaxValues = {
+          minValue: 0,
+          maxValue: 100,
+          range: 25
+        };
+
+        $scope.getMinMaxValues = function()
+        {
+          var data;
+
+          data = $scope.data.questionData;
+
+          var minValue = 100;
+          var maxValue = 0;
+
+          if (data != undefined)
+          {
+            for (var index in data) 
+            {
+              if(data[index].value < minValue)
+              {
+                  minValue = data[index].value;
+              }
+
+              if(data[index].value > maxValue)
+              {
+                  maxValue = data[index].value;
+              }
+            }
+
+            var range = (maxValue - minValue) / 4;
+            $scope.minMaxValues = {min_value: minValue,max_value: maxValue,range_value: range}; 
+          }
+          else
+          {
+            console.log("The indicator selected is not known");
+          }     
+        }
 
         /*********************************************** DATA LOAD **********************************************/
             
@@ -250,7 +292,7 @@ define(function (require) {
                     });
                 });
 
-                $log.warn($scope.selectedQuestionValues);
+                //$log.warn($scope.selectedQuestionValues);
 
                 var topLevel = angular.element('a.open').text();
                 if($scope.selectedQuestionValues[0].level == 2){

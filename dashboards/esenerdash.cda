@@ -68,7 +68,7 @@
       i.id as indicator_id,
       n.country_code as country_code,
       n.literal_id as country_name,
-      (ROUND(v.value*100,2)) as value, sa.id as answer, 
+      (ROUND(v.value*100,1)) as value, sa.id as answer, 
       IF(p.activity_sector_id IS NOT NULL, p.activity_sector_id, null) as activity_sector, 
       IF(p.company_size_id IS NOT NULL, p.company_size_id, null) as company_size
       FROM esener_category ec, esener_category ec2, indicator i, profile p, value v, split_answer sa, translation t, nuts n
@@ -85,6 +85,43 @@
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
       AND ec.father_id = ec2.id 
       ORDER BY n.country_code ASC;
+    </Query>
+  </DataAccess>
+
+  <!-- Get data of a particular question -->
+  <DataAccess access="public" connection="dvt_conn" id="getMapData" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="2009" name="pYear" type="Numeric" />
+      <Parameter default="MM161" name="pQuestion" type="String" />
+      <Parameter default="1" name="pAnswer" type="String" />
+      <Parameter default="16" name="pDataset" type="String" />
+      <Parameter default="activity-sector" name="pSectorSize" type="String" />
+      <Parameter default="8" name="pActivityFilter" type="String" />
+      <Parameter default="6" name="pCompanyFilter" type="String" />
+    </Parameters>
+    <Query>
+      SELECT DISTINCT(CONCAT(n.country_code, '-', sa.id)) as id,
+      n.country_code as country_code,
+      n.literal_id as country,
+      (ROUND(v.value*100,1)) as value, 
+      sa.id as answer_id,
+      sa.literal_id as answer
+      FROM esener_category ec, indicator i, profile p, value v, split_answer sa, translation t, nuts n
+      WHERE ec.year = 2009
+      AND ec.category = 'MM150_1'
+      AND ec.category = i.name
+      AND i.id = v.indicator_id
+      AND v.profile_id = p.id
+      AND p.nuts_id = n.id
+      AND p.answer_id = sa.id
+      AND v.dataset_id = 16
+      AND sa.literal_id = t.literal_id
+      AND t.language = 'EN'
+      And n.country_code NOT IN ('EU27')
+      AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = 8 AND p.company_size_id IS NULL) ELSE (p.company_size_id = 6 AND p.activity_sector_id IS NULL) END
+      ORDER BY id ASC;
     </Query>
   </DataAccess>
 

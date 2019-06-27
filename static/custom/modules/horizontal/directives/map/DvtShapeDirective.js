@@ -28,7 +28,7 @@ define(function (require) {
         return sequence++;
     }
 
-    function customFunction(scope, attributes, data, $log, mapProvider, dvtUtils, map, indicator, subIndicator) {
+    function customFunction(scope, attributes, data, $log, mapProvider, dvtUtils, map, indicator, subIndicator, pAnswer) {
 
         /* SVG Raphael function */
         Raphael.fn.map = function () {
@@ -69,24 +69,35 @@ define(function (require) {
 
             var clicked = scope.clickAction || undefined;
 
-            function getMinMaxValue(data){
+            function getMinMaxValue(data, actualAnswer){
                 var minValue = 100;
                 var maxValue = 0;
 
-                for (var index in data) {
-                    if(data[index].value < minValue){
-                        minValue = data[index].value;
-                    }
+                var answerId = 0;
+                var answerValue = 0;
 
-                    if(data[index].value > maxValue){
-                        maxValue = data[index].value;
+                for (var index in data) {
+                    for(var answer in data[index].answers){
+                        answerId = data[index].answers[answer].id;
+                        answerValue = data[index].answers[answer].value;
+                        if(answerId == actualAnswer){
+                            if(answerValue < minValue){
+                                minValue = answerValue;
+                            }
+
+                            if(answerValue > maxValue){
+                                maxValue = answerValue;
+                            }
+                        }
                     }
+                    
                 }
 
                 minValue = minValue;
                 maxValue = maxValue;
 
                 var range = (maxValue - minValue) / 4;
+
                 return [minValue, maxValue, range];
             };
 
@@ -126,11 +137,12 @@ define(function (require) {
 
                 textObj.id = pathObj.id;
                 textObj.label = pathObj.label;
-                textObj.medianAge = path.medianAge;
-                textObj.ageingWorkers = path.ageingWorkers;
+                textObj.questionData = path.questionData;
+                textObj.answers = path.answers;
+                /*textObj.ageingWorkers = path.ageingWorkers;
                 textObj.eRateTotal = path.eRateTotal;
                 textObj.eRateMale = path.eRateMale;
-                textObj.eRateFemale = path.eRateFemale;
+                textObj.eRateFemale = path.eRateFemale;*/
                 if (noDataCountries.indexOf(pathObj.id) < 0) {
                     textObj.click(clicked);
                     $log.debug("Country ID: " + pathObj.id);
@@ -151,19 +163,23 @@ define(function (require) {
                     angular.element(elementSVG).append('<div class="dvt-map-tooltip"></div>');
                     angular.element('.dvt-map-tooltip').append('<p class="country-name">'
                         +'<ul>'
+                        +'<li class="data0"></li>'
                         +'<li class="data1"></li>'
                         +'<li class="data2"></li>'
-                        +'<li class="data5"></li>'
-                        +'<li class="data4"></li>'
                         +'<li class="data3"></li>'
+                        +'<li class="data4"></li>'
                         +'</ul>'
                         +'</p>');
                     angular.element('.dvt-map-tooltip .country-name').text( this.label );
-                    angular.element('.dvt-map-tooltip .data1').html( '<label>' + i18nLiterals['L20615'] +'</label>'+this.medianAge+' '+i18nLiterals['L20620'] );
-                    angular.element('.dvt-map-tooltip .data2').html( '<label>' + i18nLiterals['L20616'] +'</label>'+this.ageingWorkers+' %' );
-                    angular.element('.dvt-map-tooltip .data3').html( '<label>' + i18nLiterals['L20617'] +'</label>'+this.eRateTotal+' %' );
-                    angular.element('.dvt-map-tooltip .data4').html( '<label>' + i18nLiterals['L20618'] +'</label>'+this.eRateMale+' %' );
-                    angular.element('.dvt-map-tooltip .data5').html( '<label>' + i18nLiterals['L20619'] +'</label>'+this.eRateFemale+' %' );
+
+                    for(index in this.answers){
+                        var value = (this.answers[index].value != null)?this.answers[index].value:0;
+                        if(this.answers[index].id == scope.data.pAnswer){
+                            angular.element('.dvt-map-tooltip .data'+index).html( '<span><label><u>' + i18nLiterals['L'+this.answers[index].literal_id] +': </u></label><u>'+value+' </u>'+i18nLiterals['L283'] +'</span>');
+                        }else{
+                            angular.element('.dvt-map-tooltip .data'+index).html( '<label>' + i18nLiterals['L'+this.answers[index].literal_id] +': </label>'+value+' '+i18nLiterals['L283'] );
+                        }
+                    }
 
                     var widthTooltip = angular.element('.dvt-map-tooltip').width();
                     var heightTooltip = angular.element('.dvt-map-tooltip').height();
@@ -201,29 +217,20 @@ define(function (require) {
             var paths = [];
             var noDataCountries = [];
 
-            if (scope.mapData != undefined && scope.mapData.indicator != "" && Object.keys(scope.data.medianAge).length == 0)
+            if (scope.mapData != undefined && scope.mapData.indicator != "" && Object.keys(scope.data.questionData).length == 0)
             {
                 scope.data = scope.mapData;
             }
 
             scope.countryDataToShow = [];
 
-            if(scope.data.indicator == 'median-age') {
-                scope.countryDataToShow = scope.data.medianAge;
-            } else if(scope.data.indicator == 'employment-rate' && scope.data.subIndicator == 'ageing-workers'){
-                scope.countryDataToShow = scope.data.ageingWorkers;
-            } else if(scope.data.indicator == 'employment-rate' && scope.data.subIndicator == 'Total'){
-                scope.countryDataToShow = scope.data.totalEmployment;
-            } else if(scope.data.indicator == 'employment-rate' && scope.data.subIndicator == 'Male'){
-                scope.countryDataToShow = scope.data.maleEmployment;
-            } else if(scope.data.indicator == 'employment-rate' && scope.data.subIndicator == 'Female'){
-                scope.countryDataToShow = scope.data.femaleEmployment;
-            }
+            //if(scope.data.indicator == 'median-age') {
+            scope.countryDataToShow = scope.data.questionData;
 
-            var minMaxValues = getMinMaxValue(scope.countryDataToShow);
+            //Second parameter, answer selected to be shown in map as colors
+            var minMaxValues = getMinMaxValue(scope.countryDataToShow, scope.data.pAnswer /*1*/);
             
             for (var index in map.shapes) {
-
                 var shape = map.shapes[index];
                 var cName = map.names[index];
                 var path = this.path(shape);
@@ -233,18 +240,13 @@ define(function (require) {
                 path.id = index;
                 var isInGroup = false;
 
+                var answer = 1; // answer selected to be shown
                 var countryInfo = scope.countryDataToShow[index];
-
-                //if (!!scope.groupId)
-                //    isInGroup = scope.getTooltipGroup(index).group == scope.groupId[0];
 
                 if(countryInfo != undefined){
                     isInGroup = true; 
-                    path.medianAge = scope.data.medianAge[index].value;
-                    path.ageingWorkers = scope.data.ageingWorkers[index].value;
-                    path.eRateTotal = scope.data.totalEmployment[index].value;
-                    path.eRateMale = scope.data.maleEmployment[index].value;
-                    path.eRateFemale = scope.data.femaleEmployment[index].value;
+                    path.questionData = scope.data.questionData[index].value;
+                    path.answers = scope.data.questionData[index].answers;
 
                     var labeltext = labelPath(path, index);
                 }else{
@@ -252,22 +254,20 @@ define(function (require) {
                 }
 
                 if (isInGroup && isColoredMap) {
-                    if(mapProvider.nonEUCountry(index)){
+                    /*if(mapProvider.nonEUCountry(index)){
                         path.attr({
                             stroke: strokeShapeColor,
-                            //fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.svg)',
                             fill: 'url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-barometer/static/custom/img/diagonal-stripes.png)',
                             'fill-opacity': dvtUtils.getOpacityCountries(countryInfo.value, minMaxValues[0], minMaxValues[1], minMaxValues[2], index),
-                            //fill: dvtUtils.getRangeColors( countryInfo.value, minMaxValues[0], minMaxValues[1], minMaxValues[2], index),
                             "stroke-opacity": 1.0
                         }); 
-                    }else{
+                    }else{*/
                        path.attr({
                             stroke: strokeShapeColor,
-                            fill: dvtUtils.getRangeColors( countryInfo.value, minMaxValues[0], minMaxValues[1], minMaxValues[2], index),
+                            fill: dvtUtils.getRangeColors( countryInfo.answers, minMaxValues[0], minMaxValues[1], minMaxValues[2], scope.data.pAnswer /*1*/), //Last parameter Answer Id selected
                             "stroke-opacity": 1.0
                         });
-                    }
+                    //}
                     
                     path.group = 1;
                     if (cName === sCountry) {
@@ -312,7 +312,6 @@ define(function (require) {
 
 
                 /*shape click event control*/
-                //if (attributes.clickable &&attributes.clickable == "1" && noEU.indexOf(path.id) < 0) {
                 if (attributes.clickable &&attributes.clickable == "1" && noDataCountries.indexOf(path.id) < 0) {
                     path.click(clicked);
                     path.attr({
@@ -357,7 +356,7 @@ define(function (require) {
         svg.removeAttribute("width");
         if(!configService.isIE())svg.removeAttribute("height");
 
-        svg.setAttribute("style", "width:100%");
+        svg.setAttribute("style", "width:65%");
 
         paper.canvas.setAttribute('preserveAspectRatio', 'xMaxYMin'); // always scale to fill container, preserving aspect ratio.
 
@@ -392,23 +391,10 @@ define(function (require) {
             controller: ['$scope', 'mapProvider', 'dataService', '$attrs','$state', function ($scope, mapProvider, dataService, $attrs,$state) {
                 state=$state.current.name;
 
-                /*$scope.getTooltipGroup = function (countryKey) {
-                    var group = $scope.groupList[countryKey];
-                    if (!!group)
-                        return group;
-                    else
-                        return "No group"
-                };*/
-
                 $scope.promises = {};
                 $scope.mapData = {
-                    medianAge: [], // 37
-                    ageingWorkers: [], // 38
-                    totalEmployment: [], // 39, 1 total
-                    maleEmployment: [], // 39, 2 male
-                    femaleEmployment: [], // 39, 3 female
-                    indicator: "",
-                    subIndicator: ""
+                    questionData: [],
+                    pAnswer: ''
                 };
 
                 if ($rootScope.data != undefined)
@@ -418,54 +404,22 @@ define(function (require) {
 
                 if (!!$scope.promise && $rootScope.data == undefined)
                 {
-                    Promise.all([$scope.promise[1], $scope.promise[2], $scope.promise[3], $scope.promise[4], $scope.promise[5]]).then(function(res)
+                    Promise.all([$scope.promise[1]]).then(function(res)
                     {
-                        var indicator = $stateParams.pIndicator;
-                        var subIndicator = $stateParams.pSubIndicator;
+                        var pAnswer = $stateParams.pAnswer;
 
                         var row = {};
                         res[0].data.resultset.map(function (elem) {
                             row = elem;
-                            if(!$scope.mapData.medianAge[row[0]])
-                                $scope.mapData.medianAge[row[0]]={};
-                            $scope.mapData.medianAge[row[0]].country_name = row[1];
-                            $scope.mapData.medianAge[row[0]].value = row[2];
+                            if(!$scope.mapData.questionData[row[1]]){
+                                $scope.mapData.questionData[row[1]]={};
+                                $scope.mapData.questionData[row[1]].answers = [];
+                            }
+                            $scope.mapData.questionData[row[1]].country_code = row[1];
+                            $scope.mapData.questionData[row[1]].country_name = row[2];
                         });
-                        var row = {};
-                        res[1].data.resultset.map(function (elem) {
-                            row = elem;
-                            if(!$scope.mapData.ageingWorkers[row[0]])
-                                $scope.mapData.ageingWorkers[row[0]]={};
-                            $scope.mapData.ageingWorkers[row[0]].country_name = row[1];
-                            $scope.mapData.ageingWorkers[row[0]].value = row[2];
-                        });
-                        var row = {};
-                        res[2].data.resultset.map(function (elem) {
-                            row = elem;
-                            if(!$scope.mapData.totalEmployment[row[0]])
-                                $scope.mapData.totalEmployment[row[0]]={};
-                            $scope.mapData.totalEmployment[row[0]].country_name = row[1];
-                            $scope.mapData.totalEmployment[row[0]].value = row[2];
-                        });
-                        var row = {};
-                        res[3].data.resultset.map(function (elem) {
-                            row = elem;
-                            if(!$scope.mapData.maleEmployment[row[0]])
-                                $scope.mapData.maleEmployment[row[0]]={};
-                            $scope.mapData.maleEmployment[row[0]].country_name = row[1];
-                            $scope.mapData.maleEmployment[row[0]].value = row[2];
-                        });
-                        var row = {};
-                        res[4].data.resultset.map(function (elem) {
-                            row = elem;
-                            if(!$scope.mapData.femaleEmployment[row[0]])
-                                $scope.mapData.femaleEmployment[row[0]]={};
-                            $scope.mapData.femaleEmployment[row[0]].country_name = row[1];
-                            $scope.mapData.femaleEmployment[row[0]].value = row[2];
-                        });
-
-                        $scope.mapData.indicator = indicator;
-                        $scope.mapData.subIndicator = subIndicator;
+                        
+                        $scope.mapData.pAnswer = pAnswer;
 
                         $rootScope.data = $scope.mapData;
 
@@ -490,49 +444,26 @@ define(function (require) {
 
                     if ($rootScope.data == undefined)
                     {
-                        Promise.all([scope.promise[0], scope.promise[1], scope.promise[2], scope.promise[3], scope.promise[4], scope.promise[5]]).then(function(res) {
+                        Promise.all([scope.promise[0], scope.promise[1]]).then(function(res) {
                             
                             var row = {};
                             res[1].data.resultset.map(function (elem) {
                                 row = elem;
-                                if(!scope.mapData.medianAge[row[0]])
-                                    scope.mapData.medianAge[row[0]]={};
-                                scope.mapData.medianAge[row[0]].country_name = row[1];
-                                scope.mapData.medianAge[row[0]].value = row[2];
-                            });
-                            var row = {};
-                            res[2].data.resultset.map(function (elem) {
-                                row = elem;
-                                if(!scope.mapData.ageingWorkers[row[0]])
-                                    scope.mapData.ageingWorkers[row[0]]={};
-                                scope.mapData.ageingWorkers[row[0]].country_name = row[1];
-                                scope.mapData.ageingWorkers[row[0]].value = row[2];
-                            });
-                            var row = {};
-                            res[3].data.resultset.map(function (elem) {
-                                row = elem;
-                                if(!scope.mapData.totalEmployment[row[0]])
-                                    scope.mapData.totalEmployment[row[0]]={};
-                                scope.mapData.totalEmployment[row[0]].country_name = row[1];
-                                scope.mapData.totalEmployment[row[0]].value = row[2];
-                            });
-                            var row = {};
-                            res[4].data.resultset.map(function (elem) {
-                                row = elem;
-                                if(!scope.mapData.maleEmployment[row[0]])
-                                    scope.mapData.maleEmployment[row[0]]={};
-                                scope.mapData.maleEmployment[row[0]].country_name = row[1];
-                                scope.mapData.maleEmployment[row[0]].value = row[2];
-                            });
-                            var row = {};
-                            res[5].data.resultset.map(function (elem) {
-                                row = elem;
-                                if(!scope.mapData.femaleEmployment[row[0]])
-                                    scope.mapData.femaleEmployment[row[0]]={};
-                                scope.mapData.femaleEmployment[row[0]].country_name = row[1];
-                                scope.mapData.femaleEmployment[row[0]].value = row[2];
-                            });
+                                if(!scope.mapData.questionData[row[1]]){
+                                    scope.mapData.questionData[row[1]]={};
+                                    $scope.mapData.questionData[row[1]].answers = [];
+                                }else{
 
+                                }
+                                scope.mapData.questionData[row[1]].answers.push({
+                                    id: row[4],
+                                    literal_id: row[5],
+                                    value: row[3]
+                                });
+                                scope.mapData.questionData[row[1]].country_code = row[1];
+                                scope.mapData.questionData[row[1]].country_name = row[2];
+                            });
+                            
                             $rootScope.data = scope.mapData;
 
                             scope.data = scope.mapData;
