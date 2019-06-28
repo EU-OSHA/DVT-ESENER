@@ -107,7 +107,8 @@
       n.literal_id as country,
       (ROUND(v.value*100,1)) as value, 
       sa.id as answer_id,
-      sa.literal_id as answer
+      sa.literal_id as answer,
+      i.id as indicator 
       FROM esener_category ec, indicator i, profile p, value v, split_answer sa, translation t, nuts n
       WHERE ec.year = 2009
       AND ec.category = 'MM150_1'
@@ -122,6 +123,85 @@
       And n.country_code NOT IN ('EU27')
       AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = 8 AND p.company_size_id IS NULL) ELSE (p.company_size_id = 6 AND p.activity_sector_id IS NULL) END
       ORDER BY id ASC;
+    </Query>
+  </DataAccess>
+
+  <!-- get min and max value of selected indicators -->
+  <DataAccess access="public" connection="dvt_conn" id="getGaussChartValues" type="sql">
+    <Cache duration="3600" enabled="true" />
+    <Columns />
+    <Parameters>
+      <Parameter default="16" name="pDataset" type="Numeric" />
+      <Parameter default="136" name="pIndicator" type="Numeric" />
+      <Parameter default="0" name="pMinValue" type="Numeric" />
+      <Parameter default="0" name="pMaxValue" type="Numeric" />
+      <Parameter default="0" name="pRange" type="Numeric" />
+      <Parameter default="activity-sector" name="pSectorSize" type="String" />
+      <Parameter default="8" name="pActivityFilter" type="String" />
+      <Parameter default="6" name="pCompanyFilter" type="String" />
+      <Parameter default="1" name="pAnswer" type="String" />
+    </Parameters>
+    <Query>
+      (SELECT CONCAT(ROUND(12.90, 1), '%') as Distribution, COUNT(ROUND(v.value*100,2)) as Total
+        FROM nuts n, profile p, value v, split_answer sa
+        WHERE n.id = p.nuts_id 
+        AND v.profile_id = p.id 
+        AND p.answer_id = sa.id
+        AND sa.id = ${pAnswer}
+        AND v.dataset_id = ${pDataset}
+        AND v.indicator_id = ${pIndicator}
+        AND ROUND(v.value*100,2) = 12.90
+        AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+        ORDER BY v.value ASC
+      )UNION(
+        SELECT CONCAT(ROUND(12.90+21.125,1), '%'), COUNT(ROUND(v.value*100,2))
+        FROM nuts n, profile p, value v, split_answer sa
+        WHERE n.id = p.nuts_id 
+        AND v.profile_id = p.id
+        AND p.answer_id = sa.id
+        AND sa.id = ${pAnswer}
+        AND v.dataset_id = ${pDataset}
+        AND v.indicator_id = ${pIndicator}
+        AND (ROUND(v.value*100,2) BETWEEN (12.90 + 0.01) AND (12.90 + 21.125))
+        AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+        ORDER BY v.value ASC
+      )UNION(
+        SELECT CONCAT(ROUND(12.90+21.125*2, 1), '%'), COUNT(ROUND(v.value*100,2))
+        FROM nuts n, profile p, value v, split_answer sa
+        WHERE n.id = p.nuts_id 
+        AND v.profile_id = p.id 
+        AND p.answer_id = sa.id
+        AND sa.id = ${pAnswer}
+        AND v.dataset_id = ${pDataset}
+        AND v.indicator_id = ${pIndicator}
+        AND ROUND(v.value*100, 2) BETWEEN ((12.90+21.125) + 0.01) AND (12.90+21.125*2)
+        AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+        ORDER BY v.value ASC
+      )UNION(
+        SELECT CONCAT(ROUND(97.43 - 21.125,1), '%'), COUNT(ROUND(v.value*100,2))
+        FROM nuts n, profile p, value v, split_answer sa
+        WHERE n.id = p.nuts_id 
+        AND v.profile_id = p.id 
+        AND p.answer_id = sa.id
+        AND sa.id = ${pAnswer}
+        AND v.dataset_id = ${pDataset}
+        AND v.indicator_id = ${pIndicator}
+        AND ROUND(v.value*100, 2) BETWEEN ((12.90+21.125*2) + 0.01) AND (97.43 - 21.125)
+        AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+        ORDER BY v.value ASC
+      )UNION(
+        SELECT CONCAT(ROUND(97.43, 1), '%'), COUNT(ROUND(v.value*100,2))
+        FROM nuts n, profile p, value v, split_answer sa
+        WHERE n.id = p.nuts_id 
+        AND v.profile_id = p.id 
+        AND p.answer_id = sa.id
+        AND sa.id = ${pAnswer}
+        AND v.dataset_id = ${pDataset}
+        AND v.indicator_id = ${pIndicator}
+        AND ROUND(v.value*100, 2) BETWEEN ((97.43 - 21.125) + 0.01) AND 97.43
+        AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+        ORDER BY v.value ASC
+      )
     </Query>
   </DataAccess>
 
@@ -286,17 +366,17 @@
       </Query>
   </DataAccess>
 
-   <DataAccess access="public" connection="dvt_conn" id="getEuropeanBarCharActivitiSector" type="sql">
-       <Cache duration="3600" enabled="true"/>
-       <Columns/>
-       <Parameters>
-          <Parameter default="15" name="pDataset" type="Numeric"/>
-          <Parameter default="110" name="pIndicator" type="Numeric"/>
-          <Parameter default="14" name="pActivitySector" type="Numeric"/>
-        <!--esta consulta solo es para Tiring or painful position (de momento)-->
-       </Parameters>
-       <Query>
-         SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
+  <DataAccess access="public" connection="dvt_conn" id="getEuropeanBarCharActivitiSector" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="15" name="pDataset" type="Numeric"/>
+      <Parameter default="110" name="pIndicator" type="Numeric"/>
+      <Parameter default="14" name="pActivitySector" type="Numeric"/>
+    </Parameters>
+    <!--esta consulta solo es para Tiring or painful position (de momento)-->
+    <Query>
+      SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
       FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
       WHERE n.id = p.nuts_id
       AND  v.indicator_id =${pIndicator}
@@ -307,21 +387,20 @@
       AND t.language = 'EN'
       AND d.id = v.dataset_id
       AND d.id = ${pDataset}
-      ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
-       </Query>
-   </DataAccess> 
+      ORDER BY Answer ASC, FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'RS', 'NO', 'TR'), n.country_code ASC, Value DESC;
+    </Query>
+  </DataAccess> 
 
-<DataAccess access="public" connection="dvt_conn" id="getEuropeanBarCharCompanySize" type="sql">
-       <Cache duration="3600" enabled="true"/>
-       <Columns/>
-       <Parameters>
-          <Parameter default="15" name="pDataset" type="Numeric"/>
-          <Parameter default="110" name="pIndicator" type="Numeric"/>
-          <Parameter default="11" name="pCompanySize" type="Numeric"/>
-        <!--esta consulta solo es para Tiring or painful position (de momento)-->
-       </Parameters>
-       <Query>
-         SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
+  <DataAccess access="public" connection="dvt_conn" id="getEuropeanBarCharCompanySize" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="15" name="pDataset" type="Numeric"/>
+      <Parameter default="110" name="pIndicator" type="Numeric"/>
+      <Parameter default="11" name="pCompanySize" type="Numeric"/>
+    </Parameters>
+    <Query>
+      SELECT t.text as Answer, IF(n.name = 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
       FROM nuts n, profile p, value v, dataset d, translation t, split_answer sa
       WHERE n.id = p.nuts_id
       AND  v.indicator_id =${pIndicator}
@@ -332,7 +411,7 @@
       AND t.language = 'EN'
       AND d.id = v.dataset_id
       AND d.id = ${pDataset}
-      ORDER BY Answer ASC, FIELD('EU28', n.country_code) DESC, FIELD(n.country_code, 'CH', 'IS', 'NO'), n.country_code ASC, Value DESC;
-       </Query>
-   </DataAccess> 
+      ORDER BY Answer ASC, FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'RS', 'NO', 'TR'), n.country_code ASC, Value DESC;
+    </Query>
+  </DataAccess> 
 </CDADescriptor>

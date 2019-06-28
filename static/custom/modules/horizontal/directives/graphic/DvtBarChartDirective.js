@@ -167,6 +167,7 @@ define(function (require) {
     var BarChartComponent = require('cdf/components/CccBarChartComponent');
     var PieChartComponent = require('cdf/components/CccPieChartComponent');
     var configService = require('horizontal/config/configService');
+    var pv = require('cdf/lib/CCC/protovis');
     var i18n = configService.getLiterals();
 
     var sequence = 1;
@@ -281,7 +282,7 @@ define(function (require) {
                 color2AxisColors: '=',
                 contextuals: '=?',
                 maxLabelTop:'=',
-                enlargeAction: '='
+                enlargeAction: '=',
             },
             // TODO extract template
             template:_template,
@@ -332,8 +333,8 @@ define(function (require) {
                         orientation: attributes.orientation || "vertical",
                         crosstabMode: false,
                         stacked: attributes.stacked == 1 || false,
-                        axisLabel_font: attributes.axisLabelFont || 'normal 12px "OpenSans"',
-                        axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "OpenSans" gray',
+                        axisLabel_font: attributes.axisLabelFont || 'normal 12px "OpenSans-bold"',
+                        axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "OpenSans-bold" gray',
                         axisTitleLabel_textStyle: 'gray',
                         axisFixedMax: attributes.axisFixedMax || 100,
                         axisTicks: attributes.axisTicks || false,
@@ -376,7 +377,7 @@ define(function (require) {
                         valuesVisible: attributes.valuesVisible === 'true'?true:false,
                         valuesOverflow: attributes.valuesOverflow || "",
                         valuesMask: attributes.valuesMask || '{series}',
-                        valuesFont: attributes.valuesFont || 'emphasis 10px "OpenSans"',
+                        valuesFont: attributes.valuesFont || 'emphasis 10px "OpenSans-bold"',
                         valuesAnchor: attributes.valuesAnchor || undefined,
                         valuesOptimizeLegibility: true,
                         valuesNormalized: attributes.valuesNormalized == 1 || false,
@@ -396,7 +397,7 @@ define(function (require) {
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
                         baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'center',
                         //baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "OpenSans"',
-                        axisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "OpenSans"',
+                        axisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "OpenSans-bold"',
                         baseAxisLabel_textStyle: attributes.baseAxisLabelTextStyle || 'gray' ,
                         baseAxisOverlappedLabelsMode: 'leave',
                         multiChartRole: attributes.multiChart,
@@ -410,12 +411,16 @@ define(function (require) {
                         //new tooltip
                         tooltipFormat: scope.tooltipFormat,
                         baseAxisTooltipEnabled : false,
+                        tooltipEnabled: attributes.tooltipEnabled === 'false' ? false : true,
                         orthoAxisTitle: attributes.orthoAxisTitle || '',
                         multipleLabelColors: attributes.multipleLabelColors === 'true' || false,
                         showEuroMask: attributes.showEuroMask === 'true' ? true : false,
                         leafContentOverflow: attributes.leafContentOverflow || 'auto',
-                        base_fillStyle: attributes.base_fillStyle || "#f0f0f0"
-                        //pYLabels: attributes.pYLabels || 1
+                        base_fillStyle: attributes.base_fillStyle || "#f0f0f0",
+                        //pYLabels: attributes.pYLabels || 1,
+                        panel_fillStyle: attributes.panelColor || '',
+                        xAxis_fillStyle: '#f0f0f0',
+                        axisColor: attributes.axisColor === 'true' ? true : false
                     }
 
                 };
@@ -424,6 +429,26 @@ define(function (require) {
                     definition.chartDefinition.yAxisLabel_text= function(){
                         return this.scene.vars.tick.label+' €';
                     }
+                }
+
+                if(!!attributes.axisColor){
+                    definition.chartDefinition.xAxis_fillStyle = '#FFFFFF';
+                    definition.chartDefinition.base_fillStyle = '#FFFFFF';
+                    definition.chartDefinition.xAxis_call = function(){
+                        //return "linear-gradient(to right, #daebec 0%,#519ea1 100%)";
+                        this.add(pv.Image)
+                            .url('/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/color-range.png')
+                            .left(function(scene){
+                                var panelWidth = this.root.width();
+                                if(panelWidth != 200){
+                                    return panelWidth/12;
+                                }
+                            })
+                            .right(function(scene){
+                                var panelWidth = this.root.width();
+                                return panelWidth/12;
+                            });
+                    };
                 }
 
                 //TODO refactor OR condition in to definition where it been possible
@@ -702,15 +727,21 @@ define(function (require) {
                     var pCountry1 = definition.parameters[1][1];
                     var pCountry2 = definition.parameters[1][1];
 
-                    definition.chartDefinition.baseAxisLabel_textStyle= function (){
-                        if(this.scene.vars.tick.label == 'EU28'){
-                            return dvtUtils.getEUColor();
-                        }else if(this.scene.vars.tick.label == pCountry1){
-                            return dvtUtils.getColorCountry(1);
-                        }else if(this.scene.vars.tick.label == pCountry2){
-                            return dvtUtils.getColorCountry(2);
+                    if(definition.chartDefinition.dataAccessId == 'getGaussChartValues'){
+                        definition.chartDefinition.baseAxisLabel_textStyle= 'black';
+                    }else if(attributes.multipleLabelColors == 'false'){
+                        definition.chartDefinition.baseAxisLabel_textStyle='gray';
+                    }else{
+                        definition.chartDefinition.baseAxisLabel_textStyle= function (){
+                            if(this.scene.vars.tick.label == 'EU28'){
+                                return dvtUtils.getEUColor();
+                            }else if(this.scene.vars.tick.label == pCountry1){
+                                return dvtUtils.getColorCountry(1);
+                            }else if(this.scene.vars.tick.label == pCountry2){
+                                return dvtUtils.getColorCountry(2);
+                            }
+                            return 'gray';
                         }
-                        return 'gray';
                     }
                 }
 

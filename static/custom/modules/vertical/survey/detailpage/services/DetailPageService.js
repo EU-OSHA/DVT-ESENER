@@ -4,7 +4,22 @@ define (function (require) {
     var pv = require('cdf/lib/CCC/protovis');
     var DetailPageService = function (dvtUtils, $log) {
         return {
-            
+            getMinMaxValues: function(){
+                var dashboard = this.dashboard;
+                return [
+                    {
+                        name: "main",
+                        dataPart: "0",
+                        line_lineWidth: 5,
+                        line_interpolate: 'basis',
+                        valuesAnchor: 'left',
+                        visualRoles:{
+                            category: 'category',
+                            value: 'value'
+                        }
+                    }
+                ];
+            },
             getGeneralEuropeanBarCharPlot: function() {
                 return [
                     {
@@ -68,7 +83,7 @@ define (function (require) {
                                         //$log.warn(scene);
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();
-                                        return panelWidth/40;               
+                                        return panelWidth/38;               
                                     });
 
                             }   

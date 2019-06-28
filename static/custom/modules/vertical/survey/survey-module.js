@@ -110,6 +110,10 @@ define(function (require) {
                 pCompanyFilter: {
                     value: '6',
                     squash: true
+                },
+                pSectorSize: {
+                    value: 'activity-sector',
+                    squash: true
                 }
             },
             views: {
