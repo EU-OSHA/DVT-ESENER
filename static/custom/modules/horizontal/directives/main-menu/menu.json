@@ -15,12 +15,12 @@
             {
                 "id":"overview",
                 "name":"L101007",
-                "sref":"overview({pIndicator: '2009'})",
+                "sref":"overview",
                 "accesskey":"C"
             },{
                 "id":"overview",
                 "name":"L101008",
-                "sref":"overview({pIndicator: '2014'})",
+                "sref":"overview",
                 "accesskey":"C"
             }
         ]

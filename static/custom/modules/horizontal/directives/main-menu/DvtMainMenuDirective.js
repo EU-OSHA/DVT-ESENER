@@ -97,7 +97,7 @@ define(function (require) {
 
                     // when click banner link to Home
                     $scope.goto = function (pState) {
-                       $state.go(pState, {});
+                       $state.go(pState, {pLanguage: $scope.pLanguage});
                     };
 
                     // Literals / i18n
@@ -156,11 +156,9 @@ define(function (require) {
                             $log.debug($state.current.name);
 
                             $scope.pLanguage = $stateParams.pLanguage;
-                            //$log.warn($stateParams.pLanguage);
 
                             $scope.pIndicator = $stateParams.pIndicator;
                             $scope.currentName = $state.current.name;
-                            //$log.warn($scope.currentName);
 
                             var cadena = "";
                             var params = $state.params.pIndicator;

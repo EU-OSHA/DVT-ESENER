@@ -107,7 +107,7 @@
                                     </li>
                                 -->
                                     <li ng-repeat="level1 in level0.levels">
-                                        <a ng-if="level1.sref" ui-sref='{{ level1.sref }}' id='{{ level1.id }}' accesskey="{{level1.accesskey}}">
+                                        <a ng-if="level1.sref" ui-sref="{{level1.sref}}({pLanguage: pLanguage, pIndicator: level1.name == 'L101007' ? '2009': '2014'})" id='{{ level1.id }}' accesskey="{{level1.accesskey}}">
                                             <span ng-class="isCurrentStateMenu('{{ level1.id }}')" data-ng-bind-html="i18n_literals[level1.name]"></span>
                                         </a>
                                     </li>
@@ -164,10 +164,10 @@
               <ul class="submenu--items--wrapper">
                 <!-- ESENER YEAR SELECTION -->
                 <li data-ng-class="{'active' : '2009' == pIndicator }" class="submenu--item">
-                  <a href ui-sref="overview({pIndicator: '2009'})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : '2009' == pIndicator }" >ESENER 2009</a>
+                  <a href ui-sref="overview({pLanguage: pLanguage, pIndicator: '2009'})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : '2009' == pIndicator }" >ESENER 2009</a>
                 </li>
                 <li data-ng-class="{'active' : '2014' == pIndicator }" class="submenu--item">
-                  <a href ui-sref="overview({pIndicator: '2014'})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : '2014' == pIndicator }" >ESENER 2014</a>
+                  <a href ui-sref="overview({pLanguage: pLanguage, pIndicator: '2014'})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : '2014' == pIndicator }" >ESENER 2014</a>
                 </li>
                 <!--<li data-ng-class="{'active' : indicator.anchor == pIndicator }" class="submenu--item">
                   <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : indicator.anchor == pIndicator }" >ESENER 2019</a>
@@ -183,10 +183,10 @@
             <div class="submenu--block container">
               <ul class="submenu--items--wrapper">
                 <li data-ng-class="{'active' : 'overview' == currentName }" class="submenu--item">
-                  <a href="" ui-sref="overview({pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'overview' == currentName }">OVERVIEW</a>
+                  <a href="" ui-sref="overview({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'overview' == currentName }">OVERVIEW</a>
                 </li>
                 <li data-ng-class="{'active' : 'datavisualisation' == currentName || 'detailpage' == currentName }" class="submenu--item">
-                  <a href="" ui-sref="datavisualisation({pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'datavisualisation' == currentName || 'detailpage' == currentName }" >DATA VISUALISATION</a>
+                  <a href="" ui-sref="datavisualisation({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'datavisualisation' == currentName || 'detailpage' == currentName }" >DATA VISUALISATION</a>
                 </li>
                 <!--<li data-ng-class="{'active' : 'comparisons' == currentName }" class="submenu--item">
                   <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'comparisons' == currentName }" >COMPARISONS</a>

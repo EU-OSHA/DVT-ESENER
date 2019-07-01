@@ -25,8 +25,7 @@ define (function (require) {
                     {
                         name: "main",
                         dataPart: "0",
-                       
-                     barSizeMax: 15,
+                        barSizeMax: 15,
                         bar_call: function(){
                             var resolution = screen.width;
 
@@ -81,11 +80,29 @@ define (function (require) {
                                     .lineWidth(3)
                                     .left(function(scene){
                                         //$log.warn(scene);
+                                        if(!scene.firstAtoms.value.label.match('%')){
+                                            scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                                        }
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();
-                                        return panelWidth/38;               
+                                        return panelWidth/38;
                                     });
 
+                                //NON EU stroke separator vertical
+                                this.add(pv.Rule)
+                                    //Negative value in top line continues out of the chart
+                                    .top(0)
+                                    .bottom(0)
+                                    .height(null) // clear any inherited value
+                                    .width(null)  // clear any inherited value
+                                    .strokeStyle('black')
+                                    .lineWidth(3)
+                                    .left(function(scene){
+                                        //$log.warn(scene);
+                                        var countryKey = scene.firstAtoms.category;
+                                        var panelWidth = this.root.width();
+                                        return panelWidth/1.255;               
+                                    });
                             }   
                         },
                         visualRoles:{

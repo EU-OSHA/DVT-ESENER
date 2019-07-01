@@ -43,7 +43,7 @@ define(function (require) {
         $scope.selectedSubIndicator = $stateParams.pSubIndicator;
 
         $scope.pCountry ='AT';
-        $scope.pCompanySize = $stateParams.pCompanySize;
+        //$scope.pCompanySize = $stateParams.pCompanySize;
         //$scope.pActivitySector =$stateParams.pActivitySector;
         $scope.pSectorSize = $stateParams.pSectorSize;
 
@@ -92,8 +92,8 @@ define(function (require) {
         //---------------------parameters---------------------------------
         $scope.dashboard = {
             parameters: {
-              "pActivitySector": $scope.pActivitySector,
-               "pCompanySize" : $scope.pCompanySize,
+              "pActivityFilter": $scope.pActivityFilter,
+               "pCompanyFilter" : $scope.pCompanyFilter,
                "pSelector": $scope.pSelector,
                "pChart": $scope.pChart,
                "pTopic": $scope.pTopic
@@ -124,7 +124,7 @@ define(function (require) {
         };
         $scope.dataPromises = [
           mapProvider.getEuropeShape(),
-          dataService.getMapData()
+          dataService.getMapData($scope.pIndicator, $scope.pQuestion)
         ];
 
         $scope.minMaxValues = {
@@ -412,8 +412,8 @@ define(function (require) {
                 if ($state.current.name !== undefined) {
                   $state.go($state.current.name, {
                     pCountry: $scope.pCountry,
-                    pCompanySize: $scope.pCompanySize,
-                    pActivitySector: $scope.pActivitySector,
+                    pCompanyFilter: $scope.pCompanyFilter,
+                    pActivityFilter: $scope.pActivityFilter,
                     pSelector:$scope.pSelector
                   });
                 }

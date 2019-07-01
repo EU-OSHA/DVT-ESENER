@@ -153,11 +153,18 @@ define(function (require) {
             /* Tooltip mouseover function */
             var over = function (e) {
                 if (noDataCountries.indexOf(this.id) < 0) {
-
-                    // background
-                    this.animate({
-                        opacity:.5
-                    },100);
+                    if(this.type == 'text'){
+                        // background
+                        this.animate({
+                            opacity:.5
+                        },100);
+                    }else{
+                        // background
+                        this.animate({
+                            opacity:.5,
+                            stroke: '#000'
+                        },100);
+                    }
 
                     var elementSVG = angular.element('body');
                     angular.element(elementSVG).append('<div class="dvt-map-tooltip"></div>');
@@ -203,10 +210,20 @@ define(function (require) {
 
             out = function () {
                 if (noDataCountries.indexOf(this.id) < 0) {
-                    // background
-                    this.animate({
-                        opacity:1
-                    },100);
+                    //$log.warn(this);
+                    if(this.type == 'text'){
+                        // background
+                        this.animate({
+                            opacity:1
+                        },100);
+                    }else{
+                        // background
+                        this.animate({
+                            opacity:1,
+                            stroke: '#FFF'
+                        },100);
+                    }
+                    
 
                    angular.element('.dvt-map-tooltip').remove();
                 }
@@ -356,7 +373,7 @@ define(function (require) {
         svg.removeAttribute("width");
         if(!configService.isIE())svg.removeAttribute("height");
 
-        svg.setAttribute("style", "width:65%");
+        svg.setAttribute("style", "width:100%");
 
         paper.canvas.setAttribute('preserveAspectRatio', 'xMaxYMin'); // always scale to fill container, preserving aspect ratio.
 
@@ -460,6 +477,7 @@ define(function (require) {
                                     literal_id: row[5],
                                     value: row[3]
                                 });
+                                $log.warn(row[6]);
                                 scope.mapData.questionData[row[1]].country_code = row[1];
                                 scope.mapData.questionData[row[1]].country_name = row[2];
                             });

@@ -9,6 +9,9 @@
     font-size:$font-size-body;
     color: $gray-base;
   }
+  .ccc-tt-ds .ccc-tt-dimValue .ccc-tt-valuePct{
+    display: none !important;
+  }
   body.hasCookies{
     //padding-top: 9rem;
     .ilo-header #containerMenu{
@@ -1134,6 +1137,26 @@
   }
 /**** END NOSCRIPT PAGE ***/
 
+.survey--map--block{
+  //background: $gray-lighter;
+  display: block;
+  .map--block{        
+    .dvt--map--block, div[id^='dvt_map']{
+      width: 70%;
+      text-align: center;
+      margin: auto;
+      svg{
+        //overflow: visible !important;
+        z-index: 100000 !important;
+        text{
+          font: 0.9rem 'OpenSans-bold' !important;
+          opacity: 1;
+          cursor:default;
+        }
+      }
+    }       
+  }
+}
 
 .dvt-map-tooltip{
   background:rgba(255,255,255,0.9);
@@ -1181,5 +1204,23 @@
         font-size: 1.4rem;
       }
     } 
+  }
+}
+
+.card--block--chart{
+  .chart--wrapper{
+    svg{
+      rect, circle, path, line{
+        cursor: default !important;
+      }
+    }
+  }
+}
+
+.dvt-modal{
+  svg{
+    rect, circle, path, line{
+      cursor: default !important;
+    }
   }
 }
