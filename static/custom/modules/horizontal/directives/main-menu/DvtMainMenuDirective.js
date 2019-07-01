@@ -58,7 +58,7 @@ define(function (require) {
                         }
                     }
 
-                    /** HEADER SHOW HIDE **/
+                    /** HEADER SHOW HIDE 
                     var prevScrollpos = $window.pageYOffset;
 
                     $window.onscroll = function() {
@@ -89,7 +89,8 @@ define(function (require) {
                       }
 
                     } 
-
+                    **/
+                    
                     //hide print icon in mobile
                     if(configService.isMobile()) {
                         angular.element(".a2a_button_print").remove();

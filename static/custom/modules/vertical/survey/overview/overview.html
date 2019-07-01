@@ -37,50 +37,39 @@
 </section>-->
 
 <!-- General information 2009 -->
-<section class="container-fluid" ng-if="pIndicator == '2009'">
+<section class="container" ng-if="pIndicator == '2009'">
     <div class="container grid-2">
         <div class="col-sm-6 col-xs-12  col-md-6 col-img">
             <a href=""> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2009.png"> </a>
         </div>
         <div class="col-sm-6 col-xs-12  col-md-6 col-content">
-            <h2 class="title--section main-color" data-ng-bind="i18n.L101007"></h2>
+            <h1 class="title--section main-color" data-ng-bind="i18n.L101007"></h1>
             <p data-ng-bind-html="i18n.L101004"></p>
         </div>
     </div>
-</section>
-
-<!-- Accordions section 2009 -->
-<section class="container-fluid" ng-if="pIndicator == '2009'">
-    <h1 class="text-center" data-ng-bind-html="i18n.L101011"></h1>
+    <!-- Accordions section 2009 -->
+    <h2 class="text-center" data-ng-bind-html="i18n.L101011"></h2>
     <!-- First accordion -->
-    <div class="container grid-2">
-        <div class="col-sm-6 col-xs-12  col-md-6 col-content">
-            <!-- Title of the accordion -->
-            <p class="title--section main-color" data-ng-bind-html="i18n.L101012"></p>
-            <!-- Content of the accordion -->
-            <p data-ng-bind-html="i18n.L101014"></p>
-        </div>
-    </div>
+    <!-- Title of the accordion -->
+    <h3 class="title--section main-color accordion-title active" ng-click="accordion($event)" data-ng-bind-html="i18n.L101012"></h3>
+    <!-- Content of the accordion -->
+    <div class="accordion-content active" data-ng-bind-html="i18n.L101014"></div>
 
     <!-- Second accordion -->
-    <div class="container grid-2">
-        <div class="col-sm-6 col-xs-12  col-md-6 col-content">
-            <!-- Title of the accordion -->
-            <p class="title--section main-color" data-ng-bind-html="i18n.L101013"></p>
-            <!-- Content of the accordion -->
-            <p data-ng-bind-html="i18n.L101015"></p>
-        </div>
-    </div>
+    <!-- Title of the accordion -->
+    <h3 class="title--section main-color accordion-title" ng-click="accordion($event)" data-ng-bind-html="i18n.L101013"></h3>
+    <!-- Content of the accordion -->
+    <div class="accordion-content" data-ng-bind-html="i18n.L101015"></div>
 </section>
 
 <!-- General information 2014 -->
-<section class="container-fluid" ng-if="pIndicator == '2014'">
+<section class="container" ng-if="pIndicator == '2014'">
     <div class="container grid-2">
         <div class="col-sm-6 col-xs-12  col-md-6 col-img">
             <a href="#"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
         </div>
         <div class="col-sm-6 col-xs-12  col-md-6 col-content">
-            <h2 class="title--section main-color" data-ng-bind="i18n.L101008"></h2>
+            <h1 class="title--section main-color" data-ng-bind="i18n.L101008"></h1>
             <div class="complete-text" data-ng-bind-html="i18n.L101016"></div>
             <div class="partial-text" data-ng-bind-html="trimText(i18n.L101016, maxCharacters)"></div>
             <p class="see-more" data-ng-if="i18n.L101016.length > maxCharacters">
@@ -90,30 +79,23 @@
             <!--<p data-ng-bind-html="i18n.L101016"></p>-->
         </div>
     </div>
+
+    <!-- Accordions section 2014 -->
+
+    <h2 class="text-center" data-ng-bind="i18n.L101011"></h2>
+    <div  data-ng-bind-html="i18n.L101017"></div>
+        <!-- First accordion -->
+        <!-- Title of the accordion -->
+        <h3 class="title--section main-color accordion-title active" ng-click="accordion($event)" data-ng-bind="i18n.L101012"></h3>
+        <!-- Content of the accordion -->
+        <div class="accordion-content active" data-ng-bind-html="i18n.L101018"></div>
+
+        <!-- Second accordion -->
+        <!-- Title of the accordion -->
+        <h3 class="title--section main-color accordion-title" ng-click="accordion($event)" data-ng-bind="i18n.L101013"></h3>
+        <!-- Content of the accordion -->
+        <div class="accordion-content" data-ng-bind-html="i18n.L101019"></div>
 </section>
 
-<!-- Accordions section 2014 -->
-<section class="container-fluid" ng-if="pIndicator == '2014'">
-    <h1 class="text-center" data-ng-bind="i18n.L101011"></h1>
-    <!-- First accordion -->
-    <div class="container grid-2">
-        <div class="col-sm-6 col-xs-12  col-md-6 col-content">
-            <!-- Title of the accordion -->
-            <p class="title--section main-color" data-ng-bind="i18n.L101012"></p>
-            <!-- Content of the accordion -->
-            <p data-ng-bind-html="i18n.L101018"></p>
-        </div>
-    </div>
-
-    <!-- Second accordion -->
-    <div class="container grid-2">
-        <div class="col-sm-6 col-xs-12  col-md-6 col-content">
-            <!-- Title of the accordion -->
-            <p class="title--section main-color" data-ng-bind="i18n.L101013"></p>
-            <!-- Content of the accordion -->
-            <p data-ng-bind-html="i18n.L101019"></p>
-        </div>
-    </div>
-</section>
 
 </dvt-dashboard>

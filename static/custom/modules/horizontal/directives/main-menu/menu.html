@@ -159,8 +159,8 @@
 
     <div data-ng-if="!isHome">
         <!-- First row of tabs -->
-        <section class="container-fluid">
-            <div class="container submenu--block">
+        <section class="container-fluid level2--wrapper">
+            <div class="container submenu--level2">
               <ul class="submenu--items--wrapper">
                 <!-- ESENER YEAR SELECTION -->
                 <li data-ng-class="{'active' : '2009' == pIndicator }" class="submenu--item">
@@ -179,8 +179,8 @@
         <div class="line"></div>
 
         <!-- Second row of tabs  -->
-        <section class="container-fluid">
-            <div class="submenu--block container">
+        <section class="container-fluid level3--wrapper">
+            <div class="submenu--level3 container">
               <ul class="submenu--items--wrapper">
                 <li data-ng-class="{'active' : 'overview' == currentName }" class="submenu--item">
                   <a href="" ui-sref="overview({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'overview' == currentName }">OVERVIEW</a>

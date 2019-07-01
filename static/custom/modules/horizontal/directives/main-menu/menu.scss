@@ -13,8 +13,14 @@
 
 /** HEADER **/
   .bar-header{
-    z-index: 1;
-    position: relative;
+    position: fixed;
+    z-index: 1001;
+    top: 0;
+    padding: 0;
+    width: 100%;
+    background: #FFF;
+    height: 117px;
+    border-bottom: 1px solid #f6a400;
     .header--top{
       display: flex;
       justify-content: flex-end;
@@ -128,6 +134,7 @@
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
+      margin-top: 0px;
       .navbar-nav{
         > li{
           a{
@@ -158,7 +165,7 @@
             }         
           }
           &:hover{
-            //border-bottom: 0.6rem solid $orange;
+            box-shadow: 0 6px 0 0px #F6A400;
             -webkit-transition: border-color 0.4s ease-out;
             -moz-transition: border-color 0.4s ease-out;
             -o-transition: border-color 0.4s ease-out;
@@ -181,7 +188,7 @@
           }
           &:nth-child(1){
             a, a:active, a:focus{
-              padding: 1.5rem 1.5rem 1rem 3rem;
+              padding: 1.6rem 1.6rem 1.6rem 3.2rem;
               background: url(../img/home-icon.png) left center no-repeat !important;            
             }
           } 
@@ -191,9 +198,9 @@
             }
             &:hover{
               .dropdown-menu{
-                border-top: 0.2rem solid $orange;
+                border-top: 0.6rem solid $orange;
                 display:block;
-                top:101%;
+                top:100%;
                 width: 100%;
                 li{
                   a{
@@ -203,6 +210,9 @@
                 }
               }
             }
+          }
+          .main-menu-selected{
+            color: $aquamarine;
           }
         }
         .dropdown-menu{

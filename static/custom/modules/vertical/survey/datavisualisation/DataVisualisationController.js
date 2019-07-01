@@ -11,7 +11,7 @@
 define(function (require) {
     'use strict';
 
-    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, dataService) {
+    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, dataService, $event) {
 
         $scope.pLanguage = $stateParams.pLanguage;
         
@@ -29,7 +29,13 @@ define(function (require) {
         $scope.pChart = '';
         $scope.pQuestion = '';
 
-        $scope.changeTopic = function(topic, question){
+        $scope.changeTopic = function($event, topic, question){
+
+angular.element('.section-topic .card--item').removeClass('selected');
+angular.element('.section-topic .card--item').addClass('disabled');
+$event.target.parentElement.classList.remove('disabled');
+$event.target.parentElement.classList.add('selected');
+
             $scope.pTopic = topic;
             $scope.pQuestion = question;
 
@@ -44,15 +50,13 @@ define(function (require) {
             }
         }
 
-        $scope.changeChart = function(chart){
-            $scope.pChart = chart;
-        }
+        $scope.changeChart = function($event, chart){
 
-        $scope.changeTopic = function(topic){
-            $scope.pTopic = topic;
-        }
+angular.element('.section-chart .card--item').removeClass('selected');
+angular.element('.section-chart .card--item').addClass('disabled');
+$event.target.parentElement.classList.remove('disabled');
+$event.target.parentElement.classList.add('selected');
 
-        $scope.changeChart = function(chart){
             $scope.pChart = chart;
         }
 

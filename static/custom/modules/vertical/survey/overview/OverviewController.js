@@ -8,6 +8,9 @@
  * @description
  * ############################################
  */
+
+
+
 define(function (require) {
     'use strict';
 
@@ -75,8 +78,25 @@ define(function (require) {
           //Para cambiar del boton see more al boton see less
           angular.element(' a', angular.element($event.target).parent()).toggle();
         }
+
+        $scope.accordion = function($event) {        
+          var currentTarget = angular.element($event.currentTarget);
+          var contentTarget = angular.element($event.currentTarget.nextElementSibling); 
+          var elemActive = $event.currentTarget.nextElementSibling.className.indexOf('active');
+
+          if( elemActive > 0 ){
+            contentTarget.removeClass('active');
+            currentTarget.removeClass('active');
+          }else{
+            angular.element('.accordion-content').removeClass('active');
+            angular.element('.accordion-title').removeClass('active');
+            contentTarget.addClass('active');
+            currentTarget.addClass('active');
+          }          
+        }
     }
 
     controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log', 'dataService', '$sce'];
     return controller;
 });
+

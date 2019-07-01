@@ -16,6 +16,67 @@ div.partial-text{
   display: block;
 }
 
+.overview-page{
+  h1.title--section{
+    font-size: 3rem !important;
+    padding-top: 0;
+    margin-top: 0;
+  }
+  h2{
+    font-size: 3rem;
+    color: $aquamarine;
+    padding-top: 0;
+    margin-top: 0;
+    font-family: 'OpenSans-bold';
+  }
+  h3.accordion-title{
+    font-family: OpenSans-bold;
+    font-size: 2rem;
+    color: #FFF;
+    background: $orange;
+    padding:1.5rem 2rem;
+    margin: 0.5rem 0;
+    position: relative;
+    cursor: pointer;
+    &:after{
+      content: "\f107";
+      display: inline-block;
+      font-family: FontAwesome;
+      font-size: 3rem;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: absolute;
+      right: 2rem;
+      top: 20%;
+    }
+    &.active{
+      color: #58585A;
+      background: #FFE4B1;
+      &:after{
+         content: "\f106";
+      }
+    }
+  }
+  .accordion-content{
+    font-size: 1.4rem;
+    padding: 0rem 0;
+    margin: 1.5rem 0;
+    max-height: 0px;
+    -webkit-transition: max-height 0.8s; 
+    transition: max-height 0.8s;
+    overflow: hidden;
+    &.active{
+      max-height: 100rem;
+      -webkit-transition: max-height 1.2s; 
+      transition: max-height 1.2s;
+    }
+  }
+}
+
+
+
+
 @media (max-width: 990px) {
 
   .overview-page{

@@ -1,72 +1,71 @@
 <!-- home.html -->
 <dvt-dashboard promises="promises" parameters="dashboard.parameters" class="datavisualisation-page">
-
+    <h1 class="title--section main-color outleft" data-ng-bind="i18n.L101007"></h1>
     <!-- Step 1 -->
-    <section class="container">
-        <h1 class="text-center main-color" data-ng-bind="i18n.L101021"></h1>
-        <p class="text-center title--section" data-ng-bind="i18n.L101023"></p>
-        <section class="container-fluid">
-            <div class="container grid-2">
-                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a class="btn-default" href data-ng-click="changeTopic('osh-management')"><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center" data-ng-bind="i18n.L100001"></p>
-                </div>
-                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a class="btn-default" href data-ng-click="changeTopic('psychosocial-risks')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center" data-ng-bind="i18n.L100009"></p>
-                </div>
-                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a class="btn-default" href data-ng-click="changeTopic('drivers-and-barriers')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center" data-ng-bind="i18n.L100015"></p>
-                </div>
-                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a class="btn-default" href data-ng-click="changeTopic('worker-participation')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center" data-ng-bind="i18n.L101034"></p>
-                </div>
-            </div>
-        </section>
+    <section class="container section--page section-topic">
+        <h2 class="title--section main-color text-center" data-ng-bind="i18n.L101021"></h2>
+        <p class="text-center subtitle--section" data-ng-bind="i18n.L101023"></p>
+        <ul class="card--grid min-height">
+            <li class="card--item">               
+                <a href class="icon--card osh-management-icon" data-ng-click="changeTopic($event,'osh-management')">
+                    <span data-ng-bind="i18n.L100001"></span>
+                </a>
+            </li>
+            <li class="card--item">
+                <a href class="icon--card psychosocial-risk-icon" data-ng-click="changeTopic($event,'psychosocial-risks')">
+                    <span data-ng-bind="i18n.L100009"></span>
+                </a> 
+            </li>
+            <li class="card--item">
+                <a href class="icon--card drivers-barriers-icon" data-ng-click="changeTopic($event,'drivers-and-barriers')">
+                    <span data-ng-bind="i18n.L100015"></span>
+                </a>
+            </li>
+            <li class="card--item">
+                <a href class="icon--card workers-participation-icon" data-ng-click="changeTopic($event,'worker-participation')">
+                    <span data-ng-bind="i18n.L100021"></span>
+                </a>
+            </li>
+        </ul>
     </section>
-
     <!-- Step 2 -->
-    <section class="container">
-        <h1 class="text-center main-color" data-ng-bind="i18n.L101022"></h1>
-        <p class="text-center title--section" data-ng-bind="i18n.L100024"></p>
-        <section class="container-fluid">
-            <div class="container grid-2">
-                <!-- European map -->
-                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a class="btn-default" href data-ng-click="changeChart('european-map')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center" data-ng-bind="i18n.L100623"></p>
-                    <p class="text-center" data-ng-bind="i18n.L100614"></p>
-                </div>
-                <!-- European bar chart -->
-                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a class="btn-default" href data-ng-click="changeChart('european-bar-chart')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center" data-ng-bind="i18n.L100622"></p>
-                    <p class="text-center" data-ng-bind="i18n.L100612"></p>
-                </div>
-                <!-- National bar chart -->
-                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a class="btn-default" href data-ng-click="changeChart('national-bar-chart')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center" data-ng-bind="i18n.L100624"></p>
-                    <p class="text-center" data-ng-bind="i18n.L100616"></p>
-                </div>
-                <!-- National comparisons -->
-                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a class="btn-default" href data-ng-click="changeChart('national-comparisons')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center" data-ng-bind="i18n.L100621"></p>
-                    <p class="text-center" data-ng-bind="i18n.L100610"></p>
-                </div>
-                <!-- Pie chart -->
-                <div class="col-sm-3 col-xs-12  col-md-3 col-img">
-                    <a class="btn-default" href data-ng-click="changeChart('pie-chart')"> <img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2014.png"> </a>
-                    <p class="text-center" data-ng-bind="i18n.L101033"></p>
-                    <p class="text-center" data-ng-bind="i18n.L101025"></p>
-                </div>
-            </div>
-        </section>
+    <section class="container section--page  section-chart">
+        <h2 class="title--section main-color text-center" data-ng-bind="i18n.L100022"></h2>
+        <p class="text-center subtitle--section" data-ng-bind="i18n.L100024"></p>
+        <ul class="card--grid min-height">
+            <li class="card--item">                
+                <a href class="icon--card european-maps-icon" data-ng-click="changeChart($event,'european-map')" >
+                    <span data-ng-bind="i18n.L100623"></span>
+                </a>
+                <p class="text-center" data-ng-bind="i18n.L100614"></p>
+            </li>
+            <li class="card--item">
+                <a href class="icon--card eu-bar-chart-icon" data-ng-click="changeChart($event,'european-bar-chart')">
+                    <span data-ng-bind="i18n.L100622"></span>
+                </a>
+                <p class="text-center" data-ng-bind="i18n.L100612"></p>
+            </li>
+            <li class="card--item">
+                <a href class="icon--card national-bar-chart-icon" data-ng-click="changeChart($event,'national-bar-chart')">
+                    <span data-ng-bind="i18n.L100624"></span>
+                </a>
+                <p class="text-center" data-ng-bind="i18n.L100616"></p>
+            </li>
+            <li class="card--item">
+                <a href  class="icon--card national-comparision-icon" data-ng-click="changeChart($event,'national-comparisons')">
+                    <span data-ng-bind="i18n.L100621"></span>
+                </a>
+                <p class="text-center" data-ng-bind="i18n.L100610"></p> 
+            </li>
+            <li class="card--item">
+                <a  class="icon--card pie-chart-icon" href data-ng-click="changeChart($event,'pie-chart')">
+                    <span data-ng-bind="i18n.L101033"></span>
+                </a>
+                <p class="text-center" data-ng-bind="i18n.L101025"></p>
+            </li>
+        </ul>
     </section>
 
-    <p class="text-center"><button ng-disabled="(pTopic == '' || pChart == '')" data-ng-class="{'disabled':(pTopic == '' || pChart == '')}" ui-sref="detailpage({pLanguage: pLanguage, pIndicator: pIndicator, pTopic: pTopic, pChart: pChart})" class="btn-default btn-main-color"><span data-ng-bind="i18n.L101020"></span></button></p>
+    <p class="text-center"><button ng-disabled="(pTopic == '' || pChart == '')" data-ng-class="{'disabled':(pTopic == '' || pChart == '')}" ui-sref="detailpage({pIndicator: pIndicator, pTopic: pTopic, pChart: pChart})" class="btn-default btn-main-color"><span data-ng-bind="i18n.L101020"></span></button></p>
 
 </dvt-dashboard>
