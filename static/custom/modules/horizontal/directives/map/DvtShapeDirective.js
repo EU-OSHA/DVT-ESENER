@@ -411,7 +411,12 @@ define(function (require) {
                 $scope.promises = {};
                 $scope.mapData = {
                     questionData: [],
-                    pAnswer: ''
+                    indicator: '',
+                    question: '',
+                    pAnswer: '',
+                    sectorsize: '',
+                    activityFilter: '',
+                    companyFilter: ''
                 };
 
                 if ($rootScope.data != undefined)
@@ -423,7 +428,13 @@ define(function (require) {
                 {
                     Promise.all([$scope.promise[1]]).then(function(res)
                     {
+                        $log.warn("PROMISE INSIDE DIRECTIVE 1");
                         var pAnswer = $stateParams.pAnswer;
+                        var indicator = $stateParams.pIndicator;
+                        var question = $stateParams.pQuestion;
+                        var sectorsize = $stateParams.pSectorSize;
+                        var activityFilter = $stateParams.pActivityFilter;
+                        var companyFilter = $stateParams.pCompanyFilter;
 
                         var row = {};
                         res[0].data.resultset.map(function (elem) {
@@ -434,13 +445,21 @@ define(function (require) {
                             }
                             $scope.mapData.questionData[row[1]].country_code = row[1];
                             $scope.mapData.questionData[row[1]].country_name = row[2];
+                            $scope.mapData.questionData[row[1]].indicator = row[6];
                         });
                         
+                        $scope.mapData.indicator = indicator;
                         $scope.mapData.pAnswer = pAnswer;
+                        $scope.mapData.question = question;
+                        $scope.mapData.sectorsize = sectorsize;
+                        $scope.mapData.activityFilter = activityFilter;
+                        $scope.mapData.companyFilter = companyFilter;
 
                         $rootScope.data = $scope.mapData;
-
                         $scope.data = $scope.mapData;
+
+                        $log.warn('DvtShapeDirective: ');
+                        $log.warn($rootScope.data);
                     });
                 }
 
@@ -462,28 +481,27 @@ define(function (require) {
                     if ($rootScope.data == undefined)
                     {
                         Promise.all([scope.promise[0], scope.promise[1]]).then(function(res) {
-                            
+                            $log.warn("PROMISE INSIDE DIRECTIVE 2");
                             var row = {};
                             res[1].data.resultset.map(function (elem) {
                                 row = elem;
                                 if(!scope.mapData.questionData[row[1]]){
                                     scope.mapData.questionData[row[1]]={};
-                                    $scope.mapData.questionData[row[1]].answers = [];
-                                }else{
-
+                                    scope.mapData.questionData[row[1]].answers = [];
                                 }
                                 scope.mapData.questionData[row[1]].answers.push({
                                     id: row[4],
                                     literal_id: row[5],
                                     value: row[3]
                                 });
-                                $log.warn(row[6]);
                                 scope.mapData.questionData[row[1]].country_code = row[1];
                                 scope.mapData.questionData[row[1]].country_name = row[2];
+                                scope.mapData.questionData[row[1]].indicator = row[6];
                             });
+
+                            $log.warn(scope.mapData);
                             
                             $rootScope.data = scope.mapData;
-
                             scope.data = scope.mapData;
 
                             //css style
@@ -561,7 +579,7 @@ define(function (require) {
 
                             var map = map.data;                        
 
-                            /* Pentaho component definition object*/
+                            // Pentaho component definition object
                             var definition = {
                                 type: "raphaelComponent",
                                 name: scope.id,
@@ -622,7 +640,7 @@ define(function (require) {
 
                             $log.debug("Link function of " + scope.id);
                         });
-                    }                    
+                    }                
                 }
                 else{
                     $log.error("Link function of " + scope.id+ ": Promise is undefined");

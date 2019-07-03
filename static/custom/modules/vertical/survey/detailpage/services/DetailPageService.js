@@ -111,6 +111,28 @@ define (function (require) {
                         }
                     }
                 ];
+            },
+            getNationalBarChartPlot: function() {
+                return [
+                    {
+                        name: "main",
+                        dataPart: "0",
+                        barSizeMax: 35,
+                        valuesAnchor: 'left',
+                        label_textMargin: function(scene){
+                            if(!scene.firstAtoms.value.label.match('%')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+                            return 10;
+                        },
+                        label_textBaseline: 'middle',
+                        valuesOptimizeLegibility: true,
+                        visualRoles:{
+                            series: 'series',
+                            category:'category',
+                        }
+                    }
+                ];
             }
         };
     };

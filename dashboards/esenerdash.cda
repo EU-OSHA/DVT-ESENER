@@ -93,9 +93,9 @@
     <Cache duration="3600" enabled="true"/>
     <Columns/>
     <Parameters>
-      <Parameter default="2009" name="pYear" type="Numeric" />
+      <Parameter default="2009" name="pYear" type="String" />
       <Parameter default="MM161" name="pQuestion" type="String" />
-      <Parameter default="1" name="pAnswer" type="String" />
+      <Parameter default="1" name="pAnswer" type="Numeric" />
       <Parameter default="16" name="pDataset" type="String" />
       <Parameter default="activity-sector" name="pSectorSize" type="String" />
       <Parameter default="8" name="pActivityFilter" type="String" />
@@ -117,11 +117,11 @@
       AND v.profile_id = p.id
       AND p.nuts_id = n.id
       AND p.answer_id = sa.id
-      AND v.dataset_id = 16
+      AND v.dataset_id = ${pDataset}
       AND sa.literal_id = t.literal_id
       AND t.language = 'EN'
       And n.country_code NOT IN ('EU27')
-      AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = 8 AND p.company_size_id IS NULL) ELSE (p.company_size_id = 6 AND p.activity_sector_id IS NULL) END
+      AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
       ORDER BY id ASC;
     </Query>
   </DataAccess>
@@ -132,7 +132,7 @@
     <Columns />
     <Parameters>
       <Parameter default="16" name="pDataset" type="Numeric" />
-      <Parameter default="136" name="pIndicator" type="Numeric" />
+      <Parameter default="MM161" name="pQuestion" type="String" />
       <Parameter default="0" name="pMinValue" type="Numeric" />
       <Parameter default="0" name="pMaxValue" type="Numeric" />
       <Parameter default="0" name="pRange" type="Numeric" />
@@ -142,63 +142,68 @@
       <Parameter default="1" name="pAnswer" type="String" />
     </Parameters>
     <Query>
-      (SELECT CONCAT(ROUND(12.90, 1), '%') as Distribution, COUNT(ROUND(v.value*100,2)) as Total
-        FROM nuts n, profile p, value v, split_answer sa
+      (SELECT CONCAT(ROUND(${pMinValue}, 1), '%') as Distribution, COUNT(ROUND(v.value*100,2)) as Total
+        FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
         AND v.profile_id = p.id 
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
         AND v.dataset_id = ${pDataset}
-        AND v.indicator_id = ${pIndicator}
-        AND ROUND(v.value*100,2) = 12.90
+        AND i.name = ${pQuestion}
+        AND v.indicator_id = i.id
+        AND ROUND(v.value*100,2) = ${pMinValue}
         AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         ORDER BY v.value ASC
       )UNION(
-        SELECT CONCAT(ROUND(12.90+21.125,1), '%'), COUNT(ROUND(v.value*100,2))
-        FROM nuts n, profile p, value v, split_answer sa
+        SELECT CONCAT(ROUND(${pMinValue}+${pRange},1), '%'), COUNT(ROUND(v.value*100,2))
+        FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
         AND v.profile_id = p.id
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
         AND v.dataset_id = ${pDataset}
-        AND v.indicator_id = ${pIndicator}
-        AND (ROUND(v.value*100,2) BETWEEN (12.90 + 0.01) AND (12.90 + 21.125))
+        AND i.name = ${pQuestion}
+        AND v.indicator_id = i.id
+        AND (ROUND(v.value*100,2) BETWEEN (${pMinValue} + 0.01) AND (${pMinValue} + ${pRange}))
         AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         ORDER BY v.value ASC
       )UNION(
-        SELECT CONCAT(ROUND(12.90+21.125*2, 1), '%'), COUNT(ROUND(v.value*100,2))
-        FROM nuts n, profile p, value v, split_answer sa
+        SELECT CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), '%'), COUNT(ROUND(v.value*100,2))
+        FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
         AND v.profile_id = p.id 
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
         AND v.dataset_id = ${pDataset}
-        AND v.indicator_id = ${pIndicator}
-        AND ROUND(v.value*100, 2) BETWEEN ((12.90+21.125) + 0.01) AND (12.90+21.125*2)
+        AND i.name = ${pQuestion}
+        AND v.indicator_id = i.id
+        AND ROUND(v.value*100, 2) BETWEEN ((${pMinValue}+${pRange}) + 0.01) AND (${pMinValue}+${pRange}*2)
         AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         ORDER BY v.value ASC
       )UNION(
-        SELECT CONCAT(ROUND(97.43 - 21.125,1), '%'), COUNT(ROUND(v.value*100,2))
-        FROM nuts n, profile p, value v, split_answer sa
+        SELECT CONCAT(ROUND(${pMaxValue} - ${pRange},1), '%'), COUNT(ROUND(v.value*100,2))
+        FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
         AND v.profile_id = p.id 
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
         AND v.dataset_id = ${pDataset}
-        AND v.indicator_id = ${pIndicator}
-        AND ROUND(v.value*100, 2) BETWEEN ((12.90+21.125*2) + 0.01) AND (97.43 - 21.125)
+        AND i.name = ${pQuestion}
+        AND v.indicator_id = i.id
+        AND ROUND(v.value*100, 2) BETWEEN ((${pMinValue}+${pRange}*2) + 0.01) AND (${pMaxValue} - ${pRange})
         AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         ORDER BY v.value ASC
       )UNION(
-        SELECT CONCAT(ROUND(97.43, 1), '%'), COUNT(ROUND(v.value*100,2))
-        FROM nuts n, profile p, value v, split_answer sa
+        SELECT CONCAT(ROUND(${pMaxValue}, 1), '%'), COUNT(ROUND(v.value*100,2))
+        FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
         AND v.profile_id = p.id 
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
         AND v.dataset_id = ${pDataset}
-        AND v.indicator_id = ${pIndicator}
-        AND ROUND(v.value*100, 2) BETWEEN ((97.43 - 21.125) + 0.01) AND 97.43
+        AND i.name = ${pQuestion}
+        AND v.indicator_id = i.id
+        AND ROUND(v.value*100, 2) BETWEEN ((${pMaxValue} - ${pRange}) + 0.01) AND ${pMaxValue}
         AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         ORDER BY v.value ASC
       )
@@ -441,4 +446,38 @@
       ORDER BY Answer ASC, FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'RS', 'NO', 'TR'), n.country_code ASC, Value DESC;
     </Query>
   </DataAccess>-->
+
+  <DataAccess access="public" connection="dvt_conn" id="getNationalBarChartData" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="15" name="pDataset" type="Numeric"/>
+      <Parameter default="MM161" name="pQuestion" type="String"/>
+      <Parameter default="2009" name="pYear" type="Numeric"/>
+      <Parameter default="activity-sector" name="pSectorSize" type="String" />
+      <Parameter default="AT" name="pCountry" type="String"/>
+    </Parameters>
+    <Query>
+      SELECT t.text as Answer, t2.text as Sector, v.value*100 as Value
+      FROM nuts n, profile p, value v, translation t, translation t2, indicator i, split_answer sa, split_activity_sector sas, split_company_size scs
+      WHERE n.id = p.nuts_id
+      AND i.name = ${pQuestion}
+      AND v.indicator_id = i.id
+      AND v.dataset_id = ${pDataset}
+      AND v.profile_id = p.id
+      AND p.answer_id = sa.id
+      AND sa.literal_id = t.literal_id
+      AND t.language = 'EN' 
+      AND CASE WHEN ${pSectorSize} = 'activity-sector' 
+        THEN (p.activity_sector_id = sas.id
+          AND CASE WHEN ${pYear} = '2009' 
+          THEN sas.id IN (15,16,17,8) ELSE sas.id IN (1,3,2,4,18,6,7,14) END) 
+      ELSE (p.company_size_id = scs.id
+        AND CASE WHEN ${pYear} = '2009' 
+          THEN scs.id IN (12,13,14,15,11) ELSE scs.id IN (6,7,8,14,10) END) END
+      AND t2.language = 'EN'
+      AND t2.literal_id = IF(p.activity_sector_id IS NOT NULL, sas.literal_id, scs.literal_id) 
+      AND n.country_code = 'AT';
+    </Query>
+  </DataAccess> 
 </CDADescriptor>

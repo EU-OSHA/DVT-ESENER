@@ -397,7 +397,7 @@ define(function (require) {
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
                         baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'center',
                         //baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "OpenSans"',
-                        axisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "OpenSans-bold"',
+                        axisLabel_font: attributes.baseAxisLabelFont || 'normal 14px "OpenSans-bold"',
                         baseAxisLabel_textStyle: attributes.baseAxisLabelTextStyle || 'gray' ,
                         baseAxisOverlappedLabelsMode: 'leave',
                         multiChartRole: attributes.multiChart,

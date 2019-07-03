@@ -122,11 +122,12 @@ define(function () {
              * Returns data of a particular question
              */
             getMapData: function (pYear, pQuestion, pAnswer, pDataset, pSectorSize, pActivityFilter, pCompanyFilter) {
-                var year = parseInt(pYear);
-                var url = configService.getEsenerDataPath() + "&dataAccessId=getMapData" + "&parampYear=" + year + "&parampQuestion=" + pQuestion 
+                //var year = parseInt(pYear);
+                //var answer = parseInt(pAnswer);
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getMapData" + "&parampYear=" + pYear + "&parampQuestion=" + pQuestion 
                 + "&parampAnswer=" + pAnswer + "&parampDataset=" + pDataset + "&parampSectorSize=" + pSectorSize + "&parampActivityFilter=" + pActivityFilter
                 + "&parampCompanyFilter=" + pCompanyFilter;
-                $log.debug('getMapData url:' + url);
+                $log.warn('getMapData url:' + url);
                 return promise(url);
             },
 

@@ -97,23 +97,23 @@ define(function (require) {
                 },
                 pQuestion: {
                     value: 'MM161',
-                    squash: true
+                    squash: 'MM161'
                 },
                 pAnswer: {
                     value: '1',
-                    squash: true
+                    squash: '1'
                 },
                 pActivityFilter: {
                     value: '8',
-                    squash: true
+                    squash: '8'
                 },
                 pCompanyFilter: {
                     value: '6',
-                    squash: true
+                    squash: '6'
                 },
                 pSectorSize: {
                     value: 'activity-sector',
-                    squash: true
+                    squash: 'activity-sector'
                 }
             },
             views: {

@@ -22,7 +22,6 @@ define(function (require) {
 
         //$log.warn($state.current.name);
         $scope.pIndicator = $stateParams.pIndicator;
-        $log.warn($scope.pIndicator);
         $scope.currentName = $state.current.name;
 
         $scope.pTopic = '';
@@ -31,10 +30,10 @@ define(function (require) {
 
         $scope.changeTopic = function($event, topic, question){
 
-angular.element('.section-topic .card--item').removeClass('selected');
-angular.element('.section-topic .card--item').addClass('disabled');
-$event.target.parentElement.classList.remove('disabled');
-$event.target.parentElement.classList.add('selected');
+            angular.element('.section-topic .card--item').removeClass('selected');
+            angular.element('.section-topic .card--item').addClass('disabled');
+            $event.target.parentElement.classList.remove('disabled');
+            $event.target.parentElement.classList.add('selected');
 
             $scope.pTopic = topic;
             $scope.pQuestion = question;
@@ -51,11 +50,10 @@ $event.target.parentElement.classList.add('selected');
         }
 
         $scope.changeChart = function($event, chart){
-
-angular.element('.section-chart .card--item').removeClass('selected');
-angular.element('.section-chart .card--item').addClass('disabled');
-$event.target.parentElement.classList.remove('disabled');
-$event.target.parentElement.classList.add('selected');
+            angular.element('.section-chart .card--item').removeClass('selected');
+            angular.element('.section-chart .card--item').addClass('disabled');
+            $event.target.parentElement.classList.remove('disabled');
+            $event.target.parentElement.classList.add('selected');
 
             $scope.pChart = chart;
         }

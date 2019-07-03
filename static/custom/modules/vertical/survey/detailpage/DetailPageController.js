@@ -11,23 +11,22 @@
 define(function (require) {
     'use strict';
 
-    function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, DetailPageService, dvtUtils,$rootScope, mapProvider) {
-        //$scope.pLanguage = $stateParams.pLanguage;
+    function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, DetailPageService, dvtUtils, $rootScope, mapProvider) {
+        //CDA
+        $scope.cdaEsenerDash = configService.getEsenerCda();
+
+        //Languages
+        $scope.pLanguage = $stateParams.pLanguage;
         $scope.pLocale = $stateParams.pLocale;
 
-        // Datasets, 
+        // Datasets
         $scope.datasetList = configService.getDatasets();
         $scope.datasetESENER2009 = $scope.datasetList.ESENER2009;
         $scope.datasetESENER2014 = $scope.datasetList.ESENER2014;
 
         $scope.actualDataset = ($stateParams.pIndicator == 2009)?$scope.datasetESENER2009:$scope.datasetESENER2014;
 
-        $scope.pLanguage = $stateParams.pLanguage;
-        $scope.cdaEsenerDash = configService.getEsenerCda();
-
         // Literals / i18n
-        //var i18n = configService.getLiterals();
-
         var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($scope.pLocale);
         $scope.i18n = i18n;
         
@@ -35,61 +34,42 @@ define(function (require) {
         $scope.pIndicator = $stateParams.pIndicator; //Year
         $scope.pTopic = $stateParams.pTopic; //Category
         $scope.pChart = $stateParams.pChart; //Type of chart
-        $scope.pQuestion = $stateParams.pQuestion; //Question (name)
+        $scope.pQuestion = $stateParams.pQuestion; //Question (name)        
         $scope.pCompanyFilter = $stateParams.pCompanyFilter; //Company size
         $scope.pActivityFilter = $stateParams.pActivityFilter; //Activity sector
         $scope.answer = $stateParams.pAnswer; //Answer
-        $scope.selectedIndicator = $stateParams.pIndicator;
-        $scope.selectedSubIndicator = $stateParams.pSubIndicator;
+        $scope.pCountry ='AT'; //Country
+        $scope.pSectorSize = $stateParams.pSectorSize; //Activity sector or company size
 
-        $scope.pCountry ='AT';
-        //$scope.pCompanySize = $stateParams.pCompanySize;
-        //$scope.pActivitySector =$stateParams.pActivitySector;
-        $scope.pSectorSize = $stateParams.pSectorSize;
+        // Main Category / Subcategory: Question or Main Category / Question
+        $scope.breadcrumb = '';
 
-        
+        $scope.searchText = '';
+
+        $scope.currentName = $state.current.name;
+
+        //Arrays
         $scope.countriesDataFor = [];
         $scope.activitySectorFor =[];
         $scope.companySizeFor =[];
-        $scope.i18n = i18n;
+        $scope.questions = []; //Question menu
+        $scope.selectedQuestionValues = []; //Data of selected question
+        $scope.splitAnswers = []; //Select of split answers
+        $scope.countries = []; //Select of available countries for selected question
 
         if ($rootScope.data != undefined)
         {
-          $rootScope.data.indicator = $scope.selectedIndicator;
-          $rootScope.data.subIndicator = $scope.selectedSubIndicator;
+          $rootScope.data.indicator = $scope.pIndicator;
+          $rootScope.data.question = $scope.pQuestion;
+          $rootScope.data.pAnswer = $scope.answer;
+          $rootScope.data.sectorsize = $scope.pSectorSize;
+          $rootScope.data.activityFilter = $scope.pActivityFilter;
+          $rootScope.data.companyFilter = $scope.pCompanyFilter;
+
+          //$log.warn('DetailPageController: ');
+          //$log.warn($rootScope.data);
         }
 
-        //----------------stories-----------------
-        $scope.stories = [
-        //0 - Gauss Chart plot
-        {
-            color1: dvtUtils.getColorCountry(2),
-            plots: DetailPageService.getMinMaxValues(),
-            dimensions: {
-              value: {
-                format: {
-                  number: "#"
-                }
-              }
-            }
-        },
-        //European bar chart plot
-        { 
-            color1: dvtUtils.getColorCountry(1),
-            color2: dvtUtils.getColorCountry(22),
-            color3: dvtUtils.getAccidentsColors(4),
-            plots: DetailPageService.getGeneralEuropeanBarCharPlot(),
-            dimensions: {
-              value: {
-                format: {
-                  number: "0.#",
-                  percent: "#%"
-                }
-              }
-            }
-        }];
-
-        //---------------------parameters---------------------------------
         $scope.dashboard = {
             parameters: {
               "pActivityFilter": $scope.pActivityFilter,
@@ -99,45 +79,43 @@ define(function (require) {
                "pTopic": $scope.pTopic
             }
         };
-           
-        $scope.currentName = $state.current.name;
-
-        $scope.questions = []; //Question menu
-        $scope.selectedQuestionValues = []; //Data of selected question
-        $scope.splitAnswers = []; //Select of split answers
-        $scope.countries = []; //Select of available countries for selected question
-
-        // Main Category / Subcategory: Question or Main Category / Question
-        $scope.breadcrumb = '';
-
-        //Models
-        $scope.pCountry = 'country';
-        //$scope.pSectorSize = 'activity-sector';
-        $scope.searchText = '';
 
         /* Map parameters */
         $scope.data = {
+            indicator: $scope.pIndicator,
+            question: $scope.pQuestion,
+            pAnswer: $scope.pAnswer,
+            sectorsize: $scope.pSectorSize,
+            activityFilter: $scope.pActivityFilter,
+            companyFilter: $scope.pCompanyFilter,
             questionData: []
         };
+
         $scope.promises = {
             promiseShape: mapProvider.getEuropeShape()
         };
+
         $scope.dataPromises = [
           mapProvider.getEuropeShape(),
-          dataService.getMapData($scope.pIndicator, $scope.pQuestion)
+          dataService.getMapData($scope.pIndicator, $scope.pQuestion, $scope.answer, 
+            $scope.actualDataset, $scope.pSectorSize, $scope.pActivityFilter, $scope.pCompanyFilter)
         ];
 
         $scope.minMaxValues = {
           minValue: 0,
           maxValue: 100,
           range: 25
-        };
+        };;
+
 
         $scope.getMinMaxValues = function()
         {
           var data;
 
           data = $scope.data.questionData;
+
+          //$log.warn('getMinMaxValues data');
+          //$log.warn(data);
 
           var minValue = 100;
           var maxValue = 0;
@@ -164,13 +142,65 @@ define(function (require) {
             }
 
             var range = (maxValue - minValue) / 4;
-            $scope.minMaxValues = {min_value: minValue,max_value: maxValue,range_value: range};
+
+            $scope.minMaxValues = {min_value: minValue,max_value: maxValue,range_value: range}; 
+
+            //$log.warn('minValue: '+minValue+' maxValue: '+maxValue+' range: '+range);
           }
           else
           {
             console.log("The indicator selected is not known");
           }     
         }
+
+        //STORIES
+        $scope.stories = [
+            //0 - Gauss Chart plot
+            {
+                color1: dvtUtils.getColorCountry(2),
+                plots: DetailPageService.getMinMaxValues(),
+                dimensions: {
+                  value: {
+                    format: {
+                      number: "#"
+                    }
+                  }
+                }
+            },
+            //1 - European bar chart plot
+            { 
+                color1: dvtUtils.getColorCountry(1),
+                color2: dvtUtils.getColorCountry(22),
+                color3: dvtUtils.getAccidentsColors(4),
+                plots: DetailPageService.getGeneralEuropeanBarCharPlot(),
+                dimensions: {
+                  value: {
+                    format: {
+                      number: "0.#",
+                      percent: "#%"
+                    }
+                  }
+                }
+            },
+            //2 - National Bar Chart Plot
+            {
+                color1: dvtUtils.getColorCountry(1),
+                color2: dvtUtils.getColorCountry(22),
+                color3: dvtUtils.getAccidentsColors(4),
+                color4: dvtUtils.getColorCountry(3),
+                color5: dvtUtils.getColorCountry(2),
+                plots: DetailPageService.getNationalBarChartPlot(),
+                alignment: 'left',
+                dimensions: {
+                  value: {
+                    format: {
+                      number: "0.#",
+                      percent: "#%"
+                    }
+                  }
+                }
+            }
+        ];
 
         /******************************************************************************|
         |                                DATA LOAD                                     |
@@ -187,17 +217,17 @@ define(function (require) {
                     } 
                 });
                 $scope.countriesDataFor.sort(function(a, b){
-              var codeA = a.country_code;
-              var codeB = b.country_code;
-              if (codeA < codeB) {
-                return -1;
-              }
-              if (codeA > codeB) {
-                return 1;
-              }
+                  var codeA = a.country_code;
+                  var codeB = b.country_code;
+                  if (codeA < codeB) {
+                    return -1;
+                  }
+                  if (codeA > codeB) {
+                    return 1;
+                  }
 
-              //  be equal
-              return 0;
+                  //  be equal
+                  return 0;
                 });
             }).catch(function (err) {
               throw err;
@@ -311,8 +341,9 @@ define(function (require) {
 
             if ($rootScope.data == undefined)
             {
-              Promise.all([$scope.dataPromises[1],$scope.dataPromises[2]]).then(function(res)
+              Promise.all([$scope.dataPromises[1]]).then(function(res)
               {
+                $log.warn("PROMISE INSIDE CONTROLLER");
                 var row = {};
                 res[0].data.resultset.map(function (elem) {
                     row = elem;
@@ -330,10 +361,15 @@ define(function (require) {
                     $scope.data.questionData[row[1]].indicator = row[6];
                 });
 
-                $scope.data.indicator = $scope.selectedIndicator;
-                $scope.data.subIndicator = $scope.selectedSubIndicator;
+                $scope.data.indicator = $scope.pIndicator;
+                $scope.data.question = $scope.pQuestion;
+                $scope.data.pAnswer = $scope.pAnswer;
+                $scope.data.sectorsize = $scope.pSectorSize;
+                $scope.data.activityFilter = $scope.pActivityFilter;
+                $scope.data.companyFilter = $scope.pCompanyFilter;
 
                 $scope.getMinMaxValues();
+                $state.reload();
               });
             }
             else
@@ -343,7 +379,7 @@ define(function (require) {
               $scope.getMinMaxValues();
             }  
 
-        /******************************************** END DATA LOAD *************************************************/
+        /******************************* END DATA LOAD ********************************/
 
         /*********************************************** FILTERS **************************************************/
 
@@ -385,7 +421,7 @@ define(function (require) {
                         pAnswer: $scope.answer, //Split answer
                         pActivityFilter: $scope.pActivityFilter,
                         pCompanyFilter: $scope.pCompanyFilter
-                    }, 
+                    },
                     {
                         reload: true
                     });
@@ -393,7 +429,6 @@ define(function (require) {
             }
 
             $scope.filterChange = function(){
-                //$log.warn($scope.answer);
                 $state.transitionTo('detailpage', {
                     pIndicator: $scope.pIndicator, //Year
                     pTopic: $scope.pTopic, //Category

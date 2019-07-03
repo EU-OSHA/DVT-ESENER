@@ -66,9 +66,18 @@
                     group-list="groupList" width="500" height="500"
                     group-color="groupColor"
                     data="data">
-                </dvt-map> 
+                </dvt-map>
               </div>
               <div class="map--gauss--block container">
+                      <Parameter default="16" name="pDataset" type="Numeric" />
+                      <Parameter default="MM161" name="pQuestion" type="String" />
+                      <Parameter default="0" name="pMinValue" type="Numeric" />
+                      <Parameter default="0" name="pMaxValue" type="Numeric" />
+                      <Parameter default="0" name="pRange" type="Numeric" />
+                      <Parameter default="activity-sector" name="pSectorSize" type="String" />
+                      <Parameter default="8" name="pActivityFilter" type="String" />
+                      <Parameter default="6" name="pCompanyFilter" type="String" />
+                      <Parameter default="1" name="pAnswer" type="String" />
                 	<dvt-bar-chart
                     data-ng-cloak
                     query="getGaussChartValues" cda="{{::cdaEsenerDash }}"
@@ -76,7 +85,7 @@
                     orientation="vertical" axis-fixed-min="0"
                     listen-to="[minMaxValues.min_value, minMaxValues.max_value, minMaxValues.range_value]"
                     axis-fixed-max="20" step="{{step.chart1}}"
-                    params="[['pDataset', actualDataset], ['pIndicator',data['AT'].indicator], ['pMinValue', minMaxValues.min_value], ['pMaxValue', minMaxValues.max_value], ['pRange', minMaxValues.range_value], ['pAnswer', answer]]"
+                    params="[['pDataset', actualDataset], ['pQuestion', pQuestion], ['pMinValue', minMaxValues.min_value], ['pMaxValue', minMaxValues.max_value], ['pRange', minMaxValues.range_value], ['pSectorSize', pSectorSize], ['pActivityFilter', pActivityFilter], ['pCompanyFilter', pCompanyFilter], ['pAnswer', answer]]"
                     color-role="category" colors="[stories[0].color1]" id="1"
                     axis-label-font="14px 'OpenSans-bold'"
                     plots="stories[0].plots"
@@ -103,7 +112,7 @@
         <!-- EUROPEAN BAR CHART -->
         <div class="" data-ng-show="pChart == 'european-bar-chart'">
           <!---------------------- EuropeanBarChart ESENER 2014 ------------------------>
-          <div class="card--grid xxs-w1 xs-w1 w1 center-text">
+          <div class="xxs-w1 xs-w1 w1 center-text">
               <div class="card--block--chart">
                   <!------------ActivitySector------------>
                   <div class="chart--block">
@@ -209,6 +218,37 @@
                           datasource-and-dates="[16,136,pCompanyFilter]"
                       ></dvt-bar-chart>
                   </div>-->
+              </div>
+          </div>
+        </div>
+
+        <!-- NATIONAL BAR CHART -->
+        <div class="" data-ng-show="pChart == 'national-bar-chart'">
+          <div class="xxs-w1 xs-w1 w1 center-text">
+              <div class="card--block--chart">
+                  <div class="chart--block">
+                      <dvt-bar-chart
+                        data-ng-cloak
+                        query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
+                        width="330" height="660" axis-percent="1"
+                        orientation="horizontal" axis-fixed-min="0"
+                        axis-fixed-max="100" step="20"
+                        params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', pSectorSize],['pCountry', 'AT']]"
+                        color-role="series" colors="[stories[2].color1, stories[2].color2, stories[2].color3]"
+                        id="3" axis-label-font="14px 'OpenSans-bold'"
+                        plots="stories[2].plots" values-overflow="show"
+                        values-visible="true" values-mask="{value}"                        
+                        label-text-align="stories[2].alignment"
+                        values-font="14px 'OpenSans-bold'"
+                        multiple-label-colors="false"
+                        leaf-content-overflow='visible'
+                        ortho-axis-visible="true"
+                        base-axis-position="bottom"
+                        dimensions="stories[2].dimensions"
+                        legend="true" is-maximized="false"
+                        datasource-and-dates="[15,110,pActivityFilter]"
+                      ></dvt-bar-chart>
+                  </div>
               </div>
           </div>
         </div>
