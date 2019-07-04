@@ -42,7 +42,10 @@
     outline:none !important;
     background: transparent;
   }
-
+  button[disabled], html input[disabled] {
+    cursor: default;
+    pointer-events: none;
+  }
   .section--page{
     padding: 4rem 0 2rem;
   }
@@ -233,6 +236,18 @@
       }
       &::before{
         background:$aquamarine;
+      }
+    }
+  }
+  .datavisualisation-page{
+    .btn-main-color{
+      background: $aquamarine;
+      color: $white;
+      &[disabled] {
+        opacity: 0.4;
+        border: 1px dotted #57575A;
+        color: #57575A;
+        background:transparent;
       }
     }
   }
