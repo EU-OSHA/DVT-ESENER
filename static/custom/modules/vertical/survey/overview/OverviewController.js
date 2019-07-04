@@ -9,12 +9,12 @@
  * ############################################
  */
 
-
+var resolution = screen.width;
 
 define(function (require) {
     'use strict';
 
-    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, dataService, $sce) {
+    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, dataService, $sce, $event) {
 
         $scope.pLanguage = $stateParams.pLanguage;
 
@@ -94,6 +94,37 @@ define(function (require) {
             currentTarget.addClass('active');
           }          
         }
+      
+
+      // Open indicators list like a select element
+
+      $(window).on("load resize",function(e){
+        resolution = screen.width;
+      });
+
+      var element = angular.element('.submenu--items--wrapper li');
+
+      element.one('click', function(e){
+        resolution = screen.width;
+
+        if( resolution < 990 ){
+          var parentTagClass = $(this).parent().attr('class');
+          console.log( parentTagClass );
+
+          if( parentTagClass.indexOf('open-list') < 0 ){
+            angular.element('.submenu--items--wrapper').addClass('open-list');
+          } else {
+            angular.element('.submenu--items--wrapper').removeClass('open-list');
+          }
+        }
+      });
+
+      $('body').mouseup(function(e){
+        var container = angular.element('.submenu--items--wrapper');
+        if (!container.is(e.target) && container.has(e.target).length === 0){
+          angular.element('.submenu--items--wrapper').removeClass('open-list'); 
+        }
+      });
     }
 
     controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log', 'dataService', '$sce'];
