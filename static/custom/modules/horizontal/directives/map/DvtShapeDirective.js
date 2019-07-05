@@ -405,7 +405,8 @@ define(function (require) {
                 groupColor: '=',
                 groupList: '=',
                 clickAction: '=',
-                data: '='
+                data: '=',
+                listenTo: '='
             },
             template: '' + '<div data-ng-class="{{ divClass }}" data-ng-attr-id="{{ id }}"></div>',
             controller: ['$scope', 'mapProvider', 'dataService', '$attrs','$state', function ($scope, mapProvider, dataService, $attrs,$state) {
