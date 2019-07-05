@@ -89,7 +89,7 @@
 @media (max-width: 1023px) {
 	
 	body{
-	  padding-top:0rem;
+	  padding-top:10.5rem;
 	}
 	.tablet-show{
 		display: block;
@@ -347,10 +347,6 @@
 			width: 100% !important;
 		}
 	}
-
-
-
-
 }
 
 @media (max-width: 800px) {
@@ -826,6 +822,14 @@ and (max-width :767px)  {
     	width: 100%;
     }
   }
+	.home-cover {
+		background-size: cover;
+	    height: 10.5rem;
+	    .main-title{
+	    }
+	    .lead-title{
+	    }
+	}
 	.bar-header{
 		position: fixed;
     background: $white;
