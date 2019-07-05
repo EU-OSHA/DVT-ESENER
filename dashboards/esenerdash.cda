@@ -142,68 +142,73 @@
       <Parameter default="1" name="pAnswer" type="String" />
     </Parameters>
     <Query>
-      (SELECT CONCAT(ROUND(${pMinValue}, 1), '%') as Distribution, COUNT(ROUND(v.value*100,2)) as Total
+      (SELECT CONCAT(ROUND(${pMinValue},1), '%') as Distribution, COUNT(ROUND(v.value*100,1)) as Total
         FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
+        AND n.country_code NOT IN ('EU27')
         AND v.profile_id = p.id 
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
         AND v.dataset_id = ${pDataset}
         AND i.name = ${pQuestion}
         AND v.indicator_id = i.id
-        AND ROUND(v.value*100,2) = ${pMinValue}
+        AND ROUND(v.value*100,1) = ${pMinValue}
         AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         ORDER BY v.value ASC
       )UNION(
-        SELECT CONCAT(ROUND(${pMinValue}+${pRange},1), '%'), COUNT(ROUND(v.value*100,2))
+        SELECT CONCAT(ROUND(${pMinValue}+${pRange},1), '%'), COUNT(ROUND(v.value*100,1))
         FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
+        AND n.country_code NOT IN ('EU27')
         AND v.profile_id = p.id
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
         AND v.dataset_id = ${pDataset}
         AND i.name = ${pQuestion}
         AND v.indicator_id = i.id
-        AND (ROUND(v.value*100,2) BETWEEN (${pMinValue} + 0.01) AND (${pMinValue} + ${pRange}))
+        AND (ROUND(v.value*100,1) BETWEEN (${pMinValue} + 0.01) AND (${pMinValue} + ${pRange}))
         AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         ORDER BY v.value ASC
       )UNION(
-        SELECT CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), '%'), COUNT(ROUND(v.value*100,2))
+        SELECT CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), '%'), COUNT(ROUND(v.value*100,1))
         FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
+        AND n.country_code NOT IN ('EU27')
         AND v.profile_id = p.id 
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
         AND v.dataset_id = ${pDataset}
         AND i.name = ${pQuestion}
         AND v.indicator_id = i.id
-        AND ROUND(v.value*100, 2) BETWEEN ((${pMinValue}+${pRange}) + 0.01) AND (${pMinValue}+${pRange}*2)
+        AND ROUND(v.value*100, 1) BETWEEN ((${pMinValue}+${pRange}) + 0.01) AND (${pMinValue}+${pRange}*2)
         AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         ORDER BY v.value ASC
       )UNION(
-        SELECT CONCAT(ROUND(${pMaxValue} - ${pRange},1), '%'), COUNT(ROUND(v.value*100,2))
+        SELECT CONCAT(ROUND(${pMaxValue} - ${pRange},1), '%'), COUNT(ROUND(v.value*100,1))
         FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
+        AND n.country_code NOT IN ('EU27')
         AND v.profile_id = p.id 
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
         AND v.dataset_id = ${pDataset}
         AND i.name = ${pQuestion}
         AND v.indicator_id = i.id
-        AND ROUND(v.value*100, 2) BETWEEN ((${pMinValue}+${pRange}*2) + 0.01) AND (${pMaxValue} - ${pRange})
+        AND ROUND(v.value*100,1) BETWEEN ((${pMinValue}+${pRange}*2) + 0.01) AND (${pMaxValue} - ${pRange})
         AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         ORDER BY v.value ASC
       )UNION(
-        SELECT CONCAT(ROUND(${pMaxValue}, 1), '%'), COUNT(ROUND(v.value*100,2))
+        SELECT CONCAT(ROUND(${pMaxValue},1), '%'), COUNT(ROUND(v.value*100,1))
         FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
+        AND n.country_code NOT IN ('EU27')
         AND v.profile_id = p.id 
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
         AND v.dataset_id = ${pDataset}
         AND i.name = ${pQuestion}
         AND v.indicator_id = i.id
-        AND ROUND(v.value*100, 2) BETWEEN ((${pMaxValue} - ${pRange}) + 0.01) AND ${pMaxValue}
+        AND ROUND(v.value*100,1) BETWEEN ((${pMaxValue} - ${pRange}) + 0.01) AND ${pMaxValue}
         AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         ORDER BY v.value ASC
       )

@@ -76,6 +76,9 @@ define(function (require) {
                 var answerId = 0;
                 var answerValue = 0;
 
+                $log.warn('minMaxValue Directive');
+                $log.warn(data);
+
                 for (var index in data) {
                     for(var answer in data[index].answers){
                         answerId = data[index].answers[answer].id;
@@ -97,7 +100,7 @@ define(function (require) {
                 maxValue = maxValue;
 
                 var range = (maxValue - minValue) / 4;
-
+                $log.warn('minValue: '+minValue+' maxValue: '+maxValue+' range: '+range);
                 return [minValue, maxValue, range];
             };
 
@@ -419,16 +422,16 @@ define(function (require) {
                     companyFilter: ''
                 };
 
-                if ($rootScope.data != undefined)
+                /*if ($rootScope.data != undefined)
                 {
                     $scope.data = $rootScope.data;
-                }
+                }*/
 
-                if (!!$scope.promise && $rootScope.data == undefined)
+                if (!!$scope.promise /*&& $rootScope.data == undefined*/)
                 {
                     Promise.all([$scope.promise[1]]).then(function(res)
                     {
-                        $log.warn("PROMISE INSIDE DIRECTIVE 1");
+                        $log.warn('DIRECTIVE');
                         var pAnswer = $stateParams.pAnswer;
                         var indicator = $stateParams.pIndicator;
                         var question = $stateParams.pQuestion;
@@ -458,7 +461,7 @@ define(function (require) {
                         $rootScope.data = $scope.mapData;
                         $scope.data = $scope.mapData;
 
-                        $log.warn('DvtShapeDirective: ');
+                        //$log.warn('DvtShapeDirective: ');
                         $log.warn($rootScope.data);
                     });
                 }
@@ -471,17 +474,16 @@ define(function (require) {
             link: function (scope, element, attributes, controllers) {
                 //get dashboard parent directive
                 var dashboard = controllers[0];
-
+                $log.warn('LINK SCOPE');
+                //$log.warn(scope.data);
                 //generate id
                 scope.id = "dvt_map" + nextId();
 
                 //promise with shapes and country names
                 if(!!scope.promise) {
 
-                    if ($rootScope.data == undefined)
-                    {
                         Promise.all([scope.promise[0], scope.promise[1]]).then(function(res) {
-                            $log.warn("PROMISE INSIDE DIRECTIVE 2");
+                            $log.warn('LINK DIRECTIVE');
                             var row = {};
                             res[1].data.resultset.map(function (elem) {
                                 row = elem;
@@ -499,7 +501,7 @@ define(function (require) {
                                 scope.mapData.questionData[row[1]].indicator = row[6];
                             });
 
-                            $log.warn(scope.mapData);
+                            //$log.warn(scope.mapData);
                             
                             $rootScope.data = scope.mapData;
                             scope.data = scope.mapData;
@@ -570,77 +572,7 @@ define(function (require) {
 
                             $log.debug("Link function of " + scope.id);
                         });
-                    }
-                    else
-                    {
-                        scope.promise[0].then(function(map) {
-                            //css style
-                            scope.divClass = attributes.cssClass;
-
-                            var map = map.data;                        
-
-                            // Pentaho component definition object
-                            var definition = {
-                                type: "raphaelComponent",
-                                name: scope.id,
-                                priority: attributes.priority || 100,
-                                parameters: [],
-                                executeAtStart: false,
-                                width: attributes.width || 1000,
-                                height: attributes.height || 600,
-                                htmlObject: scope.id,
-                                listeners: [],
-                                data: scope.data,
-                                customfunction: customFunction(scope, attributes, scope.data, $log, mapProvider, dvtUtils, map)
-                            };
-
-                            if (!!scope.params)
-                                definition.parameters = scope.params;
-
-                            if (!!scope.listenTo)
-                                for (var listen in scope.listenTo) {
-                                    definition.listeners[listen] = scope.listenTo[listen];
-                                }
-
-                            if (!!attributes.hover)
-                                scope.hover = attributes.hover == 1;
-
-                            if (!!scope.postFetch)
-                                definition.postFetch = scope.postFetch;
-
-                            if (!!attributes.width)
-                                scope.width = attributes.width;
-
-                            if (!!attributes.height)
-                                scope.height = attributes.height;
-
-                            if (!!attributes.x)
-                                scope.x = attributes.x;
-
-                            if (!!attributes.y)
-                                scope.y = attributes.y;
-
-
-                            var chart = new RaphaelComponent(definition);
-                            dashboard.register(chart);
-
-                            /* ------------------------------
-                             * fluidity
-                             * ------------------------------
-                             * duplicated code in:
-                             *  - DvtDashboarDirective
-                             *  - DvtBarchartDirective
-                             *  - DvtPyramidDirective
-                             *  - DvtRadarDirective
-                             *  ------------------------------
-                             */
-                            chart.postExecution = function(){
-                                this.width = this.placeholder().width();
-                            };
-
-                            $log.debug("Link function of " + scope.id);
-                        });
-                    }                
+                                   
                 }
                 else{
                     $log.error("Link function of " + scope.id+ ": Promise is undefined");
