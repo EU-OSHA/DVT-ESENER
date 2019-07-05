@@ -72,13 +72,41 @@ define(function (require) {
 
         $scope.dashboard = {
             parameters: {
-              "pActivityFilter": $scope.pActivityFilter,
+              /*"pActivityFilter": $scope.pActivityFilter,
                "pCompanyFilter" : $scope.pCompanyFilter,
-               "pSelector": $scope.pSelector,
+               "pSelector": $scope.pSelector,*/
                "pChart": $scope.pChart,
-               "pTopic": $scope.pTopic
+               "pTopic": $scope.pTopic,
+               "pFilters": {
+               		"activitySector": null,
+               		"establishmentSize": null,
+               		"country": null
+               }
             }
         };
+
+        console.log($scope.dashboard);
+        console.log(this.dashboard);
+
+        $scope.showFilters = function()
+		{
+			console.log($scope.dashboard.parameters);
+		}
+           
+        $scope.currentName = $state.current.name;
+
+        $scope.questions = []; //Question menu
+        $scope.selectedQuestionValues = []; //Data of selected question
+        $scope.splitAnswers = []; //Select of split answers
+        $scope.countries = []; //Select of available countries for selected question
+
+        // Main Category / Subcategory: Question or Main Category / Question
+        $scope.breadcrumb = '';
+
+        //Models
+        $scope.pCountry = 'country';
+        //$scope.pSectorSize = 'activity-sector';
+        $scope.searchText = '';
 
         /* Map parameters */
         $scope.data = {
