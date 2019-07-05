@@ -243,6 +243,7 @@
     .btn-main-color{
       background: $aquamarine;
       color: $white;
+      pointer-events: none;
       &[disabled] {
         opacity: 0.4;
         border: 1px dotted #57575A;
