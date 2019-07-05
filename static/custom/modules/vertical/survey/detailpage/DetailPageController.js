@@ -40,6 +40,7 @@ define(function (require) {
         $scope.answer = $stateParams.pAnswer; //Answer
         $scope.pCountry ='AT'; //Country
         $scope.pSectorSize = $stateParams.pSectorSize; //Activity sector or company size
+        $scope.nonEU = 1;
 
         // Main Category / Subcategory: Question or Main Category / Question
         $scope.breadcrumb = '';

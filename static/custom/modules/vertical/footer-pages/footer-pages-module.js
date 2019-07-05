@@ -18,8 +18,14 @@ define(function (require) {
         var i18n = configService.getLiterals();
 
         $urlRouterProvider.otherwise("/404");
-        $stateProvider.state('legal-notice', {
+        $stateProvider.state('/:pLanguage/legal-notice', {
             url: "/legal-notice",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                }
+            },
             views: {
                 "content-main": {
                     templateUrl: configService.getVerticalTplPath("footer-pages", "legal-notice"),
@@ -34,7 +40,13 @@ define(function (require) {
         });
 
         $stateProvider.state('accessibility', {
-            url: "/accessibility",
+            url: "/:pLanguage/accessibility",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                }
+            },
             views: {
                 "content-main": {
                     templateUrl: configService.getVerticalTplPath("footer-pages", "accessibility"),
@@ -49,7 +61,13 @@ define(function (require) {
         });
 
         $stateProvider.state('privacy-policy', {
-            url: "/privacy-notice",
+            url: "/:pLanguage/privacy-notice",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                }
+            },
             views: {
                 "content-main": {
                     templateUrl: configService.getVerticalTplPath("footer-pages", "privacy-policy"),
@@ -64,7 +82,13 @@ define(function (require) {
         });
 
         $stateProvider.state('site-map', {
-            url: "/site-map",
+            url: "/:pLanguage/site-map",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                }
+            },
             views: {
                 "content-main": {
                     templateUrl: configService.getVerticalTplPath("footer-pages", "sitemap"),
@@ -79,7 +103,13 @@ define(function (require) {
         });
 
         $stateProvider.state('404', {
-            url: "/404",
+            url: "/:pLanguage/404",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                }
+            },
             views: {
                 "content-main": {
                     templateUrl: configService.getVerticalTplPath("footer-pages", "404")

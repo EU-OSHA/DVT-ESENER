@@ -20,10 +20,11 @@ define(function (require) {
         $scope.title ="About the Visualisation Tool";
 
         // CDA
-        $scope.cda =  configService.getInfosystemCda();
+        $scope.cda =  configService.getEsenerCda();
 
         // Literals / i18n
-        $scope.i18n = configService.getLiterals();
+        //$scope.i18n = configService.getLiterals();
+        $scope.i18n = ($stateParams.pLanguage == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLanguage);
 
         $scope.status = 'ready';
     }

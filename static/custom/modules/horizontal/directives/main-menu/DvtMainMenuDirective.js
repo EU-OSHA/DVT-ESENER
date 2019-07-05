@@ -102,7 +102,8 @@ define(function (require) {
                     };
 
                     // Literals / i18n
-                    var i18n_literals = configService.getLiterals();
+                    //var i18n_literals = configService.getLiterals();
+                    var i18n_literals = ($stateParams.pLanguage == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLanguage);
                     $scope.i18n_literals = i18n_literals;
 
                     var breadCrumbStructure = require('json!dvt/directives/breadcrumb-items');
@@ -173,6 +174,7 @@ define(function (require) {
                             } else {
                                 var pathURL = path.split("/");
                                 $scope.isHome = false;
+                                $scope.isFooterPage = false;
                                 var setBreadCrumbs=function() {
                                     var _link = $compile((params == null)?breadCrumbStructure[$state.current.name]:breadCrumbStructure[$state.current.name+params])($scope);
                                     var breadcrumb = "";
@@ -183,10 +185,23 @@ define(function (require) {
                                     $scope.breadCrumb = $sce.trustAsHtml(breadcrumb);
                                     $scope.title = titleStructure[$state.current.name];
                                     $scope.isHome = false;
+                                    $scope.isFooterPage = false;
                                     $scope.anchorPath = $location.path().split("/")[1];
                                 };
 
                                 setBreadCrumbs();
+                            }
+
+                            $scope.isFooterPage = false;
+
+                            if($state.current.name == 'site-map'
+                                || $state.current.name == 'accessibility'
+                                || $state.current.name == 'privacy-notice'
+                                || $state.current.name == 'legal-notice'
+                                || $state.current.name == 'about-tool'){
+                                $scope.isFooterPage = true;
+                            }else{
+                                $scope.isFooterPage = false;
                             }
 
                             //angular.element("title").html($scope.titleHeader);
