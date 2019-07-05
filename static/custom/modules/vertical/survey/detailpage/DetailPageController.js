@@ -84,7 +84,7 @@ define(function (require) {
         $scope.data = {
             indicator: $scope.pIndicator,
             question: $scope.pQuestion,
-            pAnswer: $scope.pAnswer,
+            pAnswer: $scope.answer,
             sectorsize: $scope.pSectorSize,
             activityFilter: $scope.pActivityFilter,
             companyFilter: $scope.pCompanyFilter,
@@ -113,9 +113,7 @@ define(function (require) {
           var data;
 
           data = $scope.data.questionData;
-
-          //$log.warn('getMinMaxValues data');
-          //$log.warn(data);
+          $log.warn('GET MIN MAX VALUES CONTROLLER');
 
           var minValue = 100;
           var maxValue = 0;
@@ -145,7 +143,7 @@ define(function (require) {
 
             $scope.minMaxValues = {min_value: minValue,max_value: maxValue,range_value: range}; 
 
-            //$log.warn('minValue: '+minValue+' maxValue: '+maxValue+' range: '+range);
+            $log.warn('minValue: '+minValue+' maxValue: '+maxValue+' range: '+range);
           }
           else
           {
@@ -343,7 +341,7 @@ define(function (require) {
             {
               Promise.all([$scope.dataPromises[1]]).then(function(res)
               {
-                $log.warn("PROMISE INSIDE CONTROLLER");
+                $log.warn('IF ROOTSCOPE UNDEFINED CONTROLLER');
                 var row = {};
                 res[0].data.resultset.map(function (elem) {
                     row = elem;
@@ -363,20 +361,23 @@ define(function (require) {
 
                 $scope.data.indicator = $scope.pIndicator;
                 $scope.data.question = $scope.pQuestion;
-                $scope.data.pAnswer = $scope.pAnswer;
+                $scope.data.pAnswer = $scope.answer;
                 $scope.data.sectorsize = $scope.pSectorSize;
                 $scope.data.activityFilter = $scope.pActivityFilter;
                 $scope.data.companyFilter = $scope.pCompanyFilter;
 
+                //$scope.data = $rootScope.data;
                 $scope.getMinMaxValues();
                 $state.reload();
               });
             }
             else
-            {
-              $scope.data = $rootScope.data;
-
-              $scope.getMinMaxValues();
+            {   
+                $log.warn('ELSE CONTROLLER');
+                //$log.warn($scope.data);
+                //$log.warn($rootScope.data);
+                $scope.data = $rootScope.data;
+                $scope.getMinMaxValues();
             }  
 
         /******************************* END DATA LOAD ********************************/
@@ -410,7 +411,7 @@ define(function (require) {
             }
 
             $scope.changeToQuestion = function(question){
-                $log.warn(question);
+                //$log.warn(question);
                 $scope.pQuestion = question.category;
                 if(question.category != null){
                     $state.transitionTo('detailpage', {

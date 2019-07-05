@@ -73,7 +73,8 @@ define(function (require) {
         });
 
         $stateProvider.state('detailpage', {
-            url: "/:pLanguage/survey/detailpage/:pIndicator/:pTopic/:pChart/:pLocale",
+            url: "/:pLanguage/survey/detailpage/:pIndicator/:pTopic/:pChart/:pLocale/:pQuestion/:pAnswer/:pActivityFilter"
+            +"/:pCompanyFilter/:pSectorSize",
             params: {
                 pLanguage: {
                     value: 'en',

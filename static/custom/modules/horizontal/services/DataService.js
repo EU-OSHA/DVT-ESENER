@@ -127,7 +127,7 @@ define(function () {
                 var url = configService.getEsenerDataPath() + "&dataAccessId=getMapData" + "&parampYear=" + pYear + "&parampQuestion=" + pQuestion 
                 + "&parampAnswer=" + pAnswer + "&parampDataset=" + pDataset + "&parampSectorSize=" + pSectorSize + "&parampActivityFilter=" + pActivityFilter
                 + "&parampCompanyFilter=" + pCompanyFilter;
-                $log.warn('getMapData url:' + url);
+                $log.debug('getMapData url:' + url);
                 return promise(url);
             },
 
