@@ -119,6 +119,7 @@
 	        //box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
 	        border-top: 0;
   				box-shadow: none;
+  				padding: 0 !important;
 	    }
 	    .navbar-fixed-top {
 	        top: 0;
@@ -128,10 +129,8 @@
 	        //display: none!important;
 					border-top: 0;
 					box-shadow: none;
-				  left: -100%;
-				  top:9rem;
-				  transition: 0.6s;
-				  -webkit-transition: 0.6s;
+				  left:0%;
+				  top:-100rem;
 				  position: fixed;
 				  width: 100%;
 				  padding: 0 !important;
@@ -152,8 +151,6 @@
 	    	left:0%;
 	    	top:9rem;
 	    	padding: 0 !important;
-			  transition: 0.6s;
-			  -webkit-transition: 0.6s;
 	    }
 	    .collapse.in{
 	    }			
@@ -251,14 +248,15 @@
 						background:$white;
 						&:nth-child(1){
 							a{
-								padding-left: 3rem !important;
+								padding: 2.2rem 1.6rem 1.6rem 3.2rem !important;
 							}
 						}
 						&:hover{
 							box-shadow: none !important;							
 					}
-					a{
-						font-size: 1.8rem !important;
+					> a{
+						font-size:2.2rem !important;
+					  padding: 1rem 1rem 1rem 3rem;
 						&:hover{
 							border-bottom: 1px solid $aquamarine;
 						}
@@ -275,7 +273,7 @@
 				margin: 0;
 				position: initial;
 				left: 0;
-				top: 0;				
+				top: 0;	
 				.collapse{
 					&.exposed{
 						display: block !important;
@@ -285,7 +283,6 @@
 						width: 100%;
 						top: 9rem;
 						left: 0;
-						transition: 0.6s;
 						.navbar-nav{
 							margin: 1rem 0 0;
 							padding: 0rem 0 2rem;
@@ -302,7 +299,8 @@
 								  li{
 								  	padding: 0.5rem 0;
 								  	a{
-								  		font-size: $font-size-body !important;
+								  		font-size: 1.8rem !important;
+							  		  padding-left: 5rem;
 								  	}
 								  }
 								}
@@ -310,6 +308,7 @@
 						}
 					}
 				}
+
 	    }
 		  .navbar-toggle {
 		  	margin: 1rem;
@@ -396,125 +395,125 @@ and (max-width : 1024px)  {
     width: 100% !important;
   }
 	/** WIDTH CARDS  **/
-	.card--grid{
-	  justify-content: flex-start;
-	}
-	.xs-w1{
-		.card--block{
-			width:50%;
-			margin: 0 1% 3rem;
+		.card--grid{
+		  justify-content: flex-start;
 		}
-		.card--block--rounded{
-			width:48%;
-			margin: 0 1% 3rem;
+		.xs-w1{
+			.card--block{
+				width:50%;
+				margin: 0 1% 3rem;
+			}
+			.card--block--rounded{
+				width:48%;
+				margin: 0 1% 3rem;
+			}
+			.card--block--chart{
+				width:48%;
+				margin: 0 1% 3rem;
+			}
 		}
-		.card--block--chart{
-			width:48%;
-			margin: 0 1% 3rem;
+		.xs-w2{
+			.card--block{
+				width:50%;
+				margin: 0 1% 3rem;
+			}
+			.card--block--rounded{
+				width:48%;
+				margin: 0 1% 3rem;
+			}
+			.card--block--chart{
+				width:48%;
+				margin: 0 1% 3rem;
+			}
 		}
-	}
-	.xs-w2{
-		.card--block{
-			width:50%;
-			margin: 0 1% 3rem;
+		.xs-w3{
+			.card--block{
+				width: 33.333%;
+				margin: 0 1% 3rem;		
+			}
+			.card--block--rounded{
+				width:31%;
+				margin: 0 1% 3rem;
+			}
+			.card--block--chart{
+				width:31%;
+				margin: 0 1% 3rem;
+			}
 		}
-		.card--block--rounded{
-			width:48%;
-			margin: 0 1% 3rem;
+		.xs-w4{
+			.card--block{
+				width:25%;
+				margin: 0 1% 3rem;
+			}	
+			.card--block--rounded{
+				width:23%;
+				margin: 0 1% 3rem;
+			}
+			.card--block--chart{
+				width:23%;
+				margin: 0 1% 3rem;
+			}
 		}
-		.card--block--chart{
-			width:48%;
-			margin: 0 1% 3rem;
+		.xs-w5{
+			.card--block{
+				width:20%;
+				margin: 0 1% 3rem;		
+			}
+			.card--block--rounded{
+				width:18%;
+				margin: 0 1% 3rem;
+			}
+			.card--block--chart{
+				width:18%;
+			  margin: 0 1% 3rem;
+			}
 		}
-	}
-	.xs-w3{
-		.card--block{
-			width: 33.333%;
-			margin: 0 1% 3rem;		
-		}
-		.card--block--rounded{
-			width:31%;
-			margin: 0 1% 3rem;
-		}
-		.card--block--chart{
-			width:31%;
-			margin: 0 1% 3rem;
-		}
-	}
-	.xs-w4{
-		.card--block{
-			width:25%;
-			margin: 0 1% 3rem;
-		}	
-		.card--block--rounded{
-			width:23%;
-			margin: 0 1% 3rem;
-		}
-		.card--block--chart{
-			width:23%;
-			margin: 0 1% 3rem;
-		}
-	}
-	.xs-w5{
-		.card--block{
-			width:20%;
-			margin: 0 1% 3rem;		
-		}
-		.card--block--rounded{
-			width:18%;
-			margin: 0 1% 3rem;
-		}
-		.card--block--chart{
-			width:18%;
-		  margin: 0 1% 3rem;
-		}
-	}
 	/** END WIDTH CARDS  **/ 
 
 	/** ELEMENTS  **/
-	.advice--block{
-		.title--section{
-		  font-family: 'Oswald';
-		  font-size: 3.6rem;
-		  padding: 1rem;
-		  text-align: center;
+		.advice--block{
+			.title--section{
+			  font-family: 'Oswald';
+			  font-size: 3.6rem;
+			  padding: 1rem;
+			  text-align: center;
+			}
 		}
-	}
-	.advice--icon--block{
-		.title--section{
-			font-family: 'Oswald';
-			font-size: 3.6rem;
-			padding: 0;
-			text-align: left;
+		.advice--icon--block{
+			.title--section{
+				font-family: 'Oswald';
+				font-size: 3.6rem;
+				padding: 0;
+				text-align: left;
+			}
 		}
-	}
-	.carousel--card{
-		.carousel--card--block {
-			.carousel-inner {
-				min-height: auto;
-				padding-bottom: 3rem;
-				.carousel--text--block{
-					flex-direction: column;
-					.number-text{
-						.number-symbol{
+		.carousel--card{
+			.carousel--card--block {
+				.carousel-inner {
+					min-height: auto;
+					padding-bottom: 3rem;
+					.carousel--text--block{
+						flex-direction: column;
+						.number-text{
+							.number-symbol{
+							}
+						}
+						.text-area{
 						}
 					}
-					.text-area{
-					}
 				}
-			}
-			.carousel-indicators{
-			}
-			.carousel-control{
-			}
-		}		
-	}
-	.xs-row{
-		flex-direction: column;
-		li{
-			width: 100% !important;
+				.carousel-indicators{
+				}
+				.carousel-control{
+				}
+			}		
 		}
-	}
+		.xs-row{
+			flex-direction: column;
+			li{
+				width: 100% !important;
+			}
+		}
 	/** END ELEMENTS  **/
 
 	.footer-elements{
@@ -800,6 +799,9 @@ and (max-width :767px)  {
 	.hide-mobile{
 		display: none;
 	}
+	.show-mobile{
+		display: block;
+	}
   .hide-header{
     position: fixed;
     top: -10rem;
@@ -896,7 +898,7 @@ and (max-width :767px)  {
 					  font-size: 3rem;
 						&:after{
 							content: "\f078";
-							font: normal normal normal 14px/1 FontAwesome;
+							font: normal normal normal 2rem/1 FontAwesome;
 							right: 1.5rem;
 							top: 1rem;
 							padding: 1rem;
@@ -922,7 +924,7 @@ and (max-width :767px)  {
 							border-bottom: 0;
 							&:after{
 								content: "\f077" !important;
-								font: normal normal normal 14px/1 FontAwesome;
+								font: normal normal normal 2rem/1 FontAwesome;
 								right: 1.5rem;
 								top: 1rem;
 								padding: 1rem;
@@ -937,14 +939,63 @@ and (max-width :767px)  {
 	.section--page {
 	  padding: 1rem 0rem 0;
 	}
-	.level3--wrapper {
-		.submenu--level3{
-			.submenu--items--wrapper{
-				flex-direction: column;
+  .level3--wrapper{
+    .submenu--level3{
+			height: 7rem;
+			overflow: hidden;
+			position: relative;
+		  margin: 0;
+			.submenu--arrows--wrapper{
+				li{
+					list-style-type: none;
+					position: absolute;
+					a{
+						font-size: 3rem;
+						font-weight: bold;
+						color: $aquamarine;
+						cursor: pointer;
+						width: 4rem;
+						text-align: center;
+						display: block;
+						&:hover{
+							color: $orange;
+						}
+					}
+					&:nth-child(1){
+						left: 1rem;
+						top: 1rem;						
+					}
+					&:nth-child(2){
+						right: 1rem;
+						top: 1rem;
+					}
+				}
 			}
-		}		
-	}
-
+      .submenu--items--wrapper{
+        flex-direction: column;
+        li{
+          width: 100%;
+          text-align: center;
+          margin-bottom: 3rem;
+          display: none;
+          a{
+            padding: 1rem 8rem 1rem 2.6rem;           
+            &.active {
+              display: block;
+              border: none;
+            }
+          }
+          &.active{
+          	display: block;
+            a, a.active, a:hover, a:focus, a:visited {
+              color: $aquamarine;
+              font-family: "OpenSans-Bold", sans-serif;
+            }
+          }
+        }
+      }
+    }    
+  }
 
 
 /** pop up */

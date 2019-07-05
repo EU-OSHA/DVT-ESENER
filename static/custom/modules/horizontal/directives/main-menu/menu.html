@@ -163,10 +163,10 @@
             <div class="container submenu--level2">
               <ul class="submenu--items--wrapper">
                 <!-- ESENER YEAR SELECTION -->
-                <li data-ng-class="{'active' : '2009' == pIndicator }"  class="submenu--item">
+                <li data-ng-class="{'active' : '2009' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
                   <a href ui-sref="overview({pLanguage: pLanguage, pIndicator: '2009'})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : '2009' == pIndicator }" >ESENER 2009</a>
                 </li>
-                <li data-ng-class="{'active' : '2014' == pIndicator }"  class="submenu--item">
+                <li data-ng-class="{'active' : '2014' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
                   <a href ui-sref="overview({pLanguage: pLanguage, pIndicator: '2014'})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : '2014' == pIndicator }" >ESENER 2014</a>
                 </li>
                 <!--<li data-ng-class="{'active' : indicator.anchor == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
@@ -181,17 +181,25 @@
         <!-- Second row of tabs  -->
         <section class="container-fluid level3--wrapper">
             <div class="submenu--level3 container">
-              <ul class="submenu--items--wrapper">
+            <ul  class="submenu--arrows--wrapper show-mobile">
+                <li data-ng-class="{'hide' : 'overview' == currentName }">
+                    <a href="" ui-sref="overview({pLanguage: pLanguage, pIndicator: pIndicator})" title="OVERVIEW"><i class="fa fa-angle-left" aria-hidden="true"></i> <span class="sr-only">Previous option</span></a>
+                </li>
+                <li data-ng-class="{'hide' : 'datavisualisation' == currentName || 'detailpage' == currentName }">
+                    <a href="" ui-sref="datavisualisation({pLanguage: pLanguage, pIndicator: pIndicator})" title="DATA VISUALISATION"><i class="fa fa-angle-right" aria-hidden="true"></i> <span class="sr-only">Next option</span></a>
+                </li>
+            </ul>
+            <ul class="submenu--items--wrapper">
                 <li data-ng-class="{'active' : 'overview' == currentName }" class="submenu--item">
-                  <a href="" ui-sref="overview({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'overview' == currentName }">OVERVIEW</a>
+                    <a href="" ui-sref="overview({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'overview' == currentName }">OVERVIEW</a>
                 </li>
                 <li data-ng-class="{'active' : 'datavisualisation' == currentName || 'detailpage' == currentName }" class="submenu--item">
-                  <a href="" ui-sref="datavisualisation({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'datavisualisation' == currentName || 'detailpage' == currentName }" >DATA VISUALISATION</a>
+                    <a href="" ui-sref="datavisualisation({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'datavisualisation' == currentName || 'detailpage' == currentName }" >DATA VISUALISATION</a>
                 </li>
                 <!--<li data-ng-class="{'active' : 'comparisons' == currentName }" class="submenu--item">
-                  <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'comparisons' == currentName }" >COMPARISONS</a>
+                <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'comparisons' == currentName }" >COMPARISONS</a>
                 </li>-->
-              </ul>
+            </ul>
             </div>
         </section>
     </div>

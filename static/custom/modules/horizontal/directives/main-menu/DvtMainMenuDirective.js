@@ -252,6 +252,37 @@ define(function (require) {
                         formSearch.toggleClass('exposed');
                     });
 
+
+
+                // Open indicators list like a select element
+                var resolution = screen.width;
+                
+                $(window).on("resize",function(e){
+                    resolution = screen.width;
+                });
+
+                $scope.openIndicatorsList = function(e) { 
+                   
+                    if( resolution < 990 ){
+                      var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
+                      
+                      if( parentTag.indexOf('open-list') < 0 ){
+                        angular.element('.submenu--items--wrapper').addClass('open-list');
+                      } else {
+                        angular.element('.submenu--items--wrapper').removeClass('open-list');
+                      }
+
+                    }
+                }
+
+                angular.element('body').mouseup(function(e){
+                    var container = angular.element('.submenu--items--wrapper');
+                    if (!container.is(e.target) && container.has(e.target).length === 0){
+                      angular.element('.submenu--items--wrapper').removeClass('open-list'); 
+                    }
+                });
+
+
             }],
             templateUrl: configService.getHorizontalDirectiveTplPath("main-menu", "menu")
         }

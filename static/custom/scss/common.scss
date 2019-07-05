@@ -117,6 +117,9 @@
     top: -9999px;
     left:-9999px;
   }
+  .show-mobile{
+    display: none;
+  }
   .nopadding{
     padding: 0;
   }
@@ -183,90 +186,90 @@
         cursor: pointer;
       }
     }
-  .btn-default{
-    position: relative;
-    padding: 0.8rem 7rem;
-    margin:2rem 0;
-    font-weight: bold;
-    letter-spacing: 0.3rem;
-    white-space: nowrap;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background: none;
-    border: 1px solid $aquamarine;
-    display: inline-block;
-    > span{
+    .btn-default{
       position: relative;
-      width: 100%;
-      display: block;
-      z-index: 2;
-    }
-    &:before{
-      transition: all 0.4s cubic-bezier(.45,.39,.67,.6);
-      content: '';
-      width: 0%;
-      height: 100%;
-      position: absolute;
-      z-index: 0;
-      top: 0;
-      left: 0;
-    }
-    &:hover{
-      text-decoration: none;
-      color: $white;
-      &::before{
-        width: 100%;
-      }
-    }
-  }
-
-  .btn-main-color{
-    border: 1px solid $aquamarine;
-    color: $aquamarine;
-    &:hover{
+      padding: 0.8rem 7rem;
+      margin:2rem 0;
+      font-weight: bold;
+      letter-spacing: 0.3rem;
+      white-space: nowrap;
+      -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      background: none;
       border: 1px solid $aquamarine;
-      span{
-        color: $white;
-        background: transparent;
+      display: inline-block;
+      > span{
+        position: relative;
+        width: 100%;
+        display: block;
+        z-index: 2;
       }
-      &::before{
-        background:$aquamarine;
+      &:before{
+        transition: all 0.4s cubic-bezier(.45,.39,.67,.6);
+        content: '';
+        width: 0%;
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+      }
+      &:hover{
+        text-decoration: none;
+        color: $white;
+        &::before{
+          width: 100%;
+        }
       }
     }
-  }
-  .datavisualisation-page{
+
     .btn-main-color{
-      background: $aquamarine;
-      color: $white;
-      pointer-events: none;
-      &[disabled] {
-        opacity: 0.4;
-        border: 1px dotted #57575A;
-        color: #57575A;
-        background:transparent;
+      border: 1px solid $aquamarine;
+      color: $aquamarine;
+      &:hover{
+        border: 1px solid $aquamarine;
+        span{
+          color: $white;
+          background: transparent;
+        }
+        &::before{
+          background:$aquamarine;
+        }
       }
     }
-  }
-  .btn-orange{
-    border: 1px solid $orange;
-    color: $orange;
-    &:hover{
-      background: $orange-light;
-      border: 1px solid $orange;
-      span{
+    .datavisualisation-page{
+      .btn-main-color{
+        background: $aquamarine;
         color: $white;
-        background: transparent;
-      }
-      &::before{
-      background:$orange;
+        pointer-events: none;
+        &[disabled] {
+          opacity: 0.4;
+          border: 1px dotted #57575A;
+          color: #57575A;
+          background:transparent;
+        }
       }
     }
-  }
+    .btn-orange{
+      border: 1px solid $orange;
+      color: $orange;
+      &:hover{
+        background: $orange-light;
+        border: 1px solid $orange;
+        span{
+          color: $white;
+          background: transparent;
+        }
+        &::before{
+        background:$orange;
+        }
+      }
+    }
     .btn-full{
       display: block;
       width: 100%;
