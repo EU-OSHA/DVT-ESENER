@@ -25,6 +25,17 @@
     .buttons {
 			text-align: center;
 			padding: 3rem 0 1rem;
+			display: flex;
+			justify-content: center;
+			> a{
+				order: 3;
+			}
+			> .accept{
+				order: 1;
+			}
+			> .decline{
+				order: 2;
+			}
     }
     button {
       float:none;
@@ -1197,6 +1208,12 @@ and (max-width :620px) {
     .text {
     }
     .buttons {
+			justify-content: flex-start;
+			flex-wrap: wrap;
+			> a {
+				width: 100%;
+				display: block;
+			}
     }
     button {
       width: 100%;
