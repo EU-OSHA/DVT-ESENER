@@ -29,11 +29,18 @@ define(function (require) {
         $scope.pQuestion = '';
 
         $scope.changeTopic = function($event, topic, question){
-
+ 
             angular.element('.section-topic .card--item').removeClass('selected');
             angular.element('.section-topic .card--item').addClass('disabled');
-            $event.target.parentElement.classList.remove('disabled');
-            $event.target.parentElement.classList.add('selected');
+
+            if( $event.target.nodeName == "SPAN" ){
+                $event.target.parentElement.parentElement.classList.remove('disabled');
+                $event.target.parentElement.parentElement.classList.add('selected');
+            } else {
+                $event.target.parentElement.classList.remove('disabled');
+                $event.target.parentElement.classList.add('selected');
+            }
+
 
             $scope.pTopic = topic;
             $scope.pQuestion = question;
@@ -52,8 +59,14 @@ define(function (require) {
         $scope.changeChart = function($event, chart){
             angular.element('.section-chart .card--item').removeClass('selected');
             angular.element('.section-chart .card--item').addClass('disabled');
-            $event.target.parentElement.classList.remove('disabled');
-            $event.target.parentElement.classList.add('selected');
+            
+            if( $event.target.nodeName == "SPAN" ){
+                $event.target.parentElement.parentElement.classList.remove('disabled');
+                $event.target.parentElement.parentElement.classList.add('selected');
+            } else {
+                $event.target.parentElement.classList.remove('disabled');
+                $event.target.parentElement.classList.add('selected');
+            }
 
             $scope.pChart = chart;
         }
