@@ -1296,7 +1296,43 @@ and (max-width :370px){
 	  -webkit-transition: all 0.8s;
 	  transition: all 0.8s;
 	}
-
+  .level3--wrapper{
+  	padding: 0;
+    .submenu--level3{
+			.submenu--arrows--wrapper{
+				li{
+					a{
+						padding:1rem 0 !important;
+						width: 3rem;
+						&:hover{
+						}
+					}
+					&:nth-child(1){
+						left: 0;
+						top: 0;
+					}
+					&:nth-child(2){
+						right: 0;
+						top: 0;
+					}
+				}
+			}
+      .submenu--items--wrapper{
+        li{
+          a{
+          	padding: 0.5rem !important;
+            &.active {
+            }
+          }
+          &.active{
+            a, a.active, a:hover, a:focus, a:visited {
+						padding: 0.5rem !important;
+            }
+          }
+        }
+      }
+    }    
+  }
 }
 
 
