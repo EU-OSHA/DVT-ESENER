@@ -62,7 +62,7 @@ define(function (require) {
 						var breadcrumb = "";
 						if (question.level == 2)
 						{
-							breadcrumb = scope.i18n["L"+question.father] + " / " + scope.i18n["L"+question.name2];
+							breadcrumb = scope.i18n["L"+question.father] + " / " + scope.i18n["L"+question.name3];
 						}
 						else if (question.level == 3)
 						{
@@ -125,21 +125,27 @@ define(function (require) {
 					{
 						case "activitySector":
 							console.log("activitySector changed");
+							$log.warn("activitySector changed");
 							scope.filters.establishmentSize = null;
 							break;
 						case "establishmentSize":
 							console.log("establishmentSize changed");
+							$log.warn("establishmentSize changed");
 							scope.filters.activitySector = null;
 							break;
 						case "country":
 							console.log("country changed");
+							$log.warn("country changed");
 							break;
 						default:
 							console.log("No change detected");
+							$log.warn("No change detected");
 					}
 
 					dashboard.dashboard.parameters.pFilters = scope.filters;
 					dashboard.dashboard.fireChange('pFilters', scope.filters);
+					$log.warn(scope.filters);
+					$log.warn(dashboard.dashboard.parameters.pFilters);
 				}
 			}
 		}

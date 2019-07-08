@@ -71,11 +71,11 @@ define(function (require) {
 
 		$scope.dashboard = {
 			parameters: {
-				"pActivityFilter": $scope.pActivityFilter,
-			 	"pCompanyFilter" : $scope.pCompanyFilter,
-			 	"pSelector": $scope.pSelector,
-			 	"pChart": $scope.pChart,
-			 	"pTopic": $scope.pTopic
+				pActivityFilter: $scope.pActivityFilter,
+			 	pCompanyFilter : $scope.pCompanyFilter,
+			 	pSelector: $scope.pSelector,
+			 	pChart: $scope.pChart,
+			 	pTopic: $scope.pTopic
 			}
 		};
 
@@ -235,7 +235,7 @@ define(function (require) {
 			throw err;
 		});
 
-		if($scope.pIndicator=='2014')
+		/*if($scope.pIndicator=='2014')
 		{
 			dataService.get2014ActivitySector().then(function(data)
 			{
@@ -284,7 +284,7 @@ define(function (require) {
 					});
 				});
 			});
-		}
+		}*/
 				
 		dataService.getAllQuestions($scope.pIndicator).then(function (data) 
 		{

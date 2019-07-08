@@ -333,7 +333,7 @@ define(function (require) {
                         orientation: attributes.orientation || "vertical",
                         crosstabMode: false,
                         stacked: attributes.stacked == 1 || false,
-                        axisLabel_font: attributes.axisLabelFont || 'normal 12px "OpenSans-bold"',
+                        //axisLabel_font: attributes.axisLabelFont || 'normal 12px "OpenSans-bold"',
                         axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "OpenSans-bold" gray',
                         axisTitleLabel_textStyle: 'gray',
                         axisFixedMax: attributes.axisFixedMax || 100,

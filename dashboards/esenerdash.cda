@@ -326,62 +326,64 @@
       ORDER BY a.id ASC;
     </Query>
   </DataAccess>
-<DataAccess access="public" connection="dvt_conn" id="getAllCountries" type="sql">
-      <Cache duration="3600" enabled="true" />
-      <Columns />
-      <Query>
-        SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
-        FROM strategies_page sp
-        INNER JOIN nuts n
-        ON n.id = sp.nuts_id
-        ORDER BY country_code ASC
-      </Query>
+
+  <DataAccess access="public" connection="dvt_conn" id="getAllCountries" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Query>
+          SELECT DISTINCT (n.literal_id) AS country, n.country_code AS country_code
+          FROM strategies_page sp
+          INNER JOIN nuts n
+          ON n.id = sp.nuts_id
+          ORDER BY country_code ASC
+        </Query>
   </DataAccess>
 
-<DataAccess access="public" connection="dvt_conn" id="get2014ActivitySector" type="sql">
-      <Cache duration="3600" enabled="true" />
-      <Columns />
-      <Query>
-        SELECT  a.literal_id , a.id
-        FROM split_activity_sector a
-        WHERE 
-        a.id IN(14,3,4,18,6,7)
-        ORDER BY  FIELD(a.id,14,3,4,18,6,7)
-      </Query>
+  <!--<DataAccess access="public" connection="dvt_conn" id="get2014ActivitySector" type="sql">
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Query>
+          SELECT  a.literal_id , a.id
+          FROM split_activity_sector a
+          WHERE 
+          a.id IN(14,3,4,18,6,7)
+          ORDER BY  FIELD(a.id,14,3,4,18,6,7)
+        </Query>
   </DataAccess>
 
   <DataAccess access="public" connection="dvt_conn" id="get2009ActivitySector" type="sql">
-      <Cache duration="3600" enabled="true" />
-      <Columns />
-      <Query>
-        SELECT  a.literal_id , a.id
-        FROM split_activity_sector a
-        WHERE 
-        a.id IN(14,15,16,17)
-        ORDER BY  a.id  ASC
-      </Query>
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Query>
+          SELECT  a.literal_id , a.id
+          FROM split_activity_sector a
+          WHERE 
+          a.id IN(14,15,16,17)
+          ORDER BY  a.id  ASC
+        </Query>
   </DataAccess>
 
   <DataAccess access="public" connection="dvt_conn" id="get2014CompanySize" type="sql">
-      <Cache duration="3600" enabled="true" />
-      <Columns />
-      <Query>
-        SELECT  a.literal_id ,a.id
-        FROM split_company_size a
-        WHERE a.id IN  (11,7,8,14,10)
-        ORDER BY FIELD(a.id,11,7,8,14,10)
-      </Query>
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Query>
+          SELECT  a.literal_id ,a.id
+          FROM split_company_size a
+          WHERE a.id IN  (11,7,8,14,10)
+          ORDER BY FIELD(a.id,11,7,8,14,10)
+        </Query>
   </DataAccess>
+
   <DataAccess access="public" connection="dvt_conn" id="get2009CompanySize" type="sql">
-      <Cache duration="3600" enabled="true" />
-      <Columns />
-      <Query>
-        SELECT  a.literal_id ,a.id
-        FROM split_company_size a
-        WHERE a.id IN  (11,12,13,14,15)
-        ORDER BY a.id
-      </Query>
-  </DataAccess>
+        <Cache duration="3600" enabled="true" />
+        <Columns />
+        <Query>
+          SELECT  a.literal_id ,a.id
+          FROM split_company_size a
+          WHERE a.id IN  (11,12,13,14,15)
+          ORDER BY a.id
+        </Query>
+  </DataAccess>-->
 
   <DataAccess access="public" connection="dvt_conn" id="getEuropeanBarCharData" type="sql">
     <Cache duration="3600" enabled="true"/>
