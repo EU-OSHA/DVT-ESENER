@@ -155,7 +155,7 @@
         AND i.name = ${pQuestion}
         AND v.indicator_id = i.id
         AND ROUND(v.value*100,1) = ${pMinValue}
-        AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+        AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
         ORDER BY v.value ASC
       )UNION(
@@ -170,7 +170,7 @@
         AND i.name = ${pQuestion}
         AND v.indicator_id = i.id
         AND (ROUND(v.value*100,1) BETWEEN (${pMinValue} + 0.01) AND (${pMinValue} + ${pRange}))
-        AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+        AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
         ORDER BY v.value ASC
       )UNION(
@@ -185,7 +185,7 @@
         AND i.name = ${pQuestion}
         AND v.indicator_id = i.id
         AND ROUND(v.value*100, 1) BETWEEN ((${pMinValue}+${pRange}) + 0.01) AND (${pMinValue}+${pRange}*2)
-        AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+        AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
         ORDER BY v.value ASC
       )UNION(
@@ -200,7 +200,7 @@
         AND i.name = ${pQuestion}
         AND v.indicator_id = i.id
         AND ROUND(v.value*100,1) BETWEEN ((${pMinValue}+${pRange}*2) + 0.01) AND (${pMaxValue} - ${pRange})
-        AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+        AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
         ORDER BY v.value ASC
       )UNION(
@@ -215,7 +215,7 @@
         AND i.name = ${pQuestion}
         AND v.indicator_id = i.id
         AND ROUND(v.value*100,1) BETWEEN ((${pMaxValue} - ${pRange}) + 0.01) AND ${pMaxValue}
-        AND CASE WHEN 'activity-sector' = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+        AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
         ORDER BY v.value ASC
       )
