@@ -68,9 +68,6 @@ define(function () {
                 return promise(url);
             },
 
-
-          
-
             /**
              * @ngdoc method
              * @name dvt.configModule.DataService#getQuestionSelectorData
@@ -95,22 +92,6 @@ define(function () {
                 var year = parseInt(pYear);
                 var url = configService.getEsenerDataPath() + "&dataAccessId=getAllQuestions" + "&parampYear=" + year;
                 $log.debug('getAllQuestions url:' + url);
-                return promise(url);
-            },
-
-            /**
-             * @ngdoc method
-             * @name dvt.configModule.DataService#getQuestionData
-             * @methodOf dvt.configModule.DataService
-             * @description
-             * Returns data of a particular question
-             */
-            getQuestionData: function (pYear, pQuestion, pAnswer, pDataset, pSectorSize, pActivityFilter, pCompanyFilter) {
-                var year = parseInt(pYear);
-                var url = configService.getEsenerDataPath() + "&dataAccessId=getQuestionData" + "&parampYear=" + year + "&parampQuestion=" + pQuestion 
-                + "&parampAnswer=" + pAnswer + "&parampDataset=" + pDataset + "&parampSectorSize=" + pSectorSize + "&parampActivityFilter=" + pActivityFilter
-                + "&parampCompanyFilter=" + pCompanyFilter;
-                $log.debug('getQuestionData url:' + url);
                 return promise(url);
             },
 

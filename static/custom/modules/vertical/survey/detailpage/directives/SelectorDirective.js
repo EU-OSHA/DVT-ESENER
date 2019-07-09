@@ -24,9 +24,12 @@ define(function (require) {
 			templateUrl: configService.getVerticalDirectiveTplPath("survey/detailpage/directives", "selector"),
 			link: function (scope, element, attributes, controllers) {                
 				var dashboard = controllers[1];
+				var ngModel = controllers[0];
 
 				console.log(dashboard);
+				//$log.warn(dashboard);
 				console.log(dashboard.dashboard.parameters);
+				//$log.warn(dashboard.dashboard.parameters);
 
 				scope.pLanguage = $stateParams.pLanguage;
 				var i18n = ($stateParams.pLanguage == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(scope.pLanguage);
@@ -35,6 +38,11 @@ define(function (require) {
 				scope.indicator = attributes.indicator;
 				scope.dataset = $stateParams.pIndicator;
 				scope.chart = $stateParams.pChart;
+
+				scope.answer = $stateParams.pAnswer;
+				scope.activitySector = $stateParams.pActivityFilter;
+				scope.country = $stateParams.pCountry;
+				scope.sectorSize = $stateParams.pSectorSize;
 
 				// Load data to show texts for the selected question
 				dataService.getQuestionSelectorData(scope.indicator).then(function(res) {
@@ -74,7 +82,9 @@ define(function (require) {
 							name: scope.i18n["L"+question.name3],
 							description: scope.i18n["L"+question.bottomText],
 							previous: scope.i18n["L"+question.previousName],
-							next: scope.i18n["L"+question.nextName]
+							previousID: question.previousID,
+							next: scope.i18n["L"+question.nextName],
+							nextID: question.nextID
 						}
 					}
 				});
@@ -86,8 +96,6 @@ define(function (require) {
 						scope.answers.push({id:elem[0], literal:elem[1]});
 					});
 				});
-
-				scope.filters = {};
 
 				// Load the data for the filters
 				if (scope.chart =='european-map' || scope.chart=='european-bar-chart')
@@ -119,6 +127,15 @@ define(function (require) {
 					});
 				}
 
+				scope.filters = {
+					activitySector: scope.activitySector/*'8'*/,
+					establishmentSize: null,
+					country: scope.country,
+					answer: scope.answer,
+					euOnly: 0,
+					sectorSize: scope.sectorSize
+				};
+
 				scope.updateChart = function(pChangedFilter)
 				{
 					switch (pChangedFilter)
@@ -126,16 +143,35 @@ define(function (require) {
 						case "activitySector":
 							console.log("activitySector changed");
 							$log.warn("activitySector changed");
-							scope.filters.establishmentSize = null;
+							scope.filters.establishmentSize = 0;
 							break;
 						case "establishmentSize":
 							console.log("establishmentSize changed");
 							$log.warn("establishmentSize changed");
-							scope.filters.activitySector = null;
+							scope.filters.activitySector = 0;
 							break;
 						case "country":
 							console.log("country changed");
 							$log.warn("country changed");
+							break;
+						case "answer":
+							console.log("answer changed");
+							$log.warn("answer changed");
+							break;
+						case "activityToCompany":
+							console.log("activityToCompany");
+							$log.warn("activityToCompany");
+							scope.filters.sectorSize = 'company-size';
+							break;
+						case "companyToActivity":
+							console.log("companyToActivity");
+							$log.warn("companyToActivity");
+							scope.filters.sectorSize = 'activity-sector';
+							break;
+						case "euOnly":
+							console.log("eu only changed");
+							$log.warn("eu only changed");
+							scope.filters.euOnly = (scope.filters.euOnly == 0)?1:0;
 							break;
 						default:
 							console.log("No change detected");
@@ -143,9 +179,20 @@ define(function (require) {
 					}
 
 					dashboard.dashboard.parameters.pFilters = scope.filters;
+
+					$stateParams.pActivityFilter = scope.filters.activitySector;
+					$stateParams.pCompanyFilter = scope.filters.establishmentSize;
+					$stateParams.pAnswer = scope.filters.answer;
+					$stateParams.pCountry = scope.filters.country;
+					$stateParams.pSectorSize = scope.filters.sectorSize;
+
+					ngModel.$setViewValue(scope.filters, 'change');
 					dashboard.dashboard.fireChange('pFilters', scope.filters);
-					$log.warn(scope.filters);
-					$log.warn(dashboard.dashboard.parameters.pFilters);
+
+					//$log.warn(dashboard.dashboard.parameters.pFilters);
+
+					scope.filters.activitySector = scope.filters.activitySector == 0? null:scope.filters.activitySector;
+					scope.filters.establishmentSize = scope.filters.establishmentSize == 0? null:scope.filters.establishmentSize;
 				}
 			}
 		}

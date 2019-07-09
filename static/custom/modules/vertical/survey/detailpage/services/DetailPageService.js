@@ -2,7 +2,7 @@ define (function (require) {
 
     var configService = require('horizontal/config/configService');
     var pv = require('cdf/lib/CCC/protovis');
-    var DetailPageService = function (dvtUtils, $log) {
+    var DetailPageService = function (dvtUtils, $log, $stateParams) {
         return {
             getMinMaxValues: function(){
                 var dashboard = this.dashboard;
@@ -60,7 +60,7 @@ define (function (require) {
                                     .top(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
                                         
-                                        return baseScale('Iceland (IS)') + 10;
+                                        return baseScale('Switzerland (CH)') + 10;
                                     })
                                     .height(null) // clear any inherited value
                                     .width(null)  // clear any inherited value
@@ -120,6 +120,20 @@ define (function (require) {
                         barSizeMax: 35,
                         valuesAnchor: 'left',
                         label_textMargin: function(scene){
+                            var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLocale);
+                            var answer = scene.firstAtoms.series;
+                            var sector = scene.firstAtoms.category;
+
+                            if(i18n['L'+answer] != undefined){
+                                answer.key = i18n['L'+answer];
+                                answer.label = i18n['L'+answer];
+                            }
+
+                            if(i18n['L'+sector] != undefined){
+                                sector.key = i18n['L'+sector];
+                                sector.label = i18n['L'+sector];
+                            }
+
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
@@ -137,7 +151,7 @@ define (function (require) {
         };
     };
 
-    DetailPageService.$inject = ['dvtUtils', '$log'];
+    DetailPageService.$inject = ['dvtUtils', '$log', '$stateParams'];
 
     return DetailPageService;
 

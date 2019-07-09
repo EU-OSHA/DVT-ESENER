@@ -73,8 +73,7 @@ define(function (require) {
         });
 
         $stateProvider.state('detailpage', {
-            url: "/:pLanguage/survey/detailpage/:pIndicator/:pTopic/:pChart/:pLocale/:pQuestion/:pAnswer/:pActivityFilter"
-            +"/:pCompanyFilter/:pSectorSize",
+            url: "/:pLanguage/survey/detailpage/:pIndicator/:pTopic/:pChart/:pLocale/:pQuestion/:pAnswer",
             params: {
                 pLanguage: {
                     value: 'en',
@@ -109,12 +108,16 @@ define(function (require) {
                     squash: '8'
                 },
                 pCompanyFilter: {
-                    value: '6',
-                    squash: '6'
+                    value: '0',
+                    squash: '0'
                 },
                 pSectorSize: {
-                    value: 'activity-sector',
-                    squash: 'activity-sector'
+                    value: 'company-size',
+                    squash: 'company-size'
+                },
+                pCountry: {
+                    value: 'EU27',
+                    squash: 'EU27'
                 }
             },
             views: {

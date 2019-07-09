@@ -27,6 +27,7 @@ define(function (require) {
         $scope.pTopic = '';
         $scope.pChart = '';
         $scope.pQuestion = '';
+        $scope.pAnswer = '';
 
         $scope.changeTopic = function($event, topic, question){
  
@@ -47,12 +48,16 @@ define(function (require) {
 
             if($scope.pTopic == 'osh-management'){
                 $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM161':'Q250';
+                $scope.pAnswer = 1;
             }else if($scope.pTopic == 'psychosocial-risks'){
                 $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM250':'Q300';
+                $scope.pAnswer = 1;
             }else if($scope.pTopic == 'drivers-and-barriers'){
                 $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM171_1':'Q264_1';
+                $scope.pAnswer = 44;
             }else if($scope.pTopic == 'worker-participation'){
                 $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM355all':'Q358';
+                $scope.pAnswer = 1;
             }
         }
 

@@ -26,14 +26,14 @@
                     <ul data-ng-repeat="questionLevel2 in levelQuestions(2)">
                         <li data-ng-if="questionLevel2.level == 2 && questionLevel2.father_id == question.id">
                             <span>
-                                <a data-ng-bind="i18n['L'+questionLevel2.name_1]" href data-ng-click="changeToQuestion(questionLevel2)" data-ng-class="{'selected': questionLevel2.id == selectedQuestionValues[0].id}"></a>
+                                <a data-ng-bind="i18n['L'+questionLevel2.name_1]" href data-ng-click="changeToQuestion(questionLevel2)" data-ng-class="{'selected': questionLevel2.category == pQuestion}"></a>
                                 <span data-ng-if="questionLevel2.category == null">V</span>
                             </span>
                             <!-- Third level -->
                             <ul data-ng-repeat="questionLevel3 in levelQuestions(3)">
                                 <li data-ng-if="questionLevel3.level == 3 && questionLevel3.father_id == questionLevel2.id">
                                     <span>
-                                        <a data-ng-bind="i18n['L'+questionLevel3.name_1]" href data-ng-click="changeToQuestion(questionLevel3)" data-ng-class="{'selected': questionLevel3.id == selectedQuestionValues[0].id}"></a>
+                                        <a data-ng-bind="i18n['L'+questionLevel3.name_1]" href data-ng-click="changeToQuestion(questionLevel3)" data-ng-class="{'selected': questionLevel3.category == pQuestion}"></a>
                                     </span>
                                 </li>
                             </ul>
@@ -50,7 +50,8 @@
     <!-- Main section -->
     <div class="col-sm-8 col-xs-12  col-md-8 col-content">
 
-        <selector indicator="{{pQuestion}}" ng-model="pQuestion"></selector>
+        <selector indicator="{{pQuestion}}" ng-model="dashboard.parameters.pFilters"></selector>
+        <button data-ng-click="showFilters()">SHOW FILTERS</button>
 
         <!-- EUROPEAN MAP -->
         <div class="" data-ng-show="pChart == 'european-map'">
@@ -64,7 +65,7 @@
                     country="EU" use-viewbox="true" x="0" y="0"
                     css-class="dvt--map--block" is-colored="1" hover="true"
                     group-list="groupList" width="500" height="500"
-                    group-color="groupColor"
+                    group-color="groupColor" listen-to="['pFilters']"
                     data="data">
                 </dvt-map>
               </div>
@@ -114,7 +115,7 @@
                         orientation="vertical" axis-fixed-min="0"
                         axis-fixed-max="100" step="20"
                         listen-to="['pFilters']"
-                        params="[['pDataset',actualDataset],['pIndicator',pQuestion],['pSectorSize', pSectorSize],['pActivityFilter', pActivityFilter], ['pCompanyFilter', pCompanyFilter]]"
+                        params="[['pDataset',actualDataset],['pIndicator',pQuestion],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pEUOnly', 'pFilters.euOnly']]"
                         color-role="series" colors="[stories[1].color3, stories[1].color2, stories[1].color1]"
                         id="2"
                         axis-label-font="14px 'OpenSans-bold'"
@@ -131,85 +132,6 @@
                         datasource-and-dates="[15,110,pActivityFilter]"
                       ></dvt-bar-chart>
                   </div>
-                  <!---------------- CompanySize --------------->
-                  <!--<div class="chart--block" ng-hide="pSectorSize != 'establishment-size'">
-                     <dvt-bar-chart
-                        data-ng-cloak
-                        query="getEuropeanBarCharData" cda="{{::cdaEsenerDash}}"
-                        width="330" height="660" axis-percent="1"
-                        orientation="vertical" axis-fixed-min="0"
-                        axis-fixed-max="100" step="20"
-                        params="[['pDataset',15],['pIndicator',110],['pCompanyFilter', pCompanyFilter]]"
-                        color-role="series" colors="[stories[1].color3, stories[1].color2, stories[1].color1]"
-                        chart-title="{{i18n.L461}}" id="1"
-                        axis-label-font="14px 'OpenSans-bold'"
-                        plots="stories[1].plots"
-                        values-visible="false"
-                        values-font="14px 'OpenSans-bold'"
-                        multiple-label-colors="false"
-                        base-axis-label-text-baseline=""
-                        leaf-content-overflow='visible'
-                        dimensions="stories[1].dimensions"
-                        legend="true" is-maximized="false"
-                        angle="-1.57" stacked="1"
-                        base-axis-size="100"
-                        datasource-and-dates="[15,110,pCompanyFilter]"
-                     ></dvt-bar-chart>
-                  </div>-->
-              </div>
-          </div>
-          <!---------------------- EuropeanBarChart ESENER 2009 ------------------------>
-          <!--esta de adorno se puede quitar sustituyendo los datos metidos a pelo por pSubindicator y pDataset-->
-          <div class="">
-              <div class="card--block--chart">
-                  <!------------ActivitySector------------>
-                  <!--<div class="chart--block">
-                      <dvt-bar-chart
-                          data-ng-cloak
-                          query="getEuropeanBarCharData" cda="{{::cdaEsenerDash}}"
-                          width="330" height="660" axis-percent="1"
-                          orientation="vertical" axis-fixed-min="0"
-                          axis-fixed-max="100" step="20"
-                          params="[['pDataset',actualDataset],['pIndicator',136],['pSectorSize', pSectorSize],['pActivityFilter', pActivityFilter], ['pCompanyFilter', pCompanyFilter]]"
-                          color-role="series" colors="[stories[1].color3, stories[1].color2, stories[1].color1]"
-                          id="1" axis-label-font="14px 'OpenSans-bold'"
-                          plots="stories[1].plots"
-                          values-visible="false"
-                          values-font="14px 'OpenSans-bold'"
-                          multiple-label-colors="false"
-                          leaf-content-overflow='visible'
-                          dimensions="stories[1].dimensions"
-                          legend="true" is-maximized="false"
-                          angle="-1.57" stacked="1"
-                          base-axis-size="100"
-                          datasource-and-dates="[16,136,pActivityFilter]"
-                      ></dvt-bar-chart>
-                  </div>-->
-                  <!----------------CompanySize--------------->
-                  <!--<div class="chart--block" ng-hide="pSectorSize != 'establishment-size'">
-                      <dvt-bar-chart
-                          data-ng-cloak
-                          query="getEuropeanBarCharData" cda="{{::cdaEsenerDash}}"
-                          width="330" height="660" axis-percent="1"
-                          orientation="vertical" axis-fixed-min="0"
-                          axis-fixed-max="100" step="20"
-                          params="[['pDataset',16],['pIndicator',136],['pCompanyFilter', pCompanyFilter]]"
-                          color-role="series" colors="[stories[1].color3, stories[1].color2, stories[1].color1]"
-                          chart-title="{{i18n.L461}}" id="1"
-                          axis-label-font="14px 'OpenSans-bold'"
-                          plots="stories[1].plots"
-                          values-visible="false"
-                          values-font="14px 'OpenSans-bold'"
-                          multiple-label-colors="false"
-                          base-axis-label-text-baseline=""
-                          leaf-content-overflow='visible'
-                          dimensions="stories[1].dimensions"
-                          legend="true" is-maximized="false"
-                          angle="-1.57" stacked="1"
-                          base-axis-size="100"
-                          datasource-and-dates="[16,136,pCompanyFilter]"
-                      ></dvt-bar-chart>
-                  </div>-->
               </div>
           </div>
         </div>
@@ -225,8 +147,10 @@
                         width="330" height="660" axis-percent="1"
                         orientation="horizontal" axis-fixed-min="0"
                         axis-fixed-max="100" step="20"
-                        params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', pSectorSize],['pCountry', 'AT']]"
-                        color-role="series" colors="[stories[2].color1, stories[2].color2, stories[2].color3]"
+                        listen-to="['pFilters']"
+                        params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', 'pFilters.sectorSize'],['pCountry', 'pFilters.country']]"
+                        color-role="series" colors="[stories[2].color1, stories[2].color2, stories[2].color3, stories[2].color4,
+                        stories[2].color5]"
                         id="3" axis-label-font="14px 'OpenSans-bold'"
                         plots="stories[2].plots" values-overflow="show"
                         values-visible="true" values-mask="{value}"                        

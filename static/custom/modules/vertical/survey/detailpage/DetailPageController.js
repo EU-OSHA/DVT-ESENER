@@ -39,8 +39,8 @@ define(function (require) {
 		$scope.pCompanyFilter = $stateParams.pCompanyFilter; //Company size
 		$scope.pActivityFilter = $stateParams.pActivityFilter; //Activity sector
 		$scope.answer = $stateParams.pAnswer; //Answer
-		$scope.pCountry ='AT'; //Country
 		$scope.pSectorSize = $stateParams.pSectorSize; //Activity sector or company size
+		$scope.pCountry = $stateParams.pCountry;
 		$scope.nonEU = 1;
 
 		// Main Category / Subcategory: Question or Main Category / Question
@@ -51,13 +51,10 @@ define(function (require) {
 		$scope.currentName = $state.current.name;
 
 		//Arrays
-		$scope.countriesDataFor = [];
 		$scope.activitySectorFor =[];
 		$scope.companySizeFor =[];
 		$scope.questions = []; //Question menu
-		$scope.selectedQuestionValues = []; //Data of selected question
 		$scope.splitAnswers = []; //Select of split answers
-		$scope.countries = []; //Select of available countries for selected question
 
 		if ($rootScope.data != undefined)
 		{
@@ -69,15 +66,30 @@ define(function (require) {
 			$rootScope.data.companyFilter = $scope.pCompanyFilter;
 		}
 
-		$scope.dashboard = {
-			parameters: {
-				pActivityFilter: $scope.pActivityFilter,
-			 	pCompanyFilter : $scope.pCompanyFilter,
-			 	pSelector: $scope.pSelector,
-			 	pChart: $scope.pChart,
-			 	pTopic: $scope.pTopic
-			}
-		};
+		//DASHBOARD PARAMETERS
+	    $scope.dashboard = {
+	      parameters: {
+	        /*"pActivityFilter": $scope.pActivityFilter,
+	         "pCompanyFilter" : $scope.pCompanyFilter,
+	         "pSelector": $scope.pSelector,*/
+	         'pChart': $scope.pChart,
+	         'pTopic': $scope.pTopic,
+	         'pFilters': {
+	          'activitySector': $scope.pActivityFilter,
+	          'establishmentSize': null,
+	          'answer': $scope.answer,
+	          'country': $scope.pCountry,
+	          'sectorSize': $scope.pSectorSize,
+	          'euOnly': 0
+	         }
+	      }
+	    };
+
+	    $scope.showFilters = function()
+	    {
+	      console.log($scope.dashboard.parameters);
+	      $log.warn($scope.dashboard.parameters);
+	    }
 
 		/* Map parameters */
 		$scope.data = {
@@ -171,6 +183,8 @@ define(function (require) {
 				color1: dvtUtils.getColorCountry(1),
 				color2: dvtUtils.getColorCountry(22),
 				color3: dvtUtils.getAccidentsColors(4),
+				color4: dvtUtils.getColorCountry(3),
+				color5: dvtUtils.getColorCountry(2),
 				plots: DetailPageService.getGeneralEuropeanBarCharPlot(),
 				dimensions: {
 				  	value: {
@@ -183,11 +197,13 @@ define(function (require) {
 			},
 			//2 - National Bar Chart Plot
 			{
-				color1: dvtUtils.getColorCountry(1),
-				color2: dvtUtils.getColorCountry(22),
-				color3: dvtUtils.getAccidentsColors(4),
-				color4: dvtUtils.getColorCountry(3),
-				color5: dvtUtils.getColorCountry(2),
+		        color1: dvtUtils.getColorCountry(1),
+		        color2: dvtUtils.getColorCountry(22),
+		        color3: dvtUtils.getAccidentsColors(4),
+		        color4: dvtUtils.getColorCountry(3),
+		        color5: dvtUtils.getColorCountry(2),
+		        color6: dvtUtils.getColorCountry(12),
+		        color7: dvtUtils.getColorCountry(4),
 				plots: DetailPageService.getNationalBarChartPlot(),
 				alignment: 'left',
 				dimensions: {
@@ -204,87 +220,6 @@ define(function (require) {
 		/******************************************************************************|
 		|                                DATA LOAD                                     |
 		|******************************************************************************/
-
-		dataService.getAllCountries().then(function (data) 
-		{
-			data.data.resultset.map(function (elem) 
-			{
-				var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-				if(elem[1] != $scope.pCountry2){
-					$scope.countriesDataFor.push({
-					country: elem[0],
-					country_code: elem[1]
-					});
-				} 
-			});
-			$scope.countriesDataFor.sort(function(a, b){
-				var codeA = a.country_code;
-				var codeB = b.country_code;
-				if (codeA < codeB) {
-					return -1;
-				}
-				if (codeA > codeB) {
-					return 1;
-				}
-
-				//  be equal
-				return 0;
-			});
-		}).catch(function (err) 
-		{
-			throw err;
-		});
-
-		/*if($scope.pIndicator=='2014')
-		{
-			dataService.get2014ActivitySector().then(function(data)
-			{
-				data.data.resultset.map(function(elem)
-				{
-					var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-					$scope.activitySectorFor.push({
-						literal: elem[0],
-						id: elem[1]
-				  	});
-				});
-			});
-			dataService.get2014CompanySize().then(function(data)
-			{
-				data.data.resultset.map(function(elem)
-				{
-					var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-					$scope.companySizeFor.push({
-						literal: elem[0],
-						id: elem[1]
-				 	});
-				});
-			});
-		} 
-		else
-		{
-			dataService.get2009ActivitySector().then(function(data)
-			{
-				data.data.resultset.map(function(elem)
-				{
-					var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-					$scope.activitySectorFor.push({
-						literal: elem[0],
-						id: elem[1]
-					});
-				});
-			});
-			dataService.get2009CompanySize().then(function(data)
-			{
-				data.data.resultset.map(function(elem)
-				{
-					var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-					$scope.companySizeFor.push({
-						literal: elem[0],
-						id: elem[1]
-					});
-				});
-			});
-		}*/
 				
 		dataService.getAllQuestions($scope.pIndicator).then(function (data) 
 		{
@@ -317,38 +252,6 @@ define(function (require) {
 				});
 			});
 			$scope.answer = $scope.splitAnswers[0].answer_id.toString();
-		}).catch(function (err) {
-			throw err;
-		});
-
-		//pYear, pQuestion, pAnswer, pDataset, pSectorSize, pActivityFilter, pCompanyFilter
-		dataService.getQuestionData($scope.pIndicator, $scope.pQuestion, $scope.answer, $scope.actualDataset, $scope.pSectorSize, 
-			$scope.pActivityFilter, $scope.pCompanyFilter).then(function (data) {
-			data.data.resultset.map(function (elem) {
-				var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-				$scope.selectedQuestionValues.push({
-					id: elem[0],
-					category: elem[1],
-					level: elem[2],
-					father_id: elem[3],
-					father_name: elem[4],
-					name_1: elem[5],
-					bottom_text: elem[6],
-					indicator_id: elem[7],
-					country_code: elem[8],
-					country_name: elem[9],
-					answer: elem[10],
-					activity_sector: elem[11],
-					company_size: elem[12]
-				});
-			});
-
-			var topLevel = angular.element('a.open').text();
-			/*if($scope.selectedQuestionValues[0].level == 2){
-				$scope.breadcrumb = i18n['L'+$scope.selectedQuestionValues[0].father_name]+' / '+i18n['L'+$scope.selectedQuestionValues[0].name_1];
-			}else{
-				$scope.breadcrumb =  topLevel +' / '+i18n['L'+$scope.selectedQuestionValues[0].father_name]+': '+i18n['L'+$scope.selectedQuestionValues[0].name_1];
-			}*/
 		}).catch(function (err) {
 			throw err;
 		});
