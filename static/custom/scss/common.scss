@@ -356,6 +356,12 @@
             filter: grayscale(100%);
           }          
         }
+        &.tablet{
+          a{
+            color: $orange !important;
+            background-color: #FDEDCC !important;           
+          }
+        }
         a{
           font-size: 1.4rem;
           font-family: 'OpenSans-bold';
