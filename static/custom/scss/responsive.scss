@@ -638,8 +638,12 @@ and (max-width :767px)  {
 	}
 	.carousel--home{
 		margin: 2rem 0;
+		padding: 0rem 0 5rem;
 		.carousel-indicators{
-		  bottom: -1rem;
+			bottom: -2rem;
+			width: 100%;
+			left: auto;
+			right: 0;
 			li, li.active{
 				width: 2.2rem;
 				height: 2.2rem;
@@ -649,7 +653,10 @@ and (max-width :767px)  {
 		  width:100%;
 		  padding: 0;
 		  margin: 0px auto;
-		  min-height: 32rem;
+		  //min-height: 36rem;
+		  min-height: auto;
+		  -webkit-transition:min-height 0.4s;
+		  transition:min-height 0.4s;
 		}
 	} 
 	footer{

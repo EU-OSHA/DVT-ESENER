@@ -8,7 +8,7 @@
     font-family: $font-body;
     font-size:$font-size-body;
     color: $gray-base;
-    padding-top: 116px;
+    padding-top:11.6rem;
   }
   .ccc-tt-ds .ccc-tt-dimValue .ccc-tt-valuePct{
     display: none !important;
@@ -349,6 +349,7 @@
         }
         &.disabled{
           border: 0 !important;
+          cursor: default !important;
           a{
             background-color: rgba(177, 179, 180,0.2) !important;
             -webkit-filter: grayscale(100%);
@@ -1051,7 +1052,7 @@
       }
     }
     .carousel-indicators{
-      bottom: 0;
+      bottom: -2rem;
       margin-bottom: 0;
       li{
         background: $gray-icon;

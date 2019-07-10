@@ -19,7 +19,7 @@
     padding: 0;
     width: 100%;
     background: #FFF;
-    height: 117px;
+    height:11.7rem;
     border-bottom: 1px solid #f6a400;
     .header--top{
       display: flex;
@@ -28,6 +28,9 @@
         a{
           display: block;
           padding: 1rem 0;
+          img{
+            height:9rem;
+          }
         }
       }
       .nav--tools--menu {
@@ -140,23 +143,29 @@
           a{
             font-family: Oswald,sans-serif;
             color:$link-menu;
+            background:transparent !important;
             font-size:1.8rem;
             font-weight: 400;
-            -webkit-transition: all 0.8s ease-out;
-            -moz-transition: all 0.8s ease-out;
-            -o-transition: all 0.8s ease-out;
-            transition: all 0.8s ease-out;
+            padding-top: 1.6rem;
+            padding-bottom: 1.6rem;
+            -webkit-transition: color 0.8s ease-out;
+            -moz-transition: color 0.8s ease-out;
+            -o-transition: color 0.8s ease-out;
+            transition: color 0.8s ease-out;
             .fa-home:before{
                 font-size: 2.5rem;
             }
             &:hover{
               color: $aquamarine;
-              background:transparent;
-              -webkit-transition: all 0.8s ease-out;
-              -moz-transition: all 0.8s ease-out;
-              -o-transition: all 0.8s ease-out;
-              transition: all 0.8s ease-out;
-            };
+              background:transparent !important;
+              -webkit-transition: color 0.8s ease-out;
+              -moz-transition: color 0.8s ease-out;
+              -o-transition: color 0.8s ease-out;
+              transition: color 0.8s ease-out;
+            }
+            &:focus, &:visited{
+              background-color:transparent !important;
+            }
           }
           &.active{
             //border-bottom: 0.6rem solid $orange;
