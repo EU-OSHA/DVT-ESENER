@@ -91,9 +91,11 @@ define(function (require) {
                     } 
                     **/
                     
+                    
                     //hide print icon in mobile
                     if(configService.isMobile()) {
-                        angular.element(".a2a_button_print").remove();
+                        $(".print--block").addClass('hide');
+                        $(".zoom--text").addClass('hide');
                     }
 
                     // when click banner link to Home
