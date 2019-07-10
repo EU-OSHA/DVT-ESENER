@@ -181,10 +181,12 @@ define(function (require) {
 			//1 - European bar chart plot
 			{ 
 				color1: dvtUtils.getColorCountry(1),
-				color2: dvtUtils.getColorCountry(22),
-				color3: dvtUtils.getAccidentsColors(4),
-				color4: dvtUtils.getColorCountry(3),
-				color5: dvtUtils.getColorCountry(2),
+		        color2: dvtUtils.getColorCountry(22),
+		        color3: dvtUtils.getAccidentsColors(4),
+		        color4: dvtUtils.getColorCountry(3),
+		        color5: dvtUtils.getColorCountry(2),
+		        color6: dvtUtils.getColorCountry(12),
+		        color7: dvtUtils.getColorCountry(4),
 				plots: DetailPageService.getGeneralEuropeanBarCharPlot(),
 				dimensions: {
 				  	value: {

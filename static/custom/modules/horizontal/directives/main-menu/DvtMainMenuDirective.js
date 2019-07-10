@@ -196,9 +196,10 @@ define(function (require) {
 
                             if($state.current.name == 'site-map'
                                 || $state.current.name == 'accessibility'
-                                || $state.current.name == 'privacy-notice'
+                                || $state.current.name == 'privacy-policy'
                                 || $state.current.name == 'legal-notice'
-                                || $state.current.name == 'about-tool'){
+                                || $state.current.name == 'about-tool'
+                                || $state.current.name == '404'){
                                 $scope.isFooterPage = true;
                             }else{
                                 $scope.isFooterPage = false;

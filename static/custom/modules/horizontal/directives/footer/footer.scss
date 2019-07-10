@@ -65,6 +65,11 @@
           display: inline;
           font-weight: normal;
         }
+        &:last-child{
+          &:after{
+            content: '';
+          }
+        }
       }
     }
     .footer-social-network{

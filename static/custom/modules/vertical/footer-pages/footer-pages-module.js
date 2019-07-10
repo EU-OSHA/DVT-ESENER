@@ -18,8 +18,8 @@ define(function (require) {
         var i18n = configService.getLiterals();
 
         $urlRouterProvider.otherwise("/404");
-        $stateProvider.state('/:pLanguage/legal-notice', {
-            url: "/legal-notice",
+        $stateProvider.state('legal-notice', {
+            url: "/:pLanguage/legal-notice",
             params: {
                 pLanguage: {
                     value: 'en',
@@ -34,7 +34,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L298 +  " | OSH BAROMETER"/*,
+                title: i18n.L360 +  " | ESENER"/*,
                 description: i18n.L9,*/
             }
         });
@@ -55,7 +55,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L296 +  " | OSH BAROMETER"/*,
+                title: i18n.L358 +  " | ESENER"/*,
                 description: i18n.L10,*/
             }
         });
@@ -76,7 +76,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L297 +  " | OSH BAROMETER" /*,
+                title: i18n.L359 +  " | ESENER" /*,
                 description: i18n.L8,*/
             }
         });
@@ -97,7 +97,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L294 +  " | OSH BAROMETER"/*,
+                title: i18n.L356 +  " | ESENER"/*,
                 description: i18n.L7,*/
             }
         });
@@ -116,7 +116,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Page not found | OSH BAROMETER"/*,
+                title: "Page not found | ESENER"/*,
                 description: i18n.L135,*/
             }
         });

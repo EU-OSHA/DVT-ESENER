@@ -37,6 +37,12 @@ define(function (require) {
                     case 22:
                         return colors.country22;
                         break;
+                    case 3:
+                        return colors.country3;
+                        break;
+                    case 4:
+                        return colors.country4;
+                    break;
                     case "1-overlapping":
                         return colors["comparison-first-pyramid-overlapping"];
                         break;
@@ -172,6 +178,9 @@ define(function (require) {
                     case 1:
                         return colors.spider.indicator1;
                         break;
+                    case 2:
+                        return colors.spider.indicator2;
+                        break;
                     default:
                         return colors.spider.indicator0;
                 }
@@ -255,46 +264,30 @@ define(function (require) {
                 return colors.chartSecondaryColor;
              },
 
-            getRangeColors: function(values, minValue, maxValue, range, answerId) {
+            getRangeColors: function(value, minValue, maxValue, range, country) {
                 /* value < minValue + range ||  value > minValue + range && value < maxValue - range*2 || 
                 value > minValue + range*2 && value < maxValue - range || value > maxValue - range
                 */
-                var value = 0;
 
-                for(index in values){
-                    if(values[index].id = answerId){
-                        value = values[index].value;
-                        if(value <= minValue+range){
-                            return colors.rangeColors.range1;
-                        }else if((value > minValue+range) && (value <= maxValue-range*2)){
-                            return colors.rangeColors.range2;
-                        }else if((value > minValue+range*2) && (value < maxValue-range)){
-                            return colors.rangeColors.range3;
-                        }else if(value >= maxValue-range){
-                            return colors.rangeColors.range4;
-                        }
-                    }
-                }
-
-                /*if(values <= minValue+range){
+                if((value >= minValue) && (value <= minValue+range)) {
                     return colors.rangeColors.range1;
-                }else if((values > minValue+range) && (values <= maxValue-range*2)){
+                }else if((value > minValue+range) && (value <= maxValue-range*2)){
                     return colors.rangeColors.range2;
-                }else if((values > minValue+range*2) && (values < maxValue-range)){
+                }else if((value > minValue+range*2) && (value <= maxValue-range)){
                     return colors.rangeColors.range3;
-                }else if(values >= maxValue-range){
+                }else if((value > maxValue-range) && (value <= maxValue)){
                     return colors.rangeColors.range4;
-                }*/
+                }
             },
 
             getOpacityCountries: function(value, minValue, maxValue, range, country) {
-                if(value <= minValue+range){
+                if((value >= minValue) && (value <= minValue+range)){
                     return 0.25;
                 }else if((value > minValue+range) && (value <= maxValue-range*2)){
-                    return 0.50;
-                }else if((value > minValue+range*2) && (value < maxValue-range)){
+                    return 0.5;
+                }else if((value > minValue+range*2) && (value <= maxValue-range)){
                     return 0.75;
-                }else if(value >= maxValue-range){
+                }else if((value > maxValue-range) && (value <= maxValue)){
                     return 1;
                 }
             }

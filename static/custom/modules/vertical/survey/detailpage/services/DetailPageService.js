@@ -26,6 +26,63 @@ define (function (require) {
                         name: "main",
                         dataPart: "0",
                         barSizeMax: 15,
+                        bar_fillStyle: function(scene){
+                            //$log.warn(this);
+                            var series = scene.firstAtoms.series;
+                            var colors = this.sign.chart.axes.color._domainValues;
+                            this.sign.chart.options.colors = [];
+                            //var colorLegend = this.sign.chart.options.colors;
+                            //$log.warn(colors);
+
+                            for(var i=0; i<colors.length; i++){
+                                if(colors.length == 3){
+                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+
+                                    if(i == 0 && series.value == colors[i]){
+                                        return dvtUtils.getAccidentsColors(4);
+                                    }else if(i == 1 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(22);
+                                    }else if(i == 2 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(1);
+                                    }
+                                }else if(colors.length == 4){
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
+                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+                                    if(i == 0 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(3);
+                                    }else if(i == 1 && series.value == colors[i]){
+                                        return dvtUtils.getAccidentsColors(4);
+                                    }else if(i == 2 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(22);
+                                    }else if(i == 3 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(1);
+                                    }
+                                }else if(colors.length == 5){
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(2));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
+                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+                                    if(i == 0 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(2);
+                                    }else if(i == 1 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(3);
+                                    }else if(i == 2 && series.value == colors[i]){
+                                        return dvtUtils.getAccidentsColors(4);
+                                    }else if(i == 3 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(22);
+                                    }else if(i == 4 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(1);
+                                    }
+                                }
+                            }
+
+                            return dvtUtils.getChartLightGrayColor();
+                        },
                         bar_call: function(){
                             var resolution = screen.width;
 
@@ -79,13 +136,14 @@ define (function (require) {
                                     .strokeStyle('black')
                                     .lineWidth(3)
                                     .left(function(scene){
+                                        var baseScale = this.getContext().chart.axes.base.scale;
                                         //$log.warn(scene);
                                         if(!scene.firstAtoms.value.label.match('%')){
                                             scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                                         }
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();
-                                        return panelWidth/38;
+                                        return baseScale('Austria (AT)') - this.sign.panel.barWidth - 3; 
                                     });
 
                                 //NON EU stroke separator vertical
@@ -98,10 +156,11 @@ define (function (require) {
                                     .strokeStyle('black')
                                     .lineWidth(3)
                                     .left(function(scene){
+                                        var baseScale = this.getContext().chart.axes.base.scale;
                                         //$log.warn(scene);
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();
-                                        return panelWidth/1.255;               
+                                        return baseScale('Switzerland (CH)') - this.sign.panel.barWidth - 2; 
                                     });
                             }   
                         },
