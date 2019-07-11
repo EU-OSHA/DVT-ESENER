@@ -376,4 +376,24 @@
       ORDER BY ec.category_order ASC;
     </Query>
   </DataAccess>
+
+  <!-- Get all questions -->
+  <DataAccess access="public" connection="dvt_conn" id="getQuestions" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="2009" name="pYear" type="Numeric" />
+      <Parameter default="en" name="pLocale" type="String" />
+    </Parameters>
+    <Query>
+      SELECT DISTINCT(ec.category),
+        t.text AS name_1
+      FROM esener_category ec, indicator i, translation t
+      WHERE ec.year = ${pYear}
+      AND ec.category = i.name
+      AND ec.name_1_literal_id = t.literal_id
+      AND t.language = ${pLocale}
+      ORDER BY ec.category_order ASC;
+    </Query>
+  </DataAccess>
 </CDADescriptor>
