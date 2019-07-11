@@ -13,7 +13,7 @@ define(function (require) {
 		var scope = this;
 	}
 
-	function SelectorDirective($log, dataService, $stateParams) {
+	function SelectorDirective($log, dataService, $state, $stateParams) {
 		return {
 			restrict: 'E',
 			transclude: true,
@@ -32,7 +32,10 @@ define(function (require) {
 				//$log.warn(dashboard.dashboard.parameters);
 
 				scope.pLanguage = $stateParams.pLanguage;
-				var i18n = ($stateParams.pLanguage == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(scope.pLanguage);
+				scope.pLocale = $stateParams.pLocale;
+
+				// Literals / i18n
+				var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(scope.pLocale);
 				scope.i18n = i18n;
 
 				scope.indicator = attributes.indicator;
@@ -136,6 +139,19 @@ define(function (require) {
 					sectorSize: scope.sectorSize
 				};
 
+				scope.changeLocale = function(){
+					ngModel.$setViewValue(scope.pLocale, 'change');
+					$log.warn(scope.pLocale);
+					//dashboard.dashboard.fireChange('pFilters', scope.filters);
+					i18n = (scope.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(scope.pLocale);
+					$state.transitionTo('detailpage', {
+						pLocale: scope.pLocale
+					}, 
+					{
+						reload: true
+					});
+				}
+
 				scope.updateChart = function(pChangedFilter)
 				{
 					switch (pChangedFilter)
@@ -198,7 +214,7 @@ define(function (require) {
 		}
 	}
 
-	SelectorDirective.$inject = ['$log', 'dataService', '$stateParams'];
+	SelectorDirective.$inject = ['$log', 'dataService', '$state', '$stateParams'];
 
 	return SelectorDirective;
 });

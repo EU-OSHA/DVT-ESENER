@@ -41,8 +41,16 @@
                     </ul>
                 </li>
             </ul>
+            <!-- DOWNLOAD QUESTIONNARIE -->
             <ul>
                 <li id="surveyMenuItem" class="active-trail finalquestion"><a href="/DVS/import/questionnaire/{{pLanguage}}_QUESTIONNAIRE.rar" target="_blank" data-ng-bind="i18n.L100625"></a></li>
+                <li data-ng-if="pIndicator == 2009" id="surveyMenuItem" class="active-trail finalquestion">
+                  <a href="
+                  /pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/modules/vertical/survey/detailpage/questionnaries/2009/{{pLocale.toUpperCase()}}_QUESTIONNAIRE.zip" target="_blank" data-ng-bind="i18n.L100625" title="Download questionnaire"></a>
+                </li>
+                <li data-ng-if="pIndicator == 2014" id="surveyMenuItem" class="active-trail finalquestion">
+                  <a href="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/modules/vertical/survey/detailpage/questionnaries/2014/Questionnaire_{{pLocale.toUpperCase()}}.pdf" target="_blank" data-ng-bind="i18n.L100625" title="Download questionnarie"></a>
+                </li>
             </ul>
         </div>
     </div>
@@ -75,9 +83,9 @@
                     query="getGaussChartValues" cda="{{::cdaEsenerDash }}"
                     width="200" height="200" type="lines"
                     orientation="vertical" axis-fixed-min="0"
-                    listen-to="[minMaxValues.min_value, minMaxValues.max_value, minMaxValues.range_value]"
+                    listen-to="['pFilters', minMaxValues.min_value, minMaxValues.max_value, minMaxValues.range_value]"
                     axis-fixed-max="20" step="{{step.chart1}}"
-                    params="[['pDataset', actualDataset], ['pQuestion', pQuestion], ['pMinValue', minMaxValues.min_value], ['pMaxValue', minMaxValues.max_value], ['pRange', minMaxValues.range_value], ['pSectorSize', pSectorSize], ['pActivityFilter', pActivityFilter], ['pCompanyFilter', pCompanyFilter], ['pAnswer', answer]]"
+                    params="[['pDataset', actualDataset], ['pQuestion', pQuestion], ['pMinValue', minMaxValues.min_value], ['pMaxValue', minMaxValues.max_value], ['pRange', minMaxValues.range_value], ['pSectorSize', pSectorSize], ['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'], ['pAnswer', 'pFilters.answer'], ['pEuOnly', 'pFilters.euOnly']]"
                     color-role="category" colors="[stories[0].color1]" id="1"
                     axis-label-font="14px 'OpenSans-bold'"
                     plots="stories[0].plots"

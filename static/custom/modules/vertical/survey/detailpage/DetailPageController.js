@@ -346,41 +346,6 @@ define(function (require) {
 			}
 		}
 
-		$scope.filterChange = function(){
-			$state.transitionTo('detailpage', {
-				pIndicator: $scope.pIndicator, //Year
-				pTopic: $scope.pTopic, //Category
-				pChart: $scope.pChart, //Type of chart
-				pQuestion: $scope.pQuestion, //Question name
-				pAnswer: $scope.answer, //Split answer
-				pActivityFilter: $scope.pActivityFilter,
-				pCompanyFilter: $scope.pCompanyFilter
-			}, 
-			{
-				reload: true
-			});
-		}
-
-		$scope.OptionChange = function () {
-			if ($state.current.name !== undefined) {
-			  $state.go($state.current.name, {
-				pCountry: $scope.pCountry,
-				pCompanyFilter: $scope.pCompanyFilter,
-				pActivityFilter: $scope.pActivityFilter,
-				pSelector:$scope.pSelector
-			  });
-			}
-		}
-
-		$scope.changeChart = function(chart){
-			$scope.pChart = chart;
-			if ($state.current.name !== undefined) {
-				$state.go($state.current.name, {
-					pChart:  $scope.pChart,
-					pTopic: $scope.pTopic
-				});
-			}
-		}
 
 		/********************************************* END FILTERS ************************************************/
 	}
