@@ -93,6 +93,9 @@
                 -webkit-appearance: none;
                 -moz-appearance: none;
                 appearance: none;
+                &::-ms-expand {
+                  display: none;
+                }
               }
               &:after{
                 content:url(../img/lang-icon.png);

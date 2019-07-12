@@ -279,18 +279,37 @@ define(function (require) {
                     resolution = screen.width;
                 });
 
-                $scope.openIndicatorsList = function(e) { 
-                   
-                    if( resolution < 990 ){
-                      var parentTag = e.target.offsetParent.nextSibling.parentNode.className;
-                      
-                      if( parentTag.indexOf('open-list') < 0 ){
-                        angular.element('.submenu--items--wrapper').addClass('open-list');
-                      } else {
-                        angular.element('.submenu--items--wrapper').removeClass('open-list');
-                      }
 
-                    }
+                $scope.openIndicatorsList = function(e) { 
+                        
+                    if( resolution < 768 ){
+                        var isActive = false;
+
+                        if( e.target.nodeName == "A" ){
+                            if (e.target.className.indexOf("active") > 0)
+                            {
+                                isActive = true;
+
+                            } else {
+                                isActive = false;
+                                angular.element('.submenu--items--wrapper').removeClass('open-list');
+                            }
+
+                            var parentTag = e.target.parentElement.parentElement.className;
+
+                        } else {
+                            var parentTag = e.target.parentElement.className;
+                            isActive = true; 
+                        }
+
+                                     
+                        if( parentTag.indexOf('open-list') < 0 && isActive){
+                            angular.element('.submenu--items--wrapper').addClass('open-list');
+                        } else if (isActive) {
+                            angular.element('.submenu--items--wrapper').removeClass('open-list');
+                        }
+                    }                   
+
                 }
 
                 angular.element('body').mouseup(function(e){

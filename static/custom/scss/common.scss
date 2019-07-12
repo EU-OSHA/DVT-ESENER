@@ -395,8 +395,15 @@
         }
         p{
           font-size: 1.2rem;
-          color: $gray-light;
+          //color: $gray-light;
           margin: 0.5rem 0;
+        }
+        &:hover{
+          cursor: pointer;
+          .icon--card{
+            color: $aquamarine;
+            background-color:$aquamarine-light;
+          }
         }
       }
       .card--block--rounded{
@@ -1113,6 +1120,10 @@
           filter: grayscale(100%);
           -webkit-transition: filter 0.8s; /* Safari */
           transition: filter 0.8s;
+        }
+        &.no-hover:hover{
+          -webkit-filter:none; /* Safari 6.0 - 9.0 */
+          filter: none;
         }
       }     
     }

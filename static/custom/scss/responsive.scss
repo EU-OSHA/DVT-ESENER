@@ -915,16 +915,27 @@ and (max-width :767px)  {
 					  color: #F6A400 !important;
 					  font-size: 3rem;
 					  pointer-events: none;
-						&:after{
-							content: "\f078";
-							font: normal normal normal 2rem/1 FontAwesome;
-							right: 1.5rem;
-							top: 1rem;
-							padding: 1rem;
-							position: absolute;
-							pointer-events: all;
-						}
-					}		
+					}
+					&:after{
+						content: "\f078";
+						font: normal normal normal 2rem/1 FontAwesome;
+						right: 1.5rem;
+						top: 1rem;
+						padding: 1rem;
+						position: absolute;
+						pointer-events: all;
+					}	
+				}
+				&:nth-child(1){
+					&:after{
+						content: "\f078";
+						font: normal normal normal 2rem/1 FontAwesome;
+						right: 1.5rem;
+						top: 1rem;
+						padding: 1rem;
+						position: absolute;
+						pointer-events: all;
+					}	
 				}
 			}
 			&.open-list{
@@ -934,22 +945,22 @@ and (max-width :767px)  {
 						display: block;
 						a, a:hover, a:visited, a:focus{
 							border-bottom: 0;
-							&:after{
-								content: "";
-							}
-						}							
+						}
+						&:after{
+							content: "";
+						}						
 					}
 					&:nth-child(1){
 						a{
 							border-bottom: 0;
-							&:after{
-								content: "\f077" !important;
-								font: normal normal normal 2rem/1 FontAwesome;
-								right: 1.5rem;
-								top: 1rem;
-								padding: 1rem;
-								position: absolute;
-							}
+						}
+						&:after{
+							content: "\f077" !important;
+							font: normal normal normal 2rem/1 FontAwesome;
+							right: 1.5rem;
+							top: 1rem;
+							padding: 1rem;
+							position: absolute;
 						}
 					}
 				}
