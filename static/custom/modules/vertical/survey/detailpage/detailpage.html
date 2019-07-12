@@ -8,10 +8,15 @@
             <form class="row block--filter--wrapper">
                 <!-- SEARCH FILTER -->
                 <div class="filter-text">
-                    <input data-ng-keypress="clickEnter($event)" ng-focus="closeSelect($event)" id="search-input" type="text" ng-attr-placeholder="{{i18nLiterals.L378}}" data-ng-model="searchText" tabindex="7" />
+                    <!--<input data-ng-keypress="clickEnter($event)" ng-focus="closeSelect($event)" id="search-input" type="text" ng-attr-placeholder="{{i18n.L378}}" data-ng-model="searchText" tabindex="7" />
                     <button data-ng-click="clickEnter($event)"  id="policy-search" ng-attr-type="button">
                         <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
+                    </button>-->
+                    <dvt-select data-ng-cloak ng-model="pQuestion" parameter="pQuestion" params="[['pYear', 'pYear'], ['pLocale', pLocale]]"
+                      listen-to="['pYear', 'pQuestion']" query="getQuestions"
+                      cda="{{cdaEsenerDash}}"
+                      data-ng-change="changeToQuestion(pQuestion)">
+                    </dvt-select>
                 </div>
             </form>
         </div>
@@ -26,14 +31,14 @@
                     <ul data-ng-repeat="questionLevel2 in levelQuestions(2)">
                         <li data-ng-if="questionLevel2.level == 2 && questionLevel2.father_id == question.id">
                             <span>
-                                <a data-ng-bind="i18n['L'+questionLevel2.name_1]" href data-ng-click="changeToQuestion(questionLevel2)" data-ng-class="{'selected': questionLevel2.category == pQuestion}"></a>
+                                <a data-ng-bind="i18n['L'+questionLevel2.name_1]" href data-ng-click="changeToQuestion(questionLevel2.category)" data-ng-class="{'selected': questionLevel2.category == pQuestion}"></a>
                                 <span data-ng-if="questionLevel2.category == null">V</span>
                             </span>
                             <!-- Third level -->
                             <ul data-ng-repeat="questionLevel3 in levelQuestions(3)">
                                 <li data-ng-if="questionLevel3.level == 3 && questionLevel3.father_id == questionLevel2.id">
                                     <span>
-                                        <a data-ng-bind="i18n['L'+questionLevel3.name_1]" href data-ng-click="changeToQuestion(questionLevel3)" data-ng-class="{'selected': questionLevel3.category == pQuestion}"></a>
+                                        <a data-ng-bind="i18n['L'+questionLevel3.name_1]" href data-ng-click="changeToQuestion(questionLevel3.category)" data-ng-class="{'selected': questionLevel3.category == pQuestion}"></a>
                                     </span>
                                 </li>
                             </ul>
@@ -43,7 +48,7 @@
             </ul>
             <!-- DOWNLOAD QUESTIONNARIE -->
             <ul>
-                <li id="surveyMenuItem" class="active-trail finalquestion"><a href="/DVS/import/questionnaire/{{pLanguage}}_QUESTIONNAIRE.rar" target="_blank" data-ng-bind="i18n.L100625"></a></li>
+                <!--<li id="surveyMenuItem" class="active-trail finalquestion"><a href="/DVS/import/questionnaire/{{pLanguage}}_QUESTIONNAIRE.rar" target="_blank" data-ng-bind="i18n.L100625"></a></li>-->
                 <li data-ng-if="pIndicator == 2009" id="surveyMenuItem" class="active-trail finalquestion">
                   <a href="
                   /pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/modules/vertical/survey/detailpage/questionnaries/2009/{{pLocale.toUpperCase()}}_QUESTIONNAIRE.zip" target="_blank" data-ng-bind="i18n.L100625" title="Download questionnaire"></a>

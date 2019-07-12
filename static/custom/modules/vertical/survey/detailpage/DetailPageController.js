@@ -72,6 +72,8 @@ define(function (require) {
 	        /*"pActivityFilter": $scope.pActivityFilter,
 	         "pCompanyFilter" : $scope.pCompanyFilter,
 	         "pSelector": $scope.pSelector,*/
+	         'pQuestion': $scope.pQuestion,
+	         'pYear': $scope.pIndicator,
 	         'pChart': $scope.pChart,
 	         'pTopic': $scope.pTopic,
 	         'pFilters': {
@@ -312,6 +314,16 @@ define(function (require) {
 			return levels;
 		}
 
+		$scope.preguntas = function(){
+			var levels = [];
+			for(var i=0; i<$scope.questions.length; i++){
+				if($scope.questions[i].category != undefined){
+					levels.push($scope.questions[i]);
+				}
+			}
+			return levels;
+		}
+
 		$scope.clickEnter = function($event){
 			if($event.which === 13 || $event.which === 1) {
 				//search($event, 'search');
@@ -329,8 +341,8 @@ define(function (require) {
 		}
 
 		$scope.changeToQuestion = function(question){
-			$scope.pQuestion = question.category;
-			if(question.category != null){
+			$scope.pQuestion = question;
+			if(question != null){
 				$state.transitionTo('detailpage', {
 					pIndicator: $scope.pIndicator, //Year
 					pTopic: $scope.pTopic, //Category

@@ -33,7 +33,13 @@ define(function (require) {
                 params: '=',
                 listenTo: '='
             },
-            template: '<div class="dropdown"><div class="input-group"><span class="input-group-addon glyphicon glyphicon-stop" aria-hidden="false"></span> <span ng-attr-id="{{id}}" /></div></div>',
+            template: 
+            '<div class="dropdown">'
+                +'<div class="input-group">'
+                    +'<span class="" aria-hidden="false"></span>'
+                    +'<span ng-attr-id="{{id}}" />'
+                +'</div>'
+            +'</div>',
             //templateUrl: configService.getHorizontalDirectiveTplPath('select', 'select'),
             link: function (scope, element, attributes, controllers) {
                 var ngModel = controllers[0];
@@ -63,13 +69,14 @@ define(function (require) {
                         var divs = document.querySelectorAll('div.select2-container');
                         [].forEach.call(divs, function (div) {
                             // do whatever
-                            div.classList.add('btn', 'btn-default', 'dropdown-toggle', 'col-xs-12');
+                            div.classList.add('dropdown-toggle', 'col-xs-12');
                         });
 
                     },
                     postFetch: function(data){
+                        //$log.warn(data);
                         if (attributes.invalidateDefaultSelection){
-                            data.resultset.unshift(['','Select a country to compare']);
+                            data.resultset.unshift(['','Select a question']);
                             data.queryInfo.totalRows++;
                         }
                     }
