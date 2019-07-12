@@ -159,6 +159,41 @@
     }
   }
 
+  .datavisualisation-page{
+    .card--item{
+      &:hover{
+        .osh-management-icon{
+            background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/osh-management-hover.png) center 3rem no-repeat;
+          }
+          .psychosocial-risk-icon{
+            background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/psychosocial-risk-hover.png) center 3rem no-repeat;
+          }
+          .drivers-barriers-icon{
+            background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/drivers-barriers-hover.png) center 3rem no-repeat;
+          }
+          .workers-participation-icon{
+            background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/workers-participation-hover.png) center 3rem no-repeat;
+          }
+
+          .european-maps-icon{
+            background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/european-maps-hover.png) center 3rem no-repeat;
+          }
+          .eu-bar-chart-icon{
+            background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/eu-bar-chart-hover.png) center 3rem no-repeat;
+          }
+          .national-bar-chart-icon{
+            background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/national-bar-chart-hover.png) center 3rem no-repeat;
+          }
+          .national-comparision-icon{
+            background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/national-comparision-hover.png) center 3rem no-repeat;
+          }
+          .pie-chart-icon{
+             background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/pie-chart-hover.png) center 3rem no-repeat; 
+          }
+      }
+    }    
+  }
+
 
   .tablet{
     .osh-management-icon{
