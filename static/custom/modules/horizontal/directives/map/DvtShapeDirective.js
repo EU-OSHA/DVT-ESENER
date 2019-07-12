@@ -76,9 +76,6 @@ define(function (require) {
                 var answerId = 0;
                 var answerValue = 0;
 
-                $log.warn('minMaxValue Directive');
-                $log.warn(data);
-
                 for (var index in data) {
                     for(var answer in data[index].answers){
                         answerId = data[index].answers[answer].id;
@@ -100,7 +97,6 @@ define(function (require) {
                 maxValue = maxValue;
 
                 var range = (maxValue - minValue) / 4;
-                $log.warn('minValue: '+minValue+' maxValue: '+maxValue+' range: '+range);
                 return [minValue, maxValue, range];
             };
 
@@ -213,7 +209,6 @@ define(function (require) {
 
             out = function () {
                 if (noDataCountries.indexOf(this.id) < 0) {
-                    //$log.warn(this);
                     if(this.type == 'text'){
                         // background
                         this.animate({
@@ -432,7 +427,6 @@ define(function (require) {
                 {
                     Promise.all([$scope.promise[1]]).then(function(res)
                     {
-                        $log.warn('DIRECTIVE');
                         var pAnswer = $stateParams.pAnswer;
                         var indicator = $stateParams.pIndicator;
                         var question = $stateParams.pQuestion;
@@ -462,8 +456,6 @@ define(function (require) {
                         $rootScope.data = $scope.mapData;
                         $scope.data = $scope.mapData;
 
-                        //$log.warn('DvtShapeDirective: ');
-                        $log.warn($rootScope.data);
                     });
                 }
 
@@ -475,8 +467,6 @@ define(function (require) {
             link: function (scope, element, attributes, controllers) {
                 //get dashboard parent directive
                 var dashboard = controllers[0];
-                $log.warn('LINK SCOPE');
-                //$log.warn(scope.data);
                 //generate id
                 scope.id = "dvt_map" + nextId();
 
@@ -484,7 +474,6 @@ define(function (require) {
                 if(!!scope.promise) {
 
                         Promise.all([scope.promise[0], scope.promise[1]]).then(function(res) {
-                            $log.warn('LINK DIRECTIVE');
                             var row = {};
                             res[1].data.resultset.map(function (elem) {
                                 row = elem;
@@ -501,8 +490,6 @@ define(function (require) {
                                 scope.mapData.questionData[row[1]].country_name = row[2];
                                 scope.mapData.questionData[row[1]].indicator = row[6];
                             });
-
-                            //$log.warn(scope.mapData);
                             
                             $rootScope.data = scope.mapData;
                             scope.data = scope.mapData;

@@ -26,11 +26,6 @@ define(function (require) {
 				var dashboard = controllers[1];
 				var ngModel = controllers[0];
 
-				console.log(dashboard);
-				//$log.warn(dashboard);
-				console.log(dashboard.dashboard.parameters);
-				//$log.warn(dashboard.dashboard.parameters);
-
 				scope.pLanguage = $stateParams.pLanguage;
 				scope.pLocale = $stateParams.pLocale;
 
@@ -168,7 +163,6 @@ define(function (require) {
 							break;
 						case "country":
 							console.log("country changed");
-							$log.warn("country changed");
 							break;
 						case "answer":
 							console.log("answer changed");
@@ -191,7 +185,6 @@ define(function (require) {
 							break;
 						default:
 							console.log("No change detected");
-							$log.warn("No change detected");
 					}
 
 					dashboard.dashboard.parameters.pFilters = scope.filters;

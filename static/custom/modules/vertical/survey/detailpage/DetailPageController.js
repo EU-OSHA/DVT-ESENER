@@ -56,9 +56,15 @@ define(function (require) {
 		$scope.questions = []; //Question menu
 		$scope.splitAnswers = []; //Select of split answers
 
+		var questionChanged = false;
+
 		if ($rootScope.data != undefined)
-		{
+		{			
 			$rootScope.data.indicator = $scope.pIndicator;
+			if ($scope.pQuestion != $rootScope.data.question)
+			{
+				questionChanged = true;
+			}
 			$rootScope.data.question = $scope.pQuestion;
 			$rootScope.data.pAnswer = $scope.answer;
 			$rootScope.data.sectorsize = $scope.pSectorSize;
@@ -68,30 +74,24 @@ define(function (require) {
 
 		//DASHBOARD PARAMETERS
 	    $scope.dashboard = {
-	      parameters: {
-	        /*"pActivityFilter": $scope.pActivityFilter,
-	         "pCompanyFilter" : $scope.pCompanyFilter,
-	         "pSelector": $scope.pSelector,*/
-	         'pQuestion': $scope.pQuestion,
-	         'pYear': $scope.pIndicator,
-	         'pChart': $scope.pChart,
-	         'pTopic': $scope.pTopic,
-	         'pFilters': {
-	          'activitySector': $scope.pActivityFilter,
-	          'establishmentSize': null,
-	          'answer': $scope.answer,
-	          'country': $scope.pCountry,
-	          'sectorSize': $scope.pSectorSize,
-	          'euOnly': 0
-	         }
-	      }
+	      	parameters: {
+		        /*"pActivityFilter": $scope.pActivityFilter,
+		        "pCompanyFilter" : $scope.pCompanyFilter,
+		        "pSelector": $scope.pSelector,*/
+		        'pQuestion': $scope.pQuestion,
+		        'pYear': $scope.pIndicator,
+		        'pChart': $scope.pChart,
+		        'pTopic': $scope.pTopic,
+		        'pFilters': {
+			        'activitySector': $scope.pActivityFilter,
+			        'establishmentSize': null,
+			        'answer': $scope.answer,
+			        'country': $scope.pCountry,
+			        'sectorSize': $scope.pSectorSize,
+			        'euOnly': 0
+		        }
+	      	}
 	    };
-
-	    $scope.showFilters = function()
-	    {
-	      console.log($scope.dashboard.parameters);
-	      $log.warn($scope.dashboard.parameters);
-	    }
 
 		/* Map parameters */
 		$scope.data = {
@@ -259,9 +259,10 @@ define(function (require) {
 		}).catch(function (err) {
 			throw err;
 		});
-
-		if ($rootScope.data == undefined)
+		
+		if ($rootScope.data == undefined || questionChanged)
 		{
+			questionChanged = false;
 		  	Promise.all([$scope.dataPromises[1]]).then(function(res)
 			{
 				var row = {};
@@ -308,16 +309,6 @@ define(function (require) {
 			var levels = [];
 			for(var i=0; i<$scope.questions.length; i++){
 				if($scope.questions[i].level == levelIndex){
-					levels.push($scope.questions[i]);
-				}
-			}
-			return levels;
-		}
-
-		$scope.preguntas = function(){
-			var levels = [];
-			for(var i=0; i<$scope.questions.length; i++){
-				if($scope.questions[i].category != undefined){
 					levels.push($scope.questions[i]);
 				}
 			}
