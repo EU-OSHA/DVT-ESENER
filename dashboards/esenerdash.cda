@@ -36,7 +36,8 @@
         ec.level,
         ec.father_id,
         ec.name_1_literal_id AS name_1,
-        IF(ec.category IS NOT NULL, i.id, NULL) as indicator_id, ec.category_order
+        IF(ec.category IS NOT NULL, i.id, NULL) as indicator_id,
+        ec.category_order
       FROM esener_category ec, indicator i
       WHERE ec.year = ${pYear}
       AND (ec.category IS NULL OR ec.category = i.name)
@@ -392,7 +393,7 @@
       WHERE ec.year = ${pYear}
       AND ec.category = i.name
       AND ec.name_1_literal_id = t.literal_id
-      AND t.language = "${pLocale}"
+      AND t.language = ${pLocale}
       ORDER BY ec.category_order ASC;
     </Query>
   </DataAccess>
