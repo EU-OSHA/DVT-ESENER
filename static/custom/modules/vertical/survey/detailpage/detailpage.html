@@ -24,24 +24,26 @@
         <!-- Question Hierarchy -->
         <div>
             <!-- First level -->
-            <ul data-ng-repeat="question in questions">
-                <li data-ng-if="question.father_id == null">
-                    <span><a href data-ng-bind="i18n['L'+question.name_1]" data-ng-click="openAccordion($index)" data-ng-class="{'open': pTopic == question.anchor}"></a>V</span>
-                    <!-- Second level -->
-                    <ul data-ng-repeat="questionLevel2 in levelQuestions(2)">
-                        <li data-ng-if="questionLevel2.level == 2 && questionLevel2.father_id == question.id">
-                            <span>
-                                <a data-ng-bind="i18n['L'+questionLevel2.name_1]" href data-ng-click="changeToQuestion(questionLevel2.category)" data-ng-class="{'selected': questionLevel2.category == pQuestion}"></a>
-                                <span data-ng-if="questionLevel2.category == null">V</span>
+            <ul>
+                <li data-ng-repeat="question in firstLevel()" data-ng-class="{'open': pTopic == question.anchor}">
+                    <span><a href data-ng-bind="i18n['L'+question.name_1]" data-ng-click="openAccordion($index)"></a>V</span>
+                    <!-- Second Level -->
+                    <ul>
+                        <li data-ng-repeat="child in children(question.id)" data-ng-class="{'open': child.id == selectedFatherID}">
+                            <span data-ng-if="child.category != null">
+                                <a data-ng-bind="i18n['L'+child.name_1]" href data-ng-click="changeToQuestion(child.category)"  data-ng-class="{'selected': child.category == pQuestion}"></a>
                             </span>
-                            <!-- Third level -->
-                            <ul data-ng-repeat="questionLevel3 in levelQuestions(3)">
-                                <li data-ng-if="questionLevel3.level == 3 && questionLevel3.father_id == questionLevel2.id">
+                            <span data-ng-if="child.category == null">
+                                <a data-ng-bind="i18n['L'+child.name_1]" href></a>
+                                <span>V</span>
+                            </span>
+                            <ul data-ng-if="child.category == null">
+                                <li data-ng-repeat="grandchild in children(child.id)">
                                     <span>
-                                        <a data-ng-bind="i18n['L'+questionLevel3.name_1]" href data-ng-click="changeToQuestion(questionLevel3.category)" data-ng-class="{'selected': questionLevel3.category == pQuestion}"></a>
+                                        <a data-ng-bind="i18n['L'+grandchild.name_1]" href data-ng-click="changeToQuestion(grandchild.category)" data-ng-class="{'selected': grandchild.category == pQuestion}"></a>
                                     </span>
                                 </li>
-                            </ul>
+                            </ul>    
                         </li>
                     </ul>
                 </li>
@@ -64,8 +66,7 @@
     <div class="col-sm-8 col-xs-12  col-md-8 col-content">
 
         <selector indicator="{{pQuestion}}" ng-model="dashboard.parameters.pFilters"></selector>
-        <button data-ng-click="showFilters()">SHOW FILTERS</button>
-
+        
         <!-- EUROPEAN MAP -->
         <div class="" data-ng-show="pChart == 'european-map'">
           <!--<p ng-repeat="value in selectedQuestionValues">

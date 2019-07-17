@@ -315,6 +315,40 @@ define(function (require) {
 			return levels;
 		}
 
+		// Returns an array of questions of first level
+		$scope.firstLevel = function()
+		{
+			var items = [];
+			for (var i=0; i<$scope.questions.length; i++)
+			{
+				if ($scope.questions[i].level == 1)
+				{
+					items.push($scope.questions[i]);
+				}
+			}
+			return items;
+		}
+
+		$scope.selectedFatherID = null;
+
+		$scope.children = function(pFatherID)
+		{
+			var children = [];
+			for (var i = 0; i<$scope.questions.length; i++)
+			{
+				// If the current question has the same father ID as the parameter, add it to the list
+				if ($scope.questions[i].father_id == pFatherID)
+				{
+					children.push($scope.questions[i]);
+					if ($scope.questions[i].category == $scope.pQuestion)
+					{
+						$scope.selectedFatherID = $scope.questions[i].father_id
+					}
+				}
+			}
+			return children;
+		}
+
 		$scope.clickEnter = function($event){
 			if($event.which === 13 || $event.which === 1) {
 				//search($event, 'search');
