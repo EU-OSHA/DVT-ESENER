@@ -3,7 +3,7 @@
         "id": "home",
         "name":"<span>Home</span>",
         "sref": "home",
-        "accesskey": "H",
+        "accesskey": "0",
         "tabindex":"1"
     },
     {
@@ -16,12 +16,12 @@
                 "id":"overview",
                 "name":"L101007",
                 "sref":"overview",
-                "accesskey":"C"
+                "accesskey":"1"
             },{
                 "id":"overview",
                 "name":"L101008",
                 "sref":"overview",
-                "accesskey":"C"
+                "accesskey":"2"
             }
         ]
 
@@ -31,7 +31,7 @@
         "name":"L484",
         "sref": "about-tool",
         "accesskey": "T",
-        "tabindex":"4"
+        "tabindex":"3"
 
     }
 ]
