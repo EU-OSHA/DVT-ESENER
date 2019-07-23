@@ -40,7 +40,8 @@ define(function (require) {
 		$scope.pActivityFilter = $stateParams.pActivityFilter; //Activity sector
 		$scope.answer = $stateParams.pAnswer; //Answer
 		$scope.pSectorSize = $stateParams.pSectorSize; //Activity sector or company size
-		$scope.pCountry = $stateParams.pCountry;
+		$scope.pCountry = $stateParams.pCountry != null ? $stateParams.pCountry : $stateParams.pCountry1;
+		$scope.pCountry2 = $stateParams.pCountry2;
 		$scope.nonEU = $stateParams.pEuOnly;
 
 		// Main Category / Subcategory: Question or Main Category / Question
@@ -371,7 +372,7 @@ define(function (require) {
 
 		$scope.changeLocale = function(){
 			i18n = ($scope.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($scope.pLocale);
-			$state.transitionTo('detailpage', {
+			$state.transitionTo($state.current.name, {
 				pLocale: $scope.pLocale
 			}, 
 			{
@@ -383,7 +384,7 @@ define(function (require) {
 			$scope.pQuestion = question;
 			$scope.pTopic = anchor;
 			if(question != null){
-				$state.transitionTo('detailpage', {
+				$state.transitionTo($state.current.name, {
 					pIndicator: $scope.pIndicator, //Year
 					pTopic: $scope.pTopic, //Category
 					pChart: $scope.pChart, //Type of chart
@@ -416,7 +417,7 @@ define(function (require) {
 			{
 				$scope.pActivityFilter = $scope.dashboard.parameters.pFilters.activitySector == null ? 0 : $scope.dashboard.parameters.pFilters.activitySector;
 				$scope.pCompanyFilter = $scope.dashboard.parameters.pFilters.establishmentSize == null ? 0 : $scope.dashboard.parameters.pFilters.establishmentSize;
-				$state.transitionTo('detailpage', {
+				$state.transitionTo($state.current.name, {
 					pIndicator: $scope.pIndicator, //Year
 					pTopic: $scope.pTopic, //Category
 					pChart: $scope.pChart, //Type of chart

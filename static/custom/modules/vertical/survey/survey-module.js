@@ -73,7 +73,7 @@ define(function (require) {
         });
 
         $stateProvider.state('detailpage', {
-            url: "/:pLanguage/survey/detailpage/:pIndicator/:pTopic/:pChart/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter",
+            url: "/:pLanguage/survey/detailpage/:pIndicator/:pTopic/:pChart/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter/:pCountry1/:pCountry2",
             params: {
                 pLanguage: {
                     value: 'en',
@@ -99,9 +99,6 @@ define(function (require) {
                     value: 'MM161',
                     squash: 'MM161'
                 },
-                pAnswer: {
-                    value: 1
-                },
                 pActivityFilter: {
                     value: '8',
                     squash: '8'
@@ -110,16 +107,72 @@ define(function (require) {
                     value: '0',
                     squash: '0'
                 },
-                pSectorSize: {
-                    value: 'company-size',
-                    squash: 'company-size'
+                pCountry1: {
+                    value: 'AT',
+                    squash: true
+                },
+                pCountry2: {
+                    value: 'EU27',
+                    squash: true
+                },
+                pAnswer: {
+                    value: 1
+                },
+                pEuOnly: {
+                    value: 0
+                }
+            },
+            views: {
+                "content-main": {
+                    templateUrl: configService.getVerticalTplPath("survey/detailpage", "detailpage"),
+                    controller: 'DetailPageController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/detailpage/DetailPageController', 'detailpage', 'DetailPageController')
+                }
+            },
+            metaTags: {
+                title: "Data Visualisation | ESENER",
+                //description: i18n.L4,
+            }
+        });
+
+        $stateProvider.state('detailpageCountry', {
+            url: "/:pLanguage/survey/detailpage/:pIndicator/:pTopic/:pChart/:pLocale/:pQuestion/:pCountry/:pSectorSize",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pIndicator: {
+                    value: '2009',
+                    squash: '2009'
+                },
+                pTopic: {
+                    value: 'osh-management',
+                    squash: 'osh-management'
+                },
+                pChart: {
+                    value: 'national-bar-chart',
+                    squash: 'national-bar-chart'
+                },
+                pLocale: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pQuestion: {
+                    value: 'MM161',
+                    squash: 'MM161'
+                },
+                pAnswer: {
+                    value: '1',
+                    squash: '1'
                 },
                 pCountry: {
                     value: 'EU27',
                     squash: 'EU27'
                 },
-                pEuOnly: {
-                    value: 0
+                pSectorSize: {
+                    value: 'company-size',
+                    squash: true
                 }
             },
             views: {

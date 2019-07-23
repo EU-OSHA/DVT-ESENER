@@ -141,12 +141,22 @@ define(function (require) {
 					$log.warn(scope.pLocale);
 					//dashboard.dashboard.fireChange('pFilters', scope.filters);
 					i18n = (scope.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(scope.pLocale);
-					$state.transitionTo('detailpage', {
+					$state.transitionTo($state.current.name, {
 						pLocale: scope.pLocale
 					}, 
 					{
 						reload: true
 					});
+				}
+
+				scope.changeQuestion = function (pQuestionID)
+				{
+					$state.go($state.current.name, {
+						pQuestion: pQuestionID //Question name
+					},
+					{
+						reload: true
+					})
 				}
 
 				scope.updateChart = function(pChangedFilter)

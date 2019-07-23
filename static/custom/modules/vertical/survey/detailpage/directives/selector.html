@@ -6,8 +6,8 @@
         <!-- Breadcrumb -->        
 		<p data-ng-bind="question.breadcrumb"></p>
         <ul class="question--by--question">
-            <li><a ui-sref="detailpage({pQuestion: question.previousID})" ui-sref-opts="{reload: true}" title="question.previous" data-ng-bind="question.previous"></a></li>
-            <li><a ui-sref="detailpage({pQuestion: question.nextID})" ui-sref-opts="{reload: true}" title="question.next" data-ng-bind="question.next"></a></li>
+            <li><a data-ng-click="changeQuestion(question.previousID)" title="question.previous" data-ng-bind="question.previous"></a></li>
+            <li><a data-ng-click="changeQuestion(question.nextID)" title="question.next" data-ng-bind="question.next"></a></li>
         </ul> 
     </div>
 
@@ -174,7 +174,7 @@
                 <ul class="chart--selection--block">
                     <li><a ui-sref="detailpage({pChart: 'european-map'})"><span class="sr-only"  data-ng-bind="i18n.L100623"></span></a></li>
                     <li><a ui-sref="detailpage({pChart: 'european-bar-chart'})"><span class="sr-only"  data-ng-bind="i18n.L100622"></span></a></li>
-                    <li><a ui-sref="detailpage({pChart: 'national-bar-chart', pSectorSize: filters.sectorSize, pCountry: filters.country})" ><span class="sr-only"  data-ng-bind="i18n.L100624"></span></a></li>
+                    <li><a ui-sref="detailpageCountry({pChart: 'national-bar-chart', pSectorSize: filters.sectorSize, pCountry: filters.country})" ><span class="sr-only"  data-ng-bind="i18n.L100624"></span></a></li>
                     <li><a href ><span class="sr-only"  data-ng-bind="i18n.L100621"></span></a></li>
                     <!--<li><a ui-sref="detailpage({pChart: 'national-comparisons'})" ><span class="sr-only"  data-ng-bind="i18n.L100621"></span></a></li>-->
                     <li><a href ><span class="sr-only"  data-ng-bind="i18n.L101033"></span></a></li>
