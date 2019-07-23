@@ -116,7 +116,7 @@
 	        	<span  data-ng-bind="i18n.L101027"></span> 
 	        	<span  data-ng-bind="i18n.L100574"></span> 
 	        </p>
-            <form class="row block--filter--wrapper">
+            <form class="block--filter--wrapper">
                 <!-- Activity sector -->
                 <div class="filter-text activity-sector">
                     <select id="sector" class="" data-ng-change="updateChart('activitySector')" data-ng-model="filters.activitySector">
@@ -139,20 +139,20 @@
         </div>
 
         <div data-ng-if="chart=='national-bar-chart'">
-			<form class="row block--filter--wrapper">
-                <span data-ng-bind="i18n.L101026"></span>
+            <p data-ng-bind="i18n.L101026"></p>
+			<form class="block--filter--wrapper">                
                 <!-- Activity sector -->
-                <div class="filter-text">
+                <div class="filter-text-button">
                     <button data-ng-bind="i18n.L100573" data-ng-click="updateChart('companyToActivity')"></button>
-                </div>
-	        	<span data-ng-bind="i18n.L101027"></span> 
+                    <span data-ng-bind="i18n.L101027"></span> 
+                </div>	        	
                 <!-- Establishment size -->
-                <div class="filter-text">
+                <div class="filter-text-button">
                     <button data-ng-bind="i18n.L100574" data-ng-click="updateChart('activityToCompany')"></button>
                 </div>
                 <!-- Country -->
-                <div class="filter-text">
-                    <span data-ng-bind="i18n.L100589"></span> 
+                <div class="filter-text-button">
+                    <label data-ng-bind="i18n.L100589"></label> 
                     <select id="datafor" data-ng-change="updateChart('country')" data-ng-model="filters.country">
                         <option data-ng-repeat='country in countries' data-ng-value="country.id" data-ng-bind="country.literal" data-ng-selected="country.id == filters.country"></option>
                     </select>
@@ -162,7 +162,7 @@
     <hr>
         <!-- Select split answers and charts -->
         <div>
-            <form class="row block--typechart--wrapper">
+            <form class="block--typechart--wrapper">
                 <!-- Answer selection -->
                 <!-- Hidden until necessary -->
                 <!--<div class="filter-text" data-ng-if="chart == 'european-map'">

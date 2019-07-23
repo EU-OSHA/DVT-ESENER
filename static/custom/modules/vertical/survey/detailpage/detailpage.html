@@ -3,7 +3,7 @@
 
 <div class="container-fluid detail--page--wrapper">
 
-    <section class="col-sm-3 col-xs-12  col-md-3 col-content questions--list--wrapper">
+    <section class="col-content questions--list--wrapper">
 
         <div class="filter--questions--group">
             <dvt-select data-ng-cloak ng-model="pQuestion" parameter="pQuestion" params="[['pYear', 'pYear'], ['pLocale', pLocale]]"
@@ -51,7 +51,7 @@
         </div>
 
     </section>
-    <section class="col-sm-8 col-xs-12 col-md-8 detail--content--section">
+    <section class="detail--content--section">
         <selector indicator="{{pQuestion}}" ng-model="dashboard.parameters.pFilters" class="selector--page--elements"></selector>
 
 
@@ -73,7 +73,7 @@
                         data="data">
                     </dvt-map>
                   </div>
-                  <div class="map--gauss--block container">
+                  <div class="map--gauss--block">
                     <dvt-bar-chart
                       data-ng-cloak
                       query="getGaussChartValues" cda="{{::cdaEsenerDash }}"

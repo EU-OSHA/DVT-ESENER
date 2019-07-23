@@ -6,9 +6,12 @@
   .detail--page--wrapper{
     position: initial;
     width: 90%;
-    padding: 0;
+    display: flex;
+    flex-direction: row;
     .detail--content--section{
-      position: initial; 
+      position: initial;
+      width: 70%;
+      padding: 0 2rem;
       .selector--page--elements{
         position: initial; 
         .content--intro--wrapper{
@@ -293,7 +296,8 @@
 .questions--list--wrapper{
     position: relative;
     z-index: 10;
-    padding-left: 0;
+    padding: 0;
+    width: 30%;
 }
 .content--lang--wrapper{
   position: absolute;
@@ -343,7 +347,7 @@
   width: 100%;
   .filter-text{
     margin: 0 2rem 0 0;
-    min-width: 25rem;
+    min-width: 25%;
     position: relative;
     select{
       -webkit-appearance: none;
@@ -386,7 +390,7 @@
         margin: 1rem 0;
         padding: 1rem 2rem;
         background: $white;
-        outline:1px solid $aquamarine;
+        outline:1px solid $aquamarine !important;
         color: $aquamarine;
         position: relative;
       }
@@ -410,6 +414,36 @@
         right: 0;
         top: 0.5rem;
       }    
+    }
+  }
+  .filter-text-button{
+    width: auto;
+    margin-right: 1rem;
+    button{
+      width:auto;
+      margin: 1rem 0;
+      padding: 1rem 2rem;
+      background: #00a1a3;
+      color: #FFF;
+      position: relative;
+      border: none;      
+    }
+    span{
+      display: inline-block;
+      padding: 0 2rem;
+    }
+    select{
+      width:auto;
+      margin: 1rem 0;
+      padding: 1rem 2rem;
+      background: #00a1a3;
+      color: #FFF;
+      position: relative;
+      border: none;   
+      option{
+        background: $white;
+        color: $gray;
+      }
     }
   }
 }
@@ -451,6 +485,12 @@
               background: $aquamarine-light;
             }
           }
+          &.selected{
+            &:before{
+              content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-eu-map-icon-active.svg);
+              background: $orange-light;
+            }
+          }
         }     
       }
       &:nth-child(2){
@@ -463,7 +503,13 @@
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-chart-icon-hover.svg);
               background: $aquamarine-light;
             }
-          } 
+          }
+          &.selected{
+            &:before{
+              content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-chart-icon-active.svg);
+              background: $orange-light;
+            }
+          }
         }     
       }
       &:nth-child(3){
@@ -475,6 +521,12 @@
             &:before{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision-icon-hover.svg);
               background: $aquamarine-light;
+            }
+          }
+          &.selected{
+            &:before{
+              content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision-icon-active.svg);
+              background: $orange-light;
             }
           }  
         }     
@@ -489,7 +541,13 @@
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision2-icon-hover.svg);
               background: $aquamarine-light;
             }
-          } 
+          }
+          &.selected{
+            &:before{
+              content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision2-icon-active.svg);
+              background: $orange-light;
+            }
+          }  
         }        
       }
       &:nth-child(5){
@@ -503,7 +561,13 @@
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-pie-icon-hover.svg);
               background: $aquamarine-light;
             }
-          }   
+          }
+          &.selected{
+            &:before{
+              content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-pie-icon-active.svg);
+              background: $orange-light;
+            }
+          }  
         }        
       }
       &:nth-child(6){
@@ -524,8 +588,6 @@
   }
 }
 
-
-
 ul.question--by--question {
     list-style: none;
     margin: 0;
@@ -533,7 +595,7 @@ ul.question--by--question {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 99.75%;
     display: flex;
     justify-content: space-between;
     z-index:0;
@@ -570,4 +632,66 @@ ul.question--by--question {
         }    
       }
     }
+}
+
+
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px) 
+and (orientation : landscape) { 
+
+  .detail-page{
+    .detail--page--wrapper{
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      .detail--content--section{
+        width: 100%;
+        .selector--page--elements{
+          .content--intro--wrapper{ 
+          }
+        }
+      }
+      .questions--list--wrapper{
+        width: 100%;
+      }      
+    }
+  }
+  #select2-drop {
+      max-width: 100%;
+  }
+  ul.question--by--question{
+    position: relative;
+    width: 100%;
+    li{
+      a{
+        width: 17rem;
+        padding: 0 1rem;
+        &:before{
+          width: 50% !important;
+          display: block;
+          padding: 1.5rem 0;          
+        }
+      }
+      &:nth-child(1){
+        a{
+          &:before{
+            margin-left: 0;
+          }
+        }
+      }
+      &:nth-child(2){
+        a{
+          &:before{
+            margin-right: 0;
+          }
+        }
+      }
+    }
+  }
+  .block--filter--wrapper{
+    .filter-text {
+      min-width: 31.6%;
+    }
+  } 
 }
