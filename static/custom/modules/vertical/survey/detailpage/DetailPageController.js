@@ -271,46 +271,49 @@ define(function (require) {
 		});*/
 
 
-		if ($rootScope.data == undefined || questionOrFilterChanged)
-		{
-			questionOrFilterChanged = false;
-		  	Promise.all([$scope.dataPromises[1]]).then(function(res)
+		if ($scope.pChart == "european-map")
+		{			
+			if ($rootScope.data == undefined || questionOrFilterChanged)
 			{
-				var row = {};
-				res[0].data.resultset.map(function (elem) 
+				questionOrFilterChanged = false;
+			  	Promise.all([$scope.dataPromises[1]]).then(function(res)
 				{
-					row = elem;
-					if(!$scope.data.questionData[row[1]])
+					var row = {};
+					res[0].data.resultset.map(function (elem) 
 					{
-						$scope.data.questionData[row[1]]={};
-						$scope.data.questionData[row[1]].answers = [];
-					}
-					$scope.data.questionData[row[1]].answers.push({
-						id: row[4],
-						literal_id: row[5],
-						value: row[3]
+						row = elem;
+						if(!$scope.data.questionData[row[1]])
+						{
+							$scope.data.questionData[row[1]]={};
+							$scope.data.questionData[row[1]].answers = [];
+						}
+						$scope.data.questionData[row[1]].answers.push({
+							id: row[4],
+							literal_id: row[5],
+							value: row[3]
+						});
+						$scope.data.questionData[row[1]].country_code = row[1];
+						$scope.data.questionData[row[1]].country_name = row[2];
+						$scope.data.questionData[row[1]].indicator = row[6];
 					});
-					$scope.data.questionData[row[1]].country_code = row[1];
-					$scope.data.questionData[row[1]].country_name = row[2];
-					$scope.data.questionData[row[1]].indicator = row[6];
-				});
 
-				$scope.data.indicator = $scope.pIndicator;
-				$scope.data.question = $scope.pQuestion;
-				$scope.data.pAnswer = $scope.pAnswer;
-				$scope.data.sectorsize = $scope.pSectorSize;
-				$scope.data.activityFilter = $scope.pActivityFilter;
-				$scope.data.companyFilter = $scope.pCompanyFilter;
+					$scope.data.indicator = $scope.pIndicator;
+					$scope.data.question = $scope.pQuestion;
+					$scope.data.pAnswer = $scope.pAnswer;
+					$scope.data.sectorsize = $scope.pSectorSize;
+					$scope.data.activityFilter = $scope.pActivityFilter;
+					$scope.data.companyFilter = $scope.pCompanyFilter;
 
+					$scope.getMinMaxValues();
+					$state.reload();
+			  	});
+			}
+			else
+			{
+				$scope.data = $rootScope.data;
 				$scope.getMinMaxValues();
-				$state.reload();
-		  	});
-		}
-		else
-		{
-			$scope.data = $rootScope.data;
-			$scope.getMinMaxValues();
-		}  
+			} 
+		} 
 
 		/******************************* END DATA LOAD ********************************/
 
