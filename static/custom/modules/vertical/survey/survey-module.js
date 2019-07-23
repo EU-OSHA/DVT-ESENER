@@ -100,8 +100,7 @@ define(function (require) {
                     squash: 'MM161'
                 },
                 pAnswer: {
-                    value: '1',
-                    squash: '1'
+                    value: 1
                 },
                 pActivityFilter: {
                     value: '8',
@@ -118,6 +117,9 @@ define(function (require) {
                 pCountry: {
                     value: 'EU27',
                     squash: 'EU27'
+                },
+                pEuOnly: {
+                    value: 0
                 }
             },
             views: {

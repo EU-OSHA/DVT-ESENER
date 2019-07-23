@@ -41,12 +41,10 @@ define(function (require) {
 		$scope.answer = $stateParams.pAnswer; //Answer
 		$scope.pSectorSize = $stateParams.pSectorSize; //Activity sector or company size
 		$scope.pCountry = $stateParams.pCountry;
-		$scope.nonEU = 1;
+		$scope.nonEU = $stateParams.pEuOnly;
 
 		// Main Category / Subcategory: Question or Main Category / Question
 		$scope.breadcrumb = '';
-
-		$scope.searchText = '';
 
 		$scope.currentName = $state.current.name;
 
@@ -54,7 +52,7 @@ define(function (require) {
 		$scope.activitySectorFor =[];
 		$scope.companySizeFor =[];
 		$scope.questions = []; //Question menu
-		$scope.splitAnswers = []; //Select of split answers
+		//$scope.splitAnswers = []; //Select of split answers
 
 		var questionOrFilterChanged = false;
 
@@ -96,7 +94,7 @@ define(function (require) {
 			        'answer': $scope.answer,
 			        'country': $scope.pCountry,
 			        'sectorSize': $scope.pSectorSize,
-			        'euOnly': 0
+			        'euOnly': $scope.nonEU
 		        }
 	      	}
 	    };
@@ -119,7 +117,7 @@ define(function (require) {
 		$scope.dataPromises = [
 		  	mapProvider.getEuropeShape(),
 		  	dataService.getMapData($scope.pIndicator, $scope.pQuestion, $scope.answer, 
-			$scope.actualDataset, $scope.pSectorSize, $scope.pActivityFilter, $scope.pCompanyFilter)
+			$scope.actualDataset, $scope.pSectorSize, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU)
 		];
 
 		$scope.minMaxValues = {
@@ -163,6 +161,10 @@ define(function (require) {
 						}
 					}
 				}
+
+				if(minValue == null){
+                    minValue = 0;
+                }
 
 				var range = (maxValue - minValue) / 4;
 
@@ -253,7 +255,7 @@ define(function (require) {
 			throw err;
 		});
 
-		dataService.getAnswersOfIndicatorData($scope.pQuestion).then(function (data) 
+		/*dataService.getAnswersOfIndicatorData($scope.pQuestion).then(function (data) 
 		{
 			data.data.resultset.map(function (elem) {
 				var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
@@ -266,7 +268,7 @@ define(function (require) {
 			$scope.answer = $scope.splitAnswers[0].answer_id.toString();
 		}).catch(function (err) {
 			throw err;
-		});
+		});*/
 
 
 		if ($rootScope.data == undefined || questionOrFilterChanged)

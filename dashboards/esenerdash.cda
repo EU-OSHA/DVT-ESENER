@@ -222,7 +222,7 @@
       <Parameter default="MM161" name="pQuestion" type="String" />
     </Parameters>
     <Query>
-      SELECT a.id AS id, a.literal_id AS literal
+      SELECT IF(a.id = 37, 36, a.id) AS id, a.literal_id AS literal
       FROM esener_answer_order ao
       INNER JOIN indicator i ON i.id=ao.indicator_id
       INNER JOIN split_answer a ON ao.answer_id=a.id

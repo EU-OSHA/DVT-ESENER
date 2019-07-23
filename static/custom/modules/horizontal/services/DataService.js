@@ -102,7 +102,7 @@ define(function () {
              * @description
              * Returns data of a particular question
              */
-            getMapData: function (pYear, pQuestion, pAnswer, pDataset, pSectorSize, pActivityFilter, pCompanyFilter) {
+            getMapData: function (pYear, pQuestion, pAnswer, pDataset, pSectorSize, pActivityFilter, pCompanyFilter, pEuOnly) {
                 //var year = parseInt(pYear);
                 //var answer = parseInt(pAnswer);
                 var url = configService.getEsenerDataPath() + "&dataAccessId=getMapData" + "&parampYear=" + pYear + "&parampQuestion=" + pQuestion 

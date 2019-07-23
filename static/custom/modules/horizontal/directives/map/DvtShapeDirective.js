@@ -93,8 +93,9 @@ define(function (require) {
                     
                 }
 
-                minValue = minValue;
-                maxValue = maxValue;
+                if(minValue == null){
+                    minValue = 0;
+                }
 
                 var range = (maxValue - minValue) / 4;
                 return [minValue, maxValue, range];

@@ -271,7 +271,7 @@ define(function (require) {
                 var value = 0;
 
                 for(index in values){
-                    if(values[index].id = answerId){
+                    if(values[index].id == answerId){
                         value = values[index].value;
                         if(value <= minValue+range){
                             return colors.rangeColors.range1;

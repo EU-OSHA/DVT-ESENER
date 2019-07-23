@@ -69,38 +69,38 @@
                         country="EU" use-viewbox="true" x="0" y="0"
                         css-class="dvt--map--block" is-colored="1" hover="true"
                         group-list="groupList" width="500" height="500"
-                        group-color="groupColor" listen-to="['pFilters']"
+                        group-color="groupColor"
                         data="data">
                     </dvt-map>
                   </div>
                   <div class="map--gauss--block container">
-                        <dvt-bar-chart
-                        data-ng-cloak
-                        query="getGaussChartValues" cda="{{::cdaEsenerDash }}"
-                        width="200" height="200" type="lines"
-                        orientation="vertical" axis-fixed-min="0"
-                        listen-to="['pFilters', minMaxValues.min_value, minMaxValues.max_value, minMaxValues.range_value]"
-                        axis-fixed-max="20" step="{{step.chart1}}"
-                        params="[['pDataset', actualDataset], ['pQuestion', pQuestion], ['pMinValue', minMaxValues.min_value], ['pMaxValue', minMaxValues.max_value], ['pRange', minMaxValues.range_value], ['pSectorSize', pSectorSize], ['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'], ['pAnswer', 'pFilters.answer'], ['pEuOnly', 'pFilters.euOnly']]"
-                        color-role="category" colors="[stories[0].color1]" id="1"
-                        axis-label-font="14px 'OpenSans-bold'"
-                        plots="stories[0].plots"
-                        values-visible="false"
-                        values-font="14px 'OpenSans-bold'"
-                        hoverable="false"
-                        ortho-axis-grid="false"
-                        ortho-axis-visible="false"
-                        dimensions="stories[0].dimensions"
-                        multiple-label-colors="true"
-                        base-axis-label-text-baseline="top"
-                        axis-color="true"
-                        panel-color="#FFFFFF"
-                        legend="false"
-                        is-maximized="true"
-                        tooltip-enabled="false"
-                        clickable="false" 
-                        base-axis-size="25"
-                        ></dvt-bar-chart> 
+                    <dvt-bar-chart
+                      data-ng-cloak
+                      query="getGaussChartValues" cda="{{::cdaEsenerDash }}"
+                      width="200" height="200" type="lines"
+                      orientation="vertical" axis-fixed-min="0"
+                      listen-to="['pFilters', minMaxValues.min_value, minMaxValues.max_value, minMaxValues.range_value]"
+                      axis-fixed-max="20" step="{{step.chart1}}"
+                      params="[['pDataset', actualDataset], ['pQuestion', pQuestion], ['pMinValue', minMaxValues.min_value], ['pMaxValue', minMaxValues.max_value], ['pRange', minMaxValues.range_value], ['pSectorSize', pSectorSize], ['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'], ['pAnswer', 'pFilters.answer'], ['pEuOnly', 'pFilters.euOnly']]"
+                      color-role="category" colors="[stories[0].color1]" id="1"
+                      axis-label-font="14px 'OpenSans-bold'"
+                      plots="stories[0].plots"
+                      values-visible="false"
+                      values-font="14px 'OpenSans-bold'"
+                      hoverable="false"
+                      ortho-axis-grid="false"
+                      ortho-axis-visible="false"
+                      dimensions="stories[0].dimensions"
+                      multiple-label-colors="true"
+                      base-axis-label-text-baseline="top"
+                      axis-color="true"
+                      panel-color="#FFFFFF"
+                      legend="false"
+                      is-maximized="true"
+                      tooltip-enabled="false"
+                      clickable="false" 
+                      base-axis-size="25"
+                    ></dvt-bar-chart> 
                   </div>
               </section>
             </div>
@@ -170,6 +170,73 @@
                           ></dvt-bar-chart>
                       </div>
                   </div>
+              </div>
+            </div>
+
+            <!-- NATIONAL COMPARISONS -->
+            <div class="" data-ng-show="pChart == 'national-comparisons'">
+              <div class="xxs-w1 xs-w1 w1 center-text">
+                <div class="card--block--chart">
+                  <div class="chart--block">
+                    <dvt-bar-chart
+                      data-ng-cloak
+                      query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
+                      width="330" height="660" axis-percent="1"
+                      orientation="horizontal" axis-fixed-min="0"
+                      axis-fixed-max="100" step="20"
+                      listen-to="['pFilters']"
+                      params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', 'pFilters.sectorSize'],['pCountry', 'pFilters.country']]"
+                      color-role="series" colors="[stories[2].color1, stories[2].color2, stories[2].color3, stories[2].color4,
+                      stories[2].color5]"
+                      id="3" axis-label-font="14px 'OpenSans-bold'"
+                      plots="stories[2].plots" values-overflow="show"
+                      values-visible="true" values-mask="{value}"                        
+                      label-text-align="stories[2].alignment"
+                      values-font="14px 'OpenSans-bold'"
+                      multiple-label-colors="false"
+                      leaf-content-overflow='visible'
+                      ortho-axis-visible="true"
+                      base-axis-position="bottom"
+                      dimensions="stories[2].dimensions"
+                      legend="true" is-maximized="false"
+                      datasource-and-dates="[15,110,pActivityFilter]"
+                    ></dvt-bar-chart>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PIE CHART -->
+            <div class="" data-ng-show="pChart == 'pie-chart'">
+              <div class="xxs-w1 xs-w1 w1 center-text">
+                <div class="card--block--chart">
+                  <div class="chart--block">
+                    <dvt-bar-chart
+                      data-ng-cloak
+                      query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
+                      type="pie"
+                      width="330" height="660" axis-percent="1"
+                      orientation="horizontal" axis-fixed-min="0"
+                      axis-fixed-max="100" step="20"
+                      listen-to="['pFilters']"
+                      params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', 'pFilters.sectorSize'],['pCountry', 'pFilters.country']]"
+                      color-role="series" colors="[stories[2].color1, stories[2].color2, stories[2].color3, stories[2].color4,
+                      stories[2].color5]"
+                      id="3" axis-label-font="14px 'OpenSans-bold'"
+                      plots="stories[2].plots" values-overflow="show"
+                      values-visible="true" values-mask="{value}"                        
+                      label-text-align="stories[2].alignment"
+                      values-font="14px 'OpenSans-bold'"
+                      multiple-label-colors="false"
+                      leaf-content-overflow='visible'
+                      ortho-axis-visible="true"
+                      base-axis-position="bottom"
+                      dimensions="stories[2].dimensions"
+                      legend="true" is-maximized="false"
+                      datasource-and-dates="[15,110,pActivityFilter]"
+                    ></dvt-bar-chart>
+                  </div>
+                </div>
               </div>
             </div>
         </div>
