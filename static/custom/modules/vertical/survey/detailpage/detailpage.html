@@ -20,7 +20,7 @@
                         <ul>
                             <li data-ng-repeat="child in children(question.id)" data-ng-class="{'open': child.id == selectedFatherID, 'has-level3': child.category == null }">
                                 <span data-ng-if="child.category != null">
-                                    <a data-ng-bind="i18n['L'+child.name_1]" href data-ng-click="changeToQuestion(child.category)"  data-ng-class="{'selected': child.category == pQuestion}"></a>
+                                    <a data-ng-bind="i18n['L'+child.name_1]" href data-ng-click="changeToQuestion(child.category, question.anchor)"  data-ng-class="{'selected': child.category == pQuestion}"></a>
                                 </span>
                                 <span data-ng-if="child.category == null">
                                         <a data-ng-bind="i18n['L'+child.name_1]" data-ng-click="openAccordion($index,$event,2)" href></a>
@@ -28,7 +28,7 @@
                                 <ul data-ng-if="child.category == null">
                                     <li data-ng-repeat="grandchild in children(child.id)" data-ng-click="openAccordion($index,$event)">
                                         <span>
-                                            <a data-ng-bind="i18n['L'+grandchild.name_1]" href data-ng-click="changeToQuestion(grandchild.category)" data-ng-class="{'selected': grandchild.category == pQuestion}"></a>
+                                            <a data-ng-bind="i18n['L'+grandchild.name_1]" href data-ng-click="changeToQuestion(grandchild.category, question.anchor)" data-ng-class="{'selected': grandchild.category == pQuestion}"></a>
                                         </span>
                                     </li>
                                 </ul>    
@@ -57,11 +57,8 @@
 
         <!-- CHART section -->
         <div class="chart--section">
-
-            <button data-ng-click="showFilters()">SHOW FILTERS</button>
-
             <!-- EUROPEAN MAP -->
-            <div class="" data-ng-show="pChart == 'european-map'">
+            <div class="" data-ng-if="pChart == 'european-map'">
               <!--<p ng-repeat="value in selectedQuestionValues">
                   <span data-ng-bind="value.country_code"></span>: <span data-ng-bind="value.answer"></span>
               </p>-->
@@ -109,7 +106,7 @@
             </div>
 
             <!-- EUROPEAN BAR CHART -->
-            <div class="" data-ng-show="pChart == 'european-bar-chart'">
+            <div class="" data-ng-if="pChart == 'european-bar-chart'">
               <!---------------------- EuropeanBarChart ESENER 2014 ------------------------>
               <div class="xxs-w1 xs-w1 w1 center-text">
                   <div class="card--block--chart">
@@ -144,7 +141,7 @@
             </div>
 
             <!-- NATIONAL BAR CHART -->
-            <div class="" data-ng-show="pChart == 'national-bar-chart'">
+            <div class="" data-ng-if="pChart == 'national-bar-chart'">
               <div class="xxs-w1 xs-w1 w1 center-text">
                   <div class="card--block--chart">
                       <div class="chart--block">

@@ -56,19 +56,27 @@ define(function (require) {
 		$scope.questions = []; //Question menu
 		$scope.splitAnswers = []; //Select of split answers
 
-		var questionChanged = false;
+		var questionOrFilterChanged = false;
 
 		if ($rootScope.data != undefined)
 		{			
 			$rootScope.data.indicator = $scope.pIndicator;
 			if ($scope.pQuestion != $rootScope.data.question)
 			{
-				questionChanged = true;
+				questionOrFilterChanged = true;
 			}
 			$rootScope.data.question = $scope.pQuestion;
 			$rootScope.data.pAnswer = $scope.answer;
 			$rootScope.data.sectorsize = $scope.pSectorSize;
+			if ($rootScope.data.activityFilter != $scope.pActivityFilter)
+			{
+				questionOrFilterChanged = true;				
+			}
 			$rootScope.data.activityFilter = $scope.pActivityFilter;
+			if ($rootScope.data.companyFilter != $scope.pCompanyFilter)
+			{
+				questionOrFilterChanged = true;				
+			}
 			$rootScope.data.companyFilter = $scope.pCompanyFilter;
 		}
 
@@ -84,7 +92,7 @@ define(function (require) {
 		        'pTopic': $scope.pTopic,
 		        'pFilters': {
 			        'activitySector': $scope.pActivityFilter,
-			        'establishmentSize': null,
+			        'establishmentSize': $scope.pCompanyFilter,
 			        'answer': $scope.answer,
 			        'country': $scope.pCountry,
 			        'sectorSize': $scope.pSectorSize,
@@ -118,7 +126,7 @@ define(function (require) {
 		  	minValue: 0,
 		  	maxValue: 100,
 		  	range: 25
-		};;
+		};
 
 
 		$scope.getMinMaxValues = function()
@@ -259,10 +267,11 @@ define(function (require) {
 		}).catch(function (err) {
 			throw err;
 		});
-		
-		if ($rootScope.data == undefined || questionChanged)
+
+
+		if ($rootScope.data == undefined || questionOrFilterChanged)
 		{
-			questionChanged = false;
+			questionOrFilterChanged = false;
 		  	Promise.all([$scope.dataPromises[1]]).then(function(res)
 			{
 				var row = {};
@@ -365,8 +374,9 @@ define(function (require) {
 			});
 		}
 
-		$scope.changeToQuestion = function(question){
+		$scope.changeToQuestion = function(question, anchor){
 			$scope.pQuestion = question;
+			$scope.pTopic = anchor;
 			if(question != null){
 				$state.transitionTo('detailpage', {
 					pIndicator: $scope.pIndicator, //Year
@@ -383,17 +393,42 @@ define(function (require) {
 			}
 		}
 
-    $scope.openAccordion = function(i,e) {    
-      var parentNode = e.target.parentElement.parentElement;
-      angular.element(parentNode).toggleClass('open');
-    }
+		$scope.openAccordion = function(i,e) {    
+		  var parentNode = e.target.parentElement.parentElement;
+		  angular.element(parentNode).toggleClass('open');
+		}
 
-    angular.element('body').mouseup(function(e){
-      var container = angular.element('.submenu--items--wrapper');
-      if (!container.is(e.target) && container.has(e.target).length === 0){
-        angular.element('.submenu--items--wrapper').removeClass('open'); 
-      }
-    });
+		angular.element('body').mouseup(function(e){
+		  var container = angular.element('.submenu--items--wrapper');
+		  if (!container.is(e.target) && container.has(e.target).length === 0){
+		    angular.element('.submenu--items--wrapper').removeClass('open'); 
+		  }
+		});
+		
+		var firstLoad = true;
+		$scope.$watch("dashboard.parameters.pFilters", function(){
+			if (firstLoad == false)
+			{
+				$scope.pActivityFilter = $scope.dashboard.parameters.pFilters.activitySector == null ? 0 : $scope.dashboard.parameters.pFilters.activitySector;
+				$scope.pCompanyFilter = $scope.dashboard.parameters.pFilters.establishmentSize == null ? 0 : $scope.dashboard.parameters.pFilters.establishmentSize;
+				$state.transitionTo('detailpage', {
+					pIndicator: $scope.pIndicator, //Year
+					pTopic: $scope.pTopic, //Category
+					pChart: $scope.pChart, //Type of chart
+					pQuestion: $scope.pQuestion, //Question name
+					pAnswer: $scope.answer, //Split answer
+					pActivityFilter: $scope.pActivityFilter,
+					pCompanyFilter: $scope.pCompanyFilter
+				},
+				{
+					reload: true
+				});
+			}
+			else
+			{
+				firstLoad = false;
+			}
+		}, true);
 
 		/********************************************* END FILTERS ************************************************/
 	}

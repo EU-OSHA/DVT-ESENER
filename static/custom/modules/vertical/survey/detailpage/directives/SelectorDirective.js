@@ -39,6 +39,7 @@ define(function (require) {
 
 				scope.answer = $stateParams.pAnswer;
 				scope.activitySector = $stateParams.pActivityFilter;
+				scope.establishmentSize = $stateParams.pCompanyFilter;
 				scope.country = $stateParams.pCountry;
 				scope.sectorSize = $stateParams.pSectorSize;
 
@@ -88,12 +89,12 @@ define(function (require) {
 				});
 
 				// Load the order in which the answers will be painted
-				dataService.getQuestionAnswerOrder(scope.indicator).then(function(res) {
+				/*dataService.getQuestionAnswerOrder(scope.indicator).then(function(res) {
 					scope.answers = [];
 					res.data.resultset.map(function(elem) {
 						scope.answers.push({id:elem[0], literal:elem[1]});
 					});
-				});
+				});*/
 
 				// Load the data for the filters
 				if (scope.chart =='european-map' || scope.chart=='european-bar-chart')
@@ -127,7 +128,7 @@ define(function (require) {
 
 				scope.filters = {
 					activitySector: scope.activitySector/*'8'*/,
-					establishmentSize: null,
+					establishmentSize: scope.establishmentSize,
 					country: scope.country,
 					answer: scope.answer,
 					euOnly: 0,
@@ -197,8 +198,6 @@ define(function (require) {
 
 					ngModel.$setViewValue(scope.filters, 'change');
 					dashboard.dashboard.fireChange('pFilters', scope.filters);
-
-					//$log.warn(dashboard.dashboard.parameters.pFilters);
 
 					scope.filters.activitySector = scope.filters.activitySector == 0? null:scope.filters.activitySector;
 					scope.filters.establishmentSize = scope.filters.establishmentSize == 0? null:scope.filters.establishmentSize;

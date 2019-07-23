@@ -120,13 +120,13 @@
                 <!-- Activity sector -->
                 <div class="filter-text activity-sector">
                     <select id="datafor" class="" data-ng-change="updateChart('activitySector')" data-ng-model="filters.activitySector">
-                        <option data-ng-repeat='sector in activitySectors' data-ng-value="sector.id" data-ng-bind="i18n['L'+sector.literal]" data-ng-selected="sector.id == filters.activitySector"></option>
+                        <option data-ng-repeat='sector in activitySectors' data-ng-value="sector.id" data-ng-bind="i18n['L'+sector.literal]" data-ng-selected="sector.id == filters.activitySector || ($index == 0 && filters.activitySector == 0)"></option>
                     </select>
                 </div><span></span>
                 <!-- Establishment size -->
                 <div class="filter-text establishment-size">
                     <select id="datafor" class="" data-ng-change="updateChart('establishmentSize')" data-ng-model="filters.establishmentSize">
-                        <option data-ng-repeat='size in establishmentSizes' data-ng-value="size.id" data-ng-bind="i18n['L'+size.literal]" data-ng-selected="size.id == filters.establishmentSize"></option>
+                        <option data-ng-repeat='size in establishmentSizes' data-ng-value="size.id" data-ng-bind="i18n['L'+size.literal]" data-ng-selected="size.id == filters.establishmentSize || ($index == 0 && filters.establishmentSize == 0)"></option>
                     </select>
                 </div>
                 <!-- Country -->
@@ -164,11 +164,12 @@
         <div>
             <form class="row block--typechart--wrapper">
                 <!-- Answer selection -->
-                <div class="filter-text" data-ng-if="chart == 'european-map'">
+                <!-- Hidden until necessary -->
+                <!--<div class="filter-text" data-ng-if="chart == 'european-map'">
                     <select id="datafor" class="" ng-model="pAnswer" ng-change="updateChart('answer')">
                     	<option data-ng-repeat='answer in answers' value="answer.id" data-ng-bind="i18n['L'+answer.literal]" data-ng-selected="answer.id == filters.answer"></option>
                     </select>
-                </div>
+                </div>-->
                 <!-- Chart selection -->
                 <ul class="chart--selection--block">
                     <li><a ui-sref="detailpage({pChart: 'european-map'})"><span class="sr-only"  data-ng-bind="i18n.L100623"></span></a></li>
