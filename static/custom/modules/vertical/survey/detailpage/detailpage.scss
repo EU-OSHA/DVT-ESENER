@@ -6,6 +6,7 @@
   .detail--page--wrapper{
     position: initial;
     width: 90%;
+    padding: 0;
     .detail--content--section{
       position: initial; 
       .selector--page--elements{
@@ -83,7 +84,7 @@
   }
   .questions--tree{
     background-color:#E7E8E8;
-    padding:2rem;
+    padding: 3rem 2rem;
     ul{
       list-style: none;
       padding: 0 0 0 1.5rem;
@@ -100,12 +101,34 @@
           }
         }
       }
-    } 
+      &.download--button{
+        li{
+          a{
+            background: #58585A;
+            color: #FFF;
+            font-family: "OpenSans-bold";
+            padding: 1.5rem;
+            position: relative;
+            &:after{
+              content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/download-icon.png);
+              position: absolute;
+              right: 1rem;
+            }
+            &:hover{
+              &:after{
+                content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/download-icon-hover.png);
+              }
+            }
+          }        
+        }
+      }
+    }  
     > ul{
       list-style: none;
       margin: 0;
       padding: 0;
       > li{
+        margin-bottom: 1rem;
         > span{
           display: block;
           > a{
@@ -115,6 +138,7 @@
             border: 1px solid #58585A;
             padding: 1.5rem;
             font-size: 1.4rem;
+            font-family: "OpenSans-bold";
             &:after{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-down.svg);
               width: 2rem;
@@ -125,7 +149,15 @@
           }
         }
         > ul{
+          display: none;
+          &.open{
+            display: block;
+            > ul{
+              display: block;
+            }
+          }
           > li{
+            margin-bottom: 1rem;
             > span{
               > a{
                 font-size: 1.4rem;
@@ -144,41 +176,54 @@
             }
             &.has-level3{
               position: relative;
-              &:after{
-                content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-down.svg);
-                width: 2rem;
-                height: 2rem;
-                position: absolute;
-                right: 1rem;
-                top: 1rem;
-                opacity: 0.6;
+              > span{
+                a:after{
+                  content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-down.svg);
+                  width: 2rem;
+                  height: 2rem;
+                  position: absolute;
+                  right: 1rem;
+                  top: 1rem;
+                  opacity: 0.6;
+                }                
               }
+
             }
             &.open{
               position: relative; 
               > span{
                 a{
                   font-family: 'OpenSans-Bold';
+                  &:after{
+                    content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-up.svg);
+                    width: 2rem;
+                    height: 2rem;
+                    position: absolute;
+                    right: 1rem;
+                    top: 1rem;
+                  }
                 }                    
               }         
               > ul{
                 display: block;
                 margin: 0rem;
+                border-left: 1px dotted #666;
                 > li{
                   > a{
                     font-family: 'OpenSans';
+                    &:after{
+                      content:'';
+                    }
                   }
                 }
               }
-              &:after{
-                content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-down.svg);
-                width: 2rem;
-                height: 2rem;
-                position: absolute;
-                right: 1rem;
-                top: 1rem;
-              }
             }
+          }
+        }
+        &.open{
+          display: block;
+          > ul{
+            display: block;
           }
         }
       }
@@ -209,6 +254,9 @@
       background: #ccc;
       color: #666;
     }
+    .select2-no-results{
+      background: transparent;
+    }
     &::-webkit-scrollbar {
       background: #FFF;
       box-shadow: none; 
@@ -236,6 +284,7 @@
       font-size: 1.4rem;
       &:nth-child(1){
         border-top: none;
+        background: transparent;
       }
     }
   }
@@ -244,6 +293,7 @@
 .questions--list--wrapper{
     position: relative;
     z-index: 10;
+    padding-left: 0;
 }
 .content--lang--wrapper{
   position: absolute;
@@ -251,23 +301,39 @@
   top: 0;
   width: 14rem;
   text-align: right;
-  label{
-    font-family: 'OpenSans';
-    font-size: 1rem;
-  }
-  select{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    border: none;
-    font-family: 'OpenSans-Bold';
-    font-size: 1.7rem;
-    text-align-last:center;
-    option{
-      text-align: center;
+  form.compare--block--form{    
+    label{
       font-family: 'OpenSans';
-      font-size: 1.4rem;
+      font-size: 1rem;
     }
+    > div{
+      position: relative;
+      select{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        border: none;
+        font-family: 'OpenSans-Bold';
+        font-size: 1.7rem;
+        text-align-last:center;
+        option{
+          text-align: center;
+          font-family: 'OpenSans';
+          font-size: 1.4rem;
+        }
+      }
+      &:after{
+        content: "\f107";
+        font-family: FontAwesome;
+        font-weight: normal;
+        font-size: 2rem;
+        height: auto;
+        padding: 1rem;
+        position: absolute;
+        top: -1rem;
+        right: 0;
+      }       
+    }   
   }
 }
 
@@ -278,11 +344,26 @@
   .filter-text{
     margin: 0 2rem 0 0;
     min-width: 25rem;
+    position: relative;
     select{
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
       border: none;
+      option{
+        background:$white;
+        color: $gray;
+      }
+    }
+    &:after{
+      content: "\f107";
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-size: 2rem;
+      height: auto;
+      padding: 1rem;
+      position: absolute;
+      pointer-events: none;
     }
     &.activity-sector{
       select{
@@ -292,6 +373,11 @@
         background: $aquamarine;
         color:$white;
         position: relative;
+      }
+      &:after {
+        color: $white;
+        right: 0;
+        top: 0.5rem;
       }
     }
     &.establishment-size{
@@ -304,16 +390,26 @@
         color: $aquamarine;
         position: relative;
       }
+      &:after {
+        color: $aquamarine;
+        right: 0;
+        top: 0.5rem;
+      }
     }
     &.country-items{
       select{
         width: 100%;
         margin: 1rem 0;
         padding: 1rem 2rem;
-        background: $gray;
+        background: $gray-light;
         color: $white;
         position: relative;
-      }      
+      }
+      &:after {
+        color: $white;
+        right: 0;
+        top: 0.5rem;
+      }    
     }
   }
 }
@@ -321,6 +417,111 @@
   display: flex;
   justify-content:flex-start;
   width: 100%;
+  margin: 0;
+  .chart--selection--block{
+    margin-left: auto;
+    display: flex;
+    list-style: none;
+    li{
+      margin: 0 0.5rem;
+      a{
+        display: block;
+        border: 1px solid $gray-light;
+        width:4rem;
+        height:4rem;
+        padding: 0rem;
+        overflow: hidden;
+        &:before{
+          display:block;
+          width:4rem;
+          height:4rem;
+        }
+        &:hover{
+          border: 1px solid $aquamarine;          
+        }
+      }
+      &:nth-child(1){
+        a{
+          &:before{
+            content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-eu-map-icon.svg);
+          }
+          &:hover{
+            &:before{
+              content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-eu-map-icon-hover.svg);
+              background: $aquamarine-light;
+            }
+          }
+        }     
+      }
+      &:nth-child(2){
+        a{
+          &:before{
+            content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-chart-icon.svg);
+          }
+         &:hover{
+            &:before{
+              content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-chart-icon-hover.svg);
+              background: $aquamarine-light;
+            }
+          } 
+        }     
+      }
+      &:nth-child(3){
+        a{
+          &:before{
+            content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision-icon.svg);
+          }
+          &:hover{
+            &:before{
+              content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision-icon-hover.svg);
+              background: $aquamarine-light;
+            }
+          }  
+        }     
+      }
+      &:nth-child(4){
+        a{
+          &:before{
+            content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision2-icon.svg);
+          }
+          &:hover{
+            &:before{
+              content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision2-icon-hover.svg);
+              background: $aquamarine-light;
+            }
+          } 
+        }        
+      }
+      &:nth-child(5){
+        margin-right: 0;
+        a{
+          &:before{
+            content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-pie-icon.svg);
+          }
+          &:hover{
+            &:before{
+              content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-pie-icon-hover.svg);
+              background: $aquamarine-light;
+            }
+          }   
+        }        
+      }
+      &:nth-child(6){
+        a{
+          width: 10rem;
+          height: 4rem;
+          text-align: center;
+          padding:1.1rem;
+          font-size: 1.3rem;
+          color: $gray-light;
+          &:hover{
+            background:$aquamarine-light;
+            color: $aquamarine;
+          }
+        }       
+      }
+    }
+  }
 }
 
 

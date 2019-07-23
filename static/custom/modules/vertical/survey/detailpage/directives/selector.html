@@ -6,8 +6,8 @@
         <!-- Breadcrumb -->        
 		<p data-ng-bind="question.breadcrumb"></p>
         <ul class="question--by--question">
-            <li><a ui-sref="detailpage({pQuestion: question.previousID})" ui-sref-opts="{reload: true}" data-ng-bind="question.previous"></a></li>
-            <li><a ui-sref="detailpage({pQuestion: question.nextID})" ui-sref-opts="{reload: true}" data-ng-bind="question.next"></a></li>
+            <li><a ui-sref="detailpage({pQuestion: question.previousID})" ui-sref-opts="{reload: true}" title="question.previous" data-ng-bind="question.previous"></a></li>
+            <li><a ui-sref="detailpage({pQuestion: question.nextID})" ui-sref-opts="{reload: true}" title="question.next" data-ng-bind="question.next"></a></li>
         </ul> 
     </div>
 
@@ -170,14 +170,14 @@
                     </select>
                 </div>
                 <!-- Chart selection -->
-                <div class="filter-text">
-                    <a ui-sref="detailpage({pChart: 'european-map'})" data-ng-bind="i18n.L100623"></a>
-                    <a ui-sref="detailpage({pChart: 'european-bar-chart'})" data-ng-bind="i18n.L100622"></a>
-                    <a ui-sref="detailpage({pChart: 'national-bar-chart', pSectorSize: filters.sectorSize, pCountry: filters.country})" data-ng-bind="i18n.L100624"></a>
-                    <a href data-ng-bind="i18n.L100621"></a>
-                    <a href data-ng-bind="i18n.L101033"></a>
-                    <a href data-ng-bind="i18n.L100679" data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-click="updateChart('euOnly')"></a>
-                </div>
+                <ul class="chart--selection--block">
+                    <li><a ui-sref="detailpage({pChart: 'european-map'})"><span class="sr-only"  data-ng-bind="i18n.L100623"></span></a></li>
+                    <li><a ui-sref="detailpage({pChart: 'european-bar-chart'})"><span class="sr-only"  data-ng-bind="i18n.L100622"></span></a></li>
+                    <li><a ui-sref="detailpage({pChart: 'national-bar-chart', pSectorSize: filters.sectorSize, pCountry: filters.country})" ><span class="sr-only"  data-ng-bind="i18n.L100624"></span></a></li>
+                    <li><a href ><span class="sr-only"  data-ng-bind="i18n.L100621"></span></a></li>
+                    <li><a href ><span class="sr-only"  data-ng-bind="i18n.L101033"></span></a></li>
+                    <li><a href data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-click="updateChart('euOnly')" data-ng-bind="i18n.L100679"></a></li> 
+                </ul>
             </form>
         </div>        
     </div>

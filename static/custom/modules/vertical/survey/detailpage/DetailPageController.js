@@ -383,6 +383,17 @@ define(function (require) {
 			}
 		}
 
+    $scope.openAccordion = function(i,e) {    
+      var parentNode = e.target.parentElement.parentElement;
+      angular.element(parentNode).toggleClass('open');
+    }
+
+    angular.element('body').mouseup(function(e){
+      var container = angular.element('.submenu--items--wrapper');
+      if (!container.is(e.target) && container.has(e.target).length === 0){
+        angular.element('.submenu--items--wrapper').removeClass('open'); 
+      }
+    });
 
 		/********************************************* END FILTERS ************************************************/
 	}

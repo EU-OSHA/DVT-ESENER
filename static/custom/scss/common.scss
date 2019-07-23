@@ -1517,7 +1517,8 @@
 .survey--map--block{
   //background: $gray-lighter;
   display: block;
-  .map--block{        
+  .map--block{
+    background: $gray-lighter;    
     .dvt--map--block, div[id^='dvt_map']{
       width: 70%;
       text-align: center;
@@ -1558,7 +1559,7 @@
     position: absolute;
     bottom: -11%;
     left: 50%;
-    margin-left: -5px;
+    margin-left: -25px;
     border-width:1.2rem;
     border-style: solid;
     border-color: $aquamarine transparent transparent transparent;

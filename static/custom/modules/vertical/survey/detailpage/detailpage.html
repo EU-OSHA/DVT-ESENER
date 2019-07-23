@@ -15,7 +15,7 @@
                 <!-- First level -->
                 <ul>
                     <li data-ng-repeat="question in firstLevel()" data-ng-class="{'open': pTopic == question.anchor}">
-                        <span><a href data-ng-bind="i18n['L'+question.name_1]" data-ng-click="openAccordion($index)"></a></span>
+                        <span><a href data-ng-bind="i18n['L'+question.name_1]" data-ng-click="openAccordion($index,$event)" ></a></span>
                         <!-- Second Level -->
                         <ul>
                             <li data-ng-repeat="child in children(question.id)" data-ng-class="{'open': child.id == selectedFatherID, 'has-level3': child.category == null }">
@@ -23,12 +23,10 @@
                                     <a data-ng-bind="i18n['L'+child.name_1]" href data-ng-click="changeToQuestion(child.category)"  data-ng-class="{'selected': child.category == pQuestion}"></a>
                                 </span>
                                 <span data-ng-if="child.category == null">
-                                    <span>
-                                        <a data-ng-bind="i18n['L'+child.name_1]" href></a>
-                                    </span>
+                                        <a data-ng-bind="i18n['L'+child.name_1]" data-ng-click="openAccordion($index,$event,2)" href></a>
                                 </span>
                                 <ul data-ng-if="child.category == null">
-                                    <li data-ng-repeat="grandchild in children(child.id)">
+                                    <li data-ng-repeat="grandchild in children(child.id)" data-ng-click="openAccordion($index,$event)">
                                         <span>
                                             <a data-ng-bind="i18n['L'+grandchild.name_1]" href data-ng-click="changeToQuestion(grandchild.category)" data-ng-class="{'selected': grandchild.category == pQuestion}"></a>
                                         </span>
@@ -39,7 +37,7 @@
                     </li>
                 </ul>
                 <!-- DOWNLOAD QUESTIONNARIE -->
-                <ul>
+                <ul class="download--button">
                     <!--<li id="surveyMenuItem" class="active-trail finalquestion"><a href="/DVS/import/questionnaire/{{pLanguage}}_QUESTIONNAIRE.rar" target="_blank" data-ng-bind="i18n.L100625"></a></li>-->
                     <li data-ng-if="pIndicator == 2009" id="surveyMenuItem" class="active-trail finalquestion">
                       <a href="
@@ -68,7 +66,7 @@
                   <span data-ng-bind="value.country_code"></span>: <span data-ng-bind="value.answer"></span>
               </p>-->
               <section class="survey--map--block">
-                  <div class="map--block center-text container">
+                  <div class="map--block center-text">
                     <dvt-map ng-cloak
                         country-key="EU" promise="dataPromises"
                         country="EU" use-viewbox="true" x="0" y="0"
