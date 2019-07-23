@@ -138,7 +138,7 @@ define(function (require) {
 
 				scope.changeLocale = function(){
 					ngModel.$setViewValue(scope.pLocale, 'change');
-					$log.warn(scope.pLocale);
+					//$log.warn(scope.pLocale);
 					//dashboard.dashboard.fireChange('pFilters', scope.filters);
 					i18n = (scope.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(scope.pLocale);
 					$state.transitionTo($state.current.name, {
@@ -163,7 +163,7 @@ define(function (require) {
 				{
 					if(scope.chart == 'european-map'){
 						if(pChangedFilter == 'euOnly'){
-							scope.filters.euOnly = (scope.filters.euOnly == 0)?1:0;
+							scope.noneu = (scope.noneu == 0)?1:0;
 						}
 						$state.transitionTo('detailpage', {
 							pIndicator: scope.dataset, //Year
@@ -172,7 +172,7 @@ define(function (require) {
 							pAnswer: scope.filters.answer, //Split answer
 							pActivityFilter: scope.filters.activitySector,
 							pCompanyFilter: scope.filters.establishmentSize,
-							pEuOnly: scope.filters.euOnly 
+							pEuOnly: scope.noneu
 						},
 						{
 							reload: true
@@ -223,6 +223,7 @@ define(function (require) {
 						$stateParams.pAnswer = scope.filters.answer;
 						$stateParams.pCountry = scope.filters.country;
 						$stateParams.pSectorSize = scope.filters.sectorSize;
+						$stateParams.pEuOnly = scope.filters.euOnly;
 
 						ngModel.$setViewValue(scope.filters, 'change');
 						dashboard.dashboard.fireChange('pFilters', scope.filters);

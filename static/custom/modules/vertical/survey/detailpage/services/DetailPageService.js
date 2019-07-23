@@ -160,7 +160,12 @@ define (function (require) {
                                         //$log.warn(scene);
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();
-                                        return baseScale('Switzerland (CH)') - this.sign.panel.barWidth - 2; 
+                                        
+                                        if(baseScale('Switzerland (CH)') < 20){
+                                            return panelWidth;
+                                        }else{
+                                            return baseScale('Switzerland (CH)') - this.sign.panel.barWidth - 2; 
+                                        }
                                     });
                             }   
                         },

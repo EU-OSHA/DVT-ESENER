@@ -107,7 +107,7 @@ define(function () {
                 //var answer = parseInt(pAnswer);
                 var url = configService.getEsenerDataPath() + "&dataAccessId=getMapData" + "&parampYear=" + pYear + "&parampQuestion=" + pQuestion 
                 + "&parampAnswer=" + pAnswer + "&parampDataset=" + pDataset + "&parampSectorSize=" + pSectorSize + "&parampActivityFilter=" + pActivityFilter
-                + "&parampCompanyFilter=" + pCompanyFilter;
+                + "&parampCompanyFilter=" + pCompanyFilter + "&parampEUOnly=" + pEuOnly;
                 $log.debug('getMapData url:' + url);
                 return promise(url);
             },

@@ -166,20 +166,31 @@
                 <!-- Answer selection -->
                 <!-- Hidden until necessary -->
                 <!--<div class="filter-text" data-ng-if="chart == 'european-map'">
-                    <select id="datafor" class="" ng-model="pAnswer" ng-change="updateChart('answer')">
+                    <select id="datafor" class="" ng-model="filters.answer" ng-change="updateChart('answer')">
                     	<option data-ng-repeat='answer in answers' value="answer.id" data-ng-bind="i18n['L'+answer.literal]" data-ng-selected="answer.id == filters.answer"></option>
                     </select>
                 </div>-->
                 <!-- Chart selection -->
                 <ul class="chart--selection--block">
-                    <li><a ui-sref="detailpage({pChart: 'european-map'})"><span class="sr-only"  data-ng-bind="i18n.L100623"></span></a></li>
-                    <li><a ui-sref="detailpage({pChart: 'european-bar-chart'})"><span class="sr-only"  data-ng-bind="i18n.L100622"></span></a></li>
-                    <li><a ui-sref="detailpageCountry({pChart: 'national-bar-chart', pSectorSize: filters.sectorSize, pCountry: filters.country})" ><span class="sr-only"  data-ng-bind="i18n.L100624"></span></a></li>
-                    <li><a href ><span class="sr-only"  data-ng-bind="i18n.L100621"></span></a></li>
+                    <li>
+                        <a class="" data-ng-class="{'selected-chart':(chart == 'european-map')}" ui-sref="detailpage({pChart: 'european-map'})"><span class="sr-only"  data-ng-bind="i18n.L100623"></span></a></li>
+                    <li>
+                        <a class="" data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" ui-sref="detailpage({pChart: 'european-bar-chart'})"><span class="sr-only"  data-ng-bind="i18n.L100622"></span></a>
+                    </li>
+                    <li>
+                        <a class="" data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" ui-sref="detailpage({pChart: 'national-bar-chart', pSectorSize: filters.sectorSize, pCountry: filters.country})" ><span class="sr-only"  data-ng-bind="i18n.L100624"></span></a>
+                    </li>
+                    <li>
+                        <a href ><span class="sr-only"  data-ng-bind="i18n.L100621"></span></a>
+                    </li>
                     <!--<li><a ui-sref="detailpage({pChart: 'national-comparisons'})" ><span class="sr-only"  data-ng-bind="i18n.L100621"></span></a></li>-->
-                    <li><a href ><span class="sr-only"  data-ng-bind="i18n.L101033"></span></a></li>
+                    <li>
+                        <a href ><span class="sr-only"  data-ng-bind="i18n.L101033"></span></a>
+                    </li>
                     <!--<li><a ui-sref="detailpage({pChart: 'pie-chart'})" ><span class="sr-only"  data-ng-bind="i18n.L101033"></span></a></li>-->
-                    <li><a href data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-click="updateChart('euOnly')" data-ng-bind="i18n.L100679"></a></li> 
+                    <li>
+                        <a data-ng-class="{'selected-chart':(noneu == 1)}" href data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-click="updateChart('euOnly')" data-ng-bind="i18n.L100679"></a>
+                    </li> 
                 </ul>
             </form>
         </div>        

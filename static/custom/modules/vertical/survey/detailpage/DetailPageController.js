@@ -43,6 +43,7 @@ define(function (require) {
 		$scope.pCountry = $stateParams.pCountry != null ? $stateParams.pCountry : $stateParams.pCountry1;
 		$scope.pCountry2 = $stateParams.pCountry2;
 		$scope.nonEU = $stateParams.pEuOnly;
+		$log.warn($scope.nonEU);
 
 		// Main Category / Subcategory: Question or Main Category / Question
 		$scope.breadcrumb = '';
@@ -99,6 +100,8 @@ define(function (require) {
 		        }
 	      	}
 	    };
+
+	    $log.warn($scope.dashboard.parameters);
 
 		/* Map parameters */
 		$scope.data = {
@@ -424,10 +427,12 @@ define(function (require) {
 					pQuestion: $scope.pQuestion, //Question name
 					pAnswer: $scope.answer, //Split answer
 					pActivityFilter: $scope.pActivityFilter,
-					pCompanyFilter: $scope.pCompanyFilter
+					pCompanyFilter: $scope.pCompanyFilter,
+					pEuOnly: $scope.nonEU
 				},
 				{
-					reload: true
+					reload: true,
+					notify: false
 				});
 			}
 			else

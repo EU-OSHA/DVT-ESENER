@@ -116,7 +116,7 @@ define(function (require) {
                     squash: true
                 },
                 pAnswer: {
-                    value: 1
+                    value: '1'
                 },
                 pEuOnly: {
                     value: 0
