@@ -41,7 +41,8 @@ define(function (require) {
 				scope.activitySector = $stateParams.pActivityFilter;
 				scope.establishmentSize = $stateParams.pCompanyFilter;
 				scope.country = $stateParams.pCountry;
-				scope.sectorSize = $stateParams.pSectorSize;
+				scope.sectorSize = ($stateParams.pSectorSize == null && scope.chart == 'national-bar-chart') ? 'company-size':$stateParams.pSectorSize;
+				$log.warn(scope.sectorSize);
 				scope.noneu = $stateParams.pEuOnly;
 
 				scope.trim = function(text){

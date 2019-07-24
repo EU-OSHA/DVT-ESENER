@@ -30,6 +30,7 @@ define(function (require) {
 		// Literals / i18n
 		var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($scope.pLocale);
 		$scope.i18n = i18n;
+
 		
 		//Parameters
 		$scope.pIndicator = $stateParams.pIndicator; //Year
@@ -43,12 +44,14 @@ define(function (require) {
 		$scope.pCountry = $stateParams.pCountry != null ? $stateParams.pCountry : $stateParams.pCountry1;
 		$scope.pCountry2 = $stateParams.pCountry2;
 		$scope.nonEU = $stateParams.pEuOnly;
-		$log.warn($scope.nonEU);
+
+		$log.warn($stateParams);
 
 		// Main Category / Subcategory: Question or Main Category / Question
 		$scope.breadcrumb = '';
 
 		$scope.currentName = $state.current.name;
+		$log.warn($scope.currentName);
 
 		//Arrays
 		$scope.activitySectorFor =[];
@@ -96,7 +99,8 @@ define(function (require) {
 			        'answer': $scope.answer,
 			        'country': $scope.pCountry,
 			        'sectorSize': $scope.pSectorSize,
-			        'euOnly': $scope.nonEU
+			        'euOnly': $scope.nonEU,
+			        'country2': $scope.pCountry2
 		        }
 	      	}
 	    };
@@ -232,6 +236,11 @@ define(function (require) {
 						}
 				  	}
 				}
+			},
+			//3 - National Comparisons Plot
+			{
+				color1: dvtUtils.getColorCountry(1),
+				color2: dvtUtils.getColorCountry(),
 			}
 		];
 
@@ -420,6 +429,7 @@ define(function (require) {
 			{
 				$scope.pActivityFilter = $scope.dashboard.parameters.pFilters.activitySector == null ? 0 : $scope.dashboard.parameters.pFilters.activitySector;
 				$scope.pCompanyFilter = $scope.dashboard.parameters.pFilters.establishmentSize == null ? 0 : $scope.dashboard.parameters.pFilters.establishmentSize;
+
 				$state.transitionTo($state.current.name, {
 					pIndicator: $scope.pIndicator, //Year
 					pTopic: $scope.pTopic, //Category
@@ -431,7 +441,6 @@ define(function (require) {
 					pEuOnly: $scope.nonEU
 				},
 				{
-					reload: true,
 					notify: false
 				});
 			}

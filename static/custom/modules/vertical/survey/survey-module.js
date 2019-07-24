@@ -72,7 +72,7 @@ define(function (require) {
             }
         });
 
-        $stateProvider.state('detailpage', {
+        /*$stateProvider.state('detailpage', {
             url: "/:pLanguage/survey/detailpage/:pIndicator/:pTopic/:pChart/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter/:pCountry1/:pCountry2",
             params: {
                 pLanguage: {
@@ -136,7 +136,7 @@ define(function (require) {
         });
 
         $stateProvider.state('detailpageCountry', {
-            url: "/:pLanguage/survey/detailpage/:pIndicator/:pTopic/:pChart/:pLocale/:pQuestion/:pCountry/:pSectorSize",
+            url: "/:pLanguage/survey/detailpagedetailpageCountry/:pIndicator/:pTopic/:pChart/:pLocale/:pQuestion/:pCountry/:pSectorSize",
             params: {
                 pLanguage: {
                     value: 'en',
@@ -173,6 +173,279 @@ define(function (require) {
                 pSectorSize: {
                     value: null,
                     squash: true
+                }
+            },
+            views: {
+                "content-main": {
+                    templateUrl: configService.getVerticalTplPath("survey/detailpage", "detailpage"),
+                    controller: 'DetailPageController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/detailpage/DetailPageController', 'detailpage', 'DetailPageController')
+                }
+            },
+            metaTags: {
+                title: "Data Visualisation | ESENER",
+                //description: i18n.L4,
+            }
+        });*/
+
+        $stateProvider.state('detailpage-european-map', {
+            url: "/:pLanguage/survey/detailpage-european-map/:pIndicator/:pTopic/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pIndicator: {
+                    value: '2009',
+                    squash: '2009'
+                },
+                pTopic: {
+                    value: 'osh-management',
+                    squash: 'osh-management'
+                },
+                pChart: {
+                    value: 'european-map',
+                    squash: 'european-map'
+                },
+                pLocale: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pQuestion: {
+                    value: 'MM161',
+                    squash: 'MM161'
+                },
+                pActivityFilter: {
+                    value: '8',
+                    squash: '8'
+                },
+                pCompanyFilter: {
+                    value: '0',
+                    squash: '0'
+                },
+                pAnswer: {
+                    value: '1'
+                },
+                pEuOnly: {
+                    value: 0
+                }
+            },
+            views: {
+                "content-main": {
+                    templateUrl: configService.getVerticalTplPath("survey/detailpage", "detailpage"),
+                    controller: 'DetailPageController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/detailpage/DetailPageController', 'detailpage', 'DetailPageController')
+                }
+            },
+            metaTags: {
+                title: "Data Visualisation | ESENER",
+                //description: i18n.L4,
+            }
+        });
+
+        $stateProvider.state('detailpage-european-bar-chart', {
+            url: "/:pLanguage/survey/detailpage-european-bar-chart/:pIndicator/:pTopic/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pIndicator: {
+                    value: '2009',
+                    squash: '2009'
+                },
+                pTopic: {
+                    value: 'osh-management',
+                    squash: 'osh-management'
+                },
+                pChart: {
+                    value: 'european-map',
+                    squash: 'european-map'
+                },
+                pLocale: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pQuestion: {
+                    value: 'MM161',
+                    squash: 'MM161'
+                },
+                pActivityFilter: {
+                    value: '8',
+                    squash: '8'
+                },
+                pCompanyFilter: {
+                    value: '0',
+                    squash: '0'
+                },
+                pAnswer: {
+                    value: '1'
+                },
+                pEuOnly: {
+                    value: 0
+                }
+            },
+            views: {
+                "content-main": {
+                    templateUrl: configService.getVerticalTplPath("survey/detailpage", "detailpage"),
+                    controller: 'DetailPageController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/detailpage/DetailPageController', 'detailpage', 'DetailPageController')
+                }
+            },
+            metaTags: {
+                title: "Data Visualisation | ESENER",
+                //description: i18n.L4,
+            }
+        });
+
+        $stateProvider.state('detailpage-national-bar-chart', {
+            url: "/:pLanguage/survey/detailpage-national-bar-chart/:pIndicator/:pTopic/:pLocale/:pQuestion/:pCountry/:pSectorSize",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pIndicator: {
+                    value: '2009',
+                    squash: '2009'
+                },
+                pTopic: {
+                    value: 'osh-management',
+                    squash: 'osh-management'
+                },
+                pChart: {
+                    value: 'national-bar-chart',
+                    squash: 'national-bar-chart'
+                },
+                pLocale: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pQuestion: {
+                    value: 'MM161',
+                    squash: 'MM161'
+                },
+                pCountry: {
+                    value: 'EU27',
+                    squash: 'EU27'
+                },
+                pSectorSize: {
+                    value: 'company-size',
+                    squash: 'company-size'
+                }
+            },
+            views: {
+                "content-main": {
+                    templateUrl: configService.getVerticalTplPath("survey/detailpage", "detailpage"),
+                    controller: 'DetailPageController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/detailpage/DetailPageController', 'detailpage', 'DetailPageController')
+                }
+            },
+            metaTags: {
+                title: "Data Visualisation | ESENER",
+                //description: i18n.L4,
+            }
+        });
+
+        $stateProvider.state('detailpage-national-comparisons', {
+            url: "/:pLanguage/survey/detailpage-national-comparisons/:pIndicator/:pTopic/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter/:pCountry1/:pCountry2",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pIndicator: {
+                    value: '2009',
+                    squash: '2009'
+                },
+                pTopic: {
+                    value: 'osh-management',
+                    squash: 'osh-management'
+                },
+                pChart: {
+                    value: 'european-map',
+                    squash: 'european-map'
+                },
+                pLocale: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pQuestion: {
+                    value: 'MM161',
+                    squash: 'MM161'
+                },
+                pActivityFilter: {
+                    value: '8',
+                    squash: '8'
+                },
+                pCompanyFilter: {
+                    value: '0',
+                    squash: '0'
+                },
+                pCountry1: {
+                    value: 'AT',
+                    squash: 'AT'
+                },
+                pCountry2: {
+                    value: 'EU27',
+                    squash: 'EU27'
+                }
+            },
+            views: {
+                "content-main": {
+                    templateUrl: configService.getVerticalTplPath("survey/detailpage", "detailpage"),
+                    controller: 'DetailPageController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/detailpage/DetailPageController', 'detailpage', 'DetailPageController')
+                }
+            },
+            metaTags: {
+                title: "Data Visualisation | ESENER",
+                //description: i18n.L4,
+            }
+        });
+
+        $stateProvider.state('detailpage-pie-chart', {
+            url: "/:pLanguage/survey/detailpage-pie-chart/:pIndicator/:pTopic/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter/:pCountry1/:pCountry2",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pIndicator: {
+                    value: '2009',
+                    squash: '2009'
+                },
+                pTopic: {
+                    value: 'osh-management',
+                    squash: 'osh-management'
+                },
+                pChart: {
+                    value: 'european-map',
+                    squash: 'european-map'
+                },
+                pLocale: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pQuestion: {
+                    value: 'MM161',
+                    squash: 'MM161'
+                },
+                pActivityFilter: {
+                    value: '8',
+                    squash: '8'
+                },
+                pCompanyFilter: {
+                    value: '0',
+                    squash: '0'
+                },
+                pCountry1: {
+                    value: 'AT',
+                    squash: 'AT'
+                },
+                pCountry2: {
+                    value: 'EU27',
+                    squash: 'EU27'
                 }
             },
             views: {
