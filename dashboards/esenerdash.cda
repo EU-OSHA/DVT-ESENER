@@ -320,7 +320,7 @@
       AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('CH', 'NO', 'TR')) ELSE n.id = p.nuts_id END
       AND t.language = 'EN'
       AND v.dataset_id = ${pDataset}
-      ORDER BY FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC, FIELD(sa.id, 1, 34, 3, 38, 39, 2, 36, 37) DESC, sa.id DESC;
+      ORDER BY FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC, FIELD(sa.id, 1, 53, 34, 3, 38, 39, 2, 36, 37) DESC, sa.id DESC;
     </Query>
   </DataAccess>
 

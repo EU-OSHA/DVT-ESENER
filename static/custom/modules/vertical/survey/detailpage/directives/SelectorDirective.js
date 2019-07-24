@@ -44,6 +44,16 @@ define(function (require) {
 				scope.sectorSize = $stateParams.pSectorSize;
 				scope.noneu = $stateParams.pEuOnly;
 
+				scope.trim = function(text){
+					var trimText = '';
+					if(text != null){
+						if(text.length > 10){
+							trimText = text.substring(0,10) + '...';
+							return trimText;
+						}
+					}
+				}
+
 				// Load data to show texts for the selected question
 				dataService.getQuestionSelectorData(scope.indicator).then(function(res) {
 					//Check if the number of results is 1

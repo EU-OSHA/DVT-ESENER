@@ -6,9 +6,9 @@
         <!-- Breadcrumb -->        
 		<p data-ng-bind="question.breadcrumb"></p>
         <ul class="question--by--question">
-            <li><a data-ng-click="changeQuestion(question.previousID)" title="question.previous" data-ng-bind="question.previous"></a></li>
-            <li><a data-ng-click="changeQuestion(question.nextID)" title="question.next" data-ng-bind="question.next"></a></li>
-        </ul> 
+            <li><a data-ng-click="changeQuestion(question.previousID)" title="{{question.previous}}" data-ng-bind="trim(question.previous)"></a></li>
+            <li><a data-ng-click="changeQuestion(question.nextID)" title="{{question.next}}" data-ng-bind="trim(question.next)"></a></li>
+        </ul>
     </div>
 
     <div class="content--lang--wrapper">

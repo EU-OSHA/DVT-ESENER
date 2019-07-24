@@ -12,7 +12,7 @@
                 </a>
             </li>
             <li class="card--item">
-                <a href class="icon--card psychosocial-risk-icon" data-ng-click="changeTopic($event,'psychosocial-risks')">
+                <a href class="icon--card psychosocial-risk-icon" data-ng-click="changeTopic($event,'psychosocial-risks-and-their-management')">
                     <span data-ng-bind="i18n.L100009"></span>
                 </a> 
             </li>
@@ -52,13 +52,19 @@
                 <p class="text-center" data-ng-bind="i18n.L100616" data-ng-click="changeChart($event,'national-bar-chart')"></p>
             </li>
             <li class="card--item">
-                <a href  class="icon--card national-comparision-icon" data-ng-click="changeChart($event,'national-comparisons')">
+                <!--<a href  class="icon--card national-comparision-icon" data-ng-click="changeChart($event,'national-comparisons')">
+                    <span data-ng-bind="i18n.L100621"></span>
+                </a>-->
+                <a href  class="icon--card national-comparision-icon" data-ng-click="changeChart($event,'')">
                     <span data-ng-bind="i18n.L100621"></span>
                 </a>
                 <p class="text-center" data-ng-bind="i18n.L100610" data-ng-click="changeChart($event,'national-comparisons')"></p> 
             </li>
             <li class="card--item">
-                <a href class="icon--card pie-chart-icon" data-ng-click="changeChart($event,'pie-chart')">
+                <!--<a href class="icon--card pie-chart-icon" data-ng-click="changeChart($event,'pie-chart')">
+                    <span data-ng-bind="i18n.L101033" data-ng-click="changeChart($event,'pie-chart')"></span>
+                </a>-->
+                <a href class="icon--card pie-chart-icon" data-ng-click="changeChart($event,'')">
                     <span data-ng-bind="i18n.L101033" data-ng-click="changeChart($event,'pie-chart')"></span>
                 </a>
                 <p class="text-center" data-ng-bind="i18n.L101025"></p>
@@ -66,7 +72,12 @@
         </ul>
     </section>
 
-    <p class="text-center"><button ng-disabled="(pTopic == '' || pChart == '')" data-ng-class="{'disabled':(pTopic == '' || pChart == '')}" ui-sref="detailpage({pIndicator: pIndicator, pTopic: pTopic, pChart: pChart, pQuestion: pQuestion, pActivityFilter: 8, pAnswer: pAnswer})" class="btn-default btn-main-color"><span data-ng-bind="i18n.L101020"></span></button></p>
+    <p class="text-center">
+        <button data-ng-if="pChart != 'national-bar-chart'" ng-disabled="(pTopic == '' || pChart == '')" data-ng-class="{'disabled':(pTopic == '' || pChart == '')}" ui-sref="detailpage({pIndicator: pIndicator, pTopic: pTopic, pChart: pChart, pQuestion: pQuestion, pActivityFilter: 8, pAnswer: pAnswer})" class="btn-default btn-main-color"><span data-ng-bind="i18n.L101020"></span>
+        </button>
+        <button data-ng-if="pChart == 'national-bar-chart'" ng-disabled="(pTopic == '' || pChart == '')" data-ng-class="{'disabled':(pTopic == '' || pChart == '')}" ui-sref="detailpageCountry({pIndicator: pIndicator, pTopic: pTopic, pChart: pChart, pQuestion: pQuestion, pSectorSize: 'company-size', pCountry: 'EU27'})" class="btn-default btn-main-color"><span data-ng-bind="i18n.L101020"></span>
+        </button>
+    </p>
 
     <!--<p class="text-center"><button ng-disabled="(pTopic == '' || pChart == '')" data-ng-class="{'disabled':(pTopic == '' || pChart == '')}" class="btn-default btn-main-color"><span data-ng-bind="i18n.L101020"></span></button></p>-->
 

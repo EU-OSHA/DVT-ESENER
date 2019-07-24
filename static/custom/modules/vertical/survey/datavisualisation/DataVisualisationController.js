@@ -36,7 +36,7 @@ define(function (require) {
             }
         });
 
-        $scope.changeTopic = function($event, topic, question){
+        $scope.changeTopic = function($event, topic){
  
             angular.element('.section-topic .card--item').removeClass('selected');
             angular.element('.section-topic .card--item').removeClass('tablet');
@@ -62,12 +62,12 @@ define(function (require) {
 
 
             $scope.pTopic = topic;
-            $scope.pQuestion = question;
+            //$scope.pQuestion = question;
 
             if($scope.pTopic == 'osh-management'){
                 $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM161':'Q250';
                 $scope.pAnswer = 1;
-            }else if($scope.pTopic == 'psychosocial-risks'){
+            }else if($scope.pTopic == 'psychosocial-risks-and-their-management'){
                 $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM250':'Q300';
                 $scope.pAnswer = 1;
             }else if($scope.pTopic == 'drivers-and-barriers'){
