@@ -1557,9 +1557,9 @@
   &.top:after {
     content: "";
     position: absolute;
-    bottom: -11%;
-    left: 50%;
-    margin-left: -25px;
+    bottom: -25px;
+    left: 43%;
+    margin-left: 0;
     border-width:1.2rem;
     border-style: solid;
     border-color: $aquamarine transparent transparent transparent;

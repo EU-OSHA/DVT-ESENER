@@ -10,8 +10,8 @@
     flex-direction: row;
     .detail--content--section{
       position: initial;
-      width: 70%;
-      padding: 0 2rem;
+      width: 74%;
+      padding: 0 4rem;
       .selector--page--elements{
         position: initial; 
         .content--intro--wrapper{
@@ -225,8 +225,22 @@
         }
         &.open{
           display: block;
+          position: relative; 
           > ul{
             display: block;
+          }
+          > span{
+            a{
+              font-family: 'OpenSans-Bold';
+              &:after{
+                content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-up.svg);
+                width: 2rem;
+                height: 2rem;
+                position: absolute;
+                right: 1rem;
+                top: 1rem;
+              }
+            }
           }
         }
       }
@@ -297,7 +311,7 @@
     position: relative;
     z-index: 10;
     padding: 0;
-    width: 30%;
+    width:26%;
 }
 .content--lang--wrapper{
   position: absolute;
@@ -320,6 +334,19 @@
         font-family: 'OpenSans-Bold';
         font-size: 1.7rem;
         text-align-last:center;
+        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-down.svg);
+        background-repeat: no-repeat;
+        background-position: 100%;
+        &::-ms-expand {
+          display: none;
+        }
+        /*
+        &:focus{
+          background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-up.svg);
+          background-repeat: no-repeat;
+          background-position: 100%;
+        }
+        */
         option{
           text-align: center;
           font-family: 'OpenSans';
@@ -327,7 +354,7 @@
         }
       }
       &:after{
-        content: "\f107";
+        //content: "\f107";
         font-family: FontAwesome;
         font-weight: normal;
         font-size: 2rem;
@@ -418,7 +445,7 @@
   }
   .filter-text-button{
     width: auto;
-    margin-right: 1rem;
+    margin-right: 2rem;
     button{
       width:auto;
       margin: 1rem 0;
@@ -430,20 +457,48 @@
     }
     span{
       display: inline-block;
-      padding: 0 2rem;
+      padding: 0 0 0 2rem;
     }
     select{
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none;
       width:auto;
       margin: 1rem 0;
       padding: 1rem 2rem;
       background: #00a1a3;
       color: #FFF;
       position: relative;
-      border: none;   
+      border: none; 
+      background: #00a1a3 url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-down-white.svg) no-repeat 0 1px;
+      background-size: 2rem;
+      background-position: 96% 58%; 
+      &::-ms-expand {
+        display: none;
+      }
       option{
         background: $white;
         color: $gray;
       }
+    }
+    &:nth-child(1){
+
+    }
+    &:nth-child(2){
+      button{
+        width:auto;
+        margin: 1rem 0;
+        padding: 1rem 2rem;
+        background: $white;
+        outline:1px solid $aquamarine !important;
+        color: $aquamarine;
+        border: none; 
+        position: relative;        
+      }
+    }
+    &:nth-child(3){
+
     }
   }
 }
@@ -480,15 +535,23 @@
             content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-eu-map-icon.svg);
           }
           &:hover{
+            border: 1px solid $aquamarine-light;
             &:before{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-eu-map-icon-hover.svg);
               background: $aquamarine-light;
             }
           }
-          &.selected{
+          &.selected-chart{
             &:before{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-eu-map-icon-active.svg);
               background: $orange-light;
+            }
+            &:hover{
+              border: 1px solid $aquamarine-light;
+              &:before{
+                content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-eu-map-icon-hover.svg);
+                background: $aquamarine-light;
+              }
             }
           }
         }     
@@ -498,13 +561,21 @@
           &:before{
             content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-chart-icon.svg);
           }
-         &:hover{
+          &:hover{
+            border: 1px solid $aquamarine-light;
             &:before{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-chart-icon-hover.svg);
               background: $aquamarine-light;
             }
           }
-          &.selected{
+          &.selected-chart{
+            &:hover{
+              border: 1px solid $aquamarine-light;
+              &:before{
+                content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-chart-icon-hover.svg);
+                background: $aquamarine-light;
+              }
+            }
             &:before{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-chart-icon-active.svg);
               background: $orange-light;
@@ -518,12 +589,20 @@
             content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision-icon.svg);
           }
           &:hover{
+            border: 1px solid $aquamarine-light;
             &:before{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision-icon-hover.svg);
               background: $aquamarine-light;
             }
           }
-          &.selected{
+          &.selected-chart{
+            &:hover{
+              border: 1px solid $aquamarine-light;
+              &:before{
+                content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision-icon-hover.svg);
+                background: $aquamarine-light;
+              }
+            }
             &:before{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision-icon-active.svg);
               background: $orange-light;
@@ -537,12 +616,20 @@
             content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision2-icon.svg);
           }
           &:hover{
+            border: 1px solid $aquamarine-light;
             &:before{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision2-icon-hover.svg);
               background: $aquamarine-light;
             }
           }
-          &.selected{
+          &.selected-chart{
+            &:hover{
+              border: 1px solid $aquamarine-light;
+              &:before{
+                content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision2-icon-hover.svg);
+                background: $aquamarine-light;
+              }
+            }
             &:before{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision2-icon-active.svg);
               background: $orange-light;
@@ -557,12 +644,13 @@
             content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-pie-icon.svg);
           }
           &:hover{
+            border: 1px solid $aquamarine-light;
             &:before{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-pie-icon-hover.svg);
               background: $aquamarine-light;
             }
           }
-          &.selected{
+          &.selected-chart{
             &:before{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-pie-icon-active.svg);
               background: $orange-light;
@@ -582,6 +670,12 @@
             background:$aquamarine-light;
             color: $aquamarine;
           }
+          &.selected-chart{
+            //background: $orange-light;
+            //color: $orange;
+            background:$aquamarine-light;
+            color: $aquamarine;
+          } 
         }       
       }
     }
@@ -608,6 +702,7 @@ ul.question--by--question {
         background: #666;
         color: #FFF;
         text-align: center;
+        cursor: pointer;
       }   
     }
     li:nth-child(1){

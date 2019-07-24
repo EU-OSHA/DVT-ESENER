@@ -152,8 +152,8 @@
                 </div>
                 <!-- Country -->
                 <div class="filter-text-button">
-                    <label data-ng-bind="i18n.L100589"></label> 
                     <select id="datafor" data-ng-change="updateChart('country')" data-ng-model="filters.country">
+                        <option  data-ng-bind="i18n.L100589"></option>
                         <option data-ng-repeat='country in countries' data-ng-value="country.id" data-ng-bind="country.literal" data-ng-selected="country.id == filters.country"></option>
                     </select>
                 </div>
