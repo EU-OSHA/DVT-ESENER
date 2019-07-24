@@ -335,7 +335,7 @@
       <Parameter default="EU27" name="pCountry" type="String"/>
     </Parameters>
     <Query>
-      SELECT sa.literal_id as Answer, IF(p.activity_sector_id IS NULL, scs.literal_id, sas.literal_id) as Sector, v.value*100 as Value
+      SELECT DISTINCT(sa.literal_id) as Answer, IF(p.activity_sector_id IS NULL, scs.literal_id, sas.literal_id) as Sector, v.value*100 as Value
       FROM nuts n, profile p, value v, indicator i, split_answer sa, split_activity_sector sas, split_company_size scs
       WHERE n.id = p.nuts_id
       AND i.name = ${pQuestion}
