@@ -171,7 +171,7 @@ define(function (require) {
                     squash: 'EU27'
                 },
                 pSectorSize: {
-                    value: 'company-size',
+                    value: null,
                     squash: true
                 }
             },
