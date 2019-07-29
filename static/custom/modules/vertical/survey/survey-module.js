@@ -348,7 +348,7 @@ define(function (require) {
         });
 
         $stateProvider.state('detailpage-national-comparisons', {
-            url: "/:pLanguage/survey/detailpage-national-comparisons/:pIndicator/:pTopic/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter/:pCountry1/:pCountry2",
+            url: "/:pLanguage/survey/detailpage-national-comparisons/:pIndicator/:pTopic/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter/:pCountry/:pCountry2",
             params: {
                 pLanguage: {
                     value: 'en',
@@ -382,7 +382,7 @@ define(function (require) {
                     value: '0',
                     squash: '0'
                 },
-                pCountry1: {
+                pCountry: {
                     value: 'AT',
                     squash: 'AT'
                 },

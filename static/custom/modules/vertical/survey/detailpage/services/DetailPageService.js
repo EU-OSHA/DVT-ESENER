@@ -211,6 +211,58 @@ define (function (require) {
                         }
                     }
                 ];
+            },
+            getNationalComparisonsPlot: function(pCountry1, pCountry2) {
+                return [
+                    {
+                        name: "main",
+                        dataPart: "0",
+                        barSizeMax: 35,
+                        valuesAnchor: 'left',
+                        label_textMargin: function(scene){
+                            var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLocale);
+                            var answer = scene.firstAtoms.series;
+                            var sector = scene.firstAtoms.category;
+
+                            if(i18n['L'+answer] != undefined){
+                                answer.key = i18n['L'+answer];
+                                answer.label = i18n['L'+answer];
+                            }
+
+                            if(i18n['L'+sector] != undefined){
+                                sector.key = i18n['L'+sector];
+                                sector.label = i18n['L'+sector];
+                            }
+
+                            if(!scene.firstAtoms.value.label.match('%')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+                            return 10;
+                        },
+                        bar_fillStyle: function(scene){
+                            var country = scene.firstAtoms.series;
+                            if(country.label.match('('+pCountry1+')')){
+                                if(pCountry1 == 'EU27'){
+                                    return dvtUtils.getColorCountry();
+                                }else{
+                                    return dvtUtils.getColorCountry(1);
+                                }
+                            }else if(country.label.match('('+pCountry2+')')){
+                                if(pCountry2 == 'EU27'){
+                                    return dvtUtils.getColorCountry();
+                                }else{
+                                    return dvtUtils.getColorCountry(2);
+                                }
+                            }
+                        },
+                        label_textBaseline: 'middle',
+                        valuesOptimizeLegibility: true,
+                        visualRoles:{
+                            series: 'series',
+                            category:'category',
+                        }
+                    }
+                ];
             }
         };
     };

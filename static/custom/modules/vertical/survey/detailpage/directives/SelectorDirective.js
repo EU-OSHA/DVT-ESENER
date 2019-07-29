@@ -41,6 +41,7 @@ define(function (require) {
 				scope.activitySector = $stateParams.pActivityFilter;
 				scope.establishmentSize = $stateParams.pCompanyFilter;
 				scope.country = $stateParams.pCountry;
+				scope.country2 = $stateParams.pCountry2;
 				scope.sectorSize = ($stateParams.pSectorSize == null && scope.chart == 'national-bar-chart') ? 'company-size':$stateParams.pSectorSize;
 				scope.noneu = $stateParams.pEuOnly;
 
@@ -124,7 +125,25 @@ define(function (require) {
 						res.data.resultset.map(function(elem) {
 							scope.activitySectors.push({id:elem[0], literal:elem[1]});
 						});
-					}); 
+					});
+
+					if(scope.chart == 'national-comparisons'){
+						// Load the countries for the select combo
+						dataService.getCountriesSelect(scope.indicator).then(function(res) {
+							scope.countries = [];
+							scope.countriesCompareWith = [];
+							
+							res.data.resultset.map(function(elem) {
+								if(elem[0] != scope.country2){
+									scope.countries.push({id:elem[0], literal:elem[1]});
+								}
+
+								if(elem[0] != scope.country){
+									scope.countriesCompareWith.push({id:elem[0], literal:elem[1]});
+								}
+							});
+						});
+					}
 				}
 				else if (scope.chart=='national-bar-chart')
 				{
@@ -141,6 +160,7 @@ define(function (require) {
 					activitySector: scope.activitySector/*'8'*/,
 					establishmentSize: scope.establishmentSize,
 					country: scope.country,
+					country2: scope.country2,
 					answer: scope.answer,
 					euOnly: scope.noneu,
 					sectorSize: scope.sectorSize
@@ -175,7 +195,7 @@ define(function (require) {
 						if(pChangedFilter == 'euOnly'){
 							scope.noneu = (scope.noneu == 0)?1:0;
 						}
-						$state.transitionTo('detailpage', {
+						$state.transitionTo('detailpage-european-map', {
 							pIndicator: scope.dataset, //Year
 							pChart: scope.chart, //Type of chart
 							pQuestion: scope.indicator, //Question name
@@ -183,6 +203,20 @@ define(function (require) {
 							pActivityFilter: scope.filters.activitySector,
 							pCompanyFilter: scope.filters.establishmentSize,
 							pEuOnly: scope.noneu
+						},
+						{
+							reload: true
+						});
+					}else if(scope.chart == 'national-comparisons'){
+						$state.transitionTo('detailpage-national-comparisons', {
+							pIndicator: scope.dataset, //Year
+							pChart: scope.chart, //Type of chart
+							pQuestion: scope.indicator, //Question name
+							pAnswer: scope.filters.answer, //Split answer
+							pActivityFilter: scope.filters.activitySector,
+							pCompanyFilter: scope.filters.establishmentSize,
+							pCountry: scope.filters.country,
+							pCountry2: scope.filters.country2
 						},
 						{
 							reload: true
@@ -202,6 +236,11 @@ define(function (require) {
 								break;
 							case "country":
 								console.log("country changed");
+								$log.warn("country changed");
+								break;
+							case "country2":
+								console.log("country2 changed");
+								$log.warn("country2 changed");
 								break;
 							case "answer":
 								console.log("answer changed");
@@ -237,13 +276,14 @@ define(function (require) {
 						$stateParams.pCompanyFilter = scope.filters.establishmentSize;
 						$stateParams.pAnswer = scope.filters.answer;
 						$stateParams.pCountry = scope.filters.country;
+						$stateParams.pCountry2 = scope.filters.country2;
 						$stateParams.pSectorSize = scope.filters.sectorSize;
 						$stateParams.pEuOnly = scope.filters.euOnly;
 
 						ngModel.$setViewValue(scope.filters, 'change');
 						dashboard.dashboard.fireChange('pFilters', scope.filters);
 
-						//$log.warn(dashboard.dashboard.parameters.pFilters);
+						$log.warn(dashboard.dashboard.parameters.pFilters);
 
 						scope.filters.activitySector = scope.filters.activitySector == 0? null:scope.filters.activitySector;
 						scope.filters.establishmentSize = scope.filters.establishmentSize == 0? null:scope.filters.establishmentSize;
