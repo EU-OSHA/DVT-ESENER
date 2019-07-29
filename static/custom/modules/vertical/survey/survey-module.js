@@ -259,8 +259,8 @@ define(function (require) {
                     squash: 'osh-management'
                 },
                 pChart: {
-                    value: 'european-map',
-                    squash: 'european-map'
+                    value: 'european-bar-chart',
+                    squash: 'european-bar-chart'
                 },
                 pLocale: {
                     value: 'en',
@@ -363,8 +363,8 @@ define(function (require) {
                     squash: 'osh-management'
                 },
                 pChart: {
-                    value: 'european-map',
-                    squash: 'european-map'
+                    value: 'national-comparisons',
+                    squash: 'national-comparisons'
                 },
                 pLocale: {
                     value: 'en',
@@ -420,8 +420,8 @@ define(function (require) {
                     squash: 'osh-management'
                 },
                 pChart: {
-                    value: 'european-map',
-                    squash: 'european-map'
+                    value: 'pie-chart',
+                    squash: 'pie-chart'
                 },
                 pLocale: {
                     value: 'en',

@@ -42,7 +42,6 @@ define(function (require) {
 				scope.establishmentSize = $stateParams.pCompanyFilter;
 				scope.country = $stateParams.pCountry;
 				scope.sectorSize = ($stateParams.pSectorSize == null && scope.chart == 'national-bar-chart') ? 'company-size':$stateParams.pSectorSize;
-				$log.warn(scope.sectorSize);
 				scope.noneu = $stateParams.pEuOnly;
 
 				scope.trim = function(text){
@@ -109,7 +108,7 @@ define(function (require) {
 				});*/
 
 				// Load the data for the filters
-				if (scope.chart =='european-map' || scope.chart=='european-bar-chart')
+				if (scope.chart =='european-map' || scope.chart=='european-bar-chart' || scope.chart == 'national-comparisons')
 				{
 					// Load the establishment sizes for the select combo
 					dataService.getEstablishmentSizesSelect(scope.indicator).then(function(res) {
@@ -222,6 +221,11 @@ define(function (require) {
 								console.log("eu only changed");
 								$log.warn("eu only changed");
 								scope.filters.euOnly = (scope.filters.euOnly == 0)?1:0;
+								if(scope.filters.euOnly == 1){
+									angular.element('#eu-only').addClass('selected-chart');
+								}else{
+									angular.element('#eu-only').removeClass('selected-chart');
+								}
 								break;
 							default:
 								console.log("No change detected");

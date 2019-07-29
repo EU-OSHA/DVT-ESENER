@@ -109,7 +109,7 @@
     </div>
 
     <div class="content--filter--wrapper">  
-        <div data-ng-if="chart=='european-map' || chart=='european-bar-chart'">
+        <div data-ng-if="chart=='european-map' || chart=='european-bar-chart' || chart=='national-comparisons'">
 			<p class="tags">
 	        	<span  data-ng-bind="i18n.L101026"></span> 
 	        	<span  data-ng-bind="i18n.L100573"></span> 
@@ -183,16 +183,19 @@
                     <!--<li>
                         <a href ><span class="sr-only"  data-ng-bind="i18n.L100621"></span></a>
                     </li>-->
-                    <li><a title="{{i18n.L100621}}" ui-sref="detailpage-national-comparisons({pChart: 'national-comparisons', pCountry1: 'AT', pCountry2: 'EU27'})" ><span class="sr-only"  data-ng-bind="i18n.L100621"></span></a></li>
+                    <li>
+                        <a title="{{i18n.L100621}}" data-ng-class="{'selected-chart':(chart == 'national-comparisons')}" ui-sref="detailpage-national-comparisons({pChart: 'national-comparisons', pCountry1: 'AT', pCountry2: 'EU27'})" ><span class="sr-only"  data-ng-bind="i18n.L100621"></span>
+                        </a>
+                    </li>
                     <!--<li>
                         <a href ><span class="sr-only"  data-ng-bind="i18n.L101033"></span></a>
                     </li>-->
                     <li>
-                        <a title="{{i18n.L101033}}" ui-sref="detailpage-pie-chart({pChart: 'pie-chart'})" ><span class="sr-only"  data-ng-bind="i18n.L101033"></span>
+                        <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pChart: 'pie-chart'})" ><span class="sr-only"  data-ng-bind="i18n.L101033"></span>
                         </a>
                     </li>
                     <li>
-                        <a title="{{i18n.L100634}}" data-ng-class="{'selected-chart':(noneu == 1)}" href data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-click="updateChart('euOnly')" data-ng-bind="i18n.L100679"></a>
+                        <a id="eu-only" title="{{i18n.L100634}}" href data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-click="updateChart('euOnly')" data-ng-bind="i18n.L100679"></a>
                     </li> 
                 </ul>
             </form>
