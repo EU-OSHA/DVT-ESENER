@@ -31,6 +31,8 @@ define(function (require) {
 		var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($scope.pLocale);
 		$scope.i18n = i18n;
 
+		var i18nEN = configService.getLiterals();
+
 		
 		//Parameters
 		$scope.pIndicator = $stateParams.pIndicator; //Year
@@ -93,6 +95,7 @@ define(function (require) {
 		        'pYear': $scope.pIndicator,
 		        'pChart': $scope.pChart,
 		        'pTopic': $scope.pTopic,
+		        'pLocale': $scope.pLocale,
 		        'pFilters': {
 			        'activitySector': $scope.pActivityFilter,
 			        'establishmentSize': $scope.pCompanyFilter,
@@ -105,7 +108,7 @@ define(function (require) {
 	      	}
 	    };
 
-	    $log.warn($scope.dashboard.parameters);
+	    //$log.warn($scope.dashboard.parameters);
 
 		/* Map parameters */
 		$scope.data = {
@@ -122,11 +125,13 @@ define(function (require) {
 			promiseShape: mapProvider.getEuropeShape()
 		};
 
-		$scope.dataPromises = [
-		  	mapProvider.getEuropeShape(),
-		  	dataService.getMapData($scope.pIndicator, $scope.pQuestion, $scope.answer, 
-			$scope.actualDataset, $scope.pSectorSize, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU)
-		];
+		if($scope.pChart == 'european-map'){
+			$scope.dataPromises = [
+			  	mapProvider.getEuropeShape(),
+			  	dataService.getMapData($scope.pIndicator, $scope.pQuestion, $scope.answer, 
+				$scope.actualDataset, $scope.pSectorSize, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU)
+			];
+		}
 
 		$scope.minMaxValues = {
 		  	minValue: 0,
@@ -262,7 +267,7 @@ define(function (require) {
 					father_id: elem[3],
 					name_1: elem[4],
 					indicator_id: elem[5],
-					anchor: (elem[2] == 1)?i18n['L'+elem[4]].toLowerCase().replace(/[\,\ ]/g, '-'):''
+					anchor: (elem[2] == 1)?i18nEN['L'+elem[4]].toLowerCase().replace(/[\,\ ]/g, '-'):''
 				});
 			});
 		}).catch(function (err) 
@@ -378,12 +383,6 @@ define(function (require) {
 			return children;
 		}
 
-		$scope.clickEnter = function($event){
-			if($event.which === 13 || $event.which === 1) {
-				//search($event, 'search');
-			}
-		}
-
 		$scope.changeLocale = function(){
 			i18n = ($scope.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($scope.pLocale);
 			$state.transitionTo($state.current.name, {
@@ -405,7 +404,9 @@ define(function (require) {
 					pQuestion: $scope.pQuestion, //Question name
 					pAnswer: $scope.answer, //Split answer
 					pActivityFilter: $scope.pActivityFilter,
-					pCompanyFilter: $scope.pCompanyFilter
+					pCompanyFilter: $scope.pCompanyFilter,
+					pCountry: $scope.dashboard.parameters.pFilters.country,
+					pLocale: $scope.pLocale
 				},
 				{
 					reload: true

@@ -405,7 +405,7 @@ define(function (require) {
         });
 
         $stateProvider.state('detailpage-pie-chart', {
-            url: "/:pLanguage/survey/detailpage-pie-chart/:pIndicator/:pTopic/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter/:pCountry1/:pCountry2",
+            url: "/:pLanguage/survey/detailpage-pie-chart/:pIndicator/:pTopic/:pLocale/:pQuestion/:pCountry",
             params: {
                 pLanguage: {
                     value: 'en',
@@ -431,21 +431,9 @@ define(function (require) {
                     value: 'MM161',
                     squash: 'MM161'
                 },
-                pActivityFilter: {
-                    value: '8',
-                    squash: '8'
-                },
-                pCompanyFilter: {
-                    value: '0',
-                    squash: '0'
-                },
-                pCountry1: {
+                pCountry: {
                     value: 'AT',
                     squash: 'AT'
-                },
-                pCountry2: {
-                    value: 'EU27',
-                    squash: 'EU27'
                 }
             },
             views: {

@@ -20,28 +20,28 @@
                     <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-change="changeLocale()" data-ng-model="pLocale">
                             <!-- Select esener 2009 languages -->
                             <option value="bg" data-ng-selected="pLocale == 'bg'">Български</option> <!-- Bulgary -->
-                            <option value="cs">Čeština</option>
-                            <option value="da">Dansk</option>
-                            <option value="de">Deutsch</option>
-                            <option value="et">Eesti</option>
-                            <option value="el">Ελληνικά</option>
+                            <option value="cs" data-ng-selected="pLocale == 'cs'">Čeština</option>
+                            <option value="da" data-ng-selected="pLocale == 'da'">Dansk</option>
+                            <option value="de" data-ng-selected="pLocale == 'de'">Deutsch</option>
+                            <option value="et" data-ng-selected="pLocale == 'et'">Eesti</option>
+                            <option value="el" data-ng-selected="pLocale == 'el'">Ελληνικά</option>
                             <option value="en" data-ng-selected="pLocale == 'en'">English</option>
                             <option value="es" data-ng-selected="pLocale == 'es'">Español</option>
-                            <option value="fr">Français</option>
-                            <option value="it">Italiano</option>
-                            <option value="lv">Latviešu</option>
-                            <option value="lt">Lietuvių</option>
-                            <option value="hu">Magyar</option>
-                            <option value="mt">Malti</option>
-                            <option value="nl">Nederlands</option>
-                            <option value="no">Norsk</option>
-                            <option value="pl">Polski</option>
-                            <option value="pt">Português</option>
-                            <option value="ro">Română</option>
-                            <option value="sk">Slovenčina</option>
-                            <option value="sl">Slovenščina</option>
-                            <option value="fi">Suomi</option>
-                            <!--<option value="tr">Türkçe</option>-->
+                            <option value="fr" data-ng-selected="pLocale == 'fr'">Français</option>
+                            <option value="it" data-ng-selected="pLocale == 'it'">Italiano</option>
+                            <option value="lv" data-ng-selected="pLocale == 'lv'">Latviešu</option>
+                            <option value="lt" data-ng-selected="pLocale == 'lt'">Lietuvių</option>
+                            <option value="hu" data-ng-selected="pLocale == 'hu'">Magyar</option>
+                            <option value="mt" data-ng-selected="pLocale == 'mt'">Malti</option>
+                            <option value="nl" data-ng-selected="pLocale == 'nl'">Nederlands</option>
+                            <option value="no" data-ng-selected="pLocale == 'no'">Norsk</option>
+                            <option value="pl" data-ng-selected="pLocale == 'pl'">Polski</option>
+                            <option value="pt" data-ng-selected="pLocale == 'pt'">Português</option>
+                            <option value="ro" data-ng-selected="pLocale == 'ro'">Română</option>
+                            <option value="sk" data-ng-selected="pLocale == 'sk'">Slovenčina</option>
+                            <option value="sl" data-ng-selected="pLocale == 'sl'">Slovenščina</option>
+                            <option value="fi" data-ng-selected="pLocale == 'fi'">Suomi</option>
+                            <option value="tr" data-ng-selected="pLocale == 'tr'">Türkçe</option>
                     </select>
                 </div>
                 <div data-ng-show="dataset == '2014'">
@@ -109,34 +109,42 @@
     </div>
 
     <div class="content--filter--wrapper">  
-        <div data-ng-if="chart=='european-map' || chart=='european-bar-chart' || chart == 'national-comparisons'">
-			<p class="tags">
+        <div data-ng-if="chart!='national-bar-chart'">
+			<!--<p class="tags">
 	        	<span  data-ng-bind="i18n.L101026"></span> 
 	        	<span  data-ng-bind="i18n.L100573"></span> 
 	        	<span  data-ng-bind="i18n.L101027"></span> 
 	        	<span  data-ng-bind="i18n.L100574"></span> 
-	        </p>
+	        </p>-->
             <form class="block--filter--wrapper">
                 <!-- Activity sector -->
+                <p class="tags">
+                    <span data-ng-bind="i18n.L101026"></span> 
+                </p>
                 <div class="filter-text activity-sector">
-                    <select id="sector" class="" data-ng-change="updateChart('activitySector')" data-ng-model="filters.activitySector">
+                    <select id="sector" class="" data-ng-change="updateChart('activitySector')" data-ng-model="filters.activitySector" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
+                        <option data-ng-bind="i18n.L100573" data-ng-value="" data-ng-selected="chart == 'pie-chart'"></option>
                         <option data-ng-repeat='sector in activitySectors' data-ng-value="sector.id" data-ng-bind="i18n['L'+sector.literal]" data-ng-selected="sector.id == filters.activitySector || ($index == 0 && filters.activitySector == 0)"></option>
                     </select>
                 </div>
+                <p class="tags">
+                    <span data-ng-bind="i18n.L101027"></span> 
+                </p>
                 <!-- Establishment size -->
                 <div class="filter-text establishment-size">
-                    <select id="establishment" class="" data-ng-change="updateChart('establishmentSize')" data-ng-model="filters.establishmentSize">
+                    <select id="establishment" class="" data-ng-change="updateChart('establishmentSize')" data-ng-model="filters.establishmentSize" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
+                        <option data-ng-bind="i18n.L100574" data-ng-value="" data-ng-selected="chart == 'pie-chart'"></option>
                         <option data-ng-repeat='size in establishmentSizes' data-ng-value="size.id" data-ng-bind="i18n['L'+size.literal]" data-ng-selected="size.id == filters.establishmentSize || ($index == 0 && filters.establishmentSize == 0)"></option>
                     </select>
                 </div>
                 <!-- Country disabled -->
                 <div class="filter-text country-items" data-ng-if="chart=='european-map' || chart=='european-bar-chart'">
-                    <select id="datafor" class="" disabled>                 	
+                    <select id="datafor" class="" disabled>
                     	<option value="" data-ng-bind="i18n.L100589" data-ng-selected="true" disabled></option>
                     </select>
                 </div>
                 <!-- Country enabled -->
-                <div class="filter-text-button" data-ng-if="chart == 'national-comparisons'">
+                <div class="filter-text-button" data-ng-if="chart == 'national-comparisons' || chart == 'pie-chart'">
                     <select id="datafor" data-ng-change="updateChart('country')" data-ng-model="filters.country">
                         <option  data-ng-bind="i18n.L100589"></option>
                         <option data-ng-repeat='country in countries' data-ng-value="country.id" data-ng-bind="country.literal" data-ng-selected="country.id == filters.country"></option>
@@ -157,8 +165,10 @@
         </div>
 
         <div data-ng-if="chart=='national-bar-chart'">
-            <p data-ng-bind="i18n.L101026"></p>
 			<form class="block--filter--wrapper">
+                <p class="tags">
+                    <span data-ng-bind="i18n.L101026"></span>
+                </p>
                 <!-- Activity sector -->
                 <div class="filter-text-button">
                     <button data-ng-bind="i18n.L100573" data-ng-click="updateChart('companyToActivity')"></button>
@@ -209,7 +219,7 @@
                         <a href ><span class="sr-only"  data-ng-bind="i18n.L101033"></span></a>
                     </li>-->
                     <li>
-                        <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pChart: 'pie-chart'})" ><span class="sr-only"  data-ng-bind="i18n.L101033"></span>
+                        <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pChart: 'pie-chart', pCountry: filters.country})" ><span class="sr-only"  data-ng-bind="i18n.L101033"></span>
                         </a>
                     </li>
                     <li>

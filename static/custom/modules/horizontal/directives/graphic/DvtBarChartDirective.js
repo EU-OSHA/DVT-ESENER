@@ -441,12 +441,12 @@ define(function (require) {
                             .left(function(scene){
                                 var panelWidth = this.root.width();
                                 if(panelWidth != 200){
-                                    return panelWidth/12;
+                                    return panelWidth/13;
                                 }
                             })
                             .right(function(scene){
                                 var panelWidth = this.root.width();
-                                return panelWidth/12;
+                                return panelWidth/12.5;
                             });
                     };
                 }
@@ -609,23 +609,21 @@ define(function (require) {
                     number: "0.00"
                 };
 
-                if ((scope.isMaximized && attributes.type == 'pie') || attributes.type=='pie') {
+                if (attributes.type=='pie') {
                     definition.chartDefinition.valuesVisible = true;
+                    definition.chartDefinition.legend = true;
                     definition.chartDefinition.valuesAnchor = "center";
                     definition.chartDefinition.valuesLabelStyle= 'inside';
+                    //definition.chartDefinition.explodedSliceRadius = '3%'
                     if (scope.isMaximized) {
-                        definition.chartDefinition.valuesFont= '20px sans-serif';
+                        definition.chartDefinition.valuesFont= '20px OpenSans-bold';
                     }else {
-                        definition.chartDefinition.valuesFont= '14px sans-serif';
+                        definition.chartDefinition.valuesFont= '14px OpenSans-bold';
                     }
-                    definition.chartDefinition.format = {
-                        percent: "#%"
-                    };
                     definition.chartDefinition.dimensions= {
                         value: {
                             format: {
-                                number: "#.00",
-                                percent: "#%"
+                                number: "0.#"
                             }
                         }
                     };                 
@@ -635,7 +633,7 @@ define(function (require) {
                     if (!scope.isMaximized) {
                         definition.chartDefinition.valuesMask= '{value.percent}';    
                     }else {
-                        definition.chartDefinition.valuesMask = '{value}%';
+                        definition.chartDefinition.valuesMask = '{value}';
 
                     }
                     

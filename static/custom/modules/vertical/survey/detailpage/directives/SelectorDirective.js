@@ -145,7 +145,7 @@ define(function (require) {
 						});
 					}
 				}
-				else if (scope.chart=='national-bar-chart')
+				else if (scope.chart=='national-bar-chart' || scope.chart == 'pie-chart')
 				{
 					// Load the countries for the select combo
 					dataService.getCountriesSelect(scope.indicator).then(function(res) {
@@ -163,19 +163,23 @@ define(function (require) {
 					country2: scope.country2,
 					answer: scope.answer,
 					euOnly: scope.noneu,
-					sectorSize: scope.sectorSize
+					sectorSize: scope.sectorSize,
+					locale: scope.pLocale
 				};
 
 				scope.changeLocale = function(){
-					ngModel.$setViewValue(scope.pLocale, 'change');
-					//$log.warn(scope.pLocale);
+					//ngModel.$setViewValue(scope.pLocale, 'change');
+					//dashboard.dashboard.fireChange('pLocale', scope.pLocale);
+					$log.warn(dashboard.dashboard);
 					//dashboard.dashboard.fireChange('pFilters', scope.filters);
 					i18n = (scope.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(scope.pLocale);
 					$state.transitionTo($state.current.name, {
-						pLocale: scope.pLocale
+						pLocale: scope.pLocale,
+						pQuestion: $stateParams.pQuestion
 					}, 
 					{
-						reload: true
+						reload: true,
+						notify: true
 					});
 				}
 

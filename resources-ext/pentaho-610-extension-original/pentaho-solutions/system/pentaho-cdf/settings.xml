@@ -4,7 +4,7 @@
 	<cache-messages>true</cache-messages>
 	<max-age>2628001</max-age>
         <resources>
-            <downloadable-formats>css,js,html,htm,png,jpg,jpeg,gif,swf,otf,woff,ico,zip,xml,properties</downloadable-formats>
+            <downloadable-formats>css,js,html,htm,png,jpg,jpeg,gif,swf,otf,woff,ico,xml,properties</downloadable-formats>
         </resources>
 
 
