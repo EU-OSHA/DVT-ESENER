@@ -45,6 +45,19 @@ define(function (require) {
 				scope.sectorSize = ($stateParams.pSectorSize == null && scope.chart == 'national-bar-chart') ? 'company-size':$stateParams.pSectorSize;
 				scope.noneu = $stateParams.pEuOnly;
 
+				scope.filters = {};
+
+				scope.filters.activitySector =  scope.activitySector;/*'8'*/
+				scope.filters.establishmentSize = 0;
+				scope.filters.country = scope.country;
+				scope.filters.country2 = scope.country2;
+				scope.filters.answer = scope.answer;
+				scope.filters.euOnly = scope.noneu;
+				scope.filters.sectorSize = scope.sectorSize;
+				scope.filters.locale = scope.pLocale;
+
+				$log.warn(scope.filters);
+
 				scope.trim = function(text){
 					var trimText = '';
 					if(text != null){
@@ -114,6 +127,7 @@ define(function (require) {
 					// Load the establishment sizes for the select combo
 					dataService.getEstablishmentSizesSelect(scope.indicator).then(function(res) {
 						scope.establishmentSizes = [];
+						scope.establishmentSizes.push({id:0, literal: '100574'});
 						res.data.resultset.map(function(elem) {
 							scope.establishmentSizes.push({id:elem[0], literal:elem[1]});
 						});
@@ -155,17 +169,6 @@ define(function (require) {
 						});
 					});
 				}
-
-				scope.filters = {
-					activitySector: scope.activitySector/*'8'*/,
-					establishmentSize: scope.establishmentSize,
-					country: scope.country,
-					country2: scope.country2,
-					answer: scope.answer,
-					euOnly: scope.noneu,
-					sectorSize: scope.sectorSize,
-					locale: scope.pLocale
-				};
 
 				scope.changeLocale = function(){
 					//ngModel.$setViewValue(scope.pLocale, 'change');

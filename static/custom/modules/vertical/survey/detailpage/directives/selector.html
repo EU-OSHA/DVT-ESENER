@@ -123,7 +123,7 @@
                 </p>
                 <div class="filter-text activity-sector">
                     <select id="sector" class="" data-ng-change="updateChart('activitySector')" data-ng-model="filters.activitySector" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
-                        <option data-ng-bind="i18n.L100573" data-ng-value="" data-ng-selected="chart == 'pie-chart'"></option>
+                        <option data-ng-bind="i18n.L100573" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>
                         <option data-ng-repeat='sector in activitySectors' data-ng-value="sector.id" data-ng-bind="i18n['L'+sector.literal]" data-ng-selected="sector.id == filters.activitySector || ($index == 0 && filters.activitySector == 0)"></option>
                     </select>
                 </div>
@@ -131,10 +131,14 @@
                     <span data-ng-bind="i18n.L101027"></span> 
                 </p>
                 <!-- Establishment size -->
-                <div class="filter-text establishment-size">
-                    <select id="establishment" class="" data-ng-change="updateChart('establishmentSize')" data-ng-model="filters.establishmentSize" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
-                        <option data-ng-bind="i18n.L100574" data-ng-value="" data-ng-selected="chart == 'pie-chart'"></option>
-                        <option data-ng-repeat='size in establishmentSizes' data-ng-value="size.id" data-ng-bind="i18n['L'+size.literal]" data-ng-selected="size.id == filters.establishmentSize || ($index == 0 && filters.establishmentSize == 0)"></option>
+                <div class="filter-text establishment-size" data-ng-if="chart != 'pie-chart'">
+                    <select id="establishment" class="" data-ng-change="updateChart('establishmentSize')" data-ng-model="filters.establishmentSize">
+                        <option data-ng-repeat='size in establishmentSizes' data-ng-value="size.id" data-ng-bind="i18n['L'+size.literal]" data-ng-selected="size.id == filters.establishmentSize"></option>
+                    </select>
+                </div>
+                <div class="filter-text establishment-size" data-ng-if="chart == 'pie-chart'">
+                    <select id="sector" class="" data-ng-change="updateChart('establishmentSize')" data-ng-model="filters.establishmentSize" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
+                        <option data-ng-bind="i18n.L100574" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>
                     </select>
                 </div>
                 <!-- Country disabled -->
@@ -223,7 +227,7 @@
                         </a>
                     </li>
                     <li>
-                        <a id="eu-only" title="{{i18n.L100634}}" href data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-click="updateChart('euOnly')" data-ng-bind="i18n.L100679"></a>
+                        <a id="eu-only" title="{{i18n.L100580}}" href data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-click="updateChart('euOnly')" data-ng-bind="i18n.L100679"></a>
                     </li> 
                 </ul>
             </form>
