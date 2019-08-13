@@ -194,7 +194,12 @@
                     <a href="" ui-sref="overview({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'overview' == currentName }">OVERVIEW</a>
                 </li>
                 <li data-ng-class="{'active' : 'datavisualisation' == currentName || 'detailpage' == currentName }" class="submenu--item">
-                    <a href="" ui-sref="datavisualisation({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'datavisualisation' == currentName || 'detailpage' == currentName }" >DATA VISUALISATION</a>
+                    <a href="" ui-sref="datavisualisation({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'datavisualisation' == currentName || 
+                    'detailpage-european-map' == currentName ||
+                    'detailpage-european-bar-chart' == currentName ||
+                    'detailpage-national-bar-chart' == currentName || 
+                    'detailpage-national-comparisons' == currentName || 
+                    'detailpage-pie-chart' == currentName}" >DATA VISUALISATION</a>
                 </li>
                 <!--<li data-ng-class="{'active' : 'comparisons' == currentName }" class="submenu--item">
                 <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'comparisons' == currentName }" >COMPARISONS</a>
