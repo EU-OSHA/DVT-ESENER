@@ -22,12 +22,24 @@
   }
 }
 
-p.tags{
-  margin: 19px 8px 9px;
+.tags{
+  align-self: center;
   span{
-    margin: 0px 10px 0px 0px;
+    margin: 0px 15px 0px 0px;
   }
 }
+
+/*.tags{
+  .activity-sector{
+    margin: 0px 0px 0px 55px;
+  }
+  .or{
+    margin: 0px 40px 0px 80px;
+  }
+  .establishment-size{
+    margin: 0px 40px 0px 25px;
+  }
+}*/
 
 .filter--questions--group{
   .filter--questions--wrapper{
@@ -415,7 +427,7 @@ p.tags{
       &:after {
         color: $white;
         right: 0;
-        top: 0.5rem;
+        top: 3rem;
       }
     }
     &.establishment-size{
@@ -431,13 +443,13 @@ p.tags{
       &:after {
         color: $aquamarine;
         right: 0;
-        top: 0.5rem;
+        top: 3rem;
       }
     }
     &.country-items{
       select{
         width: 100%;
-        margin: 1rem 0;
+        margin: 3.1rem 0;
         padding: 1rem 2rem;
         background: $gray-light;
         color: $white;
@@ -446,7 +458,7 @@ p.tags{
       &:after {
         color: $white;
         right: 0;
-        top: 0.5rem;
+        top: 3rem;
       }    
     }
   }
@@ -465,6 +477,9 @@ p.tags{
     span{
       display: inline-block;
       padding: 0 0 0 2rem;
+    }
+    select#datafor{
+      margin: 3.1rem 0;
     }
     select{
       -webkit-appearance: none;
