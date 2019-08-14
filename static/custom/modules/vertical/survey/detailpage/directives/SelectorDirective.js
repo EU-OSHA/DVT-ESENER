@@ -49,10 +49,19 @@ define(function (require) {
 
 				scope.trim = function(text){
 					var trimText = '';
+					if(scope.question != null){
+						if(scope.question.next == null){
+							text = 'An occupational health doctor';
+						}
+					}
+					
 					if(text != null){
 						if(text.length > 10){
 							trimText = text.substring(0,10) + '...';
+							$log.warn(trimText);
 							return trimText;
+						}else{
+							return text;
 						}
 					}
 				}
@@ -189,6 +198,9 @@ define(function (require) {
 
 				scope.changeQuestion = function (pQuestionID)
 				{
+					if(pQuestionID == null){
+						pQuestionID = 'MM150_1';
+					}
 					//$log.warn(question);
 					var topic = '';
 
