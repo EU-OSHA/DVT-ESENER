@@ -200,6 +200,15 @@ define(function (require) {
 					if(pQuestionID == null){
 						pQuestionID = 'MM150_1';
 					}
+
+					if($state.current.name == 'detailpage-european-map' || $state.current.name == 'detailpage-european-bar-chart'){
+						if(pQuestionID == 'MM200_1' || pQuestionID == 'MM200_2' || pQuestionID == 'MM200_3' ||
+							pQuestionID == 'MM200_4' || pQuestionID == 'MM200_5' || pQuestionID == 'MM200_6' || pQuestionID == 'MM200_7' ){
+							scope.answer = 50;
+						}else{
+							scope.answer = 1;
+						}
+					}
 					//$log.warn(question);
 					var topic = '';
 
@@ -219,7 +228,8 @@ define(function (require) {
 
 							$state.go($state.current.name, {
 								pTopic : topic,
-								pQuestion: pQuestionID //Question name
+								pQuestion: pQuestionID, //Question name,
+								pAnswer: scope.answer
 							},
 							{
 								reload: true
@@ -231,6 +241,15 @@ define(function (require) {
 				scope.updateChart = function(pChangedFilter)
 				{
 					if(scope.chart == 'european-map'){
+						if($state.current.name == 'detailpage-european-map' || $state.current.name == 'detailpage-european-bar-chart'){
+							if(pQuestionID == 'MM200_1' || pQuestionID == 'MM200_2' || pQuestionID == 'MM200_3' ||
+								pQuestionID == 'MM200_4' || pQuestionID == 'MM200_5' || pQuestionID == 'MM200_6' || pQuestionID == 'MM200_7' ){
+								scope.answer = 50;
+							}else{
+								scope.answer = 1;
+							}
+						}
+
 						if(pChangedFilter == 'euOnly'){
 							scope.noneu = (scope.noneu == 0)?1:0;
 						}
@@ -238,7 +257,7 @@ define(function (require) {
 							pIndicator: scope.dataset, //Year
 							pChart: scope.chart, //Type of chart
 							pQuestion: scope.indicator, //Question name
-							pAnswer: scope.filters.answer, //Split answer
+							pAnswer: scope.answer, //Split answer
 							pActivityFilter: scope.filters.activitySector,
 							pCompanyFilter: scope.filters.establishmentSize,
 							pEuOnly: scope.noneu

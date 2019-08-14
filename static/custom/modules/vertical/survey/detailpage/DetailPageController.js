@@ -396,6 +396,13 @@ define(function (require) {
 		$scope.changeToQuestion = function(question, anchor){
 			$scope.pQuestion = question;
 			$scope.pTopic = anchor;
+			if($scope.pQuestion == 'MM200_1' || $scope.pQuestion == 'MM200_2' || $scope.pQuestion == 'MM200_3' ||
+				$scope.pQuestion == 'MM200_4' || $scope.pQuestion == 'MM200_5' || $scope.pQuestion == 'MM200_6' || $scope.pQuestion == 'MM200_7' ){
+				$scope.answer = 50;
+			}else{
+				$scope.answer = 1;
+			}
+
 			if(question != null){
 				$state.transitionTo($state.current.name, {
 					pIndicator: $scope.pIndicator, //Year

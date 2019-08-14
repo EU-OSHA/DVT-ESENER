@@ -80,7 +80,7 @@
       AND t.language = 'EN'
       AND CASE WHEN ${pCompanyFilter} = 0 THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
       AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
-      ORDER BY id ASC;
+      ORDER BY country_code ASC, FIELD(sa.id, 1, 53, 34, 3, 38, 39, 2, 36, 37), sa.id ASC;
     </Query>
   </DataAccess>
 
