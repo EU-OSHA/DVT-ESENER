@@ -185,7 +185,9 @@
                 <li data-ng-class="{'hide' : 'overview' == currentName }">
                     <a href="" ui-sref="overview({pLanguage: pLanguage, pIndicator: pIndicator})" title="OVERVIEW"><i class="fa fa-angle-left" aria-hidden="true"></i> <span class="sr-only">Previous option</span></a>
                 </li>
-                <li data-ng-class="{'hide' : 'datavisualisation' == currentName || 'detailpage' == currentName }">
+                <li data-ng-class="{'hide' : 'datavisualisation' == currentName || 'detailpage-european-map' == currentName ||
+                    'detailpage-european-bar-chart' == currentName || 'detailpage-national-bar-chart' == currentName || 
+                    'detailpage-national-comparisons' == currentName || 'detailpage-pie-chart' == currentName }">
                     <a href="" ui-sref="datavisualisation({pLanguage: pLanguage, pIndicator: pIndicator})" title="DATA VISUALISATION"><i class="fa fa-angle-right" aria-hidden="true"></i> <span class="sr-only">Next option</span></a>
                 </li>
             </ul>
@@ -193,12 +195,12 @@
                 <li data-ng-class="{'active' : 'overview' == currentName }" class="submenu--item">
                     <a href="" ui-sref="overview({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'overview' == currentName }">OVERVIEW</a>
                 </li>
-                <li data-ng-class="{'active' : 'datavisualisation' == currentName || 'detailpage' == currentName }" class="submenu--item">
+                <li data-ng-class="{'active' : 'datavisualisation' == currentName || 'detailpage-european-map' == currentName ||
+                    'detailpage-european-bar-chart' == currentName || 'detailpage-national-bar-chart' == currentName || 
+                    'detailpage-national-comparisons' == currentName || 'detailpage-pie-chart' == currentName}" class="submenu--item">
                     <a href="" ui-sref="datavisualisation({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'datavisualisation' == currentName || 
-                    'detailpage-european-map' == currentName ||
-                    'detailpage-european-bar-chart' == currentName ||
-                    'detailpage-national-bar-chart' == currentName || 
-                    'detailpage-national-comparisons' == currentName || 
+                    'detailpage-european-map' == currentName || 'detailpage-european-bar-chart' == currentName ||
+                    'detailpage-national-bar-chart' == currentName || 'detailpage-national-comparisons' == currentName || 
                     'detailpage-pie-chart' == currentName}" >DATA VISUALISATION</a>
                 </li>
                 <!--<li data-ng-class="{'active' : 'comparisons' == currentName }" class="submenu--item">
