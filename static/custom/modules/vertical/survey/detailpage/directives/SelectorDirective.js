@@ -58,7 +58,6 @@ define(function (require) {
 					if(text != null){
 						if(text.length > 10){
 							trimText = text.substring(0,10) + '...';
-							$log.warn(trimText);
 							return trimText;
 						}else{
 							return text;

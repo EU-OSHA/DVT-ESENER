@@ -204,25 +204,25 @@
                 <!-- Chart selection -->
                 <ul class="chart--selection--block">
                     <li>
-                        <a title="{{i18n.L100623}}" class="" data-ng-class="{'selected-chart':(chart == 'european-map')}" ui-sref="detailpage-european-map({pChart: 'european-map', pQuestion: indicator})"><span class="sr-only"  data-ng-bind="i18n.L100623"></span></a></li>
+                        <a title="{{i18n.L100623}}" class="" data-ng-class="{'selected-chart':(chart == 'european-map')}" ui-sref="detailpage-european-map({pChart: 'european-map', pQuestion: indicator, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pLanguage: pLanguage, pLocale: pLocale})"><span class="sr-only"  data-ng-bind="i18n.L100623"></span></a></li>
                     <li>
-                        <a title="{{i18n.L100622}}" class="" data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" ui-sref="detailpage-european-bar-chart({pChart: 'european-bar-chart', pQuestion: indicator})"><span class="sr-only"  data-ng-bind="i18n.L100622"></span></a>
+                        <a title="{{i18n.L100622}}" class="" data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" ui-sref="detailpage-european-bar-chart({pChart: 'european-bar-chart', pQuestion: indicator, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pLocale: pLocale})"><span class="sr-only"  data-ng-bind="i18n.L100622"></span></a>
                     </li>
                     <li>
-                        <a title="{{i18n.L100624}}" class="" data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" ui-sref="detailpage-national-bar-chart({pChart: 'national-bar-chart', pSectorSize: 'company-size', pCountry: 'EU27', pQuestion: indicator})" ><span class="sr-only"  data-ng-bind="i18n.L100624"></span></a>
+                        <a title="{{i18n.L100624}}" class="" data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" ui-sref="detailpage-national-bar-chart({pChart: 'national-bar-chart', pSectorSize: 'company-size', pCountry: filters.country, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale})" ><span class="sr-only"  data-ng-bind="i18n.L100624"></span></a>
                     </li>
                     <!--<li>
                         <a href ><span class="sr-only"  data-ng-bind="i18n.L100621"></span></a>
                     </li>-->
                     <li>
-                        <a title="{{i18n.L100621}}" data-ng-class="{'selected-chart':(chart == 'national-comparisons')}" ui-sref="detailpage-national-comparisons({pChart: 'national-comparisons', pCountry1: 'AT', pCountry2: 'EU27', pQuestion: indicator})" ><span class="sr-only"  data-ng-bind="i18n.L100621"></span>
+                        <a title="{{i18n.L100621}}" data-ng-class="{'selected-chart':(chart == 'national-comparisons')}" ui-sref="detailpage-national-comparisons({pChart: 'national-comparisons', pCountry1: filters.country, pCountry2: filters.country2, pQuestion: indicator, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pLanguage: pLanguage, pLocale: pLocale})"><span class="sr-only"  data-ng-bind="i18n.L100621"></span>
                         </a>
                     </li>
                     <!--<li>
                         <a href ><span class="sr-only"  data-ng-bind="i18n.L101033"></span></a>
                     </li>-->
                     <li>
-                        <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pChart: 'pie-chart', pCountry: filters.country, pQuestion: indicator})" ><span class="sr-only"  data-ng-bind="i18n.L101033"></span>
+                        <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pChart: 'pie-chart', pCountry: filters.country, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale})"><span class="sr-only"  data-ng-bind="i18n.L101033"></span>
                         </a>
                     </li>
                     <li>

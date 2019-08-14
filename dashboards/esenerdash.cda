@@ -244,7 +244,7 @@
       INNER JOIN value v ON p.id=v.profile_id
       INNER JOIN indicator i ON v.indicator_id=i.id
       WHERE i.name=${pQuestion}
-      ORDER BY FIELD(country_code, 'EU28') DESC, country_code ASC;
+      ORDER BY FIELD(country_code, 'EU27') DESC, country_code ASC;
     </Query>
   </DataAccess>
 
@@ -292,7 +292,7 @@
           FROM strategies_page sp
           INNER JOIN nuts n
           ON n.id = sp.nuts_id
-          ORDER BY country_code ASC
+          ORDER BY FIELD('EU27', country_code), country_code ASC
         </Query>
   </DataAccess>
 
