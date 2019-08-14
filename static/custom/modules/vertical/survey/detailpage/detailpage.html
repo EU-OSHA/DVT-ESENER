@@ -12,7 +12,7 @@
         <div class="questions--tree">
           <!-- First level -->
           <ul>
-            <li data-ng-repeat="question in firstLevel()" data-ng-class="{'open': pTopic == question.anchor}">
+            <li class="first-level" data-ng-repeat="question in firstLevel()" data-ng-class="{'open': pTopic == question.anchor}">
               <span><a href data-ng-bind="i18n['L'+question.name_1]" data-ng-click="openAccordion($index,$event)" ></a></span>
               <!-- Second Level -->
               <ul>
@@ -145,14 +145,14 @@
                         <dvt-bar-chart
                           data-ng-cloak
                           query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
-                          width="330" height="660" axis-percent="1"
+                          width="330" height="760" axis-percent="1"
                           orientation="horizontal" axis-fixed-min="0"
                           axis-fixed-max="100" step="20"
                           listen-to="['pFilters']"
                           params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', 'pFilters.sectorSize'],['pCountry', 'pFilters.country']]"
                           color-role="series" colors="[stories[2].color1, stories[2].color2, stories[2].color3, stories[2].color4,
                           stories[2].color5]"
-                          id="3" axis-label-font="14px 'OpenSans-bold'"
+                          id="3" axis-label-font="12px 'OpenSans-bold'"
                           plots="stories[2].plots" values-overflow="show"
                           values-visible="true" values-mask="{value}"                        
                           label-text-align="stories[2].alignment"

@@ -33,6 +33,8 @@ define(function (require) {
 				var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(scope.pLocale);
 				scope.i18n = i18n;
 
+				var i18nEN = configService.getLiterals();
+
 				scope.indicator = attributes.indicator;
 				scope.dataset = $stateParams.pIndicator;
 				scope.chart = $stateParams.pChart;
@@ -44,19 +46,6 @@ define(function (require) {
 				scope.country2 = $stateParams.pCountry2;
 				scope.sectorSize = ($stateParams.pSectorSize == null && scope.chart == 'national-bar-chart') ? 'company-size':$stateParams.pSectorSize;
 				scope.noneu = $stateParams.pEuOnly;
-
-				scope.filters = {};
-
-				scope.filters.activitySector =  scope.activitySector;/*'8'*/
-				scope.filters.establishmentSize = 0;
-				scope.filters.country = scope.country;
-				scope.filters.country2 = scope.country2;
-				scope.filters.answer = scope.answer;
-				scope.filters.euOnly = scope.noneu;
-				scope.filters.sectorSize = scope.sectorSize;
-				scope.filters.locale = scope.pLocale;
-
-				$log.warn(scope.filters);
 
 				scope.trim = function(text){
 					var trimText = '';
@@ -108,7 +97,9 @@ define(function (require) {
 							previous: scope.i18n["L"+question.previousName],
 							previousID: question.previousID,
 							next: scope.i18n["L"+question.nextName],
-							nextID: question.nextID
+							nextID: question.nextID,
+							father: question.father,
+							grandfather: question.grandfather
 						}
 					}
 				});
@@ -127,7 +118,6 @@ define(function (require) {
 					// Load the establishment sizes for the select combo
 					dataService.getEstablishmentSizesSelect(scope.indicator).then(function(res) {
 						scope.establishmentSizes = [];
-						scope.establishmentSizes.push({id:0, literal: '100574'});
 						res.data.resultset.map(function(elem) {
 							scope.establishmentSizes.push({id:elem[0], literal:elem[1]});
 						});
@@ -170,10 +160,21 @@ define(function (require) {
 					});
 				}
 
+				scope.filters = {
+					activitySector: scope.activitySector,
+					establishmentSize: 0,
+					country: scope.country,
+					country2: scope.country2,
+					answer: scope.answer,
+					euOnly: scope.noneu,
+					sectorSize: scope.sectorSize,
+					locale: scope.pLocale
+				};
+
 				scope.changeLocale = function(){
 					//ngModel.$setViewValue(scope.pLocale, 'change');
 					//dashboard.dashboard.fireChange('pLocale', scope.pLocale);
-					$log.warn(dashboard.dashboard);
+					//$log.warn(dashboard.dashboard);
 					//dashboard.dashboard.fireChange('pFilters', scope.filters);
 					i18n = (scope.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(scope.pLocale);
 					$state.transitionTo($state.current.name, {
@@ -188,11 +189,31 @@ define(function (require) {
 
 				scope.changeQuestion = function (pQuestionID)
 				{
-					$state.go($state.current.name, {
-						pQuestion: pQuestionID //Question name
-					},
-					{
-						reload: true
+					//$log.warn(question);
+					var topic = '';
+
+					dataService.getQuestionSelectorData(pQuestionID).then(function(res) {
+						var data = res.data.resultset;
+						if (data.length == 1)
+						{
+							var question = {
+								father: data[0][8],
+								grandfather: data[0][9]
+							}
+							if(question.grandfather != null){
+								topic = i18nEN['L'+question.grandfather].toLowerCase().replace(/[\,\ ]/g, '-');
+							}else{
+								topic = i18nEN['L'+question.father].toLowerCase().replace(/[\,\ ]/g, '-');
+							}
+
+							$state.go($state.current.name, {
+								pTopic : topic,
+								pQuestion: pQuestionID //Question name
+							},
+							{
+								reload: true
+							})
+						}
 					})
 				}
 

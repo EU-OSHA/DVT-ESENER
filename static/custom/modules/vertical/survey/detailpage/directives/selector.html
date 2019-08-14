@@ -121,7 +121,7 @@
                 <div class="filter-text activity-sector">
                     <span class="activity-sector" data-ng-bind="i18n.L100573"></span> 
                     <select id="sector" class="" data-ng-change="updateChart('activitySector')" data-ng-model="filters.activitySector" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
-                        <option data-ng-bind="i18n.L100573" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>
+                        <!--<option data-ng-bind="i18n.L100573" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>-->
                         <option data-ng-repeat='sector in activitySectors' data-ng-value="sector.id" data-ng-bind="i18n['L'+sector.literal]" data-ng-selected="sector.id == filters.activitySector || ($index == 0 && filters.activitySector == 0)"></option>
                     </select>
                 </div>
@@ -129,7 +129,7 @@
                 <div class="filter-text establishment-size" data-ng-if="chart != 'pie-chart'">
                     <span class="establishment-size" data-ng-bind="i18n.L100574"></span> 
                     <select id="establishment" class="" data-ng-change="updateChart('establishmentSize')" data-ng-model="filters.establishmentSize">
-                        <option data-ng-repeat='size in establishmentSizes' data-ng-value="size.id" data-ng-bind="i18n['L'+size.literal]" data-ng-selected="size.id == filters.establishmentSize"></option>
+                        <option data-ng-repeat='size in establishmentSizes' data-ng-value="size.id" data-ng-bind="i18n['L'+size.literal]" data-ng-selected="size.id == filters.establishmentSize || ($index == 0 && filters.establishmentSize == 0)"></option>
                     </select>
                 </div>
                 <div class="filter-text establishment-size" data-ng-if="chart == 'pie-chart'">
@@ -204,25 +204,25 @@
                 <!-- Chart selection -->
                 <ul class="chart--selection--block">
                     <li>
-                        <a title="{{i18n.L100623}}" class="" data-ng-class="{'selected-chart':(chart == 'european-map')}" ui-sref="detailpage-european-map({pChart: 'european-map'})"><span class="sr-only"  data-ng-bind="i18n.L100623"></span></a></li>
+                        <a title="{{i18n.L100623}}" class="" data-ng-class="{'selected-chart':(chart == 'european-map')}" ui-sref="detailpage-european-map({pChart: 'european-map', pQuestion: indicator})"><span class="sr-only"  data-ng-bind="i18n.L100623"></span></a></li>
                     <li>
-                        <a title="{{i18n.L100622}}" class="" data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" ui-sref="detailpage-european-bar-chart({pChart: 'european-bar-chart'})"><span class="sr-only"  data-ng-bind="i18n.L100622"></span></a>
+                        <a title="{{i18n.L100622}}" class="" data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" ui-sref="detailpage-european-bar-chart({pChart: 'european-bar-chart', pQuestion: indicator})"><span class="sr-only"  data-ng-bind="i18n.L100622"></span></a>
                     </li>
                     <li>
-                        <a title="{{i18n.L100624}}" class="" data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" ui-sref="detailpage-national-bar-chart({pChart: 'national-bar-chart', pSectorSize: 'company-size', pCountry: 'EU27'})" ><span class="sr-only"  data-ng-bind="i18n.L100624"></span></a>
+                        <a title="{{i18n.L100624}}" class="" data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" ui-sref="detailpage-national-bar-chart({pChart: 'national-bar-chart', pSectorSize: 'company-size', pCountry: 'EU27', pQuestion: indicator})" ><span class="sr-only"  data-ng-bind="i18n.L100624"></span></a>
                     </li>
                     <!--<li>
                         <a href ><span class="sr-only"  data-ng-bind="i18n.L100621"></span></a>
                     </li>-->
                     <li>
-                        <a title="{{i18n.L100621}}" data-ng-class="{'selected-chart':(chart == 'national-comparisons')}" ui-sref="detailpage-national-comparisons({pChart: 'national-comparisons', pCountry1: 'AT', pCountry2: 'EU27'})" ><span class="sr-only"  data-ng-bind="i18n.L100621"></span>
+                        <a title="{{i18n.L100621}}" data-ng-class="{'selected-chart':(chart == 'national-comparisons')}" ui-sref="detailpage-national-comparisons({pChart: 'national-comparisons', pCountry1: 'AT', pCountry2: 'EU27', pQuestion: indicator})" ><span class="sr-only"  data-ng-bind="i18n.L100621"></span>
                         </a>
                     </li>
                     <!--<li>
                         <a href ><span class="sr-only"  data-ng-bind="i18n.L101033"></span></a>
                     </li>-->
                     <li>
-                        <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pChart: 'pie-chart', pCountry: filters.country})" ><span class="sr-only"  data-ng-bind="i18n.L101033"></span>
+                        <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pChart: 'pie-chart', pCountry: filters.country, pQuestion: indicator})" ><span class="sr-only"  data-ng-bind="i18n.L101033"></span>
                         </a>
                     </li>
                     <li>
