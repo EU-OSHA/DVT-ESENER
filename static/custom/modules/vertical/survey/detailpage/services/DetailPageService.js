@@ -102,6 +102,11 @@ define (function (require) {
                                         if(!scene.firstAtoms.value.label.match('%')){
                                             scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                                         }
+
+                                        if(baseScale('Austria (AT)') < 20){
+                                            return baseScale('Belgium (BE)') + 10;
+                                        }
+
                                         return baseScale('Austria (AT)') + 10 /*this.sign.panel.barWidth/2*/;
                                     })
                                     .height(null) // clear any inherited value
@@ -116,6 +121,10 @@ define (function (require) {
                                     //Negative value in top line continues out of the chart
                                     .top(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
+
+                                        if(baseScale('Switzerland (CH)') < 20){
+                                            return baseScale('Norway (NO)') + 10;
+                                        }
                                         
                                         return baseScale('Switzerland (CH)') + 10;
                                     })
@@ -143,6 +152,11 @@ define (function (require) {
                                         }
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();
+
+                                        if(baseScale('Austria (AT)') < 20){
+                                            return baseScale('Belgium (BE)') - this.sign.panel.barWidth - 3;
+                                        }
+
                                         return baseScale('Austria (AT)') - this.sign.panel.barWidth - 3; 
                                     });
 
@@ -162,10 +176,11 @@ define (function (require) {
                                         var panelWidth = this.root.width();
                                         
                                         if(baseScale('Switzerland (CH)') < 20){
-                                            return panelWidth;
-                                        }else{
-                                            return baseScale('Switzerland (CH)') - this.sign.panel.barWidth - 2; 
+                                            return baseScale('Norway (NO)') - this.sign.panel.barWidth - 2;
                                         }
+                                        
+                                        return baseScale('Switzerland (CH)') - this.sign.panel.barWidth - 2; 
+                                        
                                     });
                             }   
                         },
