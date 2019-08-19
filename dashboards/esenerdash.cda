@@ -37,10 +37,13 @@
         ec.father_id,
         ec.name_1_literal_id AS name_1,
         IF(ec.category IS NOT NULL, i.id, NULL) as indicator_id,
-        ec.category_order
-      FROM esener_category ec, indicator i
+        ec.category_order,
+        IF(ec.category IS NOT NULL,  eao.answer_id, NULL) as answer_id
+      FROM esener_category ec, indicator i, esener_answer_order eao
       WHERE ec.year = ${pYear}
       AND (ec.category IS NULL OR ec.category = i.name)
+      AND i.id = eao.indicator_id
+      AND eao.order_position = 1
       ORDER BY ec.category_order ASC;
     </Query>
   </DataAccess>
@@ -204,12 +207,14 @@
       <Parameter default="MM161" name="pQuestion" type="String" />
     </Parameters>
     <Query>
-      SELECT ec.LEVEL AS LEVEL, ec3.category AS previousID, ec3.name_3_literal_id AS previousName, ec.name_2_literal_id AS NAME2, ec.name_3_literal_id AS NAME3, ec.bottom_text_literal_id AS bottomText, ec4.category AS nextID, ec4.name_3_literal_id AS nextName, ec1.name_2_literal_id AS father, ec2.name_2_literal_id AS grandfather  
+      SELECT ec.LEVEL AS LEVEL, ec3.category AS previousID, ec3.name_3_literal_id AS previousName, ec.name_2_literal_id AS NAME2, ec.name_3_literal_id AS NAME3, ec.bottom_text_literal_id AS bottomText, ec4.category AS nextID, ec4.name_3_literal_id AS nextName, ec1.name_2_literal_id AS father, ec2.name_2_literal_id AS grandfather, IF(ec3.category IS NOT NULL,  eao.answer_id, NULL) as answer_id_previous
       FROM esener_category ec
       INNER JOIN esener_category ec1 ON ec.father_id = ec1.id
       LEFT JOIN esener_category ec2 ON ec1.father_id=ec2.id
       LEFT JOIN esener_category ec3 ON ec.previous_id=ec3.id
       LEFT JOIN esener_category ec4 ON ec.next_id=ec4.id
+      INNER JOIN indicator i ON i.name = ec.category
+      INNER JOIN esener_answer_order eao ON i.id = eao.indicator_id AND eao.order_position = 1
       WHERE ec.category=${pQuestion};
     </Query>
   </DataAccess>

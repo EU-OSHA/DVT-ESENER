@@ -47,15 +47,31 @@ define(function (require) {
 				scope.sectorSize = ($stateParams.pSectorSize == null && scope.chart == 'national-bar-chart') ? 'company-size':$stateParams.pSectorSize;
 				scope.noneu = $stateParams.pEuOnly;
 
-				scope.trim = function(text){
+				scope.filters = {
+					activitySector: scope.activitySector,
+					establishmentSize: 0,
+					country: scope.country,
+					country2: scope.country2,
+					answer: scope.answer,
+					euOnly: scope.noneu,
+					sectorSize: scope.sectorSize,
+					locale: scope.pLocale
+				};
+
+				scope.trim = function(text, type){
 					var trimText = '';
 					if(scope.question != null){
-						if(scope.question.next == null){
+						if(scope.question.next == null && type == 'n'){
 							text = 'An occupational health doctor';
+						}
+
+						if(scope.question.previous == null && type == 'p'){
+							text = 'Is there a health and safety committee in your establishment?';
 						}
 					}
 					
 					if(text != null){
+						
 						if(text.length > 10){
 							trimText = text.substring(0,10) + '...';
 							return trimText;
@@ -63,6 +79,19 @@ define(function (require) {
 							return text;
 						}
 					}
+				}
+
+				scope.isNull = function(text, type){
+					if(scope.question != null){
+						if(scope.question.next == null && type == 'n'){
+							text = 'An occupational health doctor';
+						}
+
+						if(scope.question.previous == null && type == 'p'){
+							text = 'Is there a health and safety committee in your establishment?';
+						}
+					}
+					return text;
 				}
 
 				// Load data to show texts for the selected question
@@ -82,7 +111,9 @@ define(function (require) {
 							nextID: data[0][6],
 							nextName: data[0][7],
 							father: data[0][8],
-							grandfather: data[0][9]
+							grandfather: data[0][9],
+							answer_id_previous: data[0][10],
+							answer_id_next: data[0][11]
 						}
 					}
 
@@ -168,17 +199,6 @@ define(function (require) {
 					});
 				}
 
-				scope.filters = {
-					activitySector: scope.activitySector,
-					establishmentSize: 0,
-					country: scope.country,
-					country2: scope.country2,
-					answer: scope.answer,
-					euOnly: scope.noneu,
-					sectorSize: scope.sectorSize,
-					locale: scope.pLocale
-				};
-
 				scope.changeLocale = function(){
 					//ngModel.$setViewValue(scope.pLocale, 'change');
 					//dashboard.dashboard.fireChange('pLocale', scope.pLocale);
@@ -195,12 +215,17 @@ define(function (require) {
 					});
 				}
 
-				scope.changeQuestion = function (pQuestionID)
+				scope.changeQuestion = function (pQuestionID, type)
 				{
 					if(pQuestionID == null){
-						pQuestionID = 'MM150_1';
+						if(type == 'n'){
+							pQuestionID = 'MM150_1';
+						}else if(type == 'p'){
+							pQuestionID = 'MM358';
+						}
 					}
 
+					/*
 					if($state.current.name == 'detailpage-european-map' || $state.current.name == 'detailpage-european-bar-chart'){
 						if(pQuestionID == 'MM200_1' || pQuestionID == 'MM200_2' || pQuestionID == 'MM200_3' ||
 							pQuestionID == 'MM200_4' || pQuestionID == 'MM200_5' || pQuestionID == 'MM200_6' || pQuestionID == 'MM200_7' ){
@@ -208,7 +233,7 @@ define(function (require) {
 						}else{
 							scope.answer = 1;
 						}
-					}
+					}*/
 					//$log.warn(question);
 					var topic = '';
 
@@ -218,13 +243,16 @@ define(function (require) {
 						{
 							var question = {
 								father: data[0][8],
-								grandfather: data[0][9]
+								grandfather: data[0][9],
+								answer_id: data[0][10]
 							}
 							if(question.grandfather != null){
 								topic = i18nEN['L'+question.grandfather].toLowerCase().replace(/[\,\ ]/g, '-');
 							}else{
 								topic = i18nEN['L'+question.father].toLowerCase().replace(/[\,\ ]/g, '-');
 							}
+
+							scope.answer = question.answer_id;
 
 							$state.go($state.current.name, {
 								pTopic : topic,
@@ -241,14 +269,14 @@ define(function (require) {
 				scope.updateChart = function(pChangedFilter)
 				{
 					if(scope.chart == 'european-map'){
-						if($state.current.name == 'detailpage-european-map' || $state.current.name == 'detailpage-european-bar-chart'){
+						/*if($state.current.name == 'detailpage-european-map' || $state.current.name == 'detailpage-european-bar-chart'){
 							if(pQuestionID == 'MM200_1' || pQuestionID == 'MM200_2' || pQuestionID == 'MM200_3' ||
 								pQuestionID == 'MM200_4' || pQuestionID == 'MM200_5' || pQuestionID == 'MM200_6' || pQuestionID == 'MM200_7' ){
 								scope.answer = 50;
 							}else{
 								scope.answer = 1;
 							}
-						}
+						}*/
 
 						if(pChangedFilter == 'euOnly'){
 							scope.noneu = (scope.noneu == 0)?1:0;

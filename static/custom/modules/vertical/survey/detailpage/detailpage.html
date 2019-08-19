@@ -18,7 +18,7 @@
               <ul>
                 <li data-ng-repeat="child in children(question.id)" data-ng-class="{'open': child.id == selectedFatherID, 'has-level3': child.category == null }">
                   <span data-ng-if="child.category != null">
-                    <a data-ng-bind="i18n['L'+child.name_1]" href data-ng-click="changeToQuestion(child.category, question.anchor)"  data-ng-class="{'selected': child.category == pQuestion}"></a>
+                    <a data-ng-bind="i18n['L'+child.name_1]" href data-ng-click="changeToQuestion(child, question.anchor)"  data-ng-class="{'selected': child.category == pQuestion}"></a>
                   </span>
                   <span data-ng-if="child.category == null">
                     <a data-ng-bind="i18n['L'+child.name_1]" data-ng-click="openAccordion($index,$event,2)" href></a>
@@ -26,7 +26,7 @@
                   <ul data-ng-if="child.category == null">
                     <li data-ng-repeat="grandchild in children(child.id)" data-ng-click="openAccordion($index,$event)">
                       <span>
-                        <a data-ng-bind="i18n['L'+grandchild.name_1]" href data-ng-click="changeToQuestion(grandchild.category, question.anchor)" data-ng-class="{'selected': grandchild.category == pQuestion}"></a>
+                        <a data-ng-bind="i18n['L'+grandchild.name_1]" href data-ng-click="changeToQuestion(grandchild, question.anchor)" data-ng-class="{'selected': grandchild.category == pQuestion}"></a>
                       </span>
                     </li>
                   </ul>    

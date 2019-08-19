@@ -267,6 +267,7 @@ define(function (require) {
 					father_id: elem[3],
 					name_1: elem[4],
 					indicator_id: elem[5],
+					answer_id: elem[7],
 					anchor: (elem[2] == 1)?i18nEN['L'+elem[4]].toLowerCase().replace(/[\,\ ]/g, '-'):''
 				});
 			});
@@ -394,31 +395,64 @@ define(function (require) {
 		}
 
 		$scope.changeToQuestion = function(question, anchor){
-			$scope.pQuestion = question;
-			$scope.pTopic = anchor;
-			if($scope.pQuestion == 'MM200_1' || $scope.pQuestion == 'MM200_2' || $scope.pQuestion == 'MM200_3' ||
+			var topic = '';
+			$scope.pQuestion = question.category;
+
+			if(anchor != null){
+				$scope.pTopic = anchor;
+				if(question.category != null){
+					$state.transitionTo($state.current.name, {
+						pIndicator: $scope.pIndicator, //Year
+						pTopic: $scope.pTopic, //Category
+						pChart: $scope.pChart, //Type of chart
+						pQuestion: $scope.pQuestion, //Question name
+						pAnswer: question.answer_id, //Split answer
+						pActivityFilter: $scope.pActivityFilter,
+						pCompanyFilter: $scope.pCompanyFilter,
+						pCountry: $scope.dashboard.parameters.pFilters.country,
+						pLocale: $scope.pLocale
+					},
+					{
+						reload: true
+					});
+				}
+			}else{
+				dataService.getQuestionSelectorData(question).then(function(res) {
+					var data = res.data.resultset;
+					if (data.length == 1)
+					{
+						var questionObj = {
+							father: data[0][8],
+							grandfather: data[0][9],
+							answer_id: data[0][10]
+						}
+						if(questionObj.grandfather != null){
+							topic = i18nEN['L'+questionObj.grandfather].toLowerCase().replace(/[\,\ ]/g, '-');
+						}else{
+							topic = i18nEN['L'+questionObj.father].toLowerCase().replace(/[\,\ ]/g, '-');
+						}
+
+						$scope.answer = questionObj.answer_id;
+
+						$state.go($state.current.name, {
+							pTopic : topic,
+							pQuestion: question, //Question name,
+							pAnswer: $scope.answer
+						},
+						{
+							reload: true
+						})
+					}
+				})
+			}
+			
+
+			/*if($scope.pQuestion == 'MM200_1' || $scope.pQuestion == 'MM200_2' || $scope.pQuestion == 'MM200_3' ||
 				$scope.pQuestion == 'MM200_4' || $scope.pQuestion == 'MM200_5' || $scope.pQuestion == 'MM200_6' || $scope.pQuestion == 'MM200_7' ){
 				$scope.answer = 50;
 			}else{
 				$scope.answer = 1;
-			}
-
-			if(question != null){
-				$state.transitionTo($state.current.name, {
-					pIndicator: $scope.pIndicator, //Year
-					pTopic: $scope.pTopic, //Category
-					pChart: $scope.pChart, //Type of chart
-					pQuestion: $scope.pQuestion, //Question name
-					pAnswer: $scope.answer, //Split answer
-					pActivityFilter: $scope.pActivityFilter,
-					pCompanyFilter: $scope.pCompanyFilter,
-					pCountry: $scope.dashboard.parameters.pFilters.country,
-					pLocale: $scope.pLocale
-				},
-				{
-					reload: true
-				});
-			}
+			}*/
 		}
 
 		$scope.openAccordion = function(i,e) {
