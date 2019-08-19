@@ -49,7 +49,7 @@ define(function (require) {
 
 				scope.filters = {
 					activitySector: scope.activitySector,
-					establishmentSize: 0,
+					establishmentSize: scope.establishmentSize,
 					country: scope.country,
 					country2: scope.country2,
 					answer: scope.answer,
@@ -112,8 +112,7 @@ define(function (require) {
 							nextName: data[0][7],
 							father: data[0][8],
 							grandfather: data[0][9],
-							answer_id_previous: data[0][10],
-							answer_id_next: data[0][11]
+							answer_id: data[0][10]
 						}
 					}
 
@@ -138,7 +137,8 @@ define(function (require) {
 							next: scope.i18n["L"+question.nextName],
 							nextID: question.nextID,
 							father: question.father,
-							grandfather: question.grandfather
+							grandfather: question.grandfather,
+							answer: question.answer_id
 						}
 					}
 				});

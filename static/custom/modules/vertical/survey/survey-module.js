@@ -220,8 +220,8 @@ define(function (require) {
                     squash: '8'
                 },
                 pCompanyFilter: {
-                    value: '0',
-                    squash: '0'
+                    value: '6',
+                    squash: '6'
                 },
                 pAnswer: {
                     value: '1',
@@ -276,8 +276,8 @@ define(function (require) {
                     squash: '8'
                 },
                 pCompanyFilter: {
-                    value: '0',
-                    squash: '0'
+                    value: '6',
+                    squash: '6'
                 },
                 pAnswer: {
                     value: '1'
@@ -383,8 +383,8 @@ define(function (require) {
                     squash: '8'
                 },
                 pCompanyFilter: {
-                    value: '0',
-                    squash: '0'
+                    value: '6',
+                    squash: '6'
                 },
                 pCountry: {
                     value: 'AT',

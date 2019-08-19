@@ -120,16 +120,16 @@
                 <!-- Activity sector -->
                 <div class="filter-text activity-sector" data-ng-if="chart != 'pie-chart'">
                     <span class="activity-sector" data-ng-bind="i18n.L100573"></span> 
-                    <select id="sector" class="" data-ng-change="updateChart('activitySector')" data-ng-model="filters.activitySector" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
+                    <select id="sector" class="" ng-change="updateChart('activitySector')" ng-model="filters.activitySector" ng-selected="filters.activitySector" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
                         <!--<option data-ng-bind="i18n.L100573" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>-->
-                        <option data-ng-repeat='sector in activitySectors' data-ng-value="sector.id" data-ng-bind="i18n['L'+sector.literal]" data-ng-selected="sector.id == filters.activitySector || ($index == 0 && filters.activitySector == 0)"></option>
+                        <option data-ng-repeat='sector in activitySectors' value="{{sector.id}}" data-ng-bind="i18n['L'+sector.literal]"></option>
                     </select>
                 </div>
                 <!-- Establishment size -->
                 <div class="filter-text establishment-size" data-ng-if="chart != 'pie-chart'">
                     <span class="establishment-size" data-ng-bind="i18n.L100574"></span> 
-                    <select id="establishment" class="" data-ng-change="updateChart('establishmentSize')" data-ng-model="filters.establishmentSize">
-                        <option data-ng-repeat='size in establishmentSizes' data-ng-value="size.id" data-ng-bind="i18n['L'+size.literal]" data-ng-selected="size.id == filters.establishmentSize || ($index == 0 && filters.establishmentSize == 0)"></option>
+                    <select id="establishment" class="" ng-change="updateChart('establishmentSize')" ng-model="filters.establishmentSize" ng-selected="filters.establishmentSize">
+                        <option data-ng-repeat='size in establishmentSizes' value="{{size.id}}" data-ng-bind="i18n['L'+size.literal]"></option>
                     </select>
                 </div>
                 <!-- Activity sector for pie chart -->
@@ -154,9 +154,9 @@
                 </div>
                 <!-- Country enabled -->
                 <div class="filter-text-button" data-ng-if="chart == 'national-comparisons' || chart == 'pie-chart'">
-                    <select id="datafor" data-ng-change="updateChart('country')" data-ng-model="filters.country">
-                        <option data-ng-bind="i18n.L100589"></option>
-                        <option data-ng-repeat='country in countries' data-ng-value="country.id" data-ng-bind="country.literal" data-ng-selected="country.id == filters.country"></option>
+                    <select id="datafor" ng-change="updateChart('country')" ng-model="filters.country" ng-selected="filters.country">
+                        <option data-ng-bind="i18n.L100589" value="0"></option>
+                        <option data-ng-repeat='country in countries' value="{{country.id}}" data-ng-bind="country.literal"></option>
                     </select>
                 </div>
             </form>
@@ -165,9 +165,9 @@
         <div data-ng-if="chart=='national-comparisons'">
             <form class="block--filter--wrapper">
                 <div class="filter-text-button">
-                    <select id="comparewith" data-ng-change="updateChart('country2')" data-ng-model="filters.country2">
-                        <option data-ng-bind="i18n.L100590"></option>
-                        <option data-ng-repeat='country in countriesCompareWith' data-ng-value="country.id" data-ng-bind="country.literal" data-ng-selected="country.id == filters.country2"></option>
+                    <select id="comparewith" ng-change="updateChart('country2')" ng-model="filters.country2" ng-selected="filters.country2">
+                        <option data-ng-bind="i18n.L100590" value="0"></option>
+                        <option data-ng-repeat='country in countriesCompareWith' value="{{country.id}}" data-ng-bind="country.literal"></option>
                     </select>
                 </div>
             </form>
@@ -191,9 +191,9 @@
                 </div>
                 <!-- Country -->
                 <div class="filter-text-button">
-                    <select data-ng-change="updateChart('country')" data-ng-model="filters.country">
+                    <select data-ng-change="updateChart('country')" ng-model="filters.country" ng-selected="filters.country">
                         <option data-ng-bind="i18n.L100589"></option>
-                        <option data-ng-repeat='country in countries' data-ng-value="country.id" data-ng-bind="country.literal" data-ng-selected="country.id == filters.country"></option>
+                        <option data-ng-repeat='country in countries' value="{{country.id}}" data-ng-bind="country.literal"></option>
                     </select>
                 </div>
             </form>
