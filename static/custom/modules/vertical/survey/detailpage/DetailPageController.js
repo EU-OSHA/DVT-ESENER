@@ -457,17 +457,21 @@ define(function (require) {
 
 		$scope.openAccordion = function(i,e) {
 			//$log.warn('Abrir accordion');
+			
 		 	var parentNode = e.target.parentElement.parentElement;
 
-		 	if(angular.element(parentNode).hasClass("first-level")){
-		 		angular.element('.questions--tree ul li.first-level').removeClass('open');
+		 	if(angular.element(parentNode).hasClass("open")){
+		 		angular.element(parentNode).removeClass('open');
+		 	} else {
+		 		if(angular.element(parentNode).hasClass('has-level3') == false  ){
+		 			$('.questions--tree li').removeClass('open');
+		 		}	else {
+		 			$('.questions--tree li .has-level3').removeClass('open');
+		 		}	 		
+		 		angular.element(parentNode).addClass('open');
 		 	}
 
-		 	if(angular.element(parentNode).hasClass("has-level3")){
-		 		angular.element('.questions--tree ul li.has-level3').removeClass('open');
-		 	}
-
-		  	angular.element(parentNode).toggleClass('open');
+		  //angular.element(parentNode).toggleClass('open');
 		}
 
 		angular.element('body').mouseup(function(e){
