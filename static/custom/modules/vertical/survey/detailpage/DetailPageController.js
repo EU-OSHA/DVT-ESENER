@@ -41,13 +41,13 @@ define(function (require) {
 		$scope.pQuestion = $stateParams.pQuestion; //Question (name)        
 		$scope.pCompanyFilter = $stateParams.pCompanyFilter; //Company size
 		$scope.pActivityFilter = $stateParams.pActivityFilter; //Activity sector
-		$scope.answer = $stateParams.pAnswer; //Answer
+		$scope.answer = ($scope.pChart == 'european-map')?$stateParams.pAnswer:$rootScope.answer; //Answer
 		$scope.pSectorSize = $stateParams.pSectorSize; //Activity sector or company size
 		$scope.pCountry = $stateParams.pCountry != null ? $stateParams.pCountry : $stateParams.pCountry1;
 		$scope.pCountry2 = $stateParams.pCountry2;
 		$scope.nonEU = $stateParams.pEuOnly;
 
-		$log.warn($stateParams);
+		//$log.warn($stateParams);
 
 		// Main Category / Subcategory: Question or Main Category / Question
 		$scope.breadcrumb = '';
@@ -401,6 +401,7 @@ define(function (require) {
 			if(anchor != null){
 				$scope.pTopic = anchor;
 				if(question.category != null){
+					$rootScope.answer = question.answer_id;
 					$state.transitionTo($state.current.name, {
 						pIndicator: $scope.pIndicator, //Year
 						pTopic: $scope.pTopic, //Category
@@ -433,6 +434,7 @@ define(function (require) {
 						}
 
 						$scope.answer = questionObj.answer_id;
+						$rootScope.answer = questionObj.answer_id;
 
 						$state.go($state.current.name, {
 							pTopic : topic,

@@ -189,7 +189,7 @@ define(function (require) {
         });*/
 
         $stateProvider.state('detailpage-european-map', {
-            url: "/:pLanguage/survey/detailpage-european-map/:pIndicator/:pTopic/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter",
+            url: "/:pLanguage/survey/detailpage-european-map/:pIndicator/:pTopic/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter/:pAnswer",
             params: {
                 pLanguage: {
                     value: 'en',
@@ -224,7 +224,8 @@ define(function (require) {
                     squash: '0'
                 },
                 pAnswer: {
-                    value: '1'
+                    value: '1',
+                    squash: '1'
                 },
                 pEuOnly: {
                     value: 0
@@ -332,6 +333,9 @@ define(function (require) {
                 pSectorSize: {
                     value: 'company-size',
                     squash: 'company-size'
+                },
+                pAnswer: {
+                    value: '1'
                 }
             },
             views: {
@@ -389,6 +393,9 @@ define(function (require) {
                 pCountry2: {
                     value: 'EU27',
                     squash: 'EU27'
+                },
+                pAnswer: {
+                    value: '1'
                 }
             },
             views: {
@@ -434,6 +441,9 @@ define(function (require) {
                 pCountry: {
                     value: 'AT',
                     squash: 'AT'
+                },
+                pAnswer: {
+                    value: '1'
                 }
             },
             views: {
