@@ -346,7 +346,7 @@ define(function (require) {
 								scope.filters.sectorSize = 'activity-sector';
 								break;
 							case "euOnly":
-								console.log("eu only changed");
+								//console.log("eu only changed");
 								$log.warn("eu only changed");
 								scope.filters.euOnly = (scope.filters.euOnly == 0)?1:0;
 								if(scope.filters.euOnly == 1){
@@ -379,6 +379,21 @@ define(function (require) {
 					}
 
 				}
+
+				scope.openOptions = function(i,e) {
+					//$log.warn('Abrir accordion');
+					
+				 	var parentNode = e.target.parentElement;
+
+				 	if(angular.element(parentNode).hasClass("open")){
+				 		angular.element(parentNode).removeClass('open');
+				 	} else {
+				 		angular.element(parentNode).addClass('open');
+				 	}
+
+				  //angular.element(parentNode).toggleClass('open');
+				}
+
 			}
 		}
 	}

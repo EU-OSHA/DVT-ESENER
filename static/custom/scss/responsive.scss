@@ -822,7 +822,7 @@ and (max-width :767px)  {
 	}
   .hide-header{
     position: fixed;
-    top: -10rem;
+    top: -20rem;
     -webkit-transition: all 0.8s;
     transition: all 0.8s;
     &.affix, &.affix-top{

@@ -58,14 +58,14 @@ define(function (require) {
                         }
                     }
 
-                    /** HEADER SHOW HIDE 
+                    /** HEADER SHOW HIDE **/
                     var prevScrollpos = $window.pageYOffset;
 
                     $window.onscroll = function() {
                       
                       var currentScrollPos = $window.pageYOffset;
-                     
-
+                     //console.log(currentScrollPos);
+                    if( currentScrollPos > 165){
                       if (prevScrollpos > currentScrollPos) {
                         angular.element(".bar-header").addClass('show-header');
                         angular.element(".affix").addClass('show-header');
@@ -79,17 +79,19 @@ define(function (require) {
                         angular.element(".affix").removeClass('show-header');
                         angular.element(".bar-header").removeClass('show-header');
                       }
+                    }
                       prevScrollpos = currentScrollPos;
-
+/*
                       if( angular.element('.advice--block-not-home') ){
                           if( prevScrollpos <= angular.element('.advice--icon--block').offset.top + angular.element('.advice--icon--block')[0].clientHeight){
                             //angular.element(".compare--block.regulation-page").removeClass('affix');
                             angular.element(".compare--block.regulation-page").removeClass('show-header');
                           }
                       }
+                      */
 
                     } 
-                    **/
+                    
                     
                     
                     //hide print icon in mobile

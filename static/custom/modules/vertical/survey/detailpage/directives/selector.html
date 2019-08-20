@@ -208,32 +208,30 @@
                 </div>-->
                 <!-- Chart selection -->
                 <ul class="chart--selection--block">
-                    <li>
-                        <a title="{{i18n.L100623}}" class="" data-ng-class="{'selected-chart':(chart == 'european-map')}" ui-sref="detailpage-european-map({pTopic: topic, pChart: 'european-map', pQuestion: indicator, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer})"><span class="sr-only"  data-ng-bind="i18n.L100623"></span></a></li>
-                    <li>
-                        <a title="{{i18n.L100622}}" class="" data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" ui-sref="detailpage-european-bar-chart({pTopic: topic, pChart: 'european-bar-chart', pQuestion: indicator, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pLocale: pLocale, pAnswer: answer})"><span class="sr-only"  data-ng-bind="i18n.L100622"></span></a>
+                    <li data-ng-class="{'selected-chart':(chart == 'european-map')}" data-ng-click="openOptions($index,$event)">
+                        <a title="{{i18n.L100623}}" class="" data-ng-class="{'selected-chart':(chart == 'european-map')}" ui-sref="detailpage-european-map({pTopic: topic, pChart: 'european-map', pQuestion: indicator, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer})"><span class="visible-xs"  data-ng-bind="i18n.L100623"></span></a></li>
+                    <li data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" data-ng-click="openOptions($index,$event)">
+                        <a title="{{i18n.L100622}}" class="" data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" ui-sref="detailpage-european-bar-chart({pTopic: topic, pChart: 'european-bar-chart', pQuestion: indicator, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pLocale: pLocale, pAnswer: answer})"><span class="visible-xs"  data-ng-bind="i18n.L100622"></span></a>
                     </li>
-                    <li>
-                        <a title="{{i18n.L100624}}" class="" data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" ui-sref="detailpage-national-bar-chart({pTopic: topic, pChart: 'national-bar-chart', pSectorSize: 'company-size', pCountry: filters.country, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer})" ><span class="sr-only"  data-ng-bind="i18n.L100624"></span></a>
+                    <li data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" data-ng-click="openOptions($index,$event)">
+                        <a title="{{i18n.L100624}}" class="" data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" ui-sref="detailpage-national-bar-chart({ pTopic: topic, pChart: 'national-bar-chart', pSectorSize: 'company-size', pCountry: filters.country, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer})" ><span class="visible-xs"  data-ng-bind="i18n.L100624"></span></a>
+
                     </li>
-                    <!--<li>
-                        <a href ><span class="sr-only"  data-ng-bind="i18n.L100621"></span></a>
-                    </li>-->
-                    <li>
-                        <a title="{{i18n.L100621}}" data-ng-class="{'selected-chart':(chart == 'national-comparisons')}" ui-sref="detailpage-national-comparisons({pTopic: topic, pChart: 'national-comparisons', pCountry1: filters.country, pCountry2: filters.country2, pQuestion: indicator, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer})"><span class="sr-only"  data-ng-bind="i18n.L100621"></span>
+
+                    <li data-ng-class="{'selected-chart':(chart == 'national-comparisons')}" data-ng-click="openOptions($index,$event)">
+                        <a title="{{i18n.L100621}}" data-ng-class="{'selected-chart':(chart == 'national-comparisons')}" ui-sref="detailpage-national-comparisons({pTopic: topic, pChart: 'national-comparisons', pCountry1: filters.country, pCountry2: filters.country2, pQuestion: indicator, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer})"><span class="visible-xs"  data-ng-bind="i18n.L100621"></span>
                         </a>
                     </li>
-                    <!--<li>
-                        <a href ><span class="sr-only"  data-ng-bind="i18n.L101033"></span></a>
-                    </li>-->
-                    <li>
-                        <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pTopic: topic, pChart: 'pie-chart', pCountry: filters.country, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer})"><span class="sr-only"  data-ng-bind="i18n.L101033"></span>
+
+                    <li data-ng-class="{'selected-chart':(chart == 'pie-chart')}" data-ng-click="openOptions($index,$event)">
+                        <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pTopic: topic, pChart: 'pie-chart', pCountry: filters.country, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer})"><span class="visible-xs"  data-ng-bind="i18n.L101033"></span>
                         </a>
                     </li>
                     <li>
                         <a id="eu-only" title="{{i18n.L100580}}" href data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-click="updateChart('euOnly')" data-ng-bind="i18n.L100679"></a>
                     </li> 
                 </ul>
+                <a id="eu-only-mobile" title="{{i18n.L100580}}" href data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-click="updateChart('euOnly')" data-ng-bind="i18n.L100679"></a>
             </form>
         </div>        
     </div>

@@ -13,7 +13,6 @@
   } 
 }
 @media (max-width: 767px) {
-
   .datavisualisation-page{
     .card--grid{
       flex-direction: column;
@@ -26,9 +25,12 @@
         }
         a{
           background-position: 2rem center;
-          background-size: 26%;
+          background-size: 12rem !important;
           &.icon--card{
             height:14rem;
+            &:hover{
+              background-position: 2rem center !important;
+            }
           }
           span{
             position: absolute;
@@ -44,6 +46,42 @@
         }
       }
     }
-  }
- 
+  } 
+}
+
+@media (max-width: 475px) {
+  .datavisualisation-page{
+    .card--grid{
+      .card--item{
+        &.min-height{
+          .title--card{
+            min-height: 10rem;
+          }
+        }
+        a{
+          background-size: 9rem !important;
+          background-position: 1rem center !important;
+          &.icon--card{
+            height:10rem;
+            &:hover{
+              background-position: 1rem center !important;
+            }
+          }
+          span{
+            position: absolute;
+            bottom: auto;
+            top: 30%;
+            left: auto;
+            min-height: auto;
+            width: 60%;
+            padding: 0 1.3rem;
+            display: block;
+            right: 0;
+            text-align: left;
+            height: auto;
+          }
+        }
+      }
+    }
+  } 
 }

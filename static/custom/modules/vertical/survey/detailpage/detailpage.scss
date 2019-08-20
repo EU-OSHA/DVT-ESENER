@@ -277,10 +277,7 @@
       border: none;
       color: #666;
       background: #FFF url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/magnifying-glass.svg) no-repeat 100.5% 0px;
-      background: #FFF url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/magnifying-glass.svg) no-repeat 100.5% 0px;
-      background: #FFF url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/magnifying-glass.svg) no-repeat 100.5% 0px;
-      background: #FFF url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/magnifying-glass.svg) no-repeat 100.5% 0px;
-      background: #FFF url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/magnifying-glass.svg) no-repeat 100.5% 0px;
+      background-size:3.5rem 3.5rem;
     }
   }
   .select2-results{
@@ -356,6 +353,7 @@
         background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-down.svg);
         background-repeat: no-repeat;
         background-position: 100%;
+        background-size: 2rem 2rem;
         &::-ms-expand {
           display: none;
         }
@@ -494,7 +492,7 @@
       position: relative;
       border: none; 
       background: #00a1a3 url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-down-white.svg) no-repeat 0 1px;
-      background-size: 2rem;
+      background-size: 2rem 2rem;
       background-position: 96% 58%; 
       &::-ms-expand {
         display: none;
@@ -549,6 +547,9 @@
         }
         &:hover{
           border: 1px solid $aquamarine;          
+        }
+        &.selected-chart{
+          border: 1px solid $aquamarine;
         }
       }
       &:nth-child(1){
@@ -702,6 +703,29 @@
       }
     }
   }
+  a#eu-only-mobile{
+    display: none;
+    border: 1px solid $gray-light;
+    overflow: hidden;
+    margin: 0 0.5rem;
+    width: 10rem;
+    height: 4rem;
+    text-align: center;
+    padding: 1.1rem;
+    font-size: 1.3rem;
+    color: $gray-light;
+    &:before{
+      display:block;
+      width:4rem;
+      height:4rem;
+    }
+    &:hover{
+      border: 1px solid $aquamarine;          
+    }
+    &.selected-chart{
+      border: 1px solid $aquamarine;
+    }
+  }
 }
 
 ul.question--by--question {
@@ -753,17 +777,17 @@ ul.question--by--question {
 
 
 @media only screen 
-and (min-width : 768px) 
-and (max-width : 1024px) 
-and (orientation : landscape) { 
+and (max-width : 1024px) { 
 
   .detail-page{
     .detail--page--wrapper{
-      width: 90%;
+      width: 100%;
+      padding: 0;
       display: flex;
       flex-direction: column;
       .detail--content--section{
         width: 100%;
+        padding: 0 2rem;
         .selector--page--elements{
           .content--intro--wrapper{ 
           }
@@ -775,22 +799,27 @@ and (orientation : landscape) {
     }
   }
   #select2-drop {
-      max-width: 100%;
+    max-width: 100% !important;
+    padding: 0 1rem;
   }
   ul.question--by--question{
     position: relative;
     width: 100%;
+    margin: 4rem 0;
     li{
       a{
-        width: 17rem;
+        width: auto;
         padding: 0 1rem;
-        &:before{
-          width: 50% !important;
-          display: block;
+        height: auto;
+        &:before, &:after{
+          width: 7rem !important;
+          display: inline-block !important;
+          vertical-align: middle !important;
           padding: 1.5rem 0;          
         }
       }
       &:nth-child(1){
+        margin-left: -2rem;
         a{
           &:before{
             margin-left: 0;
@@ -798,9 +827,14 @@ and (orientation : landscape) {
         }
       }
       &:nth-child(2){
+        margin-right: -2rem;
         a{
           &:before{
-            margin-right: 0;
+            content:'';
+            display: none !important;
+          }
+          &:after{
+            content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/next-question.svg);
           }
         }
       }
@@ -812,3 +846,89 @@ and (orientation : landscape) {
     }
   } 
 }
+
+@media only screen 
+and (max-width : 768px) { 
+
+  .block--typechart--wrapper{
+    .chart--selection--block{
+      display: block;
+      padding: 0;
+      width: 75%;
+      margin-left: 0;
+      height: 5rem;
+      overflow: hidden;
+      position: relative;
+      li{
+        display: none;        
+        margin: 0 0.5rem 2rem 0.5rem;
+        a{
+          overflow: visible;
+          width: auto;
+          border: none;
+          &:before{
+            display:  inline-block !important;
+            vertical-align: middle;
+            width: 4rem;
+            height: 4rem;
+            border: 1px solid $gray-light;
+          }
+          &.selected-chart{
+            border: none !important;
+            &:before{
+              border: 1px solid $gray-light !important;
+            }
+          }
+          span{
+            display: inline-block !important;
+            padding: 1.1rem;
+            font-size: 1.3rem;
+            color: $gray;
+          }
+        }
+        &.selected-chart{
+          display: block;
+          &:after{
+            content: "\f107";
+            font-family: FontAwesome;
+            color: $aquamarine;
+            font-weight: normal;
+            font-size: 3rem;
+            height: auto;
+            padding: 0rem 1rem;
+            position: absolute;
+            top: 0;
+            right: 1rem;
+          }
+        }
+      }
+      li:nth-child(6){
+        display: none !important;
+      }
+      &.open{
+      height: auto;
+      overflow: visible;
+        li{
+          display: block;
+          &.selected-chart:after{
+            content: "\f106";
+          }
+        }
+      }
+    }
+    a#eu-only-mobile{
+      display: block;
+      width: 25%;
+    }
+  }
+  .dvt-map-tooltip{
+    width: 90% !important;
+    left: 5% !important;
+    &:after{
+      display:none;
+    }
+  }
+
+}
+
+

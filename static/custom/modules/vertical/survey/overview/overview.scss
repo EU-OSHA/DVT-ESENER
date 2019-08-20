@@ -85,4 +85,15 @@ and (max-width :767px) {
 
 }
 
+@media only screen 
+and (max-width :500px) {
+
+  .overview-page{
+    h3.accordion-title {
+      padding: 1.5rem 4rem 1.5rem 2rem;
+    }
+  } 
+
+
+}
 

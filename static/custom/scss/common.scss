@@ -293,6 +293,9 @@
   /** END BUTTONS ELEMENT AND BLOCK  **/
 
   /** FORM ELEMENTS  **/
+    select::-ms-expand {
+        display: none;
+    }
     .select-default{
       position: relative;
       select{
@@ -305,7 +308,7 @@
 
         -webkit-appearance: none;
         -moz-appearance: none;
-        appearance: none;   
+        appearance: none; 
       }
       &:after {
         content:"\f107";
@@ -1552,7 +1555,7 @@
       }
     }
   }
-    
+
 /** pop up */
   #popUpMessage{
     background: rgba(0,0,0,0.6);
