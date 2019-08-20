@@ -333,13 +333,15 @@ define(function (require) {
                         orientation: attributes.orientation || "vertical",
                         crosstabMode: false,
                         stacked: attributes.stacked == 1 || false,
-                        //axisLabel_font: attributes.axisLabelFont || 'normal 12px "OpenSans-bold"',
-                        axisTitleLabel_font: attributes.axisTitleLabelFont || 'normal 12px "OpenSans-bold" gray',
+                        axisLabel_font: attributes.axisLabelFont || '14px "OpenSans-bold"',
+                        axisTitleLabel_font: attributes.axisTitleLabelFont || '14px "OpenSans-bold" gray',
                         axisTitleLabel_textStyle: 'gray',
                         axisFixedMax: attributes.axisFixedMax || 100,
+                        axisFixedMin: attributes.axisFixedMin || 0,
                         axisTicks: attributes.axisTicks || false,
                         axisRule_strokeStyle: attributes.axisRule_strokeStyle || '',
-                        clickable: true,
+                        baseAxisOffset : attributes.baseAxisOffset || 0,
+                        clickable: attributes.clickable === 'false' ? false : true,
                         clickAction: function (dataset) {
                         },
                         colorRole: "category",
@@ -353,6 +355,7 @@ define(function (require) {
                         selectable: attributes.selectable || false,
                         hoverable: attributes.hoverable == 'false' ? false: true,
                         // tooltip
+                        tooltipEnabled: attributes.tooltipEnabled === 'false' ? false : true,
                         tooltipClassName: 'light',
                         tooltipOpacity: 0.80,
                         /*Axis & Frames visivility*/
@@ -372,12 +375,12 @@ define(function (require) {
                         orthoAxisGrid: attributes.orthoAxisGrid === "false" ? false : true, // Color axes
                         axisGrid_strokeStyle: 'white',
                         axisGrid_lineWidth: 2,
-                        axisBandSizeRatio: 0.6,
+                        axisBandSizeRatio: 1,
                         //show values
                         valuesVisible: attributes.valuesVisible === 'true'?true:false,
                         valuesOverflow: attributes.valuesOverflow || "",
                         valuesMask: attributes.valuesMask || '{series}',
-                        valuesFont: attributes.valuesFont || 'emphasis 10px "OpenSans-bold"',
+                        valuesFont: attributes.valuesFont || 'emphasis 10px "OpenSans"',
                         valuesAnchor: attributes.valuesAnchor || undefined,
                         valuesOptimizeLegibility: true,
                         valuesNormalized: attributes.valuesNormalized == 1 || false,
@@ -385,23 +388,24 @@ define(function (require) {
                         label_top: scope.labelTop,
                         legend: attributes.legend === 'true'?true: false,
                         legendClickMode: attributes.legendClickMode || 'toggleVisible',
-                        legendFont: attributes.legendFont || 'normal 14px "OpenSans"',
+                        legendFont: attributes.legendFont || 'normal 12px "OpenSans"',
                         legendPosition: attributes.legendPos || 'bottom',
                         legendLabel_visible: true,
                         legendDot_strokeStyle: attributes.legendDotStrokeStyle,
                         legendShape: 'square',
                         legendAlign: attributes.legendAlign || 'center',
                         legendOverflow: attributes.legendOverflow || 'clip',
+                        legendItemSize: attributes.legendItemSize,
                         color2AxisLegendShape: attributes.color2AxisLegendShape || "square",
                         baseAxisLabel_text: !scope.isMaximized?scope.baseAxisLabelText:scope.baseAxisLabelLongText,
                         baseAxisLabel_visible: scope.baseAxisLabelVisible,
-                        baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'center',
-                        //baseAxisLabel_font: attributes.baseAxisLabelFont || 'normal 12px "OpenSans"',
-                        axisLabel_font: attributes.baseAxisLabelFont || 'normal 14px "OpenSans-bold"',
+                        baseAxisLabel_textBaseline: attributes.baseAxisLabelTextBaseline || 'middle',
+                        baseAxisLabel_textAlign: attributes.baseAxisLabelTextBaseline || 'center',
+                        xAxisLabel_textAlign: 'left',
                         baseAxisLabel_textStyle: attributes.baseAxisLabelTextStyle || 'gray' ,
                         baseAxisOverlappedLabelsMode: 'leave',
                         multiChartRole: attributes.multiChart,
-                        label_visible: scope.labelVisible,
+                        //label_visible: scope.labelVisible,
                         label_textAlign: scope.labelTextAlign || 'center',
                         labelTextMargin: attributes.labelTextMargin || 0,
                         /*Adjust tooltip position*/
@@ -410,17 +414,18 @@ define(function (require) {
                         //tooltipOffset: 76
                         //new tooltip
                         tooltipFormat: scope.tooltipFormat,
-                        baseAxisTooltipEnabled : false,
-                        tooltipEnabled: attributes.tooltipEnabled === 'false' ? false : true,
+                        baseAxisTooltipEnabled : true,
+                        baseAxisLabelSpacingMin: 1,
                         orthoAxisTitle: attributes.orthoAxisTitle || '',
                         multipleLabelColors: attributes.multipleLabelColors === 'true' || false,
                         showEuroMask: attributes.showEuroMask === 'true' ? true : false,
                         leafContentOverflow: attributes.leafContentOverflow || 'auto',
-                        base_fillStyle: attributes.base_fillStyle || "#f0f0f0",
-                        //pYLabels: attributes.pYLabels || 1,
-                        panel_fillStyle: attributes.panelColor || '',
+                        base_fillStyle: "#f0f0f0",
                         xAxis_fillStyle: '#f0f0f0',
-                        axisColor: attributes.axisColor === 'true' ? true : false
+                        panel_fillStyle: attributes.panelColor || '',
+                        axisLabelWordBreak: attributes.axisLabelWordBreak || 0,
+                        //customTooltip: attributes.customTooltip || 0,
+                        datasourceAndDates: scope.datasourceAndDates || []
                     }
 
                 };
@@ -502,11 +507,15 @@ define(function (require) {
                 }
                 if (!!attributes.angle) {
                     definition.chartDefinition.baseAxisLabel_textAngle = (attributes.angle==1)?-Math.PI / 3:-Math.PI / 6.5;
+
                     if (definition.chartDefinition.orientation == 'horizontal') {
                         definition.chartDefinition.baseAxisLabel_textAngle = 0;
+                    }else{
+                        definition.chartDefinition.baseAxisLabel_textAngle = 4.7;
                     }
+
                     definition.chartDefinition.baseAxisLabel_textAlign = 'right';
-                    definition.chartDefinition.baseAxisLabel_textBaseline = 'top';
+                    //definition.chartDefinition.baseAxisLabel_textBaseline = 'top';
                     if(attributes.angle>1)
                     {
                         definition.chartDefinition.margins = !scope.isMaximized ?'1 1 -30 1':'1 1 -5 1';

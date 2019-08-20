@@ -47,6 +47,17 @@ define(function (require) {
 		$scope.pCountry2 = $stateParams.pCountry2;
 		$scope.nonEU = $stateParams.pEuOnly;
 
+		var resolution = screen.width;
+		$scope.angle = resolution > 768 ? 1 : 0;
+
+		$(window).on("resize",function(e){
+	      if(screen.width != resolution){
+	        resolution = screen.width;
+	        //$log.warn('Resolucion ha cambiado');
+	        $state.reload();
+	      }
+	    });
+
 		//$log.warn($stateParams);
 
 		// Main Category / Subcategory: Question or Main Category / Question
@@ -212,7 +223,7 @@ define(function (require) {
 		        color5: dvtUtils.getColorCountry(2),
 		        color6: dvtUtils.getColorCountry(12),
 		        color7: dvtUtils.getColorCountry(4),
-				plots: DetailPageService.getGeneralEuropeanBarCharPlot(),
+				plots: DetailPageService.getGeneralEuropeanBarCharPlot($scope.dashboard.parameters.pFilters.euOnly),
 				dimensions: {
 				  	value: {
 						format: {

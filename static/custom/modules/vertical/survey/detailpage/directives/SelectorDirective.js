@@ -38,6 +38,7 @@ define(function (require) {
 				scope.indicator = attributes.indicator;
 				scope.dataset = $stateParams.pIndicator;
 				scope.chart = $stateParams.pChart;
+				scope.topic = $stateParams.pTopic;
 
 				scope.answer = $stateParams.pAnswer;
 				scope.activitySector = $stateParams.pActivityFilter;
@@ -207,7 +208,8 @@ define(function (require) {
 					i18n = (scope.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(scope.pLocale);
 					$state.transitionTo($state.current.name, {
 						pLocale: scope.pLocale,
-						pQuestion: $stateParams.pQuestion
+						pQuestion: $stateParams.pQuestion,
+						pTopic: scope.topic
 					}, 
 					{
 						reload: true,
@@ -268,7 +270,7 @@ define(function (require) {
 
 				scope.updateChart = function(pChangedFilter)
 				{
-					if(scope.chart == 'european-map'){
+					if(scope.chart == 'european-map' || scope.chart == 'european-bar-chart'){
 						/*if($state.current.name == 'detailpage-european-map' || $state.current.name == 'detailpage-european-bar-chart'){
 							if(pQuestionID == 'MM200_1' || pQuestionID == 'MM200_2' || pQuestionID == 'MM200_3' ||
 								pQuestionID == 'MM200_4' || pQuestionID == 'MM200_5' || pQuestionID == 'MM200_6' || pQuestionID == 'MM200_7' ){
@@ -281,9 +283,10 @@ define(function (require) {
 						if(pChangedFilter == 'euOnly'){
 							scope.noneu = (scope.noneu == 0)?1:0;
 						}
-						$state.transitionTo('detailpage-european-map', {
+						$state.transitionTo(((scope.chart == 'european-map')?'detailpage-european-map':'detailpage-european-bar-chart'), {
 							pIndicator: scope.dataset, //Year
 							pChart: scope.chart, //Type of chart
+							pTopic: scope.topic,
 							pQuestion: scope.indicator, //Question name
 							pAnswer: scope.answer, //Split answer
 							pActivityFilter: scope.filters.activitySector,
