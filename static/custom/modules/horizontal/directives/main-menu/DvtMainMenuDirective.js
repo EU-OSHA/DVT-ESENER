@@ -218,6 +218,7 @@ define(function (require) {
                         collapse.removeClass("exposed");
                         navMainMenu.removeClass('exposed');
                         buttonToggle.removeClass('exposed');
+                        angular.element('.bar-header').removeClass('hide-header');
                     });
 
                     $rootScope.$on('$stateNotFound', function(event, unfoundState, fromState, fromParams) {
