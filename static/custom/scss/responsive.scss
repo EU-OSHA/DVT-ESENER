@@ -282,7 +282,7 @@
 				width: auto;
 				padding: 2rem 0;
 				margin: 0;
-				position: initial;
+				position: static;
 				left: 0;
 				top: 0;	
 				.collapse{
@@ -684,6 +684,9 @@ and (max-width :767px)  {
 		top:0rem;
 		flex-direction: column-reverse;
 		padding: 1rem 0 1rem 1rem;
+		.breadcrumbs{
+			align-self: flex-start;
+		}
 		.social--network--nav{
 			align-self: flex-end;
 			ul{
@@ -1265,7 +1268,7 @@ and (max-width :620px) {
 				width: 100%;
 				float: none;
 				position: relative;
-				justify-content: space-evenly;
+				justify-content: center;
 			  align-items: center;
 				.menu-tools-top{
 					padding: 0;

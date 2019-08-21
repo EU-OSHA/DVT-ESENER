@@ -372,7 +372,8 @@ define(function (require) {
         svg.removeAttribute("width");
         if(!configService.isIE())svg.removeAttribute("height");
 
-        svg.setAttribute("style", "width:100%");
+       svg.setAttribute("style", "width:100%");
+       //svg.setAttribute("style", "height:600px");
 
         paper.canvas.setAttribute('preserveAspectRatio', 'xMaxYMin'); // always scale to fill container, preserving aspect ratio.
 

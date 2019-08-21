@@ -95,13 +95,61 @@
 			}
 		}		
 	}
-
+	.grid-2{
+		margin-top: 2rem;
+	}
+	.level3--wrapper{
+		border: none;
+	}
+	.background-orange-light{
+		.grid-2{
+			display: flex;
+			flex-direction: column-reverse;
+		}
+	}
 	.title-section{
 		margin: 1.5rem 0;
 	}
 	.section--page {
 		padding: 0;
 	}
+	.submenu--items--wrapper{
+		li{
+			display: none;
+			a{
+				margin: 2rem 0;
+				border-bottom:none !important;
+				width: 100%;
+				text-align: center;
+			}
+			&.active{
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+	.overview-page{
+		.accordion-content{
+			max-height: 100rem;
+	    overflow: visible;
+		}
+	}
+	.card--grid{
+		.card--item{
+			a.icon--card {
+			  background-color: #FDEDCC !important;
+			  background-size: auto;
+			  display: block !important;
+			}	
+		}
+	} 
+	.datavisualisation-page .card--grid .card--item a span {
+		position: absolute;
+		width: 100%;
+		text-align: center;
+	}
+
+
 
 }
 
