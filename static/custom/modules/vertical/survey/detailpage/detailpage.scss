@@ -1035,9 +1035,7 @@ and (max-width : 768px) {
 
 @media only screen 
 and (max-width : 350px){
-  .hide-header {
-    top: -20rem;
-  }
+
   .block--typechart--wrapper{
     .chart--selection--block{
       width: 70%;
@@ -1046,5 +1044,4 @@ and (max-width : 350px){
       width: 30%;
     }
   } 
-
 }
