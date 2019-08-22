@@ -752,6 +752,8 @@
     }
     &.selected-chart{
       border: 1px solid $aquamarine;
+      background: $aquamarine-light;
+      color:$aquamarine;
     }
   }
 }
@@ -845,6 +847,9 @@ and (max-width : 1024px) {
         padding: 3rem 2rem;
         margin: 0;
         display: block;
+        &:hover{
+          cursor:pointer;
+        }
         &:before{
           content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/select-question-close.svg);
           display: inline-block;
@@ -1028,4 +1033,18 @@ and (max-width : 768px) {
 
 }
 
+@media only screen 
+and (max-width : 350px){
+  .hide-header {
+    top: -20rem;
+  }
+  .block--typechart--wrapper{
+    .chart--selection--block{
+      width: 70%;
+    }
+    a#eu-only-mobile {
+      width: 30%;
+    }
+  } 
 
+}
