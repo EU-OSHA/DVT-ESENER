@@ -178,14 +178,14 @@
                 </p>
                 <!-- Activity sector -->
                 <div class="filter-text-button">
-                    <button data-ng-bind="i18n.L100573" data-ng-click="updateChart('companyToActivity')"></button>                    
+                    <button data-ng-class="{'active':(filters.sectorSize == 'activity-sector')}" data-ng-bind="i18n.L100573" data-ng-click="updateChart('companyToActivity')"></button>                    
                 </div>
                 <p class="tags">
                     <span data-ng-bind="i18n.L101027"></span>
                 </p>       	
                 <!-- Establishment size -->
                 <div class="filter-text-button">
-                    <button data-ng-bind="i18n.L100574" data-ng-click="updateChart('activityToCompany')"></button>
+                    <button data-ng-class="{'active':(filters.sectorSize == 'company-size')}" data-ng-bind="i18n.L100574" data-ng-click="updateChart('activityToCompany')"></button>
                 </div>
                 <!-- Country -->
                 <div class="filter-text-button">
