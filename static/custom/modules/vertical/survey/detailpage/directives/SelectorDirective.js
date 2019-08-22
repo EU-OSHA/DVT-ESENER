@@ -270,6 +270,7 @@ define(function (require) {
 
 				scope.updateChart = function(pChangedFilter)
 				{
+					angular.element('.bar-header').removeClass('hide-header');
 					if(scope.chart == 'european-map' || scope.chart == 'european-bar-chart'){
 						/*if($state.current.name == 'detailpage-european-map' || $state.current.name == 'detailpage-european-bar-chart'){
 							if(pQuestionID == 'MM200_1' || pQuestionID == 'MM200_2' || pQuestionID == 'MM200_3' ||

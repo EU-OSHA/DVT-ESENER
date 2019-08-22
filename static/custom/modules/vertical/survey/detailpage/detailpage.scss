@@ -467,10 +467,20 @@
       width:auto;
       margin: 1rem 0;
       padding: 1rem 2rem;
-      background: #00a1a3;
-      color: #FFF;
-      position: relative;
-      border: none;      
+      background: $white;
+      outline:1px solid $aquamarine !important;
+      color: $aquamarine;
+      border: none; 
+      position: relative; 
+      &.active{
+        width:auto;
+        margin: 1rem 0;
+        padding: 1rem 2rem;
+        background: #00a1a3;
+        color: #FFF;
+        position: relative;
+        border: none;            
+      }  
     }
     span{
       display: inline-block;
@@ -514,7 +524,16 @@
         outline:1px solid $aquamarine !important;
         color: $aquamarine;
         border: none; 
-        position: relative;        
+        position: relative;  
+        &.active{
+          width:auto;
+          margin: 1rem 0;
+          padding: 1rem 2rem;
+          background: #00a1a3;
+          color: #FFF;
+          position: relative;
+          border: none;  
+        }      
       }
     }
     &:nth-child(3){
