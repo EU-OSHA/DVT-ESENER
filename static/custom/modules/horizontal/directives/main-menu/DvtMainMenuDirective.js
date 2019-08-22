@@ -276,15 +276,15 @@ define(function (require) {
 
 
                 // Open indicators list like a select element
-                var resolution = screen.width;
+                var resolution = $(window).width();
                 
                 $(window).on("resize",function(e){
-                    resolution = screen.width;
+                    resolution = $(window).width();
                 });
 
 
                 $scope.openIndicatorsList = function(e) { 
-                        
+                        console.log(resolution);
                     if( resolution < 768 ){
                         var isActive = false;
 

@@ -965,6 +965,7 @@ and (max-width : 768px) {
           overflow: visible;
           width: auto;
           border: none;
+          display: flex;
           &:hover{
             border: none !important;
           }
