@@ -472,7 +472,6 @@ define(function (require) {
 			//$log.warn('Abrir accordion');
 			
 		 	var parentNode = e.target.parentElement.parentElement;
-
 		 	if(angular.element(parentNode).hasClass("open")){
 		 		angular.element(parentNode).removeClass('open');
 		 	} else {

@@ -40,8 +40,14 @@
     margin: 0px 40px 0px 25px;
   }
 }*/
-
-.filter--questions--group{
+.questions--list--wrapper{
+  .filter--questions--group--wrapper{
+    > p{
+      display: none;
+    }
+  }
+}
+.filter--questions--group--wrapper{
   .filter--questions--wrapper{
     .dropdown{
       background: #666;
@@ -107,6 +113,7 @@
   .questions--tree{
     background-color:#E7E8E8;
     padding: 3rem 2rem;
+    width: 100%;
     ul{
       list-style: none;
       padding: 0 0 0 1.5rem;
@@ -335,6 +342,7 @@
   top: 0;
   width: 14rem;
   text-align: right;
+  margin: 2rem 0;
   form.compare--block--form{    
     label{
       font-family: 'OpenSans';
@@ -809,6 +817,8 @@ and (max-width : 1024px) {
         width: 100%;
         padding: 0 2rem;
         .selector--page--elements{
+          position: relative;
+          padding-top: 9rem;
           .content--intro--wrapper{ 
           }
         }
@@ -822,6 +832,44 @@ and (max-width : 1024px) {
     max-width: 100% !important;
     padding: 0 1rem;
     left: 0 !important;
+  }
+  .content--lang--wrapper {
+    right: 2rem;
+  }
+  .questions--list--wrapper{
+    .filter--questions--group--wrapper{
+      > p{
+        font-size: 1.8rem;
+        font-family: 'OpenSans-Bold';
+        background-color: #E7E8E8;
+        padding: 3rem 2rem;
+        margin: 0;
+        display: block;
+        &:before{
+          content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/select-question-close.svg);
+          display: inline-block;
+          width: 4rem;
+          height: 4rem;
+          float: right;
+          position: relative;
+          top: -5px;
+        }
+      }  
+    }
+    &.open{
+      .filter--questions--group--wrapper{
+        > p{
+          &:before{
+            content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/select-question.svg);
+          }
+        }
+        .filter--questions--group{
+          display: none;
+          > ul{
+          }    
+        }
+      }
+    }  
   }
   ul.question--by--question{
     position: relative;
@@ -881,7 +929,7 @@ and (max-width : 768px) {
       .detail--content--section{
         .selector--page--elements{
           position: relative;
-          padding-top: 4rem;
+          padding-top: 9rem;
           .content--lang--wrapper {
             position: absolute;
             right: 0;
