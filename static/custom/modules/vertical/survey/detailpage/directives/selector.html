@@ -227,8 +227,8 @@
                         <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pTopic: topic, pChart: 'pie-chart', pCountry: filters.country, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer})"><span class="visible-xs"  data-ng-bind="i18n.L101033"></span>
                         </a>
                     </li>
-                    <li>
-                        <a id="eu-only" title="{{i18n.L100580}}" href data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-click="updateChart('euOnly')" data-ng-bind="i18n.L100679"></a>
+                    <li data-ng-class="{'selected-chart':(noneu == 1)}">
+                        <a data-ng-class="{'selected-chart':(noneu == 1)}" id="eu-only" title="{{i18n.L100580}}" href data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-click="updateChart('euOnly')" data-ng-bind="i18n.L100679"></a>
                     </li> 
                 </ul>
                 <a id="eu-only-mobile" title="{{i18n.L100580}}" href data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-click="updateChart('euOnly')" data-ng-bind="i18n.L100679"></a>
