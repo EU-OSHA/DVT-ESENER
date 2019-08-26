@@ -11,8 +11,15 @@
 	.bar-main-menu, 
 	.icon--card, 
 	.btn--block, .btn--card, .btn-default, 
-	.block--filter--wrapper, 
-	.see-more, .see-less{
+	//.block--filter--wrapper, 
+	.see-more, .see-less, 
+	.social--network--nav, 
+	.footer-social-network, 
+	.footer-nav-accessibility, 
+	.question--by--question, 
+	.questions--tree, 
+	.select2-drop, 
+	.questions--list--wrapper{
 	  display: none !important;
 	}
 	a[href]:after {
@@ -22,8 +29,14 @@
 		display: block !important;
 	}
 	@page {
-   size: auto;
-  	margin: 10mm 25mm 25mm 25mm; 
+		size: auto;
+		margin: 10mm 25mm 25mm 25mm; 
+	}
+	html{
+		font-size: 8px !important;
+	}
+	body{
+		padding: 0;
 	}
 	h2{
 		font-size: 2.8rem !important;
@@ -36,7 +49,9 @@
 	}
 	.container{
 		padding: 0;
+		width: 100%;
 	}
+
 
   /** WIDTH CARDS  **/
     .w2, .w3, .w4, .w4{
@@ -75,6 +90,12 @@
 		border-top: 0px;
 		height: auto;
 	}
+	.carousel--home .carousel-inner {
+	  width: 100%;
+	  padding: 0;
+	  margin: 0px auto;
+	  min-height: auto;
+	}
 	.advice--block{
 		top: 0;
 		&.advice--block-not-home{
@@ -97,9 +118,23 @@
 	}
 	.grid-2{
 		margin-top: 2rem;
+		.col-content{
+			.title--section{
+				margin: 2rem 0;
+			}
+		}
 	}
 	.level3--wrapper{
 		border: none;
+		.submenu--level3{
+			.submenu--items--wrapper{
+				li{
+					a{
+						padding: 0 !important;
+					}
+				}
+			}
+		}
 	}
 	.background-orange-light{
 		.grid-2{
@@ -133,9 +168,18 @@
 			max-height: 100rem;
 	    overflow: visible;
 		}
+		h3.accordion-title{
+			&:after{
+				content:''!important;
+			}
+		}
 	}
 	.card--grid{
 		.card--item{
+			a{
+				height: 6rem !important;
+				padding: 0 !important;
+			}
 			a.icon--card {
 			  background-color: #FDEDCC !important;
 			  background-size: auto;
@@ -148,9 +192,71 @@
 		width: 100%;
 		text-align: center;
 	}
+	.block--typechart--wrapper{
+		margin: 0 0 2rem 0;
+		.chart--selection--block{
+			margin: auto;
+			li{
+				a{
+					&.selected-chart{
+						border: 4px solid #000;
+					}
+				}
+			}
+		}
+	}
 
+	.block--filter--wrapper{
+		margin: 2rem 0;
+		.filter-text{
+			select, #establishment{
+				border: none;
+				padding: 0 !important;
+				outline: 0px!important;		
+			}
+			> span{
+				font-weight: bold;
+			}
+			&:after{
+				content:'' !important;
+			}
+		}
+	}
+	.detail-page{
+    margin-top: 0;
+		.detail--page--wrapper {
+	    width: 100%;
+			.detail--content--section{
+				width:100%;
+				padding: 0;
+				.content--lang--wrapper {
+				  position: relative;
+				  right: 0;
+				  top: 0;
+				  width: 100%;
+				  text-align: center;
+				  margin: 2rem 0;
+				}
+			}
+		}
+		div[query="getEuropeanBarCharData"]{
+			svg{
+				zoom:0.5;
+			}
+		} 
+		div[query="getNationalBarChartData"]{
+			svg{
+				zoom:0.8;
+			}
+		} 
+	}
+	svg{
+		page-break-inside : avoid !important;
+	} 
 
-
+	.footer-elements{
+		text-align: center!important;
+	}
 }
 
 

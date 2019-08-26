@@ -144,8 +144,9 @@
               right: 1rem;
             }
             &:hover{
+              opacity: 0.6;
               &:after{
-                content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/download-icon-hover.png);
+                content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/download-icon.png);
               }
             }
           }        

@@ -1702,3 +1702,14 @@
     }
   }
 }
+
+
+/* hack IE11 */
+@media all and (-ms-high-contrast:none)
+{     
+   .foo { color: green } /* IE10 */
+   *::-ms-backdrop, .foo { color: red } /* IE11 */
+  .survey--map--block .map--block .dvt--map--block svg, .survey--map--block .map--block div[id^='dvt_map'] svg{
+    height:680px !important
+  }
+}
