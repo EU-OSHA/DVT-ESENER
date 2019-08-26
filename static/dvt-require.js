@@ -105,9 +105,33 @@
     /* MODEL */
     /* LITERALS */
     requirePaths['horizontal/model/literals'] = horizontalModules + '/model/Literals' + suffix + '.json';
+    requirePaths['horizontal/model/literals/BG'] = horizontalModules + '/model/Literals_BG' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/CS'] = horizontalModules + '/model/Literals_CS' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/DA'] = horizontalModules + '/model/Literals_DA' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/DE'] = horizontalModules + '/model/Literals_DE' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/ET'] = horizontalModules + '/model/Literals_ET' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/EL'] = horizontalModules + '/model/Literals_EL' + suffix + '.json' ;
     requirePaths['horizontal/model/literals/ES'] = horizontalModules + '/model/Literals_ES' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/FR'] = horizontalModules + '/model/Literals_FR' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/HR'] = horizontalModules + '/model/Literals_HR' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/IS'] = horizontalModules + '/model/Literals_IS' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/IT'] = horizontalModules + '/model/Literals_IT' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/LV'] = horizontalModules + '/model/Literals_LV' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/LT'] = horizontalModules + '/model/Literals_LT' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/HU'] = horizontalModules + '/model/Literals_HU' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/MT'] = horizontalModules + '/model/Literals_MT' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/NL'] = horizontalModules + '/model/Literals_NL' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/NO'] = horizontalModules + '/model/Literals_NO' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/PL'] = horizontalModules + '/model/Literals_PL' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/PT'] = horizontalModules + '/model/Literals_PT' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/RO'] = horizontalModules + '/model/Literals_RO' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/SK'] = horizontalModules + '/model/Literals_SK' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/SL'] = horizontalModules + '/model/Literals_SL' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/FI'] = horizontalModules + '/model/Literals_FI' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/SV'] = horizontalModules + '/model/Literals_SV' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/TR'] = horizontalModules + '/model/Literals_TR' + suffix + '.json' ;
 
-    /* DATASETS */ 
+    /* DATASETS */
     requirePaths['horizontal/model/datasets'] = horizontalModules + '/model/Datasets' + suffix + '.json';
 
     /* COLORS */

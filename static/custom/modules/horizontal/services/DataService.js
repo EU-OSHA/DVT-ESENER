@@ -49,8 +49,8 @@ define(function () {
              * @description
              * Returns the countries list for the select combo
              */
-            getCountriesSelect: function (pQuestion) {
-                var url = configService.getEsenerDataPath() + "&dataAccessId=getCountriesSelect" + "&parampQuestion=" + pQuestion;
+            getCountriesSelect: function (pQuestion, pLanguage) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getCountriesSelect" + "&parampQuestion=" + pQuestion + "&parampLanguage=" + pLanguage;
                 $log.debug('getCountriesSelect url:' + url);
                 return promise(url);
             },
@@ -122,6 +122,34 @@ define(function () {
             getAnswersOfIndicatorData: function (pQuestion) {
                 var url = configService.getEsenerDataPath() + "&dataAccessId=getAnswersOfIndicatorData" + "&parampQuestion=" + pQuestion;
                 $log.debug('getAnswersOfIndicatorData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getNationalBarChartIndicators
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns data of a particular question
+             */
+            getNationalBarChartIndicators: function (pDataset, pQuestion, pYear, pSectorSize) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getNationalBarChartIndicators" + "&parampDataset=" + pDataset + "&parampQuestion=" + pQuestion + "&parampYear=" + pYear 
+                + "&parampSectorSize=" + pSectorSize;
+                $log.debug('getNationalBarChartIndicators url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getNationalComparisonsAnswers
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns data of a particular question
+             */
+            getNationalComparisonsAnswers: function (pDataset, pQuestion, pYear, pActivityFilter, pCompanyFilter) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getNationalComparisonsAnswers" + "&parampDataset=" + pDataset + "&parampQuestion=" + pQuestion + "&parampYear=" + pYear 
+                + "&pActivityFilter=" + pActivityFilter + "&pCompanyFilter=" + pCompanyFilter;
+                $log.debug('getNationalComparisonsAnswers url:' + url);
                 return promise(url);
             },
 

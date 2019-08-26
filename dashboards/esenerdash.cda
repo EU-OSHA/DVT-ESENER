@@ -388,7 +388,35 @@
       AND n.country_code IN (${pCountry1}, ${pCountry2})
       AND t.language = 'EN'
       AND v.dataset_id = ${pDataset}
-      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) ASC, FIELD(sa.id, 1, 53, 34, 3, 38, 39, 2, 36, 37) DESC, sa.id ASC;
+      AND sa.id = ${pAnswer}
+      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) DESC, FIELD(sa.id, 1, 53, 34, 3, 38, 39, 2, 36, 37) DESC, sa.id ASC;
+    </Query>
+  </DataAccess>
+
+  <DataAccess access="public" connection="dvt_conn" id="getPieChartData" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="15" name="pDataset" type="Numeric"/>
+      <Parameter default="MM161" name="pQuestion" type="String"/>
+      <Parameter default="2009" name="pYear" type="Numeric"/>
+      <Parameter default="AT" name="pCountry" type="String"/>
+    </Parameters>
+    <Query>
+      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Answer, v.value*100 as Value
+      FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i
+      WHERE n.id = p.nuts_id
+      AND i.name = ${pQuestion}
+      AND v.indicator_id = i.id
+      AND v.profile_id = p.id
+      AND p.answer_id=sa.id
+      AND t.literal_id = sa.literal_id
+      AND p.activity_sector_id = 8
+      AND n.id = p.nuts_id
+      AND n.country_code = ${pCountry}
+      AND t.language = 'EN'
+      AND v.dataset_id = ${pDataset}
+      ORDER BY FIELD(sa.id, 1, 53, 34, 3, 38, 39, 2, 36, 37) ASC, sa.id DESC;
     </Query>
   </DataAccess>
 

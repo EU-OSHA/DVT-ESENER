@@ -201,31 +201,21 @@
           </div>
 
           <!-- PIE CHART -->
-          <div class="" data-ng-show="">
+          <div class="" data-ng-if="pChart == 'pie-chart'">
             <div class="xxs-w1 xs-w1 w1 center-text">
               <div class="card--block--chart">
                 <div class="chart--block">
                   <dvt-bar-chart
                     data-ng-cloak
-                    query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
-                    type="pie"
+                    query="getPieChartData" cda="{{::cdaEsenerDash}}"
+                    type="pie" listen-to="['pFilters']"
                     width="330" height="660" axis-percent="1"
-                    orientation="horizontal" axis-fixed-min="0"
-                    axis-fixed-max="100" step="20"
-                    listen-to="['pFilters']"
-                    params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', 'pFilters.sectorSize'],['pCountry', 'pFilters.country']]"
-                    color-role="series" colors="[stories[2].color1, stories[2].color2, stories[2].color3, stories[2].color4,
-                    stories[2].color5]"
-                    id="3" axis-label-font="14px 'OpenSans-bold'"
-                    plots="stories[2].plots" values-overflow="show"
-                    values-visible="true" values-mask="{value}"                        
-                    label-text-align="stories[2].alignment"
-                    values-font="14px 'OpenSans-bold'"
+                    params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pCountry', 'pFilters.country']]"
+                    color-role="c" colors="[stories[4].color1, stories[4].color2, stories[4].color3, stories[4].color4,
+                    stories[4].color5]" id="5" 
+                    plots="stories[4].plots"
                     multiple-label-colors="false"
-                    leaf-content-overflow='visible'
-                    ortho-axis-visible="true"
-                    base-axis-position="bottom"
-                    dimensions="stories[2].dimensions"
+                    dimensions="stories[4].dimensions"
                     legend="true" is-maximized="false"
                     datasource-and-dates="[15,110,pActivityFilter]"
                   ></dvt-bar-chart>

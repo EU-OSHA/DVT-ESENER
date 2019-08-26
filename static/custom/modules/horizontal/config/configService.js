@@ -21,8 +21,34 @@ define(function (require) {
     var horizontalPath = pentahoInstance + configuration.paths['directive-route'] + "/modules/horizontal/";
     var horizontalPathDiretive = horizontalPath + "directives/";
 
+    // LITERALS
     var i18n = require('json!horizontal/model/literals');
+    var i18nBG = require('json!horizontal/model/literals/BG');
+    var i18nCS = require('json!horizontal/model/literals/CS');
+    var i18nDA = require('json!horizontal/model/literals/DA');
+    var i18nDE = require('json!horizontal/model/literals/DE');
+    var i18nET = require('json!horizontal/model/literals/ET');
+    var i18nEL = require('json!horizontal/model/literals/EL');
     var i18nES = require('json!horizontal/model/literals/ES');
+    var i18nFR = require('json!horizontal/model/literals/FR');
+    var i18nHR = require('json!horizontal/model/literals/HR');
+    var i18nIS = require('json!horizontal/model/literals/IS');
+    var i18nIT = require('json!horizontal/model/literals/IT');
+    var i18nLV = require('json!horizontal/model/literals/LV');
+    var i18nLT = require('json!horizontal/model/literals/LT');
+    var i18nHU = require('json!horizontal/model/literals/HU');
+    var i18nMT = require('json!horizontal/model/literals/MT');
+    var i18nNL = require('json!horizontal/model/literals/NL');
+    var i18nNO = require('json!horizontal/model/literals/NO');
+    var i18nPL = require('json!horizontal/model/literals/PL');
+    var i18nPT = require('json!horizontal/model/literals/PT');
+    var i18nRO = require('json!horizontal/model/literals/RO');
+    var i18nSK = require('json!horizontal/model/literals/SK');
+    var i18nSL = require('json!horizontal/model/literals/SL');
+    var i18nFI = require('json!horizontal/model/literals/FI');
+    var i18nSV = require('json!horizontal/model/literals/SV');
+    var i18nTR = require('json!horizontal/model/literals/TR');
+
     var datasets = require('json!horizontal/model/datasets');
 
     /*gtranslator info*/
@@ -353,7 +379,64 @@ define(function (require) {
          */
         getSpecificLanguageLiterals: function (language) {
             //var languageUpper = language.toUpperCase();
-            return i18nES;
+
+            //Missing: Hrvatski (hr), Íslenska (is), Svenska (sv)
+
+            if(language == 'bg'){
+                return i18nBG;
+            }else if(language == 'cs'){
+                return i18nCS;
+            }else if(language == 'da'){
+                return i18nDA;
+            }else if(language == 'de'){
+                return i18nDE;
+            }else if(language == 'et'){
+                return i18nET;
+            }else if(language == 'el'){
+                return i18nEL;
+            }else if(language == 'en'){
+                return i18n;
+            }else if(language == 'es'){
+                return i18nES;
+            }else if(language == 'fr'){
+                return i18nFR;
+            }else if(language == 'hr'){
+                return i18nHR;
+            }else if(language == 'is'){
+                return i18nIS;
+            }else if(language == 'it'){
+                return i18nIT;
+            }else if(language == 'lv'){
+                return i18nLV;
+            }else if(language == 'lt'){
+                return i18nLT;
+            }else if(language == 'hu'){
+                return i18nHU;
+            }else if(language == 'mt'){
+                return i18nMT;
+            }else if(language == 'nl'){
+                return i18nNL;
+            }else if(language == 'no'){
+                return i18nNO;
+            }else if(language == 'pl'){
+                return i18nPL;
+            }else if(language == 'pt'){
+                return i18nPT;
+            }else if(language == 'ro'){
+                return i18nRO;
+            }else if(language == 'sk'){
+                return i18nSK;
+            }else if(language == 'sl'){
+                return i18nSL;
+            }else if(language == 'fi'){
+                return i18nFI;
+            }else if(language == 'sv'){
+                return i18nSV;
+            }else if(language == 'tr'){
+                return i18nTR;
+            }
+
+            return i18n;
         },
 
         // ----------------------------------

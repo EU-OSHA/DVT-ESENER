@@ -178,14 +178,14 @@
                 </p>
                 <!-- Activity sector -->
                 <div class="filter-text-button">
-                    <button data-ng-class="{'active':(filters.sectorSize == 'activity-sector')}" data-ng-bind="i18n.L100573" data-ng-click="updateChart('companyToActivity')"></button>                    
+                    <button data-ng-class="{'active':(filters.sectorSize == 'activity-sector')}" data-ng-click="updateChart('activityToCompany')"data-ng-bind="i18n.L100573" ui-sref="detailpage-national-bar-chart({ pTopic: topic, pChart: 'national-bar-chart', pSectorSize: 'activity-sector', pCountry: filters.country, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer})"></button>                    
                 </div>
                 <p class="tags">
                     <span data-ng-bind="i18n.L101027"></span>
                 </p>       	
                 <!-- Establishment size -->
                 <div class="filter-text-button">
-                    <button data-ng-class="{'active':(filters.sectorSize == 'company-size')}" data-ng-bind="i18n.L100574" data-ng-click="updateChart('activityToCompany')"></button>
+                    <button data-ng-class="{'active':(filters.sectorSize == 'company-size')}" data-ng-click="updateChart('CompanyToActivity')" data-ng-bind="i18n.L100574" ui-sref="detailpage-national-bar-chart({ pTopic: topic, pChart: 'national-bar-chart', pSectorSize: 'company-size', pCountry: filters.country, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer})"></button>
                 </div>
                 <!-- Country -->
                 <div class="filter-text-button">

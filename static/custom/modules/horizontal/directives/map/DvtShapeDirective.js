@@ -28,14 +28,17 @@ define(function (require) {
         return sequence++;
     }
 
-    function customFunction(scope, attributes, data, $log, mapProvider, dvtUtils, map, indicator, subIndicator, pAnswer) {
+    function customFunction(scope, attributes, data, $log, mapProvider, dvtUtils, map, indicator, subIndicator, pAnswer, ) {
 
         /* SVG Raphael function */
         Raphael.fn.map = function () {
             $log.debug("Start Raphael");
 
             // Literals
-            var i18nLiterals = configService.getLiterals();
+            //var i18nLiterals = configService.getLiterals();
+
+            // Literals / i18n
+            var i18nLiterals = (attributes.local == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(attributes.local);
 
             var noEU = mapProvider.getNotEUCountries();
 
@@ -252,7 +255,7 @@ define(function (require) {
                 var path = this.path(shape);
 
                 var group = scope.group;
-                path.label = cName;
+                //path.label = cName;
                 path.id = index;
                 var isInGroup = false;
 
@@ -263,7 +266,7 @@ define(function (require) {
                     isInGroup = true; 
                     path.questionData = scope.data.questionData[index].value;
                     path.answers = scope.data.questionData[index].answers;
-
+                    path.label = i18nLiterals['L'+scope.data.questionData[index].country_name];
                     var labeltext = labelPath(path, index);
                 }else{
                     noDataCountries.push(index);
@@ -284,7 +287,6 @@ define(function (require) {
                             "stroke-opacity": 1.0
                         });
                     //}
-                    
                     path.group = 1;
                     if (cName === sCountry) {
                         path.attr({

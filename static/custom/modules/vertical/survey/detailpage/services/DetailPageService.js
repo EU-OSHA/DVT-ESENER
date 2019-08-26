@@ -194,11 +194,7 @@ define (function (require) {
                             return 10;
                         },
                         label_textBaseline: 'middle',
-                        valuesOptimizeLegibility: true,
-                        visualRoles:{
-                            series: 'series',
-                            category:'category',
-                        }
+                        valuesOptimizeLegibility: true
                     }
                 ];
             },
@@ -244,6 +240,26 @@ define (function (require) {
                                     return dvtUtils.getColorCountry(2);
                                 }
                             }
+                        },
+                        label_textBaseline: 'middle',
+                        valuesOptimizeLegibility: true
+                    }
+                ];
+            },
+            getPieChartPlot: function(){
+                return [
+                    {
+                        name: "main",
+                        dataPart: "0",
+                        label_textMargin: function(scene){
+                            var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLocale);
+                            var answer = scene.firstAtoms.series;
+                            var sector = scene.firstAtoms.category;
+
+                            if(!scene.firstAtoms.value.label.match('%')){
+                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
+                            }
+                            return 10;
                         },
                         label_textBaseline: 'middle',
                         valuesOptimizeLegibility: true,

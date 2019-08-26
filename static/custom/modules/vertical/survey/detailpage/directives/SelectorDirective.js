@@ -173,7 +173,7 @@ define(function (require) {
 
 					if(scope.chart == 'national-comparisons'){
 						// Load the countries for the select combo
-						dataService.getCountriesSelect(scope.indicator).then(function(res) {
+						dataService.getCountriesSelect(scope.indicator, scope.pLocale).then(function(res) {
 							scope.countries = [];
 							scope.countriesCompareWith = [];
 							
@@ -192,7 +192,7 @@ define(function (require) {
 				else if (scope.chart=='national-bar-chart' || scope.chart == 'pie-chart')
 				{
 					// Load the countries for the select combo
-					dataService.getCountriesSelect(scope.indicator).then(function(res) {
+					dataService.getCountriesSelect(scope.indicator, scope.pLocale).then(function(res) {
 						scope.countries = [];
 						res.data.resultset.map(function(elem) {
 							scope.countries.push({id:elem[0], literal:elem[1]});
@@ -272,14 +272,6 @@ define(function (require) {
 				{
 					angular.element('.bar-header').removeClass('hide-header');
 					if(scope.chart == 'european-map' || scope.chart == 'european-bar-chart'){
-						/*if($state.current.name == 'detailpage-european-map' || $state.current.name == 'detailpage-european-bar-chart'){
-							if(pQuestionID == 'MM200_1' || pQuestionID == 'MM200_2' || pQuestionID == 'MM200_3' ||
-								pQuestionID == 'MM200_4' || pQuestionID == 'MM200_5' || pQuestionID == 'MM200_6' || pQuestionID == 'MM200_7' ){
-								scope.answer = 50;
-							}else{
-								scope.answer = 1;
-							}
-						}*/
 
 						if(pChangedFilter == 'euOnly'){
 							scope.noneu = (scope.noneu == 0)?1:0;

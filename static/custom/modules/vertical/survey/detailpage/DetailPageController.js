@@ -259,6 +259,24 @@ define(function (require) {
 				color2: ($scope.pCountry2 == 'EU27')?dvtUtils.getColorCountry():dvtUtils.getColorCountry(2),
 				plots: DetailPageService.getNationalComparisonsPlot($scope.dashboard.parameters.pFilters.country, 
 					$scope.dashboard.parameters.pFilters.country2)
+			},
+			// 4 - Pie Chart Plot
+			{
+				color1: dvtUtils.getColorCountry(1),
+		        color2: dvtUtils.getColorCountry(22),
+		        color3: dvtUtils.getAccidentsColors(4),
+		        color4: dvtUtils.getColorCountry(3),
+		        color5: dvtUtils.getColorCountry(2),
+		        color6: dvtUtils.getColorCountry(12),
+		        color7: dvtUtils.getColorCountry(4),
+				plots: DetailPageService.getPieChartPlot(),
+				dimensions: {
+				  	value: {
+						format: {
+					  		number: "0.#"
+						}
+				  	}
+				}
 			}
 		];
 
