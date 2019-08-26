@@ -221,6 +221,14 @@
 				content:'' !important;
 			}
 		}
+		.filter-text-button{
+			button{
+				&.active{
+					background: $gray !important;
+					color: #FFF !important;
+				}
+			}
+		}
 	}
 	.detail-page{
     margin-top: 0;
