@@ -216,12 +216,12 @@ define(function (require) {
                     squash: 'MM161'
                 },
                 pActivityFilter: {
-                    value: '8',
-                    squash: '8'
+                    value: '14',
+                    squash: '14'
                 },
                 pCompanyFilter: {
-                    value: '6',
-                    squash: '6'
+                    value: '11',
+                    squash: '11'
                 },
                 pAnswer: {
                     value: '1',
@@ -272,12 +272,12 @@ define(function (require) {
                     squash: 'MM161'
                 },
                 pActivityFilter: {
-                    value: '8',
-                    squash: '8'
+                    value: '14',
+                    squash: '14'
                 },
                 pCompanyFilter: {
-                    value: '6',
-                    squash: '6'
+                    value: '11',
+                    squash: '11'
                 },
                 pAnswer: {
                     value: '1'
@@ -379,12 +379,12 @@ define(function (require) {
                     squash: 'MM161'
                 },
                 pActivityFilter: {
-                    value: '8',
-                    squash: '8'
+                    value: '14',
+                    squash: '14'
                 },
                 pCompanyFilter: {
-                    value: '6',
-                    squash: '6'
+                    value: '11',
+                    squash: '11'
                 },
                 pCountry: {
                     value: 'AT',

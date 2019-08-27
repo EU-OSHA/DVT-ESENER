@@ -28,7 +28,7 @@ define(function (require) {
         return sequence++;
     }
 
-    function customFunction(scope, attributes, data, $log, mapProvider, dvtUtils, map, indicator, subIndicator, pAnswer, ) {
+    function customFunction(scope, attributes, data, $log, mapProvider, dvtUtils, map, indicator, subIndicator, pAnswer) {
 
         /* SVG Raphael function */
         Raphael.fn.map = function () {

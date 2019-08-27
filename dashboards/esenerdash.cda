@@ -58,8 +58,8 @@
       <Parameter default="1" name="pAnswer" type="Numeric" />
       <Parameter default="16" name="pDataset" type="String" />
       <Parameter default="activity-sector" name="pSectorSize" type="String" />
-      <Parameter default="8" name="pActivityFilter" type="String" />
-      <Parameter default="6" name="pCompanyFilter" type="String" />
+      <Parameter default="14" name="pActivityFilter" type="String" />
+      <Parameter default="11" name="pCompanyFilter" type="String" />
       <Parameter default="0" name="pEUOnly" type="String" />
     </Parameters>
     <Query>
@@ -98,8 +98,8 @@
       <Parameter default="0" name="pMaxValue" type="Numeric" />
       <Parameter default="0" name="pRange" type="Numeric" />
       <Parameter default="activity-sector" name="pSectorSize" type="String" />
-      <Parameter default="8" name="pActivityFilter" type="String" />
-      <Parameter default="6" name="pCompanyFilter" type="String" />
+      <Parameter default="14" name="pActivityFilter" type="String" />
+      <Parameter default="11" name="pCompanyFilter" type="String" />
       <Parameter default="1" name="pAnswer" type="String" />
       <Parameter default="0" name="pEUOnly" type="String" />
     </Parameters>
@@ -242,12 +242,15 @@
     <Columns/>
     <Parameters>
       <Parameter default="MM161" name="pQuestion" type="String" />
+      <Parameter default="en" name="pLanguage" type="String" />
     </Parameters>
     <Query>
-      SELECT DISTINCT(n.country_code), IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")"))  FROM nuts n
+      SELECT DISTINCT(n.country_code), IF(n.name REGEXP 'European Union', n.country_code, CONCAT(t.text, " (", n.country_code, ")")) as name  
+      FROM nuts n
       INNER JOIN profile p ON n.id=p.nuts_id
       INNER JOIN value v ON p.id=v.profile_id
       INNER JOIN indicator i ON v.indicator_id=i.id
+      INNER JOIN translation t ON n.literal_id = t.literal_id AND t.language = ${pLanguage}
       WHERE i.name=${pQuestion}
       ORDER BY FIELD(country_code, 'EU27') DESC, country_code ASC;
     </Query>
@@ -307,29 +310,90 @@
     <Parameters>
       <Parameter default="15" name="pDataset" type="Numeric"/>
       <Parameter default="MM161" name="pIndicator" type="String"/>
-      <Parameter default="8" name="pActivityFilter" type="String" />
-      <Parameter default="6" name="pCompanyFilter" type="String" />
+      <Parameter default="14" name="pActivityFilter" type="String" />
+      <Parameter default="11" name="pCompanyFilter" type="String" />
       <Parameter default="0" name="pEUOnly" type="String" />
     </Parameters>
     <Query>
       SELECT t.text as Answer, IF(n.name REGEXP 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
-      FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i
+      FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i, esener_answer_order eao
       WHERE n.id = p.nuts_id
       AND i.name = ${pIndicator}
       AND v.indicator_id = i.id
+      AND i.id = eao.indicator_id
       AND v.profile_id = p.id
-      AND p.answer_id=sa.id
+      AND p.answer_id=IF(sa.id = 37, 36, sa.id)
+      AND sa.id = eao.answer_id
       AND t.literal_id =sa.literal_id
       AND CASE WHEN ${pCompanyFilter} = 0 THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
       ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
       AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('CH', 'NO', 'TR')) ELSE n.id = p.nuts_id END
       AND t.language = 'EN'
       AND v.dataset_id = ${pDataset}
-      ORDER BY FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC, FIELD(sa.id, 1, 53, 34, 3, 38, 39, 2, 36, 37) DESC, sa.id DESC;
+      ORDER BY FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC, eao.order_position DESC;
     </Query>
   </DataAccess>
 
-  <DataAccess access="public" connection="dvt_conn" id="getNationalBarChartData" type="sql">
+    <DataAccess access="public" connection="dvt_conn" id="getNationalBarChartIndicators" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+        <Parameter default="15" name="pDataset" type="Numeric"/>
+        <Parameter default="MM161" name="pQuestion" type="String"/>
+        <Parameter default="2009" name="pYear" type="Numeric"/>
+        <Parameter default="company-size" name="pSectorSize" type="String" />
+      </Parameters>
+      <Query>
+        SELECT DISTINCT(IF(p.activity_sector_id IS NULL, scs.id, sas.id)) as id, IF(p.activity_sector_id IS NULL, scs.literal_id, sas.literal_id) as name
+        FROM nuts n, profile p, value v, indicator i, split_answer sa, split_activity_sector sas, split_company_size scs
+        WHERE n.id = p.nuts_id
+        AND i.name = ${pQuestion}
+        AND v.indicator_id = i.id
+        AND v.dataset_id = ${pDataset}
+        AND v.profile_id = p.id
+        AND p.answer_id = sa.id
+        AND CASE WHEN ${pSectorSize} = 'activity-sector' 
+          THEN (p.activity_sector_id = sas.id
+            AND CASE WHEN ${pYear} = '2009' 
+            THEN sas.id IN (15,16,17,14) ELSE sas.id IN (1,3,2,4,18,6,7,14) END) 
+        ELSE (p.company_size_id = scs.id
+          AND CASE WHEN ${pYear} = '2009' 
+            THEN scs.id IN (12,13,14,15,11) ELSE scs.id IN (11,7,8,14,10) END) END
+        ORDER BY FIELD(sas.id,15,16,17,14,1,3,2,4,18,6,7,14) ASC, FIELD(scs.id,12,13,7,8,14,15,10,11) ASC;
+      </Query>
+    </DataAccess>
+
+    <DataAccess access="public" connection="dvt_conn" id="getNationalBarChartData" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+        <Parameter default="15" name="pDataset" type="Numeric"/>
+        <Parameter default="MM161" name="pQuestion" type="String"/>
+        <Parameter default="2009" name="pYear" type="Numeric"/>
+        <Parameter default="company-size" name="pSectorSize" type="String" />
+        <Parameter default="EU27" name="pCountry" type="String"/>
+        <Parameter default="14" name="pIndicator" type="Numeric"/>
+      </Parameters>
+      <Query>
+        SELECT (sa.literal_id) as Answer, v.value*100 as Value
+        FROM nuts n, profile p, value v, indicator i, split_answer sa, split_activity_sector sas, split_company_size scs, esener_answer_order eao
+        WHERE n.id = p.nuts_id
+        AND i.name = ${pQuestion}
+        AND v.indicator_id = i.id
+        AND i.id = eao.indicator_id
+        AND v.dataset_id = ${pDataset}
+        AND v.profile_id = p.id
+        AND p.answer_id = IF(sa.id = 37, 36, sa.id)
+        AND sa.id = eao.answer_id
+        AND CASE WHEN ${pSectorSize} = 'activity-sector' 
+          THEN (sas.id = ${pIndicator} AND p.activity_sector_id = sas.id) 
+        ELSE (scs.id = ${pIndicator} AND p.company_size_id = scs.id) END
+        AND n.country_code = ${pCountry}
+        ORDER BY eao.order_position DESC;
+      </Query>
+    </DataAccess>
+
+  <!--<DataAccess access="public" connection="dvt_conn" id="getNationalBarChartData" type="sql">
     <Cache duration="3600" enabled="true"/>
     <Columns/>
     <Parameters>
@@ -359,7 +423,35 @@
       ORDER BY FIELD(sas.id, 15,16,17,8) DESC, FIELD(scs.id, 12,13,14,15,6) DESC, 
       FIELD(sa.id, 1, 34, 3, 38, 39, 2, 36, 37) ASC, sa.id ASC;
     </Query>
-  </DataAccess>
+  </DataAccess>-->
+
+    <DataAccess access="public" connection="dvt_conn" id="getNationalComparisonsAnswers" type="sql">
+      <Cache duration="3600" enabled="true"/>
+      <Columns/>
+      <Parameters>
+        <Parameter default="15" name="pDataset" type="Numeric"/>
+        <Parameter default="MM161" name="pQuestion" type="String"/>
+        <Parameter default="2009" name="pYear" type="Numeric"/>
+        <Parameter default="14" name="pActivityFilter" type="String" />
+        <Parameter default="11" name="pCompanyFilter" type="String" />
+      </Parameters>
+      <Query>
+        SELECT DISTINCT(IF(sa.id = 37, 36, sa.id)) as id, t.text as name
+        FROM profile p, value v, translation t, split_answer sa, indicator i, esener_answer_order eao
+        WHERE i.name = ${pQuestion}
+        AND v.indicator_id = i.id
+        AND i.id = eao.indicator_id
+        AND v.profile_id = p.id
+        AND p.answer_id=IF(sa.id = 37, 36, sa.id)
+        AND sa.id = eao.answer_id
+        AND t.literal_id =sa.literal_id
+        AND CASE WHEN ${pCompanyFilter} = 0 THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
+        ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+        AND t.language = 'EN'
+        AND v.dataset_id = ${pDataset}
+        ORDER BY eao.order_position ASC, sa.id DESC;
+      </Query>
+    </DataAccess>
 
   <DataAccess access="public" connection="dvt_conn" id="getNationalComparisonsData" type="sql">
     <Cache duration="3600" enabled="true"/>
@@ -372,12 +464,12 @@
       <Parameter default="6" name="pCompanyFilter" type="String" />
       <Parameter default="AT" name="pCountry1" type="String"/>
       <Parameter default="EU27" name="pCountry2" type="String"/>
+      <Parameter default="1" name="pAnswer" type="Numeric"/>
     </Parameters>
     <Query>
-      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Answer, v.value*100 as Value
+      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, v.value*100 as Value
       FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i
-      WHERE n.id = p.nuts_id
-      AND i.name = ${pQuestion}
+      WHERE i.name = ${pQuestion}
       AND v.indicator_id = i.id
       AND v.profile_id = p.id
       AND p.answer_id=sa.id
@@ -389,7 +481,7 @@
       AND t.language = 'EN'
       AND v.dataset_id = ${pDataset}
       AND sa.id = ${pAnswer}
-      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) DESC, FIELD(sa.id, 1, 53, 34, 3, 38, 39, 2, 36, 37) DESC, sa.id ASC;
+      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) DESC;
     </Query>
   </DataAccess>
 
@@ -404,19 +496,21 @@
     </Parameters>
     <Query>
       SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Answer, v.value*100 as Value
-      FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i
+      FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i, esener_answer_order eao
       WHERE n.id = p.nuts_id
       AND i.name = ${pQuestion}
       AND v.indicator_id = i.id
+      AND i.id = eao.indicator_id
       AND v.profile_id = p.id
-      AND p.answer_id=sa.id
+      AND p.answer_id=IF(sa.id = 37, 36, sa.id)
+      AND sa.id = eao.answer_id
       AND t.literal_id = sa.literal_id
-      AND p.activity_sector_id = 8
+      AND p.activity_sector_id = 14
       AND n.id = p.nuts_id
       AND n.country_code = ${pCountry}
       AND t.language = 'EN'
       AND v.dataset_id = ${pDataset}
-      ORDER BY FIELD(sa.id, 1, 53, 34, 3, 38, 39, 2, 36, 37) ASC, sa.id DESC;
+      ORDER BY eao.order_position;
     </Query>
   </DataAccess>
 

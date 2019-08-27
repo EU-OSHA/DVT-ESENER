@@ -74,27 +74,63 @@ define(function (require) {
 
 		var questionOrFilterChanged = false;
 
-		if ($rootScope.data != undefined)
-		{			
-			$rootScope.data.indicator = $scope.pIndicator;
-			if ($scope.pQuestion != $rootScope.data.question)
-			{
-				questionOrFilterChanged = true;
+		if($scope.pChart == 'european-map'){
+			if ($rootScope.data != undefined)
+			{			
+				$rootScope.data.indicator = $scope.pIndicator;
+				if ($scope.pQuestion != $rootScope.data.question)
+				{
+					questionOrFilterChanged = true;
+				}
+				$rootScope.data.question = $scope.pQuestion;
+				$rootScope.data.pAnswer = $scope.answer;
+				$rootScope.data.sectorsize = $scope.pSectorSize;
+				if ($rootScope.data.activityFilter != $scope.pActivityFilter)
+				{
+					questionOrFilterChanged = true;				
+				}
+				$rootScope.data.activityFilter = $scope.pActivityFilter;
+				if ($rootScope.data.companyFilter != $scope.pCompanyFilter)
+				{
+					questionOrFilterChanged = true;				
+				}
+				$rootScope.data.companyFilter = $scope.pCompanyFilter;
 			}
-			$rootScope.data.question = $scope.pQuestion;
-			$rootScope.data.pAnswer = $scope.answer;
-			$rootScope.data.sectorsize = $scope.pSectorSize;
-			if ($rootScope.data.activityFilter != $scope.pActivityFilter)
-			{
-				questionOrFilterChanged = true;				
-			}
-			$rootScope.data.activityFilter = $scope.pActivityFilter;
-			if ($rootScope.data.companyFilter != $scope.pCompanyFilter)
-			{
-				questionOrFilterChanged = true;				
-			}
-			$rootScope.data.companyFilter = $scope.pCompanyFilter;
 		}
+		
+
+		if($scope.pChart == 'national-bar-chart'){
+			if($rootScope.nationalBarChartIndicators != undefined){
+				if($rootScope.nationalBarChartIndicators.pQuestion != $scope.pQuestion){
+					questionOrFilterChanged = true;
+				}
+				if($rootScope.nationalBarChartIndicators.sectorsize != $scope.pSectorSize){
+					questionOrFilterChanged = true;
+				}
+			}
+		}
+		
+
+		if($scope.pChart == 'national-comparisons'){
+			if($rootScope.answersNationalComparisons != undefined){
+				if($rootScope.answersNationalComparisons.pQuestion != $scope.pQuestion){
+					questionOrFilterChanged = true;
+				}
+				if($rootScope.answersNationalComparisons.pCountry1 != $scope.pCountry1){
+					questionOrFilterChanged = true;
+				}
+				if($rootScope.answersNationalComparisons.pCountry2 != $scope.pCountry2){
+					questionOrFilterChanged = true;
+				}
+				if($rootScope.answersNationalComparisons.pActivityFilter != $scope.pActivityFilter){
+					questionOrFilterChanged = true;
+				}
+				if($rootScope.answersNationalComparisons.pCompanyFilter != $scope.pCompanyFilter){
+					questionOrFilterChanged = true;
+				}
+			}
+		}
+		
 
 		//DASHBOARD PARAMETERS
 	    $scope.dashboard = {
@@ -130,6 +166,20 @@ define(function (require) {
 			activityFilter: $scope.pActivityFilter,
 			companyFilter: $scope.pCompanyFilter,
 			questionData: []
+		};
+
+		$scope.indicators = {
+			pQuestion: $scope.pQuestion,
+			sectorsize: $scope.pSectorSize,
+			data: []
+		};
+		$scope.answers = {
+			pQuestion: $scope.pQuestion,
+			pCountry1: $scope.pCountry1,
+			pCountry2: $scope.pCountry2,
+			pActivityFilter: $scope.pActivityFilter,
+			pCompanyFilter: $scope.pCompanyFilter,
+			data: []
 		};
 
 		$scope.promises = {
@@ -364,6 +414,82 @@ define(function (require) {
 				$scope.getMinMaxValues();
 			} 
 		} 
+
+		if($scope.pChart == 'national-bar-chart' ){
+			//With this only charges splits of company size. If we change to activity sector it is never reload.
+			if($rootScope.nationalBarChartIndicators == undefined || questionOrFilterChanged){
+				questionOrFilterChanged = false;
+
+				dataService.getNationalBarChartIndicators($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, $scope.pSectorSize).then(function (data) 
+				{
+					var list = [];
+					data.data.resultset.map(function (elem) 
+					{
+						list.push({
+							id: elem[0],
+							name: elem[1]
+						});
+					});
+
+					//$scope.indicators = $rootScope.nationalBarChartIndicators;
+					$scope.indicators.data = list;
+					$scope.indicators.pQuestion = $scope.pQuestion;
+					$scope.indicators.sectorsize = $scope.pSectorSize;
+					$rootScope.nationalBarChartIndicators = $scope.indicators;
+					
+					//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:[];
+					
+				}).catch(function (err) 
+				{
+					throw err;
+				});
+
+				//$scope.indicators = [];
+				//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:$rootScope.indicatorsActivity;
+				//$log.warn($scope.indicators);
+				//$log.warn($rootScope.indicators);
+				$state.reload();
+			}else{
+				$scope.indicators = [];
+				$scope.indicators = $rootScope.nationalBarChartIndicators;
+			}
+		}
+
+		if($scope.pChart == 'national-comparisons'){
+			if($rootScope.answersNationalComparisons == undefined || questionOrFilterChanged){
+				questionOrFilterChanged = false;
+				dataService.getNationalComparisonsAnswers($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, $scope.pActivityFilter, $scope.pCompanyFilter).then(function (data) 
+				{
+					var list = [];
+					data.data.resultset.map(function (elem) 
+					{
+						list.push({
+							id: elem[0],
+							name: elem[1]
+						});
+					});
+					
+					$scope.answers.pQuestion = $scope.pQuestion;
+					$scope.answers.pCountry1 = $scope.pCountry1;
+					$scope.answers.pCountry2 = $scope.pCountry2;
+					$scope.answers.pActivityFilter = $scope.pActivityFilter;
+					$scope.answers.pCompanyFilter = $scope.pCompanyFilter;
+					$scope.answers.data = list;
+
+					$rootScope.answersNationalComparisons = $scope.answers;
+					//$scope.answers = ;
+					
+				}).catch(function (err) 
+				{
+					throw err;
+				});
+				$log.warn($rootScope.answersNationalComparisons);
+				$state.reload();
+			}else{
+				$scope.answers = [];
+				$scope.answers = $rootScope.answersNationalComparisons; 
+			}
+		}
 
 		/******************************* END DATA LOAD ********************************/
 

@@ -67,7 +67,7 @@
                       country="EU" use-viewbox="true" x="0" y="0"
                       css-class="dvt--map--block" is-colored="1" hover="true"
                       group-list="groupList" width="500" height="500"
-                      group-color="groupColor"
+                      group-color="groupColor" local="{{::pLocale}}"
                       data="data">
                   </dvt-map>
                 </div>
@@ -137,20 +137,19 @@
           </div>
 
           <!-- NATIONAL BAR CHART -->
-          <div class="" data-ng-if="pChart == 'national-bar-chart'">
+          <div class="national-bar-chart-wrapper" data-ng-if="pChart == 'national-bar-chart'">
             <div class="xxs-w1 xs-w1 w1 center-text">
                 <div class="card--block--chart">
-                    <div class="chart--block">
+                    <div data-ng-repeat="indicator in indicators.data" class="chart--block">
                         <dvt-bar-chart
                           data-ng-cloak
                           query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
-                          width="330" height="760" axis-percent="1"
+                          width="330" height="160" axis-percent="1"
                           orientation="horizontal" axis-fixed-min="0"
                           axis-fixed-max="100" step="20"
                           listen-to="['pFilters']"
-                          params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', 'pFilters.sectorSize'],['pCountry', 'pFilters.country']]"
-                          color-role="series" colors="[stories[2].color1, stories[2].color2, stories[2].color3, stories[2].color4,
-                          stories[2].color5]"
+                          params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', 'pFilters.sectorSize'],['pCountry', 'pFilters.country'], ['pIndicator', indicator.id]]"
+                          color-role="c" chart-title="{{i18n['L'+indicator.name]}}"
                           id="3" axis-label-font="12px 'OpenSans-bold'"
                           plots="stories[2].plots" values-overflow="show"
                           values-visible="true" values-mask="{value}"                        
@@ -159,9 +158,8 @@
                           multiple-label-colors="false"
                           leaf-content-overflow='visible'
                           ortho-axis-visible="true"
-                          base-axis-position="bottom"
                           dimensions="stories[2].dimensions"
-                          legend="true" is-maximized="false"
+                          legend="false" is-maximized="false"
                           datasource-and-dates="[15,110,pActivityFilter]"
                         ></dvt-bar-chart>
                     </div>
@@ -170,19 +168,20 @@
           </div>
 
           <!-- NATIONAL COMPARISONS -->
-          <div class="" data-ng-show="">
+          <div class="" data-ng-if="pChart == 'national-comparisons'">
             <div class="xxs-w1 xs-w1 w1 center-text">
               <div class="card--block--chart">
-                <div class="chart--block">
+                <div data-ng-repeat="answer in answers.data" class="chart--block">
                   <dvt-bar-chart
                     data-ng-cloak
                     query="getNationalComparisonsData" cda="{{::cdaEsenerDash}}"
-                    width="330" height="660" axis-percent="1"
+                    width="330" height="160" axis-percent="1"
                     orientation="horizontal" axis-fixed-min="0"
                     axis-fixed-max="100" step="20"
-                    params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pCountry1', 'pFilters.country'], ['pCountry2', 'pFilters.country2']]"
-                    color-role="series" colors="[stories[3].color1, stories[3].color2]"
+                    params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pCountry1', 'pFilters.country'], ['pCountry2', 'pFilters.country2'], ['pAnswer', answer.id]]"
+                    color-role="c" colors="[stories[3].color1, stories[3].color2]"
                     id="4" axis-label-font="14px 'OpenSans-bold'"
+                    chart-title="Answer: {{answer.name}}"
                     plots="stories[3].plots" values-overflow="show"
                     values-visible="true" values-mask="{value}"                        
                     label-text-align="stories[2].alignment"
@@ -192,7 +191,7 @@
                     ortho-axis-visible="true"
                     base-axis-position="bottom"
                     dimensions="stories[2].dimensions"
-                    legend="true" is-maximized="false"
+                    is-maximized="false"
                     datasource-and-dates="[15,110,pActivityFilter]"
                   ></dvt-bar-chart>
                 </div>
