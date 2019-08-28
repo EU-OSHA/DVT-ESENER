@@ -1558,7 +1558,8 @@
 
 /** pop up */
   #popUpMessage{
-    background: rgba(0,0,0,0.6);
+    //background: rgba(0,0,0,0.6);
+    background: rgba(37, 173, 175, 0.8);
     position: fixed;
     width: 100vw;
     height:100vh;
@@ -1567,12 +1568,16 @@
     z-index: 9999;
     .popUpMessage--text--block{
       background: $white;
-      width: 70vw;
-      height: 70vh;
+      width: 58vw;
+      //height: 70vh;
       top: 0;      
-      margin: 15vh 15vw; 
-      padding: 15vh 10vw;
+      margin: 4vh 0vw; 
+      padding: 10vh 10vw;
       position: relative;
+      p{
+        font-size: 2rem;
+        margin: 2rem;
+      }
       .close-popup{
         bottom: 5vh;
         position: absolute;

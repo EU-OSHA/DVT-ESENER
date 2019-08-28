@@ -222,6 +222,60 @@
               </div>
             </div>
           </div>
+
+          <div class="filter-text-button">
+            <button id="btnSocial" class="btn-default" data-ng-bind="i18n.L101028" data-ng-click="showSharePopUp(event)"></button>
+            <button id="btnExport" class="btn-default" data-ng-bind="i18n.L101029" data-ng-click="showSharePopUp(event)"></button>
+          </div>
+
+          <section id="popUpMessage" data-ng-if="showPopUpSocialMedia">
+            <div class="modal fade dvt-modal-social in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10}" ng-transclude="" modal-window="" window-class="dvt-modal" index="0" style="z-index: 1050;">
+              <div class="modal-wrapper">
+                <div class="modal-body">
+                  <span class="btn pull-right" role="button" aria-hidden="true" title="Close window" data-ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
+                  <div class="popUpMessage--text--block">
+                    <p class="text-center" data-ng-bind="i18n.L369"></p>
+                    <div class="social--network--modal" id="osha-menu-social">
+                      <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n.L370}}" socialshare-text="{{i18n[title]}}" socialshare-url="{{pathURLDVT}}">
+                        <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L370)"></span>
+                      </a>
+                      <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n.L371}}" socialshare-url="{{pathURLDVT}}">
+                        <i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L371)"></span>
+                      </a>
+                      <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n.L372}}" socialshare-url="{{pathURLDVT}}">
+                        <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L372)"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="popUpMessage" data-ng-if="showPopUpExportData" data-ng-click="ok()">
+            <div class="modal fade dvt-modal-social in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10}" ng-transclude="" modal-window="" window-class="dvt-modal" index="0" style="z-index: 1050;">
+              <div class="modal-wrapper">
+                <div class="modal-body">
+                  <span class="btn pull-right" role="button" aria-hidden="true" title="Close window" data-ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
+                  <div class="popUpMessage--text--block">
+                    <p class="text-center" data-ng-bind="i18n.L101029"></p>
+                    <div class="export--data--modal" id="osha-menu-social">
+                      <a class="main-color" target="_blank" data-ng-bind="i18n.L100660">
+                      </a>
+                      <a class="main-color" target="_blank" data-ng-bind="i18n.L100657">
+                      </a>
+                      <a class="main-color" target="_blank" data-ng-bind="i18n.L100656">
+                      </a>
+                      <a class="main-color" target="_blank" data-ng-bind="i18n.L100652">
+                      </a>
+                      <a class="main-color" target="_blank" data-ng-bind="i18n.L100656">
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
       </div>
 
     </section>

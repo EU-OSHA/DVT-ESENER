@@ -39,6 +39,151 @@
   }
 }
 
+.social--network--modal{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  margin-right: 10rem; 
+  margin-left: 10rem; 
+  font-size: 3rem;
+}
+
+.export--data--modal{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  margin-right: 10rem; 
+  margin-left: 10rem;
+}
+
+.dvt-modal-social{
+  display: block;
+  background:$white;
+  width: 60%;
+  margin: auto;
+  height: 45%;
+  border-radius: 6px;
+  .modal-wrapper {
+    height: auto;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 6px;
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+      background-color: #F5F5F5;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: #666;
+    }
+    .card--block--chart--wrapper {
+      .chart--submenu{
+        list-style: none;
+        display: block;
+        justify-content: unset;
+        position: relative;
+        width: 80%;
+        margin: auto;
+        padding: 0;
+        > li{
+          float: right;
+          > a{
+            width: 3.5rem;
+            height: 2.7rem;
+            display: block;
+            color: $gray-base;
+            &.download-button:after{
+              content: "\f019";
+              font-family: FontAwesome;
+            }
+          }
+        }
+      }
+      .export-button-modal{
+        a{
+          padding: 0.8rem 1rem;
+          border-radius: 0.3rem;
+          background: #f2f2f2;
+          color: #000;
+          font-size: 1.4rem;
+          display: block;
+          overflow-y:hidden; 
+          &:hover{
+            color:$white;
+            background: $aquamarine;
+            .fa-arrow-down{
+              top:0rem;
+              -webkit-transition: all 0.8s; 
+              transition: all 0.8s;
+            }
+            .fa-picture-o{
+              top:3rem;
+              -webkit-transition: all 0.8s; 
+              transition: all 0.8s;
+            }
+          }
+          .fa-arrow-down{
+            position: relative;
+            top: -3rem;
+            left: 3px;
+            -webkit-transition: all 0.8s; 
+            transition: all 0.8s;
+          }
+          .fa-picture-o{
+            position: relative;
+            top:0rem;
+            left:-1rem;
+            -webkit-transition: all 0.8s; 
+            transition: all 0.8s;
+          }
+        }
+      }
+      .title--card{
+        font-size: 2.8rem;
+        margin-top: 0;
+        text-align: left;
+      } 
+      .chart--wrapper{
+        width: 80%;
+        height: auto;
+        margin: 10vh auto;
+        svg{
+          text{
+            font-size: 14px !important;
+          }
+        }
+      }      
+    }  
+  }
+  .dvt-chart {
+    height: 100% !important;
+    width: 100%;
+    overflow: hidden;
+    border-radius: .5em;
+    margin: 0;
+    position: relative;
+    left: 0%;
+    top: 0%;
+
+    h3{
+      font-size:2rem !important ;
+      min-height: auto !important;
+    }
+    .legend-info{
+      float: left;
+      background: $white;
+      width: 100%;
+      padding: 0 30px;
+      color: #000;
+      text-align: center;
+      font-size: 1.4rem;
+    }
+  }
+}
+
 /*.tags{
   .activity-sector{
     margin: 0px 0px 0px 55px;

@@ -621,7 +621,7 @@ define(function (require) {
                 if (attributes.type=='pie') {
                     definition.chartDefinition.valuesVisible = true;
                     definition.chartDefinition.legend = true;
-                    definition.chartDefinition.valuesAnchor = "center";
+                    definition.chartDefinition.valuesAnchor = 'center';
                     definition.chartDefinition.valuesLabelStyle= 'inside';
                     //definition.chartDefinition.explodedSliceRadius = '3%'
                     if (scope.isMaximized) {

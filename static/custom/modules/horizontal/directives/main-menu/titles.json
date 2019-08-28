@@ -1,16 +1,13 @@
 {
   "home": null,
 
-  "_SECCTION-ABOUT-TOOL": null,
-  "about-tool": "L22022",
-
   "_SECCTION-FOOTER-PAGES": null,
-  "site-map": "L294",
-  "accessibility": "L296",
-  "privacy-policy":"L297",
-  "legal-notice":"L298",
+  "site-map": "L356",
+  "accessibility": "L358",
+  "privacy-policy":"L359",
+  "legal-notice":"L360",
 
-  "search": "L395",
+  "search": "L378",
 
   "shareThis": "Share this on: ",
   "default-title":"L62",
@@ -18,6 +15,12 @@
 
   "404": "L63",
 
-  "_SECCTION-GENERIC-INFORMATION": null,
-  "osh-authorities": "L396"
+  "_SECCTION-SURVEY": null,
+  "overview": "L101009",
+  "datavisualisation": "L101010",
+  "detailpage-european-map": "L100623",
+  "detailpage-european-bar-chart": "L100622",
+  "detailpage-national-bar-chart": "L100624",
+  "detailpage-national-comparisons": "L100621",
+  "detailpage-pie-chart": "L101033"
 }

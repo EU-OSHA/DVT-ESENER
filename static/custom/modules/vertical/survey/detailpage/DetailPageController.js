@@ -11,7 +11,7 @@
 define(function (require) {
 	'use strict';
 
-	function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, DetailPageService, dvtUtils, $rootScope, mapProvider) {
+	function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, DetailPageService, dvtUtils, $rootScope, mapProvider, $location) {
 
 		//CDA
 		$scope.cdaEsenerDash = configService.getEsenerCda();
@@ -33,6 +33,12 @@ define(function (require) {
 
 		var i18nEN = configService.getLiterals();
 
+		//Social network modal
+		$scope.showPopUpSocialMedia = false;
+		$scope.showPopUpExportData = false;
+		$scope.pathURLDVT=$location.absUrl();
+		var titleStructure = require('json!dvt/directives/title-items');
+		$scope.title = titleStructure[$state.current.name];
 		
 		//Parameters
 		$scope.pIndicator = $stateParams.pIndicator; //Year
@@ -630,6 +636,18 @@ define(function (require) {
 		  //angular.element(parentNode).toggleClass('open');
 		}
 
+		$scope.showSharePopUp = function(){
+			if(event.target.id == 'btnSocial')
+				$scope.showPopUpSocialMedia = true;
+			else
+				$scope.showPopUpExportData = true;
+		}
+
+		$scope.ok = function () {
+            $scope.showPopUpSocialMedia = false;
+			$scope.showPopUpExportData = false;
+        };
+
 		angular.element('body').mouseup(function(e){
 		  var container = angular.element('.submenu--items--wrapper');
 		  if (!container.is(e.target) && container.has(e.target).length === 0){
@@ -667,7 +685,7 @@ define(function (require) {
 		/********************************************* END FILTERS ************************************************/
 	}
 
-	controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'DetailPageService','dvtUtils','$rootScope', 'mapProvider'];
+	controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'DetailPageService','dvtUtils','$rootScope', 'mapProvider', '$location'];
 	return controller;
 });
 
