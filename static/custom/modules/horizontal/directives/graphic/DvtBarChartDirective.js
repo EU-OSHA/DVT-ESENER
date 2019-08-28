@@ -637,7 +637,7 @@ define(function (require) {
                         }
                     };                 
                     definition.chartDefinition.valuesOverflow= 'trim';
-                    definition.chartDefinition.label_textStyle = 'black';
+                    //definition.chartDefinition.label_textStyle = 'black';
                     //Solve problem when maximizing chart and percentage changing
                     if (!scope.isMaximized) {
                         definition.chartDefinition.valuesMask= '{value.percent}';    

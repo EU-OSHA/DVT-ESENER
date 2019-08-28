@@ -510,7 +510,7 @@
       AND n.country_code = ${pCountry}
       AND t.language = 'EN'
       AND v.dataset_id = ${pDataset}
-      ORDER BY eao.order_position;
+      ORDER BY eao.order_position DESC;
     </Query>
   </DataAccess>
 
