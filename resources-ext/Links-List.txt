@@ -4,7 +4,8 @@
 81014-https://osha.europa.eu/en/tools-and-publications/publications/reports/en_esener1-summary.pdf/view
 81014-https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx
 81014-http://oshwiki.eu/wiki/ESENER-1_Methodology
-81014-http://discover.ukdataservice.ac.uk/?q=esener
+81014-https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446
+81014-https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=en
 81014-https://search.gesis.org/research_data/ZA6864
 81015-https://osha.europa.eu/en/tools-and-publications/publications/reports/qualitative-post-test-evaluation-of-esener-overview-report/view
 81015-https://osha.europa.eu/en/tools-and-publications/publications/reports/qualitative-post-test-evaluation-of-esener-substantive-findings/view
@@ -24,6 +25,7 @@
 81018-https://osha.europa.eu/en/tools-and-publications/publications/reports/esener-ii-summary.pdf/view
 81018-http://oshwiki.eu/wiki/ESENER-2_Methodology
 81018-http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue
+81018-https://www.europeandataportal.eu/data/#/datasets/esener-2
 81018-https://search.gesis.org/research_data/ZA6865
 81019-https://osha.europa.eu/en/tools-and-publications/publications/worker-participation-management-occupational-safety-health/view
 81019-https://osha.europa.eu/en/tools-and-publications/publications/l_en?text=Country%20report%20Worker%20participation%20in%20the%20management%20of%20occupational%20safety%20and%20health%20%E2%80%94%20qualitative%20evidence%20from%20ESENER-2&amp;sort_by=search_api_relevance&amp;direction=desc
@@ -36,4 +38,8 @@
 81019-https://osha.europa.eu/en/tools-and-publications/publications/executive-summary-management-occupational-health-and-safety/view
 81019-https://osha.europa.eu/en/tools-and-publications/publications/technical-assessment-expansion-second-european-survey/view
 81019-https://osha.europa.eu/en/tools-and-publications/publications/ex-post-evaluation-second-european-survey-enterprises-new-and/view
+81039-http://www.w3.org/TR/WCAG10-HTML-TECHS/#link-accesskey
+81055-https://eur-lex.europa.eu/eli/reg/2018/213/oj
+81070-mailto:dpo@osha.europa.eu
+81072-http://www.edps.europa.eu/
 
