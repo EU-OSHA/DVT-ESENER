@@ -237,7 +237,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Tegevusvaldkond");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_sec3" AND t.language="EN" AND t.text="Activity sector");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Toiminta-ala");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Toiminta-ala");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_sec3" AND t.language="EN" AND t.text="Activity sector");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Secteur d’activité");
@@ -309,7 +309,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Ettevõtte/asutuse suurus");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_size_4" AND t.language="EN" AND t.text="Establishment size");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Toimipaikan koko");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Toimipaikan koko");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_size_4" AND t.language="EN" AND t.text="Establishment size");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Taille de l’établissement");
@@ -378,7 +378,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "#N/A");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_above" AND t.language="EN" AND t.text="higher than the");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "#N/A");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "#N/A");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_above" AND t.language="EN" AND t.text="higher than the");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, " ");
@@ -450,7 +450,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Graafikut ei saa kuvada, sest valitud andmed ei ole esinduslikud.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_alertnotdis" AND t.language="EN" AND t.text="The graphic cannot be displayed, as the data selected is not representative");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Kuvaa ei voida näyttää, koska valitut tiedot eivät ole edustavia.");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Kuvaa ei voida näyttää, koska valitut tiedot eivät ole edustavia.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_alertnotdis" AND t.language="EN" AND t.text="The graphic cannot be displayed, as the data selected is not representative");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Le graphique ne peut être affiché, car les données sélectionnées ne sont pas représentatives.");
@@ -522,7 +522,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kõik");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_all" AND t.language="EN" AND t.text="All");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Kaikki");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Kaikki");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_all" AND t.language="EN" AND t.text="All");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Tous");
@@ -594,7 +594,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "madalam");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_below" AND t.language="EN" AND t.text="lower than the");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "alle");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "alle");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_below" AND t.language="EN" AND t.text="lower than the");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "au-dessous");
@@ -660,7 +660,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "* Ainult EL");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_euonly" AND t.language="EN" AND t.text="*EU only");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "* Vain EU");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "* Vain EU");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_euonly" AND t.language="EN" AND t.text="*EU only");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "*UE seule");
@@ -732,7 +732,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Funktsioon filtreerib Euroopa Liidu liikmesriikide andmed");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_euonlytt" AND t.language="EN" AND t.text="The function filters EU Member States data");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Toiminto suodattaa EU:n jäsenvaltioiden tiedot");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Toiminto suodattaa EU:n jäsenvaltioiden tiedot");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_euonlytt" AND t.language="EN" AND t.text="The function filters EU Member States data");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Cette fonction filtre les données des États membres de l’UE");
@@ -804,7 +804,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Keeled");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_languages" AND t.language="EN" AND t.text="Available languages");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Saatavissa olevat kielet");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Saatavissa olevat kielet");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_languages" AND t.language="EN" AND t.text="Available languages");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Langues disponibles");
@@ -870,7 +870,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "kõrgem");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_mean" AND t.language="EN" AND t.text="Mean");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "yli");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "yli");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_mean" AND t.language="EN" AND t.text="Mean");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "au-dessus");
@@ -936,7 +936,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "OK");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_ok" AND t.language="EN" AND t.text="Ok");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Ok");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Ok");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_ok" AND t.language="EN" AND t.text="Ok");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Ok");
@@ -1017,7 +1017,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Vali sisu");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_selectContent" AND t.language="EN" AND t.text="Select content");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Valitse sisältö");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Valitse sisältö");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_selectContent" AND t.language="EN" AND t.text="Select content");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Sélectionner le contenu");
@@ -1089,7 +1089,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Külasta URLi");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_visitURL" AND t.language="EN" AND t.text="Visit URL");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Käy URL-osoitteessa");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Käy URL-osoitteessa");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_visitURL" AND t.language="EN" AND t.text="Visit URL");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Visiter l’URL");
@@ -1152,7 +1152,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kopeeri: Ctrl+C");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_toCopy" AND t.language="EN" AND t.text="Ctrl+C to copy");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Kopioi: Ctrl+C ");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Kopioi: Ctrl+C ");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_toCopy" AND t.language="EN" AND t.text="Ctrl+C to copy");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Ctrl+C pour copier");
@@ -1224,7 +1224,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Vastus");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_answer" AND t.language="EN" AND t.text="Answer");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Vastaus");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Vastaus");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_answer" AND t.language="EN" AND t.text="Answer");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Réponse");
@@ -1296,7 +1296,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Riik");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_country" AND t.language="EN" AND t.text="Country");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Maa");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Maa");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_country" AND t.language="EN" AND t.text="Country");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Pays");
@@ -1368,7 +1368,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Võrdle");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_countryB" AND t.language="EN" AND t.text="Compare with");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Verrattuna maahan");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Verrattuna maahan");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_countryB" AND t.language="EN" AND t.text="Compare with");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Comparer avec");
@@ -1440,7 +1440,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Visualisatsioon");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_plot" AND t.language="EN" AND t.text="Visualisation");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Visualisointi");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Visualisointi");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_plot" AND t.language="EN" AND t.text="Visualisation");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Visualisation");
@@ -1509,7 +1509,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Küsimus");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_question" AND t.language="EN" AND t.text="Question");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Kysymys");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Kysymys");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_question" AND t.language="EN" AND t.text="Question");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Question");
@@ -1650,7 +1650,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Teema");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_topic" AND t.language="EN" AND t.text="Topic");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Aihe");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Aihe");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_topic" AND t.language="EN" AND t.text="Topic");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Sujet");
@@ -1722,7 +1722,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Viita sellele visualisatsioonile");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_citeExport" AND t.language="EN" AND t.text="Page citation");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Lainaa tätä visualisointia");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Lainaa tätä visualisointia");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_citeExport" AND t.language="EN" AND t.text="Page citation");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Faire référence à cette visualisation");
@@ -1794,7 +1794,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Andmed (XLS)");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_csvExport" AND t.language="EN" AND t.text="Data (XLS)");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Data (XLS)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Data (XLS)");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_csvExport" AND t.language="EN" AND t.text="Data (XLS)");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Données (XLS)");
@@ -1866,7 +1866,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kõrge resolutsioon (EPS)");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_epsExport" AND t.language="EN" AND t.text="EPS (High resolution)");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Korkea resoluutio (EPS)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Korkea resoluutio (EPS)");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_epsExport" AND t.language="EN" AND t.text="EPS (High resolution)");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Haute résolution (EPS)");
@@ -1938,7 +1938,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Integreeritav HTML");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_htmlExport" AND t.language="EN" AND t.text="Embeddable HTML");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Sisäänrakennettu HTML");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Sisäänrakennettu HTML");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_htmlExport" AND t.language="EN" AND t.text="Embeddable HTML");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "HTML incorporable");
@@ -2010,7 +2010,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Järgmine küsimus");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_nextQuest" AND t.language="EN" AND t.text="Next Question");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Seuraava kysymys");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Seuraava kysymys");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_nextQuest" AND t.language="EN" AND t.text="Next Question");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Question suivante");
@@ -2082,7 +2082,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "PDF");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_pdfExport" AND t.language="EN" AND t.text="PDF (High resolution)");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "PDF");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "PDF");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_pdfExport" AND t.language="EN" AND t.text="PDF (High resolution)");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "PDF");
@@ -2154,7 +2154,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Pilt (PNG)");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_pngExport" AND t.language="EN" AND t.text="Figure (PNG)");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Kuva (PNG)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Kuva (PNG)");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_pngExport" AND t.language="EN" AND t.text="Figure (PNG)");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Image (PNG)");
@@ -2226,7 +2226,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Eelmine küsimus");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_prevQuest" AND t.language="EN" AND t.text="Previous Question");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Edellinen kysymys");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Edellinen kysymys");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_prevQuest" AND t.language="EN" AND t.text="Previous Question");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Question précédente");
@@ -2298,7 +2298,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "SVG");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_svgExport" AND t.language="EN" AND t.text="SVG (High resolution)");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "SVG");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "SVG");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_svgExport" AND t.language="EN" AND t.text="SVG (High resolution)");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "SVG");
@@ -2370,7 +2370,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Lehe URL");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_toolUrlExport" AND t.language="EN" AND t.text="Page URL");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "URL-sivu");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "URL-sivu");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_toolUrlExport" AND t.language="EN" AND t.text="Page URL");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Page URL");
@@ -2442,7 +2442,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Pane järjehoidja");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_urlExport" AND t.language="EN" AND t.text="Page bookmark");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Lisää sivu kirjanmerkkeihin");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Lisää sivu kirjanmerkkeihin");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_urlExport" AND t.language="EN" AND t.text="Page bookmark");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Označi ovu stranicu");
@@ -2511,7 +2511,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Ekspordi visualisatsioon");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_exportOptions" AND t.language="EN" AND t.text="Export visualization");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Vie visualisointi");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Vie visualisointi");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_exportOptions" AND t.language="EN" AND t.text="Export visualization");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Exporter la visualisation");
@@ -2583,7 +2583,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Vali küsimus");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_plotParameters" AND t.language="EN" AND t.text="Select a question");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Valitse kysymys");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Valitse kysymys");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_plotParameters" AND t.language="EN" AND t.text="Select a question");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Sélectionner une question");
@@ -2655,7 +2655,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "* Euroopa Liidu keskmine arvestab ka Horvaatia andmeid, kuigi see ei olnud uute ja tekkivate riskide Euroopa ettevõtete esimese uuringu (ESENER-1) välitööde tegemise ajal 2009. aastal veel Euroopa Liidu liikmesriik (Horvaatia ühines Euroopa Liiduga 1. juulil 2013). Horvaatia andmed on lisatud selleks, et tekiks järjepidevus uute ja tekkivate riskide Euroopa ettevõtete teise uuringu (ESENER-2) andmetega. Võrreldes ESENER-1 väljaannetes esitatud arvnäitajatega EL 27 kohta on Horvaatia andmete lisamise mõju Euroopa Liidu tulemustele siiski väga väike.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_crossCountry" AND t.language="EN" AND t.text="*The average for the European Union includes data for Croatia although it was not a Member State of the EU at the time of the fieldwork for ESENER-1 in 2009 (Croatia joined the EU on 1 July 2013). Its data have been included for the sake of consistency with the presentation of ESENER-2 data. It should be noted that its inclusion has only a very slight effect on EU figures compared with those that appear in ESENER-1 publications and which correspond to the EU-27");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "* Euroopan keskiarvo sisältää Kroatian tiedot, vaikka se ei ollut EU:n jäsenvaltio, kun ESENER-1-tutkimuksen haastattelut tehtiin vuonna 2009 (Kroatia liittyi EU:hun 1. heinäkuuta 2013). Sen tiedot on otettu mukaan, jotta tiedot ovat yhtenäisiä ESENER-2-tutkimuksen tietojen kanssa. On pantava merkille, että Kroatian tietojen mukaan ottamisella on vain vähäinen vaikutus EU:n lukuihin verrattuna niihin, jotka esitetään ESENER-1-julkaisuissa ja jotka vastaavat EU:n 27:ää jäsenvaltiota.");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "* Euroopan keskiarvo sisältää Kroatian tiedot, vaikka se ei ollut EU:n jäsenvaltio, kun ESENER-1-tutkimuksen haastattelut tehtiin vuonna 2009 (Kroatia liittyi EU:hun 1. heinäkuuta 2013). Sen tiedot on otettu mukaan, jotta tiedot ovat yhtenäisiä ESENER-2-tutkimuksen tietojen kanssa. On pantava merkille, että Kroatian tietojen mukaan ottamisella on vain vähäinen vaikutus EU:n lukuihin verrattuna niihin, jotka esitetään ESENER-1-julkaisuissa ja jotka vastaavat EU:n 27:ää jäsenvaltiota.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_crossCountry" AND t.language="EN" AND t.text="*The average for the European Union includes data for Croatia although it was not a Member State of the EU at the time of the fieldwork for ESENER-1 in 2009 (Croatia joined the EU on 1 July 2013). Its data have been included for the sake of consistency with the presentation of ESENER-2 data. It should be noted that its inclusion has only a very slight effect on EU figures compared with those that appear in ESENER-1 publications and which correspond to the EU-27");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "*La moyenne de l’Union européenne inclut des données relatives à la Croatie, même si cette dernière n’était pas membre de l’UE au moment du travail de terrain de l’enquête ESENER-1 en 2009 (la Croatie n’ayant rejoint l’UE que le 1er juillet 2013). Les données se rapportant à la Croatie ont été incluses afin de garantir la cohérence avec la présentation des données de l’enquête ESENER-2. Il est à noter que leur inclusion n’a qu’un effet très minime sur les chiffres de l’UE par comparaison avec ceux figurant dans les publications d’ESENER-1 et correspondant à l’UE-27.");
@@ -2727,7 +2727,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Visualisatsioon kujutab vastuste protsentuaalset jagunemist või mõne konkreetse rühma kahe riigi keskmist või Euroopa keskmist küsimuse puhul.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_crossCountryMouse" AND t.language="EN" AND t.text="The National comparisons visualisation presents a comparative overview for the values of all answers between two selected countries.");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Visualisointi kuvaa vastausten prosenttiosuutta, tietyn ihmisryhmän vastauskohtaista keskiarvoa kahden maan välillä tai Euroopan keskiarvoa kysymyksen osalta.");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Visualisointi kuvaa vastausten prosenttiosuutta, tietyn ihmisryhmän vastauskohtaista keskiarvoa kahden maan välillä tai Euroopan keskiarvoa kysymyksen osalta.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_crossCountryMouse" AND t.language="EN" AND t.text="The National comparisons visualisation presents a comparative overview for the values of all answers between two selected countries.");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "La visualisation illustre les pourcentages de réponses ou la valeur de réponse moyenne pour un groupe particulier de personnes entre deux pays ou la moyenne européenne pour une question.");
@@ -2799,7 +2799,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "* Euroopa Liidu keskmine arvestab ka Horvaatia andmeid, kuigi see ei olnud uute ja tekkivate riskide Euroopa ettevõtete esimese uuringu (ESENER-1) välitööde tegemise ajal 2009. aastal veel Euroopa Liidu liikmesriik (Horvaatia ühines Euroopa Liiduga 1. juulil 2013). Horvaatia andmed on lisatud selleks, et tekiks järjepidevus uute ja tekkivate riskide Euroopa ettevõtete teise uuringu (ESENER-2) andmetega. Võrreldes ESENER-1 väljaannetes esitatud arvnäitajatega EL 27 kohta on Horvaatia andmete lisamise mõju Euroopa Liidu tulemustele siiski väga väike.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_euBars" AND t.language="EN" AND t.text="*The average for the European Union includes data for Croatia although it was not a Member State of the EU at the time of the fieldwork for ESENER-1 in 2009 (Croatia joined the EU on 1 July 2013). Its data have been included for the sake of consistency with the presentation of ESENER-2 data. It should be noted that its inclusion has only a very slight effect on EU figures compared with those that appear in ESENER-1 publications and which correspond to the EU-27");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "* Euroopan keskiarvo sisältää Kroatian tiedot, vaikka se ei ollut EU:n jäsenvaltio, kun ESENER-1-tutkimuksen haastattelut tehtiin vuonna 2009 (Kroatia liittyi EU:hun 1. heinäkuuta 2013). Sen tiedot on otettu mukaan, jotta tiedot ovat yhtenäisiä ESENER-2-tutkimuksen tietojen kanssa. On pantava merkille, että Kroatian tietojen mukaan ottamisella on vain vähäinen vaikutus EU:n lukuihin verrattuna niihin, jotka esitetään ESENER-1-julkaisuissa ja jotka vastaavat EU:n 27:ää jäsenvaltiota.");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "* Euroopan keskiarvo sisältää Kroatian tiedot, vaikka se ei ollut EU:n jäsenvaltio, kun ESENER-1-tutkimuksen haastattelut tehtiin vuonna 2009 (Kroatia liittyi EU:hun 1. heinäkuuta 2013). Sen tiedot on otettu mukaan, jotta tiedot ovat yhtenäisiä ESENER-2-tutkimuksen tietojen kanssa. On pantava merkille, että Kroatian tietojen mukaan ottamisella on vain vähäinen vaikutus EU:n lukuihin verrattuna niihin, jotka esitetään ESENER-1-julkaisuissa ja jotka vastaavat EU:n 27:ää jäsenvaltiota.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_euBars" AND t.language="EN" AND t.text="*The average for the European Union includes data for Croatia although it was not a Member State of the EU at the time of the fieldwork for ESENER-1 in 2009 (Croatia joined the EU on 1 July 2013). Its data have been included for the sake of consistency with the presentation of ESENER-2 data. It should be noted that its inclusion has only a very slight effect on EU figures compared with those that appear in ESENER-1 publications and which correspond to the EU-27");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "*La moyenne de l’Union européenne inclut des données relatives à la Croatie, même si cette dernière n’était pas membre de l’UE au moment du travail de terrain de l’enquête ESENER-1 en 2009 (la Croatie n’ayant rejoint l’UE que le 1er juillet 2013). Les données se rapportant à la Croatie ont été incluses afin de garantir la cohérence avec la présentation des données de l’enquête ESENER-2. Il est à noter que leur inclusion n’a qu’un effet très minime sur les chiffres de l’UE par comparaison avec ceux figurant dans les publications d’ESENER-1 et correspondant à l’UE-27.");
@@ -2871,7 +2871,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Visualisatsioon kujutab vastuste protsentuaalset jagunemist või keskmist riigi tasandil ja kõigi Euroopa riikide lõikes.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_euBarsMouse" AND t.language="EN" AND t.text="The European bar chart visualisation illustrates the values of all answers per country in a vertical stucked bar chart. The European Union average is also provided for comparative reasons in the left  hand side of the graph.");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Visualisointi kuvaa vastausten prosenttiosuutta, vastauskohtaista keskiarvoa maittain tai kaikissa Euroopan maissa kysymyksen osalta.");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Visualisointi kuvaa vastausten prosenttiosuutta, vastauskohtaista keskiarvoa maittain tai kaikissa Euroopan maissa kysymyksen osalta.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_euBarsMouse" AND t.language="EN" AND t.text="The European bar chart visualisation illustrates the values of all answers per country in a vertical stucked bar chart. The European Union average is also provided for comparative reasons in the left  hand side of the graph.");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "La visualisation du diagramme à colonnes européen illustre les valeurs de toutes les réponses par pays dans un diagramme à colonnes verticales. La moyenne de l’Union européenne est également fournie à titre comparatif sur le côté gauche du graphique.");
@@ -2943,7 +2943,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "* Euroopa Liidu keskmine arvestab ka Horvaatia andmeid, kuigi see ei olnud uute ja tekkivate riskide Euroopa ettevõtete esimese uuringu (ESENER-1) välitööde tegemise ajal 2009. aastal veel Euroopa Liidu liikmesriik (Horvaatia ühines Euroopa Liiduga 1. juulil 2013). Horvaatia andmed on lisatud selleks, et tekiks järjepidevus uute ja tekkivate riskide Euroopa ettevõtete teise uuringu (ESENER-2) andmetega. Võrreldes ESENER-1 väljaannetes esitatud arvnäitajatega EL 27 kohta on Horvaatia andmete lisamise mõju Euroopa Liidu tulemustele siiski väga väike.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_heatMap" AND t.language="EN" AND t.text="*The average for the European Union includes data for Croatia although it was not a Member State of the EU at the time of the fieldwork for ESENER-1 in 2009 (Croatia joined the EU on 1 July 2013). Its data have been included for the sake of consistency with the presentation of ESENER-2 data. It should be noted that its inclusion has only a very slight effect on EU figures compared with those that appear in ESENER-1 publications and which correspond to the EU-27");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "* Euroopan keskiarvo sisältää Kroatian tiedot, vaikka se ei ollut EU:n jäsenvaltio, kun ESENER-1-tutkimuksen haastattelut tehtiin vuonna 2009 (Kroatia liittyi EU:hun 1. heinäkuuta 2013). Sen tiedot on otettu mukaan, jotta tiedot ovat yhtenäisiä ESENER-2-tutkimuksen tietojen kanssa. On pantava merkille, että Kroatian tietojen mukaan ottamisella on vain vähäinen vaikutus EU:n lukuihin verrattuna niihin, jotka esitetään ESENER-1-julkaisuissa ja jotka vastaavat EU:n 27:ää jäsenvaltiota.");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "* Euroopan keskiarvo sisältää Kroatian tiedot, vaikka se ei ollut EU:n jäsenvaltio, kun ESENER-1-tutkimuksen haastattelut tehtiin vuonna 2009 (Kroatia liittyi EU:hun 1. heinäkuuta 2013). Sen tiedot on otettu mukaan, jotta tiedot ovat yhtenäisiä ESENER-2-tutkimuksen tietojen kanssa. On pantava merkille, että Kroatian tietojen mukaan ottamisella on vain vähäinen vaikutus EU:n lukuihin verrattuna niihin, jotka esitetään ESENER-1-julkaisuissa ja jotka vastaavat EU:n 27:ää jäsenvaltiota.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_heatMap" AND t.language="EN" AND t.text="*The average for the European Union includes data for Croatia although it was not a Member State of the EU at the time of the fieldwork for ESENER-1 in 2009 (Croatia joined the EU on 1 July 2013). Its data have been included for the sake of consistency with the presentation of ESENER-2 data. It should be noted that its inclusion has only a very slight effect on EU figures compared with those that appear in ESENER-1 publications and which correspond to the EU-27");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "*La moyenne de l’Union européenne inclut des données relatives à la Croatie, même si cette dernière n’était pas membre de l’UE au moment du travail de terrain de l’enquête ESENER-1 en 2009 (la Croatie n’ayant rejoint l’UE que le 1er juillet 2013). Les données se rapportant à la Croatie ont été incluses afin de garantir la cohérence avec la présentation des données de l’enquête ESENER-2. Il est à noter que leur inclusion n’a qu’un effet très minime sur les chiffres de l’UE par comparaison avec ceux figurant dans les publications d’ESENER-1 et correspondant à l’UE-27.");
@@ -3015,7 +3015,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Visualisatsioon kujutab kaardil vastuste protsentuaalset jagunemist või keskmist vastust küsimusele Euroopa riigis.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_heatMapMouse" AND t.language="EN" AND t.text="The European map visualisation illustrates in a map the values of the answers per Country.");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Visualisointi kuvaa kartalla vastausten prosenttimääriä tai vastauskohtaista keskiarvoa maittain Euroopassa.");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Visualisointi kuvaa kartalla vastausten prosenttimääriä tai vastauskohtaista keskiarvoa maittain Euroopassa.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_heatMapMouse" AND t.language="EN" AND t.text="The European map visualisation illustrates in a map the values of the answers per Country.");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "La visualisation illustre dans une carte les pourcentages de réponses ou la valeur de réponse moyenne d’une question par pays européen.");
@@ -3087,7 +3087,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "* Euroopa Liidu keskmine arvestab ka Horvaatia andmeid, kuigi see ei olnud uute ja tekkivate riskide Euroopa ettevõtete esimese uuringu (ESENER-1) välitööde tegemise ajal 2009. aastal veel Euroopa Liidu liikmesriik (Horvaatia ühines Euroopa Liiduga 1. juulil 2013). Horvaatia andmed on lisatud selleks, et tekiks järjepidevus uute ja tekkivate riskide Euroopa ettevõtete teise uuringu (ESENER-2) andmetega. Võrreldes ESENER-1 väljaannetes esitatud arvnäitajatega EL 27 kohta on Horvaatia andmete lisamise mõju Euroopa Liidu tulemustele siiski väga väike.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_inCountry" AND t.language="EN" AND t.text="*The average for the European Union includes data for Croatia although it was not a Member State of the EU at the time of the fieldwork for ESENER-1 in 2009 (Croatia joined the EU on 1 July 2013). Its data have been included for the sake of consistency with the presentation of ESENER-2 data. It should be noted that its inclusion has only a very slight effect on EU figures compared with those that appear in ESENER-1 publications and which correspond to the EU-27");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "* Euroopan keskiarvo sisältää Kroatian tiedot, vaikka se ei ollut EU:n jäsenvaltio, kun ESENER-1-tutkimuksen haastattelut tehtiin vuonna 2009 (Kroatia liittyi EU:hun 1. heinäkuuta 2013). Sen tiedot on otettu mukaan, jotta tiedot ovat yhtenäisiä ESENER-2-tutkimuksen tietojen kanssa. On pantava merkille, että Kroatian tietojen mukaan ottamisella on vain vähäinen vaikutus EU:n lukuihin verrattuna niihin, jotka esitetään ESENER-1-julkaisuissa ja jotka vastaavat EU:n 27:ää jäsenvaltiota.");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "* Euroopan keskiarvo sisältää Kroatian tiedot, vaikka se ei ollut EU:n jäsenvaltio, kun ESENER-1-tutkimuksen haastattelut tehtiin vuonna 2009 (Kroatia liittyi EU:hun 1. heinäkuuta 2013). Sen tiedot on otettu mukaan, jotta tiedot ovat yhtenäisiä ESENER-2-tutkimuksen tietojen kanssa. On pantava merkille, että Kroatian tietojen mukaan ottamisella on vain vähäinen vaikutus EU:n lukuihin verrattuna niihin, jotka esitetään ESENER-1-julkaisuissa ja jotka vastaavat EU:n 27:ää jäsenvaltiota.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_inCountry" AND t.language="EN" AND t.text="*The average for the European Union includes data for Croatia although it was not a Member State of the EU at the time of the fieldwork for ESENER-1 in 2009 (Croatia joined the EU on 1 July 2013). Its data have been included for the sake of consistency with the presentation of ESENER-2 data. It should be noted that its inclusion has only a very slight effect on EU figures compared with those that appear in ESENER-1 publications and which correspond to the EU-27");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "*La moyenne de l’Union européenne inclut des données relatives à la Croatie, même si cette dernière n’était pas membre de l’UE au moment du travail de terrain de l’enquête ESENER-1 en 2009 (la Croatie n’ayant rejoint l’UE que le 1er juillet 2013). Les données se rapportant à la Croatie ont été incluses afin de garantir la cohérence avec la présentation des données de l’enquête ESENER-2. Il est à noter que leur inclusion n’a qu’un effet très minime sur les chiffres de l’UE par comparaison avec ceux figurant dans les publications d’ESENER-1 et correspondant à l’UE-27.");
@@ -3159,7 +3159,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Visualisatsioon kujutab vastuste protsentuaalset jagunemist või keskmist vastust küsimusele rühma või riigi tasandil.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_inCountryMouse" AND t.language="EN" AND t.text="The National bar chart visualisation illustrates the values of all answers per selected country and subset. The average among all subsets per answer is also provided at the end.");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Visualisointi kuvaa vastauksien prosenttiosuuksia tai yhden kysymyksen vastausten keskiarvoa tietyssä ryhmässä yhdessä maassa.");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Visualisointi kuvaa vastauksien prosenttiosuuksia tai yhden kysymyksen vastausten keskiarvoa tietyssä ryhmässä yhdessä maassa.");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_inCountryMouse" AND t.language="EN" AND t.text="The National bar chart visualisation illustrates the values of all answers per selected country and subset. The average among all subsets per answer is also provided at the end.");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "La visualisation illustre les pourcentages de réponses ou les valeurs de réponse moyennes pour une question par groupe de personnes pour un pays.");
@@ -3231,7 +3231,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "ELi välised riigid");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_NONEU" AND t.language="EN" AND t.text="Non EU countries");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Muut kuin EU-maat");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Muut kuin EU-maat");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_NONEU" AND t.language="EN" AND t.text="Non EU countries");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Pays tiers");
@@ -3303,7 +3303,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "ELi kandidaatriigid");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_EUCC" AND t.language="EN" AND t.text="EU Candidate Countries");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "EU:n ehdokasvaltiot");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "EU:n ehdokasvaltiot");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_EUCC" AND t.language="EN" AND t.text="EU Candidate Countries");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Pays candidats à l’adhésion à l’UE");
@@ -3369,7 +3369,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Näita andmetabelit");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_csv" AND t.language="EN" AND t.text="Data table");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Näytä tietotaulukko");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Näytä tietotaulukko");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_csv" AND t.language="EN" AND t.text="Data table");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Table de données");
@@ -3441,7 +3441,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Riikide võrdlused");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_crossCountry" AND t.language="EN" AND t.text="National comparisons");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Kansalliset vertailut");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Kansalliset vertailut");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_crossCountry" AND t.language="EN" AND t.text="National comparisons");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Comparaisons nationales");
@@ -3513,7 +3513,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "ELi tulpdiagramm");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_euBars" AND t.language="EN" AND t.text="European bar chart");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "EU-pylväskaavio");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "EU-pylväskaavio");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_euBars" AND t.language="EN" AND t.text="European bar chart");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Graphique à barres pour l’UE");
@@ -3585,7 +3585,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Euroopa kaart");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_heatMap" AND t.language="EN" AND t.text="European map");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Euroopan kartta");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Euroopan kartta");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_heatMap" AND t.language="EN" AND t.text="European map");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Carte européenne");
@@ -3657,7 +3657,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Riigi tulpdiagramm");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_inCountry" AND t.language="EN" AND t.text="National bar chart");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "Kansallinen pylväskaavio");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Kansallinen pylväskaavio");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_inCountry" AND t.language="EN" AND t.text="National bar chart");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Graphique à barres national");
@@ -3729,7 +3729,7 @@ SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "KÜSIMUSTIK");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_Questionnaire" AND t.language="EN" AND t.text="QUESTIONNAIRE");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FL", 0, "KYSELYLOMAKE");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "KYSELYLOMAKE");
 
 SET @literalId=(SELECT l.id FROM literal l INNER JOIN translation t ON t.literal_id = l.id WHERE l.type="ESENER_01_LITERAL_Questionnaire" AND t.language="EN" AND t.text="QUESTIONNAIRE");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "QUESTIONNAIRE");
