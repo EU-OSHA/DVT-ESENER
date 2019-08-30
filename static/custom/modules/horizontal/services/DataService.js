@@ -114,6 +114,23 @@ define(function () {
 
             /**
              * @ngdoc method
+             * @name dvt.configModule.DataService#getMapExportData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns data of a particular question
+             */
+            getMapExportData: function (pYear, pQuestion, pAnswer, pDataset, pSectorSize, pActivityFilter, pCompanyFilter, pEuOnly) {
+                //var year = parseInt(pYear);
+                //var answer = parseInt(pAnswer);
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getMapExportData" + "&parampYear=" + pYear + "&parampQuestion=" + pQuestion 
+                + "&parampAnswer=" + pAnswer + "&parampDataset=" + pDataset + "&parampSectorSize=" + pSectorSize + "&parampActivityFilter=" + pActivityFilter
+                + "&parampCompanyFilter=" + pCompanyFilter + "&parampEUOnly=" + pEuOnly;
+                $log.debug('getMapExportData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
              * @name dvt.configModule.DataService#getAnswersOfIndicatorData
              * @methodOf dvt.configModule.DataService
              * @description
@@ -122,6 +139,20 @@ define(function () {
             getAnswersOfIndicatorData: function (pQuestion) {
                 var url = configService.getEsenerDataPath() + "&dataAccessId=getAnswersOfIndicatorData" + "&parampQuestion=" + pQuestion;
                 $log.debug('getAnswersOfIndicatorData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getEuropeanBarCharData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns data of a particular question
+             */
+            getEuropeanBarCharData: function (pDataset, pQuestion, pActivityFilter, pCompanyFilter, pEuOnly) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getEuropeanBarCharData" + "&parampDataset=" + pDataset + "&parampIndicator=" + pQuestion 
+                + "&pActivityFilter=" + pActivityFilter + "&pCompanyFilter=" + pCompanyFilter + "&parampEuOnly=" + pEuOnly;
+                $log.debug('getEuropeanBarCharData url:' + url);
                 return promise(url);
             },
 
@@ -141,6 +172,20 @@ define(function () {
 
             /**
              * @ngdoc method
+             * @name dvt.configModule.DataService#getNationalBarChartExportData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns data of a particular question
+             */
+            getNationalBarChartExportData: function (pDataset,pQuestion,pYear,pSectorSize,pCountry,pIndicator) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getNationalBarChartExportData" + "&parampDataset=" + pDataset + "&parampQuestion=" + pQuestion + "&parampYear=" + pYear 
+                + "&parampSectorSize=" + pSectorSize + '&parampCountry=' + pCountry + '&parampIndicator=' + pIndicator;
+                $log.debug('getNationalBarChartExportData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
              * @name dvt.configModule.DataService#getNationalComparisonsAnswers
              * @methodOf dvt.configModule.DataService
              * @description
@@ -150,6 +195,35 @@ define(function () {
                 var url = configService.getEsenerDataPath() + "&dataAccessId=getNationalComparisonsAnswers" + "&parampDataset=" + pDataset + "&parampQuestion=" + pQuestion + "&parampYear=" + pYear 
                 + "&pActivityFilter=" + pActivityFilter + "&pCompanyFilter=" + pCompanyFilter;
                 $log.debug('getNationalComparisonsAnswers url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getNationalComparisonsExportData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns data of a particular question
+             */
+            getNationalComparisonsExportData: function (pDataset,pQuestion,pYear,pActivityFilter,pCompanyFilter,pCountry1,pCountry2,pAnswer,pSectorSize) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getNationalComparisonsExportData" + "&parampDataset=" + pDataset + "&parampQuestion=" + pQuestion + "&parampYear=" + pYear 
+                + "&pActivityFilter=" + pActivityFilter + "&pCompanyFilter=" + pCompanyFilter + '&parampCountry1=' + pCountry1 
+                + '&parampCountry2=' + pCountry2 + '&parampAnswer=' + pAnswer + '&parampSectorSize=' + pSectorSize;
+                $log.warn('getNationalComparisonsExportData url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getPieChartData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns data of a particular question
+             */
+            getPieChartData: function (pDataset, pQuestion, pYear, pCountry) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getPieChartData" + "&parampDataset=" + pDataset + "&parampQuestion=" + pQuestion + "&parampYear=" + pYear 
+                + "&parampCountry=" + pCountry;
+                $log.debug('getPieChartData url:' + url);
                 return promise(url);
             },
 

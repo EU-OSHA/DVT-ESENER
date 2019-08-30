@@ -441,13 +441,13 @@ define(function (require) {
                         var row = {};
                         res[0].data.resultset.map(function (elem) {
                             row = elem;
-                            if(!$scope.mapData.questionData[row[1]]){
-                                $scope.mapData.questionData[row[1]]={};
-                                $scope.mapData.questionData[row[1]].answers = [];
+                            if(!$scope.mapData.questionData[row[0]]){
+                                $scope.mapData.questionData[row[0]]={};
+                                $scope.mapData.questionData[row[0]].answers = [];
                             }
-                            $scope.mapData.questionData[row[1]].country_code = row[1];
-                            $scope.mapData.questionData[row[1]].country_name = row[2];
-                            $scope.mapData.questionData[row[1]].indicator = row[6];
+                            $scope.mapData.questionData[row[0]].country_code = row[0];
+                            $scope.mapData.questionData[row[0]].country_name = row[1];
+                            $scope.mapData.questionData[row[0]].indicator = row[5];
                         });
                         
                         $scope.mapData.indicator = indicator;
@@ -481,18 +481,18 @@ define(function (require) {
                             var row = {};
                             res[1].data.resultset.map(function (elem) {
                                 row = elem;
-                                if(!scope.mapData.questionData[row[1]]){
-                                    scope.mapData.questionData[row[1]]={};
-                                    scope.mapData.questionData[row[1]].answers = [];
+                                if(!scope.mapData.questionData[row[0]]){
+                                    scope.mapData.questionData[row[0]]={};
+                                    scope.mapData.questionData[row[0]].answers = [];
                                 }
-                                scope.mapData.questionData[row[1]].answers.push({
-                                    id: row[4],
-                                    literal_id: row[5],
-                                    value: row[3]
+                                scope.mapData.questionData[row[0]].answers.push({
+                                    id: row[3],
+                                    literal_id: row[4],
+                                    value: row[2]
                                 });
-                                scope.mapData.questionData[row[1]].country_code = row[1];
-                                scope.mapData.questionData[row[1]].country_name = row[2];
-                                scope.mapData.questionData[row[1]].indicator = row[6];
+                                scope.mapData.questionData[row[0]].country_code = row[0];
+                                scope.mapData.questionData[row[0]].country_name = row[1];
+                                scope.mapData.questionData[row[0]].indicator = row[5];
                             });
                             
                             $rootScope.data = scope.mapData;

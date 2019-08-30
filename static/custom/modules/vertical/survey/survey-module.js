@@ -189,7 +189,7 @@ define(function (require) {
         });*/
 
         $stateProvider.state('detailpage-european-map', {
-            url: "/:pLanguage/survey/detailpage-european-map/:pIndicator/:pTopic/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter/:pAnswer",
+            url: "/:pLanguage/survey/detailpage-european-map/:pIndicator/:pTopic/:pLocale/:pQuestion/:pSectorSize/:pActivityFilter/:pCompanyFilter/:pAnswer",
             params: {
                 pLanguage: {
                     value: 'en',
@@ -206,6 +206,10 @@ define(function (require) {
                 pChart: {
                     value: 'european-map',
                     squash: 'european-map'
+                },
+                pSectorSize: {
+                    value: 'activity-sector',
+                    squash: 'activity-sector'
                 },
                 pLocale: {
                     value: 'en',
@@ -245,7 +249,7 @@ define(function (require) {
         });
 
         $stateProvider.state('detailpage-european-bar-chart', {
-            url: "/:pLanguage/survey/detailpage-european-bar-chart/:pIndicator/:pTopic/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter",
+            url: "/:pLanguage/survey/detailpage-european-bar-chart/:pIndicator/:pTopic/:pLocale/:pQuestion/:pSectorSize/:pActivityFilter/:pCompanyFilter",
             params: {
                 pLanguage: {
                     value: 'en',
@@ -262,6 +266,10 @@ define(function (require) {
                 pChart: {
                     value: 'european-bar-chart',
                     squash: 'european-bar-chart'
+                },
+                pSectorSize: {
+                    value: 'activity-sector',
+                    squash: 'activity-sector'
                 },
                 pLocale: {
                     value: 'en',
@@ -318,6 +326,10 @@ define(function (require) {
                     value: 'national-bar-chart',
                     squash: 'national-bar-chart'
                 },
+                pSectorSize: {
+                    value: 'company-size',
+                    squash: 'company-size'
+                },
                 pLocale: {
                     value: 'en',
                     squash: 'en'
@@ -352,7 +364,7 @@ define(function (require) {
         });
 
         $stateProvider.state('detailpage-national-comparisons', {
-            url: "/:pLanguage/survey/detailpage-national-comparisons/:pIndicator/:pTopic/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter/:pCountry/:pCountry2",
+            url: "/:pLanguage/survey/detailpage-national-comparisons/:pIndicator/:pTopic/:pLocale/:pQuestion/:pSectorSize/:pActivityFilter/:pCompanyFilter/:pCountry/:pCountry2",
             params: {
                 pLanguage: {
                     value: 'en',
@@ -369,6 +381,10 @@ define(function (require) {
                 pChart: {
                     value: 'national-comparisons',
                     squash: 'national-comparisons'
+                },
+                pSectorSize: {
+                    value: 'activity-sector',
+                    squash: 'activity-sector'
                 },
                 pLocale: {
                     value: 'en',
@@ -429,6 +445,10 @@ define(function (require) {
                 pChart: {
                     value: 'pie-chart',
                     squash: 'pie-chart'
+                },
+                pSectorSize: {
+                    value: 'company-size',
+                    squash: 'company-size'
                 },
                 pLocale: {
                     value: 'en',

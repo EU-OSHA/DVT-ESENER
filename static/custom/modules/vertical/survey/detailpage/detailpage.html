@@ -55,227 +55,236 @@
 
       <!-- CHART section -->
       <div class="chart--section">
-          <!-- EUROPEAN MAP -->
-          <div class="" data-ng-if="pChart == 'european-map'">
-            <!--<p ng-repeat="value in selectedQuestionValues">
-                <span data-ng-bind="value.country_code"></span>: <span data-ng-bind="value.answer"></span>
-            </p>-->
-            <section class="survey--map--block">
-                <div class="map--block center-text">
-                  <dvt-map ng-cloak
-                      country-key="EU" promise="dataPromises"
-                      country="EU" use-viewbox="true" x="0" y="0"
-                      css-class="dvt--map--block" is-colored="1" hover="true"
-                      group-list="groupList" width="500" height="500"
-                      group-color="groupColor" local="{{::pLocale}}"
-                      data="data">
-                  </dvt-map>
-                </div>
-                <div class="map--gauss--block">
-                  <dvt-bar-chart
-                    data-ng-cloak
-                    query="getGaussChartValues" cda="{{::cdaEsenerDash }}"
-                    width="200" height="200" type="lines"
-                    orientation="vertical" axis-fixed-min="0"
-                    listen-to="['pFilters', minMaxValues.min_value, minMaxValues.max_value, minMaxValues.range_value]"
-                    axis-fixed-max="20" step="{{step.chart1}}"
-                    params="[['pDataset', actualDataset], ['pQuestion', pQuestion], ['pMinValue', minMaxValues.min_value], ['pMaxValue', minMaxValues.max_value], ['pRange', minMaxValues.range_value], ['pSectorSize', pSectorSize], ['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'], ['pAnswer', 'pFilters.answer'], ['pEuOnly', 'pFilters.euOnly']]"
-                    color-role="category" colors="[stories[0].color1]" id="1"
-                    axis-label-font="14px 'OpenSans-bold'"
-                    plots="stories[0].plots"
-                    values-visible="false"
-                    values-font="14px 'OpenSans-bold'"
-                    hoverable="false"
-                    ortho-axis-grid="false"
-                    ortho-axis-visible="false"
-                    dimensions="stories[0].dimensions"
-                    multiple-label-colors="true"
-                    base-axis-label-text-baseline="top"
-                    axis-color="true"
-                    panel-color="#FFFFFF"
-                    legend="false"
-                    is-maximized="true"
-                    tooltip-enabled="false"
-                    clickable="false" 
-                    base-axis-size="25"
-                  ></dvt-bar-chart> 
-                </div>
-            </section>
-          </div>
+        <!-- EUROPEAN MAP -->
+        <div class="" data-ng-if="pChart == 'european-map'">
+          <!--<p ng-repeat="value in selectedQuestionValues">
+              <span data-ng-bind="value.country_code"></span>: <span data-ng-bind="value.answer"></span>
+          </p>-->
+          <section class="survey--map--block">
+              <div class="map--block center-text">
+                <dvt-map ng-cloak
+                    country-key="EU" promise="dataPromises"
+                    country="EU" use-viewbox="true" x="0" y="0"
+                    css-class="dvt--map--block" is-colored="1" hover="true"
+                    group-list="groupList" width="500" height="500"
+                    group-color="groupColor" local="{{::pLocale}}"
+                    data="data">
+                </dvt-map>
+              </div>
+              <div class="map--gauss--block">
+                <dvt-bar-chart
+                  data-ng-cloak
+                  query="getGaussChartValues" cda="{{::cdaEsenerDash }}"
+                  width="200" height="200" type="lines"
+                  orientation="vertical" axis-fixed-min="0"
+                  listen-to="['pFilters', minMaxValues.min_value, minMaxValues.max_value, minMaxValues.range_value]"
+                  axis-fixed-max="20" step="{{step.chart1}}"
+                  params="[['pDataset', actualDataset], ['pQuestion', pQuestion], ['pMinValue', minMaxValues.min_value], ['pMaxValue', minMaxValues.max_value], ['pRange', minMaxValues.range_value], ['pSectorSize', pSectorSize], ['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'], ['pAnswer', 'pFilters.answer'], ['pEuOnly', 'pFilters.euOnly']]"
+                  color-role="category" colors="[stories[0].color1]" id="1"
+                  axis-label-font="14px 'OpenSans-bold'"
+                  plots="stories[0].plots"
+                  values-visible="false"
+                  values-font="14px 'OpenSans-bold'"
+                  hoverable="false"
+                  ortho-axis-grid="false"
+                  ortho-axis-visible="false"
+                  dimensions="stories[0].dimensions"
+                  multiple-label-colors="true"
+                  base-axis-label-text-baseline="top"
+                  axis-color="true"
+                  panel-color="#FFFFFF"
+                  legend="false"
+                  is-maximized="true"
+                  tooltip-enabled="false"
+                  clickable="false" 
+                  base-axis-size="25"
+                ></dvt-bar-chart> 
+              </div>
+          </section>
+        </div>
 
-          <!-- EUROPEAN BAR CHART -->
-          <div class="" data-ng-if="pChart == 'european-bar-chart'">
-            <!---------------------- EuropeanBarChart ESENER 2014 ------------------------>
-            <div class="xxs-w1 xs-w1 w1 center-text">
-                <div class="card--block--chart">
-                    <!------------ActivitySector------------>
-                    <div class="chart--block">
-                        <dvt-bar-chart
-                          data-ng-cloak
-                          query="getEuropeanBarCharData" cda="{{::cdaEsenerDash}}"
-                          width="330" height="660" axis-percent="1"
-                          orientation="vertical" axis-fixed-min="0"
-                          axis-fixed-max="100" step="20"
-                          listen-to="['pFilters']"
-                          params="[['pDataset',actualDataset],['pIndicator',pQuestion],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pEUOnly', 'pFilters.euOnly']]"
-                          color-role="series" id="2"
-                          axis-label-font="14px 'OpenSans'"
-                          plots="stories[1].plots"
-                          values-visible="false"
-                          values-font="14px 'OpenSans-bold'"
-                          multiple-label-colors="false"
-                          leaf-content-overflow='visible'
-                          dimensions="stories[1].dimensions"
-                          legend="true" is-maximized="false"
-                          angle="{{angle}}" stacked="1"
-                          base-axis-size="100"
-                          datasource-and-dates="[15,110,pActivityFilter]"
-                        ></dvt-bar-chart>
-                    </div>
-                </div>
-            </div>
-          </div>
-
-          <!-- NATIONAL BAR CHART -->
-          <div class="national-bar-chart-wrapper" data-ng-if="pChart == 'national-bar-chart'">
-            <div class="xxs-w1 xs-w1 w1 center-text">
-                <div class="card--block--chart">
-                    <div data-ng-repeat="indicator in indicators.data" class="chart--block">
-                        <dvt-bar-chart
-                          data-ng-cloak
-                          query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
-                          width="330" height="160" axis-percent="1"
-                          orientation="horizontal" axis-fixed-min="0"
-                          axis-fixed-max="100" step="20"
-                          listen-to="['pFilters']"
-                          params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', 'pFilters.sectorSize'],['pCountry', 'pFilters.country'], ['pIndicator', indicator.id]]"
-                          color-role="c" chart-title="{{i18n['L'+indicator.name]}}"
-                          id="3" axis-label-font="12px 'OpenSans-bold'"
-                          plots="stories[2].plots" values-overflow="show"
-                          values-visible="true" values-mask="{value}"                        
-                          label-text-align="stories[2].alignment"
-                          values-font="14px 'OpenSans-bold'"
-                          multiple-label-colors="false"
-                          leaf-content-overflow='visible'
-                          ortho-axis-visible="true"
-                          dimensions="stories[2].dimensions"
-                          legend="false" is-maximized="false"
-                          datasource-and-dates="[15,110,pActivityFilter]"
-                        ></dvt-bar-chart>
-                    </div>
-                </div>
-            </div>
-          </div>
-
-          <!-- NATIONAL COMPARISONS -->
-          <div class="" data-ng-if="pChart == 'national-comparisons'">
-            <div class="xxs-w1 xs-w1 w1 center-text">
+        <!-- EUROPEAN BAR CHART -->
+        <div class="" data-ng-if="pChart == 'european-bar-chart'">
+          <!---------------------- EuropeanBarChart ESENER 2014 ------------------------>
+          <div class="xxs-w1 xs-w1 w1 center-text">
               <div class="card--block--chart">
-                <div data-ng-repeat="answer in answers.data" class="chart--block">
-                  <dvt-bar-chart
-                    data-ng-cloak
-                    query="getNationalComparisonsData" cda="{{::cdaEsenerDash}}"
-                    width="330" height="160" axis-percent="1"
-                    orientation="horizontal" axis-fixed-min="0"
-                    axis-fixed-max="100" step="20"
-                    params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pCountry1', 'pFilters.country'], ['pCountry2', 'pFilters.country2'], ['pAnswer', answer.id]]"
-                    color-role="c" colors="[stories[3].color1, stories[3].color2]"
-                    id="4" axis-label-font="14px 'OpenSans-bold'"
-                    chart-title="Answer: {{answer.name}}"
-                    plots="stories[3].plots" values-overflow="show"
-                    values-visible="true" values-mask="{value}"                        
-                    label-text-align="stories[2].alignment"
-                    values-font="14px 'OpenSans-bold'"
-                    multiple-label-colors="false"
-                    leaf-content-overflow='visible'
-                    ortho-axis-visible="true"
-                    base-axis-position="bottom"
-                    dimensions="stories[2].dimensions"
-                    is-maximized="false"
-                    datasource-and-dates="[15,110,pActivityFilter]"
-                  ></dvt-bar-chart>
+                  <!------------ActivitySector------------>
+                  <div class="chart--block">
+                      <dvt-bar-chart
+                        data-ng-cloak
+                        query="getEuropeanBarCharData" cda="{{::cdaEsenerDash}}"
+                        width="330" height="660" axis-percent="1"
+                        orientation="vertical" axis-fixed-min="0"
+                        axis-fixed-max="100" step="20"
+                        listen-to="['pFilters']"
+                        params="[['pDataset',actualDataset],['pIndicator',pQuestion],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pEUOnly', 'pFilters.euOnly'], ['pSectorSize', pSectorSize]]"
+                        color-role="series" id="2"
+                        axis-label-font="14px 'OpenSans'"
+                        plots="stories[1].plots"
+                        values-visible="false"
+                        values-font="14px 'OpenSans-bold'"
+                        multiple-label-colors="false"
+                        leaf-content-overflow='visible'
+                        dimensions="stories[1].dimensions"
+                        legend="true" is-maximized="false"
+                        angle="{{angle}}" stacked="1"
+                        base-axis-size="100"
+                        datasource-and-dates="[15,110,pActivityFilter]"
+                      ></dvt-bar-chart>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <!-- NATIONAL BAR CHART -->
+        <div class="national-bar-chart-wrapper" data-ng-if="pChart == 'national-bar-chart'">
+          <div class="xxs-w1 xs-w1 w1 center-text">
+              <div class="card--block--chart">
+                  <div data-ng-repeat="indicator in indicators.data" class="chart--block">
+                      <dvt-bar-chart
+                        data-ng-cloak
+                        query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
+                        width="330" height="160" axis-percent="1"
+                        orientation="horizontal" axis-fixed-min="0"
+                        axis-fixed-max="100" step="20"
+                        listen-to="['pFilters']"
+                        params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', 'pFilters.sectorSize'],['pCountry', 'pFilters.country'], ['pIndicator', indicator.id]]"
+                        color-role="c" chart-title="{{i18n['L'+indicator.name]}}"
+                        id="3" axis-label-font="12px 'OpenSans-bold'"
+                        plots="stories[2].plots" values-overflow="show"
+                        values-visible="true" values-mask="{value}"                        
+                        label-text-align="stories[2].alignment"
+                        values-font="14px 'OpenSans-bold'"
+                        multiple-label-colors="false"
+                        leaf-content-overflow='visible'
+                        ortho-axis-visible="true"
+                        dimensions="stories[2].dimensions"
+                        legend="false" is-maximized="false"
+                        datasource-and-dates="[15,110,pActivityFilter]"
+                      ></dvt-bar-chart>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <!-- NATIONAL COMPARISONS -->
+        <div class="" data-ng-if="pChart == 'national-comparisons'">
+          <div class="xxs-w1 xs-w1 w1 center-text">
+            <div class="card--block--chart">
+              <div data-ng-repeat="answer in answers.data" class="chart--block">
+                <dvt-bar-chart
+                  data-ng-cloak
+                  query="getNationalComparisonsData" cda="{{::cdaEsenerDash}}"
+                  width="330" height="160" axis-percent="1"
+                  orientation="horizontal" axis-fixed-min="0"
+                  axis-fixed-max="100" step="20"
+                  params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pCountry1', 'pFilters.country'], ['pCountry2', 'pFilters.country2'], ['pAnswer', answer.id], ['pSectorSize', 'pSectorSize']]"
+                  color-role="c" colors="[stories[3].color1, stories[3].color2]"
+                  id="4" axis-label-font="14px 'OpenSans-bold'"
+                  chart-title="Answer: {{answer.name}}"
+                  plots="stories[3].plots" values-overflow="show"
+                  values-visible="true" values-mask="{value}"                        
+                  label-text-align="stories[2].alignment"
+                  values-font="14px 'OpenSans-bold'"
+                  multiple-label-colors="false"
+                  leaf-content-overflow='visible'
+                  ortho-axis-visible="true"
+                  base-axis-position="bottom"
+                  dimensions="stories[2].dimensions"
+                  is-maximized="false"
+                  datasource-and-dates="[15,110,pActivityFilter]"
+                ></dvt-bar-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PIE CHART -->
+        <div class="" data-ng-if="pChart == 'pie-chart'">
+          <div class="xxs-w1 xs-w1 w1 center-text">
+            <div class="card--block--chart">
+              <div class="chart--block">
+                <dvt-bar-chart
+                  data-ng-cloak
+                  query="getPieChartData" cda="{{::cdaEsenerDash}}"
+                  type="pie" listen-to="['pFilters']"
+                  width="330" height="660" axis-percent="1"
+                  params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pCountry', 'pFilters.country']]"
+                  color-role="c" colors="[stories[4].color1, stories[4].color2, stories[4].color3, stories[4].color4,
+                  stories[4].color5]" id="5" 
+                  plots="stories[4].plots"
+                  multiple-label-colors="false"
+                  dimensions="stories[4].dimensions"
+                  legend="true" is-maximized="false"
+                  datasource-and-dates="[15,110,pActivityFilter]"
+                ></dvt-bar-chart>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!--<div class="filter-text-button">
+          <button id="btnSocial" class="btn-default" data-ng-bind="i18n.L101028" data-ng-click="showSharePopUp(event)"></button>
+          <button id="btnExport" class="btn-default" data-ng-bind="i18n.L101029" data-ng-click="showSharePopUp(event)"></button>
+        </div>-->
+
+        <section id="popUpMessage" data-ng-if="showPopUpSocialMedia" data-ng-click="ok()">
+          <div class="modal fade dvt-modal-social in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10}" ng-transclude="" modal-window="" window-class="dvt-modal" index="0" style="z-index: 1050;">
+            <div class="modal-wrapper">
+              <div class="modal-body">
+                <span class="btn pull-right" role="button" aria-hidden="true" title="Close window" data-ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
+                <div class="popUpMessage--text--block">
+                  <p class="text-center" data-ng-bind="i18n.L369"></p>
+                  <div class="social--network--modal" id="osha-menu-social">
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n.L370}}" socialshare-text="{{i18n[title]}}" socialshare-url="{{pathURLDVT}}">
+                      <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L370)"></span>
+                    </a>
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n.L371}}" socialshare-url="{{pathURLDVT}}">
+                      <i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L371)"></span>
+                    </a>
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n.L372}}" socialshare-url="{{pathURLDVT}}">
+                      <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L372)"></span>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
+        </section>
 
-          <!-- PIE CHART -->
-          <div class="" data-ng-if="pChart == 'pie-chart'">
-            <div class="xxs-w1 xs-w1 w1 center-text">
-              <div class="card--block--chart">
-                <div class="chart--block">
-                  <dvt-bar-chart
-                    data-ng-cloak
-                    query="getPieChartData" cda="{{::cdaEsenerDash}}"
-                    type="pie" listen-to="['pFilters']"
-                    width="330" height="660" axis-percent="1"
-                    params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pCountry', 'pFilters.country']]"
-                    color-role="c" colors="[stories[4].color1, stories[4].color2, stories[4].color3, stories[4].color4,
-                    stories[4].color5]" id="5" 
-                    plots="stories[4].plots"
-                    multiple-label-colors="false"
-                    dimensions="stories[4].dimensions"
-                    legend="true" is-maximized="false"
-                    datasource-and-dates="[15,110,pActivityFilter]"
-                  ></dvt-bar-chart>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="filter-text-button">
-            <button id="btnSocial" class="btn-default" data-ng-bind="i18n.L101028" data-ng-click="showSharePopUp(event)"></button>
-            <button id="btnExport" class="btn-default" data-ng-bind="i18n.L101029" data-ng-click="showSharePopUp(event)"></button>
-          </div>
-
-          <section id="popUpMessage" data-ng-if="showPopUpSocialMedia">
-            <div class="modal fade dvt-modal-social in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10}" ng-transclude="" modal-window="" window-class="dvt-modal" index="0" style="z-index: 1050;">
-              <div class="modal-wrapper">
-                <div class="modal-body">
-                  <span class="btn pull-right" role="button" aria-hidden="true" title="Close window" data-ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
-                  <div class="popUpMessage--text--block">
-                    <p class="text-center" data-ng-bind="i18n.L369"></p>
-                    <div class="social--network--modal" id="osha-menu-social">
-                      <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n.L370}}" socialshare-text="{{i18n[title]}}" socialshare-url="{{pathURLDVT}}">
-                        <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L370)"></span>
-                      </a>
-                      <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n.L371}}" socialshare-url="{{pathURLDVT}}">
-                        <i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L371)"></span>
-                      </a>
-                      <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n.L372}}" socialshare-url="{{pathURLDVT}}">
-                        <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L372)"></span>
-                      </a>
+        <section id="popUpMessage" data-ng-if="showPopUpExportData" data-ng-click="ok()">
+          <div class="modal fade dvt-modal-social in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10}" ng-transclude="" modal-window="" window-class="dvt-modal" index="0" style="z-index: 1050;">
+            <div class="modal-wrapper">
+              <div class="modal-body">
+                <span class="btn pull-right" role="button" aria-hidden="true" title="Close window" data-ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
+                <div class="popUpMessage--exportData--text--block">
+                  <p class="text-center" data-ng-bind="i18n.L101029"></p>
+                  <div class="export--data--modal" id="osha-menu-social">
+                    <a href class="main-color text-center" target="_blank" data-ng-bind="i18n.L100660" data-ng-click="pageUrlActive = true" title="{{i18n.L100662}} > {{i18n.L100660}}">
+                    </a>
+                    <a class="main-color text-center" target="_blank" data-ng-bind="i18n.L100657" title="{{i18n.L100662}} > {{i18n.L100657}}">
+                    </a>
+                    <a class="main-color text-center" target="_blank" data-ng-bind="i18n.L100656" title="{{i18n.L100662}} > {{i18n.L100656}}">
+                    </a>
+                    <a class="main-color text-center" target="_blank" data-ng-bind="i18n.L100651" title="{{i18n.L100662}} > {{i18n.L100651}}">
+                    </a>
+                    <a href class="main-color text-center" target="_blank" data-ng-bind="i18n.L100652" title="{{i18n.L100662}} > {{i18n.L100652}}" data-ng-click="exportData(promiseToExport, pQuestion, 1)">
+                    </a>
+                  </div>
+                  <div id="panel--url" data-ng-if="pageUrlActive">
+                    <p data-ng-bind="i18n.L100587 + ': ' + i18n.L100660"></p>
+                    <textarea id="urlTextArea" readonly="readonly" cols="80" rows="3" data-ng-bind="createURL()"></textarea>
+                    <div class="pageUrl">
+                      <button id="btnSocial" class="btn-default" data-ng-bind="i18n.L100640" data-ng-click="selectTextArea()"></button>
+                      <a id="btnSocial" class="btn-default" data-ng-bind="i18n.L100641" href="{{pathURLDVT}}" target="_blank"></a>
+                      <!--<button id="btnSocial" class="btn-default" data-ng-bind="i18n.L100638" data-ng-click=""></button>-->
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </section>
-
-          <section id="popUpMessage" data-ng-if="showPopUpExportData" data-ng-click="ok()">
-            <div class="modal fade dvt-modal-social in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10}" ng-transclude="" modal-window="" window-class="dvt-modal" index="0" style="z-index: 1050;">
-              <div class="modal-wrapper">
-                <div class="modal-body">
-                  <span class="btn pull-right" role="button" aria-hidden="true" title="Close window" data-ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
-                  <div class="popUpMessage--text--block">
-                    <p class="text-center" data-ng-bind="i18n.L101029"></p>
-                    <div class="export--data--modal" id="osha-menu-social">
-                      <a class="main-color" target="_blank" data-ng-bind="i18n.L100660">
-                      </a>
-                      <a class="main-color" target="_blank" data-ng-bind="i18n.L100657">
-                      </a>
-                      <a class="main-color" target="_blank" data-ng-bind="i18n.L100656">
-                      </a>
-                      <a class="main-color" target="_blank" data-ng-bind="i18n.L100652">
-                      </a>
-                      <a class="main-color" target="_blank" data-ng-bind="i18n.L100656">
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
+          </div>
+        </section>
       </div>
 
     </section>

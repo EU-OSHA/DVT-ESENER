@@ -11,7 +11,7 @@
 define(function (require) {
 	'use strict';
 
-	function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, DetailPageService, dvtUtils, $rootScope, mapProvider, $location) {
+	function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, DetailPageService, dvtUtils, $rootScope, mapProvider, $location, exportService) {
 
 		//CDA
 		$scope.cdaEsenerDash = configService.getEsenerCda();
@@ -33,12 +33,13 @@ define(function (require) {
 
 		var i18nEN = configService.getLiterals();
 
-		//Social network modal
+		//Social network and export data modals
 		$scope.showPopUpSocialMedia = false;
 		$scope.showPopUpExportData = false;
 		$scope.pathURLDVT=$location.absUrl();
 		var titleStructure = require('json!dvt/directives/title-items');
 		$scope.title = titleStructure[$state.current.name];
+		$scope.pageUrlActive = false;
 		
 		//Parameters
 		$scope.pIndicator = $stateParams.pIndicator; //Year
@@ -191,6 +192,26 @@ define(function (require) {
 		$scope.promises = {
 			promiseShape: mapProvider.getEuropeShape()
 		};
+
+		
+		if($scope.pChart == 'european-map'){
+			$scope.promiseToExport = dataService.getMapExportData($scope.pIndicator, $scope.pQuestion, $scope.answer, 
+				$scope.actualDataset, $scope.pSectorSize, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU);
+		}else if($scope.pChart == 'european-bar-chart'){
+			$scope.promiseToExport = dataService.getEuropeanBarCharData($scope.actualDataset, $scope.pQuestion, 
+				$scope.dashboard.parameters.pFilters.activitySector, $scope.dashboard.parameters.pFilters.establishmentSize,
+				$scope.dashboard.parameters.pFilters.euOnly);
+		}else if($scope.pChart == 'national-bar-chart'){
+			$scope.promiseToExport = dataService.getNationalBarChartExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
+				$scope.dashboard.parameters.pFilters.sectorSize, $scope.dashboard.parameters.pFilters.country, 0);
+		}else if($scope.pChart == 'national-comparisons'){
+			$scope.promiseToExport = dataService.getNationalComparisonsExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
+				$scope.dashboard.parameters.pFilters.activitySector, $scope.dashboard.parameters.pFilters.establishmentSize,
+				$scope.dashboard.parameters.pFilters.country, $scope.dashboard.parameters.pFilters.country2, 0, $scope.dashboard.parameters.pFilters.sectorSize);			
+		}else if($scope.pChart == 'pie-chart'){
+			$scope.promiseToExport = dataService.getPieChartData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, 
+				$scope.dashboard.parameters.pFilters.country);
+		}
 
 		if($scope.pChart == 'european-map'){
 			$scope.dataPromises = [
@@ -569,6 +590,7 @@ define(function (require) {
 						pChart: $scope.pChart, //Type of chart
 						pQuestion: $scope.pQuestion, //Question name
 						pAnswer: question.answer_id, //Split answer
+						pSectorSize: $scope.pSectorSize,
 						pActivityFilter: $scope.pActivityFilter,
 						pCompanyFilter: $scope.pCompanyFilter,
 						pCountry: $scope.dashboard.parameters.pFilters.country,
@@ -644,9 +666,24 @@ define(function (require) {
 		}
 
 		$scope.ok = function () {
-            $scope.showPopUpSocialMedia = false;
-			$scope.showPopUpExportData = false;
-        };
+			var target = event.target;
+			if(target.className == 'btn pull-right' || target.className == 'fa fa-2x fa-times' || target.id == 'popUpMessage'){
+				$scope.showPopUpSocialMedia = false;
+				$scope.showPopUpExportData = false;
+			}
+        }
+
+        $scope.createURL = function(){
+        	return $scope.pathURLDVT;
+        }
+
+        $scope.selectTextArea = function(){
+        	angular.element('#urlTextArea').select();
+        }
+
+        $scope.exportData = function(promise, title, id){
+        	exportService.exportDataManually(promise, title, id);
+        }
 
 		angular.element('body').mouseup(function(e){
 		  var container = angular.element('.submenu--items--wrapper');
@@ -668,6 +705,7 @@ define(function (require) {
 					pChart: $scope.pChart, //Type of chart
 					pQuestion: $scope.pQuestion, //Question name
 					pAnswer: $scope.answer, //Split answer
+					pSectorSize: $scope.pSectorSize,
 					pActivityFilter: $scope.pActivityFilter,
 					pCompanyFilter: $scope.pCompanyFilter,
 					pEuOnly: $scope.nonEU
@@ -685,7 +723,7 @@ define(function (require) {
 		/********************************************* END FILTERS ************************************************/
 	}
 
-	controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'DetailPageService','dvtUtils','$rootScope', 'mapProvider', '$location'];
+	controller.$inject = ['$scope', '$stateParams', '$state', 'configService', '$log', '$document','dataService', '$window', '$sce', '$compile', '$timeout', 'DetailPageService','dvtUtils','$rootScope', 'mapProvider', '$location', 'exportService'];
 	return controller;
 });
 
