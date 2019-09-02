@@ -209,7 +209,7 @@ define(function (require) {
                     + '</ul>'
             +  '</ul>'
 */
-            + '<h2 ng-if="(!!chartTitle && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="chartTitle" class="title--card ng-binding">Company size</h2>'
+            + '<h3 ng-if="(!!chartTitle && !isMaximized && !titleH3) || (isMaximized && !longTitle)" data-ng-bind-html="chartTitle" class="title--card ng-binding">Company size</h3>'
             + '<h2 ng-if="!!isMaximized && !!longTitle" data-ng-bind-html="longTitle" class="title--card ng-binding" >Company size</h2>'
             + '<h2 data-ng-if="(!!chartTitle && !isMaximized && titleH3)" class="title--card ng-binding" data-ng-bind-html="chartTitle"></h2>'
 

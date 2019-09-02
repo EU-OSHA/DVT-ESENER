@@ -61,6 +61,9 @@ define(function (require) {
                     /** HEADER SHOW HIDE **/
                     var prevScrollpos = $window.pageYOffset;
 
+
+
+
                     $window.onscroll = function() {
                       
                       var currentScrollPos = $window.pageYOffset;
@@ -92,6 +95,9 @@ define(function (require) {
 
                     } 
                     
+                    $( window ).resize(function() {
+                      angular.element(".bar-header").removeClass('hide-header');
+                    });
                     
                     
                     //hide print icon in mobile
