@@ -395,7 +395,7 @@
         ELSE (p.company_size_id = scs.id
           AND CASE WHEN ${pYear} = '2009' 
             THEN scs.id IN (12,13,14,15,11) ELSE scs.id IN (11,7,8,14,10) END) END
-        ORDER BY FIELD(sas.id,15,16,17,14,1,3,2,4,18,6,7,14) ASC, FIELD(scs.id,12,13,7,8,14,15,10,11) ASC;
+        ORDER BY FIELD(sas.id,15,16,17,14,1,3,2,4,18,6,7) ASC, FIELD(scs.id,12,13,7,8,14,15,10,11) ASC;
       </Query>
     </DataAccess>
 
@@ -441,7 +441,7 @@
         <Parameter default="14" name="pIndicator" type="Numeric"/>
       </Parameters>
       <Query>
-        SELECT DISTINCT(sa.literal_id) as Answer, IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) Split, ${pCountry} as Country,v.value*100 as Value
+        SELECT DISTINCT(sa.literal_id) as Answer, IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) Split, ${pCountry} as Country,v.value*100 as Value, eao.order_position
         FROM nuts n, profile p, value v, indicator i, split_answer sa, split_activity_sector sas, split_company_size scs, esener_answer_order eao
         WHERE n.id = p.nuts_id
         AND i.name = ${pQuestion}
@@ -503,7 +503,7 @@
         <Parameter default="activity-sector" name="pSectorSize" type="String" />
       </Parameters>
       <Query>
-        SELECT DISTINCT(IF(sa.id = 37, 36, sa.id)) as id, t.text as name
+        SELECT DISTINCT(IF(sa.id = 37, 36, sa.id)) as id, t.text as name, eao.order_position
         FROM profile p, value v, translation t, split_answer sa, indicator i, esener_answer_order eao
         WHERE i.name = ${pQuestion}
         AND v.indicator_id = i.id
@@ -516,7 +516,7 @@
         ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         AND t.language = 'EN'
         AND v.dataset_id = ${pDataset}
-        ORDER BY eao.order_position ASC, sa.id DESC;
+        ORDER BY eao.order_position ASC, id DESC;
       </Query>
     </DataAccess>
 
@@ -568,15 +568,15 @@
       <Parameter default="activity-sector" name="pSectorSize" type="String" />
     </Parameters>
     <Query>
-      SELECT IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id), n.country_code as Country, t.text as Answer, v.value*100 as Value
-      FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i
+      SELECT DISTINCT(n.country_code) as Country, i.name as Question, IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) as Split, t.text as Answer, v.value*100 as Value
+      FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i, split_activity_sector sas, split_company_size scs
       WHERE i.name = ${pQuestion}
       AND v.indicator_id = i.id
       AND v.profile_id = p.id
       AND p.answer_id=sa.id
       AND t.literal_id =sa.literal_id
-      AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
-      ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+      AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND sas.id = ${pActivityFilter} AND p.company_size_id IS NULL) 
+      ELSE (p.company_size_id = ${pCompanyFilter} AND scs.id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
       AND n.id = p.nuts_id
       AND n.country_code IN (${pCountry1}, ${pCountry2})
       AND t.language = 'EN'
@@ -595,7 +595,7 @@
       <Parameter default="AT" name="pCountry" type="String"/>
     </Parameters>
     <Query>
-      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Answer, v.value*100 as Value
+      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Answer, v.value*100 as Value, eao.order_position
       FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i, esener_answer_order eao
       WHERE n.id = p.nuts_id
       AND i.name = ${pQuestion}
