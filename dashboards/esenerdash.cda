@@ -395,8 +395,8 @@
         ELSE (p.company_size_id = scs.id
           AND CASE WHEN ${pYear} = '2009' 
             THEN scs.id IN (12,13,14,15,11) ELSE scs.id IN (11,7,8,14,10) END) END
-        ORDER BY FIELD(sas.id,15,16,17,14,1,3,2,4,18,6,7) ASC, FIELD(scs.id,12,13,7,8,14,15,10,11) ASC;
       </Query>
+      <!-- ORDER BY FIELD(sas.id,15,16,17,14,1,3,2,4,18,6,7), FIELD(scs.id,12,13,7,8,14,15,10,11); -->
     </DataAccess>
 
     <DataAccess access="public" connection="dvt_conn" id="getNationalBarChartData" type="sql">
@@ -411,8 +411,8 @@
         <Parameter default="14" name="pIndicator" type="Numeric"/>
       </Parameters>
       <Query>
-        SELECT DISTINCT(sa.literal_id) as Answer, v.value*100 as Value
-        FROM nuts n, profile p, value v, indicator i, split_answer sa, split_activity_sector sas, split_company_size scs, esener_answer_order eao
+        SELECT sa.literal_id as Answer, v.value*100 as Value
+        FROM nuts n, profile p, value v, indicator i, split_answer sa, esener_answer_order eao
         WHERE n.id = p.nuts_id
         AND i.name = ${pQuestion}
         AND v.indicator_id = i.id
@@ -422,11 +422,13 @@
         AND p.answer_id = IF(sa.id = 37, 36, sa.id)
         AND sa.id = eao.answer_id
         AND CASE WHEN ${pSectorSize} = 'activity-sector' 
-          THEN (CASE WHEN ${pIndicator} != 0 THEN sas.id = ${pIndicator} AND p.activity_sector_id = sas.id ELSE p.activity_sector_id = sas.id END) 
-        ELSE (CASE WHEN ${pIndicator} != 0 THEN scs.id = ${pIndicator} AND p.company_size_id = scs.id ELSE p.company_size_id = scs.id END) END
+          THEN (p.activity_sector_id = ${pIndicator} AND p.company_size_id IS NULL) 
+        ELSE (p.company_size_id = ${pIndicator} AND p.activity_sector_id IS NULL) END
         AND n.country_code = ${pCountry}
         ORDER BY eao.order_position DESC;
       </Query>
+      <!-- THEN (CASE WHEN ${pIndicator} != 0 THEN sas.id = ${pIndicator} AND p.activity_sector_id = sas.id ELSE p.activity_sector_id = sas.id END) 
+        ELSE (CASE WHEN ${pIndicator} != 0 THEN scs.id = ${pIndicator} AND p.company_size_id = scs.id ELSE p.company_size_id = scs.id END) END -->
     </DataAccess>
 
     <DataAccess access="public" connection="dvt_conn" id="getNationalBarChartExportData" type="sql">
