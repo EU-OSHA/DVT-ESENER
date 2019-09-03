@@ -383,7 +383,7 @@ define(function (require) {
 						ngModel.$setViewValue(scope.filters, 'change');
 						dashboard.dashboard.fireChange('pFilters', scope.filters);
 
-						$log.warn(dashboard.dashboard.parameters.pFilters);
+						//$log.warn(dashboard.dashboard.parameters.pFilters);
 
 						scope.filters.activitySector = scope.filters.activitySector == 0? null:scope.filters.activitySector;
 						scope.filters.establishmentSize = scope.filters.establishmentSize == 0? null:scope.filters.establishmentSize;
@@ -391,17 +391,40 @@ define(function (require) {
 
 				}
 
+				scope.cambiar = function(){
+
+					if(scope.filters.country == 'EU27'){
+						scope.filters.country2 = 'EU27';
+						scope.filters.country = 'AT'
+					}
+
+					$state.transitionTo('detailpage-national-comparisons', {
+						pIndicator: scope.dataset, //Year
+						pChart: 'national-comparisons', //Type of chart
+						pQuestion: scope.indicator, //Question name
+						pAnswer: scope.filters.answer, //Split answer
+						pSectorSize: scope.filters.sectorSize,
+						pActivityFilter: scope.filters.activitySector,
+						pCompanyFilter: scope.filters.establishmentSize,
+						pCountry: scope.filters.country,
+						pCountry2: scope.filters.country2
+					},
+					{
+						reload: true
+					});
+				}
+
 				scope.openOptions = function(i,e) {
-					//$log.warn('Abrir accordion');
+					
 					
 				 	var parentNode = e.target.parentElement;
+				 	$log.warn(e.target.title);
 
 				 	if(angular.element(parentNode).hasClass("open")){
 				 		angular.element(parentNode).removeClass('open');
 				 	} else {
 				 		angular.element(parentNode).addClass('open');
 				 	}
-
 				  //angular.element(parentNode).toggleClass('open');
 				}
 
