@@ -627,6 +627,14 @@
       position: absolute;
       pointer-events: none;
     }
+    &.disabled{
+      &:after{
+        content: "" !important;
+      }
+    }
+    span.disabled{
+      visibility: hidden !important;
+    }
     &.activity-sector{
       select{
         width: 100%;
@@ -635,6 +643,10 @@
         background: $aquamarine;
         color:$white;
         position: relative;
+        &.disabled{
+          background: $gray-light !important;
+          cursor: not-allowed;
+        } 
       }
       &:after {
         color: $white;
@@ -666,6 +678,12 @@
         outline:1px solid $aquamarine !important;
         color: $aquamarine;
         position: relative;
+         &.disabled{
+          background: $gray-light !important;
+          color: $white!important;
+          outline:none!important;
+          cursor: not-allowed;
+        }
       }
       &:after {
         color: $aquamarine;
@@ -702,7 +720,15 @@
         color: $white;
         right: 0;
         top: 3rem;
-      }    
+      }
+      &.disabled{
+        select{
+          background: $gray-light !important;
+          color: $white!important;
+          outline:none!important;
+          cursor: not-allowed;          
+        }
+      }   
     }
   }
   .filter-text-button{

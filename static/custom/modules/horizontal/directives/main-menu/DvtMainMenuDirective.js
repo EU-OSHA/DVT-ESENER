@@ -84,14 +84,6 @@ define(function (require) {
                       }
                     }
                       prevScrollpos = currentScrollPos;
-/*
-                      if( angular.element('.advice--block-not-home') ){
-                          if( prevScrollpos <= angular.element('.advice--icon--block').offset.top + angular.element('.advice--icon--block')[0].clientHeight){
-                            //angular.element(".compare--block.regulation-page").removeClass('affix');
-                            angular.element(".compare--block.regulation-page").removeClass('show-header');
-                          }
-                      }
-                      */
 
                     } 
                     
@@ -290,7 +282,7 @@ define(function (require) {
 
 
                 $scope.openIndicatorsList = function(e) { 
-                        console.log(resolution);
+                    //console.log(resolution);
                     if( resolution < 768 ){
                         var isActive = false;
 
@@ -321,10 +313,15 @@ define(function (require) {
 
                 }
 
-                angular.element('body').mouseup(function(e){
+
+                $('body').click(function(e) {
                     var container = angular.element('.submenu--items--wrapper');
+                    var container2 = angular.element('.chart--selection--block');
                     if (!container.is(e.target) && container.has(e.target).length === 0){
                       angular.element('.submenu--items--wrapper').removeClass('open-list'); 
+                    }
+                    if (!container2.is(e.target) && container2.has(e.target).length === 0){
+                      angular.element('.chart--selection--block').removeClass('open'); 
                     }
                 });
 

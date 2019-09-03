@@ -133,21 +133,23 @@
                     </select>
                 </div>
                 <!-- Activity sector for pie chart -->
-                <div class="filter-text activity-sector-pie-chart" data-ng-if="chart == 'pie-chart'">
+                <div class="filter-text activity-sector" data-ng-if="chart == 'pie-chart'" data-ng-class="{'disabled':(chart == 'pie-chart')}">
+                    <span class="activity-sector" data-ng-bind="i18n.L100573" data-ng-class="{'disabled':(chart == 'pie-chart')}"></span> 
                     <select id="sector" class="" data-ng-change="updateChart('activitySector')" data-ng-model="filters.activitySector" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
                         <option data-ng-bind="i18n.L100573" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>
                     </select>
                 </div>
                 <!-- Establishment size for pie chart -->
-                <div class="filter-text establishment-size-pie-chart" data-ng-if="chart == 'pie-chart'">
+                <div class="filter-text establishment-size" data-ng-if="chart == 'pie-chart'" data-ng-class="{'disabled':(chart == 'pie-chart')}">
+                    <span class="establishment-size" data-ng-bind="i18n.L100574" data-ng-class="{'disabled':(chart == 'pie-chart')}"></span>
                     <select id="sector" class="" data-ng-change="updateChart('establishmentSize')" data-ng-model="filters.establishmentSize" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
                         <option data-ng-bind="i18n.L100574" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>
                     </select>
                 </div>
                 <!-- Country disabled -->
-                <div class="filter-text country-items" data-ng-if="chart=='european-map' || chart=='european-bar-chart'">
-                    <select id="datafor" class="" disabled>
-                    	<option value="" data-ng-bind="i18n.L100589" data-ng-selected="true" disabled></option>
+                <div class="filter-text country-items" data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-class="{'disabled':(chart=='european-map' || chart=='european-bar-chart')}">
+                    <select id="datafor" class="" disabled="disabled">
+                    	<option value="" data-ng-bind="i18n.L100589" data-ng-selected="true"></option>
                     </select>
                 </div>
                 <!-- Country enabled -->
