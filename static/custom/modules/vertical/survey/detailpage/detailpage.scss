@@ -652,6 +652,8 @@
         &.disabled{
           background: $gray-light !important;
           cursor: not-allowed;
+          outline: none;
+          color: $white;
         }
         &:focus{
           outline:1px solid $aquamarine !important;
