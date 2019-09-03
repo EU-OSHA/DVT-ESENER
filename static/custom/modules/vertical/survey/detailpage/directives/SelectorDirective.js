@@ -271,15 +271,25 @@ define(function (require) {
 				scope.updateChart = function(pChangedFilter)
 				{
 					angular.element('.bar-header').removeClass('hide-header');
+					if(pChangedFilter == 'activitySector'){
+						scope.filters.sectorSize = 'activity-sector';
+						scope.filters.establishmentSize = 11;
+					}else if(pChangedFilter == 'establishmentSize'){
+						scope.filters.sectorSize = 'company-size';
+						scope.filters.activitySector = 14;
+					}
+
 					if(scope.chart == 'european-map' || scope.chart == 'european-bar-chart'){
 
 						if(pChangedFilter == 'euOnly'){
 							scope.noneu = (scope.noneu == 0)?1:0;
-						}else if(pChangedFilter == 'activitySector'){
+						}/*else if(pChangedFilter == 'activitySector'){
 							scope.filters.sectorSize = 'activity-sector';
+							scope.filters.establishmentSize = 11;
 						}else if(pChangedFilter == 'establishmentSize'){
 							scope.filters.sectorSize = 'company-size';
-						}
+							scope.filters.activitySector = 14;
+						}*/
 						$state.transitionTo(((scope.chart == 'european-map')?'detailpage-european-map':'detailpage-european-bar-chart'), {
 							pIndicator: scope.dataset, //Year
 							pChart: scope.chart, //Type of chart
@@ -295,11 +305,6 @@ define(function (require) {
 							reload: true
 						});
 					}else if(scope.chart == 'national-comparisons'){
-						if(pChangedFilter == 'activitySector'){
-							scope.filters.sectorSize = 'activity-sector';
-						}else if(pChangedFilter == 'establishmentSize'){
-							scope.filters.sectorSize = 'company-size';
-						}
 						$state.transitionTo('detailpage-national-comparisons', {
 							pIndicator: scope.dataset, //Year
 							pChart: scope.chart, //Type of chart
@@ -320,14 +325,14 @@ define(function (require) {
 							case "activitySector":
 								console.log("activitySector changed");
 								$log.warn("activitySector changed");
-								scope.filters.establishmentSize = 0;
+								scope.filters.establishmentSize = 11;
 								scope.filters.sectorSize = 'activity-sector';
 								break;
 							case "establishmentSize":
 								console.log("establishmentSize changed");
 								$log.warn("establishmentSize changed");
 								scope.filters.sectorSize = 'company-size';
-								scope.filters.activitySector = 0;
+								scope.filters.activitySector = 14;
 								break;
 							case "country":
 								console.log("country changed");
