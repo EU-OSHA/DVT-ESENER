@@ -342,10 +342,6 @@ define(function (require) {
                     value: 'EU27',
                     squash: 'EU27'
                 },
-                pSectorSize: {
-                    value: 'company-size',
-                    squash: 'company-size'
-                },
                 pAnswer: {
                     value: '1'
                 }

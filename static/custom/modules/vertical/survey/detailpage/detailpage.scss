@@ -634,6 +634,7 @@
     }
     span.disabled{
       visibility: hidden !important;
+      display: none !important;
     }
     &.activity-sector{
       select{
