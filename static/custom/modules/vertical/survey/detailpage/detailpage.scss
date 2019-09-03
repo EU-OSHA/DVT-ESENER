@@ -639,7 +639,7 @@
       &:after {
         color: $white;
         right: 0;
-        top: 3rem;
+        top: 1rem;
       }
     }
     &.establishment-size{
@@ -655,7 +655,7 @@
       &:after {
         color: $aquamarine;
         right: 0;
-        top: 3rem;
+        top: 1rem;
       }
     }
     &.country-items{
@@ -701,7 +701,7 @@
       padding: 0 0 0 2rem;
     }
     select#datafor{
-      margin: 3.1rem 0;
+      //margin: 3.1rem 0;
     }
     select#comparewith{
       margin: 3.1rem 0;

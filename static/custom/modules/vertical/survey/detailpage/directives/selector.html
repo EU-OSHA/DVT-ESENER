@@ -134,14 +134,12 @@
                 </div>
                 <!-- Activity sector for pie chart -->
                 <div class="filter-text activity-sector" data-ng-if="chart == 'pie-chart'">
-                    <span class="activity-sector" data-ng-bind="i18n.L100573"></span> 
                     <select id="sector" class="" data-ng-change="updateChart('activitySector')" data-ng-model="filters.activitySector" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
                         <option data-ng-bind="i18n.L100573" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>
                     </select>
                 </div>
                 <!-- Establishment size for pie chart -->
                 <div class="filter-text establishment-size" data-ng-if="chart == 'pie-chart'">
-                    <span class="establishment-size" data-ng-bind="i18n.L100574"></span>
                     <select id="sector" class="" data-ng-change="updateChart('establishmentSize')" data-ng-model="filters.establishmentSize" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
                         <option data-ng-bind="i18n.L100574" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>
                     </select>
