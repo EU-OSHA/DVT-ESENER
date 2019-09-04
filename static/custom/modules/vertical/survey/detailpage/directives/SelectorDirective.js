@@ -408,7 +408,9 @@ define(function (require) {
 						pActivityFilter: scope.filters.activitySector,
 						pCompanyFilter: scope.filters.establishmentSize,
 						pCountry: scope.filters.country,
-						pCountry2: scope.filters.country2
+						pCountry2: scope.filters.country2,
+						pLanguage: scope.pLanguage,
+						pLocale: scope.pLocale
 					},
 					{
 						reload: true

@@ -455,8 +455,8 @@ define(function (require) {
                     squash: 'MM161'
                 },
                 pCountry: {
-                    value: 'AT',
-                    squash: 'AT'
+                    value: 'EU27',
+                    squash: 'EU27'
                 },
                 pAnswer: {
                     value: '1'
