@@ -625,6 +625,16 @@
         color: $gray;
       }
     }
+    label{
+      display:block;
+      max-width: 100%;
+      margin: 0;
+      font-weight: normal;
+      &.disabled{
+        visibility: hidden !important;
+        //display: none !important;
+      }
+    }
     &:after{
       content: "\f107";
       font-family: FontAwesome;
@@ -639,10 +649,6 @@
       &:after{
         content: "" !important;
       }
-    }
-    span.disabled{
-      visibility: hidden !important;
-      display: none !important;
     }
     &.activity-sector{
       select{
@@ -726,13 +732,24 @@
       }
     }
     &.country-items{
+      min-width: auto;
       select{
-        width: 100%;
-        margin: 3.1rem 0 0;
+        width: auto;
+        margin: 1.1rem 0 0;
         padding: 1rem 2rem;
-        background: $gray-light;
+        background: $aquamarine;
         color: $white;
         position: relative;
+        &.comparisons{
+          //margin: 1.1rem 0 0;
+        }
+        &::-ms-expand {
+          display: none;
+        }
+        option{
+          background: $white;
+          color: $gray;
+        }
       }
       &:after {
         color: $white;
@@ -1111,9 +1128,16 @@ and (max-width : 1240px){
   .detail-page{
     .block--filter--wrapper{
         flex-wrap: wrap;
-       .filter-text, .filter-text-button{
+        filter-text{
           min-width: 40%;
           width: 40%;
+        }
+        .filter-text-button{
+          min-width:auto;
+          width: auto;
+          margin-right: 2rem;
+        }
+       .filter-text, .filter-text-button{
           select{
             width: 100%;
           }
@@ -1238,9 +1262,14 @@ and (max-width : 1024px) {
   }
   .block--filter--wrapper{
     .filter-text {
-      min-width: 31.6%;
+      min-width: 22%;
     }
-  } 
+  }
+  .block--typechart--wrapper{
+    .chart--selection--block {
+      //padding-right: 5%;
+    }
+  }
 }
 
 @media only screen 
@@ -1269,7 +1298,7 @@ and (max-width : 768px) {
   .block--typechart--wrapper{
     .chart--selection--block{
       display: block;
-      padding: 0;
+      padding: 0 !important;
       width: 100%;
       margin-left: 0;
       height: 5rem;
@@ -1357,18 +1386,28 @@ and (max-width : 768px) {
           text-align: center;
           width: 100%;
         }
-       .filter-text, .filter-text-button{
+       .filter-text-button{
           min-width: auto;
-          width: auto;
+          width:auto;
+          margin-right: 2rem;
+       }
+       .filter-text{
+          min-width: auto;
+          width: 100%;
           margin-right: 0rem;
+       }
+       .filter-text, .filter-text-button{
           select{
             width: 100%;
             &#datafor{
-              margin: 3.1rem 0 1rem;
+              margin: 1rem 0 1rem;
             }
             &#comparewith{
-              margin: 2rem 0 1rem 0;
+              margin: 1rem 0 1rem 0;
             }
+          }
+          label.disabled{
+            display: none;
           }
        }
     }
@@ -1376,14 +1415,43 @@ and (max-width : 768px) {
 }
 
 @media only screen 
-and (max-width : 350px){
+and (max-width : 375px){
+
+  .detail-page{
+    .filter-text, .filter-text-button{
+      button{
+        min-width: auto;
+        width: 100% !important;
+      }
+    }
+  }
 
   .block--typechart--wrapper{
+    flex-wrap: wrap;
     .chart--selection--block{
-      width: 70%;
+      width:100% !important;
     }
     a#eu-only-mobile {
-      width: 30%;
+      width: 100% !important;
+      margin: 0 0 2rem 0;
     }
-  } 
+  }
+  ul.question--by--question{
+    li{
+      a{
+        &:before, &:after{
+          width: 5rem !important;
+          display: inline-block !important;
+          vertical-align: middle !important;
+          padding: 2rem 0 !important;
+          height: 7.2rem;     
+        }
+      }
+    }
+  }
+  div[query="getPieChartData"]{
+    svg{
+      height: 400px !important;
+    }
+  }
 }
