@@ -103,10 +103,7 @@ define(function (require) {
                        $state.go(pState, {pLanguage: $scope.pLanguage});
                     };
 
-                    // Literals / i18n
-                    //var i18n_literals = configService.getLiterals();
-                    var i18n_literals = ($stateParams.pLanguage == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLanguage);
-                    $scope.i18n_literals = i18n_literals;
+                    var i18n_literals = configService.getLiterals();
 
                     var breadCrumbStructure = require('json!dvt/directives/breadcrumb-items');
                     var titleStructure = require('json!dvt/directives/title-items');
@@ -166,6 +163,11 @@ define(function (require) {
 
                             var cadena = "";
                             var params = $state.params.pIndicator;
+
+                            // Literals / i18n
+                            //var i18n_literals = configService.getLiterals();
+                            i18n_literals = ($stateParams.pLanguage == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLanguage);
+                            $scope.i18n_literals = i18n_literals;
                             
                             $scope.breadCrumb = (params == null)?breadCrumbStructure[$state.current.name]:breadCrumbStructure[$state.current.name+params];
                             $scope.titleHeader = $scope.i18n_literals.L22020;
@@ -173,6 +175,7 @@ define(function (require) {
                             if ($state.current.name == 'home') {
                                 $scope.isHome = true;                                
                                 $scope.title = titleStructure[$state.current.name];
+                                $scope.title = $scope.i18n_literals[$scope.title];
                             } else {
                                 var pathURL = path.split("/");
                                 $scope.isHome = false;

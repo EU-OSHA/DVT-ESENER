@@ -207,6 +207,7 @@ define(function (require) {
 					//dashboard.dashboard.fireChange('pFilters', scope.filters);
 					i18n = (scope.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(scope.pLocale);
 					$state.transitionTo($state.current.name, {
+						pLanguage: scope.pLanguage,
 						pLocale: scope.pLocale,
 						pQuestion: $stateParams.pQuestion,
 						pTopic: scope.topic

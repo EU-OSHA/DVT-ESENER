@@ -25,18 +25,24 @@ define(function (require) {
             restrict: 'E',
             transclude: true,
             scope: {},
-            controller: ['$scope', 'configService', '$http', function($scope, configService, $http) {
-                // Literals / i18n
-                $scope.i18n = configService.getLiterals();
+            controller: ['$scope', 'configService', '$http', '$stateParams', '$rootScope', function($scope, configService, $http, $stateParams, $rootScope) {
 
                 $scope.path = configService.getHorizontalDirectiveDataPath("footer", "footer");
+                $log.debug($scope.path)
                 $http.get($scope.path).success(function(footer) {
-                    $log.debug(footer)
                     $scope.footer = footer;
                     $scope.CurrentDate = new Date();
                     $scope.debugEnabled = (typeof document == "undefined" || document.location.href.indexOf("debug=true") > 0);
                 }).error(function(data,error){
                     //TODO process error
+                });
+
+                $rootScope.$on('$viewContentLoading', function(event, viewConfig) {
+                    $scope.pLanguage = $stateParams.pLanguage;
+
+                    // Literals / i18n
+                    //var i18n_literals = configService.getLiterals();
+                    $scope.i18n = ($stateParams.pLanguage == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLanguage);
                 });
             }],
             templateUrl: configService.getHorizontalDirectiveTplPath("footer", "footer")

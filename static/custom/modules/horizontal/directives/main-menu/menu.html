@@ -30,7 +30,7 @@
                                     <option value="es">Español</option>
                                     <option value="fr">Français</option>
                                     <option value="hr">Hrvatski</option>
-                                    <option value="en">Íslenska</option>
+                                    <option value="is">Íslenska</option>
                                     <option value="it">Italiano</option>
                                     <option value="lv">Latviešu</option>
                                     <option value="lt">Lietuvių</option>
@@ -88,15 +88,14 @@
                                     <span ng-class="isCurrentSection('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
                                     <i class="fa fa-caret-down" aria-hidden="true"></i>
                                 </a>
-                                <a ng-if='level0.levels && level0.sref' ui-sref= '{{ level0.sref}}'
+                                <a ng-if='level0.levels && level0.sref' ui-sref= '{{ level0.sref}}({pLanguage: pLanguage})'
                                    class="dropdown-toggle {{level0.class}}"
                                    data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" tabindex="{{level0.tabindex}}">
                                     <span ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
                                     <i class="fa fa-caret-down" aria-hidden="true"></i>
                                 </a>
-                                <a ng-if='!level0.levels && level0.sref' ui-sref='{{ level0.sref}}' accesskey="{{level0.accesskey}}" tabindex="{{level0.tabindex}}">
-                                    <span ng-if="level0.id == 'home'" ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="level0.name"></span>
-                                    <span ng-if="level0.id != 'home'" ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
+                                <a ng-if='!level0.levels && level0.sref' ui-sref='{{ level0.sref}}({pLanguage: pLanguage})' accesskey="{{level0.accesskey}}" tabindex="{{level0.tabindex}}">
+                                    <span ng-class="isCurrentStateMenu('{{ level0.id }}')" data-ng-bind-html="i18n_literals[level0.name]"></span>
                                 </a>
                                 <ul class="dropdown-menu" ng-if="level0.levels">
                                     <!--
@@ -164,10 +163,10 @@
               <ul class="submenu--items--wrapper">
                 <!-- ESENER YEAR SELECTION -->
                 <li data-ng-class="{'active' : '2009' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
-                  <a href ui-sref="overview({pLanguage: pLanguage, pIndicator: '2009'})" data-ng-click="openIndicatorsList($event);" data-ng-class="{'active' : '2009' == pIndicator }" >ESENER 2009</a>
+                  <a href ui-sref="overview({pLanguage: pLanguage, pIndicator: '2009'})" data-ng-click="openIndicatorsList($event);" data-ng-class="{'active' : '2009' == pIndicator }" data-ng-bind="i18n_literals.L101007"></a>
                 </li>
                 <li data-ng-class="{'active' : '2014' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
-                  <a href ui-sref="overview({pLanguage: pLanguage, pIndicator: '2014'})" data-ng-click="openIndicatorsList($event);" data-ng-class="{'active' : '2014' == pIndicator }" >ESENER 2014</a>
+                  <a href ui-sref="overview({pLanguage: pLanguage, pIndicator: '2014'})" data-ng-click="openIndicatorsList($event);" data-ng-class="{'active' : '2014' == pIndicator }" data-ng-bind="i18n_literals.L101008"></a>
                 </li>
                 <!--<li data-ng-class="{'active' : indicator.anchor == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
                   <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : indicator.anchor == pIndicator }" >ESENER 2019</a>
@@ -193,7 +192,7 @@
             </ul>
             <ul class="submenu--items--wrapper">
                 <li data-ng-class="{'active' : 'overview' == currentName }" class="submenu--item">
-                    <a href="" ui-sref="overview({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'overview' == currentName }">OVERVIEW</a>
+                    <a href="" ui-sref="overview({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'overview' == currentName }" data-ng-bind="i18n_literals.L101009"></a>
                 </li>
                 <li data-ng-class="{'active' : 'datavisualisation' == currentName || 'detailpage-european-map' == currentName ||
                     'detailpage-european-bar-chart' == currentName || 'detailpage-national-bar-chart' == currentName || 
@@ -201,7 +200,7 @@
                     <a href="" ui-sref="datavisualisation({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'datavisualisation' == currentName || 
                     'detailpage-european-map' == currentName || 'detailpage-european-bar-chart' == currentName ||
                     'detailpage-national-bar-chart' == currentName || 'detailpage-national-comparisons' == currentName || 
-                    'detailpage-pie-chart' == currentName}" >DATA VISUALISATION</a>
+                    'detailpage-pie-chart' == currentName}" data-ng-bind="i18n_literals.L101010"></a>
                 </li>
                 <!--<li data-ng-class="{'active' : 'comparisons' == currentName }" class="submenu--item">
                 <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'comparisons' == currentName }" >COMPARISONS</a>
