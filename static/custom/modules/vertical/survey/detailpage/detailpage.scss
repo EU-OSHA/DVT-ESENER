@@ -708,6 +708,7 @@
         }
         &:focus{
           outline:1px solid $aquamarine !important;
+          outline-offset:0 !important;
         }
       }
       &:after {
