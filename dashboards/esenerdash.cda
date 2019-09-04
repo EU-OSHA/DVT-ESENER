@@ -349,6 +349,7 @@
       <Parameter default="11" name="pCompanyFilter" type="String" />
       <Parameter default="0" name="pEUOnly" type="String" />
       <Parameter default="activity-sector" name="pSectorSize" type="String" />
+      <Parameter default="0" name="pAnswer" type="Numeric" />
     </Parameters>
     <Query>
       SELECT t.text as Answer, IF(n.name REGEXP 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
@@ -366,7 +367,9 @@
       AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('CH', 'NO', 'TR')) ELSE n.id = p.nuts_id END
       AND t.language = 'EN'
       AND v.dataset_id = ${pDataset}
-      ORDER BY FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC, eao.order_position DESC;
+      ORDER BY FIELD('EU27', n.country_code) DESC, CASE WHEN ${pAnswer}=0 THEN FIELD(n.country_code, 'CH', 'NO', 'TR') END ASC, 
+      CASE WHEN ${pAnswer}!=0 THEN FIELD(${pAnswer}, eao.answer_id) END DESC, CASE WHEN ${pAnswer}=0 THEN n.country_code END ASC, eao.order_position ASC, 
+      CASE WHEN ${pAnswer}!=0 THEN Value END DESC
     </Query>
   </DataAccess>
 

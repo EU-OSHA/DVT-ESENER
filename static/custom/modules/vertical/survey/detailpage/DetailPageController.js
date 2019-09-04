@@ -48,7 +48,7 @@ define(function (require) {
 		$scope.pQuestion = $stateParams.pQuestion; //Question (name)        
 		$scope.pCompanyFilter = $stateParams.pCompanyFilter; //Company size
 		$scope.pActivityFilter = $stateParams.pActivityFilter; //Activity sector
-		$scope.answer = ($scope.pChart == 'european-map')?$stateParams.pAnswer:$rootScope.answer; //Answer
+		$scope.answer = ($scope.pChart == 'european-map' || $scope.pChart == 'european-bar-chart')?$stateParams.pAnswer:$rootScope.answer; //Answer
 		$scope.pSectorSize = $stateParams.pSectorSize; //Activity sector or company size
 		$scope.pCountry = $stateParams.pCountry != null ? $stateParams.pCountry : $stateParams.pCountry1;
 		$scope.pCountry2 = $stateParams.pCountry2;
@@ -137,7 +137,6 @@ define(function (require) {
 				}
 			}
 		}
-		
 
 		//DASHBOARD PARAMETERS
 	    $scope.dashboard = {
@@ -307,6 +306,12 @@ define(function (require) {
 					  		number: "0.#",
 					  		percent: "#%"
 						}
+				  	},
+				  	series: {
+				  		comparer: function(seriesValuesA, seriesValuesB)
+				  		{
+				  			return -1
+				  		}
 				  	}
 				}
 			},

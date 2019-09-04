@@ -200,12 +200,19 @@
         <div>
             <form class="block--typechart--wrapper">
                 <!-- Answer selection -->
-                <!-- Hidden until necessary -->
-                <!--<div class="filter-text" data-ng-if="chart == 'european-map'">
+                <div class="filter-text" data-ng-if="chart == 'european-map'">
+                    <span data-ng-bind="i18n.L100588"></span>
                     <select id="datafor" class="" ng-model="filters.answer" ng-change="updateChart('answer')">
-                    	<option data-ng-repeat='answer in answers' value="answer.id" data-ng-bind="i18n['L'+answer.literal]" data-ng-selected="answer.id == filters.answer"></option>
+                    	<option data-ng-repeat='answer in answers' value="{{answer.id}}" data-ng-bind="i18n['L'+answer.literal]" data-ng-selected="answer.id == filters.answer"></option>
                     </select>
-                </div>-->
+                </div>
+                <div class="filter-text" data-ng-if="chart == 'european-bar-chart'">
+                    <span data-ng-bind="i18n.L101030"></span>
+                    <select id="datafor" class="" ng-model="filters.answer" ng-change="updateChart('answer')">
+                        <option data-ng-bind="i18n.L100589" value="0" data-ng-selected="0 == filters.answer"></option>
+                        <option data-ng-repeat='answer in answers' value="{{answer.id}}" data-ng-bind="i18n.L100588 + ': ' + i18n['L'+answer.literal]" data-ng-selected="answer.id == filters.answer"></option>
+                    </select>
+                </div>
                 <!-- Chart selection -->
                 <ul class="chart--selection--block">
                     <li data-ng-class="{'selected-chart':(chart == 'european-map')}" data-ng-click="openOptions($index,$event)">
@@ -213,7 +220,7 @@
                     </li>
 
                     <li data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" data-ng-click="openOptions($index,$event)">
-                        <a title="{{i18n.L100622}}" class="" data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" ui-sref="detailpage-european-bar-chart({pTopic: topic, pChart: 'european-bar-chart', pQuestion: indicator, pSectorSize: sectorSize, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pLocale: pLocale, pAnswer: answer})"><span class="visible-xs"  data-ng-bind="i18n.L100622"></span></a>
+                        <a title="{{i18n.L100622}}" class="" data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" ui-sref="detailpage-european-bar-chart({pTopic: topic, pChart: 'european-bar-chart', pQuestion: indicator, pSectorSize: sectorSize, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pLocale: pLocale, pAnswer: 0})"><span class="visible-xs"  data-ng-bind="i18n.L100622"></span></a>
                     </li>
 
                     <li data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" data-ng-click="openOptions($index,$event)">

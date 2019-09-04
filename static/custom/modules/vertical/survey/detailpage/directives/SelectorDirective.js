@@ -145,12 +145,12 @@ define(function (require) {
 				});
 
 				// Load the order in which the answers will be painted
-				/*dataService.getQuestionAnswerOrder(scope.indicator).then(function(res) {
+				dataService.getQuestionAnswerOrder(scope.indicator).then(function(res) {
 					scope.answers = [];
 					res.data.resultset.map(function(elem) {
 						scope.answers.push({id:elem[0], literal:elem[1]});
 					});
-				});*/
+				});
 
 				// Load the data for the filters
 				if (scope.chart =='european-map' || scope.chart=='european-bar-chart' || scope.chart == 'national-comparisons')
@@ -296,7 +296,7 @@ define(function (require) {
 							pChart: scope.chart, //Type of chart
 							pTopic: scope.topic,
 							pQuestion: scope.indicator, //Question name
-							pAnswer: scope.answer, //Split answer
+							pAnswer: scope.filters.answer, //Split answer
 							pSectorSize: scope.filters.sectorSize,
 							pActivityFilter: scope.filters.activitySector,
 							pCompanyFilter: scope.filters.establishmentSize,

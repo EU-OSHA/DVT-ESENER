@@ -288,7 +288,7 @@ define(function (require) {
                     squash: '11'
                 },
                 pAnswer: {
-                    value: '1'
+                    value: '0'
                 },
                 pEuOnly: {
                     value: 0
