@@ -150,6 +150,16 @@ define(function (require) {
 					res.data.resultset.map(function(elem) {
 						scope.answers.push({id:elem[0], literal:elem[1]});
 					});
+
+					if(scope.filters.answer == 0 && scope.chart == 'european-map'){
+						$state.transitionTo($state.current.name, {
+							pLanguage: scope.pLanguage,
+							pAnswer: scope.answers[0].id
+						}, 
+						{
+							reload: true
+						});
+					}
 				});
 
 				// Load the data for the filters
@@ -410,7 +420,8 @@ define(function (require) {
 						pCountry: scope.filters.country,
 						pCountry2: scope.filters.country2,
 						pLanguage: scope.pLanguage,
-						pLocale: scope.pLocale
+						pLocale: scope.pLocale,
+						pEuOnly: scope.pEuOnly
 					},
 					{
 						reload: true

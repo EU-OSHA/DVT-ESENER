@@ -211,6 +211,14 @@ define(function (require) {
                     value: 'activity-sector',
                     squash: 'activity-sector'
                 },
+                pCountry: {
+                    value: 'EU27',
+                    squash: 'EU27'
+                },
+                pCountry2: {
+                    value: 'EU27',
+                    squash: 'EU27'
+                },
                 pLocale: {
                     value: 'en',
                     squash: 'en'
@@ -270,6 +278,14 @@ define(function (require) {
                 pSectorSize: {
                     value: 'activity-sector',
                     squash: 'activity-sector'
+                },
+                pCountry: {
+                    value: 'EU27',
+                    squash: 'EU27'
+                },
+                pCountry2: {
+                    value: 'EU27',
+                    squash: 'EU27'
                 },
                 pLocale: {
                     value: 'en',
@@ -342,8 +358,15 @@ define(function (require) {
                     value: 'EU27',
                     squash: 'EU27'
                 },
+                pCountry2: {
+                    value: 'EU27',
+                    squash: 'EU27'
+                },
                 pAnswer: {
                     value: '1'
+                },
+                pEuOnly: {
+                    value: 0
                 }
             },
             views: {
@@ -408,6 +431,9 @@ define(function (require) {
                 },
                 pAnswer: {
                     value: '1'
+                },
+                pEuOnly: {
+                    value: 0
                 }
             },
             views: {
@@ -458,8 +484,15 @@ define(function (require) {
                     value: 'EU27',
                     squash: 'EU27'
                 },
+                pCountry2: {
+                    value: 'EU27',
+                    squash: 'EU27'
+                },
                 pAnswer: {
                     value: '1'
+                },
+                pEuOnly: {
+                    value: 0
                 }
             },
             views: {

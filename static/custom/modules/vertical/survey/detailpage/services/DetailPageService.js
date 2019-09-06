@@ -20,7 +20,7 @@ define (function (require) {
                     }
                 ];
             },
-            getGeneralEuropeanBarCharPlot: function(euonly) {
+            getGeneralEuropeanBarCharPlot: function(euonly, answer) {
                 return [
                     {
                         name: "main",
@@ -99,7 +99,7 @@ define (function (require) {
                               resolution = screen.width;
                             });
 
-                            if(euonly != 1){
+                            if(euonly != 1 && answer == 0){
                                 //NON EU stroke separator vertical
                                 this.add(pv.Rule)
                                     //Negative value in top line continues out of the chart
@@ -158,14 +158,15 @@ define (function (require) {
                                     var countryKey = scene.firstAtoms.category;
                                     var panelWidth = this.root.width();
 
-                                    if(baseScale('Austria (AT)') < 20){
+                                    /*if(baseScale('Austria (AT)') < 20){
                                         return baseScale('Belgium (BE)') - this.sign.panel.barWidth - 3;
                                     }
 
                                     if(resolution<=768){
                                         return baseScale('Austria (AT)') - this.sign.panel.barWidth + 4;
                                     }
-                                    return baseScale('Austria (AT)') - this.sign.panel.barWidth - 3; 
+                                    return baseScale('Austria (AT)') - this.sign.panel.barWidth - 3; */
+                                     return baseScale('EU27') + this.sign.panel.barWidth + 3;
                                 });
                         },
                         visualRoles:{
