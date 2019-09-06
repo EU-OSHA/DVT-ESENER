@@ -200,15 +200,15 @@
         <div>
             <form class="block--typechart--wrapper">
                 <!-- Answer selection -->
-                <div class="filter-text" data-ng-if="chart == 'european-map'">
-                    <span data-ng-bind="i18n.L100588"></span>
-                    <select id="datafor" class="" ng-model="filters.answer" ng-change="updateChart('answer')">
+                <div class="filter-text sort-by" data-ng-if="chart == 'european-map'">
+                    <label for="sortBy" data-ng-bind="i18n.L100588 + ': '"></label>
+                    <select id="sortBy" class="" ng-model="filters.answer" ng-change="updateChart('answer')">
                     	<option data-ng-repeat='answer in answers' value="{{answer.id}}" data-ng-bind="i18n['L'+answer.literal]" data-ng-selected="answer.id == filters.answer"></option>
                     </select>
                 </div>
-                <div class="filter-text" data-ng-if="chart == 'european-bar-chart'">
-                    <span data-ng-bind="i18n.L101030"></span>
-                    <select id="datafor" class="" ng-model="filters.answer" ng-change="updateChart('answer')">
+                <div class="filter-text sort-by" data-ng-if="chart == 'european-bar-chart'">
+                    <label for="sortBy" data-ng-bind="i18n.L101030 + ': '"></label>
+                    <select id="sortBy" class="" ng-model="filters.answer" ng-change="updateChart('answer')">
                         <option data-ng-bind="i18n.L100589" value="0" data-ng-selected="0 == filters.answer"></option>
                         <option data-ng-repeat='answer in answers' value="{{answer.id}}" data-ng-bind="i18n.L100588 + ': ' + i18n['L'+answer.literal]" data-ng-selected="answer.id == filters.answer"></option>
                     </select>

@@ -874,6 +874,46 @@
   justify-content:flex-start;
   width: 100%;
   margin: 0;
+  .filter-text{
+    position: relative;
+    display: flex;
+    label{
+      font-weight: normal;
+      width: 10rem;
+      padding: 1.3rem 0;
+      margin: 0.4rem 0;
+    }
+    select, select:focus{
+      width: 100%;
+      margin: 0.4rem 0;
+      padding: 0.5rem 3rem 0.5rem 1.3rem;
+      background: #FFF;
+      outline: 1px solid $gray-light !important;
+      outline-offset:0 !important;
+      border: 0;
+      color: $gray;
+      position: relative;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      &::-ms-expand {
+        display: none;
+      }
+    }
+    &:after {
+      content: "\f107";
+      font-family: 'FontAwesome';
+      font-weight: normal;
+      font-size: 2rem;
+      height: auto;
+      padding:0 1rem;
+      color: $gray-light;
+      position: absolute;
+      pointer-events: none;
+      top:1.3rem;
+      right: 0;
+    }
+  }
   .chart--selection--block{
     margin-left: auto;
     display: flex;
@@ -1298,10 +1338,15 @@ and (max-width : 768px) {
     }
   }   
   .block--typechart--wrapper{
+     flex-wrap: wrap;
+     .sort-by{
+      width: 100%;
+      margin: 0 0 4rem 0;
+     }
     .chart--selection--block{
       display: block;
       padding: 0 !important;
-      width: 100%;
+      width: 60%;
       margin-left: 0;
       height: 5rem;
       overflow: hidden;
@@ -1370,6 +1415,8 @@ and (max-width : 768px) {
     a#eu-only-mobile{
       display: block;
       width: 25%;
+      margin-left: auto;
+      margin-right: 0;
     }
   }
   .dvt-map-tooltip{
