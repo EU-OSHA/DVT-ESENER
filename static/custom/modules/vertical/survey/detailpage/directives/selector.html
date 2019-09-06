@@ -116,11 +116,11 @@
 	        	<span class="or" data-ng-bind="i18n.L101027"></span>
 	        	<span class="establishment-size" data-ng-bind="i18n.L100574"></span> 
 	        </p> -->
-             <p data-ng-if="chart != 'pie-chart'">Select</p>  
+             <p data-ng-if="chart != 'pie-chart'" data-ng-bind="i18n.L101026" ></p>  
             <form class="block--filter--wrapper">
                 <!-- Activity sector -->
                 <div data-ng-class="{'active':(filters.sectorSize == 'activity-sector')}" class="filter-text activity-sector" data-ng-if="chart != 'pie-chart'">
-                    <label class="activity-sector"data-ng-bind="i18n.L100573" ></label> 
+                    <label class="activity-sector" data-ng-bind="i18n.L100573" ></label> 
                     <select id="sector" class="" ng-change="updateChart('activitySector')" ng-model="filters.activitySector" ng-selected="filters.activitySector" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
                         <!--<option data-ng-bind="i18n.L100573" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>-->
                         <option data-ng-repeat='sector in activitySectors' value="{{sector.id}}" data-ng-bind="i18n['L'+sector.literal]"></option>
