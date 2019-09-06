@@ -16,6 +16,12 @@
                 <!-- nav tools top -->
                 <nav class="menu-tools-top">
                     <ul class="menu-tools-top--items list-inline">
+                        <li class="zoom--text">
+                            <span class="a_small"><a onclick="zoomSmall()" title="{{i18n_literals.L365}}">a</a></span>
+                            <span class="a_medium"><a onclick="zoomMedium()" title="{{i18n_literals.L366}}">a</a></span>
+                            <span class="a_big"><a onclick="zoomBig()" title="{{i18n_literals.L367}}">a</a></span>
+                        </li>
+                        <li class="print--block"><a href="javascript:"  title="{{i18n_literals.L364}}" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i><label for="search" class="sr-only" data-ng-bind="i18n_literals.L364"></label></a></li>
                         <li class="lang--block">
                             <form action="" class="lang--form">
                                 <label for="search" class="sr-only">Language</label>
@@ -48,12 +54,8 @@
                                 </select>
                             </form>
                         </li> 
-                        <li class="print--block"><a href="javascript:"  title="{{i18n_literals.L364}}" onclick="window.print()"><i class="fa fa-print" aria-hidden="true"></i><label for="search" class="sr-only" data-ng-bind="i18n_literals.L364"></label></a></li>
-                        <li class="zoom--text">
-                            <span class="a_small"><a onclick="zoomSmall()" title="{{i18n_literals.L365}}">a</a></span>
-                            <span class="a_medium"><a onclick="zoomMedium()" title="{{i18n_literals.L366}}">a</a></span>
-                            <span class="a_big"><a onclick="zoomBig()" title="{{i18n_literals.L367}}">a</a></span>
-                        </li>
+
+
                        <!--
                         <li id="google_translate_element_wrapper">
                             <div id="google_translate_element"  title="{{i18n_literals.L368}}"></div>
