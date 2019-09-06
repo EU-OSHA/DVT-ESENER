@@ -19,7 +19,9 @@
 	.question--by--question, 
 	.questions--tree, 
 	.select2-drop, 
-	.questions--list--wrapper{
+	.questions--list--wrapper, 
+	.disabled, 
+	.content--lang--wrapper{
 	  display: none !important;
 	}
 	a[href]:after {
@@ -261,6 +263,14 @@
 	svg{
 		page-break-inside : avoid !important;
 	} 
+  .european-bar-chart, 
+  .pie-chart{
+  	padding:0rem !important;
+    svg{
+      padding: 0rem;
+      zoom:0.6 !important;
+    }
+  }
 
 	.footer-elements{
 		text-align: center!important;

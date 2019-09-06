@@ -12,6 +12,9 @@
       position: initial;
       width: 74%;
       padding: 0 4rem;
+      h3:empty{
+        display:none;
+      }
       .selector--page--elements{
         position: initial; 
         .content--intro--wrapper{
@@ -604,7 +607,7 @@
   display: flex;
   justify-content:flex-start;
   width: 100%;
-  margin: 2rem 0 0;
+  margin: 0rem 0 0;
   .note-select{
     color: $aquamarine;
   }
@@ -880,7 +883,7 @@
     label{
       font-weight: normal;
       width: 10rem;
-      padding: 1.3rem 0;
+      padding: 0.8rem 0;
       margin: 0.4rem 0;
     }
     select, select:focus{
@@ -1117,7 +1120,13 @@
     }
   }
 }
-
+.european-map, .european-bar-chart{
+  margin-top: 1rem;
+}
+.european-bar-chart{
+  padding: 4rem;
+  background: #F0F0F0 !important;
+}
 ul.question--by--question {
     list-style: none;
     margin: 0;
@@ -1185,6 +1194,9 @@ and (max-width : 1240px){
           }
        }
     }
+  }
+  .european-bar-chart{
+    padding: 0rem;
   }
 }
 

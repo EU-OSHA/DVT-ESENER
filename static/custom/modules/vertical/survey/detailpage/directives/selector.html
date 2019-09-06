@@ -116,6 +116,7 @@
 	        	<span class="or" data-ng-bind="i18n.L101027"></span>
 	        	<span class="establishment-size" data-ng-bind="i18n.L100574"></span> 
 	        </p> -->
+             <p data-ng-if="chart != 'pie-chart'">Select</p>  
             <form class="block--filter--wrapper">
                 <!-- Activity sector -->
                 <div data-ng-class="{'active':(filters.sectorSize == 'activity-sector')}" class="filter-text activity-sector" data-ng-if="chart != 'pie-chart'">
@@ -168,8 +169,7 @@
                         <option data-ng-repeat='country in countriesCompareWith' value="{{country.id}}" data-ng-bind="country.literal"></option>
                     </select>
                 </div>
-            </form>
-            <p class="note-select" data-ng-if="chart != 'pie-chart'">(*) Select an Activity sector or Establishment size</p>  
+            </form>           
         </div>
         <div data-ng-if="chart=='national-bar-chart'">
 			<form class="block--filter--wrapper">
