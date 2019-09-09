@@ -1,2563 +1,3 @@
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CH");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="TR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="AT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="BG");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CY");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="CZ");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="DK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="ES");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="FR");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="HU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="IT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LU");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="LV");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="MT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="NL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PL");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="PT");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="RO");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SE");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SI");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="SK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="UK");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite high" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Quite low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Total" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Production sector" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Private Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
-SET @activitySectorId = (SELECT a.id FROM split_activity_sector a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Public Services" AND t.language="EN");
-SET @answerId = (SELECT a.id FROM split_answer a INNER JOIN translation t ON a.literal_id=t.literal_id WHERE t.text="Very low" AND t.language="EN");
-SET @nutsId = (SELECT id FROM nuts WHERE country_code="EU27");
-INSERT INTO profile (nuts_id, activity_sector_id, answer_id) VALUE (@nutsId, @activitySectorId, @answerId);
-
 
 SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="CH" AND t1.text="Very high" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
@@ -2639,22 +79,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08298115735450068);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="CH" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="CH" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.012663011664545048);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="CH" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="CH" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.00447693451440094);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="CH" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="CH" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.020681534092389476);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="CH" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="CH" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0031616332884047125);
@@ -2739,22 +179,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0575613930895242);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="HR" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="HR" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1086717272602482);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="HR" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="HR" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11276587357611342);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="HR" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="HR" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.11139123511601139);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="HR" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="HR" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09580969010407683);
@@ -2839,22 +279,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.015045524413125153);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="NO" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="NO" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.041769706151950456);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="NO" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="NO" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04856560781642907);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="NO" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="NO" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0529321011574891);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="NO" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="NO" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.019465099249944322);
@@ -2939,22 +379,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.2540894703190902);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="TR" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="TR" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0492125608077147);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="TR" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="TR" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03204842929089187);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="TR" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="TR" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05963891101927026);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="TR" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="TR" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.06007102524148339);
@@ -3039,22 +479,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1104970551277797);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="AT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="AT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02016440154788252);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="AT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="AT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0312894984889757);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="AT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="AT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.022391015746145788);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="AT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="AT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0013491804157371363);
@@ -3139,22 +579,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.029684698317777536);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="BE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="BE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.030032131031912254);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="BE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="BE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0251850308562438);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="BE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="BE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.029653129178054335);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="BE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="BE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03450583860558838);
@@ -3239,22 +679,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="BG" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="BG" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.008742243531243159);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="BG" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="BG" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.006043955092335369);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="BG" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="BG" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="BG" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="BG" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.029956018377738817);
@@ -3339,22 +779,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03426064605415928);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="CY" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="CY" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.032964188395836584);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="CY" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="CY" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.026242375680230457);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="CY" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="CY" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.029812349496489234);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="CY" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="CY" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05322318653864178);
@@ -3439,22 +879,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0025346755414411646);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="CZ" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="CZ" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0260275114055218);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="CZ" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="CZ" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.01852560894627345);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="CZ" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="CZ" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02540236177437619);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="CZ" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="CZ" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.040434310868156624);
@@ -3539,22 +979,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17263946035879793);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="DE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="DE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02520996847063973);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="DE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="DE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02168601762126128);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="DE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="DE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02686469157164713);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="DE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="DE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02511430285311211);
@@ -3639,22 +1079,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.010312373104781747);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="DK" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="DK" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17918467566656276);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="DK" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="DK" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.19098287663376062);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="DK" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="DK" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.16855464584805138);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="DK" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="DK" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.18607664977459815);
@@ -3739,22 +1179,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.038895194869385905);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="EE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="EE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04101790581356682);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="EE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="EE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.048825282725666434);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="EE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="EE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.040453092009333724);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="EE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="EE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02937468100030204);
@@ -3839,22 +1279,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.17836319361214778);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="EL" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="EL" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04603411914038603);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="EL" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="EL" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0302277047310028);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="EL" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="EL" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04636023624524797);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="EL" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="EL" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05576085672995942);
@@ -3939,22 +1379,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07615178029638134);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="ES" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="ES" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.01885437533778057);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="ES" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="ES" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0035142638204946);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="ES" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="ES" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02198938092006764);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="ES" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="ES" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.037394120020855376);
@@ -4039,22 +1479,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05963874593739521);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="FI" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="FI" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.021407821609450248);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="FI" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="FI" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.011324525637652374);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="FI" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="FI" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03252648546228874);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="FI" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="FI" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0);
@@ -4139,22 +1579,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1301405035250657);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="FR" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="FR" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.014359355579527359);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="FR" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="FR" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.009752490466742801);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="FR" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="FR" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.017797782717910715);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="FR" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="FR" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.012076307920662013);
@@ -4239,22 +1679,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1121524843655345);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="HU" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="HU" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.127874280419631);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="HU" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="HU" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03793089878410334);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="HU" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="HU" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.16311502387701432);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="HU" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="HU" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.1866042840638161);
@@ -4339,22 +1779,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.012450768890813266);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="IE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="IE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0205952840838736);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="IE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="IE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.015767675738784917);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="IE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="IE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.021601938928811647);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="IE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="IE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.021801680371321373);
@@ -4439,22 +1879,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.003452875279808037);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="IT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="IT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.011908342652803123);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="IT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="IT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.018825476385503335);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="IT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="IT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.010743331489236237);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="IT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="IT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0);
@@ -4539,22 +1979,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04714701191183945);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="LT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="LT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.035348007540529684);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="LT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="LT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.023977112654070782);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="LT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="LT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03217918869686893);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="LT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="LT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05947353129043627);
@@ -4639,22 +2079,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.028760303957404598);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="LU" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="LU" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.017424334974194457);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="LU" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="LU" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.019890937754262747);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="LU" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="LU" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.010650362831243492);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="LU" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="LU" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.041239647778177256);
@@ -4739,22 +2179,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.016331781450912908);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="LV" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="LV" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.06191904695161667);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="LV" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="LV" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05571445216013481);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="LV" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="LV" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07454561631230087);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="LV" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="LV" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.042430370251151844);
@@ -4839,22 +2279,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.06890852452497145);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="MT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="MT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09739079890610336);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="MT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="MT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02697521251736503);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="MT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="MT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09177532106737386);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="MT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="MT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.18329496657033478);
@@ -4939,22 +2379,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.004113198119909135);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="NL" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="NL" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.014326417710921656);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="NL" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="NL" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.028286131230828782);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="NL" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="NL" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.008988645396969993);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="NL" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="NL" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.013321512037383182);
@@ -5039,22 +2479,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0097577580408291);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="PL" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="PL" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.061689122445634056);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="PL" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="PL" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0848281268657405);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="PL" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="PL" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.036977476349066424);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="PL" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="PL" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.06929251392745554);
@@ -5139,22 +2579,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.09971069507837696);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="PT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="PT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02094817339318398);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="PT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="PT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02993101479232837);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="PT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="PT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.026574534410639266);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="PT" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="PT" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.0005887401855869916);
@@ -5239,22 +2679,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05912582207980408);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="RO" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="RO" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.028559037288687642);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="RO" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="RO" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.009421994178673645);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="RO" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="RO" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.021337075115596217);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="RO" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="RO" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07659236506744543);
@@ -5339,22 +2779,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.007519599359557309);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="SE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="SE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.01866075418159702);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="SE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="SE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.018333535562671747);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="SE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="SE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.016882021832654904);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="SE" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="SE" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02172582772783374);
@@ -5439,22 +2879,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03339393417460397);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="SI" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="SI" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.011866846376964623);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="SI" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="SI" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.020402829302671625);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="SI" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="SI" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.010813116770625788);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="SI" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="SI" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0);
@@ -5539,22 +2979,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.04263051758739257);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="SK" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="SK" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07904277457243611);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="SK" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="SK" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.08628535642415425);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="SK" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="SK" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.049396178458776585);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="SK" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="SK" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.10843567781412856);
@@ -5639,22 +3079,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.05655241578154255);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="UK" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="UK" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.025548939806030145);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="UK" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="UK" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.021533897141611844);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="UK" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="UK" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.02421101817567646);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="UK" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="UK" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.031268340217590264);
@@ -5739,22 +3179,22 @@ SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.07641711183038052);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="EU27" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Total" AND t.language="EN" AND n.country_code="EU27" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.029154819968155096);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="EU27" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Production sector" AND t.language="EN" AND n.country_code="EU27" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.026063710375437518);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="EU27" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Private Services" AND t.language="EN" AND n.country_code="EU27" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.027938233941838576);
 
-SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="EU27" AND t1.text="DK/ NA" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
+SET @profileID = (SELECT p.id FROM profile p INNER JOIN nuts n ON p.nuts_id=n.id INNER JOIN split_activity_sector sa ON p.activity_sector_id=sa.id INNER JOIN translation t ON sa.literal_id=t.literal_id INNER JOIN split_answer a ON p.answer_id=a.id INNER JOIN translation t1 ON a.literal_id=t1.literal_id WHERE t.text="Public Services" AND t.language="EN" AND n.country_code="EU27" AND t1.text="No answer" AND t1.language="EN" AND age_group_id IS NULL AND company_size_id IS NULL AND currency_id IS NULL AND gender_id IS NULL AND illness_id IS NULL AND subindicator_id IS NULL);
 SET @indicatorID = (SELECT id FROM indicator WHERE name="MM159");
 SET @datasetID = (SELECT dataset_id FROM indicators_in_dataset WHERE indicator_id=@indicatorID);
 INSERT INTO value (dataset_id, indicator_id, profile_id, value)VALUES (@datasetID, @indicatorID, @profileID, 0.03549995529752419);
