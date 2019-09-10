@@ -663,8 +663,8 @@ define(function (require) {
 		  //angular.element(parentNode).toggleClass('open');
 		}
 
-		$scope.showSharePopUp = function(){
-			if(event.target.id == 'btnSocial')
+		$scope.showSharePopUp = function(e){
+			if( e.currentTarget.attributes[0].nodeValue == 'btnSocial')
 				$scope.showPopUpSocialMedia = true;
 			else
 				$scope.showPopUpExportData = true;

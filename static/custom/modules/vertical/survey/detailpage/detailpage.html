@@ -146,7 +146,7 @@
                       <dvt-bar-chart
                         data-ng-cloak
                         query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
-                        width="330" height="160" axis-percent="1"
+                        width="330" height="90" axis-percent="1"
                         orientation="horizontal" axis-fixed-min="0"
                         axis-fixed-max="100" step="20"
                         listen-to="['pFilters']"
@@ -179,7 +179,7 @@
                 <dvt-bar-chart
                   data-ng-cloak
                   query="getNationalComparisonsData" cda="{{::cdaEsenerDash}}"
-                  width="330" height="160" axis-percent="1"
+                  width="330" height="90" axis-percent="1"
                   orientation="horizontal" axis-fixed-min="0"
                   axis-fixed-max="100" step="20"
                   params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pCountry1', 'pFilters.country'], ['pCountry2', 'pFilters.country2'], ['pAnswer', answer.id], ['pSectorSize', 'pSectorSize']]"
@@ -231,9 +231,12 @@
           </div>
         </div>
 
-        <div class="filter-text-button">
-          <button id="btnSocial" class="btn-default" data-ng-bind="i18n.L101028" data-ng-click="showSharePopUp(event)"></button>
-          <button id="btnExport" class="btn-default" data-ng-bind="i18n.L101029" data-ng-click="showSharePopUp(event)"></button>
+        <div class="export--button--wrapper">
+          <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="showSharePopUp($event)">
+            <span data-ng-bind="i18n.L101028"></span>
+            <span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
+          </button>
+          <button id="btnExport" class="btn-default btn-main-color" data-ng-click="showSharePopUp($event)"><span data-ng-bind="i18n.L101029"></span></button>
         </div>
 
         <section id="popUpMessage" data-ng-if="showPopUpSocialMedia" data-ng-click="ok()">
@@ -242,7 +245,7 @@
               <div class="modal-body">
                 <span class="btn pull-right" role="button" aria-hidden="true" title="Close window" data-ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
                 <div class="popUpMessage--text--block">
-                  <p class="text-center" data-ng-bind="i18n.L369"></p>
+                  <p class="text-center title-share" data-ng-bind="i18n.L369"></p>
                   <div class="social--network--modal" id="osha-menu-social">
                     <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n.L370}}" socialshare-text="{{i18n[title]}}" socialshare-url="{{pathURLDVT}}">
                       <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L370)"></span>
@@ -283,8 +286,8 @@
                     <p data-ng-bind="i18n.L100587 + ': ' + i18n.L100660"></p>
                     <textarea id="urlTextArea" readonly="readonly" cols="80" rows="3" data-ng-bind="createURL()"></textarea>
                     <div class="pageUrl">
-                      <button id="btnSocial" class="btn-default" data-ng-bind="i18n.L100640" data-ng-click="selectTextArea()"></button>
-                      <a id="btnSocial" class="btn-default" data-ng-bind="i18n.L100641" href="{{pathURLDVT}}" target="_blank"></a>
+                      <button id="btnSocial" class="btn-default btn-main-color" data-ng-bind="i18n.L100640" data-ng-click="selectTextArea()"></button>
+                      <a id="btnSocial" class="btn-default btn-main-color" data-ng-bind="i18n.L100641" href="{{pathURLDVT}}" target="_blank"></a>
                       <!--<button id="btnSocial" class="btn-default" data-ng-bind="i18n.L100638" data-ng-click=""></button>-->
                     </div>
                   </div>

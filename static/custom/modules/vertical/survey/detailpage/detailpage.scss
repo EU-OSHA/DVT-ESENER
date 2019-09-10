@@ -197,6 +197,21 @@
     top: 0;
     left: 0;
     z-index: 9999;
+    p.title-share{
+      font-size: 1.6rem;
+      margin: 2rem;
+      font-weight: bold;
+    }
+    .social--network--modal{
+      a{
+        i{
+          cursor: pointer;
+        }
+        &:hover{
+          color: $orange;
+        }
+      }      
+    }
     .popUpMessage--exportData--text--block{
       background: $white;
       width: 58vw;
@@ -206,7 +221,7 @@
       padding: 4vh 10vw;
       position: relative;
       p{
-        font-size: 2rem;
+        font-size: 1.6rem;
         margin: 2rem;
       }
       .close-popup{
@@ -1125,7 +1140,6 @@
 }
 .european-bar-chart{
   padding: 4rem;
-  background: #F0F0F0 !important;
 }
 ul.question--by--question {
     list-style: none;
@@ -1172,6 +1186,17 @@ ul.question--by--question {
         }    
       }
     }
+}
+.export--button--wrapper{
+  margin: 4rem 0;
+  button{
+    display: inline-flex;
+    span{
+      i{
+        margin-left: 1rem;
+      }
+    }
+  }
 }
 
 @media only screen 
@@ -1473,7 +1498,23 @@ and (max-width : 768px) {
        }
     }
   }
+
 }
+
+@media only screen 
+and (max-width : 768px){
+  .export--button--wrapper{
+    button{
+      display: inline-flex;
+      justify-content: center;
+      width: 100%;
+      span{
+        width: auto;
+      }
+    }
+  }  
+}
+
 
 @media only screen 
 and (max-width : 375px){
