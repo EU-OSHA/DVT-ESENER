@@ -506,6 +506,7 @@
         <Parameter default="14" name="pActivityFilter" type="String" />
         <Parameter default="11" name="pCompanyFilter" type="String" />
         <Parameter default="activity-sector" name="pSectorSize" type="String" />
+        <Parameter default="en" name="pLocale" type="String" />
       </Parameters>
       <Query>
         SELECT DISTINCT(IF(sa.id = 37, 36, sa.id)) as id, t.text as name, eao.order_position
@@ -519,7 +520,7 @@
         AND t.literal_id =sa.literal_id
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
         ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-        AND t.language = 'EN'
+        AND t.language = ${pLocale}
         AND v.dataset_id = ${pDataset}
         ORDER BY eao.order_position ASC, id DESC;
       </Query>
@@ -554,7 +555,7 @@
       AND t.language = 'EN'
       AND v.dataset_id = ${pDataset}
       AND CASE WHEN ${pAnswer} != 0 THEN (sa.id = ${pAnswer} AND p.answer_id=sa.id) ELSE p.answer_id=sa.id END
-      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) DESC;
+      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27') DESC;
     </Query>
   </DataAccess>
 

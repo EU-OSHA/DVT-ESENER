@@ -50,19 +50,20 @@ define(function (require) {
                     
 
                     $scope.changeLanguage = function(){
+                        var local = $scope.pLanguage;
                         if ($state.current.name !== undefined) {
+                            if($scope.pIndicator == '2009' && $scope.pLanguage == 'is'){
+                                local = 'en';
+                            }
                             $state.go($state.current.name, {
                                 pLanguage: $scope.pLanguage,
-                                pLocale: $scope.pLanguage
+                                pLocale: local
                             }, {reload: true});
                         }
                     }
 
                     /** HEADER SHOW HIDE **/
                     var prevScrollpos = $window.pageYOffset;
-
-
-
 
                     $window.onscroll = function() {
                       

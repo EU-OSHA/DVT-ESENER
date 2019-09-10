@@ -129,6 +129,8 @@
                         legend="true" is-maximized="false"
                         angle="{{angle}}" stacked="1"
                         base-axis-size="100"
+                        base-color="#FFFFFF" axis-style="#FFFFFF"
+                        panel-color="#FFFFFF"
                         datasource-and-dates="[15,110,pActivityFilter]"
                       ></dvt-bar-chart>
                   </div>
@@ -160,6 +162,8 @@
                         ortho-axis-visible="true"
                         dimensions="stories[2].dimensions"
                         legend="false" is-maximized="false"
+                        base-color="#FFFFFF" axis-style="#FFFFFF"
+                        panel-color="#FFFFFF"
                         datasource-and-dates="[15,110,pActivityFilter]"
                       ></dvt-bar-chart>
                   </div>
@@ -181,7 +185,7 @@
                   params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pCountry1', 'pFilters.country'], ['pCountry2', 'pFilters.country2'], ['pAnswer', answer.id], ['pSectorSize', 'pSectorSize']]"
                   color-role="c" colors="[stories[3].color1, stories[3].color2]"
                   id="4" axis-label-font="14px 'OpenSans-bold'"
-                  chart-title="Answer: {{answer.name}}"
+                  chart-title="{{i18n.L100588}}: {{answer.name}}"
                   plots="stories[3].plots" values-overflow="show"
                   values-visible="true" values-mask="{value}"                        
                   label-text-align="stories[2].alignment"
@@ -192,6 +196,8 @@
                   base-axis-position="bottom"
                   dimensions="stories[2].dimensions"
                   is-maximized="false"
+                  base-color="#FFFFFF" axis-style="#FFFFFF"
+                  panel-color="#FFFFFF"
                   datasource-and-dates="[15,110,pActivityFilter]"
                 ></dvt-bar-chart>
               </div>
@@ -216,6 +222,8 @@
                   multiple-label-colors="false"
                   dimensions="stories[4].dimensions"
                   legend="true" is-maximized="false"
+                  base-color="#FFFFFF" axis-style="#FFFFFF"
+                  panel-color="#FFFFFF"
                   datasource-and-dates="[15,110,pActivityFilter]"
                 ></dvt-bar-chart>
               </div>

@@ -216,8 +216,8 @@ define(function (require) {
                     squash: 'EU27'
                 },
                 pCountry2: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: 'AT',
+                    squash: 'AT'
                 },
                 pLocale: {
                     value: 'en',
@@ -284,8 +284,8 @@ define(function (require) {
                     squash: 'EU27'
                 },
                 pCountry2: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: 'AT',
+                    squash: 'AT'
                 },
                 pLocale: {
                     value: 'en',
@@ -359,8 +359,8 @@ define(function (require) {
                     squash: 'EU27'
                 },
                 pCountry2: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: 'AT',
+                    squash: 'AT'
                 },
                 pAnswer: {
                     value: '1'
@@ -422,12 +422,12 @@ define(function (require) {
                     squash: '11'
                 },
                 pCountry: {
-                    value: 'AT',
-                    squash: 'AT'
-                },
-                pCountry2: {
                     value: 'EU27',
                     squash: 'EU27'
+                },
+                pCountry2: {
+                    value: 'AT',
+                    squash: 'AT'
                 },
                 pAnswer: {
                     value: '1'
@@ -485,8 +485,8 @@ define(function (require) {
                     squash: 'EU27'
                 },
                 pCountry2: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: 'AT',
+                    squash: 'AT'
                 },
                 pAnswer: {
                     value: '1'

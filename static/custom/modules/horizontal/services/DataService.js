@@ -191,9 +191,9 @@ define(function () {
              * @description
              * Returns data of a particular question
              */
-            getNationalComparisonsAnswers: function (pDataset, pQuestion, pYear, pActivityFilter, pCompanyFilter) {
+            getNationalComparisonsAnswers: function (pDataset, pQuestion, pYear, pActivityFilter, pCompanyFilter, pLocale) {
                 var url = configService.getEsenerDataPath() + "&dataAccessId=getNationalComparisonsAnswers" + "&parampDataset=" + pDataset + "&parampQuestion=" + pQuestion + "&parampYear=" + pYear 
-                + "&pActivityFilter=" + pActivityFilter + "&pCompanyFilter=" + pCompanyFilter;
+                + "&pActivityFilter=" + pActivityFilter + "&pCompanyFilter=" + pCompanyFilter + "&parampLocale=" + pLocale;
                 $log.debug('getNationalComparisonsAnswers url:' + url);
                 return promise(url);
             },

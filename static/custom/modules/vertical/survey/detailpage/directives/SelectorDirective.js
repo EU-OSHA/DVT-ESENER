@@ -404,10 +404,10 @@ define(function (require) {
 
 				scope.cambiar = function(){
 
-					if(scope.filters.country == 'EU27'){
+					/*if(scope.filters.country == 'EU27'){
 						scope.filters.country2 = 'EU27';
 						scope.filters.country = 'AT'
-					}
+					}*/
 
 					$state.transitionTo('detailpage-national-comparisons', {
 						pIndicator: scope.dataset, //Year

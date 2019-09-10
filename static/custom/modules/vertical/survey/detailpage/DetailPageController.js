@@ -490,7 +490,7 @@ define(function (require) {
 		if($scope.pChart == 'national-comparisons'){
 			if($rootScope.answersNationalComparisons == undefined || questionOrFilterChanged){
 				questionOrFilterChanged = false;
-				dataService.getNationalComparisonsAnswers($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, $scope.pActivityFilter, $scope.pCompanyFilter).then(function (data) 
+				dataService.getNationalComparisonsAnswers($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.pLocale).then(function (data) 
 				{
 					var list = [];
 					data.data.resultset.map(function (elem) 
@@ -515,7 +515,7 @@ define(function (require) {
 				{
 					throw err;
 				});
-				$log.warn($rootScope.answersNationalComparisons);
+				//$log.warn($rootScope.answersNationalComparisons);
 				$state.reload();
 			}else{
 				$scope.answers = [];
