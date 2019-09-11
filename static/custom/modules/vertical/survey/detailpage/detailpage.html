@@ -271,23 +271,32 @@
                 <div class="popUpMessage--exportData--text--block">
                   <p class="text-center" data-ng-bind="i18n.L101029"></p>
                   <div class="export--data--modal" id="osha-menu-social">
-                    <a href class="main-color text-center" target="_blank" data-ng-bind="i18n.L100660" data-ng-click="pageUrlActive = true" title="{{i18n.L100662}} > {{i18n.L100660}}">
+                    <a href class="main-color text-center" target="_blank" data-ng-click="pageUrlActive = true" title="{{i18n.L100662}} > {{i18n.L100660}}">
+                      <i class="fa fa-link" aria-hidden="true"></i></i> <span data-ng-bind="i18n.L100660" ></span>
                     </a>
-                    <a class="main-color text-center" target="_blank" data-ng-bind="i18n.L100657" title="{{i18n.L100662}} > {{i18n.L100657}}">
+                    <a class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100657}}">
+                      <i class="fa fa-file-image-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100657" ></span>
                     </a>
-                    <a class="main-color text-center" target="_blank" data-ng-bind="i18n.L100656" title="{{i18n.L100662}} > {{i18n.L100656}}">
+                    <a class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100656}}">
+                      <i class="fa fa-file-pdf-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100656" ></span>
                     </a>
-                    <a class="main-color text-center" target="_blank" data-ng-bind="i18n.L100651" title="{{i18n.L100662}} > {{i18n.L100651}}">
+                    <a class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100651}}">
+                      <i class="fa fa-file-code-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100651" ></span>
                     </a>
-                    <a href class="main-color text-center" target="_blank" data-ng-bind="i18n.L100652" title="{{i18n.L100662}} > {{i18n.L100652}}" data-ng-click="exportData(promiseToExport, pQuestion, 1)">
+                    <a href class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100652}}" data-ng-click="exportData(promiseToExport, pQuestion, 1)">
+                      <i class="fa fa-file-excel-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100652" ></span>
                     </a>
                   </div>
                   <div id="panel--url" data-ng-if="pageUrlActive">
                     <p data-ng-bind="i18n.L100587 + ': ' + i18n.L100660"></p>
                     <textarea id="urlTextArea" readonly="readonly" cols="80" rows="3" data-ng-bind="createURL()"></textarea>
                     <div class="pageUrl">
-                      <button id="btnSocial" class="btn-default btn-main-color" data-ng-bind="i18n.L100640" data-ng-click="selectTextArea()"></button>
-                      <a id="btnSocial" class="btn-default btn-main-color" data-ng-bind="i18n.L100641" href="{{pathURLDVT}}" target="_blank"></a>
+                      <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="selectTextArea()">
+                        <span  data-ng-bind="i18n.L100640" ></span>
+                      </button>
+                      <a id="btnSocial" class="btn-default btn-main-color" href="{{pathURLDVT}}" target="_blank">
+                        <span data-ng-bind="i18n.L100641"></span>
+                      </a>
                       <!--<button id="btnSocial" class="btn-default" data-ng-bind="i18n.L100638" data-ng-click=""></button>-->
                     </div>
                   </div>

@@ -218,8 +218,17 @@
       //height: 70vh;
       top: 0;      
       margin: 4vh 0vw; 
-      padding: 4vh 10vw;
+      padding: 4vh 2vw;
       position: relative;
+      .export--data--modal{
+        > a{
+          i{
+            font-size: 4rem;
+            vertical-align: middle;
+            margin-right: 1rem;
+          }
+        }
+      }
       p{
         font-size: 1.6rem;
         margin: 2rem;
@@ -1198,6 +1207,8 @@ ul.question--by--question {
     }
   }
 }
+
+
 
 @media only screen 
 and (max-width : 1240px){
