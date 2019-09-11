@@ -514,7 +514,7 @@
            </partitioning>
    <typefield>CompanySize</typefield>
     <fields>      <field>        <name>Total</name>
-        <value>Total</value>
+        <value>All</value>
         <norm>Value</norm>
         </field>      <field>        <name>10 to 19</name>
         <value>10 to 19 employees</value>
