@@ -20,13 +20,14 @@ define(function(require){
 
     var exportImage = function (scope) {
 
-            var node = $('#' + scope.id).parents('.dvt-chart')[0];
-
+            var node = $('.card--block--chart');
+            $log.warn(node);
 
             //---------------------------------
             // 1 dom-to-image
             //convierto el svg a imagen...
-            var svg = document.querySelector('.modal svg');
+            var svg = document.querySelector('.chart--wrapper svg');
+            $log.warn($('.card--block--chart svg').length);
             var xml = Utf8Encode(new XMLSerializer().serializeToString(svg)); //Created with Raphaël... creo que es por esto
 
             //console.log(xml);
@@ -36,13 +37,14 @@ define(function(require){
             var image64 = b64Start + svg64;
 
 
-            angular.element('.modal svg').after("<img id='svg2image'>");
+            angular.element('.chart--wrapper').after("<img id='svg2image'>");
             var img = document.getElementById('svg2image');
             img.src = image64;
-            angular.element(".modal svg").attr("style","display:none");
+            angular.element(".chart--wrapper").attr("style","display:none");
 
-            $(".dropdown").hide();
-            angular.element(".legend-info").attr("style","display:none");
+            //$(".dropdown").hide();
+            angular.element("#popUpMessage").attr("style","display:none");
+            //angular.element(".legend-info").attr("style","display:none");
 
             var Promise = require('es6-promise').Promise;
 
@@ -51,7 +53,7 @@ define(function(require){
                  canvas.toBlob(function(blob){
 
                      if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) {
-                         scope.titleH2=$("#"+scope.id).parents().find("h2:eq(0)").text()
+                         scope.titleH2=node.parents().find("h2:eq(0)").text()
                          var filename = scope.titleH2 + '.png';
                      } else {
                          var filename = scope.chartTitle + '.png';
@@ -59,9 +61,10 @@ define(function(require){
 
                      saveAs(blob,filename);
 
-                     $(".dropdown").show();
+                     //$(".dropdown").show();
                      $("#svg2image").remove();
-                     angular.element(".modal svg").removeAttr("style");
+                     angular.element(".chart--wrapper").removeAttr("style");
+                     angular.element("#popUpMessage").removeAttr("style");
                  });
              }, function(error) {            
              });

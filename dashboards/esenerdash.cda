@@ -422,7 +422,7 @@
         AND i.id = eao.indicator_id
         AND v.dataset_id = ${pDataset}
         AND v.profile_id = p.id
-        AND p.answer_id = IF(sa.id = 37, 36, sa.id)
+        AND p.answer_id = sa.id
         AND sa.id = eao.answer_id
         AND CASE WHEN ${pSectorSize} = 'activity-sector' 
           THEN (p.activity_sector_id = ${pIndicator} AND p.company_size_id IS NULL) 
@@ -454,7 +454,7 @@
         AND i.id = eao.indicator_id
         AND v.dataset_id = ${pDataset}
         AND v.profile_id = p.id
-        AND p.answer_id = IF(sa.id = 37, 36, sa.id)
+        AND p.answer_id = sa.id
         AND sa.id = eao.answer_id
         AND CASE WHEN ${pSectorSize} = 'activity-sector' 
           THEN (CASE WHEN ${pIndicator} != 0 THEN sas.id = ${pIndicator} AND p.activity_sector_id = sas.id ELSE p.activity_sector_id = sas.id END) 
@@ -509,13 +509,13 @@
         <Parameter default="en" name="pLocale" type="String" />
       </Parameters>
       <Query>
-        SELECT DISTINCT(IF(sa.id = 37, 36, sa.id)) as id, t.text as name, eao.order_position
+        SELECT DISTINCT(sa.id) as id, t.text as name, eao.order_position
         FROM profile p, value v, translation t, split_answer sa, indicator i, esener_answer_order eao
         WHERE i.name = ${pQuestion}
         AND v.indicator_id = i.id
         AND i.id = eao.indicator_id
         AND v.profile_id = p.id
-        AND p.answer_id=IF(sa.id = 37, 36, sa.id)
+        AND p.answer_id= sa.id
         AND sa.id = eao.answer_id
         AND t.literal_id =sa.literal_id
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
@@ -608,7 +608,7 @@
       AND v.indicator_id = i.id
       AND i.id = eao.indicator_id
       AND v.profile_id = p.id
-      AND p.answer_id=IF(sa.id = 37, 36, sa.id)
+      AND p.answer_id=sa.id
       AND sa.id = eao.answer_id
       AND t.literal_id = sa.literal_id
       AND p.activity_sector_id = 14

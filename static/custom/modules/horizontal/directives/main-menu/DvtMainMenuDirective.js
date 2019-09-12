@@ -52,7 +52,7 @@ define(function (require) {
                     $scope.changeLanguage = function(){
                         var local = $scope.pLanguage;
                         if ($state.current.name !== undefined) {
-                            if($scope.pIndicator == '2009' && $scope.pLanguage == 'is'){
+                            if($scope.pIndicator == '2009' && ($scope.pLanguage == 'is' || $scope.pLanguage == 'sv')){
                                 local = 'en';
                             }
                             $state.go($state.current.name, {

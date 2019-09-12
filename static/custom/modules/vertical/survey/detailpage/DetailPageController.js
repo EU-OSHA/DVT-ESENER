@@ -12,6 +12,7 @@ define(function (require) {
 	'use strict';
 
 	function controller($scope, $stateParams, $state, configService, $log, $document,dataService, $window, $sce, $compile, $timeout, DetailPageService, dvtUtils, $rootScope, mapProvider, $location, exportService) {
+		var html2canvas = require('common-exporting/html2canvas');
 
 		//CDA
 		$scope.cdaEsenerDash = configService.getEsenerCda();
@@ -123,7 +124,7 @@ define(function (require) {
 				if($rootScope.answersNationalComparisons.pQuestion != $scope.pQuestion){
 					questionOrFilterChanged = true;
 				}
-				if($rootScope.answersNationalComparisons.pCountry1 != $scope.pCountry1){
+				if($rootScope.answersNationalComparisons.pCountry1 != $scope.pCountry){
 					questionOrFilterChanged = true;
 				}
 				if($rootScope.answersNationalComparisons.pCountry2 != $scope.pCountry2){
@@ -181,7 +182,7 @@ define(function (require) {
 		};
 		$scope.answers = {
 			pQuestion: $scope.pQuestion,
-			pCountry1: $scope.pCountry1,
+			pCountry1: $scope.pCountry,
 			pCountry2: $scope.pCountry2,
 			pActivityFilter: $scope.pActivityFilter,
 			pCompanyFilter: $scope.pCompanyFilter,
@@ -490,7 +491,7 @@ define(function (require) {
 		if($scope.pChart == 'national-comparisons'){
 			if($rootScope.answersNationalComparisons == undefined || questionOrFilterChanged){
 				questionOrFilterChanged = false;
-				dataService.getNationalComparisonsAnswers($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.pLocale).then(function (data) 
+				dataService.getNationalComparisonsAnswers($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.pSectorSize, $scope.pLocale).then(function (data) 
 				{
 					var list = [];
 					data.data.resultset.map(function (elem) 
@@ -502,14 +503,12 @@ define(function (require) {
 					});
 					
 					$scope.answers.pQuestion = $scope.pQuestion;
-					$scope.answers.pCountry1 = $scope.pCountry1;
+					$scope.answers.pCountry1 = $scope.pCountry;
 					$scope.answers.pCountry2 = $scope.pCountry2;
 					$scope.answers.pActivityFilter = $scope.pActivityFilter;
 					$scope.answers.pCompanyFilter = $scope.pCompanyFilter;
 					$scope.answers.data = list;
-
 					$rootScope.answersNationalComparisons = $scope.answers;
-					//$scope.answers = ;
 					
 				}).catch(function (err) 
 				{
@@ -520,6 +519,7 @@ define(function (require) {
 			}else{
 				$scope.answers = [];
 				$scope.answers = $rootScope.answersNationalComparisons; 
+				//$log.warn($scope.answers);
 			}
 		}
 
@@ -684,10 +684,15 @@ define(function (require) {
 
         $scope.selectTextArea = function(){
         	angular.element('#urlTextArea').select();
+        	document.execCommand("copy");
         }
 
         $scope.exportData = function(promise, title, id){
         	exportService.exportDataManually(promise, title, id);
+        }
+
+        $scope.exportPNG = function(){
+        	exportService.exportImageAction($scope);
         }
 
 		angular.element('body').mouseup(function(e){

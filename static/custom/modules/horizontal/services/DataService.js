@@ -191,10 +191,11 @@ define(function () {
              * @description
              * Returns data of a particular question
              */
-            getNationalComparisonsAnswers: function (pDataset, pQuestion, pYear, pActivityFilter, pCompanyFilter, pLocale) {
+            getNationalComparisonsAnswers: function (pDataset, pQuestion, pYear, pActivityFilter, pCompanyFilter, pSectorSize, pLocale) {
                 var url = configService.getEsenerDataPath() + "&dataAccessId=getNationalComparisonsAnswers" + "&parampDataset=" + pDataset + "&parampQuestion=" + pQuestion + "&parampYear=" + pYear 
-                + "&pActivityFilter=" + pActivityFilter + "&pCompanyFilter=" + pCompanyFilter + "&parampLocale=" + pLocale;
-                $log.debug('getNationalComparisonsAnswers url:' + url);
+                + "&pActivityFilter=" + pActivityFilter + "&pCompanyFilter=" + pCompanyFilter + '&parampSectorSize=' + pSectorSize
+                + "&parampLocale=" + pLocale;
+                $log.warn('getNationalComparisonsAnswers url:' + url);
                 return promise(url);
             },
 
@@ -209,7 +210,7 @@ define(function () {
                 var url = configService.getEsenerDataPath() + "&dataAccessId=getNationalComparisonsExportData" + "&parampDataset=" + pDataset + "&parampQuestion=" + pQuestion + "&parampYear=" + pYear 
                 + "&pActivityFilter=" + pActivityFilter + "&pCompanyFilter=" + pCompanyFilter + '&parampCountry1=' + pCountry1 
                 + '&parampCountry2=' + pCountry2 + '&parampAnswer=' + pAnswer + '&parampSectorSize=' + pSectorSize;
-                $log.warn('getNationalComparisonsExportData url:' + url);
+                $log.debug('getNationalComparisonsExportData url:' + url);
                 return promise(url);
             },
 
