@@ -117,7 +117,7 @@
                         orientation="vertical" axis-fixed-min="0"
                         axis-fixed-max="100" step="20"
                         listen-to="['pFilters']"
-                        params="[['pDataset',actualDataset],['pIndicator',pQuestion],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pEUOnly', 'pFilters.euOnly'], ['pSectorSize', pSectorSize], ['pAnswer', 'pFilters.answer']]"
+                        params="[['pDataset',actualDataset],['pIndicator',pQuestion],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pEUOnly', 'pFilters.euOnly'], ['pSectorSize', pSectorSize], ['pAnswer', 'pFilters.answer'], ['pLocale', pLocale]]"
                         color-role="series" id="2"
                         axis-label-font="14px 'OpenSans'"
                         plots="stories[1].plots"
@@ -182,7 +182,7 @@
                   width="330" height="90" axis-percent="1"
                   orientation="horizontal" axis-fixed-min="0"
                   axis-fixed-max="100" step="20"
-                  params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pCountry1', 'pFilters.country'], ['pCountry2', 'pFilters.country2'], ['pAnswer', answer.id], ['pSectorSize', 'pSectorSize']]"
+                  params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pCountry1', 'pFilters.country'], ['pCountry2', 'pFilters.country2'], ['pAnswer', answer.id], ['pSectorSize', 'pSectorSize'],['pLocale', pLocale]]"
                   color-role="c" colors="[stories[3].color1, stories[3].color2]"
                   id="4" axis-label-font="14px 'OpenSans-bold'"
                   chart-title="{{i18n.L100588}}: {{answer.name}}"
@@ -215,7 +215,7 @@
                   query="getPieChartData" cda="{{::cdaEsenerDash}}"
                   type="pie" listen-to="['pFilters']"
                   width="330" height="660" axis-percent="1"
-                  params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pCountry', 'pFilters.country']]"
+                  params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pCountry', 'pFilters.country'],['pLocale',pLocale]]"
                   color-role="c" colors="[stories[4].color1, stories[4].color2, stories[4].color3, stories[4].color4,
                   stories[4].color5]" id="5" 
                   plots="stories[4].plots"
@@ -284,8 +284,8 @@
                       <i class="fa fa-file-pdf-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100656" ></span>
                     </a>
                     <!-- PAGE CITATION -->
-                    <a class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100651}}">
-                      <i class="fa fa-file-code-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100651" ></span>
+                    <a href class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100651}}" data-ng-click="pageCitationActive = true">
+                      <i class="fa fa-file-code-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100651"></span>
                     </a>
                     <!-- XLS -->
                     <a href class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100652}}" data-ng-click="exportData(promiseToExport, pQuestion, 1)">
@@ -303,6 +303,15 @@
                         <span data-ng-bind="i18n.L100641"></span>
                       </a>
                       <!--<button id="btnSocial" class="btn-default" data-ng-bind="i18n.L100638" data-ng-click=""></button>-->
+                    </div>
+                  </div>
+                  <div id="panel--url" data-ng-if="pageCitationActive">
+                    <p data-ng-bind="i18n.L100587 + ': ' + i18n.L100660"></p>
+                    <textarea id="urlTextArea" readonly="readonly" cols="80" rows="5" data-ng-bind="createCitation()"></textarea>
+                    <div class="pageUrl">
+                      <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="selectTextArea()">
+                        <span  data-ng-bind="i18n.L100640" ></span>
+                      </button>
                     </div>
                   </div>
                 </div>

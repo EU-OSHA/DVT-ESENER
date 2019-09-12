@@ -350,6 +350,7 @@
       <Parameter default="0" name="pEUOnly" type="String" />
       <Parameter default="activity-sector" name="pSectorSize" type="String" />
       <Parameter default="0" name="pAnswer" type="Numeric" />
+      <Parameter default="EN" name="pLocale" type="String" />
     </Parameters>
     <Query>
       SELECT t.text as Answer, IF(n.name REGEXP 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(n.name, " (", n.country_code, ")"))) as Country, v.value*100 as Value
@@ -365,7 +366,7 @@
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
       ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
       AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('CH', 'NO', 'TR')) ELSE n.id = p.nuts_id END
-      AND t.language = 'EN'
+      AND t.language = ${pLocale}
       AND v.dataset_id = ${pDataset}
       ORDER BY FIELD('EU27', n.country_code) DESC, CASE WHEN ${pAnswer}=0 THEN FIELD(n.country_code, 'CH', 'NO', 'TR') END ASC, 
       CASE WHEN ${pAnswer}!=0 THEN FIELD(${pAnswer}, eao.answer_id) END DESC, CASE WHEN ${pAnswer}=0 THEN n.country_code END ASC, eao.order_position ASC, 
@@ -599,6 +600,7 @@
       <Parameter default="MM161" name="pQuestion" type="String"/>
       <Parameter default="2009" name="pYear" type="Numeric"/>
       <Parameter default="AT" name="pCountry" type="String"/>
+      <Parameter default="EN" name="pLocale" type="String"/>
     </Parameters>
     <Query>
       SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Answer, v.value*100 as Value
@@ -614,7 +616,7 @@
       AND p.activity_sector_id = 14
       AND n.id = p.nuts_id
       AND n.country_code = ${pCountry}
-      AND t.language = 'EN'
+      AND t.language = ${pLocale}
       AND v.dataset_id = ${pDataset}
       ORDER BY eao.order_position DESC;
     </Query>

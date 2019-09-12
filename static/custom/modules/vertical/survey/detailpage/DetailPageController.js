@@ -41,6 +41,8 @@ define(function (require) {
 		var titleStructure = require('json!dvt/directives/title-items');
 		$scope.title = titleStructure[$state.current.name];
 		$scope.pageUrlActive = false;
+		$scope.pageCitationActive = false;
+		$scope.chartCitation = '';
 		
 		//Parameters
 		$scope.pIndicator = $stateParams.pIndicator; //Year
@@ -195,20 +197,25 @@ define(function (require) {
 
 		
 		if($scope.pChart == 'european-map'){
+			$scope.chartCitation = 'L100623';
 			$scope.promiseToExport = dataService.getMapExportData($scope.pIndicator, $scope.pQuestion, $scope.answer, 
 				$scope.actualDataset, $scope.pSectorSize, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU);
 		}else if($scope.pChart == 'european-bar-chart'){
+			$scope.chartCitation = 'L100622';
 			$scope.promiseToExport = dataService.getEuropeanBarCharData($scope.actualDataset, $scope.pQuestion, 
 				$scope.dashboard.parameters.pFilters.activitySector, $scope.dashboard.parameters.pFilters.establishmentSize,
 				$scope.dashboard.parameters.pFilters.euOnly);
 		}else if($scope.pChart == 'national-bar-chart'){
+			$scope.chartCitation = 'L100624';
 			$scope.promiseToExport = dataService.getNationalBarChartExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
 				$scope.dashboard.parameters.pFilters.sectorSize, $scope.dashboard.parameters.pFilters.country, 0);
 		}else if($scope.pChart == 'national-comparisons'){
+			$scope.chartCitation = 'L100621';
 			$scope.promiseToExport = dataService.getNationalComparisonsExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
 				$scope.dashboard.parameters.pFilters.activitySector, $scope.dashboard.parameters.pFilters.establishmentSize,
 				$scope.dashboard.parameters.pFilters.country, $scope.dashboard.parameters.pFilters.country2, 0, $scope.dashboard.parameters.pFilters.sectorSize);			
 		}else if($scope.pChart == 'pie-chart'){
+			$scope.chartCitation = 'L101033';
 			$scope.promiseToExport = dataService.getPieChartData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, 
 				$scope.dashboard.parameters.pFilters.country);
 		}
@@ -367,161 +374,161 @@ define(function (require) {
 		|                                DATA LOAD                                     |
 		|******************************************************************************/
 				
-		dataService.getAllQuestions($scope.pIndicator).then(function (data) 
-		{
-			data.data.resultset.map(function (elem) 
+			dataService.getAllQuestions($scope.pIndicator).then(function (data) 
 			{
-				var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-				$scope.questions.push({
-					id: elem[0],
-					category: elem[1],
-					level: elem[2],
-					father_id: elem[3],
-					name_1: elem[4],
-					indicator_id: elem[5],
-					answer_id: elem[7],
-					anchor: (elem[2] == 1)?i18nEN['L'+elem[4]].toLowerCase().replace(/[\,\ ]/g, '-'):''
-				});
-			});
-		}).catch(function (err) 
-		{
-			throw err;
-		});
-
-		/*dataService.getAnswersOfIndicatorData($scope.pQuestion).then(function (data) 
-		{
-			data.data.resultset.map(function (elem) {
-				var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
-				$scope.splitAnswers.push({
-					indicator_id: elem[0],
-					answer_id: elem[1],
-					literal_id: elem[2]
-				});
-			});
-			$scope.answer = $scope.splitAnswers[0].answer_id.toString();
-		}).catch(function (err) {
-			throw err;
-		});*/
-
-
-		if ($scope.pChart == "european-map")
-		{			
-			if ($rootScope.data == undefined || questionOrFilterChanged)
-			{
-				questionOrFilterChanged = false;
-			  	Promise.all([$scope.dataPromises[1]]).then(function(res)
+				data.data.resultset.map(function (elem) 
 				{
-					var row = {};
-					res[0].data.resultset.map(function (elem) 
+					var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+					$scope.questions.push({
+						id: elem[0],
+						category: elem[1],
+						level: elem[2],
+						father_id: elem[3],
+						name_1: elem[4],
+						indicator_id: elem[5],
+						answer_id: elem[7],
+						anchor: (elem[2] == 1)?i18nEN['L'+elem[4]].toLowerCase().replace(/[\,\ ]/g, '-'):''
+					});
+				});
+			}).catch(function (err) 
+			{
+				throw err;
+			});
+
+			/*dataService.getAnswersOfIndicatorData($scope.pQuestion).then(function (data) 
+			{
+				data.data.resultset.map(function (elem) {
+					var param = (!!$stateParams.filter) ? $stateParams.filter : undefined;
+					$scope.splitAnswers.push({
+						indicator_id: elem[0],
+						answer_id: elem[1],
+						literal_id: elem[2]
+					});
+				});
+				$scope.answer = $scope.splitAnswers[0].answer_id.toString();
+			}).catch(function (err) {
+				throw err;
+			});*/
+
+
+			if ($scope.pChart == "european-map")
+			{			
+				if ($rootScope.data == undefined || questionOrFilterChanged)
+				{
+					questionOrFilterChanged = false;
+				  	Promise.all([$scope.dataPromises[1]]).then(function(res)
 					{
-						row = elem;
-						if(!$scope.data.questionData[row[1]])
+						var row = {};
+						res[0].data.resultset.map(function (elem) 
 						{
-							$scope.data.questionData[row[1]]={};
-							$scope.data.questionData[row[1]].answers = [];
-						}
-						$scope.data.questionData[row[1]].answers.push({
-							id: row[4],
-							literal_id: row[5],
-							value: row[3]
+							row = elem;
+							if(!$scope.data.questionData[row[1]])
+							{
+								$scope.data.questionData[row[1]]={};
+								$scope.data.questionData[row[1]].answers = [];
+							}
+							$scope.data.questionData[row[1]].answers.push({
+								id: row[4],
+								literal_id: row[5],
+								value: row[3]
+							});
+							$scope.data.questionData[row[1]].country_code = row[1];
+							$scope.data.questionData[row[1]].country_name = row[2];
+							$scope.data.questionData[row[1]].indicator = row[6];
 						});
-						$scope.data.questionData[row[1]].country_code = row[1];
-						$scope.data.questionData[row[1]].country_name = row[2];
-						$scope.data.questionData[row[1]].indicator = row[6];
-					});
 
-					$scope.data.indicator = $scope.pIndicator;
-					$scope.data.question = $scope.pQuestion;
-					$scope.data.pAnswer = $scope.pAnswer;
-					$scope.data.sectorsize = $scope.pSectorSize;
-					$scope.data.activityFilter = $scope.pActivityFilter;
-					$scope.data.companyFilter = $scope.pCompanyFilter;
+						$scope.data.indicator = $scope.pIndicator;
+						$scope.data.question = $scope.pQuestion;
+						$scope.data.pAnswer = $scope.pAnswer;
+						$scope.data.sectorsize = $scope.pSectorSize;
+						$scope.data.activityFilter = $scope.pActivityFilter;
+						$scope.data.companyFilter = $scope.pCompanyFilter;
 
+						$scope.getMinMaxValues();
+						$state.reload();
+				  	});
+				}
+				else
+				{
+					$scope.data = $rootScope.data;
 					$scope.getMinMaxValues();
-					$state.reload();
-			  	});
-			}
-			else
-			{
-				$scope.data = $rootScope.data;
-				$scope.getMinMaxValues();
+				} 
 			} 
-		} 
 
-		if($scope.pChart == 'national-bar-chart' ){
-			//With this only charges splits of company size. If we change to activity sector it is never reload.
-			if($rootScope.nationalBarChartIndicators == undefined || questionOrFilterChanged){
-				questionOrFilterChanged = false;
+			if($scope.pChart == 'national-bar-chart' ){
+				//With this only charges splits of company size. If we change to activity sector it is never reload.
+				if($rootScope.nationalBarChartIndicators == undefined || questionOrFilterChanged){
+					questionOrFilterChanged = false;
 
-				dataService.getNationalBarChartIndicators($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, $scope.pSectorSize).then(function (data) 
-				{
-					var list = [];
-					data.data.resultset.map(function (elem) 
+					dataService.getNationalBarChartIndicators($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, $scope.pSectorSize).then(function (data) 
 					{
-						list.push({
-							id: elem[0],
-							name: elem[1]
+						var list = [];
+						data.data.resultset.map(function (elem) 
+						{
+							list.push({
+								id: elem[0],
+								name: elem[1]
+							});
 						});
+
+						//$scope.indicators = $rootScope.nationalBarChartIndicators;
+						$scope.indicators.data = list;
+						$scope.indicators.pQuestion = $scope.pQuestion;
+						$scope.indicators.sectorsize = $scope.pSectorSize;
+						$rootScope.nationalBarChartIndicators = $scope.indicators;
+						
+						//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:[];
+						
+					}).catch(function (err) 
+					{
+						throw err;
 					});
 
-					//$scope.indicators = $rootScope.nationalBarChartIndicators;
-					$scope.indicators.data = list;
-					$scope.indicators.pQuestion = $scope.pQuestion;
-					$scope.indicators.sectorsize = $scope.pSectorSize;
-					$rootScope.nationalBarChartIndicators = $scope.indicators;
-					
-					//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:[];
-					
-				}).catch(function (err) 
-				{
-					throw err;
-				});
-
-				//$scope.indicators = [];
-				//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:$rootScope.indicatorsActivity;
-				//$log.warn($scope.indicators);
-				//$log.warn($rootScope.indicators);
-				$state.reload();
-			}else{
-				$scope.indicators = [];
-				$scope.indicators = $rootScope.nationalBarChartIndicators;
+					//$scope.indicators = [];
+					//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:$rootScope.indicatorsActivity;
+					//$log.warn($scope.indicators);
+					//$log.warn($rootScope.indicators);
+					$state.reload();
+				}else{
+					$scope.indicators = [];
+					$scope.indicators = $rootScope.nationalBarChartIndicators;
+				}
 			}
-		}
 
-		if($scope.pChart == 'national-comparisons'){
-			if($rootScope.answersNationalComparisons == undefined || questionOrFilterChanged){
-				questionOrFilterChanged = false;
-				dataService.getNationalComparisonsAnswers($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.pSectorSize, $scope.pLocale).then(function (data) 
-				{
-					var list = [];
-					data.data.resultset.map(function (elem) 
+			if($scope.pChart == 'national-comparisons'){
+				if($rootScope.answersNationalComparisons == undefined || questionOrFilterChanged){
+					questionOrFilterChanged = false;
+					dataService.getNationalComparisonsAnswers($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.pSectorSize, $scope.pLocale).then(function (data) 
 					{
-						list.push({
-							id: elem[0],
-							name: elem[1]
+						var list = [];
+						data.data.resultset.map(function (elem) 
+						{
+							list.push({
+								id: elem[0],
+								name: elem[1]
+							});
 						});
+						
+						$scope.answers.pQuestion = $scope.pQuestion;
+						$scope.answers.pCountry1 = $scope.pCountry;
+						$scope.answers.pCountry2 = $scope.pCountry2;
+						$scope.answers.pActivityFilter = $scope.pActivityFilter;
+						$scope.answers.pCompanyFilter = $scope.pCompanyFilter;
+						$scope.answers.data = list;
+						$rootScope.answersNationalComparisons = $scope.answers;
+						
+					}).catch(function (err) 
+					{
+						throw err;
 					});
-					
-					$scope.answers.pQuestion = $scope.pQuestion;
-					$scope.answers.pCountry1 = $scope.pCountry;
-					$scope.answers.pCountry2 = $scope.pCountry2;
-					$scope.answers.pActivityFilter = $scope.pActivityFilter;
-					$scope.answers.pCompanyFilter = $scope.pCompanyFilter;
-					$scope.answers.data = list;
-					$rootScope.answersNationalComparisons = $scope.answers;
-					
-				}).catch(function (err) 
-				{
-					throw err;
-				});
-				//$log.warn($rootScope.answersNationalComparisons);
-				$state.reload();
-			}else{
-				$scope.answers = [];
-				$scope.answers = $rootScope.answersNationalComparisons; 
-				//$log.warn($scope.answers);
+					//$log.warn($rootScope.answersNationalComparisons);
+					$state.reload();
+				}else{
+					$scope.answers = [];
+					$scope.answers = $rootScope.answersNationalComparisons; 
+					//$log.warn($scope.answers);
+				}
 			}
-		}
 
 		/******************************* END DATA LOAD ********************************/
 
@@ -680,6 +687,49 @@ define(function (require) {
 
         $scope.createURL = function(){
         	return $scope.pathURLDVT;
+        }
+
+        // Load data to show texts for the selected question
+		dataService.getQuestionSelectorData($scope.pQuestion).then(function(res) {
+			//Check if the number of results is 1
+			var data = res.data.resultset;
+			if (data.length == 1)
+			{
+				// Create an object containing the data retrieved from the database for the current question
+				$scope.question = {
+					level: data[0][0],
+					name2: data[0][3],
+					name3: data[0][4],
+					bottomText: data[0][5],
+					father: data[0][8],
+					grandfather: data[0][9]
+				}
+			}
+			$log.warn($scope.question);
+		});
+
+        $scope.createCitation = function(){
+        	var type = ($scope.pIndicator == '2009')?1:2;
+        	$scope.currentDate = new Date();
+        	$log.warn($state);
+
+        	var title = '';
+        	if($scope.question.grandfather == undefined){
+        		title = $scope.i18n['L'+$scope.question.name3]+' ('+$scope.i18n['L'+$scope.question.father]+')';
+        	}else{
+        		title = $scope.i18n['L'+$scope.question.name2] + ': ' + $scope.i18n['L'+$scope.question.name3]+' ('+$scope.i18n['L'+$scope.question.grandfather]+')';
+        	}
+
+        	var text = '@ONLINE{OSHA:'+ $scope.currentDate.getFullYear() +':Online,\n' +
+				'author = {},\n' +
+				'title = {'+title+' '+$scope.i18n.L100591 +': '+
+				' '+$scope.i18n[$scope.chartCitation]+' '+ $scope.i18n.L100593 + ' :  Activity sector,  All, answer : Yes ' +
+				'- ESENER-'+type+
+				'},\n' +
+				'year = {2012},\n' +
+				'url = {'+$scope.pathURLDVT+'}' +
+			'}'
+        	return text;
         }
 
         $scope.selectTextArea = function(){

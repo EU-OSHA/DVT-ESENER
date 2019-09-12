@@ -343,7 +343,7 @@ define (function (require) {
                             var series = scene.firstAtoms.category;
                             var colorScale = this.panel.axes.color.scale;
                             var colors = this.sign.chart.axes.color._domainValues;
-                            $log.warn(colors);
+                            //$log.warn(colors);
 
                             if(colors.length == 4 && series.value == colors[0]){
                                 return 'black';
