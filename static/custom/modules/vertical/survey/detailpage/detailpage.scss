@@ -1116,6 +1116,18 @@
           } 
         }       
       }
+      .no-event{
+        display: none;
+      }
+      &.selected-chart{
+        .no-event{
+          background: transparent;
+          display: block;
+          width: 100%;
+          position: absolute;
+          height: 5rem;
+        }
+      }
     }
   }
   a#eu-only-mobile{
@@ -1394,7 +1406,7 @@ and (max-width : 768px) {
     .chart--selection--block{
       display: block;
       padding: 0 !important;
-      width: 60%;
+      width:100%;
       margin-left: 0;
       height: 5rem;
       overflow: hidden;
@@ -1524,6 +1536,19 @@ and (max-width : 768px){
       }
     }
   }  
+}
+
+@media only screen 
+and (max-width : 767px){
+
+  .block--filter--wrapper{
+    .filter-text-button{
+      button{
+        width: 100% !important;
+      }
+    }
+  }  
+
 }
 
 
