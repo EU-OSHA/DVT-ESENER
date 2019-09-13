@@ -99,6 +99,10 @@ define (function (require) {
                               resolution = screen.width;
                             });
 
+                            if(resolution < 425){
+                                this.root.sign.chart.options.axisLabel_font = '10px OpenSans';
+                            }
+
                             if(euonly != 1 && answer == 0){
                                 //NON EU stroke separator vertical
                                 this.add(pv.Rule)
@@ -147,7 +151,7 @@ define (function (require) {
                                     if(resolution<=768){
                                         return 1.5
                                     }
-                                    return 3;
+                                    return 2.5;
                                 })
                                 .left(function(scene){
                                     var baseScale = this.getContext().chart.axes.base.scale;
@@ -166,7 +170,11 @@ define (function (require) {
                                         return baseScale('Austria (AT)') - this.sign.panel.barWidth + 4;
                                     }
                                     return baseScale('Austria (AT)') - this.sign.panel.barWidth - 3; */
+                                    if(resolution <= 768){
+                                        return baseScale('EU27') + this.sign.panel.barWidth - 5;
+                                    }
                                      return baseScale('EU27') + this.sign.panel.barWidth + 3;
+                                    
                                 });
                         },
                         visualRoles:{

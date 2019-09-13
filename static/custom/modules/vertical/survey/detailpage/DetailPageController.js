@@ -691,7 +691,6 @@ define(function (require) {
 
         // Load data to show texts for the selected question
 		dataService.getQuestionSelectorData($scope.pQuestion).then(function(res) {
-			//Check if the number of results is 1
 			var data = res.data.resultset;
 			if (data.length == 1)
 			{
@@ -705,13 +704,16 @@ define(function (require) {
 					grandfather: data[0][9]
 				}
 			}
-			$log.warn($scope.question);
+			//$log.warn($scope.question);
 		});
 
         $scope.createCitation = function(){
         	var type = ($scope.pIndicator == '2009')?1:2;
         	$scope.currentDate = new Date();
-        	$log.warn($state);
+
+        	var url = $state.current.url;
+        	var paramsUsed = url.substring(url.indexOf('pQuestion')+9);
+        	var textParams = '';
 
         	var title = '';
         	if($scope.question.grandfather == undefined){
@@ -720,10 +722,46 @@ define(function (require) {
         		title = $scope.i18n['L'+$scope.question.name2] + ': ' + $scope.i18n['L'+$scope.question.name3]+' ('+$scope.i18n['L'+$scope.question.grandfather]+')';
         	}
 
+        	if(paramsUsed.includes('pSectorSize')){
+        		if($scope.pSectorSize == 'activity-sector'){
+        			textParams = textParams + 'Activity sector ';
+        		}else{
+        			textParams = textParams + 'Establishment size ';
+        		}
+        	}
+
+        	if(paramsUsed.includes('pActivityFilter')){
+        		if($scope.pSectorSize == 'activity-sector'){
+        			textParams = textParams + ', ' + $scope.pActivityFilter + ' ';
+        		}
+        	}
+
+        	if(paramsUsed.includes('pActivityFilter')){
+        		if($scope.pSectorSize != 'activity-sector'){
+        			textParams = textParams + ', ' + $scope.pCompanyFilter + ' ';
+        		}
+        	}
+
+        	if(paramsUsed.includes('pCountry')){
+        		if($scope.pChart == 'pie-chart'){
+        			textParams = textParams + 'country : ' + $scope.pCountry + ' ';
+        		}else{
+        			textParams = textParams + ', country : ' + $scope.pCountry + ' ';
+        		}
+        	}
+
+        	if(paramsUsed.includes('pCountry2')){
+        		textParams = textParams + ', compare with : ' + $scope.pCountry2 + ' ';
+        	}
+
+        	if(paramsUsed.includes('pAnswer')){
+        		textParams = textParams + ', answer : ' + $scope.pAnswer + ' ';
+        	}
+
         	var text = '@ONLINE{OSHA:'+ $scope.currentDate.getFullYear() +':Online,\n' +
 				'author = {},\n' +
-				'title = {'+title+' '+$scope.i18n.L100591 +': '+
-				' '+$scope.i18n[$scope.chartCitation]+' '+ $scope.i18n.L100593 + ' :  Activity sector,  All, answer : Yes ' +
+				'title = {'+title+' '+$scope.i18n.L100591 +' : '+
+				' '+$scope.i18n[$scope.chartCitation]+' '+ $scope.i18n.L100593 + ' : ' + textParams +
 				'- ESENER-'+type+
 				'},\n' +
 				'year = {2012},\n' +

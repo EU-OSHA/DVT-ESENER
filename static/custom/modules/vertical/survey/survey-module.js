@@ -203,22 +203,6 @@ define(function (require) {
                     value: 'osh-management',
                     squash: 'osh-management'
                 },
-                pChart: {
-                    value: 'european-map',
-                    squash: 'european-map'
-                },
-                pSectorSize: {
-                    value: 'activity-sector',
-                    squash: 'activity-sector'
-                },
-                pCountry: {
-                    value: 'EU27',
-                    squash: 'EU27'
-                },
-                pCountry2: {
-                    value: 'AT',
-                    squash: 'AT'
-                },
                 pLocale: {
                     value: 'en',
                     squash: 'en'
@@ -226,6 +210,10 @@ define(function (require) {
                 pQuestion: {
                     value: 'MM161',
                     squash: 'MM161'
+                },
+                pSectorSize: {
+                    value: 'activity-sector',
+                    squash: 'activity-sector'
                 },
                 pActivityFilter: {
                     value: '14',
@@ -238,6 +226,18 @@ define(function (require) {
                 pAnswer: {
                     value: '1',
                     squash: '1'
+                },
+                pChart: {
+                    value: 'european-map',
+                    squash: 'european-map'
+                },
+                pCountry: {
+                    value: 'EU27',
+                    squash: 'EU27'
+                },
+                pCountry2: {
+                    value: 'AT',
+                    squash: 'AT'
                 },
                 pEuOnly: {
                     value: 0
@@ -271,22 +271,6 @@ define(function (require) {
                     value: 'osh-management',
                     squash: 'osh-management'
                 },
-                pChart: {
-                    value: 'european-bar-chart',
-                    squash: 'european-bar-chart'
-                },
-                pSectorSize: {
-                    value: 'activity-sector',
-                    squash: 'activity-sector'
-                },
-                pCountry: {
-                    value: 'EU27',
-                    squash: 'EU27'
-                },
-                pCountry2: {
-                    value: 'AT',
-                    squash: 'AT'
-                },
                 pLocale: {
                     value: 'en',
                     squash: 'en'
@@ -295,6 +279,10 @@ define(function (require) {
                     value: 'MM161',
                     squash: 'MM161'
                 },
+                pSectorSize: {
+                    value: 'activity-sector',
+                    squash: 'activity-sector'
+                },
                 pActivityFilter: {
                     value: '14',
                     squash: '14'
@@ -302,6 +290,18 @@ define(function (require) {
                 pCompanyFilter: {
                     value: '11',
                     squash: '11'
+                },
+                pChart: {
+                    value: 'european-bar-chart',
+                    squash: 'european-bar-chart'
+                },
+                pCountry: {
+                    value: 'EU27',
+                    squash: 'EU27'
+                },
+                pCountry2: {
+                    value: 'AT',
+                    squash: 'AT'
                 },
                 pAnswer: {
                     value: '0'
@@ -324,7 +324,7 @@ define(function (require) {
         });
 
         $stateProvider.state('detailpage-national-bar-chart', {
-            url: "/:pLanguage/survey/detailpage-national-bar-chart/:pIndicator/:pTopic/:pLocale/:pQuestion/:pCountry/:pSectorSize",
+            url: "/:pLanguage/survey/detailpage-national-bar-chart/:pIndicator/:pTopic/:pLocale/:pQuestion/:pSectorSize/:pCountry",
             params: {
                 pLanguage: {
                     value: 'en',
@@ -337,15 +337,7 @@ define(function (require) {
                 pTopic: {
                     value: 'osh-management',
                     squash: 'osh-management'
-                },
-                pChart: {
-                    value: 'national-bar-chart',
-                    squash: 'national-bar-chart'
-                },
-                pSectorSize: {
-                    value: 'company-size',
-                    squash: 'company-size'
-                },
+                },                
                 pLocale: {
                     value: 'en',
                     squash: 'en'
@@ -353,10 +345,18 @@ define(function (require) {
                 pQuestion: {
                     value: 'MM161',
                     squash: 'MM161'
-                },
+                },                
                 pCountry: {
                     value: 'EU27',
                     squash: 'EU27'
+                },                
+                pSectorSize: {
+                    value: 'company-size',
+                    squash: 'company-size'
+                },
+                pChart: {
+                    value: 'national-bar-chart',
+                    squash: 'national-bar-chart'
                 },
                 pCountry2: {
                     value: 'AT',
@@ -397,14 +397,6 @@ define(function (require) {
                     value: 'osh-management',
                     squash: 'osh-management'
                 },
-                pChart: {
-                    value: 'national-comparisons',
-                    squash: 'national-comparisons'
-                },
-                pSectorSize: {
-                    value: 'activity-sector',
-                    squash: 'activity-sector'
-                },
                 pLocale: {
                     value: 'en',
                     squash: 'en'
@@ -412,6 +404,10 @@ define(function (require) {
                 pQuestion: {
                     value: 'MM161',
                     squash: 'MM161'
+                },
+                pSectorSize: {
+                    value: 'activity-sector',
+                    squash: 'activity-sector'
                 },
                 pActivityFilter: {
                     value: '14',
@@ -428,6 +424,10 @@ define(function (require) {
                 pCountry2: {
                     value: 'AT',
                     squash: 'AT'
+                },
+                pChart: {
+                    value: 'national-comparisons',
+                    squash: 'national-comparisons'
                 },
                 pAnswer: {
                     value: '1'
@@ -464,14 +464,6 @@ define(function (require) {
                     value: 'osh-management',
                     squash: 'osh-management'
                 },
-                pChart: {
-                    value: 'pie-chart',
-                    squash: 'pie-chart'
-                },
-                pSectorSize: {
-                    value: 'company-size',
-                    squash: 'company-size'
-                },
                 pLocale: {
                     value: 'en',
                     squash: 'en'
@@ -483,6 +475,14 @@ define(function (require) {
                 pCountry: {
                     value: 'EU27',
                     squash: 'EU27'
+                },
+                pChart: {
+                    value: 'pie-chart',
+                    squash: 'pie-chart'
+                },
+                pSectorSize: {
+                    value: 'company-size',
+                    squash: 'company-size'
                 },
                 pCountry2: {
                     value: 'AT',

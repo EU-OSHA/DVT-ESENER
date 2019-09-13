@@ -85,11 +85,15 @@ define(function (require) {
 				scope.isNull = function(text, type){
 					if(scope.question != null){
 						if(scope.question.next == null && type == 'n'){
-							text = 'An occupational health doctor';
+							text = 'Use of health and safety services: An occupational health doctor';
 						}
 
 						if(scope.question.previous == null && type == 'p'){
 							text = 'Is there a health and safety committee in your establishment?';
+						}
+
+						if(scope.question.grandfather != undefined){
+							return scope.i18n['L'+scope.question.father] + ': ' + text;
 						}
 					}
 					return text;
@@ -270,7 +274,9 @@ define(function (require) {
 							$state.go($state.current.name, {
 								pTopic : topic,
 								pQuestion: pQuestionID, //Question name,
-								pAnswer: scope.answer
+								pAnswer: scope.answer,
+								pLanguage: scope.pLanguage,
+								pLocale: scope.pLocale
 							},
 							{
 								reload: true
@@ -303,6 +309,8 @@ define(function (require) {
 						}*/
 						$state.transitionTo(((scope.chart == 'european-map')?'detailpage-european-map':'detailpage-european-bar-chart'), {
 							pIndicator: scope.dataset, //Year
+							pLanguage: scope.pLanguage,
+							pLocale: scope.pLocale,
 							pChart: scope.chart, //Type of chart
 							pTopic: scope.topic,
 							pQuestion: scope.indicator, //Question name
@@ -318,6 +326,8 @@ define(function (require) {
 					}else if(scope.chart == 'national-comparisons'){
 						$state.transitionTo('detailpage-national-comparisons', {
 							pIndicator: scope.dataset, //Year
+							pLanguage: scope.pLanguage,
+							pLocale: scope.pLocale,
 							pChart: scope.chart, //Type of chart
 							pQuestion: scope.indicator, //Question name
 							pAnswer: scope.filters.answer, //Split answer
