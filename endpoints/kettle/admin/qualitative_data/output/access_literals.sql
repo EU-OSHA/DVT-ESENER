@@ -31,55 +31,47 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_esener");
-INSERT INTO section (tool_id, name) VALUES (@toolId, "LEGAL_NOTICE");
-
-
-
-
-
-SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_esener");
-INSERT INTO section (tool_id, name) VALUES (@toolId, "ACCESSIBILITY");
-
-
-
-
-
-
-
-SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_esener");
-INSERT INTO section (tool_id, name) VALUES (@toolId, "ACESSIBILITY");
-
-
-SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_esener");
-INSERT INTO section (tool_id, name) VALUES (@toolId, "PRIVACY_NOTICE");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+INSERT INTO section (tool_id, name) VALUES (@toolId, "METHODOLOGY");
 
 
 SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
@@ -432,31 +424,180 @@ SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Publication_Group1_ESENER2009");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "<ul type=\"disc\"><li>European Survey of Enterprises on New and Emerging Risks (ESENER) - Managing safety and health at work (2010): <a href=\"https://osha.europa.eu/en/tools-and-publications/publications/reports/esener1_osh_management/view\">Overview report</a> in English and <a href=\"https://osha.europa.eu/en/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Summary</a> in 24 languages</li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpoint presentation</a> providing an overview of the results 2009</li><li>ESENER 2009: <a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology</a></li><li>ESENER 2009 dataset can be accessed via the <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Archive (UKDA) of the University of Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=en\">European Data Portal</a> and <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "<ul type=\"disc\"><li>Европейско проучване на предприятията относно новите и възникващите рискове (ESENER) — Управление на безопасността и здравето при работа (2010 г.):&nbsp;<a href=\"https://osha.europa.eu/bg/tools-and-publications/publications/reports/esener1_osh_management/view\">Обзорен доклад</a>&nbsp;<em>на английски език&nbsp;</em>и&nbsp;<a href=\"https://osha.europa.eu/bg/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Резюме</a>&nbsp;<em>на 24 езика</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Презентация в Powerpoint</a>, предоставяща общ преглед на резултатите от 2009 г.</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li></ul><ul><li><span>Данните от ESENER 2009 са достъпни чрез&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Archive (UKDA) на Университета на Есекс</a>, <a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=bg\">Европейски Портал за данни</a>&nbsp;<span>и&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "<ul type=\"disc\"><li>Evropský průzkum podniků na téma nových a vznikajících rizik (ESENER) – Řízení bezpečnosti a ochrany zdraví při práci (2010):&nbsp;<a href=\"https://osha.europa.eu/cs/tools-and-publications/publications/reports/esener1_osh_management/view\">přehled</a>&nbsp;<em>v angličtině&nbsp;</em>a&nbsp;<a href=\"https://osha.europa.eu/cs/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">shrnutí</a>&nbsp;<em>ve 24 jazycích</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">prezentace ve formátu PowerPoint</a>&nbsp;poskytující přehled výsledků z roku 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>Soubor údajů z průzkumu ESENER-2009 je k dispozici v&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/?q=esener\" target=\"_blank\">datovém archivu Univerzity v Essexu</a>, <a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=cs\">Evropský Datový Portál</a>&nbsp;<span>a&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">institutu GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "<ul type=\"disc\"><li>Den europæiske virksomhedsundersøgelse af nye risici og risici i fremvækst (ESENER) – Håndtering af arbejdsmiljørisici på arbejdspladsen (2010):&nbsp;<a href=\"https://osha.europa.eu/da/tools-and-publications/publications/reports/esener1_osh_management/view\">oversigtsrapport</a>&nbsp;<em>på engelsk</em>&nbsp;og&nbsp;<a href=\"https://osha.europa.eu/da/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">sammendrag</a>&nbsp;<em>på 24 sprog</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">PowerPoint-præsentation</a>&nbsp;med en oversigt over resultaterne fra 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>ESENER 2009-datasættet kan tilgås via&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Archive (UKDA) ved University of Essex</a>, <a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=da\">Europæisk Dataportal</a>&nbsp;<span>og&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "<ul type=\"disc\"><li>European Survey of Enterprises on New and Emerging Risks (ESENER) – Managing safety and health at work (Europäische Unternehmensumfrage über neue und aufkommende Risiken – Management von Sicherheit und Gesundheitsschutz am Arbeitsplatz) (2010).&nbsp;<a href=\"https://osha.europa.eu/de/tools-and-publications/publications/reports/esener1_osh_management/view\">Übersichtsbericht</a>&nbsp;<em>auf Englisch&nbsp;</em>und&nbsp;<a href=\"https://osha.europa.eu/de/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Zusammenfassung</a>&nbsp;<em>in 24 Sprachen</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">PowerPoint-Präsentation</a>&nbsp;mit einem Überblick über die Ergebnisse von 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Der Datensatz zu ESENER 2009 kann über das&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Archive (UKDA) der University of Essex</a>, <a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=de\" target=\"_blank\">Europäisches Datenportal</a>&nbsp;<span>und&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>&nbsp;abgerufen werden.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "<ul type=\"disc\"><li>Uute ja tekkivate riskide Euroopa ettevõtete uuring (ESENER) – tööohutuse ja töötervishoiu juhtimine (2010):&nbsp;<a href=\"https://osha.europa.eu/et/tools-and-publications/publications/reports/esener1_osh_management/view\">ülevaatlik aruanne</a>&nbsp;<em>inglise keeles&nbsp;</em>ja&nbsp;<a href=\"https://osha.europa.eu/et/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">kokkuvõte</a>&nbsp;<em>24 keeles</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">PowerPointi esitlus</a>, mis annab ülevaate 2009. aasta tulemustest</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\">ESENER 2009 andmekogum on kättesaadav&nbsp;<a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Essexi ülikooli Ühendkuningriigi andmearhiivi (UKDA)</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=et\" target=\"_blank\">Euroopa Andmeportaal</a>&nbsp;ja&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">sotsiaalteaduste instituudi GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a>&nbsp;kaudu.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "<ul type=\"disc\"><li>Ευρωπαϊκή έρευνα για τις επιχειρήσεις σχετικά με τους νέους και τους αναδυόμενους κινδύνους (ESENER) - Διαχείριση της υγείας και της ασφάλειας στον χώρο εργασίας (2010):&nbsp;<a href=\"https://osha.europa.eu/el/tools-and-publications/publications/reports/esener1_osh_management/view\">Έκθεση επισκόπησης</a>&nbsp;<em>στα αγγλικά&nbsp;</em>και&nbsp;<a href=\"https://osha.europa.eu/el/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Περίληψη</a>&nbsp;<em>σε 24 γλώσσες</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Παρουσίαση Powerpoint</a>: ανασκόπηση των αποτελεσμάτων του 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Τα δεδομένα της ESENER 2009 είναι προσβάσιμα μέσω του&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Αρχείου Δεδομένων του Ηνωμένου Βασιλείου (UKDA) του πανεπιστημίου του Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=el\" rel=\"noopener\" target=\"_blank\" data-v-a58b879a=\"\">Ευρωπαϊκή Πύλη Δεδομένων&nbsp;</a><span>και του&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<ul type=\"disc\"><li>Encuesta europea de empresas sobre riesgos nuevos y emergentes (ESENER) – Gestión de la salud y la seguridad en el trabajo (2010):&nbsp;<a href=\"https://osha.europa.eu/es/tools-and-publications/publications/reports/esener1_osh_management/view\">Informe general</a>&nbsp;<em>en inglés&nbsp;</em>y&nbsp;<a href=\"https://osha.europa.eu/es/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Resumen</a>&nbsp;<em>en 24 idiomas</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Presentación en PowerPoint</a>&nbsp;que ofrece una descripción general de los resultados de 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>El conjunto de datos de ESENER 2009 está disponible en el&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">archivo de datos del Reino Unido (UKDA) de la Universidad de Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=es\" rel=\"noopener\" target=\"_blank\" data-v-a58b879a=\"\">Europeo Portal de datos</a><span>&nbsp;y&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "<ul type=\"disc\"><li>Enquête européenne des entreprises sur les risques nouveaux et émergents (ESENER) -Gérer la sécurité et la santé au travail (2010):&nbsp;<a href=\"https://osha.europa.eu/fr/tools-and-publications/publications/reports/esener1_osh_management/view\">rapport général&nbsp;</a><em>en anglais&nbsp;</em>et&nbsp;<a href=\"https://osha.europa.eu/fr/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">résumé</a>&nbsp;<em>languesdans 24</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Présentation Powerpoint</a>&nbsp;2009 donnant un aperçu des résultats</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Il est possible d’accéder aux séries de données ESENER 2009 par le biais de&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Archive (UKDA) de l’université d’Essex</a><span>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=fr\" target=\"_blank\">Portail européen de données</a> et&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a><span>.</span></span></li></ul><p>&nbsp;</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "<ul type=\"disc\"><li>Europsko istraživanje poduzeća o novim rizicima i rizicima u nastajanju (ESENER) – upravljanje sigurnošću i zdravljem na radu (2010.):&nbsp;<a href=\"https://osha.europa.eu/hr/tools-and-publications/publications/reports/esener1_osh_management/view\">Pregledno izvješće</a>&nbsp;<em>na engleskom jeziku&nbsp;</em>i&nbsp;<a href=\"https://osha.europa.eu/hr/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Sažetak</a>&nbsp;<em>na 24 jezika</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Prezentacija u programu Powerpoint</a>&nbsp;koja pruža pregled rezultata istraživanja iz 2009.</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Skupu podataka o istraživanju ESENER 2009 možete pristupiti putem arhive Sveučilišta u Essexu&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Archive (UKDA) of the University of Essex</a><span>, <a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=hr\" target=\"_blank\">Europski Portal Podataka</a>&nbsp;i instituta&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "<ul type=\"disc\"><li>Evrópska fyrirtækjakönnun Evrópu um nýjar og aðsteðjandi áhættur (ESENER) - stjórnun heilbrigðis og öryggismála á vinnustöðum (2010):<a href=\"https://osha.europa.eu/is/tools-and-publications/publications/reports/esener1_osh_management/view\">yfirlit</a>&nbsp;<em>á ensku&nbsp;</em>og&nbsp;<a href=\"https://osha.europa.eu/is/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">samantekt</a>&nbsp;<em>á 24 tungumálum</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpoint kynning</a>&nbsp;með yfirlit yfir niðurstöðurnar 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>ESENER 2009 gagnasettið má nálgast í gegnum&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK gagnasafn (UKDA) Háskólans í Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=en\" target=\"_blank\">European Data Portal</a>&nbsp;<span>og&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "<ul type=\"disc\"><li>Indagine europea tra le imprese sui rischi nuovi ed emergenti (ESENER) - Gestione della sicurezza e salute sul posto di lavoro (2010):&nbsp;<a href=\"https://osha.europa.eu/it/tools-and-publications/publications/reports/esener1_osh_management/view\">Relazione generale</a><a href=\"https://osha.europa.eu/it/tools-and-publications/publications/reports/esener1_osh_management/view\">&nbsp;<em>in inglese&nbsp;</em>e&nbsp;</a><a href=\"https://osha.europa.eu/it/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">sintesi</a>&nbsp;<em>in 24 lingue</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Presentazione Powerpoint</a>&nbsp;che offre una panoramica dei risultati del 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Puoi accedere all’insieme dei dati relativi all’indagine europea tra le imprese sui rischi nuovi ed emergenti (ESENER) 2009 tramite&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">l’archivio dei dati del Regno Unito (UK Data Archive, UKDA) dell’Università di Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=it\" target=\"_blank\">Portale Europeo dei Dati</a>&nbsp;<span>e&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "<ul type=\"disc\"><li>Eiropas uzņēmumu apsekojums par jaunajiem un nākotnes riska veidiem (<em>ESENER</em>) — Darba drošības un veselības aizsardzības risku pārvaldīšana darbavietās (2010.):&nbsp;<a href=\"https://osha.europa.eu/lv/tools-and-publications/publications/reports/esener1_osh_management/view\">Pārskata ziņojums</a>&nbsp;<em>angļu valodā&nbsp;</em>un&nbsp;<a href=\"https://osha.europa.eu/lv/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Kopsavilkums</a>&nbsp;<em>24 valodās</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Prezentācija Powerpoint formātā</a>, kas sniedz pārskatu pa 2009. gada apsekojuma rezultātiem</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><em>ESENER 2009</em><span>&nbsp;dati kopai var piekļūt caur&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">AK Eseksas Universitātes datu arhīvu (<em>UKDA</em>)<span class=\"osha_target_external_link\">&nbsp;</span></a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=lv\" target=\"_blank\">Eiropas datu portāls</a>&nbsp;<span>un caur&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\"><em>GESIS</em>.<span class=\"osha_target_external_link\">&nbsp;</span></a></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "<ul type=\"disc\"><li>„Europos įmonių apklausa apie naują ir kylančią riziką (ESENER). Darbuotojų saugos ir sveikatos valdymas (2010 m.)“;&nbsp;<a href=\"https://osha.europa.eu/lt/tools-and-publications/publications/reports/esener1_osh_management/view\">apžvalgos ataskaita</a>&nbsp;<em>(anglų k.)&nbsp;</em>ir&nbsp;<a href=\"https://osha.europa.eu/lt/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">santrauka</a>&nbsp;<em>(24 kalbomis);</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">„Powerpoint“ skaidrės</a>, kuriose apžvelgiami 2009 m. apklausos rezultatai.</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Su 2009 m. ESENER apklausos duomenų rinkiniu galima susipažinti&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">JK Esekso universiteto duomenų archyve (angl. UKDA)</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=lt\" target=\"_blank\">Europos duomenų portalas</a>&nbsp;<span>ir&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "<ul type=\"disc\"><li>Európai vállalati felmérés az új és újonnan megjelenő kockázatokról (ESENER) &shy; A munkahelyi biztonság és egészségvédelem kezelése (2010):&nbsp;<a href=\"https://osha.europa.eu/hu/tools-and-publications/publications/reports/esener1_osh_management/view\">Áttekintő jelentés</a>&nbsp;<em>angolul&nbsp;</em>és&nbsp;<a href=\"https://osha.europa.eu/hu/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Összefoglaló</a>&nbsp;<em>24 nyelven</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpoint prezentáció</a>&nbsp;a 2009-es eredmények áttekintésével</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\">Az ESENER 2009 adatkészlete&nbsp;<a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">az Essexi Egyetem egyesült királysági adatarchívumán (UKDA)<span class=\"osha_target_external_link\">&nbsp;</span></a>, <a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=hu\" target=\"_blank\">Európai Adatportál</a>, illetve a&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a>&nbsp;rendszeren keresztül érhető el.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "<ul type=\"disc\"><li>Stħarriġ Ewropew ta' Intrapriżi dwar Riskji Ġodda u Emerġenti (ESENER) - Ġestjoni tas-Saħħa u s-Sigurtà fuq il-post tax-xogħol (2010):&nbsp;<a href=\"https://osha.europa.eu/mt/tools-and-publications/publications/reports/esener1_osh_management/view\">Ħarsa ġenerali rapport&nbsp;</a><em>bl-Ingliż</em>&nbsp;u<a href=\"https://osha.europa.eu/mt/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Sommarju&nbsp;</a><em>f'24 lingwa</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Preżentazzjoni Powerpoint&nbsp;</a>tipprovdi ħarsa ġenerali tar-riżultati tal-2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Is-sett tad-data ta’ ESENER 2009 jista’ jiġi aċċessat permezz tal-</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Archive (UKDA) of the University of Essex (Arkivju tad-Data tar-Renju Unit (UKDA) tal-Università ta’ Essex</a><span>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=mt\" target=\"_blank\">Ewropew Portal tad-Data</a> u&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "<ul type=\"disc\"><li>Europese bedrijvenenquête over nieuwe en opkomende risico's (Esener) – Managing safety and health at work (Beheer van veiligheid en gezondheid op het werk, 2010):&nbsp;<a href=\"https://osha.europa.eu/nl/tools-and-publications/publications/reports/esener1_osh_management/view\">overzichtsrapport</a>&nbsp;<em>in het Engels&nbsp;</em>en&nbsp;<a href=\"https://osha.europa.eu/nl/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">samenvatting</a>&nbsp;<em>in 24 talen</em></li></ul><ul><li>een&nbsp;<a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpoint-presentatie</a>&nbsp;met een overzicht van de resultaten uit 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>De gegevensset van Esener 2009 is toegankelijk via het&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Archive (UKDA) van de Universiteit van</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=nl\" target=\"_blank\">Europees Dataportaal</a>&nbsp;<span>en&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "<ul type=\"disc\"><li>European Survey of Enterprises on New and Emerging Risks (ESENER) – Managing safety and health at work (2010):&nbsp;<a href=\"https://osha.europa.eu/no/tools-and-publications/publications/reports/esener1_osh_management/view\">Oversiktsrapport</a>&nbsp;<em>på engelsk&nbsp;</em>og&nbsp;<a href=\"https://osha.europa.eu/no/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Sammendrag</a>&nbsp;<em>på 24 språk</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">PowerPoint-presentasjon</a>&nbsp;med en oversikt over funnene fra 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>ESENER 2009 datasettet er tilgjengelig via&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Archive (UKDA) fra University of Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=no\" target=\"_blank\">Den europeiske Dataportalen</a>&nbsp;<span>og&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "<ul type=\"disc\"><li>Europejskie badanie przedsiębiorstw na temat nowych i pojawiających się zagrożeń (ESENER) – Zarządzanie bezpieczeństwem i higieną pracy (2010):&nbsp;<a href=\"https://osha.europa.eu/pl/tools-and-publications/publications/reports/esener1_osh_management/view\">Sprawozdanie ogólne</a>&nbsp;<em>w jęz. angielskim&nbsp;</em>i&nbsp;<a href=\"https://osha.europa.eu/pl/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Streszczenie</a>&nbsp;<em>w 24 językach</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Prezentacja w programie Powerpoint</a>&nbsp;zawierająca podsumowanie wyników badania z 2009 r.</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Zestaw danych z badania ESENER 2009 jest dostępny za pośrednictwem bazy&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Archive (UKDA) Uniwersytetu w Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=pl\" target=\"_blank\">Europejski Portal Danych</a>&nbsp;<span>i&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "<ul type=\"disc\"><li>Inquérito Europeu às Empresas sobre Riscos Novos e Emergentes (ESENER) - Gestão da segurança e saúde no trabalho (2010):&nbsp;<a href=\"https://osha.europa.eu/pt/tools-and-publications/publications/reports/esener1_osh_management/view\">Relatório geral</a>&nbsp;<em>disponível em inglês&nbsp;</em>e&nbsp;<a href=\"https://osha.europa.eu/pt/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Síntese</a>&nbsp;<em>disponível em 24 línguas</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Apresentação em Powerpoint</a>, que apresenta uma perspetiva geral dos resultados de 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>O conjunto de dados do ESENER 2009 está disponível em:&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Arquivo de dados do Reino Unido (UKDA) da Universidade de Essex<span class=\"osha_target_external_link\">&nbsp;</span></a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=pt\" target=\"_blank\">Portal Europeu Portal de Dados</a>&nbsp;<span>e&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "<ul type=\"disc\"><li>Sondajul european în rândul întreprinderilor privind riscurile noi și emergente (ESENER) – Gestionarea sănătății și securității în muncă (2010):&nbsp;<a href=\"https://osha.europa.eu/ro/tools-and-publications/publications/reports/esener1_osh_management/view\">Raport general</a>&nbsp;<em>în limba engleză&nbsp;</em>și&nbsp;<a href=\"https://osha.europa.eu/ro/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Rezumat</a>&nbsp;<em>în 24 de limbi</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Prezentare PowerPoint</a>&nbsp;care oferă o imagine de ansamblu asupra rezultatelor din 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Setul de date ESENER 2009 poate fi accesat prin&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">arhiva de date din Regatul Unit (UKDA) a Universității Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=ro\" target=\"_blank\">European Portalul de date</a>&nbsp;<span>și prin&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul><p>summary_data/SEP%20ESENER%20presentation%202009.pptx\"&gt;Prezentare PowerPoint&nbsp;care oferă o imagine de ansamblu asupra rezultatelor din 2009</p><ul><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Setul de date ESENER 2009 poate fi accesat prin&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">arhiva de date din Regatul Unit (UKDA) a Universității Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=ro\" target=\"_blank\">European Portalul de date</a>&nbsp;<span>și prin&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "<ul type=\"disc\"><li>Európsky prieskum podnikov v nových a vznikajúcich rizíkách (ESENER) – Riadenie bezpečnosti a ochrany zdravia pri práci (2010):&nbsp;<a href=\"https://osha.europa.eu/sk/tools-and-publications/publications/reports/esener1_osh_management/view\">Správa</a>&nbsp;<em>v angličtine&nbsp;</em>a&nbsp;<a href=\"https://osha.europa.eu/sk/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">zhrnutie</a>&nbsp;<em>v 24 jazykoch</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">powerpointovú prezentáciu</a>, ktorá obsahuje prehľad výsledkov z roku 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Súbor údajov z prieskumu ESENER 2009 je dostupný prostredníctvom&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">archívu údajov Spojeného kráľovstva (UK Data Archive, UKDA) University of Essex<span class=\"osha_target_external_link\">&nbsp;</span></a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=sk\" target=\"_blank\">Portál Európskych Údajov</a><span>&nbsp;a&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "<ul type=\"disc\"><li>Evropska raziskava v podjetjih o novih in nastajajočih tveganjih (ESENER) – Upravljanje varnosti in zdravja pri delu (2010):&nbsp;<a href=\"https://osha.europa.eu/sl/tools-and-publications/publications/reports/esener1_osh_management/view\">Pregledno poročilo</a>&nbsp;<em>v angleščini&nbsp;</em>in&nbsp;<a href=\"https://osha.europa.eu/sl/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">povzetek</a>&nbsp;<em>v 24 jezikih</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Predstavitev v Powerpointu</a>, ki zagotavlja pregled rezultatov iz leta 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Do nabora podatkov raziskave ESENER 2009 je mogoče dostopati prek&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">arhiva podatkov Združenega kraljestva (UKDA) Univerze v Essexu<span class=\"osha_target_external_link\">&nbsp;</span></a>,<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=sl\" target=\"_blank\">&nbsp;Evropski podatkovni portal</a>&nbsp;<span>in&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">nemškega Inštituta za družbene vede (GESIS)<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<ul type=\"disc\"><li>Kyselytutkimus Euroopan yrityksille uusista ja kehittyvistä riskeistä (ESENER) – Työsuojelun hallinta (2010):&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener1_osh_management/view\">yhteenvetokertomus</a>&nbsp;<em>englanniksi&nbsp;</em>ja&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">tiivistelmä</a>&nbsp;<em>24 kielellä</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpoint-yhteenveto</a>&nbsp;vuonna 2009 saaduista tuloksista</li><li>ESENER-2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>ESENER 2009 -tietoaineistoon pääsee seuraavien kautta:&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Essexin yliopiston Britannian tietoarkisto (UKDA)</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=fi\" target=\"_blank\">Euroopan Dataportaali</a>&nbsp;<span>ja&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<ul type=\"disc\"><li>Den europeiska företagsundersökningen om nya och framväxande risker (Esener) – Hantering av arbetsmiljöfrågor (2010):&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/esener1_osh_management/view\">Översiktsrapport</a>&nbsp;<em>på engelska&nbsp;</em>och&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">sammanfattning</a>&nbsp;<em>på 24 språk</em>.</li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpointpresentation</a>&nbsp;med en översikt av resultaten från 2009.</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Datauppsättningen från Esener 2009 kan nås via&nbsp;</span><a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Archive (UKDA) of the University of Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=sv\" target=\"_blank\">Europeiska Dataportalen</a>&nbsp;<span>och&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "<ul type=\"disc\"><li>European Survey of Enterprises on New and Emerging Risks (ESENER) - Managing safety and health at work (2010): <a href=\"https://osha.europa.eu/en/tools-and-publications/publications/reports/esener1_osh_management/view\">Overview report</a> in English and <a href=\"https://osha.europa.eu/en/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Summary</a> in 24 languages</li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpoint presentation</a> providing an overview of the results 2009</li><li>ESENER 2009: <a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology</a></li></ul>
+<p>ESENER 2009 dataset can be accessed via the <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-1\" target=\"_blank\">the European data portal</a> and <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "<ul type=\"disc\"><li>Европейско проучване на предприятията относно новите и възникващите рискове (ESENER) &mdash; Управление на безопасността и здравето при работа (2010 г.):&nbsp;<a href=\"https://osha.europa.eu/bg/tools-and-publications/publications/reports/esener1_osh_management/view\">Обзорен доклад</a>&nbsp;<em>на английски език&nbsp;</em>и&nbsp;<a href=\"https://osha.europa.eu/bg/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Резюме</a>&nbsp;<em>на 24 езика</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Презентация в Powerpoint</a>, предоставяща общ преглед на резултатите от 2009 г.</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li></ul><p>Наборът от данни от ESENER 2009 е достъпен чрез <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Службата за данни на Обединеното кралство към Университета в Есекс</a>, <a href=\"https://data.europa.eu/euodp/bg/data/dataset/esener-1\" target=\"_blank\">Европейския портал за данни</a> и <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "<ul type=\"disc\"><li>Evropsk&yacute; průzkum podniků na t&eacute;ma nov&yacute;ch a vznikaj&iacute;c&iacute;ch rizik (ESENER) &ndash; Ř&iacute;zen&iacute; bezpečnosti a ochrany zdrav&iacute; při pr&aacute;ci (2010):&nbsp;<a href=\"https://osha.europa.eu/cs/tools-and-publications/publications/reports/esener1_osh_management/view\">přehled</a>&nbsp;<em>v angličtině&nbsp;</em>a&nbsp;<a href=\"https://osha.europa.eu/cs/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">shrnut&iacute;</a>&nbsp;<em>ve 24 jazyc&iacute;ch</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">prezentace ve form&aacute;tu PowerPoint</a>&nbsp;poskytuj&iacute;c&iacute; přehled v&yacute;sledků z roku 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Datov&yacute; soubor průzkumu ESENER 2009 je dostupn&yacute; prostřednictv&iacute;m <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">datov&eacute; služby Spojen&eacute;ho kr&aacute;lovstv&iacute; při University of Essex</a>, <a href=\"https://data.europa.eu/euodp/cs/data/dataset/esener-1\" target=\"_blank\">evropsk&eacute;ho datov&eacute;ho port&aacute;lu</a> a <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "<ul type=\"disc\">
+<li>Den europ&aelig;iske virksomhedsunders&oslash;gelse af nye risici og risici i fremv&aelig;kst (ESENER) &ndash; H&aring;ndtering af arbejdsmilj&oslash;risici p&aring; arbejdspladsen (2010):&nbsp;<a href=\"https://osha.europa.eu/da/tools-and-publications/publications/reports/esener1_osh_management/view\">oversigtsrapport</a>&nbsp;<em>p&aring; engelsk</em>&nbsp;og&nbsp;<a href=\"https://osha.europa.eu/da/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">sammendrag</a>&nbsp;<em>p&aring; 24 sprog</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">PowerPoint-pr&aelig;sentation</a>&nbsp;med en oversigt over resultaterne fra 2009</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Der er adgang til ESENER 2009-datas&aelig;ttet via <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Det Forenede Kongeriges datatjeneste ved University of Essex</a>, <a href=\"https://data.europa.eu/euodp/DA/data/dataset/esener-1\" target=\"_blank\">Den Europ&aelig;iske Dataportal</a> og <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "<ul type=\"\">
+<li>European Survey of Enterprises on New and Emerging Risks (ESENER) &ndash; Managing safety and health at work (Europ&auml;ische Unternehmensumfrage &uuml;ber neue und aufkommende Risiken &ndash; Management von Sicherheit und Gesundheitsschutz am Arbeitsplatz) (2010).&nbsp;<a>&Uuml;bersichtsbericht</a>&nbsp;<em>auf Englisch&nbsp;</em>und&nbsp;<a>Zusammenfassung</a>&nbsp;<em>in 24 Sprachen</em></li>
+</ul>
+<ul>
+<li><a>PowerPoint-Pr&auml;sentation</a>&nbsp;mit einem &Uuml;berblick &uuml;ber die Ergebnisse von 2009</li>
+<li>ESENER 2009:&nbsp;<a target=\"\">http://oshwiki.eu/wiki/ESENER-1_Methodology&nbsp;</a></li>
+</ul>
+<p>Der Datensatz ESENER&nbsp;2009 ist &uuml;ber <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">den Datendienst des Vereinigten K&ouml;nigreichs der Universit&auml;t Essex</a>, <a href=\"https://data.europa.eu/euodp/de/data/dataset/esener-1\" target=\"_blank\">das Europ&auml;ische Datenportal</a> und <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a> abrufbar.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "<ul type=\"disc\">
+<li>Uute ja tekkivate riskide Euroopa ettev&otilde;tete uuring (ESENER) &ndash; t&ouml;&ouml;ohutuse ja t&ouml;&ouml;tervishoiu juhtimine (2010):&nbsp;<a href=\"https://osha.europa.eu/et/tools-and-publications/publications/reports/esener1_osh_management/view\">&uuml;levaatlik aruanne</a>&nbsp;<em>inglise keeles&nbsp;</em>ja&nbsp;<a href=\"https://osha.europa.eu/et/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">kokkuv&otilde;te</a>&nbsp;<em>24 keeles</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">PowerPointi esitlus</a>, mis annab &uuml;levaate 2009. aasta tulemustest</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Uuringu ESENER 2009 andmekogumile p&auml;&auml;seb ligi <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Essexi &uuml;likooli hallatava &Uuml;hendkuningriigi andmearhiivi</a>, <a href=\"https://data.europa.eu/euodp/et/data/dataset/esener-1\" target=\"_blank\">Euroopa andmeportaali</a> ja <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESISe</a> kaudu.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "<ul type=\"disc\"><li>Ευρωπαϊκή έρευνα για τις επιχειρήσεις σχετικά με τους νέους και τους αναδυόμενους κινδύνους (ESENER) - Διαχείριση της υγείας και της ασφάλειας στον χώρο εργασίας (2010):&nbsp;<a href=\"https://osha.europa.eu/el/tools-and-publications/publications/reports/esener1_osh_management/view\">Έκθεση επισκόπησης</a>&nbsp;<em>στα αγγλικά&nbsp;</em>και&nbsp;<a href=\"https://osha.europa.eu/el/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Περίληψη</a>&nbsp;<em>σε 24 γλώσσες</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Παρουσίαση Powerpoint</a>: ανασκόπηση των αποτελεσμάτων του 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li></ul><p>Το σύνολο δεδομένων της έρευνας ESENER 2009 διατίθεται μέσω της&nbsp;<a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Υπηρεσίας Δεδομένων του Πανεπιστημίου Essex του Ηνωμένου Βασιλείου</a>,&nbsp;<a href=\"https://data.europa.eu/euodp/el/data/dataset/esener-1\" target=\"_blank\">της ευρωπαϊκής δικτυακής πύλης δεδομένων</a>και του&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">Ινστιτούτου GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<ul type=\"disc\">
+<li>Encuesta europea de empresas sobre riesgos nuevos y emergentes (ESENER) &ndash; Gesti&oacute;n de la salud y la seguridad en el trabajo (2010):&nbsp;<a href=\"https://osha.europa.eu/es/tools-and-publications/publications/reports/esener1_osh_management/view\">Informe general</a>&nbsp;<em>en ingl&eacute;s&nbsp;</em>y&nbsp;<a href=\"https://osha.europa.eu/es/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Resumen</a>&nbsp;<em>en 24 idiomas</em><a id=\"edit-body0value-source-value_html\" href=\"https://test.osha.europa.eu/en/admin/tmgmt/items/48456?destination=admin/tmgmt/jobs/377#\">HTML</a></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Presentaci&oacute;n en PowerPoint</a>&nbsp;que ofrece una descripci&oacute;n general de los resultados de 2009</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Se puede acceder al conjunto de datos de ESENER 2009 a trav&eacute;s del <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Servicio de Datos del Reino Unido de la Universidad de Essex</a>, <a href=\"https://data.europa.eu/euodp/es/data/dataset/esener-1\" target=\"_blank\">el Portal Europeo de Datos</a> y <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "<ul type=\"disc\">
+<li>Enqu&ecirc;te europ&eacute;enne des entreprises sur les risques nouveaux et &eacute;mergents (ESENER) -G&eacute;rer la s&eacute;curit&eacute; et la sant&eacute; au travail (2010):&nbsp;<a href=\"https://osha.europa.eu/fr/tools-and-publications/publications/reports/esener1_osh_management/view\">rapport g&eacute;n&eacute;ral&nbsp;</a><em>en anglais&nbsp;</em>et&nbsp;<a href=\"https://osha.europa.eu/fr/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">r&eacute;sum&eacute;</a>&nbsp;<em>languesdans 24</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Pr&eacute;sentation Powerpoint</a>&nbsp;2009 donnant un aper&ccedil;u des r&eacute;sultats</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>L&rsquo;ensemble de donn&eacute;es de l&rsquo;&eacute;dition&nbsp;2009 de l&rsquo;enqu&ecirc;te ESENER est accessible via le <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">service de donn&eacute;es du Royaume-Uni de l&rsquo;universit&eacute; d&rsquo;Essex</a>, <a href=\"https://data.europa.eu/euodp/fr/data/dataset/esener-1\" target=\"_blank\">le portail de donn&eacute;es europ&eacute;en</a> et <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+<p>&nbsp;</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "<ul>
+<li>Europsko istraživanje poduzeća o novim rizicima i rizicima u nastajanju (ESENER) &ndash; upravljanje sigurno&scaron;ću i zdravljem na radu (2010.): <a href=\"https://osha.europa.eu/hr/tools-and-publications/publications/reports/esener1_osh_management/view\">Pregledno izvje&scaron;će</a>&nbsp;<em>na engleskom jeziku&nbsp;</em>i&nbsp;<a href=\"https://osha.europa.eu/hr/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Sažetak</a>&nbsp;<em>na 24 jezika</em></li>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Prezentacija u programu Powerpoint</a>&nbsp;koja pruža pregled rezultata istraživanja iz 2009.</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Skupu podataka iz istraživanja ESENER&nbsp;2009 moguće je pristupiti putem <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Podatkovne arhive UK‑a Sveučili&scaron;ta u Essexu</a>, <a href=\"https://data.europa.eu/euodp/hr/data/dataset/esener-1\" target=\"_blank\">Europskog portala podataka</a> i baze podataka <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "<ul type=\"disc\">
+<li>Evr&oacute;pska fyrirt&aelig;kjak&ouml;nnun Evr&oacute;pu um n&yacute;jar og a&eth;ste&eth;jandi &aacute;h&aelig;ttur (ESENER) - stj&oacute;rnun heilbrig&eth;is og &ouml;ryggism&aacute;la &aacute; vinnust&ouml;&eth;um (2010):<a href=\"https://osha.europa.eu/is/tools-and-publications/publications/reports/esener1_osh_management/view\">yfirlit</a>&nbsp;<em>&aacute; ensku&nbsp;</em>og&nbsp;<a href=\"https://osha.europa.eu/is/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">samantekt</a>&nbsp;<em>&aacute; 24 tungum&aacute;lum</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpoint kynning</a>&nbsp;me&eth; yfirlit yfir ni&eth;urst&ouml;&eth;urnar 2009</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>ESENER 2009 gagnasafni&eth; er h&aelig;gt a&eth; n&aacute;lgast &iacute; gegnum <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Gagna&thorn;j&oacute;nustu Bretlands hj&aacute; H&aacute;sk&oacute;lanum &iacute; Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-1\" target=\"_blank\">Evr&oacute;psku gagnag&aacute;ttina</a> og <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "<ul type=\"disc\">
+<li>Indagine europea tra le imprese sui rischi nuovi ed emergenti (ESENER) - Gestione della sicurezza e salute sul posto di lavoro (2010):&nbsp;<a href=\"https://osha.europa.eu/it/tools-and-publications/publications/reports/esener1_osh_management/view\">Relazione generale</a><a href=\"https://osha.europa.eu/it/tools-and-publications/publications/reports/esener1_osh_management/view\">&nbsp;<em>in inglese&nbsp;</em>e&nbsp;</a><a href=\"https://osha.europa.eu/it/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">sintesi</a>&nbsp;<em>in 24 lingue</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Presentazione Powerpoint</a>&nbsp;che offre una panoramica dei risultati del 2009</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Si pu&ograve; accedere all&rsquo;insieme dei dati ESENER 2009 tramite il <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">servizio dati del Regno Unito dell&rsquo;universit&agrave; di Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-1\" target=\"_blank\">il portale europeo dei dati</a> e <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "<ul type=\"disc\">
+<li>Eiropas uzņēmumu apsekojums par jaunajiem un nākotnes riska veidiem (<em>ESENER</em>) &mdash; Darba dro&scaron;ības un veselības aizsardzības risku pārvaldī&scaron;ana darbavietās (2010.):&nbsp;<a href=\"https://osha.europa.eu/lv/tools-and-publications/publications/reports/esener1_osh_management/view\">Pārskata ziņojums</a>&nbsp;<em>angļu valodā&nbsp;</em>un&nbsp;<a href=\"https://osha.europa.eu/lv/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Kopsavilkums</a>&nbsp;<em>24 valodās</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Prezentācija Powerpoint formātā</a>, kas sniedz pārskatu pa 2009. gada apsekojuma rezultātiem</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>2009.&nbsp;gada <em>ESENER</em> datu kopai var piekļūt, ejot uz <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Apvienotās Karalistes Eseksas Universitātes datu dienesta mājas lapu</a>, <a href=\"https://data.europa.eu/euodp/lv/data/dataset/esener-1\" target=\"_blank\">Eiropas datu portālu</a> un <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\"><em>GESIS</em> mājas lapu</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "<ul type=\"disc\">
+<li>&bdquo;Europos įmonių apklausa apie naują ir kylančią riziką (ESENER). Darbuotojų saugos ir sveikatos valdymas (2010 m.)&ldquo;;&nbsp;<a href=\"https://osha.europa.eu/lt/tools-and-publications/publications/reports/esener1_osh_management/view\">apžvalgos ataskaita</a>&nbsp;<em>(anglų k.)&nbsp;</em>ir&nbsp;<a href=\"https://osha.europa.eu/lt/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">santrauka</a>&nbsp;<em>(24 kalbomis);</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">&bdquo;Powerpoint&ldquo; skaidrės</a>, kuriose apžvelgiami 2009 m. apklausos rezultatai.</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>ESENER 2009 duomenų rinkinį galima rasti <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Jungtinės Karalystės Esekso universiteto duomenų tarnyboje</a>, <a href=\"https://data.europa.eu/euodp/lt/data/dataset/esener-1\" target=\"_blank\">Europos duomenų portale</a> ir <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "<ul type=\"disc\">
+<li>Eur&oacute;pai v&aacute;llalati felm&eacute;r&eacute;s az &uacute;j &eacute;s &uacute;jonnan megjelenő kock&aacute;zatokr&oacute;l (ESENER) &shy; A munkahelyi biztons&aacute;g &eacute;s eg&eacute;szs&eacute;gv&eacute;delem kezel&eacute;se (2010):&nbsp;<a href=\"https://osha.europa.eu/hu/tools-and-publications/publications/reports/esener1_osh_management/view\">&Aacute;ttekintő jelent&eacute;s</a>&nbsp;<em>angolul&nbsp;</em>&eacute;s&nbsp;<a href=\"https://osha.europa.eu/hu/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">&Ouml;sszefoglal&oacute;</a>&nbsp;<em>24 nyelven</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpoint prezent&aacute;ci&oacute;</a>&nbsp;a 2009-es eredm&eacute;nyek &aacute;ttekint&eacute;s&eacute;vel</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>A 2009.&nbsp;&eacute;vi ESENER adatk&eacute;szlet&eacute;nek hozz&aacute;f&eacute;rhetős&eacute;ge: <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">az Essexi Egyetem egyes&uuml;lt kir&aacute;lys&aacute;gi adatarch&iacute;vuma</a>, <a href=\"https://data.europa.eu/euodp/hu/data/dataset/esener-1\" target=\"_blank\">az Eur&oacute;pai Adatport&aacute;l</a> &eacute;s a <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "<ul type=\"disc\">
+<li>Stħarriġ Ewropew ta' Intrapriżi dwar Riskji Ġodda u Emerġenti (ESENER) - Ġestjoni tas-Saħħa u s-Sigurt&agrave; fuq il-post tax-xogħol (2010):&nbsp;<a href=\"https://osha.europa.eu/mt/tools-and-publications/publications/reports/esener1_osh_management/view\">Ħarsa ġenerali rapport&nbsp;</a><em>bl-Ingliż</em>&nbsp;u<a href=\"https://osha.europa.eu/mt/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Sommarju&nbsp;</a><em>f'24 lingwa</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Preżentazzjoni Powerpoint&nbsp;</a>tipprovdi ħarsa ġenerali tar-riżultati tal-2009</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Is-sett ta&rsquo; data ta&rsquo; ESENER 2009 jista&rsquo; jiġi aċċessat permezz tas-<a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Servizz tad-Data tar-Renju Unit tal-Universit&agrave; ta&rsquo; Essex</a>, <a href=\"https://data.europa.eu/euodp/mt/data/dataset/esener-1\" target=\"_blank\">il-portal Ewropew tad-data</a> u <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "<ul type=\"disc\">
+<li>Europese bedrijvenenqu&ecirc;te over nieuwe en opkomende risico's (Esener) &ndash; Managing safety and health at work (Beheer van veiligheid en gezondheid op het werk, 2010):&nbsp;<a href=\"https://osha.europa.eu/nl/tools-and-publications/publications/reports/esener1_osh_management/view\">overzichtsrapport</a>&nbsp;<em>in het Engels&nbsp;</em>en&nbsp;<a href=\"https://osha.europa.eu/nl/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">samenvatting</a>&nbsp;<em>in 24 talen</em></li>
+</ul>
+<ul>
+<li>een&nbsp;<a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpoint-presentatie</a>&nbsp;met een overzicht van de resultaten uit 2009</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>De gegevensset van Esener&nbsp;2009 is toegankelijk via de <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service van de Universiteit van Essex</a>, <a href=\"https://data.europa.eu/euodp/nl/data/dataset/esener-1\" target=\"_blank\">het opendataportaal van de EU</a> en <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "<ul type=\"disc\">
+<li>European Survey of Enterprises on New and Emerging Risks (ESENER) &ndash; Managing safety and health at work (2010):&nbsp;<a href=\"https://osha.europa.eu/no/tools-and-publications/publications/reports/esener1_osh_management/view\">Oversiktsrapport</a>&nbsp;<em>p&aring; engelsk&nbsp;</em>og&nbsp;<a href=\"https://osha.europa.eu/no/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Sammendrag</a>&nbsp;<em>p&aring; 24 spr&aring;k</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">PowerPoint-presentasjon</a>&nbsp;med en oversikt over funnene fra 2009</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Datasettet for ESENER 2009 er tilgjengelig via <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-1\" target=\"_blank\">the European data portal</a> og <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "<ul type=\"disc\">
+<li>Europejskie badanie przedsiębiorstw na temat nowych i pojawiających się zagrożeń (ESENER) &ndash; Zarządzanie bezpieczeństwem i higieną pracy (2010):&nbsp;<a href=\"https://osha.europa.eu/pl/tools-and-publications/publications/reports/esener1_osh_management/view\">Sprawozdanie og&oacute;lne</a>&nbsp;<em>w jęz. angielskim&nbsp;</em>i&nbsp;<a href=\"https://osha.europa.eu/pl/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Streszczenie</a>&nbsp;<em>w 24 językach</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Prezentacja w programie Powerpoint</a>&nbsp;zawierająca podsumowanie wynik&oacute;w badania z 2009 r.</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Dostęp do zbioru danych ESENER 2009 można uzyskać za pośrednictwem <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">portalu UK Data Service prowadzonego przez Uniwersytet w Essex</a>, <a href=\"https://data.europa.eu/euodp/pl/data/dataset/esener-1\" target=\"_blank\">portalu danych UE</a> i <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "<ul type=\"disc\">
+<li>Inqu&eacute;rito Europeu &agrave;s Empresas sobre Riscos Novos e Emergentes (ESENER) - Gest&atilde;o da seguran&ccedil;a e sa&uacute;de no trabalho (2010):&nbsp;<a href=\"https://osha.europa.eu/pt/tools-and-publications/publications/reports/esener1_osh_management/view\">Relat&oacute;rio geral</a>&nbsp;<em>dispon&iacute;vel em ingl&ecirc;s&nbsp;</em>e&nbsp;<a href=\"https://osha.europa.eu/pt/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">S&iacute;ntese</a>&nbsp;<em>dispon&iacute;vel em 24 l&iacute;nguas</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Apresenta&ccedil;&atilde;o em Powerpoint</a>, que apresenta uma perspetiva geral dos resultados de 2009</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>O conjunto de dados do ESENER 2009 est&aacute; dispon&iacute;vel no <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service da Universidade de Essex</a>, no <a href=\"https://data.europa.eu/euodp/pt/data/dataset/esener-1\" target=\"_blank\">Portal Europeu de Dados</a> e no <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "<ul type=\"disc\">
+<li>Sondajul european &icirc;n r&acirc;ndul &icirc;ntreprinderilor privind riscurile noi și emergente (ESENER) &ndash; Gestionarea sănătății și securității &icirc;n muncă (2010):&nbsp;<a href=\"https://osha.europa.eu/ro/tools-and-publications/publications/reports/esener1_osh_management/view\">Raport general</a>&nbsp;<em>&icirc;n limba engleză&nbsp;</em>și&nbsp;<a href=\"https://osha.europa.eu/ro/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Rezumat</a>&nbsp;<em>&icirc;n 24 de limbi</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Prezentare PowerPoint</a>&nbsp;care oferă o imagine de ansamblu asupra rezultatelor din 2009</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Setul de date ESENER 2009 poate fi accesat prin intermediul platformelor <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a> (Serviciul de date din Regatul Unit al Universității Essex), <a href=\"https://data.europa.eu/euodp/ro/data/dataset/esener-1\" target=\"_blank\">European data portal</a> (Portalul european de date) și <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "<ul type=\"disc\">
+<li>Eur&oacute;psky prieskum podnikov v nov&yacute;ch a vznikaj&uacute;cich riz&iacute;k&aacute;ch (ESENER) &ndash; Riadenie bezpečnosti a ochrany zdravia pri pr&aacute;ci (2010):&nbsp;<a href=\"https://osha.europa.eu/sk/tools-and-publications/publications/reports/esener1_osh_management/view\">Spr&aacute;va</a>&nbsp;<em>v angličtine&nbsp;</em>a&nbsp;<a href=\"https://osha.europa.eu/sk/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">zhrnutie</a>&nbsp;<em>v 24 jazykoch</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">powerpointov&uacute; prezent&aacute;ciu</a>, ktor&aacute; obsahuje prehľad v&yacute;sledkov z roku 2009</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>D&aacute;tov&yacute; s&uacute;bor ESENER 2009 m&ocirc;žete n&aacute;jsť prostredn&iacute;ctvom <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sk/data/dataset/esener-1\" target=\"_blank\">Eur&oacute;pskeho d&aacute;tov&eacute;ho port&aacute;lu</a> a&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "<ul type=\"disc\">
+<li>Evropska raziskava v podjetjih o novih in nastajajočih tveganjih (ESENER) &ndash; Upravljanje varnosti in zdravja pri delu (2010):&nbsp;<a href=\"https://osha.europa.eu/sl/tools-and-publications/publications/reports/esener1_osh_management/view\">Pregledno poročilo</a>&nbsp;<em>v angle&scaron;čini&nbsp;</em>in&nbsp;<a href=\"https://osha.europa.eu/sl/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">povzetek</a>&nbsp;<em>v 24 jezikih</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Predstavitev v Powerpointu</a>, ki zagotavlja pregled rezultatov iz leta 2009</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>D&aacute;tov&yacute; s&uacute;bor ESENER 2009 m&ocirc;žete n&aacute;jsť prostredn&iacute;ctvom <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sk/data/dataset/esener-1\" target=\"_blank\">Eur&oacute;pskeho d&aacute;tov&eacute;ho port&aacute;lu</a> a&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<ul type=\"disc\">
+<li>Kyselytutkimus Euroopan yrityksille uusista ja kehittyvist&auml; riskeist&auml; (ESENER) &ndash; Ty&ouml;suojelun hallinta (2010):&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener1_osh_management/view\">yhteenvetokertomus</a>&nbsp;<em>englanniksi&nbsp;</em>ja&nbsp;<a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">tiivistelm&auml;</a>&nbsp;<em>24 kielell&auml;</em></li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpoint-yhteenveto</a>&nbsp;vuonna 2009 saaduista tuloksista</li>
+<li>ESENER-2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>ESENER 2009:n tiedostot saa n&auml;ht&auml;v&auml;ksi <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Yhdistyneen kuningaskunnan datapalvelun (Essexin yliopisto)</a>, <a href=\"https://data.europa.eu/euodp/fi/data/dataset/esener-1\" target=\"_blank\">Euroopan dataportaalin</a> ja <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>-tietoportaalin kautta.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<ul type=\"disc\">
+<li>Den europeiska f&ouml;retagsunders&ouml;kningen om nya och framv&auml;xande risker (Esener) &ndash; Hantering av arbetsmilj&ouml;fr&aring;gor (2010):&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/esener1_osh_management/view\">&Ouml;versiktsrapport</a>&nbsp;<em>p&aring; engelska&nbsp;</em>och&nbsp;<a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">sammanfattning</a>&nbsp;<em>p&aring; 24 spr&aring;k</em>.</li>
+</ul>
+<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpointpresentation</a>&nbsp;med en &ouml;versikt av resultaten fr&aring;n 2009.</li>
+<li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Dataupps&auml;ttningen fr&aring;n Esener 2009 kan n&aring;s via <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sv/data/dataset/esener-1\" target=\"_blank\">europeiska dataportalen</a> och <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">Gesis</a>.</p>");
 
 SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
@@ -566,31 +707,163 @@ SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Publication_Group1_ESENER2014");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "<ul><li><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Overview report</a></span></li><li><span><a href=\"https://osha.europa.eu/en/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>A first findings report</span></a></span></li><li><span><a href=\"https://osha.europa.eu/en/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">A summary report</a></span></li><li><span>ESENER 2014: <a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology</a></span></li></ul><p>ESENER 2014 dataset can be accessed via the <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Archive (UKDA) of the University of Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2\" target=\"_blank\">the European data portal</a> and <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Обзорен доклад</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/bg/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Доклад с първоначални резултати</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/bg/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Резюме</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Данните от ESENER 2014 са достъпни чрез&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Archive (UKDA) на Университета на Есекс</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=bg\" target=\"_blank\">Европейски Портал за данни</a>&nbsp;<span>и&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 přehled</a></span></span></li><li><a href=\"https://osha.europa.eu/cs/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>zpráva o prvních zjištěních</span></a></li><li><span><a href=\"https://osha.europa.eu/cs/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">souhrnná zpráva</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Soubor údajů z průzkumu ESENER-2014 je k dispozici v&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">datovém archivu Univerzity v Essexu</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=cs\" target=\"_blank\">Evropský Datový Portál</a>&nbsp;<span>a&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">institutu GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 oversigtsrapport</a></span></span></li><li><a href=\"https://osha.europa.eu/da/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Rapport om første resultater</span></a></li><li><span><a href=\"https://osha.europa.eu/da/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Sammendrag</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>ESENER 2014-datasættet kan tilgås via&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Archive (UKDA) ved University of Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=da\" target=\"_blank\">Europæisk Dataportal</a>&nbsp;<span>og&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Übersichtsbericht</a></span></span></li><li><a href=\"https://osha.europa.eu/de/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Ein Bericht mit ersten Ergebnissen</span></a></li><li><span><a href=\"https://osha.europa.eu/de/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Ein zusammenfassender Bericht</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Der Datensatz zu ESENER 2014 kann über das&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Archive (UKDA) der University of Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=de\" target=\"_blank\">Europäisches Datenportal</a>&nbsp;<span>und&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>&nbsp;abgerufen werden.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 ülevaatlik aruanne</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/et/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Aruanne esimeste järelduste kohta</span></a></span></span></li><li><a href=\"https://osha.europa.eu/et/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Kokkuvõtlik aruanne</a></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>ESENER 2014 andmekogum on kättesaadav&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Essexi ülikooli Ühendkuningriigi andmearhiivi (UKDA)</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=et\" target=\"_blank\">Euroopa Andmeportaal</a>&nbsp;<span>ja&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">sotsiaalteaduste instituudi GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>&nbsp;kaudu.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Έκθεση επισκόπησης</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/el/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Πρώτα πορίσματα</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/el/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Συνοπτική έκθεση</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>Τα δεδομένα της ESENER 2014 είναι προσβάσιμα μέσω του&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Αρχείου Δεδομένων του Ηνωμένου Βασιλείου (UKDA) του πανεπιστημίου του Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=el\" target=\"_blank\">Ευρωπαϊκή Πύλη Δεδομένων</a>&nbsp;<span>και του&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Informe general</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/es/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Un primer informe de resultados</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/es/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Un informe resumido</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>El conjunto de datos de ESENER 2014 está disponible en el&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">archivo de datos del Reino Unido (UKDA) de la Universidad de Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=es\" target=\"_blank\">Europeo Portal de datos</a>&nbsp;<span>y&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 rapport général</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/fr/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>un rapport sur les premières conclusions;</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/fr/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">un rapport de synthèse</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>Il est possible d’accéder aux séries de données ESENER 2014 par le biais de&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Archive (UKDA) de l’université d’Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=fr\" target=\"_blank\">Portail européen de données</a>&nbsp;<span>et&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Pregledno izvješće</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/hr/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Izvješće o prvim zaključcima</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/hr/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Sažetak izvješća</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>Skupu podataka o istraživanju ESENER 2014 možete pristupiti putem arhive Sveučilišta u Essexu&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Archive (UKDA) of the University of Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=hr\" target=\"_blank\">Europski Portal Podataka</a>&nbsp;<span>i instituta&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 yfirlit</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/is/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Skýrsla með fyrstu niðurstöðum</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/is/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Samantekt</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>ESENER-1 gagnasettið má nálgast í gegnum&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK gagnasafn (UKDA) Háskólans í Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=en\" target=\"_blank\">European Data Portal</a>&nbsp;<span>og&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Relazione generale</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/it/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Relazione sui “primi risultati”</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/it/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Relazione di sintesi</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>Puoi accedere all’insieme dei dati relativi all’indagine europea tra le imprese sui rischi nuovi ed emergenti (ESENER) 2014 tramite&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">l’archivio dei dati del Regno Unito (UK Data Archive, UKDA) dell’Università di Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=it\" target=\"_blank\">Portale Europeo dei Dati</a>&nbsp;<span>e&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Pārskata ziņojums</a></span></span></li><li><a href=\"https://osha.europa.eu/lv/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Ziņojums par pirmajiem secinājumiem</span></a></li><li><span><a href=\"https://osha.europa.eu/lv/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Kopsavilkuma ziņojums</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><em>ESENER 2014</em>&nbsp;datu kopai var piekļūt caur&nbsp;<a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">AK Eseksas Universitātes datu arhīvu (<em>UKDA</em>)<span class=\"osha_target_external_link\">&nbsp;</span></a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=lv\" target=\"_blank\">Eiropas datu portāls</a> un caur&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\"><em>GESIS</em>.<span class=\"osha_target_external_link\">&nbsp;</span></a></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 apžvalgos ataskaita</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/lt/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>pirmųjų išvadų ataskaita;</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/lt/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">ataskaitos santrauka.</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>Su 2014 m. ESENER apklausos duomenų rinkiniu galima susipažinti&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">JK Esekso universiteto duomenų archyve (angl. UKDA)</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=lt\" target=\"_blank\">Europos duomenų portalas</a>&nbsp;<span>ir&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "<ul type=\"disc\"><li>Európai vállalati felmérés az új és újonnan megjelenő kockázatokról (ESENER) &shy; A munkahelyi biztonság és egészségvédelem kezelése (2010):&nbsp;<a href=\"https://osha.europa.eu/hu/tools-and-publications/publications/reports/esener1_osh_management/view\">Áttekintő jelentés</a>&nbsp;<em>angolul&nbsp;</em>és&nbsp;<a href=\"https://osha.europa.eu/hu/tools-and-publications/publications/reports/en_esener1-summary.pdf/view\">Összefoglaló</a>&nbsp;<em>24 nyelven</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\">Powerpoint prezentáció</a>&nbsp;a 2009-es eredmények áttekintésével</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\">Az ESENER 2009 adatkészlete&nbsp;<a href=\"http://discover.ukdataservice.ac.uk/?q=esener\" target=\"_blank\">az Essexi Egyetem egyesült királysági adatarchívumán (UKDA)<span class=\"osha_target_external_link\">&nbsp;</span></a>, <a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-1?locale=hu\" target=\"_blank\">Európai Adatportál</a>, illetve a&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>&nbsp;rendszeren keresztül érhető el.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Ħarsa ġenerali rapport</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/mt/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Rapport tal-ewwel riżultati</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/mt/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Rapport ta 'sommarju</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>Is-sett tad-data ta’ ESENER 2014 jista’ jiġi aċċessat permezz tal-</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Archive (UKDA) of the University of Essex (Arkivju tad-Data tar-Renju Unit (UKDA) tal-Università ta’ Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=mt\" target=\"_blank\">Ewropew Portal tad-Data</a>&nbsp;<span>u&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "<ul><li><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 overzichtsrapport</a></span></li><li><span><a href=\"https://osha.europa.eu/nl/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>een rapport met de eerste bevindingen</span></a></span></li><li><span><a href=\"https://osha.europa.eu/nl/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">een samenvattend rapport</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>De gegevensset van Esener 2014 is toegankelijk via het&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Archive (UKDA) van de Universiteit van</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=nl\" target=\"_blank\">Europees Dataportaal</a>&nbsp;e<span>n&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Oversiktsrapport</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/no/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>En rapport med de første funnene fra undersøkelsen</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/no/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">En sammendragsrapport</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>ESENER 2014 datasettet er tilgjengelig via&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Archive (UKDA) fra University of Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=no\" target=\"_blank\">Den europeiske Dataportalen</a>&nbsp;<span>og&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Sprawozdanie ogólne</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/pl/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Sprawozdanie zawierające wstępne ustalenia</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/pl/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Streszczenie sprawozdania</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>Zestaw danych z badania ESENER 2014 jest dostępny za pośrednictwem bazy&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Archive (UKDA) Uniwersytetu w Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=pl\" target=\"_blank\">Europejski Portal Danych</a>&nbsp;<span>i&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Relatório geral</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/pt/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Um relatório dos primeiros resultados</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/pt/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Um relatório de síntese</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span class=\"osha_target_external_link\"><span>O conjunto de dados do ESENER 2014 está disponível em:&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Arquivo de dados do Reino Unido (UKDA) da Universidade de Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=pt\" target=\"_blank\">Portal Europeu Portal de Dados</a>&nbsp;<span>e&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Raport general</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/ro/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Un raport al primelor constatări</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/ro/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Un raport de sinteză</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>Setul de date ESENER 2014 poate fi accesat prin&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">arhiva de date din Regatul Unit (UKDA) a Universității Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=ro\" target=\"_blank\">European Portalul de date</a>&nbsp;<span>și prin&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "<ul><li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Správa</a></li><li><span><a href=\"https://osha.europa.eu/sk/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>prvé zistenia</span></a></span></li><li><span><a href=\"https://osha.europa.eu/sk/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">súhrnná správa</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>Súbor údajov z prieskumu ESENER 2014 je dostupný prostredníctvom&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">archívu údajov Spojeného kráľovstva (UK Data Archive, UKDA) University of Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=sk\" target=\"_blank\">Portál Európskych Údajov</a>&nbsp;<span>a&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "<ul><li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\"><span><span>ESENER-2 Pregledno poročilo</span></span></a></li><li><span><span><a href=\"https://osha.europa.eu/sl/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>poročilo o prvih ugotovitvah;</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/sl/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">povzetek poročila.</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>Do nabora podatkov raziskave ESENER 2014 je mogoče dostopati prek&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">arhiva podatkov Združenega kraljestva (UKDA) Univerze v Essexu</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=sl\" target=\"_blank\">Evropski podatkovni portal</a>&nbsp;<span>in&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">nemškega Inštituta za družbene vede (GESIS)<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2&nbsp;</a><a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener1_osh_management/view\">yhteenvetokertomus</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Kertomus alustavista tuloksista</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Tiivistelmä</a></span></li><li>ESENER-2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>ESENER 2014 -tietoaineistoon pääsee seuraavien kautta:&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Essexin yliopiston Britannian tietoarkisto (UKDA)</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=fi\" target=\"_blank\">Euroopan Dataportaali</a>&nbsp;<span>ja&nbsp;</span><a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a><span>.</span></li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Översiktsrapport</a></span></span></li><li><a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>En första resultatrapport</span></a></li><li><span><a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Sammanfattning</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li><li><span>Datauppsättningen från Esener 2014 kan nås via&nbsp;</span><a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Archive (UKDA) of the University of Essex</a>,&nbsp;<a href=\"https://www.europeandataportal.eu/data/#/datasets/esener-2?locale=sv\" target=\"_blank\">Europeiska Dataportalen</a> och&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a>.</li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "<ul><li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Overview report</a></li><li><a href=\"https://osha.europa.eu/en/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">A first findings report</a></li><li><a href=\"https://osha.europa.eu/en/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">A summary report</a></li><li>ESENER 2014: <a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology</a></li></ul><p>ESENER 2014 dataset can be accessed via the <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-2\" target=\"_blank\">the European data portal</a> and <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "<ul><li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Обзорен доклад</a></li><li><a href=\"https://osha.europa.eu/bg/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Доклад с първоначални резултати</a></li><li><a href=\"https://osha.europa.eu/bg/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Резюме</a></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li></ul><p>Наборът от данни от ESENER 2014 е достъпен чрез <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Службата за данни на Обединеното кралство към Университета в Есекс</a>, <a href=\"https://data.europa.eu/euodp/bg/data/dataset/esener-2\" target=\"_blank\">Европейския портал за данни</a> и <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 přehled</a></li>
+<li><a href=\"https://osha.europa.eu/cs/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">zpr&aacute;va o prvn&iacute;ch zji&scaron;těn&iacute;ch</a></li>
+<li><a href=\"https://osha.europa.eu/cs/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">souhrnn&aacute; zpr&aacute;va</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a><span class=\"osha_target_external_link\">Soubor &uacute;dajů z průzkumu</span></li>
+</ul>
+<p><span class=\"osha_target_external_link\">Datov&yacute; soubor průzkumu ESENER 2014 je dostupn&yacute; prostřednictv&iacute;m <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">datov&eacute; služby Spojen&eacute;ho kr&aacute;lovstv&iacute; při University of Essex</a>, <a href=\"https://data.europa.eu/euodp/cs/data/dataset/esener-2\" target=\"_blank\">evropsk&eacute;ho datov&eacute;ho port&aacute;lu</a> a <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</span></p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 oversigtsrapport</a></li>
+<li><a href=\"https://osha.europa.eu/da/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Rapport om f&oslash;rste resultater</a></li>
+<li><a href=\"https://osha.europa.eu/da/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Sammendrag</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Der er adgang til ESENER 2014-datas&aelig;ttet via <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Det Forenede Kongeriges datatjeneste ved University of Essex</a>, <a href=\"https://data.europa.eu/euodp/da/data/dataset/esener-2\" target=\"_blank\">Den Europ&aelig;iske Dataportal</a> og <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 &Uuml;bersichtsbericht</a></li>
+<li><a href=\"https://osha.europa.eu/de/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Ein Bericht mit ersten Ergebnissen</a></li>
+<li><a href=\"https://osha.europa.eu/de/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Ein zusammenfassender Bericht</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Der Datensatz ESENER&nbsp;2014 ist &uuml;ber <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">den Datendienst des Vereinigten K&ouml;nigreichs der Universit&auml;t Essex</a>, <a href=\"https://data.europa.eu/euodp/de/data/dataset/esener-2\" target=\"_blank\">das Europ&auml;ische Datenportal</a> und <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a> abrufbar.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 &uuml;levaatlik aruanne</a></li>
+<li><a href=\"https://osha.europa.eu/et/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Aruanne esimeste j&auml;relduste kohta</a></li>
+<li><a href=\"https://osha.europa.eu/et/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Kokkuv&otilde;tlik aruanne</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Uuringu ESENER 2014 andmekogumile p&auml;&auml;seb ligi <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Essexi &uuml;likooli hallatava &Uuml;hendkuningriigi andmearhiivi</a>, <a href=\"https://data.europa.eu/euodp/et/data/dataset/esener-2\" target=\"_blank\">Euroopa andmeportaali</a> ja <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESISe</a> kaudu.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "<ul><li><span><span><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Έκθεση επισκόπησης</a></span></span></li><li><span><span><a href=\"https://osha.europa.eu/el/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\"><span>Πρώτα πορίσματα</span></a></span></span></li><li><span><a href=\"https://osha.europa.eu/el/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Συνοπτική έκθεση</a></span></li><li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li></ul><p>Το σύνολο δεδομένων της έρευνας ESENER 2014 διατίθεται μέσω της&nbsp;<a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Υπηρεσίας Δεδομένων του Πανεπιστημίου Essex του Ηνωμένου Βασιλείου</a>,&nbsp;<a href=\"https://data.europa.eu/euodp/el/data/dataset/esener-2\" target=\"_blank\">της ευρωπαϊκής δικτυακής πύλης δεδομένων</a>και του&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">Ινστιτούτου GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Informe general</a></li>
+<li><a href=\"https://osha.europa.eu/es/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Un primer informe de resultados</a></li>
+<li><a href=\"https://osha.europa.eu/es/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Un informe resumido</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Se puede acceder al conjunto de datos de ESENER 2014 a trav&eacute;s del <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Servicio de Datos del Reino Unido de la Universidad de Essex</a>, <a href=\"https://data.europa.eu/euodp/es/data/dataset/esener-2\" target=\"_blank\">el Portal Europeo de Datos</a> y <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 rapport g&eacute;n&eacute;ral</a></li>
+<li><a href=\"https://osha.europa.eu/fr/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">un rapport sur les premi&egrave;res conclusions;</a></li>
+<li><a href=\"https://osha.europa.eu/fr/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">un rapport de synth&egrave;se</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>L&rsquo;ensemble de donn&eacute;es de l&rsquo;&eacute;dition&nbsp;2014 de l&rsquo;enqu&ecirc;te ESENER est accessible via le <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">service de donn&eacute;es du Royaume-Uni de l&rsquo;universit&eacute; d&rsquo;Essex</a>, <a href=\"https://data.europa.eu/euodp/fr/data/dataset/esener-2\" target=\"_blank\">le portail de donn&eacute;es europ&eacute;en</a> et <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Pregledno izvje&scaron;će</a></li>
+<li><a href=\"https://osha.europa.eu/hr/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Izvje&scaron;će o prvim zaključcima</a></li>
+<li><a href=\"https://osha.europa.eu/hr/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Sažetak izvje&scaron;ća</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Skupu podataka iz istraživanja ESENER&nbsp;2014 moguće je pristupiti putem <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Podatkovne arhive UK‑a Sveučili&scaron;ta u Essexu</a>, <a href=\"https://data.europa.eu/euodp/hr/data/dataset/esener-2\" target=\"_blank\">Europskog portala podataka</a> i baze podataka <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 yfirlit</a></li>
+<li><a href=\"https://osha.europa.eu/is/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Sk&yacute;rsla me&eth; fyrstu ni&eth;urst&ouml;&eth;um</a></li>
+<li><a href=\"https://osha.europa.eu/is/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Samantekt</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>ESENER 2014 gagnasafni&eth; er h&aelig;gt a&eth; n&aacute;lgast &iacute; gegnum <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Gagna&thorn;j&oacute;nustu Bretlands hj&aacute; H&aacute;sk&oacute;lanum &iacute; Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-2\" target=\"_blank\">Evr&oacute;psku gagnag&aacute;ttina</a> og <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Relazione generale</a></li>
+<li><a href=\"https://osha.europa.eu/it/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Relazione sui &ldquo;primi risultati&rdquo;</a></li>
+<li><a href=\"https://osha.europa.eu/it/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Relazione di sintesi</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Si pu&ograve; accedere all&rsquo;insieme dei dati ESENER 2014 tramite il <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">servizio dati del Regno Unito dell&rsquo;universit&agrave; di Essex</a>, <a href=\"https://data.europa.eu/euodp/it/data/dataset/esener-2\" target=\"_blank\">il portale europeo dei dati</a> e <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Pārskata ziņojums</a></li>
+<li><a href=\"https://osha.europa.eu/lv/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Ziņojums par pirmajiem secinājumiem</a></li>
+<li><a href=\"https://osha.europa.eu/lv/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Kopsavilkuma ziņojums</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>2014.&nbsp;gada <em>ESENER</em> datu kopai var piekļūt, ejot uz <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Apvienotās Karalistes Eseksas Universitātes datu dienesta mājas lapu</a>, <a href=\"https://data.europa.eu/euodp/lv/data/dataset/esener-2\" target=\"_blank\">Eiropas datu portālu</a> un <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\"><em>GESIS</em> mājas lapu</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 apžvalgos ataskaita</a></li>
+<li><a href=\"https://osha.europa.eu/lt/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">pirmųjų i&scaron;vadų ataskaita;</a></li>
+<li><a href=\"https://osha.europa.eu/lt/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">ataskaitos santrauka.</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>ESENER 2014 duomenų rinkinį galima rasti <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Jungtinės Karalystės Esekso universiteto duomenų tarnyboje</a>, <a href=\"https://data.europa.eu/euodp/lt/data/dataset/esener-2\" target=\"_blank\">Europos duomenų portale</a> ir <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 &Aacute;ttekintő jelent&eacute;s</a></li>
+<li><a href=\"https://osha.europa.eu/hu/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Jelent&eacute;s az első eredm&eacute;nyekről</a></li>
+<li><a href=\"https://osha.europa.eu/hu/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">&Ouml;sszefoglal&oacute; jelent&eacute;s</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>A 2014.&nbsp;&eacute;vi ESENER adatk&eacute;szlet&eacute;nek hozz&aacute;f&eacute;rhetős&eacute;ge: <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">az Essexi Egyetem egyes&uuml;lt kir&aacute;lys&aacute;gi adatarch&iacute;vuma</a>, <a href=\"https://data.europa.eu/euodp/hu/data/dataset/esener-2\" target=\"_blank\">az Eur&oacute;pai Adatport&aacute;l</a> &eacute;s a <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Ħarsa ġenerali rapport</a></li>
+<li><a href=\"https://osha.europa.eu/mt/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Rapport tal-ewwel riżultati</a></li>
+<li><a href=\"https://osha.europa.eu/mt/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Rapport ta 'sommarju</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Is-sett ta&rsquo; data ta&rsquo; ESENER 2014 jista&rsquo; jiġi aċċessat permezz tas-<a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Servizz tad-Data tar-Renju Unit tal-Universit&agrave; ta&rsquo; Essex</a>, <a href=\"https://data.europa.eu/euodp/mt/data/dataset/esener-2\" target=\"_blank\">il-portal Ewropew tad-data</a> u <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 overzichtsrapport</a></li>
+<li><a href=\"https://osha.europa.eu/nl/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">een rapport met de eerste bevindingen</a></li>
+<li><a href=\"https://osha.europa.eu/nl/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">een samenvattend rapport</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>De gegevensset van Esener&nbsp;2014 is toegankelijk via de <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service van de Universiteit van Essex</a>, <a href=\"https://data.europa.eu/euodp/nl/data/dataset/esener-2\" target=\"_blank\">het opendataportaal van de EU</a> en <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Oversiktsrapport</a></li>
+<li><a href=\"https://osha.europa.eu/no/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">En rapport med de f&oslash;rste funnene fra unders&oslash;kelsen</a></li>
+<li><a href=\"https://osha.europa.eu/no/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">En sammendragsrapport</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Datasettet for ESENER 2014 er tilgjengelig via <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-2\" target=\"_blank\">the European data portal</a> og <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Sprawozdanie og&oacute;lne</a></li>
+<li><a href=\"https://osha.europa.eu/pl/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Sprawozdanie zawierające wstępne ustalenia</a></li>
+<li><a href=\"https://osha.europa.eu/pl/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Streszczenie sprawozdania</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Dostęp do zbioru danych ESENER 2014 można uzyskać za pośrednictwem <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">portalu UK Data Service prowadzonego przez Uniwersytet w Essex</a>, <a href=\"https://data.europa.eu/euodp/pl/data/dataset/esener-2\" target=\"_blank\">portalu danych UE</a> i <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Relat&oacute;rio geral</a></li>
+<li><a href=\"https://osha.europa.eu/pt/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Um relat&oacute;rio dos primeiros resultados</a></li>
+<li><a href=\"https://osha.europa.eu/pt/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Um relat&oacute;rio de s&iacute;ntese</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>O conjunto de dados do ESENER 2014 est&aacute; dispon&iacute;vel no <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service da Universidade de Essex</a>, no <a href=\"https://data.europa.eu/euodp/pt/data/dataset/esener-2\" target=\"_blank\">Portal Europeu de Dados</a> e no <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Raport general</a></li>
+<li><a href=\"https://osha.europa.eu/ro/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Un raport al primelor constatări</a></li>
+<li><a href=\"https://osha.europa.eu/ro/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Un raport de sinteză</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Setul de date ESENER 2014 poate fi accesat prin intermediul platformelor <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a> (Serviciul de date din Regatul Unit al Universității Essex), <a href=\"https://data.europa.eu/euodp/ro/data/dataset/esener-2\" target=\"_blank\">European data portal</a> (Portalul european de date) și <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Spr&aacute;va</a></li>
+<li><a href=\"https://osha.europa.eu/sk/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">prv&eacute; zistenia</a></li>
+<li><a href=\"https://osha.europa.eu/sk/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">s&uacute;hrnn&aacute; spr&aacute;va</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>D&aacute;tov&yacute; s&uacute;bor ESENER 2014 m&ocirc;žete n&aacute;jsť prostredn&iacute;ctvom <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sk/data/dataset/esener-2\" target=\"_blank\">Eur&oacute;pskeho d&aacute;tov&eacute;ho port&aacute;lu</a> a&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 Pregledno poročilo</a></li>
+<li><a href=\"https://osha.europa.eu/sl/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">poročilo o prvih ugotovitvah;</a></li>
+<li><a href=\"https://osha.europa.eu/sl/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">povzetek poročila.</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>D&aacute;tov&yacute; s&uacute;bor ESENER 2014 m&ocirc;žete n&aacute;jsť prostredn&iacute;ctvom <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sk/data/dataset/esener-2\" target=\"_blank\">Eur&oacute;pskeho d&aacute;tov&eacute;ho port&aacute;lu</a> a&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2&nbsp;</a><a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener1_osh_management/view\">yhteenvetokertomus</a></li>
+<li><a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">Kertomus alustavista tuloksista</a></li>
+<li><a href=\"https://osha.europa.eu/fi/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Tiivistelm&auml;</a></li>
+<li>ESENER-2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>ESENER 2014:n tiedostot saa n&auml;ht&auml;v&auml;ksi <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Yhdistyneen kuningaskunnan datapalvelun (Essexin yliopisto)</a>, <a href=\"https://data.europa.eu/euodp/fi/data/dataset/esener-2\" target=\"_blank\">Euroopan dataportaalin</a> ja <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>-tietoportaalin kautta.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<ul>
+<li><a href=\"https://osha.europa.eu/sites/default/files/ESENER2-Overview_report.pdf\">ESENER-2 &Ouml;versiktsrapport</a></li>
+<li><a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/esener-ii-first-findings.pdf/view\">En f&ouml;rsta resultatrapport</a></li>
+<li><a href=\"https://osha.europa.eu/sv/tools-and-publications/publications/reports/esener-ii-summary.pdf/view\">Sammanfattning</a></li>
+<li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
+</ul>
+<p>Dataupps&auml;ttningen fr&aring;n Esener 2014 kan n&aring;s via <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sv/data/dataset/esener-2\" target=\"_blank\">europeiska dataportalen</a> och <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">Gesis</a>.</p>");
 
 SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
@@ -1272,31 +1545,454 @@ SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="ACCESSIBILITY");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "TEXT");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "<p>This site uses a setup that closely matches most international recommendations on access keys. These are:</p><ul><li>M - Site map</li><li><div style=\"display: inline !important;\">C - Contact Us</div></li><li>K - Accessibility</li><li>P - Privacy notice</li><li>D - Google Chrome</li><li>N - Legal notice</li><li>L - Change language</li><li>0 - Home</li><li>Survey</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 - Methodology</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "<p><span>Този сайт използва настройки, които съответстват на повечето международни препоръки за организация на клавишите за достъп. Те са:</span></p><ul><li>M -&nbsp;Карта на сайта</li><li><div style=\"display: inline !important;\">C -&nbsp;За контакти</div></li><li>K - Достъпност</li><li>P -&nbsp;&nbsp;Политика за поверителност</li><li>D - Google Chrome</li><li>N - Правна информация</li><li>L -&nbsp;Смяна на език</li><li>0 -&nbsp;Начало</li><li>Преглед</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Методика</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "<p><span>Tyto internetové stránky používají nastavení, které je téměř shodné s mezinárodními doporučeními o přístupových klávesách. Jedná se o tyto:</span></p><ul><li>M -&nbsp;Mapa stránek</li><li><div style=\"display: inline !important;\">C -&nbsp;Kontaktujte nás</div></li><li>K -&nbsp;Přístupnost</li><li>P - Политика за поверителност</li><li>D - Google Chrome</li><li>N -&nbsp;Právní oznámení</li><li>L -&nbsp;<span>Změnit jazyk</span></li><li>0 -&nbsp;Úvodní stránka</li><li>Průzkum</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodika</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "<p><span>Dette websted efterlever de fleste internationale retningslinjer vedrørende brugen af genvejstaster. Følgende retningslinjer er efterlevet:</span></p><ul><li>M -&nbsp;<span>Sitemap</span></li><li><div style=\"display: inline !important;\">C -&nbsp;Kontakt os</div></li><li>K -&nbsp;Tilgængelighed</li><li>P -&nbsp;Beskyttelse af personoplysninger</li><li>D - Google Chrome</li><li>N -&nbsp;Juridisk meddelelse</li><li>L -&nbsp;<span>Skift sprog</span></li><li>0 -&nbsp;Hjem</li><li>Undersøgelse</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodologi</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "<p><span>Der Aufbau dieser Site entspricht weitgehend den gängigen internationalen Empfehlungen zu Zugriffsschlüsseln. Diese sind:</span></p><ul><li>M -&nbsp;Strukturkarte</li><li><div style=\"display: inline !important;\">C -&nbsp;Kontaktieren Sie uns</div></li><li>K -&nbsp;Barrierefreiheit</li><li>P -&nbsp;Datenschutzhinweise</li><li>D - Google Chrome</li><li>N -&nbsp;Rechtlicher Hinweis</li><li>L -&nbsp;<span>Sprache ändern</span></li><li>0 -&nbsp;Startseite</li><li>Erhebung</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Methode</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "<p><span>Käesoleval saidil kasutatakse enamikule rahvusvahelistele soovitustele vastavaid juurdepääsuklahve. Need on järgmised:</span></p><ul><li>M -&nbsp;Sisukaart</li><li><div style=\"display: inline !important;\">C -&nbsp;Kontaktandmed</div></li><li>K -&nbsp;Juurdepääsetavus</li><li>P -&nbsp;Isikuandmete kaitse põhimõtted</li><li>D - Google Chrome</li><li>N -&nbsp;Õigusteave</li><li>L -&nbsp;<span>Muuda keelevalikut</span></li><li>0 -&nbsp;Avaleht</li><li>Küsitlus</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodoloogia</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "<p><span>Η ιστοσελίδα αυτή είναι οργανωμένη κατά τέτοιον τρόπο ώστε να ανταποκρίνεται στην πλειονότητα των διεθνών συστάσεων σχετικά με τα πλήκτρα πρόσβασης. Αυτά είναι:</span></p><ul><li>M -&nbsp;Χάρτης Ιστοχώρου</li><li><div style=\"display: inline !important;\">C -&nbsp;Eπικοινωνήστε μαζί μας</div></li><li>K -&nbsp;Προσβασιμότητα</li><li>P -&nbsp;Πολιτική για την προστασία της ιδιωτικής ζωής</li><li>D - Google Chrome</li><li>N -&nbsp;Ανακοίνωση νομικού περιεχομένου</li><li>L -&nbsp;<span>Αλλαγή γλώσσας</span></li><li>0 -&nbsp;Αρχική σελίδα</li><li>Έρευνα</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Μεθοδολογία</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<p><span>Este sitio utiliza un conjunto de teclas que coincide en gran parte con la mayoría de recomendaciones internacionales sobre las teclas de navegación. Son las siguientes:</span></p><ul><li>M -&nbsp;Mapa del sitio</li><li><div style=\"display: inline !important;\">C -&nbsp;Contacto</div></li><li>K -&nbsp;Accesibilidad</li><li>P -&nbsp;Política de privacidad</li><li>D - Google Chrome</li><li>N -&nbsp;Aviso jurídico</li><li>L - <span>Cambiar idioma</span></li><li>0 -&nbsp;Inicio</li><li>Encuesta</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodología</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "<p><span>Ce site utilise une configuration conforme à la plupart des recommandations internationales en matière de touches d'accès. Les touches disponibles sont les suivantes:</span></p><ul><li>M -&nbsp;Plan du site</li><li><div style=\"display: inline !important;\">C -&nbsp;Nous contacter</div></li><li>K -&nbsp;Accessibilité</li><li>P -&nbsp;Politique de confidentialité</li><li>D - Google Chrome</li><li>N -&nbsp;Avertissement juridique</li><li>L -&nbsp;<span>Changer de langue</span></li><li>0 -&nbsp;Accueil</li><li>Enquête</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Méthodologie</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "<p><span>Na ovoj se internetskoj stranici upotrebljavaju postavke koje približno odgovaraju međunarodnim preporukama u pogledu pristupnih tipki. One su:</span></p><ul><li>M -&nbsp;Mapa mjesta</li><li><div style=\"display: inline !important;\">C -&nbsp;Obratite nam se</div></li><li>K -&nbsp;Dostupnost</li><li>P -&nbsp;Pravila zaštite privatnosti</li><li>D - Google Chrome</li><li>N -&nbsp;Pravna napomena</li><li>L -&nbsp;<span>Promijeni jezik</span></li><li>0 -&nbsp;Početna stranica</li><li>Anketa</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodologija</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "<p><span>Síðan notar uppsetningu sem er mjög lík flestum alþjóðlegum tilmælum varðandi aðgangslykla. Hún er:</span></p><ul><li>M -&nbsp;Síðu kort</li><li><div style=\"display: inline !important;\">C -&nbsp;Hafa samband við okkur</div></li><li>K -&nbsp;Aðgengi</li><li>P -&nbsp;Friðhelgisstefna</li><li>D - Google Chrome</li><li>N -&nbsp;Lagalegur fyrirvari</li><li>L - B<span>reyta um tungumál</span></li><li>0 -&nbsp;Heim</li><li>Könnun</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Aðferðarfræði</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "<p><span>L’impostazione del sito rispecchia le principali raccomandazioni internazionali sui tasti a scelta rapida. In particolare:</span></p><ul><li>M -&nbsp;Mappa del sito</li><li><div style=\"display: inline !important;\">C -&nbsp;Contatti</div></li><li>K -&nbsp;Accessibilità</li><li>P -&nbsp;Politica in materia di privacy</li><li>D - Google Chrome</li><li>N -&nbsp;Avviso legale</li><li>L -&nbsp;<span>Cambia lingua</span></li><li>0 -&nbsp;Home</li><li>Indagine</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodologia</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "<p><span>Šajā vietnē ir izmantots iestatījums, kas ir ļoti pietuvināts vairumam starptautisku ieteikumu attiecībā uz piekļuves taustiņiem. Piekļuves taustiņi:</span></p><ul><li>M -&nbsp;Vietnes karte</li><li><div style=\"display: inline !important;\">C -&nbsp;Sazināties ar mums</div></li><li>K -&nbsp;Pieejamība</li><li>P -&nbsp;Privātuma politika</li><li>D - Google Chrome</li><li>N -&nbsp;Juridisks paziņojums</li><li>L -&nbsp;<span>Nomainīt valodu</span></li><li>0 -&nbsp;Sākums</li><li>Apsekojums</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodoloģija</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "<p>Šios svetainės konfigūracija atitinka daugumą tarptautinių rekomendacijų dėl prieigos klavišų. Naudojami šie prieigos klavišai:</p><ul><li>M -&nbsp;Interneto svetainės žemėlapis</li><li><div style=\"display: inline !important;\">C -&nbsp;Susisiekite su mumis</div></li></ul><ul><li>K -&nbsp;Prieinamumas</li><li>P -&nbsp;Privatumo politika</li><li>D - Google Chrome</li><li>N -&nbsp;Teisinis pranešimas</li><li>L - P<span>akeisti kalbą</span></li><li>0 -&nbsp;Pradžia</li><li>Survey</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodologija</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "<p><span>Ez a honlap a billentyűzetről történő elérés általános nemzetközi gyakorlatához igazodó beállításokat használ. Ezek a következők:</span></p><ul><li>M -&nbsp;Oldaltérkép</li><li><div style=\"display: inline !important;\">C -&nbsp;Kapcsolat</div></li><li>K -&nbsp;Elérhetőség</li><li>P -&nbsp;Adatvédelmi szabályzat</li><li>D - Google Chrome</li><li>N -&nbsp;&nbsp;Jogi nyilatkozat</li><li>L -&nbsp;<span>Nyelv átállítása</span></li><li>0 -&nbsp;Főoldal</li><li>Felmérés</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Módszertan</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "<p><span>Dan il-sit juża sistema li tixbah ħafna l-biċċa l-kbira tar-rakkomandazzjonijiet internazzjonali fir-rigward tal-kodiċi ta' aċċess. Dawn huma:</span></p><ul><li>M -&nbsp;Mappa tas-sit</li><li><div style=\"display: inline !important;\">C -&nbsp;Ikkuntattjana</div></li><li>K -&nbsp;Aċċessibbiltà</li><li>P -&nbsp;Politika dwar il-privatezza</li><li>D - Google Chrome</li><li>N -&nbsp;Avviż legali</li><li>L -&nbsp;<span>Biddel il-lingwa</span></li><li>0 -&nbsp;Paġna ewlenija</li><li>Stħarriġ</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodoloġija</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "<p><span>Voor deze website is een setup gebruikt die aansluit bij de meeste internationale aanbevelingen over toegangstoetsen. Het gaat daarbij om:</span></p><ul><li>M -&nbsp;Site map</li><li><div style=\"display: inline !important;\">C -&nbsp;Contact</div></li><li>K -&nbsp;Toegankelijkheid</li><li>P -&nbsp;Privacybeleid</li><li>D - Google Chrome</li><li>N -&nbsp;Juridische mededeling</li><li>L -&nbsp;<span>Taal veranderen</span></li><li>0 -&nbsp;Startpagina</li><li>Survey</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Enquête</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "<p><span>Dette nettstedet bruker et oppsett som er i tråd med de fleste internasjonale anbefalinger knyttet til tilgjengelighetstaster. Tilgjengelighetstastene er som følger:</span></p><ul><li>M -&nbsp;Kart over nettstedet</li><li><div style=\"display: inline !important;\">C -&nbsp;Kontakt oss</div></li><li>K -&nbsp;&nbsp;Tilgjengelighet</li><li>P -&nbsp;Personvernpolitikk</li><li>D - Google Chrome</li><li>N -&nbsp;Juridisk meddelelse</li><li>L -&nbsp;<span>&nbsp;Endring av språk</span></li><li>0 -&nbsp;Hjem</li><li>Spørreundersøkelse</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodikk</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "<p><span>Niniejsza strona internetowa opiera się na strukturze ściśle odpowiadającej międzynarodowym zaleceniom w sprawie kluczy dostępu. Należą do nich:</span></p><ul><li>M -&nbsp;Mapa witryny</li><li><div style=\"display: inline !important;\">C -&nbsp;Skontaktuj się z nami</div></li><li>K -&nbsp;Dostępność</li><li>P -&nbsp;Polityka ochrony prywatności</li><li>D - Google Chrome</li><li>N -&nbsp;Informacja prawna</li><li>L -&nbsp;<span>Zmień język</span></li><li>0 -&nbsp;Strona główna</li><li>Badanie</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodyka</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "<p><span>Este sítio Web utiliza uma configuração muito próxima das principais recomendações internacionais sobre teclas de acesso direto. A saber:</span></p><ul><li>M -&nbsp;Mapa do Sítio</li><li><div style=\"display: inline !important;\">C -&nbsp;Contacte-nos</div></li><li>K -&nbsp;Acessibilidade</li><li>P -&nbsp;Política de privacidade</li><li>D - Google Chrome</li><li>N -&nbsp;Aviso legal</li><li>L -&nbsp;<span>Mudar a língua</span></li><li>0 -&nbsp;Página inicial</li><li>Inquérito</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodologua</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "<p><span>Acest site folosește o configurare care corespunde în cea mai mare parte majorității recomandărilor internaționale privind tastele de acces. Acestea sunt:</span></p><ul><li>M -&nbsp;Harta site-ului</li><li><div style=\"display: inline !important;\">C -&nbsp;Contactați-ne</div></li><li>K -&nbsp;Accesibilitate</li><li>P -&nbsp;Politica de protecție a vieții private</li><li>D - Google Chrome</li><li>N -&nbsp;Aviz juridic</li><li>L -&nbsp;<span>Schimbarea limbii</span></li><li>0 -&nbsp;Pagina principală</li><li>Sondaj</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodologie</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "<p><span>Na tejto webovej stránke sa používa nastavenie, ktoré sa zhoduje s väčšinou medzinárodných odporúčaní pre prístupové klávesy. Sú nimi:</span></p><ul><li>M -&nbsp;Mapa stránky</li><li><div style=\"display: inline !important;\">C -&nbsp;Spojte sa s nami</div></li><li>K -&nbsp;Dostupnosť</li><li>P -&nbsp;Ochrana osobných údajov</li><li>D - Google Chrome</li><li>N -&nbsp;Právna poznámka</li><li>L -&nbsp;<span>Zmena jazyka</span></li><li>0 -&nbsp;Domovská stránka</li><li>Prieskum</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodika</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "<p><span>Na tej strani je uporabljena nastavitev, pri kateri se natančno upoštevajo mednarodna priporočila v zvezi s tipkami za dostop. To so:</span></p><ul><li>M -&nbsp;Načrt spletišča</li><li><div style=\"display: inline !important;\">C -&nbsp;Kontakt</div></li><li>K -&nbsp;Dostopnost</li><li>P -&nbsp;Politika zasebnosti</li><li>D - Google Chrome</li><li>N -&nbsp;Pravno obvestilo</li><li>L -&nbsp;<span>Spremeni jezik</span></li><li>0 -&nbsp;Domov</li><li>Raziskava</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodologija</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<p><span>Tällä sivustolla käytettävät valintanäppäimet vastaavat valtaosin kansainvälisiä suosituksia. Valintanäppäimet ovat seuraavat:</span></p><ul><li>M -&nbsp;Sivukartta</li><li><div style=\"display: inline !important;\">C -&nbsp;Ota meihin yhteyttä</div></li><li>K -&nbsp;Esteettömyys</li><li>P -&nbsp;Tietosuojakäytäntö</li><li>D - Google Chrome</li><li>N -&nbsp;Oikeudellinen huomautus</li><li>L -&nbsp;<span>Kielen vaihtaminen</span></li><li>0 -&nbsp;Aloitussivu</li><li>Tutkimus</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metodologia</li></ul>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<p><span>På den här webbplatsen används en uppsättning som i stort överensstämmer med de flesta internationella rekommendationer om snabbtangenter, nämligen</span>:</p><ul><li>M -&nbsp;Webbplatsöversikt</li><li><div style=\"display: inline !important;\">C -&nbsp;Kontakta oss</div></li><li>K -&nbsp;Tillgänglighet</li><li>P -&nbsp;Policy för integritetsskydd</li><li>D - Google Chrome</li><li>N -&nbsp;Rättsligt meddelande</li><li>L -&nbsp;<span>Ändra språk</span></li><li>0 -&nbsp;Hem</li><li>Undersökning</li></ul><p>&nbsp; &nbsp;1 - ESENER 2009<br />&nbsp; &nbsp;2 - ESENER 2014</p><ul><li>3 -&nbsp;Metod</li></ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "<p>This site uses a setup that closely matches most international recommendations on access keys. These are:</p>
+<ul>
+<li>0 - Home</li>
+<li>Survey
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 - Methodology</li>
+<li>M - Site map</li>
+<li>C - Contact Us</li>
+<li>K - Accessibility</li>
+<li>P - Privacy notice</li>
+<li>N - Legal notice</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "<p>Този сайт използва настройки, които съответстват на повечето международни препоръки за организация на клавишите за достъп. Те са:</p>
+<ul>
+<li>0 - Начало</li>
+<li>Преглед
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Методика</li>
+<li>M -&nbsp;Карта на сайта</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;За контакти</div>
+</li>
+<li>K - Достъпност</li>
+<li>P - Политика за поверителност</li>
+<li>N - Правна информация</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "<p>Tyto internetov&eacute; str&aacute;nky použ&iacute;vaj&iacute; nastaven&iacute;, kter&eacute; je t&eacute;měř shodn&eacute; s mezin&aacute;rodn&iacute;mi doporučen&iacute;mi o př&iacute;stupov&yacute;ch kl&aacute;ves&aacute;ch. Jedn&aacute; se o tyto:</p>
+<ul>
+<li>0 -&nbsp;&Uacute;vodn&iacute; str&aacute;nka</li>
+<li>Průzkum
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodika</li>
+<li>M -&nbsp;Mapa str&aacute;nek</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Kontaktujte n&aacute;s</div>
+</li>
+<li>K -&nbsp;Př&iacute;stupnost</li>
+<li>P - Политика за поверителност</li>
+<li>N -&nbsp;Pr&aacute;vn&iacute; ozn&aacute;men&iacute;</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "<p>Dette websted efterlever de fleste internationale retningslinjer vedr&oslash;rende brugen af genvejstaster. F&oslash;lgende retningslinjer er efterlevet:</p>
+<ul>
+<li>0 -&nbsp;Hjem</li>
+<li>Unders&oslash;gelse
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodologi</li>
+<li>M -&nbsp;Sitemap</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Kontakt os</div>
+</li>
+<li>K -&nbsp;Tilg&aelig;ngelighed</li>
+<li>P -&nbsp;Beskyttelse af personoplysninger</li>
+<li>N -&nbsp;Juridisk meddelelse</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "<p>Der Aufbau dieser Site entspricht weitgehend den g&auml;ngigen internationalen Empfehlungen zu Zugriffsschl&uuml;sseln. Diese sind:</p>
+<ul>
+<li>0 -&nbsp;Startseite</li>
+<li>Erhebung
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Methode</li>
+<li>M -&nbsp;Strukturkarte</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Kontaktieren Sie uns</div>
+</li>
+<li>K -&nbsp;Barrierefreiheit</li>
+<li>P -&nbsp;Datenschutzhinweise</li>
+<li>N -&nbsp;Rechtlicher Hinweis</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "<p>K&auml;esoleval saidil kasutatakse enamikule rahvusvahelistele soovitustele vastavaid juurdep&auml;&auml;suklahve. Need on j&auml;rgmised:</p>
+<ul>
+<li>0 -&nbsp;Avaleht</li>
+<li>K&uuml;sitlus
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodoloogia</li>
+<li>M -&nbsp;Sisukaart</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Kontaktandmed</div>
+</li>
+<li>K -&nbsp;Juurdep&auml;&auml;setavus</li>
+<li>P -&nbsp;Isikuandmete kaitse p&otilde;him&otilde;tted</li>
+<li>N -&nbsp;&Otilde;igusteave</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "<p>&Eta; &iota;&sigma;&tau;&omicron;&sigma;&epsilon;&lambda;ί&delta;&alpha; &alpha;&upsilon;&tau;ή &epsilon;ί&nu;&alpha;&iota; &omicron;&rho;&gamma;&alpha;&nu;&omega;&mu;έ&nu;&eta; &kappa;&alpha;&tau;ά &tau;έ&tau;&omicron;&iota;&omicron;&nu; &tau;&rho;ό&pi;&omicron; ώ&sigma;&tau;&epsilon; &nu;&alpha; &alpha;&nu;&tau;&alpha;&pi;&omicron;&kappa;&rho;ί&nu;&epsilon;&tau;&alpha;&iota; &sigma;&tau;&eta;&nu; &pi;&lambda;&epsilon;&iota;&omicron;&nu;ό&tau;&eta;&tau;&alpha; &tau;&omega;&nu; &delta;&iota;&epsilon;&theta;&nu;ώ&nu; &sigma;&upsilon;&sigma;&tau;ά&sigma;&epsilon;&omega;&nu; &sigma;&chi;&epsilon;&tau;&iota;&kappa;ά &mu;&epsilon; &tau;&alpha; &pi;&lambda;ή&kappa;&tau;&rho;&alpha; &pi;&rho;ό&sigma;&beta;&alpha;&sigma;&eta;&sigmaf;. &Alpha;&upsilon;&tau;ά &epsilon;ί&nu;&alpha;&iota;:</p>
+<ul>
+<li>0 -&nbsp;&Alpha;&rho;&chi;&iota;&kappa;ή &sigma;&epsilon;&lambda;ί&delta;&alpha;</li>
+<li>Έ&rho;&epsilon;&upsilon;&nu;&alpha;
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;&Mu;&epsilon;&theta;&omicron;&delta;&omicron;&lambda;&omicron;&gamma;ί&alpha;</li>
+<li>M -&nbsp;&Chi;ά&rho;&tau;&eta;&sigmaf; &Iota;&sigma;&tau;&omicron;&chi;ώ&rho;&omicron;&upsilon;</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;E&pi;&iota;&kappa;&omicron;&iota;&nu;&omega;&nu;ή&sigma;&tau;&epsilon; &mu;&alpha;&zeta;ί &mu;&alpha;&sigmaf;</div>
+</li>
+<li>K -&nbsp;&Pi;&rho;&omicron;&sigma;&beta;&alpha;&sigma;&iota;&mu;ό&tau;&eta;&tau;&alpha;</li>
+<li>P -&nbsp;&Pi;&omicron;&lambda;&iota;&tau;&iota;&kappa;ή &gamma;&iota;&alpha; &tau;&eta;&nu; &pi;&rho;&omicron;&sigma;&tau;&alpha;&sigma;ί&alpha; &tau;&eta;&sigmaf; &iota;&delta;&iota;&omega;&tau;&iota;&kappa;ή&sigmaf; &zeta;&omega;ή&sigmaf;</li>
+<li>N -&nbsp;&Alpha;&nu;&alpha;&kappa;&omicron;ί&nu;&omega;&sigma;&eta; &nu;&omicron;&mu;&iota;&kappa;&omicron;ύ &pi;&epsilon;&rho;&iota;&epsilon;&chi;&omicron;&mu;έ&nu;&omicron;&upsilon;</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<p>Este sitio utiliza un conjunto de teclas que coincide en gran parte con la mayor&iacute;a de recomendaciones internacionales sobre las teclas de navegaci&oacute;n. Son las siguientes:</p>
+<ul>
+<li>0 -&nbsp;Inicio</li>
+<li>Encuesta
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodolog&iacute;a</li>
+<li>M -&nbsp;Mapa del sitio</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Contacto</div>
+</li>
+<li>K -&nbsp;Accesibilidad</li>
+<li>P -&nbsp;Pol&iacute;tica de privacidad</li>
+<li>N -&nbsp;Aviso jur&iacute;dico</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "<p>Ce site utilise une configuration conforme &agrave; la plupart des recommandations internationales en mati&egrave;re de touches d'acc&egrave;s. Les touches disponibles sont les suivantes:</p>
+<ul>
+<li>0 -&nbsp;Accueil</li>
+<li>Enqu&ecirc;te
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;M&eacute;thodologie</li>
+<li>M -&nbsp;Plan du site</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Nous contacter</div>
+</li>
+<li>K -&nbsp;Accessibilit&eacute;</li>
+<li>P -&nbsp;Politique de confidentialit&eacute;</li>
+<li>N -&nbsp;Avertissement juridique</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "<p>Na ovoj se internetskoj stranici upotrebljavaju postavke koje približno odgovaraju međunarodnim preporukama u pogledu pristupnih tipki. One su:</p>
+<ul>
+<li>0 -&nbsp;Početna stranica</li>
+<li>Anketa
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodologija</li>
+<li>M -&nbsp;Mapa mjesta</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Obratite nam se</div>
+</li>
+<li>K -&nbsp;Dostupnost</li>
+<li>P -&nbsp;Pravila za&scaron;tite privatnosti</li>
+<li>N -&nbsp;Pravna napomena</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "<p>S&iacute;&eth;an notar uppsetningu sem er mj&ouml;g l&iacute;k flestum al&thorn;j&oacute;&eth;legum tilm&aelig;lum var&eth;andi a&eth;gangslykla. H&uacute;n er:</p>
+<ul>
+<li>0 -&nbsp;Heim</li>
+<li>K&ouml;nnun
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;A&eth;fer&eth;arfr&aelig;&eth;i</li>
+<li>M -&nbsp;S&iacute;&eth;u kort</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Hafa samband vi&eth; okkur</div>
+</li>
+<li>K -&nbsp;A&eth;gengi</li>
+<li>P -&nbsp;Fri&eth;helgisstefna</li>
+<li>N -&nbsp;Lagalegur fyrirvari</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "<p>L&rsquo;impostazione del sito rispecchia le principali raccomandazioni internazionali sui tasti a scelta rapida. In particolare:</p>
+<ul>
+<li>0 -&nbsp;Home</li>
+<li>Indagine
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodologia</li>
+<li>M -&nbsp;Mappa del sito</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Contatti</div>
+</li>
+<li>K -&nbsp;Accessibilit&agrave;</li>
+<li>P -&nbsp;Politica in materia di privacy</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "<p>&Scaron;ajā vietnē ir izmantots iestatījums, kas ir ļoti pietuvināts vairumam starptautisku ieteikumu attiecībā uz piekļuves taustiņiem. Piekļuves taustiņi:</p>
+<ul>
+<li>0 -&nbsp;Sākums</li>
+<li>Apsekojums
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodoloģija</li>
+<li>M -&nbsp;Vietnes karte</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Sazināties ar mums</div>
+</li>
+<li>K -&nbsp;Pieejamība</li>
+<li>P -&nbsp;Privātuma politika</li>
+<li>N -&nbsp;Juridisks paziņojums</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "<p>&Scaron;ios svetainės konfigūracija atitinka daugumą tarptautinių rekomendacijų dėl prieigos klavi&scaron;ų. Naudojami &scaron;ie prieigos klavi&scaron;ai:</p>
+<ul>
+<li>0 -&nbsp;Pradžia</li>
+<li>Apklausa
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodologija</li>
+
+<li>M -&nbsp;Interneto svetainės žemėlapis</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Susisiekite su mumis</div>
+</li>
+<li>K -&nbsp;Prieinamumas</li>
+<li>P -&nbsp;Privatumo politika</li>
+<li>N -&nbsp;Teisinis prane&scaron;imas</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "<p>Ez a honlap a billentyűzetről t&ouml;rt&eacute;nő el&eacute;r&eacute;s &aacute;ltal&aacute;nos nemzetk&ouml;zi gyakorlat&aacute;hoz igazod&oacute; be&aacute;ll&iacute;t&aacute;sokat haszn&aacute;l. Ezek a k&ouml;vetkezők:</p>
+<ul>
+<li>0 -&nbsp;Főoldal</li>
+<li>Felm&eacute;r&eacute;s
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;M&oacute;dszertan</li>
+<li>M -&nbsp;Oldalt&eacute;rk&eacute;p</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Kapcsolat</div>
+</li>
+<li>K -&nbsp;El&eacute;rhetős&eacute;g</li>
+<li>P -&nbsp;Adatv&eacute;delmi szab&aacute;lyzat</li>
+<li>N -&nbsp;&nbsp;Jogi nyilatkozat</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "<p>Dan il-sit juża sistema li tixbah ħafna l-biċċa l-kbira tar-rakkomandazzjonijiet internazzjonali fir-rigward tal-kodiċi ta' aċċess. Dawn huma:</p>
+<ul>
+<li>0 -&nbsp;Paġna ewlenija</li>
+<li>Stħarriġ
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodoloġija</li>
+<li>M -&nbsp;Mappa tas-sit</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Ikkuntattjana</div>
+</li>
+<li>K -&nbsp;Aċċessibbilt&agrave;</li>
+<li>P -&nbsp;Politika dwar il-privatezza</li>
+<li>N -&nbsp;Avviż legali</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "<p>Voor deze website is een setup gebruikt die aansluit bij de meeste internationale aanbevelingen over toegangstoetsen. Het gaat daarbij om:</p>
+<ul>
+<li>0 -&nbsp;Startpagina</li>
+<li>Enqu&ecirc;te<br />
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 - Methodologie</li>
+<li>M -&nbsp;Site map</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Contact</div>
+</li>
+<li>K -&nbsp;Toegankelijkheid</li>
+<li>P -&nbsp;Privacybeleid</li>
+<li>N -&nbsp;Juridische mededeling</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "<p>Dette nettstedet bruker et oppsett som er i tr&aring;d med de fleste internasjonale anbefalinger knyttet til tilgjengelighetstaster. Tilgjengelighetstastene er som f&oslash;lger:</p>
+<ul>
+<li>0 -&nbsp;Hjem</li>
+<li>Sp&oslash;rreunders&oslash;kelse
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodikk</li>
+<li>M -&nbsp;Kart over nettstedet</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Kontakt oss</div>
+</li>
+<li>K -&nbsp;&nbsp;Tilgjengelighet</li>
+<li>P -&nbsp;Personvernpolitikk</li>
+<li>N -&nbsp;Juridisk meddelelse</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "<p>Niniejsza strona internetowa opiera się na strukturze ściśle odpowiadającej międzynarodowym zaleceniom w sprawie kluczy dostępu. Należą do nich:</p>
+<ul>
+<li>0 -&nbsp;Strona gł&oacute;wna</li>
+<li>Badanie
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodyka</li>
+<li>M -&nbsp;Mapa witryny</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Skontaktuj się z nami</div>
+</li>
+<li>K -&nbsp;Dostępność</li>
+<li>P -&nbsp;Polityka ochrony prywatności</li>
+<li>N -&nbsp;Informacja prawna</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "<p>Este s&iacute;tio Web utiliza uma configura&ccedil;&atilde;o muito pr&oacute;xima das principais recomenda&ccedil;&otilde;es internacionais sobre teclas de acesso direto. A saber:</p>
+<ul>
+<li>0 -&nbsp;P&aacute;gina inicial</li>
+<li>Inqu&eacute;rito
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodologua</li>
+<li>M -&nbsp;Mapa do S&iacute;tio</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Contacte-nos</div>
+</li>
+<li>K -&nbsp;Acessibilidade</li>
+<li>P -&nbsp;Pol&iacute;tica de privacidade</li>
+<li>N - Aviso legal</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "<p>Acest site folosește o configurare care corespunde &icirc;n cea mai mare parte majorității recomandărilor internaționale privind tastele de acces. Acestea sunt:</p>
+<ul>
+<li>0 -&nbsp;Pagina principală</li>
+<li>Sondaj
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodologie</li>
+<li>M -&nbsp;Harta site-ului</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Contactați-ne</div>
+</li>
+<li>K -&nbsp;Accesibilitate</li>
+<li>P -&nbsp;Politica de protecție a vieții private</li>
+<li>N -&nbsp;Aviz juridic</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "<p>Na tejto webovej str&aacute;nke sa použ&iacute;va nastavenie, ktor&eacute; sa zhoduje s v&auml;č&scaron;inou medzin&aacute;rodn&yacute;ch odpor&uacute;čan&iacute; pre pr&iacute;stupov&eacute; kl&aacute;vesy. S&uacute; nimi:</p>
+<ul>
+<li>0 -&nbsp;Domovsk&aacute; str&aacute;nka</li>
+<li>Prieskum
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodika</li>
+<li>M -&nbsp;Mapa str&aacute;nky</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Spojte sa s nami</div>
+</li>
+<li>K -&nbsp;Dostupnosť</li>
+<li>P -&nbsp;Ochrana osobn&yacute;ch &uacute;dajov</li>
+<li>N -&nbsp;Pr&aacute;vna pozn&aacute;mka</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "<p>Na tej strani je uporabljena nastavitev, pri kateri se natančno upo&scaron;tevajo mednarodna priporočila v zvezi s tipkami za dostop. To so:</p>
+<ul>
+<li>0 -&nbsp;Domov</li>
+<li>Raziskava
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodologija</li>
+<li>M -&nbsp;Načrt spleti&scaron;ča</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Kontakt</div>
+</li>
+<li>K -&nbsp;Dostopnost</li>
+<li>P -&nbsp;Politika zasebnosti</li>
+<li>N -&nbsp;Pravno obvestilo</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<p>T&auml;ll&auml; sivustolla k&auml;ytett&auml;v&auml;t valintan&auml;pp&auml;imet vastaavat valtaosin kansainv&auml;lisi&auml; suosituksia. Valintan&auml;pp&auml;imet ovat seuraavat:</p>
+<ul>
+<li>0 -&nbsp;Aloitussivu</li>
+<li>Tutkimus
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metodologia</li>
+<li>M -&nbsp;Sivukartta</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Ota meihin yhteytt&auml;</div>
+</li>
+<li>K -&nbsp;Esteett&ouml;myys</li>
+<li>P -&nbsp;Tietosuojak&auml;yt&auml;nt&ouml;</li>
+<li>N -&nbsp;Oikeudellinen huomautus</li>
+</ul>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<p>P&aring; den h&auml;r webbplatsen anv&auml;nds en upps&auml;ttning som i stort &ouml;verensst&auml;mmer med de flesta internationella rekommendationer om snabbtangenter, n&auml;mligen:</p>
+<ul>
+<li>0 -&nbsp;Hem</li>
+<li>Unders&ouml;kning
+<ul>
+<li>1 - ESENER 2009</li>
+<li>2 - ESENER 2014</li>
+</ul>
+</li>
+<li>3 -&nbsp;Metod</li>
+<li>M -&nbsp;Webbplats&ouml;versikt</li>
+<li>
+<div style=\"display: inline !important;\">C -&nbsp;Kontakta oss</div>
+</li>
+<li>K -&nbsp;Tillg&auml;nglighet</li>
+<li>P -&nbsp;Policy f&ouml;r integritetsskydd</li>
+<li>N -&nbsp;R&auml;ttsligt meddelande</li>
+</ul>");
 
 SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
@@ -1525,4 +2221,12561 @@ SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="PRIVACY_NOTICE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "TEXT");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "<p>Data subjects are entitled to make recourse to the European Data Protection Supervisor: <a href=\"http://www.edps.europa.eu/\" target=\"_blank\">http://www.edps.europa.eu</a> , should they consider that the processing operations do not comply with the Regulation.</p>");
+
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000)+1, 101001));
+SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
+SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="METHODOLOGY");
+INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "METHODOLOGY");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\">
+
+    <!-- INIT LITERAL HTML -->      
+      <h1>ESENER Methodology</h1>
+        <h2>Universe and unit of analysis</h2>
+          <p>The survey population comprises all establishments that have five or more employees in the participating countries, covering all sectors of economic activity except for private households (NACE T) and extraterritorial organisations (NACE U). Agriculture, forestry and fishing (NACE A) and establishments employing less than 10 workers were not covered in ESENER 2009. For the purpose of the survey, an establishment is defined as comprising the activities of a single employer at a single set of premises (e.g. a single branch of a bank, a car factory or a school).</p>
+          <p>The participating countries comprise all European Union Member States, as well as Norway and Switzerland. Turkey was covered in ESENER 2009 and 2014, Albania and Montenegro were covered in ESENER 2014 and Iceland, North Macedonia and Serbia were covered in ESENER 2014 and 2019.</p>
+           
+          <h3>Country coverage in ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>
+                         ESENER 2009
+                      </th>
+                      <th>
+                         ESENER 2014
+                      </th>
+                      <th>
+                         ESENER 2019
+                      </th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>
+                         European Union (*)
+                      </th>
+                      <td>
+                         X
+                      </td>
+                      <td>
+                         X
+                      </td>
+                      <td>
+                         X
+                      </td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>
+                         Norway
+                      </th>
+                      <td>
+                        X
+                      </td>
+                      <td>
+                         X
+                      </td>
+                      <td>
+                         X
+                      </td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>
+                        Switzerland
+                      </th>
+                      <td>
+                         X
+                      </td>
+                      <td>
+                         X
+                      </td>
+                      <td>
+                         X
+                      </td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>
+                         Iceland
+                      </th>
+                      <td>&nbsp;</td>
+                      <td>
+                         X
+                      </td>
+                      <td>
+                         X
+                      </td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>
+                         North Macedonia
+                      </th>
+                      <td>&nbsp;</td>
+                      <td>
+                         X
+                      </td>
+                      <td>
+                         X
+                      </td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>
+                        Serbia
+                      </th>
+                      <td>&nbsp;</td>
+                      <td>
+                         X
+                      </td>
+                      <td>
+                         X
+                      </td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>
+                         Turkey
+                      </th>
+                      <td>
+                         X
+                      </td>
+                      <td>
+                        X
+                      </td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>
+                         Albania
+                      </th>
+                      <td>&nbsp;</td>
+                      <td>
+                         X
+                      </td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>
+                          Montenegro
+                      </th>
+                      <td>&nbsp;</td>
+                      <td>
+                         X
+                      </td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Including Croatia and the United Kingdom</p>
+
+        <h2>Respondents</h2>
+          <p>In each establishment surveyed, <em>'the person who knows best about the way safety and health risks are managed at their workplace'</em> is interviewed. This is different from ESENER 2009 where <em>'the most senior manager who coordinates safety and health activities in this establishment'</em> was targeted. Additionally, in ESENER 2009, an interview with the workers' health and safety representative was aimed in those establishments where (1) a management interview was completed; (2) a formally designated representative with specific responsibility for the safety and health of workers existed; and (3) the management respondent had granted permission for the interview.</p>
+          <p>The main reason for the change was to get to the person who has the best knowledge about all health and safety issues, including details on risk assessment and other particular measures, regardless of their function or role in the establishment - which is asked anyway in a follow-up question.</p>
+             
+        <h2>Sampling strategy</h2>
+          <p>In order to ensure that the survey results are comparable cross-nationally, it is essential that the sampling strategy result in the same type of units being surveyed in each country. The quality of the available address registers varies across the participating countries in terms of:</p>
+          <ul>
+           <li>coverage (especially the sectors of activity included);</li>
+           <li>the availability and accuracy of the necessary background information (such as the sector of activity and number of employees).</li>
+          </ul>
+          <p>Existing address registers are not comparable among countries and therefore considerable efforts have been made to build samples that provide the necessary quality and ensure cross-national comparability. These efforts have required a screening procedure in those countries where the available address registers provide information at company rather than at establishment level.</p>
+          <p>Stratification of the sample is based on a matrix of four size classes and eight groups of sectors. While the general approach to sampling in the first two waves of ESENER was largely the same, there have been some changes over the years, particularly with respect to ESENER 2009. The details are available at <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> and <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>ESENER 2019 Sampling matrix</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">
+                         Sector group - NACE Rev. 2 sections
+                      </th>
+                      <th  colspan=\"4\" class=\"center-text\">
+                         Size - number of employees
+                      </th>
+                   </tr>
+                   <tr>
+                      <th>
+                         5-9
+                      </th>
+                      <th>
+                        10-49
+                      </th>
+                      <th>
+                         50-249
+                      </th>
+                      <th>
+                         250+
+                      </th>
+                   </tr>
+                   <tr>
+                      <td>
+                         <strong>A</strong>: Agriculture, forestry and fishing.
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td>
+                         <strong>B, D, E, F</strong>: Construction, waste management, water and electricity supply
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td>
+                         <strong>C</strong>: Manufacturing
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td>
+                         <strong>G, H, I, R</strong>: Trade, transport, food/accommodation and recreation activities
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td>
+                         <strong>J, K, L, M, N, S</strong>: IT, Finance, Real estate and other technical scientific or personal service activities
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td>
+                         <strong>O</strong>: Public administration
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td>
+                         <strong>P</strong>: Education
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td>
+                         <strong>Q: </strong>Human health and social work activities
+                      </td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Questionnaire development</h2>
+          <p>The ESENER 2019 questionnaire is largely the same to the one used in the previous wave (ESENER 2014), which was itself originally based on the structure of the management version of the ESENER 2009 questionnaire. However, almost all questions were modified between 2009 and 2014 and hence, trend analyses are possible from ESENER 2014 onwards. The development and revision of the ESENER questionnaire is done in close cooperation between EU-OSHA, the main ESENER contractor and a group of researchers on occupational health and safety from different countries, as well as EU-OSHA stakeholders.</p>
+          <p>The ESENER questionnaires have been subject to several tests:</p>
+
+          <ol type=\"a\" >
+            <li>A <strong>cognitive pre-test</strong> in Germany, Latvia and the Netherlands, with around 40 in-depth face-to-face interviews. The main aim of the cognitive pre-test is to check the understanding and clarity of the questions. There are also a number of cognitive questions aimed at testing whether respondents from different countries and different types of organisations interpret the standardised questions in the intended way and whether they are relevant to them. The cognitive pre-test usually leads to a number of modifications to the questionnaire.</li>
+            <li>A <strong>translatability assessment</strong> of the English master questionnaire version. Experienced translators from different language families elaborate rough translations of the draft master questionnaire in order to identify any ambiguities or other difficulties for translation. Where such difficulties are identified translators make proposals for alternative formulations for the master version, which is revised accordingly.</li>
+            <li>A <strong>pilot field test</strong> is carried out in all countries, with around 50 interviews per country. Using the same infrastructure as the main survey, this pilot test is done in the CATI mode (Computer Assisted Telephone Interviewing) but the option to participate online (CAWI: Computer Assisted Web Interviewing) is offered to those refusing to carry out the interview over the phone. The pilot field test results in a number of changes to the master questionnaire and to the individual national versions of the questionnaire.</li>
+          </ol>
+
+        <h2>Translation</h2>        
+          <p>Different national versions of the questionnaire are developed for the countries covered by the survey (available here: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> and ESENER 2019). An optimal translation strategy is essential to ensure that each national version of the questionnaire comprises high-quality questions that can be directed at all types of enterprise within the country concerned and generates information that can be compared cross-nationally. The translation of the ESENER questionnaire follows the TRAPD approach, an acronym for <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), except for the first wave (available here: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>For languages shared by two or more countries, different national versions are developed, taking into account work-related practices such as worker representation or labour inspection, which require different questions and terminology. More details on the translation process can be found in the <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report</a> - see below.</p>
+          <p>The basic steps included in the translation of ESENER are:</p>
+           
+          <ol type=\"1\" >
+            <li>Two independent translations into each of the languages carried out by professional translators - native speakers of the target language - who were not in contact with each other while producing their translation.</li>
+            <li>Review of the independent translations by an adjudicator, who drafts a new version.</li>
+            <li>Review meetings between the adjudicator and the two translators in order to jointly discuss the new draft and agree on a final adjudicated version.</li>
+            <li>Check of the adjudicated versions by EU-OSHA's <a href=\"https://osha.europa.eu/en/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">network of Focal Points</a>, with a specific focus on the national occupational safety and health (OSH) terminology, including the questions related to bodies of worker representation.</li>
+          </ol>
+
+        <h2>National sample sizes</h2>
+          <p>For the first time in ESENER 2014, national authorities were offered the possibility to fund an expansion of their national sample sizes. Spain, Slovenia and the United Kingdom took up the offer to boost their respective sample sizes. In ESENER 2019, three countries accepted this offer (Ireland, Norway and Slovenia), which this time included as well the possibility to add two to three questions of national interest to their respective questionnaires. Switzerland has fully funded all waves of ESENER.</p>
+           
+          <h3>Achieved sample sizes in ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>
+                       Country
+                    </th>
+                    <th class=\"center-text\">
+                       ESENER 2009 (management interviews)
+                    </th>
+                    <th class=\"center-text\">
+                       ESENER 2014
+                    </th class=\"center-text\">
+                    <th>
+                       ESENER 2019 
+                    </th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Austria
+                    </th>
+                    <td>
+                       1034
+                    </td>
+                    <td>
+                       1503
+                    </td>
+                    <td>
+                       1500
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Belgium
+                    </th>
+                    <td>
+                       1069
+                    </td>
+                    <td>
+                       1504
+                    </td>
+                    <td>
+                       1500
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Bulgaria
+                    </th>
+                    <td>
+                       501
+                    </td>
+                    <td>
+                       750
+                    </td>
+                    <td>
+                       750
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Croatia
+                    </th>
+                    <td>
+                       500
+                    </td>
+                    <td>
+                       751
+                    </td>
+                    <td>
+                       750
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Cyprus
+                    </th>
+                    <td>
+                       500
+                    </td>
+                    <td>
+                       751
+                    </td>
+                    <td>
+                       750
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Czech Republic
+                    </th>
+                    <td>
+                       1015
+                    </td>
+                    <td>
+                       1508
+                    </td>
+                    <td>
+                       1500
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Denmark
+                    </th>
+                    <td>
+                       1005
+                    </td>
+                    <td>
+                       1508
+                    </td>
+                    <td>
+                       1500
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Estonia
+                    </th>
+                    <td>
+                       501
+                    </td>
+                    <td>
+                       750
+                    </td>
+                    <td>
+                       750
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Finland
+                    </th>
+                    <td>
+                       1000
+                    </td>
+                    <td>
+                       1511
+                    </td>
+                    <td>
+                       1500
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       France
+                    </th>
+                    <td>
+                       1497
+                    </td>
+                    <td>
+                       2256
+                    </td>
+                    <td>
+                       2250
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Germany
+                    </th>
+                    <td>
+                       1510
+                    </td>
+                    <td>
+                       2261
+                    </td>
+                    <td>
+                       2250
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Greece
+                    </th>
+                    <td>
+                       1000
+                    </td>
+                    <td>
+                       1503
+                    </td>
+                    <td>
+                       1500
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Hungary
+                    </th>
+                    <td>
+                       1031
+                    </td>
+                    <td>
+                       1514
+                    </td>
+                    <td>
+                       1500
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Ireland
+                    </th>
+                    <td>
+                       506
+                    </td>
+                    <td>
+                       750
+                    </td>
+                    <td>
+                       <em>2000</em>
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Italy
+                    </th>
+                    <td>
+                       1501
+                    </td>
+                    <td>
+                       2254
+                    </td>
+                    <td>
+                       2250
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Latvia
+                    </th>
+                    <td>
+                       506
+                    </td>
+                    <td>
+                       753
+                    </td>
+                    <td>
+                       750
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Lithuania
+                    </th>
+                    <td>
+                       520
+                    </td>
+                    <td>
+                       774
+                    </td>
+                    <td>
+                       750
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Luxembourg
+                    </th>
+                    <td>
+                       500
+                    </td>
+                    <td>
+                       752
+                    </td>
+                    <td>
+                       750
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Malta
+                    </th>
+                    <td>
+                       343
+                    </td>
+                    <td>
+                       452
+                    </td>
+                    <td>
+                       450
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Netherlands
+                    </th>
+                    <td>
+                       1009
+                    </td>
+                    <td>
+                       1519
+                    </td>
+                    <td>
+                       1500
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Poland
+                    </th>
+                    <td>
+                       1500
+                    </td>
+                    <td>
+                       2257
+                    </td>
+                    <td>
+                       2250
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Portugal
+                    </th>
+                    <td>
+                       1005
+                    </td>
+                    <td>
+                       1513
+                    </td>
+                    <td>
+                       1500
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Romania
+                    </th>
+                    <td>
+                       518
+                    </td>
+                    <td>
+                       756
+                    </td>
+                    <td>
+                       1500
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Slovakia
+                    </th>
+                    <td>
+                       503
+                    </td>
+                    <td>
+                       750
+                    </td>
+                    <td>
+                       750
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Slovenia
+                    </th>
+                    <td>
+                       529
+                    </td>
+                    <td>
+                       <em>1051</em>
+                    </td>
+                    <td>
+                       <em>1050</em>
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Spain
+                    </th>
+                    <td>
+                       1566
+                    </td>
+                    <td>
+                       <em>3 162</em>
+                    </td>
+                    <td>
+                       2250
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Sweden
+                    </th>
+                    <td>
+                       1000
+                    </td>
+                    <td>
+                       1521
+                    </td>
+                    <td>
+                       1500
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       United Kingdom
+                    </th>
+                    <td>
+                       1500
+                    </td>
+                    <td>
+                       <em>4 250</em>
+                    </td>
+                    <td>
+                       2250
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Norway
+                    </th>
+                    <td>
+                       951
+                    </td>
+                    <td>
+                       1513
+                    </td>
+                    <td>
+                       1950
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Switzerland
+                    </th>
+                    <td>
+                       1019
+                    </td>
+                    <td>
+                       1511
+                    </td>
+                    <td>
+                       1500
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Iceland
+                    </th>
+                    <td>
+                       -
+                    </td>
+                    <td>
+                       757
+                    </td>
+                    <td>
+                       750
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Serbia
+                    </th>
+                    <td>
+                       -
+                    </td>
+                    <td>
+                       752
+                    </td>
+                    <td>
+                       750
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       North Macedonia
+                    </th>
+                    <td>
+                       -
+                    </td>
+                    <td>
+                       750
+                    </td>
+                    <td>
+                       750
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Turkey
+                    </th>
+                    <td>
+                       1500
+                    </td>
+                    <td>
+                       2251
+                    </td>
+                    <td>
+                       -
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Albania
+                    </th>
+                    <td>
+                       -
+                    </td>
+                    <td>
+                       750
+                    </td>
+                    <td>
+                       -
+                    </td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>
+                       Montenegro
+                    </th>
+                    <td>
+                       -
+                    </td>
+                    <td>
+                       452
+                    </td>
+                    <td>
+                       -
+                    </td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>
+                       Total
+                    </th>
+                    <td>
+                       <strong>28649</strong>
+                    </td>
+                    <td>
+                       <strong>49320</strong>
+                    </td>
+                    <td>
+                       <strong>45200</strong>
+                    </td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Documents and further information for researchers</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Tender specifications:</dt>
+                <dd>Open call published on 21<sup>st</sup> August 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Support letter: </dt>
+                <dd>Letters setting out the background and aims of the survey and the support from social partners were produced in all survey languages with the aim to encourage participation in the survey.</dd>
+                <dt>Master questionnaires:</dt>
+                <dd>
+                  <ul>
+                    <li>Management Representative Questionnaire: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Worker Representative Questionnaire: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Technical reports: </dt>
+                <dd>
+                  <ul>
+                    <li>European Survey on New and Emerging Risks - Psychosocial Risks (ESENER-PSR 2009) - Technical Report: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Ex-post evaluation of the European Survey of Enterprises on New and Emerging Risks: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>ESENER Sampling Report 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>ESENER 2009 dataset can be accessed via the <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-1\" target=\"_blank\">the European data portal</a> and <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Tender specifications:</dt>
+                <dd>Open call published on 5<sup>th</sup> December 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Support letter:</dt>
+                <dd>Letters setting out the background and aims of the survey and the support from social partners were produced in all survey languages with the aim to encourage participation in the survey.</dd>
+                <dt>Master questionnaire:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Technical reports:</dt>
+                <dd>
+                  <ul>
+                    <li>Technical report: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Quality report: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Translation report: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>ESENER 2014 dataset can be accessed via the <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-2\" target=\"_blank\">the European data portal</a> and <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Tender specifications:</dt>
+                <dd>Open call published on 5<sup>th</sup> January 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Support letter</dt>
+                <dd>Letters setting out the background and aims of the survey and the support from social partners were produced in all survey languages with the aim to encourage participation in the survey.</dd>
+                <dt>Master questionnaire</dt>
+                <dt>Technical reports</dt>
+              </dl>
+              <p>Please note that all works using or referring to ESENER should acknowledge its source by means of bibliographic citation in footnotes or in the reference section of publications. Similarly, any publication, whether printed, electronic, or broadcast, based wholly or partly on ESENER should acknowledge the European Agency for Safety and Health at Work (EU-OSHA). It should also carry a statement that EU-OSHA bear no responsibility for their further analysis or interpretation.</p>
+    <!-- END LITERAL HTML -->
+
+   </body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Методология на ESENER</h1>
+        <h2>Обхват и единица на анализ</h2>
+          <p>Изследваната популация включва всички предприятия в участващите държави с пет или повече заети лица, като са обхванати всички сектори на икономическа дейност, с изключение на частните домакинства (NACE T) и извънтериториалните организации (NACE U). В обхвата на ESENER 2009 не попадат селското, горското и рибното стопанство (NACE A) и предприятията с по-малко от 10 работници. За целите на проучването &bdquo;предприятие&ldquo; се определя като дейностите на един работодател в една сграда (напр. клон на банка, автомобилна фабрика или училище).</p>
+          <p>Участват всички държави &mdash; членки на Европейския съюз, както и Норвегия и Швейцария. Турция беше включена в ESENER 2009 и 2014, Албания и Черна гора &mdash; в ESENER 2014, а Исландия, Северна Македония и Сърбия &mdash; в ESENER 2014 и 2019.</p>
+           
+          <h3>Обхват на държавите в ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Европейски съюз (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Норвегия</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Швейцария</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Исландия</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Северна Македония</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Сърбия</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Турция</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Албания</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Черна гора</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Включително Хърватия и Обединеното кралство</p>
+
+        <h2>Респонденти</h2>
+          <p>Във всяко проучено предприятие анкетата се провежда с <em>&bdquo;лицето, което най-добре познава начина, по който се управляват рисковете за здравето и безопасността на работното място&ldquo;</em>. Това се отличава от ESENER 2009, в което се търсеше <em>&bdquo;най-старшият ръководител, който координира дейностите във връзка с безопасността и здравето в предприятието&ldquo;</em>. Освен това в ESENER 2009 целта беше да се проведе анкета с представителя по въпросите на здравето и безопасността на работниците в онези предприятия, в които: 1) е проведена анкета с ръководството; 2) съществува официално определен представител с конкретна отговорност за безопасността и здравето на работниците; и 3) респондентът от ръководството е дал разрешение за анкетата.</p>
+          <p>Основната причина за тази промяна е да се достигне до лицето, което има най-добри познания по всички въпроси, свързани със здравето и безопасността, включително подробности относно оценката на риска и други конкретни мерки, независимо от тяхната функция или роля в предприятието (което се покрива от следващ въпрос).</p>
+             
+        <h2>Стратегия за изготвяне на извадки</h2>
+          <p>За да се гарантира, че резултатите от проучването са съпоставими между отделните държави, важно е стратегията за изготвяне на извадки да доведе до същия тип единици, проучвани във всяка държава. Качеството на наличните адресни регистри се различава в отделните участващи държави по отношение на:</p>
+          <ul>
+           <li>обхват (по-специално включените сектори на дейност);</li>
+           <li>наличие и точност на необходимата съпътстваща информация (напр. сектор на дейност и брой на служителите).</li>
+          </ul>
+          <p>Съществуващите адресни регистри не са съпоставими между държавите и поради това бяха положени значителни усилия за съставяне на извадки, които предоставят необходимото качество и позволяват сравняване между отделните държави. Тези усилия наложиха процедура на скрининг в държавите, в които наличните адресни регистри предоставят информация на равнище дружество, а не на равнище обект на дружеството.</p>
+          <p>Разслояването на извадката се основава на матрица от четири класа по размер и осем групи сектори. Въпреки че общият подход за съставяне на извадки от първите две издания на ESENER беше до голяма степен един и същ, през годините бяха въведени някои промени, по-специално в ESENER 2009. Данните са налице в <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> и <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Матрица за съставяне на извадки в ESENER 2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Секторна група &mdash; раздели по NACE Rev. 2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Размер &mdash; брой на служителите</th>
+                   </tr>
+                   <tr>
+                      <th>5&mdash;9</th>
+                      <th>10&mdash;49</th>
+                      <th>50&mdash;249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>А</strong>: Селско стопанство, горско стопанство и риболов.</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Строителство, управление на отпадъците, водоснабдяване и електроснабдяване</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Преработваща промишленост</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Търговия, транспорт, ресторантьорство/хотелиерство и отдих и развлечение</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: ИТ, финанси, недвижимо имущество и други технически, научни или персонални услуги</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Публична администрация</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Образование</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Здравеопазване и социални дейности</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Разработване на въпросника</h2>
+          <p>Въпросникът на ESENER 2019 до голяма степен съвпада с използвания в предишното издание (ESENER 2014), който първоначално се основаваше на структурата на въпросника за ESENER 2009 във версията за ръководството. Същевременно почти всички въпроси бяха изменени между 2009 и 2014&nbsp;г., поради което анализите на тенденции са възможни само след ESENER 2014. Разработването и преразглеждането на въпросника на ESENER е извършено в тясно сътрудничество между EU-OSHA, главния изпълнител на ESENER и група изследователи в областта на здравословните и безопасни условия на труд от различни държави, както и със заинтересованите страни на EU-OSHA.</p>
+          <p>Въпросниците на ESENER бяха подложени на няколко теста:</p>
+
+          <ol type=\"a\" >
+            <li><strong>Когнитивен предварителен тест</strong> в Германия, Латвия и Нидерландия, като бяха проведени около 40 подробни лични анкети. Основната цел на когнитивния предварителен тест е да се провери дали въпросите се разбират и са ясни. Има също редица когнитивни въпроси, които целят да се провери дали респондентите от различни държави и от различни видове организации тълкуват стандартните въпроси по очаквания начин и дали въпросите се отнасят до тях. Обикновено след когнитивния предварителен тест се въвеждат редица изменения на въпросника.</li>
+            <li><strong>Оценка на преводимостта</strong> на основната версия на въпросника на английски език. Опитни преводачи от различни езикови семейства правят груби преводи на проекта за основен въпросник, за да се открият евентуални неясноти или други трудности при превода. Ако се установят такива трудности, преводачите отправят предложения за други формулировки в основната версия, която съответно се преразглежда.</li>
+            <li>Във всички държави се провежда <strong>пилотен практически тест</strong> с около 50 анкети във всяка държава. Въз основа на същата инфраструктура, използвана в основното проучване, пилотният тест се провежда чрез анкета по телефона с помощта на компютър (Computer Assisted Telephone Interview, CATI), но на тези, които отказват да проведат анкетата по телефона, се предлага възможността да участват онлайн (Computer Assisted Web Interviewing, CAWI). Пилотният практически тест води до редица промени в основния въпросник и в отделните версии на въпросника на национално равнище.</li>
+          </ol>
+
+        <h2>Писмен превод</h2>        
+          <p>Разработват се различни национални версии на въпросника за държавите, обхванати от проучването (достъпно тук: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> и ESENER 2019). Важно е да има оптимална стратегия за писмен превод, за да се гарантира, че всяка национална версия на въпросника съдържа ясно формулирани въпроси, които могат да бъдат зададени на всички видове предприятия в съответната държава, и че генерира информация, която може да бъде сравнявана между отделните държави. Преводът на въпросника на ESENER е в съответствие с подхода TRAPD &mdash; съкращение на <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> (&bdquo;превод, редакция, оценка, предварителен тест и документиране&ldquo;) (Harkness, J. A. (2003). &bdquo;Превод на въпросника&ldquo;. В публикация на J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (стр. 35&mdash;56). Hoboken, NJ: John Wiley &amp; Sons) &mdash; с изключение на първото издание (достъпно тук: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>За езиците, които са общи за две или повече държави, се разработват отделни национални версии, като се отчитат свързаните с работата практики, например представителство на работниците или инспекции на труда, които изискват различни въпроси и терминология. Повече подробности за процеса на превод могат да се намерят в <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report</a> (Доклад за писмените преводи) &mdash; вж. по-долу.</p>
+          <p>Основните стъпки в превода на ESENER са:</p>
+           
+          <ol type=\"1\" >
+            <li>Два независими превода на всеки от езиците, направени от професионални преводачи (чийто майчин език е езикът, на който се превежда), които не са в контакт един с друг по време на превода.</li>
+            <li>Редакция на независимите преводи от оценител, който изготвя нова версия.</li>
+            <li>Срещи между оценителя и двамата преводачи, за да се обсъди съвместно новият проект и да се постигне съгласие по окончателната версия.</li>
+            <li>Проверка на окончателната версия от <a href=\"https://osha.europa.eu/bg/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">мрежата от фокусни точки</a> на EU-OSHA със специален акцент върху националната терминология в областта на безопасността и здравето при работа (БЗР), включително въпросите, свързани с органите за представителство на работниците.</li>
+          </ol>
+
+        <h2>Обеми на националните извадки</h2>
+          <p>За първи път в ESENER 2014 националните органи получиха възможността да финансират разширяването на националните извадки. Испания, Словения и Обединеното кралство се възползваха от предложението да увеличат обема на извадките. В ESENER 2019 три държави приеха това предложение (Ирландия, Норвегия и Словения), като този път предложението включваше и възможността да се добавят два до три въпроса от национален интерес към националните въпросници. Швейцария финансира изцяло всички издания на ESENER.</p>
+           
+          <h3>Обеми на извадките, постигнати в ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Държава</th>
+                    <th class=\"center-text\">ESENER 2009 (анкети с ръководството)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Австрия</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Белгия</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>България</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Хърватия</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Кипър</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Чешка република</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Дания</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Естония</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Финландия</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Франция</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Германия</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Гърция</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Унгария</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ирландия</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Италия</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Латвия</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Литва</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Люксембург</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Малта</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Нидерландия</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Полша</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Португалия</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Румъния</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Словакия</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Словения</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Испания</th>
+                    <td>1566</td>
+                    <td><em>3&nbsp;162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Швеция</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Обединено кралство</th>
+                    <td>1500</td>
+                    <td><em>4250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Норвегия</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Швейцария</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Исландия</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Сърбия</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Северна Македония</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Турция</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Албания</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Черна гора</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Общо</th>
+                    <td><strong>28649</strong></td>
+                    <td><strong>49320</strong></td>
+                    <td><strong>45200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Документи и допълнителна информация за изследователи</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Тръжни спецификации:</dt>
+                <dd>Открита покана за предложения, публикувана на 21 август 2007&nbsp;г.: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Писмо за подкрепа:</dt>
+                <dd>Писма, в които се излагат основна информация и целите на проучването, както и подкрепата от страна на социалните партньори, бяха съставени на всички езици на проучването с цел да се насърчи участието.</dd>
+                <dt>Основни въпросници:</dt>
+                <dd>
+                  <ul>
+                    <li>Въпросник за представител на ръководството: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Въпросник за представител на работниците: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Технически доклади:</dt>
+                <dd>
+                  <ul>
+                    <li>Европейско проучване относно новите и възникващите рискове &mdash; психосоциални рискове (ESENER-PSR 2009) &mdash; Технически доклад: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Последваща оценка на Европейското проучване относно новите и възникващите рискове в предприятията: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Доклад относно извадките в ESENER 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Наборът от данни от ESENER 2009 е достъпен чрез <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Службата за данни на Обединеното кралство към Университета в Есекс</a>, <a href=\"https://data.europa.eu/euodp/bg/data/dataset/esener-1\" target=\"_blank\">Европейския портал за данни</a> и <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Тръжни спецификации:</dt>
+                <dd>Открита покана за предложения, публикувана на 5 декември 2012&nbsp;г.: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Писмо за подкрепа:</dt>
+                <dd>Писма, в които се излагат основна информация и целите на проучването, както и подкрепата от страна на социалните партньори, бяха съставени на всички езици на проучването с цел да се насърчи участието.</dd>
+                <dt>Основен въпросник:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Технически доклади:</dt>
+                <dd>
+                  <ul>
+                    <li>Технически доклад: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Доклад за качеството: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Доклад за писмените преводи: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Наборът от данни от ESENER 2014 е достъпен чрез <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Службата за данни на Обединеното кралство към Университета в Есекс</a>, <a href=\"https://data.europa.eu/euodp/bg/data/dataset/esener-2\" target=\"_blank\">Европейския портал за данни</a> и <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Тръжни спецификации:</dt>
+                <dd>Открита покана за предложения, публикувана на 5 януари 2018&nbsp;г.: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Писмо за подкрепа</dt>
+                <dd>Писма, в които се излагат основна информация и целите на проучването, както и подкрепата от страна на социалните партньори, бяха съставени на всички езици на проучването с цел да се насърчи участието.</dd>
+                <dt>Основен въпросник</dt>
+                <dt>Технически доклади</dt>
+              </dl>
+              <p>Имайте предвид, че всички публикации, които използват или се позовават на ESENER, следва да посочат източника си посредством библиографско позоваване в бележки под линия или в раздела с източници на публикациите. Също така всяка публикация &mdash; независимо дали е печатна, електронна или излъчена в ефир &mdash; базирана изцяло или частично на ESENER, трябва да посочи като източник Европейската агенция за безопасност и здраве при работа (EU-OSHA). В публикацията трябва също да се съдържа отказ от отговорност, че EU-OSHA не носи отговорност за по-нататъшни анализи или тълкувания, съдържащи се в публикацията.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Metodika průzkumu ESENER</h1>
+        <h2>Statistický soubor a analyzovaná jednotka</h2>
+          <p>Průzkumu se účastnily podniky s&nbsp;pěti či více zaměstnanci v&nbsp;zúčastněných zemích, a to ve v&scaron;ech odvětvích hospodářské činnosti s&nbsp;výjimkou domácností (NACE T) a exteritoriálních organizací (NACE U). Zemědělství, lesnictví a rybářství (NACE A) a podniky zaměstnávající méně než 10 pracovníků nebyly zařazeny do průzkumu ESENER 2009. Pro účely průzkumu je podnik definován jako místo, kde provádí činnost jeden zaměstnavatel v jednom souboru prostor (např. pobočka banky, závod na výrobu automobilů nebo &scaron;kola).</p>
+          <p>Zúčastněnými zeměmi jsou členské státy EU a dále Norsko a Švýcarsko. Turecko bylo zapojeno do průzkumů ESENER 2009 a 2014, Albánie a Černá Hora do průzkumu ESENER 2014 a Island, Severní Makedonie a Srbsko do průzkumů ESENER 2014 a 2019.</p>
+           
+          <h3>Zapojení zemí do průzkumu ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Evropská unie (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norsko</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Švýcarsko</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Island</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Severní Makedonie</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Srbsko</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turecko</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albánie</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Černá Hora</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) včetně Chorvatska a Spojeného království</p>
+
+        <h2>Respondenti</h2>
+          <p>V&nbsp;každém z podniků zahrnutých do průzkumu byla dotazována <em>&bdquo;osoba, která je nejlépe informovaná o způsobu řízení rizik v&nbsp;oblasti BOZP na příslu&scaron;ném pracovi&scaron;ti&ldquo;</em>. To se li&scaron;í od průzkumu ESENER 2009, při němž byl dotazován <em>&bdquo;nejvý&scaron;e postavený vedoucí pracovník, který koordinuje činnosti v&nbsp;oblasti BOZP v&nbsp;příslu&scaron;ném podniku&ldquo;</em>. Kromě toho bylo v&nbsp;rámci průzkumu ESENER 2009 cílem provést rozhovor se zástupcem pracovníků pro oblast BOZP v&nbsp;podnicích, kde 1) byl již proveden rozhovor s&nbsp;vedoucím pracovníkem, 2) existoval oficiálně jmenovaný zástupce odpovědný za bezpečnost a ochranu zdraví pracovníků a&nbsp;3) dotazovaný vedoucí pracovník takový rozhovor povolil.</p>
+          <p>Hlavním důvodem pro tuto změnu byl záměr provést rozhovor s&nbsp;osobou, která je nejlépe informovaná o&nbsp;ve&scaron;kerých záležitostech týkajících se oblasti BOZP, včetně podrobných informací o&nbsp;hodnocení rizik a dal&scaron;ích konkrétních opatřeních, bez ohledu na její funkci či úlohu v&nbsp;podniku (na které se beztak zaměřuje navazující otázka).</p>
+             
+        <h2>Strategie výběru respondentů</h2>
+          <p>K zaji&scaron;tění srovnatelnosti výsledků průzkumu napříč jednotlivými zeměmi je zásadní, aby strategie výběru respondentů vedla k tomu, že jsou ve v&scaron;ech zemích zkoumány tytéž typy analyzovaných jednotek. Kvalita dostupných rejstříků adres v&nbsp;zapojených zemích se li&scaron;í s&nbsp;ohledem na:</p>
+          <ul>
+           <li>pokrytí (zejména z&nbsp;hlediska zahrnutých odvětví činnosti),</li>
+           <li>dostupnost a přesnost nezbytných podkladových informací (jako je odvětví činnosti a počet zaměstnanců).</li>
+          </ul>
+          <p>Existující rejstříky adres nejsou mezi jednotlivými zeměmi srovnatelné, bylo proto třeba vyvinout značné úsilí k&nbsp;získání dostatečně kvalitních vzorků podniků, které budou zárukou mezinárodní srovnatelnosti. Toto úsilí vyžaduje postup prověřování v zemích, kde dostupné rejstříky adres poskytují informace spí&scaron;e na úrovni podniku jako celku než na úrovni jeho jednotlivých provozoven.</p>
+          <p>Stratifikace vzorku podniků vychází z&nbsp;matice zahrnující 4 třídy podle velikosti a 8 skupin odvětví. Přestože obecný přístup k&nbsp;výběru vzorků v&nbsp;prvních dvou vlnách průzkumu ESENER byl z&nbsp;velké části totožný, v&nbsp;průběhu let do&scaron;lo k&nbsp;určitým změnám, zejména s&nbsp;ohledem na průzkum ESENER 2009. Podrobnosti získáte kliknutím na <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> a <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Matice výběru vzorků pro průzkum ESENER 2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Skupina odvětví &ndash; sekce NACE Rev. 2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Velikost &ndash; počet zaměstnanců</th>
+                   </tr>
+                   <tr>
+                      <th>5&ndash;9</th>
+                      <th>10&ndash;49</th>
+                      <th>50&ndash;249</th>
+                      <th>nad 250</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Zemědělství, lesnictví a&nbsp;rybářství</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Stavebnictví, nakládání s&nbsp;odpady, zásobování vodou a&nbsp;elektřinou</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Zpracovatelský průmysl</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Obchod, doprava, stravování/ubytování a&nbsp;rekreační činnosti</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: Činnosti v oblasti informačních technologií, peněžnictví, činnosti v&nbsp;oblasti nemovitostí a&nbsp;dal&scaron;í technické a&nbsp;vědecké činnosti nebo poskytování osobních služeb</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Veřejná správa</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Vzdělávání</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Zdravotní a sociální péče</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Vývoj dotazníku</h2>
+          <p>Dotazník průzkumu ESENER 2019 je z&nbsp;velké části totožný s&nbsp;dotazníkem používaným v&nbsp;předchozí vlně (ESENER 2014), který vycházel ze struktury verze dotazníku ESENER 2009 pro vedoucí pracovníky. Téměř v&scaron;echny otázky v&scaron;ak byly mezi lety 2009 a 2014 pozměněny, analýzy trendů jsou tudíž možné teprve od průzkumu ESENER 2014. Vývoj a revize dotazníku průzkumu ESENER se provádí v&nbsp;úzké spolupráci mezi agenturou EU-OSHA, hlavním dodavatelem průzkumu ESENER a skupinou výzkumných pracovníků se zaměřením na BOZP z různých zemí, jakož i zainteresovanými subjekty agentury EU-OSHA.</p>
+          <p>Dotazníky průzkumu ESENER byly podrobeny několika testům:</p>
+
+          <ol type=\"a\" >
+            <li><strong>Kognitivní předběžný test</strong> v&nbsp;Německu, Loty&scaron;sku a Nizozemsku, který zahrnoval přibližně 40 podrobných osobních rozhovorů. Hlavním cílem kognitivního předběžného testu je prověřit srozumitelnost a jednoznačnost otázek. Zahrnuje také řadu kognitivních otázek, jejichž cílem je ověřit, zda respondenti z&nbsp;různých zemí a různých typů organizací chápou standardizované otázky zamý&scaron;leným způsobem a zda jsou pro ně otázky relevantní. Kognitivní předběžný test obvykle vede k&nbsp;řadě úprav dotazníku.</li>
+            <li><strong>Posouzení přeložitelnosti</strong> výchozí hlavní anglické verze dotazníku. Zku&scaron;ení překladatelé z různých jazykových skupin vypracují hrubé překlady návrhu výchozí hlavní verze dotazníku za účelem odhalení jakýchkoli nejasností či jiných problémů souvisejících s&nbsp;překladem. Pokud dojde k odhalení takových problémů, překladatelé navrhnou alternativní formulace výchozí hlavní verze, která je následně zrevidována.</li>
+            <li><strong>Pilotní test v terénu</strong> se provádí ve v&scaron;ech zemích a zahrnuje přibližně 50 rozhovorů v&nbsp;každé z&nbsp;nich. Pro pilotní test se používá stejná infrastruktura jako pro hlavní průzkum a provádí se v módu CATI (telefonický rozhovor prostřednictvím počítače). Osobám, které odmítnou telefonický rozhovor, je nabídnuta možnost se zúčastnit on-line (CAWI: webový rozhovor prostřednictvím počítače). Výsledky pilotního testu v&nbsp;terénu vedou k&nbsp;řadě změn výchozí hlavní verze dotazníku i jeho jednotlivých národních verzí.</li>
+          </ol>
+
+        <h2>Překlad</h2>        
+          <p>Vypracují se jednotlivé národní verze dotazníku pro země účastnící se průzkumu (dostupné zde: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> a ESENER 2019). K&nbsp;zaji&scaron;tění toho, aby každá národní verze dotazníku obsahovala kvalitně formulované otázky, které mohou být použity ve v&scaron;ech typech podniků v&nbsp;příslu&scaron;né zemi, a aby generovala informace, které umožní porovnání mezi jednotlivými zeměmi, je nezbytná optimální strategie pro překlady. Překlad dotazníku z&nbsp;průzkumu ESENER se řídí přístupem TRAPD, což je zkratka pro <em><i>Translation, Review, Adjudication, Pre-testing and Documentation</i></em> (Harkness, J. A., 2003). Překlad dotazníku. J. A. Harkness, F. van de Vijver a P. Ph. Mohler (Eds.), Cross-cultural survey methods (s. 35&ndash;56). Hoboken, NJ: John Wiley &amp; Sons), s výjimkou první vlny (k&nbsp;dispozici zde: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>V&nbsp;případě jazyků, které se používají ve dvou či více zemích, se pro jednotlivé země vypracovávají národní verze, které zohledňují postupy týkající se práce, jako je zastoupení pracovníků nebo inspekce práce, které vyžadují odli&scaron;né otázky a terminologii. Více podrobností o&nbsp;procesu překladu lze nalézt ve <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">zprávě o překladu</a> &ndash; viz níže.</p>
+          <p>Základní kroky v&nbsp;rámci překladu dotazníku průzkumu ESENER jsou:</p>
+           
+          <ol type=\"1\" >
+            <li>dva na sobě nezávislé překlady do každého jazyka vyhotovené profesionálními překladateli, rodilými mluvčími cílového jazyka, kteří spolu v&nbsp;průběhu práce na překladu nebyli v&nbsp;kontaktu,</li>
+            <li>revize těchto na sobě nezávislých překladů posuzovatelem, který vypracuje novou verzi,</li>
+            <li>setkání rozhodce s&nbsp;oběma překladateli s&nbsp;cílem společně prodiskutovat nové znění a dohodnout se na konečné revidované verzi,</li>
+            <li>kontrola revidované verze ze strany <a href=\"https://osha.europa.eu/cs/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">sítě kontaktních míst</a> agentury EU-OSHA se zvlá&scaron;tním zaměřením na národní terminologii v oblasti BOZP, včetně otázek týkajících se subjektů zastupujících pracovníky.</li>
+          </ol>
+
+        <h2>Velikost národních vzorků</h2>
+          <p>Počínaje průzkumem ESENER 2014 bylo vnitrostátním orgánům nabídnuta možnost financování roz&scaron;íření rozsahu jejich národních vzorků. Této možnosti k&nbsp;roz&scaron;íření počtu zkoumaných podniků ve své zemi využilo Slovinsko, Spojené království a Španělsko. V&nbsp;rámci průzkumu ESENER 2019 tuto nabídku, která tentokrát zahrnovala i možnost přidat do národní verze dotazníku dvě až tři otázky národního zájmu, přijaly tři země (Irsko, Norsko a Slovinsko). Švýcarsko si v&scaron;echny vlny průzkumu ESENER kompletně financovalo samo.</p>
+           
+          <h3>Dosažená velikost vzorků v rámci průzkumu ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Země</th>
+                    <th class=\"center-text\">ESENER 2009 (rozhovory s&nbsp;vedoucími pracovníky)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rakousko</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgie</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulharsko</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Chorvatsko</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kypr</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Česká republika</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Dánsko</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estonsko</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finsko</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Francie</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Německo</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Řecko</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Maďarsko</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Irsko</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Itálie</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Loty&scaron;sko</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Litva</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lucembursko</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nizozemsko</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Polsko</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugalsko</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rumunsko</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovensko</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovinsko</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Španělsko</th>
+                    <td>1566</td>
+                    <td><em>3162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Švédsko</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spojené království</th>
+                    <td>1500</td>
+                    <td><em>4250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norsko</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Švýcarsko</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Island</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Srbsko</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Severní Makedonie</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turecko</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albánie</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Černá Hora</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Celkem</th>
+                    <td><strong>28649</strong></td>
+                    <td><strong>49320</strong></td>
+                    <td><strong>45200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Dokumenty a dal&scaron;í informace pro výzkumné pracovníky</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Specifikace pro nabídky:</dt>
+                <dd>Otevřená výzva zveřejněná dne 21.&nbsp;srpna 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Podpůrný dopis:</dt>
+                <dd>Za účelem podpory účasti v&nbsp;průzkumu byly ve v&scaron;ech jazycích průzkumu vypracovány dopisy obsahující základní informace o průzkumu a popisující jeho cíle a podporu ze strany sociálních partnerů.</dd>
+                <dt>Výchozí hlavní dotazníky:</dt>
+                <dd>
+                  <ul>
+                    <li>Dotazník pro zástupce vedení: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Dotazník pro zástupce zaměstnanců: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Technické zprávy:</dt>
+                <dd>
+                  <ul>
+                    <li>Evropský průzkum na téma nových a vznikajících rizik &ndash; psychosociální rizika (ESENER-PSR 2009) &ndash; technická zpráva: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Hodnocení ex post Evropského průzkumu podniků na téma nových a vznikajících rizik: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Zpráva o&nbsp;výběru vzorků v&nbsp;rámci průzkumu ESENER 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Datový soubor průzkumu ESENER 2009 je dostupný prostřednictvím <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">datové služby Spojeného království při University of Essex</a>, <a href=\"https://data.europa.eu/euodp/cs/data/dataset/esener-1\" target=\"_blank\">evropského datového portálu</a> a <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Specifikace pro nabídky:</dt>
+                <dd>Otevřená výzva zveřejněná dne 5.&nbsp;prosince 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Podpůrný dopis:</dt>
+                <dd>Za účelem podpory účasti v&nbsp;průzkumu byly ve v&scaron;ech jazycích průzkumu vypracovány dopisy obsahující základní informace o průzkumu a popisující jeho cíle a podporu ze strany sociálních partnerů.</dd>
+                <dt>Výchozí hlavní dotazník:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Technické zprávy:</dt>
+                <dd>
+                  <ul>
+                    <li>Technická zpráva: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Zpráva o kvalitě: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Zpráva o překladu: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Datový soubor průzkumu ESENER 2014 je dostupný prostřednictvím <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">datové služby Spojeného království při University of Essex</a>, <a href=\"https://data.europa.eu/euodp/cs/data/dataset/esener-2\" target=\"_blank\">evropského datového portálu</a> a <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Specifikace pro nabídky:</dt>
+                <dd>Otevřená výzva zveřejněná dne 5. ledna 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Podpůrný dopis</dt>
+                <dd>Za účelem podpory účasti v&nbsp;průzkumu byly ve v&scaron;ech jazycích průzkumu vypracovány dopisy obsahující základní informace o průzkumu a popisující jeho cíle a podporu ze strany sociálních partnerů.</dd>
+                <dt>Výchozí hlavní dotazník</dt>
+                <dt>Technické zprávy</dt>
+              </dl>
+              <p>Upozorňujeme, že ve&scaron;kerá díla, která využívají nebo odkazují na&nbsp;průzkum ESENER, by měla uvádět zdroj prostřednictvím bibliografických odkazů v&nbsp;poznámkách pod&nbsp;čarou nebo v&nbsp;referenčním oddíle publikací. Obdobně by každá publikace, ať již ti&scaron;těná, elektronická nebo vysílaná, která zcela nebo částečně vychází z průzkumu ESENER, měla uvádět Evropskou agenturu pro bezpečnost a&nbsp;ochranu zdraví při práci (EU-OSHA). Rovněž by měla obsahovat prohlá&scaron;ení, že agentura EU-OSHA nenese žádnou odpovědnost za následné analýzy nebo interpretaci průzkumů ESENER.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>ESENER-metodologien</h1>
+        <h2>Univers og analyseenhed</h2>
+          <p>Undersøgelsespopulationen omfatter alle forretningssteder, der har mindst fem ansatte i de deltagende lande, og som dækker alle erhvervssektorer undtagen private husholdninger (NACE T) og ekstraterritoriale organisationer (NACE U). Landbrug, skovbrug og fiskeri (NACE A) og forretningssteder med færre end 10 ansatte var ikke omfattet af ESENER 2009. I forbindelse med undersøgelsen forstås et forretningssted som et sted, der huser en enkelt arbejdsgivers aktiviteter i et enkelt sæt lokaler (f.eks. en enkelt bankfilial, en bilfabrik eller en skole).</p>
+          <p>De deltagende lande omfatter alle EU&apos;s medlemsstater samt Norge og Schweiz. Tyrkiet var omfattet af ESENER 2009 og 2014, Albanien og Montenegro af ESENER 2014, og Island, Nordmakedonien og Serbien af ESENER 2014 og 2019.</p>
+           
+          <h3>Landedækning i ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Den Europæiske Union (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norge</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Schweiz</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Island</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Nordmakedonien</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbien</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Tyrkiet</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albanien</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Montenegro</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Inklusive Kroatien og Det Forenede Kongerige</p>
+
+        <h2>Respondenter</h2>
+          <p>På hvert af de undersøgte forretningssteder udspørges <em>&quot;den person, som kender mest til arbejdsmiljøet på denne arbejdsplads&quot;</em>. Dette adskiller sig fra ESENER 2009, hvor <em>&quot;den leder, der har det højeste ansvar for at koordinere arbejdsmiljøarbejdet i denne virksomhed&quot;</em> blev adspurgt. Derudover bestræbte man sig i ESENER 2009 på at interviewe arbejdstagernes arbejdsmiljørepræsentant på de forretningssteder, 1) hvor et interview med ledelsen blev afholdt, 2) hvor en formelt udpeget repræsentant med særligt ansvar for arbejdstagernes sikkerhed og sundhed fandtes, og 3) hvor respondenten i ledelsen havde givet tilladelse til samtalen.</p>
+          <p>Ændringen blev indført først og fremmest for at få adgang til den person, der har det bedste kendskab til alle arbejdsmiljørelaterede spørgsmål, herunder oplysninger om risikovurdering og andre særlige foranstaltninger, uanset vedkommendes funktion eller rolle på forretningsstedet. Under alle omstændigheder ville dette blive aktuelt i forbindelse med opfølgende spørgsmål.</p>
+             
+        <h2>Stikprøvestrategi</h2>
+          <p>For at sikre, at undersøgelsesresultaterne er sammenlignelige på tværs af medlemsstaterne, er det vigtigt, at stikprøvestrategien muliggør, at den samme type enheder overvåges i hvert land. Kvaliteten af de tilgængelige adresseregistre varierer fra land til land med hensyn til:</p>
+          <ul>
+           <li>dækning (navnlig for de omfattede erhvervssektorer)</li>
+           <li>tilgængeligheden og nøjagtigheden af den nødvendige baggrundsinformation (såsom erhvervssektor og antal ansatte).</li>
+          </ul>
+          <p>Eksisterende adresseregistre er ikke sammenlignelige på tværs af landene, og der er derfor gjort en stor indsats for at sikre en prøveudtagning, som giver den fornødne kvalitet og sikrer tværnational sammenlignelighed. Denne indsats har krævet en screeningprocedure i de lande, hvor de tilgængelige adresseregistre giver oplysninger på virksomhedsniveau frem for på forretningsstedsniveau.</p>
+          <p>Stratificeringen af stikprøven er baseret på en matrix af fire størrelsesklasser og otte grupper af sektorer. Den generelle tilgang til stikprøveudtagning i de to første ESENER-runder var stort set den samme, men der er sket en række ændringer i årenes løb, navnlig med hensyn til ESENER 2009. Nærmere oplysninger findes i <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> og <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Stikprøvematrix i ESENER 2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Sektorgruppe &mdash; hovedafdelinger i NACE rev. 2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Størrelse &mdash; antal ansatte</th>
+                   </tr>
+                   <tr>
+                      <th>5-9</th>
+                      <th>10-49</th>
+                      <th>50-249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Landbrug, skovbrug og fiskeri</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Bygge- og anlægsvirksomhed, affaldshåndtering, vand- og elforsyning</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Fremstilling</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Handel, transport, overnatningsfaciliteter/restaurationsvirksomhed og sport</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: IT-branchen, finansiel virksomhed, fast ejendom og andre videnskabelige og tekniske eller personlige tjenesteydelser</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Offentlig forvaltning</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Undervisning</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Sundhedsvæsen og sociale foranstaltninger</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Udformning af spørgeskemaer</h2>
+          <p>Spørgeskemaet for ESENER 2019 er stort set det samme som det, der blev brugt i den foregående runde (ESENER 2014). Dette var selv oprindeligt baseret på ledelsesversionen af ESENER 2009-spørgeskemaet. Næsten alle spørgsmål blev dog ændret mellem 2009 og 2014, og derfor har der kunnet foretages tendensanalyser fra ESENER 2014 og frem. Udformningen og revisionen af ESENER-spørgeskemaet foregår i tæt samarbejde mellem EU-OSHA, ESENER-hovedkontrahenten og en gruppe arbejdsmiljøforskere fra forskellige lande såvel som EU-OSHA&apos;s interessenter.</p>
+          <p>ESENER-spørgeskemaerne har undergået flere undersøgelser:</p>
+
+          <ol type=\"a\" >
+            <li>En <strong>kognitiv pilotundersøgelse</strong> i Tyskland, Letland og Nederlandene med ca. 40 indgående personlige interviews. Hovedformålet med den kognitive pilotundersøgelse er at kontrollere forståelsen af spørgsmålene og deres klarhed. Der er også en række kognitive spørgsmål, som har til formål at afprøve, om respondenter fra forskellige lande og forskellige typer af organisationer fortolker de standardiserede spørgsmål efter hensigten, og om de er relevante for dem. Den kognitive pilotundersøgelse fører normalt til en række ændringer af spørgeskemaet.</li>
+            <li>En <strong>oversættelighedsvurdering</strong> af originalversionen af spørgeskemaet på engelsk. Erfarne oversættere inden for forskellige sprogfamilier udarbejder grove oversættelser af udkastet til originaludgaven af spørgeskemaet for at indkredse eventuelle uklarheder eller andre vanskeligheder relateret til oversættelse. Når sådanne vanskeligheder indkredses, stiller oversættere forslag til alternative formuleringer i originalversionen, som følgelig revideres.</li>
+            <li>Der gennemføres en <strong>feltbaseret pilotundersøgelse</strong> i alle lande, herunder ca. 50 interviews pr. land. Ved hjælp af samme infrastruktur som i hovedundersøgelsen gennemføres denne pilotundersøgelse som computerformidlede telefoninterviews (CATI, Computer Assisted Telephone Interviewing), men der gives mulighed for at deltage online (CAWI, Computer Assisted Web Interviewing) til personer, der ikke ønsker at blive interviewet over telefonen. Den feltbaserede pilotundersøgelse medfører en række ændringer såvel af originalsprogsversionen som af de enkelte nationale versioner af spørgeskemaet.</li>
+          </ol>
+
+        <h2>Oversættelse</h2>        
+          <p>Der udarbejdes forskellige nationale versioner af spørgeskemaet for de lande, der er omfattet af undersøgelsen (findes her: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> og ESENER 2019). En optimal oversættelsesstrategi er afgørende for at sikre, at hver nationale version af spørgeskemaet både indeholder spørgsmål af høj kvalitet, der kan rettes mod alle typer af virksomheder i det pågældende land, og genererer information, der kan sammenlignes tværnationalt. Oversættelsen af ESENER-spørgeskemaet følger TRAPD-tilgangen, et akronym for <em>Translation, Review, Adjudication, Pre-testing og Documentation</em> (Harkness, J. A. (2003). Questionnaire translation. I J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), bortset fra første runde (findes her: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>For sprog, der tales i to eller flere lande, udarbejdes der forskellige nationale versioner, hvor der tages hensyn til arbejdsrelaterede praksisser, f.eks. for medarbejderrepræsentation eller arbejdstilsyn, som kræver forskellige spørgsmål og terminologier. Yderligere oplysninger om oversættelsesprocessen findes i <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">oversættelsesrapporten</a> &mdash; se nedenfor.</p>
+          <p>De grundlæggende trin ved oversættelsen af ESENER er:</p>
+           
+          <ol type=\"1\" >
+            <li>To selvstændige oversættelser til alle sprog foretaget af professionelle oversættere &mdash; modersmålstalende på målsproget &mdash; som ikke var i kontakt med hinanden under oversættelsen.</li>
+            <li>Gennemgang af de selvstændige oversættelser foretaget af en uafhængig bedømmer, som udarbejder en ny version.</li>
+            <li>Behandlingsmøder mellem den uafhængige bedømmer og de to oversættere for i fællesskab at drøfte det nye udkast og vedtage en endelig version.</li>
+            <li>Kontrol af de endelige versioner foretaget af EU-OSHA&apos;s <a href=\"https://osha.europa.eu/da/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">netværk af focal points</a>, med særligt fokus på den nationale arbejdsmiljøterminologi, herunder på spørgsmål vedrørende medarbejderrepræsentation.</li>
+          </ol>
+
+        <h2>Antal nationale stikprøver</h2>
+          <p>Med ESENER 2014 fik de nationale myndigheder for første gang mulighed for at finansiere en udvidelse af antallet af nationale stikprøver. Spanien, Slovenien og Det Forenede Kongerige tog imod tilbuddet om at øge antallet af deres respektive stikprøver. I ESENER 2019 takkede tre lande ja til dette tilbud (Irland, Norge og Slovenien), som i denne omgang også inkluderede muligheden for at føje to til tre spørgsmål af national interesse til de respektive spørgeskemaer. Schweiz har fuldt ud finansieret alle runder af ESENER.</p>
+           
+          <h3>Opnået antal stikprøver i ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Land</th>
+                    <th class=\"center-text\">ESENER 2009 (ledelsessamtaler)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Østrig</th>
+                    <td>1&nbsp;034</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgien</th>
+                    <td>1&nbsp;069</td>
+                    <td>1&nbsp;504</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgarien</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kroatien</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Cypern</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Tjekkiet</th>
+                    <td>1&nbsp;015</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Danmark</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estland</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finland</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Frankrig</th>
+                    <td>1&nbsp;497</td>
+                    <td>2&nbsp;256</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Tyskland</th>
+                    <td>1&nbsp;510</td>
+                    <td>2&nbsp;261</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Grækenland</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ungarn</th>
+                    <td>1&nbsp;031</td>
+                    <td>1&nbsp;514</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Irland</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2&nbsp;000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Italien</th>
+                    <td>1&nbsp;501</td>
+                    <td>2&nbsp;254</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Letland</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Litauen</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luxembourg</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nederlandene</th>
+                    <td>1&nbsp;009</td>
+                    <td>1&nbsp;519</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Polen</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;257</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugal</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rumænien</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovakiet</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovenien</th>
+                    <td>529</td>
+                    <td><em>1&nbsp;051</em></td>
+                    <td><em>1&nbsp;050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spanien</th>
+                    <td>1&nbsp;566</td>
+                    <td><em>3&nbsp;162</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Sverige</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;521</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Det Forenede Kongerige</th>
+                    <td>1&nbsp;500</td>
+                    <td><em>4&nbsp;250</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norge</th>
+                    <td>951</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Schweiz</th>
+                    <td>1&nbsp;019</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Island</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbien</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nordmakedonien</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Tyrkiet</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albanien</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Montenegro</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>I alt</th>
+                    <td><strong>28&nbsp;649</strong></td>
+                    <td><strong>49&nbsp;320</strong></td>
+                    <td><strong>45&nbsp;200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Dokumenter og yderligere information til forskere</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Udbudsmateriale:</dt>
+                <dd>Åben indkaldelse offentliggjort den 21. august 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Støtteskrivelse:</dt>
+                <dd>Skrivelser om baggrunden og formålet med undersøgelsen og med støtteerklæringer fra arbejdsmarkedets parter på alle undersøgelsessprog blev udfærdiget for at opfordre til deltagelse i undersøgelsen.</dd>
+                <dt>Originalversioner af spørgeskemaer:</dt>
+                <dd>
+                  <ul>
+                    <li>Spørgeskema til ledelsesrepræsentant: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Spørgeskema til medarbejderrepræsentant: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Tekniske rapporter:</dt>
+                <dd>
+                  <ul>
+                    <li>Europæisk undersøgelse af nye risici og risici i fremvækst &mdash; psykosociale risici (ESENER-PSR 2009) &mdash; teknisk rapport: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Efterfølgende evaluering af den europæiske virksomhedsundersøgelse af nye risici og risici i fremvækst: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>ESENER-stikprøverapport 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Der er adgang til ESENER 2009-datasættet via <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Det Forenede Kongeriges datatjeneste ved University of Essex</a>, <a href=\"https://data.europa.eu/euodp/DA/data/dataset/esener-1\" target=\"_blank\">Den Europæiske Dataportal</a> og <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Udbudsmateriale:</dt>
+                <dd>Åben indkaldelse offentliggjort den 5. december 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Støtteskrivelse:</dt>
+                <dd>Skrivelser om baggrunden og formålet med undersøgelsen og med støtteerklæringer fra arbejdsmarkedets parter på alle undersøgelsessprog blev udfærdiget for at opfordre til deltagelse i undersøgelsen.</dd>
+                <dt>Originalversion af spørgeskema:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Tekniske rapporter:</dt>
+                <dd>
+                  <ul>
+                    <li>Teknisk rapport: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Kvalitetsrapport: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Oversættelsesrapport: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Der er adgang til ESENER 2014-datasættet via <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Det Forenede Kongeriges datatjeneste ved University of Essex</a>, <a href=\"https://data.europa.eu/euodp/da/data/dataset/esener-2\" target=\"_blank\">Den Europæiske Dataportal</a> og <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Udbudsmateriale:</dt>
+                <dd>Åben indkaldelse offentliggjort den 5. januar 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Støtteskrivelse</dt>
+                <dd>Skrivelser om baggrunden og formålet med undersøgelsen og med støtteerklæringer fra arbejdsmarkedets parter på alle undersøgelsessprog blev udfærdiget for at opfordre til deltagelse i undersøgelsen.</dd>
+                <dt>Originalversion af spørgeskema</dt>
+                <dt>Tekniske rapporter</dt>
+              </dl>
+              <p>Bemærk venligst, at der i alle værker, hvor der gøres brug af eller refereres til ESENER, skal henvises til kilden ved hjælp af bibliografisk citering i fodnoter eller i referenceafsnittet af publikationer. På samme måde bør enhver publikation, trykt, elektronisk eller transmitteret, der helt eller delvis er baseret på ESENER, indeholde en anerkendelse af Det Europæiske Arbejdsmiljøagentur (EU-OSHA). Den bør også indeholde en erklæring om, at EU-OSHA ikke er ansvarlig for yderligere analyser eller fortolkninger indeholdt deri.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Die ESENER-Methodik</h1>
+        <h2>Erhebungsumgebung und Analyseeinheit</h2>
+          <p>Die Grundgesamtheit der Erhebung umfasst alle Betriebe mit fünf oder mehr Beschäftigten in den teilnehmenden Ländern, die alle Wirtschaftszweige mit Ausnahme der privaten Haushalte (NACE&nbsp;T) und der exterritorialen Organisationen (NACE&nbsp;U) abdecken. Land- und Forstwirtschaft und Fischerei (NACE&nbsp;A) und Betriebe mit weniger als zehn Beschäftigten wurden von ESENER&nbsp;2009 nicht erfasst. Für die Zwecke der Erhebung ist ein Betrieb definiert als die Tätigkeit eines einzigen Arbeitgebers an einem einzigen Standort (z.&nbsp;B. eine einzelne Filiale einer Bank, eine Automobilfabrik oder eine Schule).</p>
+          <p>Zu den teilnehmenden Ländern gehören alle Mitgliedstaaten der Europäischen Union sowie Norwegen und die Schweiz. Die Türkei wurde von ESENER&nbsp;2009 und 2014 erfasst, Albanien und Montenegro von ESENER&nbsp;2014 und Island, Nordmazedonien und Serbien wurden in ESENER&nbsp;2014 und 2019 erfasst.</p>
+           
+          <h3>In ESENER erfasste Länder</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER&nbsp;2009</th>
+                      <th>ESENER&nbsp;2014</th>
+                      <th>ESENER&nbsp;2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Europäische Union (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norwegen</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Schweiz</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Island</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Nordmazedonien</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbien</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Türkei</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albanien</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Montenegro</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Einschließlich Kroatiens und des Vereinigten Königreichs</p>
+
+        <h2>Befragte</h2>
+          <p>In jedem untersuchten Betrieb wird <em>&bdquo;die Person befragt, die sich am besten mit der Art des Risikomanagements im Bereich Sicherheit und Gesundheitsschutz an ihrem Arbeitsplatz auskennt.&ldquo;</em> Dies unterscheidet sich von ESENER&nbsp;2009, bei der <em>&bdquo;die erfahrenste Führungskraft, die die Aktivitäten im Bereich Sicherheit und Gesundheitsschutz im Betrieb koordiniert,&ldquo;</em> im Mittelpunkt stand. Darüber hinaus war in ESENER&nbsp;2009 eine Befragung mit dem Arbeitnehmervertreter für Gesundheits- und Sicherheitsfragen in den Betrieben das Ziel, in denen 1.)&nbsp;eine Befragung der Betriebsleitung abgeschlossen war, 2.)&nbsp;es einen offiziell ernannten und speziell für die Sicherheit und Gesundheit der Arbeitnehmer zuständigen Vertreter gab und 3.)&nbsp;der Befragte der Betriebsleitung seine Zustimmung zur Befragung gegeben hatte.</p>
+          <p>Der Hauptgrund für die Änderung bestand in der Absicht, sich an die Person zu wenden, die über die besten Kenntnisse in allen Gesundheits- und Sicherheitsfragen verfügt, einschließlich Einzelheiten der Risikobewertung und anderer besonderer Maßnahmen, unabhängig von der Funktion oder Rolle des Betreffenden im Betrieb, die ohnehin später erfragt wird.</p>
+             
+        <h2>Stichprobenstrategie</h2>
+          <p>Um zu gewährleisten, dass die Umfrageergebnisse länderübergreifend vergleichbar sind, ist es von entscheidender Bedeutung, dass die Stichprobenstrategie die gleiche Art von Einheiten beinhaltet, die in jedem Land Gegenstand der Erhebung sind. Die Qualität der verfügbaren Adressenregister unterscheidet sich in den teilnehmenden Ländern durch:</p>
+          <ul>
+           <li>den Erfassungsbereich (insbesondere die erfassten Wirtschaftszweige);</li>
+           <li>die Verfügbarkeit und Genauigkeit der benötigten Hintergrundinformationen (wie Wirtschaftszweig und Zahl der Beschäftigten).</li>
+          </ul>
+          <p>Die vorhandenen Adressenregister sind zwischen den einzelnen Ländern nicht vergleichbar, weshalb erhebliche Anstrengungen unternommen wurden, um Proben zu bilden, die die erforderliche Qualität aufweisen und die länderübergreifende Vergleichbarkeit gewährleisten. Diese Bemühungen haben ein Screening-Verfahren in den Ländern erfordert, in denen die verfügbaren Adressenregister eher Informationen auf Unternehmens- als auf Betriebsebene zur Verfügung stellen.</p>
+          <p>Die Schichtung der Stichprobe basiert auf einer Matrix mit vier Größenklassen und acht Gruppen von Wirtschaftszweigen. Während der allgemeine Ansatz für die Stichprobenziehung in den ersten beiden Wellen von ESENER weitgehend identisch war, gab es im Laufe der Jahre einige Veränderungen, insbesondere im Hinblick auf ESENER&nbsp;2009. Die Einzelheiten dazu sind unter <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER&nbsp;2009</a> und <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER&nbsp;2014</a> zu finden.</p>
+            
+          <h3>ESENER&nbsp;2019 Stichprobenmatrix</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Sektorgruppe &ndash; NACE Rev.&nbsp;2 Abschnitte</th>
+                      <th  colspan=\"4\" class=\"center-text\">Größe &ndash; Zahl der Beschäftigten</th>
+                   </tr>
+                   <tr>
+                      <th>5-9</th>
+                      <th>10-49</th>
+                      <th>50-249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Land- und Forstwirtschaft, Fischerei</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Baugewerbe/Bau, Abfallentsorgung, Wasser- und Stromversorgung</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Verarbeitendes Gewerbe</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Handel, Verkehr, Lebensmittel/Beherbergung und Freizeitaktivitäten</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: IT-Dienstleistungen, Finanzdienstleistungen, Grundstücks- und Wohnungswesen und sonstige technische, wissenschaftliche oder sonstige persönliche Dienstleistungen</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Öffentliche Verwaltung</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Erziehung und Unterricht</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Gesundheits- und Sozialwesen</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Entwicklung des Fragebogens</h2>
+          <p>Der ESENER-2019-Fragebogen ist weitgehend identisch mit dem in der vorangegangenen Welle (ESENER&nbsp;2014) verwendeten Fragebogen, der sich ursprünglich auf die Struktur des ESENER-2009-Fragebogens für die Betriebsleitung stützte. Zwischen 2009 und 2014 wurden jedoch fast alle Fragen geändert, sodass Trendanalysen ab ESENER&nbsp;2014 möglich sind. Die Entwicklung und Überarbeitung des ESENER-Fragebogens erfolgt in enger Zusammenarbeit zwischen der EU-OSHA, dem ESENER-Hauptauftragnehmer und einer Gruppe von im Bereich Sicherheit und Gesundheit bei der Arbeit tätigen Forschern aus verschiedenen Ländern sowie Interessenträgern der EU-OSHA.</p>
+          <p>Die ESENER-Fragebögen wurden mehreren Tests unterzogen:</p>
+
+          <ol type=\"a\" >
+            <li>einem <strong>kognitiven Pretest</strong> in Deutschland, Lettland und den Niederlanden mit etwa 40 eingehenden persönlichen Befragungen. Das Hauptziel des kognitiven Pretests besteht darin, das Verständnis und die Klarheit der Fragen zu überprüfen. Es gibt auch eine Reihe kognitiver Fragen, mit denen überprüft werden soll, ob Befragte aus unterschiedlichen Ländern und unterschiedlichen Arten von Organisationen die standardisierten Fragen in der beabsichtigten Weise interpretieren und ob sie für sie relevant sind. Der kognitive Pretest führt in der Regel zu einer Reihe von Änderungen am Fragebogen.</li>
+            <li>Eine <strong>Beurteilung der Übersetzbarkeit</strong> der englischen Masterfassung des Fragebogens. Erfahrene Übersetzer aus verschiedenen Sprachfamilien erstellen Rohübersetzungen des Entwurfs des Masterfragebogens, um etwaige Uneindeutigkeiten oder sonstige Übersetzungsschwierigkeiten zu ermitteln. Werden solche Schwierigkeiten festgestellt, so unterbreiten die Übersetzer Vorschläge für alternative Formulierungen für die Masterfassung, die entsprechend überarbeitet wird.</li>
+            <li>In allen Ländern wird ein <strong>Pilotfeldtest</strong> durchgeführt, bei dem pro Land etwa 50&nbsp;Befragungen durchgeführt werden. Dieser Pilottest, der die gleiche Infrastruktur wie die Haupterhebung nutzt, wird im CATI-Modus (Computer Assisted Telephone Interviews&nbsp;&ndash; computergestützte telefonische Befragung) durchgeführt, wobei jedoch die Personen, die nicht per Telefon befragt werden möchten, die Möglichkeit zur Online-Teilnahme (CAWI: Computer Assisted Web Interviewing&nbsp;&ndash; computergestützte Befragung über das Internet) haben. Der Pilotfeldtest führt zu einer Reihe von Änderungen am Masterfragebogen und an den einzelnen nationalen Fassungen des Fragebogens.</li>
+          </ol>
+
+        <h2>Übersetzung</h2>        
+          <p>Für die Länder, die Gegenstand der Erhebung sind, werden verschiedene nationale Fassungen des Fragebogens entwickelt (abrufbar unter: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER&nbsp;2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER&nbsp;2014</a> und ESENER&nbsp;2019). Eine optimale Übersetzungsstrategie ist unerlässlich, um sicherzustellen, dass jede nationale Fassung des Fragebogens qualitativ hochwertige Fragen enthält, die an alle Unternehmensarten innerhalb des betreffenden Landes gerichtet werden können und die Informationen generieren, die länderübergreifend miteinander verglichen werden können. Die Übersetzung des ESENER-Fragebogens folgt dem TRAPD-Konzept, einem Akronym für <em>Übersetzung, Überprüfung, Klärung, Pretest und Dokumentation</em> (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Hrsg.), Cross-cultural survey methods (S.&nbsp;35-56). Hoboken, NJ: John Wiley &amp; Sons), ausgenommen bei der ersten Welle (abrufbar unter: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER&nbsp;2009</a>).</p>
+          <p>Für Sprachen, die in zwei oder mehr Ländern gesprochen werden, werden unterschiedliche nationale Fassungen entwickelt, bei denen arbeitsbezogene Praktiken wie Arbeitnehmervertretung oder Arbeitsaufsicht berücksichtigt werden, die unterschiedliche Fragen und Terminologien erfordern. Weitere Einzelheiten zum Übersetzungsprozess finden sich im <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Übersetzungsbericht</a>&nbsp;&ndash; siehe unten.</p>
+          <p>Folgende grundlegende Schritte wurden in die Übersetzung von ESENER aufgenommen:</p>
+           
+          <ol type=\"1\" >
+            <li>Zwei voneinander unabhängige Übersetzungen in jede der Sprachen, die von professionellen Übersetzern&nbsp;&ndash; Muttersprachlern der Zielsprache&nbsp;&ndash; angefertigt werden, die bei der Erstellung ihrer Übersetzung nicht miteinander in Kontakt standen.</li>
+            <li>Überprüfung der unabhängigen Übersetzungen durch einen &bdquo;Adjudicator&ldquo;, der etwaige Unklarheiten ausräumt und eine neue Fassung erstellt.</li>
+            <li>Überprüfungssitzungen zwischen dem &bdquo;Adjudicator&ldquo; und den beiden Übersetzern, um gemeinsam den neuen Entwurf zu erörtern und Einvernehmen über eine endgültig zu verabschiedende Fassung zu erzielen.</li>
+            <li>Prüfung der verabschiedeten Fassungen durch das <a href=\"https://osha.europa.eu/de/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">Netz der Focal Points</a> der EU-OSHA, mit besonderem Schwerpunkt auf der nationalen Terminologie im Bereich Sicherheit und Gesundheit bei der Arbeit, einschließlich der Fragen in Bezug auf die Gremien der Arbeitnehmervertretung.</li>
+          </ol>
+
+        <h2>Nationale Stichprobenumfänge</h2>
+          <p>Zum ersten Mal erhielten nationale Behörden bei ESENER&nbsp;2014 die Möglichkeit, eine Ausweitung ihrer nationalen Stichprobenumfänge zu finanzieren. Spanien, Slowenien und das Vereinigte Königreich nahmen das Angebot an, um ihren jeweiligen Stichprobenumfang zu erhöhen. In ESENER&nbsp;2019 nahmen drei Länder (Irland, Norwegen und Slowenien) dieses Angebot an, was diesmal die Möglichkeit einschloss, zwei bis drei Fragen von nationalem Interesse zum Fragebogen hinzuzufügen. Die Schweiz hat alle Wellen von ESENER vollständig finanziert.</p>
+           
+          <h3>In ESENER erzielte Stichprobenumfänge</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Land</th>
+                    <th class=\"center-text\">ESENER&nbsp;2009 (Befragungen der Betriebsleitung)</th>
+                    <th class=\"center-text\">ESENER&nbsp;2014</th>
+                    <th>ESENER&nbsp;2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Österreich</th>
+                    <td>1&nbsp;034</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgien</th>
+                    <td>1&nbsp;069</td>
+                    <td>1&nbsp;504</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgarien</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kroatien</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Zypern</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Tschechische Republik</th>
+                    <td>1&nbsp;015</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Dänemark</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estland</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finnland</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Frankreich</th>
+                    <td>1&nbsp;497</td>
+                    <td>2&nbsp;256</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Deutschland</th>
+                    <td>1&nbsp;510</td>
+                    <td>2&nbsp;261</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Griechenland</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ungarn</th>
+                    <td>1&nbsp;031</td>
+                    <td>1&nbsp;514</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Irland</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2&nbsp;000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Italien</th>
+                    <td>1&nbsp;501</td>
+                    <td>2&nbsp;254</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lettland</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Litauen</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luxemburg</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Niederlande</th>
+                    <td>1&nbsp;009</td>
+                    <td>1&nbsp;519</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Polen</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;257</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugal</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rumänien</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slowakei</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slowenien</th>
+                    <td>529</td>
+                    <td><em>1&nbsp;051</em></td>
+                    <td><em>1&nbsp;050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spanien</th>
+                    <td>1&nbsp;566</td>
+                    <td><em>3&nbsp;162</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Schweden</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;521</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Vereinigtes Königreich</th>
+                    <td>1&nbsp;500</td>
+                    <td><em>4&nbsp;250</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norwegen</th>
+                    <td>951</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Schweiz</th>
+                    <td>1&nbsp;019</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Island</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbien</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nordmazedonien</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Türkei</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albanien</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Montenegro</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Gesamt</th>
+                    <td><strong>28&nbsp;649</strong></td>
+                    <td><strong>49&nbsp;320</strong></td>
+                    <td><strong>45&nbsp;200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Dokumente und weitere Informationen für Forscher</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER&nbsp;2009</a></h4>
+              <dl>
+                <dt>Leistungsbeschreibung:</dt>
+                <dd>Am 21.&nbsp;August 2007 veröffentlichte Aufforderung zur Einreichung von Vorschlägen: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Leistungsbeschreibung ESENER.pdf</a></dd>
+                <dt>Unterstützungsschreiben:</dt>
+                <dd>In allen Erhebungssprachen wurden Schreiben zum Hintergrund und zu den Zielen der Erhebung sowie zur Unterstützung durch die Sozialpartner mit dem Ziel erstellt, zur Teilnahme an der Erhebung zu ermuntern.</dd>
+                <dt>Masterfragebögen:</dt>
+                <dd>
+                  <ul>
+                    <li>Fragebogen für den Vertreter der Betriebsleitung: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Fragebogen für den Arbeitnehmervertreter: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Technische Berichte:</dt>
+                <dd>
+                  <ul>
+                    <li>Europäische Unternehmenserhebung über neue und aufkommende Risiken&nbsp;&ndash; Psychosoziale Risiken (ESENER-PSR&nbsp;2009)&nbsp;&ndash; Technischer Bericht: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technischer Bericht EUOSHA.pdf</a></li>
+                    <li>Ex-post-Bewertung der Europäischen Unternehmenserhebung über neue und aufkommende Risiken: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post-Bewertung von ESENER.pdf</a></li>
+                    <li>ESENER-Stichprobenbericht 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Stichprobenbericht-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Der Datensatz ESENER&nbsp;2009 ist über <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">den Datendienst des Vereinigten Königreichs der Universität Essex</a>, <a href=\"https://data.europa.eu/euodp/de/data/dataset/esener-1\" target=\"_blank\">das Europäische Datenportal</a> und <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a> abrufbar.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER&nbsp;2014</a></h4>
+              <dl>
+                <dt>Leistungsbeschreibung:</dt>
+                <dd>Am 5.&nbsp;Dezember 2012 veröffentlichte Aufforderung zur Einreichung von Vorschlägen: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-Leistungsbeschreibung.pdf</a></dd>
+                <dt>Unterstützungsschreiben:</dt>
+                <dd>In allen Erhebungssprachen wurden Schreiben zum Hintergrund und zu den Zielen der Erhebung sowie zur Unterstützung durch die Sozialpartner mit dem Ziel erstellt, zur Teilnahme an der Erhebung zu ermuntern.</dd>
+                <dt>Masterfragebogen</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Masterfragebogen2.pdf</a></dd>
+                <dt>Technische Berichte:</dt>
+                <dd>
+                  <ul>
+                    <li>Technischer Bericht: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technischer Bericht.pdf</a></li>
+                    <li>Qualitätsbericht: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Qualitätsbericht.pdf</a></li>
+                    <li>Übersetzungsbericht: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Übersetzungsbericht.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Der Datensatz ESENER&nbsp;2014 ist über <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">den Datendienst des Vereinigten Königreichs der Universität Essex</a>, <a href=\"https://data.europa.eu/euodp/de/data/dataset/esener-2\" target=\"_blank\">das Europäische Datenportal</a> und <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a> abrufbar.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Leistungsbeschreibung:</dt>
+                <dd>Am 5.&nbsp;Januar 2018 veröffentlichte Aufforderung zur Einreichung von Vorschlägen: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/de/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Unterstützungsschreiben</dt>
+                <dd>In allen Erhebungssprachen wurden Schreiben zum Hintergrund und zu den Zielen der Erhebung sowie zur Unterstützung durch die Sozialpartner mit dem Ziel erstellt, zur Teilnahme an der Erhebung zu ermuntern.</dd>
+                <dt>Masterfragebogen</dt>
+                <dt>Technische Berichte</dt>
+              </dl>
+              <p>Bitte beachten Sie, dass alle Werke, die ESENER verwenden oder sich darauf beziehen, die Quelle durch bibliografische Angaben in Fußnoten oder im Literaturverzeichnis angeben sollten. Ebenso sollte jede Veröffentlichung&nbsp;&ndash; unabhängig davon, ob sie in gedruckter oder elektronischer Form oder im Rundfunk verbreitet wird und sich vollständig oder teilweise auf ESENER stützt&nbsp;&ndash; die Europäische Agentur für Sicherheit und Gesundheitsschutz am Arbeitsplatz (EU-OSHA) als Quelle angeben. Sie sollte auch eine Erklärung enthalten, wonach die EU-OSHA keine Haftung für jedwede weitere Analyse oder Auslegung übernimmt.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Uuringu ESENER metoodika</h1>
+        <h2>Uuringu hõlmavus ja analüüsiüksus</h2>
+          <p>Uuringusse on kaasatud osalevate riikide kõik ettevõtted, kus on viis või rohkem töötajat, ning see hõlmab kõiki majandussektoreid, v.a kodumajapidamised (NACE&nbsp;T) ja eksterritoriaalsed organisatsioonid (NACE&nbsp;U). ESENER 2009 ei hõlmanud põllumajandust, metsamajandust ja kalapüüki (NACE&nbsp;A) ning vähem kui 10&nbsp;töötajaga ettevõtteid. Uuringus on &bdquo;ettevõte&ldquo; määratletud kui ühe tööandja tegevus ühes tegevuskohas (nt panga harukontor, autotehas või kool).</p>
+          <p>Osalevad riigid on kõik ELi liikmesriigid ning Norra ja Šveits. Uuringud ESENER&nbsp;2009 ja 2014 hõlmasid Türgit, ESENER 2014 hõlmas Albaaniat ja Montenegrot ning ESENER&nbsp;2014 ja 2019 hõlmasid Islandit, Põhja-Makedooniat ja Serbiat.</p>
+           
+          <h3>Uuringus ESENER osalevad riigid</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Euroopa Liit (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norra</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Šveits</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Island</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Põhja-Makedoonia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Türgi</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albaania</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Montenegro</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Sh Horvaatia ja Ühendkuningriik</p>
+
+        <h2>Vastajad</h2>
+          <p>Ettevõtetes küsitleti <em>&bdquo;inimest, kes teab kõige paremini, kuidas töökohas tööohutuse ja töötervishoiu riske juhitakse&ldquo;</em>. See erines uuringust ESENER&nbsp;2009, milles küsitleti <em>&bdquo;kõrgeima astme juhti, kes koordineerib ettevõttes tööohutuse ja töötervishoiu tegevust&ldquo;</em>. 2009.&nbsp;aasta uuringus küsitleti lisaks ka töötajate tervishoiu ja ohutuse esindajat, kui (1) juhiga oli juba intervjuu tehtud; (2) ettevõttes oli ametlikult määratud esindaja, kellel oli konkreetne vastutus töötajate ohutuse ja tervise eest, ja (3) juht oli andnud intervjuuks loa.</p>
+          <p>Selle muudatuse peamine põhjus oli soov suhelda inimesega, kes tunneb kõige paremini tervise- ja ohutusküsimusi, sh riskihinnangute ja muude erimeetmete üksikasju, hoolimata tema ametikohast või rollist ettevõttes (mida nagunii küsiti).</p>
+             
+        <h2>Valimi koostamise strateegia</h2>
+          <p>Uuringutulemuste riikidevahelise võrreldavuse huvides peab valimi koostamise strateegia tagama, et igas riigis analüüsitakse sama tüüpi ühikuid. Osalevate riikide aadressiregistrite kvaliteet on erinev, sest varieeruvad</p>
+          <ul>
+           <li>registrite hõlmavus (eelkõige hõlmatud tegevusalad);</li>
+           <li>vajaliku taustateabe kättesaadavus ja korrektsus (nt tegevusala ja töötajate arv).</li>
+          </ul>
+          <p>Olemasolevad aadressiregistrid ei ole riikide lõikes võrreldavad ning seepärast tehti suuri jõupingutusi, et koostada vajaliku kvaliteediga valimid, mis tagavad võrreldavuse riikide vahel. Riikides, kus aadressiregistrid pakuvad teavet äriühingu, mitte ettevõtte tasandil, kasutati seetõttu sõelumismenetlust.</p>
+          <p>Valimite segmenteerimine põhineb 4&nbsp;suurusklassi ja 8&nbsp;sektorirühmaga maatriksil. Kui kahes esimeses uuringus kasutati sama valimi koostamise üldstrateegiat, siis hilisematel aastatel tehti paar muudatust, eelkõige 2009.&nbsp;aasta uuringus. Lisateave: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> ja <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>ESENER 2019: valimimaatriks</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Sektorirühm &ndash; NACE Rev.&nbsp;2 jaod</th>
+                      <th  colspan=\"4\" class=\"center-text\">Suurus &ndash; töötajate arv</th>
+                   </tr>
+                   <tr>
+                      <th>5&ndash;9</th>
+                      <th>10&ndash;49</th>
+                      <th>50&ndash;249</th>
+                      <th>Üle 250</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: põllumajandus, metsamajandus ja kalandus</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: ehitus, jäätmekäitlus, vee- ja elektrivarustus</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: tootmine</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: kaubandus, transport, toitlustus/majutus ja vabaajategevused</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: IT, rahandus, kinnisvara ja muu tehniline või teaduslik tegevus või teenindus</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: avalik haldus</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: haridus</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>tervishoid ja sotsiaalhoolekanne</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Küsimustiku väljatöötamine</h2>
+          <p>Uuringu ESENER&nbsp;2019 küsimustik on suures osas sama mis eelnevas uuringus (ESENER 2014) kasutatud küsimustik, mis põhines algselt 2009.&nbsp;aasta uuringu juhtkonna küsimustiku versioonil. 2009.&nbsp;ja 2014.&nbsp;aasta uuringute vahelisel ajal muudeti aga peaaegu kõiki küsimusi ning alates uuringust ESENER&nbsp;2014 on kättesaadavad trendianalüüsid. ESENERi küsimustik valmis uuringu põhitellija EU-OSHA, eri riikidest pärit tööohutuse ja -tervishoiu uurijate rühma ning EU-OSHA sidusrühmade tihedas koostöös.</p>
+          <p>ESENERi küsimustikuga tehti mitu testi:</p>
+
+          <ol type=\"a\" >
+            <li><strong>Kognitiivne eeltest</strong> Saksamaal, Lätis ja Madalmaades pluss ligikaudu 40&nbsp;põhjalikku otseintervjuud. Kognitiivse eeltesti peamine eesmärk on kontrollida küsimuste selgust ja nendest arusaamist. Lisaks uuritakse kognitiivsete küsimuste kogumi abil, kas eri riikidest ja erinevatest organisatsioonidest pärit vastajad tõlgendavad standardküsimusi soovitud viisil ja kas küsimused on nende arvates asjakohased. Kognitiivse eeltesti järel tehakse küsimustikku tavaliselt parandusi.</li>
+            <li>Põhiküsimustiku ingliskeelse versiooni <strong>tõlgitavuse hinnang</strong>. Kogenud tõlkijad eri keelerühmadest teevad põhiküsimustiku kavandi esialgsed tõlked, et selgitada välja võimalikud ebaselgused või muud tõlkeraskused. Ebaselguste tuvastamisel pakuvad tõlkijad välja alternatiivsed variandid, mille alusel parandatakse põhiküsimustikku.</li>
+            <li>Kõikides riikides korraldatakse <strong>välikatse</strong>, mille käigus tehakse igas riigis umbes 50&nbsp;intervjuud. Põhiuuringuga sama taristut kasutades viiakse katse läbi nn CATI-režiimis (arvutipõhine telefoniintervjuu &ndash; <i>Computer Assisted Telephone Interviewing</i>). Telefonivestlusest keeldujatele palutakse võimalust vastata veebis (arvutipõhine veebiintervjuu &ndash; <i>Computer Assisted Web Interviewing</i>, CAWI). Välikatse järel parandatakse põhiküsimustikku ja selle riiklikke versioone.</li>
+          </ol>
+
+        <h2>Tõlkimine</h2>        
+          <p>Uuringus osalevate riikide jaoks koostatakse küsimustiku riiklikud versioonid (vt <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> ja ESENER 2019). Optimaalne tõlkestrateegia aitab tagada, et küsimustiku riiklikud versioonid sisaldavad kvaliteetseid küsimusi, mida saab esitada asjaomase riigi igat liiki ettevõtetele ja mis annavad tulemuseks riikide vahel võrreldavad andmed. ESENERi küsimustiku tõlkestrateegia järgib TRAPD-meetodit (tõlkimine, läbivaatamine, hindamine, eeltestimine ja dokumenteerimine &ndash; <em><i>Translation, Review, Adjudication, Pre-testing and Documentation</i></em> (Harkness,&nbsp;J.&nbsp;A. (2003). &bdquo;Questionnaire translation&ldquo; teoses: J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), &bdquo;Cross-cultural survey methods&ldquo; (lk&nbsp;35&ndash;56). Hoboken, NJ: John Wiley &amp; Sons), v.a esimeses uuringus (vt <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Kahes või enamas riigis kõneldavate keelte jaoks koostatakse erinevad riiklikud versioonid, milles võetakse arvesse tööga seotud tavasid, nagu töötajate esindatus või tööinspektsioon, mis nõuavad erinevaid küsimusi ja terminoloogiat. Tõlkeprotsessi lisateave on <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">tõlkearuandes</a> &ndash; vt allpool.</p>
+          <p>Uuringu ESENER tõlkimise põhietapid on järgmised:</p>
+           
+          <ol type=\"1\" >
+            <li>Sihtkeelt emakeelena kõnelevad elukutselised tõlkijad teevad kaks üksteisest sõltumatut tõlget igasse keelde, kusjuures tõlkijad ei tohi tõlkeprotsessi ajal üksteisega suhelda.</li>
+            <li>Sõltumatud tõlked vaatab läbi hindaja, kes koostab uue versiooni.</li>
+            <li>Hindaja ja kaks tõlkijat osalevad tõlgete läbivaatamise kohtumistel, et koos arutleda uue versiooni üle ja kokku leppida läbivaadatud lõppversioonis.</li>
+            <li>EU-OSHA <a href=\"https://osha.europa.eu/et/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">koordinatsioonikeskuste võrgustik</a> kontrollib läbivaadatud versioone, keskendudes tööohutuse ja töötervishoiu riiklikule terminoloogiale, sh töötajate esindusorganitega seotud küsimustele.</li>
+          </ol>
+
+        <h2>Riiklike valimite suurus</h2>
+          <p>Uuringus ESENER&nbsp;2014 pakuti riiklikele ametiasutusele esimest korda võimalust rahastada riiklike valimite laiendamist. Hispaania, Sloveenia ja Ühendkuningriik laiendasidki oma valimeid. Uuringus ESENER&nbsp;2019 kasutasid kolm riiki (Iirimaa, Norra ja Sloveenia) seda valikut, millega kaasnes seekord võimalus lisada küsimustikele 2&ndash;3 riigi seisukohast olulist küsimust. Šveits on täielikult rahastanud kõik senised ESENERi uuringud.</p>
+           
+          <h3>Valimite suurused uuringus ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Riik</th>
+                    <th class=\"center-text\">ESENER 2009 (intervjuud juhtkonnaga)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Austria</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgia</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgaaria</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Horvaatia</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Küpros</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>T&scaron;ehhi Vabariik</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Taani</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Eesti</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Soome</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Prantsusmaa</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Saksamaa</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kreeka</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ungari</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Iirimaa</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Itaalia</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Läti</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Leedu</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luksemburg</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Madalmaad</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Poola</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugal</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rumeenia</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovakkia</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Sloveenia</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Hispaania</th>
+                    <td>1566</td>
+                    <td><em>3162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rootsi</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ühendkuningriik</th>
+                    <td>1500</td>
+                    <td><em>4250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norra</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Šveits</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Island</th>
+                    <td>&ndash;</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbia</th>
+                    <td>&ndash;</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Põhja-Makedoonia</th>
+                    <td>&ndash;</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Türgi</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>&ndash;</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albaania</th>
+                    <td>&ndash;</td>
+                    <td>750</td>
+                    <td>&ndash;</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Montenegro</th>
+                    <td>&ndash;</td>
+                    <td>452</td>
+                    <td>&ndash;</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Kokku</th>
+                    <td><strong>28 649</strong></td>
+                    <td><strong>49 320</strong></td>
+                    <td><strong>45 200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Dokumendid ja lisateave teaduritele</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Hanke tehniline kirjeldus:</dt>
+                <dd>21.&nbsp;augustil 2007 avaldatud avaliku hanke kutse: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Kaaskiri:</dt>
+                <dd>Uuringus osalemise soodustamiseks koostati kõigis küsitluskeeltes kirjad, milles selgitatakse uuringu tausta ja eesmärke ning rõhutatakse sotsiaalpartnerite toetust.</dd>
+                <dt>Põhiküsimustikud:</dt>
+                <dd>
+                  <ul>
+                    <li>Juhtkonna esindajate küsimustik: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Töötajate esindajate küsimustik: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Tehnilised aruanded:</dt>
+                <dd>
+                  <ul>
+                    <li>Uute ja tekkivate riskide Euroopa uuring &ndash; psühhosotsiaalsed riskid (ESENER-PSR 2009) &ndash; tehniline aruanne: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Uute ja tekkivate riskide Euroopa ettevõtete uuringu järelhindamine: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>ESENERi valimiaruanne 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Uuringu ESENER 2009 andmekogumile pääseb ligi <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Essexi ülikooli hallatava Ühendkuningriigi andmearhiivi</a>, <a href=\"https://data.europa.eu/euodp/et/data/dataset/esener-1\" target=\"_blank\">Euroopa andmeportaali</a> ja <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESISe</a> kaudu.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Hanke tehniline kirjeldus:</dt>
+                <dd>5.&nbsp;detsembril 2012 avaldatud avaliku hanke kutse: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Kaaskiri:</dt>
+                <dd>Uuringus osalemise soodustamiseks koostati kõigis küsitluskeeltes kirjad, milles selgitatakse uuringu tausta ja eesmärke ning rõhutatakse sotsiaalpartnerite toetust.</dd>
+                <dt>Põhiküsimustik:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Tehnilised aruanded:</dt>
+                <dd>
+                  <ul>
+                    <li>Tehniline aruanne: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Kvaliteediaruanne: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Tõlkearuanne: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Uuringu ESENER 2014 andmekogumile pääseb ligi <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Essexi ülikooli hallatava Ühendkuningriigi andmearhiivi</a>, <a href=\"https://data.europa.eu/euodp/et/data/dataset/esener-2\" target=\"_blank\">Euroopa andmeportaali</a> ja <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESISe</a> kaudu.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Hanke tehniline kirjeldus:</dt>
+                <dd>5.&nbsp;jaanuaril 2018 avaldatud avaliku hanke kutse: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Kaaskiri</dt>
+                <dd>Uuringus osalemise soodustamiseks koostati kõigis küsitluskeeltes kirjad, milles selgitatakse uuringu tausta ja eesmärke ning rõhutatakse sotsiaalpartnerite toetust.</dd>
+                <dt>Põhiküsimustik</dt>
+                <dt>Tehnilised aruanded</dt>
+              </dl>
+              <p>NB! Kõigis uuringut ESENER kasutavates või sellele viitavates tekstides tuleks mainida allikat, lisades joonealusesse märkusesse või väljaande viidete jaotisse bibliograafilise viite. Samamoodi tuleks igas trükitud, elektroonilises või levindatud väljaandes, mis põhineb täielikult või osaliselt uuringul ESENER, mainida Euroopa Tööohutuse ja Töötervishoiu Ametit (EU-OSHA). Lisama peaks ka avalduse, et EU-OSHA ei vastuta järelanalüüside ega -tõlgenduste eest.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Μεθοδολογία ESENER</h1>
+        <h2>Σύνολο δεδομένων και μονάδα ανάλυσης</h2>
+          <p>Ο πληθυσμός της έρευνας περιλαμβάνει όλες τις εγκαταστάσεις που έχουν πέντε ή περισσότερους υπαλλήλους στις συμμετέχουσες χώρες, καλύπτοντας όλους τους κλάδους της οικονομικής δραστηριότητας, με εξαίρεση τα ιδιωτικά νοικοκυριά (NACE T) και τους ετερόδικους οργανισμούς (NACE U). Η γεωργία, η δασοκομία και η αλιεία (NACE A), καθώς και οι εγκαταστάσεις που απασχολούν λιγότερο από 10 εργαζομένους δεν καλύφθηκαν από την έρευνα ESENER 2009. Για τον σκοπό της έρευνας, ως εγκατάσταση νοείται το σύνολο των δραστηριοτήτων που αναπτύσσει μεμονωμένος εργοδότης σε μεμονωμένο χώρο (π.χ. μεμονωμένο υποκατάστημα τράπεζας, εργοστάσιο αυτοκινήτων ή σχολείο).</p>
+          <p>Στις συμμετέχουσες χώρες περιλαμβάνονται όλα τα κράτη μέλη της ΕΕ, καθώς επίσης και η Νορβηγία και η Ελβετία. Η Τουρκία συμμετείχε στις έρευνες ESENER 2009 και 2014, η Αλβανία και το Μαυροβούνιο συμμετείχαν στην έρευνα ESENER 2014 και η Ισλανδία, η Βόρεια Μακεδονία και η Σερβία συμμετείχαν στις έρευνες ESENER 2014 και 2019.</p>
+           
+          <h3>Γεωγραφική κάλυψη ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Ευρωπαϊκή Ένωση (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Νορβηγία</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Ελβετία</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Ισλανδία</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Βόρεια Μακεδονία</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Σερβία</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Τουρκία</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Αλβανία</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Μαυροβούνιο</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Περιλαμβάνονται η Κροατία και το Ηνωμένο Βασίλειο</p>
+
+        <h2>Ερωτώμενοι</h2>
+          <p>Σε κάθε εγκατάσταση που συμμετείχε στην έρευνα, <em>«το πρόσωπο που γνωρίζει καλύτερα από οποιονδήποτε άλλο τον τρόπο διαχείρισης των κινδύνων για την ασφάλεια και την υγεία στον χώρο εργασίας του»</em> υποβάλλεται σε συνέντευξη. Η πρακτική αυτή είναι διαφορετική από τη μέθοδο που εφαρμόστηκε στην έρευνα ESENER 2009, η οποία είχε επικεντρωθεί στο <em>«υψηλότερο στην ιεραρχία διοικητικό στέλεχος που συντονίζει τις δραστηριότητες για την ασφάλεια και την υγεία στην εγκατάσταση»</em>. Επιπλέον, στο πλαίσιο της έρευνας ESENER 2009, συνέντευξη με τον εκπρόσωπο των εργαζομένων που ήταν υπεύθυνος για θέματα υγείας και ασφάλειας πραγματοποιήθηκε στις εγκαταστάσεις εκείνες στις οποίες 1) είχε προηγηθεί συνέντευξη με διοικητικό στέλεχος· 2) είχε οριστεί επίσημος εκπρόσωπος που ήταν αρμόδιος ειδικά για την ασφάλεια και την υγεία των εργαζομένων· και 3) το διοικητικό στέλεχος που συμμετείχε στην έρευνα είχε χορηγήσει άδεια για τη διενέργεια της συνέντευξης με τον εκπρόσωπο των εργαζομένων.</p>
+          <p>Η αλλαγή οφείλεται κυρίως στο γεγονός ότι η έρευνα έπρεπε να επικεντρωθεί στο πρόσωπο που γνωρίζει καλύτερα από οποιονδήποτε άλλο τα θέματα υγείας και ασφάλειας, όπως μεταξύ άλλων λεπτομέρειες για την εκτίμηση κινδύνου και άλλα ειδικά μέτρα, ανεξάρτητα από την ιδιότητα και τον ρόλο που ασκεί το πρόσωπο στην εγκατάσταση &ndash; το ερώτημα αυτό τίθεται ούτως ή άλλως κατά τη διάρκεια της συνέντευξης.</p>
+             
+        <h2>Στρατηγική δειγματοληψίας</h2>
+          <p>Για να διασφαλιστεί ότι τα αποτελέσματα της έρευνας είναι συγκρίσιμα σε διακρατικό επίπεδο, είναι πολύ σημαντική η στρατηγική δειγματοληψίας που ακολουθείται, καθώς ο τύπος των μονάδων που χρησιμοποιείται στην έρευνα πρέπει να είναι ο ίδιος σε κάθε χώρα. Η ποιότητα των διαθέσιμων μητρώων διευθύνσεων διαφέρει μεταξύ των χωρών που συμμετέχουν όσον αφορά:</p>
+          <ul>
+           <li>την κάλυψη (ιδίως τους τομείς δραστηριότητας που καλύπτονται)·</li>
+           <li>τη διαθεσιμότητα και την ακρίβεια των αναγκαίων βασικών πληροφοριών (όπως π.χ. ο κλάδος δραστηριότητας και ο αριθμός των υπαλλήλων).</li>
+          </ul>
+          <p>Επειδή τα υφιστάμενα μητρώα διευθύνσεων δεν είναι συγκρίσιμα μεταξύ των χωρών, έχουν καταβληθεί σημαντικές προσπάθειες για τη δημιουργία δειγμάτων που θα παρέχουν την αναγκαία ποιότητα και θα διασφαλίζουν διακρατική συγκρισιμότητα. Στο πλαίσιο αυτών των προσπαθειών δρομολογήθηκε διαδικασία εξονυχιστικής εξέτασης στις χώρες εκείνες στις οποίες τα μητρώα διευθύνσεων παρέχουν πληροφορίες σε επίπεδο εταιρείας, και όχι σε επίπεδο εγκατάστασης.</p>
+          <p>Η διαστρωμάτωση του δείγματος βασίζεται σε υπόδειγμα που περιλαμβάνει τέσσερις κατηγορίες μεγέθους και οχτώ ομάδες κλάδων. Μολονότι η γενική προσέγγιση έναντι της δειγματοληψίας στα πρώτα δύο κύματα της έρευνας ESENER ήταν κατά βάση η ίδια, επήλθαν ορισμένες αλλαγές με την πάροδο των ετών, οι οποίες αφορούν κυρίως την έρευνα ESENER 2009. Οι λεπτομέρειες παρουσιάζονται στους δικτυακούς τόπους <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> και <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Υπόδειγμα δειγματοληψίας ESENER 2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Ομάδα κλάδου - τομείς NACE αναθ. 2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Μέγεθος - αριθμός υπαλλήλων</th>
+                   </tr>
+                   <tr>
+                      <th>5-9</th>
+                      <th>10-49</th>
+                      <th>50-249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Γεωργία, δασοκομία και αλιεία</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Κατασκευές, διαχείριση απορριμμάτων, υδροδότηση και ηλεκτροδότηση</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Μεταποίηση</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Εμπόριο, μεταφορές, τρόφιμα/φιλοξενία και ψυχαγωγικές δραστηριότητες</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: ΤΠ, χρηματοοικονομικές υπηρεσίες, υπηρεσίες διαχείρισης ακινήτων και άλλες τεχνικές, επιστημονικές ή προσωπικές υπηρεσίες</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Δημόσια διοίκηση</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Εκπαίδευση</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Δραστηριότητες σχετικές με την ανθρώπινη υγεία και την κοινωνική μέριμνα</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Ανάπτυξη ερωτηματολογίου</h2>
+          <p>Το ερωτηματολόγιο της έρευνας ESENER 2019 είναι κατά βάση το ίδιο με το ερωτηματολόγιο που χρησιμοποιήθηκε στο προηγούμενο κύμα (ESENER 2014), το οποίο με τη σειρά του βασιζόταν στην αρχική «διοικητικοκεντρική» δομή του ερωτηματολογίου ESENER 2009. Ωστόσο, όλες σχεδόν οι ερωτήσεις τροποποιήθηκαν από το 2009 έως το 2014 και, ως εκ τούτου, μπορούν να χρησιμοποιηθούν για να αναλυθούν οι τάσεις που προέκυψαν από την έρευνα ESENER 2014 και εφεξής. Για την ανάπτυξη και την αναθεώρηση του ερωτηματολογίου ESENER, ο EU-OSHA, ο οποίος αποτελεί τον κύριο ανάδοχο της μεθοδολογίας ESENER, συνεργάζεται στενά με ομάδα ερευνητών από διάφορες χώρες που μελετούν την υγεία και ασφάλεια στην εργασία, καθώς επίσης και με ενδιαφερόμενους φορείς του τομέα δραστηριοτήτων του EU-OSHA.</p>
+          <p>Τα ερωτηματολόγια ESENER υποβλήθηκαν σε πολλές δοκιμές:</p>
+
+          <ol type=\"a\" >
+            <li>Στη Γερμανία, στη Λετονία και στις Κάτω Χώρες διενεργήθηκε <strong>γνωστική προκαταρκτική δοκιμή</strong> με 40 περίπου διεξοδικές προσωπικές συνεντεύξεις. Βασικός σκοπός της γνωστικής προκαταρκτικής δοκιμής είναι να ελεγχθεί η κατανόηση και η σαφήνεια των ερωτήσεων. Επίσης, με τη βοήθεια διαφόρων γνωστικών ερωτήσεων ελέγχεται αν οι ερωτώμενοι από διαφορετικές χώρες και διαφορετικά είδη οργανισμών ερμηνεύουν τις τυποποιημένες ερωτήσεις με τον επιθυμητό τρόπο και αν οι ερωτήσεις αυτές τούς αφορούν. Μετά τη γνωστική προκαταρκτική δοκιμή επέρχονται συνήθως διάφορες τροποποιήσεις στο ερωτηματολόγιο.</li>
+            <li><strong>Αξιολογήθηκε η δυνατότητα μετάφρασης</strong> του αγγλικού πρωτότυπου κειμένου. Έμπειροι μεταφραστές από διαφορετικές γλωσσικές οικογένειες μεταφράζουν πρόχειρα το αρχικό πρωτότυπο ερωτηματολόγιο προκειμένου να εντοπίσουν ασάφειες ή άλλες δυσκολίες που συνδέονται με τη μεταφραστική διαδικασία. Όταν εντοπίζονται τέτοιες δυσκολίες, οι μεταφραστές προτείνουν εναλλακτικές διατυπώσεις για το πρωτότυπο κείμενο, το οποίο αναθεωρείται αναλόγως.</li>
+            <li>Σε όλες τις χώρες διενεργείται <strong>πειραματική δοκιμή σε πραγματικές συνθήκες</strong> με 50 περίπου συνεντεύξεις ανά χώρα. Η εν λόγω πειραματική δοκιμή, στην οποία χρησιμοποιούνται οι ίδιες υποδομές με αυτές που υπάρχουν στην κύρια έρευνα, διενεργείται με τη μέθοδο CATI (τηλεφωνική συνέντευξη με τη βοήθεια υπολογιστή) αλλά προσφέρεται και η επιλογή της διαδικτυακής συμμετοχής (CAWI: διαδικτυακή συνέντευξη με τη βοήθεια υπολογιστή) για όσους δεν επιθυμούν να πραγματοποιήσουν τη συνέντευξη μέσω τηλεφώνου. Μετά την πειραματική δοκιμή σε πραγματικές συνθήκες επέρχονται μια σειρά από αλλαγές στο πρωτότυπο ερωτηματολόγιο και στα μεμονωμένα ερωτηματολόγια που εκδίδονται σε κάθε χώρα.</li>
+          </ol>
+
+        <h2>Μετάφραση</h2>        
+          <p>Το ερωτηματολόγιο έχει διαφορετική μορφή σε κάθε μία από τις χώρες που καλύπτονται από την έρευνα (βλ. τους δικτυακούς τόπους: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> και ESENER 2019). Η εφαρμογή της καλύτερης δυνατής στρατηγικής για τη μετάφραση του ερωτηματολογίου έχει καίρια σημασία προκειμένου να διασφαλιστεί ότι τα εθνικά διαφορετικά ερωτηματολόγια περιλαμβάνουν ερωτήσεις υψηλής ποιότητας, οι οποίες αφορούν όλα τα είδη των επιχειρήσεων της εκάστοτε χώρας, παρέχοντας πληροφορίες που μπορούν να συγκριθούν σε διακρατικό επίπεδο. Η μετάφραση του ερωτηματολογίου ESENER ακολουθεί την προσέγγιση TRAPD, αγγλικό ακρωνύμιο των όρων <em>Μετάφραση, Αναθεώρηση, Έγκριση, Προκαταρκτική Δοκιμή και Τεκμηρίωση</em> (Harkness, J. A. (2003). Questionnaire translation. Κεφάλαιο του πονήματος των J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (σσ. 35-56). Hoboken, NJ: John Wiley &amp; Sons), με εξαίρεση το πρώτο κύμα (παρουσιάζεται στον εξής δικτυακό τόπο: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Όσον αφορά τις γλώσσες που είναι κοινές σε δύο ή περισσότερες χώρες, συντάσσονται διαφορετικά εθνικά ερωτηματολόγια με βάση τις πρακτικές που ακολουθούνται στους χώρους εργασίας, όπως π.χ. η εκπροσώπηση των εργαζομένων ή η επιθεώρηση εργασίας, οι οποίες επιβάλλουν τη διατύπωση διαφορετικών ερωτήσεων και τη χρήση διαφορετικής ορολογίας. Περισσότερες λεπτομέρειες για τη διαδικασία της μετάφρασης περιλαμβάνονται στην <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Έκθεση για τη μετάφραση</a> - βλέπε κατωτέρω.</p>
+          <p>Τα βασικά στάδια που περιλαμβάνει η μετάφραση του ESENER είναι τα εξής:</p>
+           
+          <ol type=\"1\" >
+            <li>Πραγματοποιούνται δύο ανεξάρτητες μεταφράσεις σε όλες τις γλώσσες της έρευνας από επαγγελματίες μεταφραστές που έχουν ως μητρική γλώσσα τη γλώσσα-στόχο. Οι μεταφραστές δεν έρχονται σε επαφή μεταξύ τους κατά τη διαδικασία της μετάφρασης.</li>
+            <li>Οι ανεξάρτητες μεταφράσεις αναθεωρούνται από τον υπεύθυνο έγκρισης, ο οποίος δίνει νέα μορφή στο κείμενο του ερωτηματολογίου.</li>
+            <li>Πραγματοποιούνται συναντήσεις μεταξύ του υπεύθυνου έγκρισης και των δύο μεταφραστών προκειμένου να συζητηθεί το νέο σχέδιο κειμένου και να εγκριθεί στην τελική του μορφή.</li>
+            <li>Το <a href=\"https://osha.europa.eu/el/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">δίκτυο των εστιακών πόλων</a> του EU-OSHA ελέγχει τα μεταφρασμένα κείμενα που εγκρίθηκαν, δίνοντας ιδιαίτερη έμφαση στην εθνική ορολογία που χρησιμοποιείται για την υγεία και ασφάλεια στην εργασία (ΥΣΑ) και, μεταξύ άλλων, στις ερωτήσεις που αφορούν τα αντιπροσωπευτικά όργανα των εργαζομένων.</li>
+          </ol>
+
+        <h2>Μέγεθος δειγμάτων σε εθνικό επίπεδο</h2>
+          <p>Στην έρευνα ESENER 2014, προσφέρθηκε για πρώτη φορά η δυνατότητα στις εθνικές αρχές να χρηματοδοτήσουν την επέκταση του μεγέθους των δειγμάτων που χρησιμοποιούνται σε εθνικό επίπεδο. Η Ισπανία, η Σλοβενία και το Ηνωμένο Βασίλειο αξιοποίησαν αυτήν την ευκαιρία και αύξησαν το μέγεθος του δείγματός τους. Στην έρευνα ESENER 2019, τρεις χώρες αποδέχθηκαν την πρόταση αυτή (Ιρλανδία, Νορβηγία και Σλοβενία), η οποία εν προκειμένω παρείχε στις ενδιαφερόμενες χώρες τη δυνατότητα να προσθέσουν δύο ή τρεις ερωτήσεις εθνικού ενδιαφέροντος στα ερωτηματολόγιά τους. Η Ελβετία χρηματοδότησε πλήρως όλα τα κύματα των ερευνών ESENER.</p>
+           
+          <h3>Μεγέθη δειγμάτων στις έρευνες ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Χώρα</th>
+                    <th class=\"center-text\">ESENER 2009 (συνεντεύξεις με διοικητικά στελέχη)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Αυστρία</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Βέλγιο</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Βουλγαρία</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Κροατία</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Κύπρος</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Τσεχική Δημοκρατία</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Δανία</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Εσθονία</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Φινλανδία</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Γαλλία</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Γερμανία</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ελλάδα</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ουγγαρία</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ιρλανδία</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ιταλία</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Λετονία</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Λιθουανία</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Λουξεμβούργο</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Μάλτα</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Κάτω Χώρες</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Πολωνία</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Πορτογαλία</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ρουμανία</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Σλοβακία</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Σλοβενία</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ισπανία</th>
+                    <td>1566</td>
+                    <td><em>3 162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Σουηδία</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ηνωμένο Βασίλειο</th>
+                    <td>1500</td>
+                    <td><em>4 250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Νορβηγία</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ελβετία</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ισλανδία</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Σερβία</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Βόρεια Μακεδονία</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Τουρκία</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Αλβανία</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Μαυροβούνιο</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Σύνολο</th>
+                    <td><strong>28649</strong></td>
+                    <td><strong>49320</strong></td>
+                    <td><strong>45200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Έγγραφα και περαιτέρω πληροφορίες για τους ερευνητές</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Συγγραφή υποχρεώσεων:</dt>
+                <dd>Ανοιχτή πρόσκληση υποβολής προσφορών που δημοσιεύθηκε στις 21 Αυγούστου 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Υποστηρικτική επιστολή:</dt>
+                <dd>Για να ενθαρρυνθεί η συμμετοχή των ενδιαφερόμενων φορέων στην έρευνα, εκπονήθηκαν επιστολές σε όλες τις γλώσσες της έρευνας, οι οποίες παρουσιάζουν το πλαίσιο και τους σκοπούς της έρευνας, καθώς και τη στήριξη που παρέχεται από τους κοινωνικούς εταίρους.</dd>
+                <dt>Πρωτότυπα ερωτηματολόγια:</dt>
+                <dd>
+                  <ul>
+                    <li>Ερωτηματολόγιο για τον εκπρόσωπο των διοικητικών στελεχών: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Ερωτηματολόγιο για τον εκπρόσωπο των εργαζομένων: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Τεχνικές εκθέσεις:</dt>
+                <dd>
+                  <ul>
+                    <li>Ευρωπαϊκή έρευνα για τους νέους και αναδυόμενους κινδύνους - Ψυχοκοινωνικοί κίνδυνοι (ESENER-PSR 2009) - Τεχνική έκθεση: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Εκ των υστέρων αξιολόγηση της ευρωπαϊκής έρευνας για τους νέους και τους αναδυόμενους κινδύνους στις επιχειρήσεις: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Έκθεση για τη δειγματοληψία της έρευνας ESENER 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Το σύνολο δεδομένων της έρευνας ESENER 2009 διατίθεται μέσω της <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Υπηρεσίας Δεδομένων του Πανεπιστημίου Essex του Ηνωμένου Βασιλείου</a>, <a href=\"https://data.europa.eu/euodp/el/data/dataset/esener-1\" target=\"_blank\">της ευρωπαϊκής δικτυακής πύλης δεδομένων</a> και του <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">Ινστιτούτου GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Συγγραφή υποχρεώσεων:</dt>
+                <dd>Ανοιχτή πρόσκληση υποβολής προσφορών που δημοσιεύθηκε στις 5 Δεκεμβρίου 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Υποστηρικτική επιστολή:</dt>
+                <dd>Για να ενθαρρυνθεί η συμμετοχή των ενδιαφερόμενων φορέων στην έρευνα, εκπονήθηκαν επιστολές σε όλες τις γλώσσες της έρευνας, οι οποίες παρουσιάζουν το πλαίσιο και τους σκοπούς της έρευνας, καθώς και τη στήριξη που παρέχεται από τους κοινωνικούς εταίρους.</dd>
+                <dt>Πρωτότυπο ερωτηματολόγιο:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Τεχνικές εκθέσεις:</dt>
+                <dd>
+                  <ul>
+                    <li>Τεχνική έκθεση: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Έκθεση για την ποιότητα: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Έκθεση για τη μετάφραση: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Το σύνολο δεδομένων της έρευνας ESENER 2014 διατίθεται μέσω της <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Υπηρεσίας Δεδομένων του Πανεπιστημίου Essex του Ηνωμένου Βασιλείου</a>, <a href=\"https://data.europa.eu/euodp/el/data/dataset/esener-2\" target=\"_blank\">της ευρωπαϊκής δικτυακής πύλης δεδομένων</a> και του <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">Ινστιτούτου GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Συγγραφή υποχρεώσεων:</dt>
+                <dd>Ανοιχτή πρόσκληση υποβολής προσφορών που δημοσιεύθηκε στις 5 Ιανουαρίου 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/el/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Υποστηρικτική επιστολή</dt>
+                <dd>Για να ενθαρρυνθεί η συμμετοχή των ενδιαφερόμενων φορέων στην έρευνα, εκπονήθηκαν επιστολές σε όλες τις γλώσσες της έρευνας, οι οποίες παρουσιάζουν το πλαίσιο και τους σκοπούς της έρευνας, καθώς και τη στήριξη που παρέχεται από τους κοινωνικούς εταίρους.</dd>
+                <dt>Πρωτότυπο ερωτηματολόγιο</dt>
+                <dt>Τεχνικές εκθέσεις</dt>
+              </dl>
+              <p>Σημειώνεται ότι σε όλα τα έργα που χρησιμοποιούν την έρευνα ESENER ή παραπέμπουν σε αυτήν, πρέπει να αναφέρεται η έρευνα ESENER ως πηγή μέσω της παράθεσης της σχετικής βιβλιογραφίας είτε στις υποσημειώσεις είτε στην ενότητα των παραπομπών. Ομοίως, σε οποιοδήποτε υλικό που δημοσιεύεται με έντυπα ή ηλεκτρονικά μέσα ή μεταδίδεται ραδιοτηλεοπτικά και βασίζεται συνολικά ή εν μέρει στην έρευνα ESENER, θα πρέπει να αναφέρεται ο Ευρωπαϊκός Οργανισμός για την Ασφάλεια και την Υγεία στην Εργασία (EU-OSHA). Θα πρέπει επίσης να περιλαμβάνεται δήλωση στην οποία θα αναφέρεται ότι ο EU-OSHA δεν φέρει καμία ευθύνη για την περαιτέρω ανάλυση ή ερμηνεία των δεδομένων.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Metodología de ESENER</h1>
+        <h2>Población de interés y unidad de análisis </h2>
+          <p>La población encuestada comprende todos los establecimientos de los países participantes que cuentan con al menos cinco trabajadores y operan en todos los sectores de la actividad económica, excepto los hogares privados (NACE T) y las organizaciones extraterritoriales (NACE U). La agricultura, la silvicultura y la pesca (NACE A) y los establecimientos con menos de 10 trabajadores no se incluyeron en la encuesta ESENER 2009. A efectos de la encuesta, un establecimiento se define como aquel que comprende las actividades de un único empleador en un único conjunto de locales (por ejemplo, una única sucursal bancara, una fábrica de automóviles o una escuela).</p>
+          <p>Los países participantes comprenden todos los Estados miembros de la Unión Europea, más Noruega y Suiza. Turquía se incluyó en las encuestas ESENER de 2009 y 2014, Albania y Montenegro, en la encuesta ESENER de 2014 e Islandia, Macedonia del Norte y Serbia en las de 2014 y 2019.</p>
+           
+          <h3>Cobertura geográfica de la encuesta ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Unión Europea (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Noruega</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Suiza</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Islandia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Macedonia del Norte</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turquía</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albania</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Montenegro</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Incluida Croacia y el Reino Unido</p>
+
+        <h2>Encuestados</h2>
+          <p>En cada establecimiento, se entrevista a <em>«la persona que mejor conoce cómo se gestionan los riesgos para la seguridad y la salud en el lugar de trabajo»</em>. Esto difiere de la edición de 2009 de la encuesta ESENER, cuyo eje se centraba en torno <em>«al superior jerárquico que coordina las actividades de seguridad y salud en este establecimiento»</em>. Además, en ESENER 2009 se celebraba una entrevista con el representante en materia de seguridad y salud de los trabajadores en aquellos establecimientos en los que: (1) se había realizado una entrevista con el personal de gestión; (2) había un representante oficialmente designado con responsabilidades específicas en materia de seguridad y de salud de los trabajadores; y (3) el encuestado que pertenecía a la dirección había autorizado la realización de la entrevista.</p>
+          <p>El cambio se debió principalmente a la necesidad de dirigirse a la persona que mejor conoce todas las cuestiones de seguridad y salud, en especial los detalles sobre la evaluación de riesgos y otras medidas concretas independientemente de su función o del papel que desempeña en el establecimiento que es objeto de una pregunta complementaria.</p>
+             
+        <h2>Estrategia de muestreo</h2>
+          <p>Para garantizar que los resultados de la encuesta sean comparables entre países, es fundamental que la estrategia de muestreo seleccione para la encuesta el mismo tipo de unidades en cada país. La calidad de los registros de direcciones disponibles varía en función de los países en lo que respecta a:</p>
+          <ul>
+           <li>la cobertura (especialmente los sectores de actividad que se incluyen);</li>
+           <li>la disponibilidad y exactitud de la información de referencia necesaria (como el sector de actividad y el número de empleados).</li>
+          </ul>
+          <p>Como los registros de direcciones existentes no son comparables entre países, se han hecho esfuerzos considerables por crear muestras que tengan la calidad necesaria y garanticen la comparabilidad entre los países, lo que exigió llevar a cabo un procedimiento de selección en aquellos países en los que los registros disponibles de direcciones proporcionaban información a nivel de empresa y no de establecimiento.</p>
+          <p>La estratificación de la muestra se basa en una matriz de cuatro categorías de tamaño y ocho grupos de sectores. Aunque el enfoque general de muestreo en las dos primeras ediciones de la encuesta ESENER fue en gran parte similar, a lo largo de los años se han ido introduciendo cambios, especialmente en relación con ESENER 2009. La información detallada está disponible en <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> y <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Matriz de muestreo de ESENER 2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Grupo de sectores - Secciones de la NACE Rev. 2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Tamaño &mdash; Número de empleados</th>
+                   </tr>
+                   <tr>
+                      <th>5-9</th>
+                      <th>10-49</th>
+                      <th>50-249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Agricultura, silvicultura y pesca</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Construcción, gestión de residuos, suministro de agua y electricidad</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Industrias manufactureras</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Comercio, transporte, hostelería y ocio</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: Tecnología de la información, finanzas, sector inmobiliario y servicios científico-técnicos o personales.</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Administración pública</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Educación</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Salud humana y actividades de trabajo social</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Elaboración del cuestionario</h2>
+          <p>El cuestionario de la encuesta ESENER 2019 es en gran parte el mismo que el utilizado en la edición anterior (ESENER 2014) que, a su vez, se basaba originalmente en la estructura de la versión del cuestionario de ESENER 2009 dirigido al personal directivo. Sin embargo, casi todas las preguntas se modificaron entre 2009 y 2014, por lo que a partir de ESENER 2014 es posible analizar las tendencias. El cuestionario de la encuesta ESENER lo elabora y revisa la EU-OSHA, el principal contratista de la encuesta ESENER, en estrecha colaboración con un grupo de expertos en la problemática de la seguridad y salud en el trabajo provenientes de distintos países, así como interlocutores de la EU-OSHA.</p>
+          <p>Los cuestionarios de la encuesta ESENER han sido sometidos a distintas pruebas:</p>
+
+          <ol type=\"a\" >
+            <li>Una <strong>prueba cognitiva previa</strong> realizada en Alemania, Letonia y Países Bajos, sobre la base de unas 40 entrevistas presenciales exhaustivas. El objetivo principal de esta prueba cognitiva previa es comprobar la comprensión y la claridad de las preguntas. También se formulan una serie de preguntas cognitivas para comprobar si los encuestados de diferentes países y distintos tipos de organizaciones interpretan las preguntas normalizadas de la manera prevista y si les resultan pertinentes. La prueba cognitiva previa lleva por lo general a la introducción de algunas modificaciones en el cuestionario.</li>
+            <li>Una <strong>evaluación de la traductibilidad </strong> de la versión inglesa del cuestionario original. Traductores experimentados de diferentes familias lingüísticas elaboran traducciones aproximadas del borrador del cuestionario original para determinar posibles ambigüedades u otros problemas de traducción. Cuando se detectan estas dificultades, los traductores proponen formulaciones alternativas a la versión de referencia, que se revisa en consecuencia.</li>
+            <li>En todos los países se efectúa un <strong>ensayo de campo en condiciones reales</strong> en la que se efectúan unas 50 entrevistas en cada país. Utilizando la misma infraestructura que en la encuesta principal, este ensayo de campo se realiza en el modo CATI (Computer Assisted Telephone Interviewing), pero se ofrece la opción de participar en línea (CAWI: Computer Assisted Web Interviewing) a aquellos que no desean realizar la entrevista por teléfono. El ensayo de campo en condiciones normales genera una serie de cambios en el cuestionario de referencia y la elaboración de distintas versiones nacionales particulares del cuestionario.</li>
+          </ol>
+
+        <h2>Traducción</h2>        
+          <p>Se redactan distintas versiones nacionales del cuestionario teniendo en cuenta la idiosincrasia de los países objeto de la encuesta (consulte aquí las encuestas  <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> y ESENER 2019). Para garantizar que cada versión nacional del cuestionario incluya preguntas de elevada calidad que puedan dirigirse a todos los tipos de empresas del país en cuestión y ofrezca información comparable entre los países es fundamental seguir una estrategia óptima de traducción. La traducción del cuestionario de la encuesta ESENER sigue el enfoque TRAPD, acrónimo de <em>Translation, Review, Adjudication, Pre-testing y Documentation (Traducción, Revisión, Adjudicación, Pruebas preliminares y Documentación) </em> (Harkness, J. A. (2003). Traducción del cuestionario. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), excepto la primera edición (consulte la encuesta aquí: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>En el caso de las lenguas compartidas por dos o más países, se elaboran distintas versiones nacionales teniendo en cuenta las prácticas laborales, como la representación de los trabajadores o la inspección de trabajo, que requieren preguntas y terminología diferentes. El <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Informe de Traducción</a> ofrece más información sobre el proceso de traducción (véase a continuación).</p>
+          <p>Las etapas básicas que comprende la traducción de ESENER son las siguientes:</p>
+           
+          <ol type=\"1\" >
+            <li>Realización de dos traducciones independientes en cada una de las lenguas a cargo de traductores profesionales (hablantes nativos de la lengua de destino) que no mantuvieron contacto durante la elaboración de la traducción.</li>
+            <li>Revisión de las traducciones independientes efectuadas por un adjudicador, que redacta una nueva versión.</li>
+            <li>Reuniones de examen entre el adjudicador y los dos traductores con el fin de debatir conjuntamente el nuevo proyecto y acordar una versión definitiva.</li>
+            <li>Supervisión, por parte de la <a href=\"https://osha.europa.eu/es/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">red de Centros de Referencia</a> de la EU-OSHA, de las versiones adjudicadas, centrándose específicamente en la terminología nacional sobre seguridad y salud en el trabajo (SST), en particular las cuestiones relativas a los órganos de representación de los trabajadores.</li>
+          </ol>
+
+        <h2>Tamaños de las muestras nacionales</h2>
+          <p>En ESENER 2014 se ofreció por primera vez a las autoridades nacionales la posibilidad de financiar una ampliación de sus muestras nacionales. España, Eslovenia y el Reino Unido aceptaron la oferta de aumentar el tamaño respectivo de sus muestras. En ESENER 2019, tres países aceptaron esta oferta  (Irlanda, Noruega y Eslovenia). En esta ocasión existía también la posibilidad de añadir dos a tres preguntas más de interés nacional a sus cuestionarios respectivos.  Suiza ha financiado plenamente todas las ediciones de ESENER.</p>
+           
+          <h3>Tamaños de muestra obtenidos en el marco de la encuesta ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>País</th>
+                    <th class=\"center-text\">ESENER 2009 (entrevistas con el personal directivo)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Austria</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bélgica</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgaria</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Croacia</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Chipre</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>República Checa</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Dinamarca</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estonia</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finlandia</th>
+                    <td>1&nbsp;000</td>
+                    <td>1511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Francia</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Alemania</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Grecia</th>
+                    <td>1&nbsp;000</td>
+                    <td>1503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Hungría</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Irlanda</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Italia</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Letonia</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lituania</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luxemburgo</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Países Bajos</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Polonia</th>
+                    <td>1&nbsp;500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugal</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rumanía</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Eslovaquia</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Eslovenia</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>España</th>
+                    <td>1566</td>
+                    <td><em>3 162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Suecia</th>
+                    <td>1&nbsp;000</td>
+                    <td>1521</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Reino Unido</th>
+                    <td>1&nbsp;500</td>
+                    <td><em>4 250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Noruega</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Suiza</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Islandia</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbia</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Macedonia del Norte</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turquía</th>
+                    <td>1&nbsp;500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albania</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Montenegro</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Total</th>
+                    <td><strong>28649</strong></td>
+                    <td><strong>49320</strong></td>
+                    <td><strong>45200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Documentos e información adicional para los investigadores</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Pliego de condiciones:</dt>
+                <dd>Convocatoria abierta publicada el 21 de agosto de 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Carta de apoyo:</dt>
+                <dd>En todas las lenguas de la encuesta se han redactado cartas en las que se expone el contexto y los objetivos de la encuesta, así como el apoyo recibido de los interlocutores sociales, con el fin de fomentar la participación en la encuesta.</dd>
+                <dt>Cuestionarios principales:</dt>
+                <dd>
+                  <ul>
+                    <li>Cuestionario dirigido a los representantes del personal directivo: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Cuestionario dirigido al representante de los trabajadores: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Informes técnicos</dt>
+                <dd>
+                  <ul>
+                    <li>Encuesta europea sobre los riesgos nuevos y emergentes &mdash; Riesgos psicosociales (ESENER-PSR 2009) &mdash; Informe técnico: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical report EUOSHA.pdf</a></li>
+                    <li>Evaluación <i>ex post</i> de la Encuesta europea de empresas sobre riesgos nuevos y emergentes (ESENER). <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of  Esener.pdf</a></li>
+                    <li>Informe sobre la toma de muestras de ESENER 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER Sampling Report 2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Se puede acceder al conjunto de datos de ESENER 2009 a través del <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Servicio de Datos del Reino Unido de la Universidad de Essex</a>, <a href=\"https://data.europa.eu/euodp/es/data/dataset/esener-1\" target=\"_blank\">el Portal Europeo de Datos</a> y <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Pliego de condiciones:</dt>
+                <dd>Convocatoria abierta publicada el 5 de diciembre de 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Carta de apoyo:</dt>
+                <dd>En todas las lenguas de la encuesta se han redactado cartas en las que se expone el contexto y los objetivos de la encuesta, así como el apoyo recibido de los interlocutores sociales, con el fin de fomentar la participación en la encuesta.</dd>
+                <dt>Cuestionario principal:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Informes técnicos:</dt>
+                <dd>
+                  <ul>
+                    <li>Informe técnico: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Informe de calidad: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Informe de traducción: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Se puede acceder al conjunto de datos de ESENER 2014 a través del <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Servicio de Datos del Reino Unido de la Universidad de Essex</a>, <a href=\"https://data.europa.eu/euodp/es/data/dataset/esener-2\" target=\"_blank\">el Portal Europeo de Datos</a> y <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Pliego de condiciones:</dt>
+                <dd>Convocatoria abierta publicada el 5 de enero de 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Carta de apoyo</dt>
+                <dd>En todas las lenguas de la encuesta se han redactado cartas en las que se expone el contexto y los objetivos de la encuesta, así como el apoyo recibido de los interlocutores sociales, con el fin de fomentar la participación en la encuesta.</dd>
+                <dt>Cuestionario principal</dt>
+                <dt>Informes técnicos:</dt>
+              </dl>
+              <p>Téngase en cuenta que todas las obras que utilizan o hacen referencia a ESENER deben reconocer su fuente mediante una cita bibliográfica en la nota a pie de página o en la sección de referencia de las publicaciones. Del mismo modo, la producción, impresión y difusión de toda publicación, basada total o parcialmente en la encuesta ESENER, debe mencionar a la Agencia Europea para la Seguridad y la Salud en el Trabajo (EU-OSHA). También debe incluir una declaración que especifique que la EU-OSHA no asume ninguna responsabilidad por su posterior análisis o interpretación.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Méthodologie ESENER</h1>
+        <h2>Univers et unité d&rsquo;analyse</h2>
+          <p>La population visée par l&rsquo;enquête se compose de tous les établissements qui comptent au moins cinq&nbsp;employés dans les pays participants, couvrant tous les secteurs d&rsquo;activité économique, à l&rsquo;exception des ménages privés (NACE&nbsp;T) et des organisations extraterritoriales (NACE&nbsp;U). L&rsquo;agriculture, la sylviculture et la pêche (NACE&nbsp;A) et les établissements employant moins de 10&nbsp;personnes n&rsquo;étaient pas couverts par l&rsquo;édition&nbsp;2009 de l&rsquo;enquête ESENER. Aux fins de l&rsquo;enquête, un établissement est défini comme comprenant les activités d&rsquo;un employeur unique dans un seul ensemble de locaux (par exemple, une filiale unique d&rsquo;une banque, une usine automobile ou une école).</p>
+          <p>Les pays participants comprennent tous les États membres de l&rsquo;Union européenne, ainsi que la Norvège et la Suisse. La Turquie était couverte dans les éditions&nbsp;2009 et 2014 de l&rsquo;enquête ESENER, l&rsquo;Albanie et le Monténégro dans l&rsquo;édition&nbsp;2014, et l&rsquo;Islande, la Macédoine du Nord et la Serbie dans les éditions&nbsp;2014 et 2019.</p>
+           
+          <h3>Couverture par pays dans l&rsquo;enquête ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER&nbsp;2009</th>
+                      <th>ESENER&nbsp;2014</th>
+                      <th>ESENER&nbsp;2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Union européenne (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norvège</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Suisse</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Islande</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Macédoine du Nord</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbie</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turquie</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albanie</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Monténégro</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Y compris la Croatie et le Royaume-Uni</p>
+
+        <h2>Répondants</h2>
+          <p>Dans chaque établissement faisant l&rsquo;objet de l&rsquo;enquête, <em>«la personne qui sait le mieux de quelle manière les risques pour la sécurité et la santé sont gérés sur son lieu de travail»</em> est interrogée. C&rsquo;est une différence par rapport à l&rsquo;édition&nbsp;2009 de l&rsquo;enquête ESENER, qui visait <em>«le responsable ayant le grade le plus élevé qui coordonne les activités relatives à la sécurité et à la santé dans cet établissement»</em>. En outre, l&rsquo;édition&nbsp;2009 de l&rsquo;enquête ESENER visait à réaliser un entretien avec le représentant chargé de la santé et de la sécurité des travailleurs dans les établissements dans lesquels: 1)&nbsp;un entretien avec le personnel d&rsquo;encadrement avait été réalisé; 2)&nbsp;il y avait un représentant officiellement désigné spécifiquement chargé de la santé et de la sécurité des travailleurs; et 3)&nbsp;le répondant issu du personnel d&rsquo;encadrement avait donné son autorisation en vue de la réalisation de l&rsquo;entretien.</p>
+          <p>Le changement était principalement dû à la nécessité de s&rsquo;adresser à la personne qui connaissait le mieux toutes les questions relatives à la santé et à la sécurité, notamment les détails des évaluations des risques et d&rsquo;autres mesures particulières, indépendamment de sa fonction ou de son rôle au sein de l&rsquo;établissement, qui fait de toute façon l&rsquo;objet d&rsquo;une question complémentaire.</p>
+             
+        <h2>Stratégie d&rsquo;échantillonnage</h2>
+          <p>Afin de garantir la comparabilité des résultats entre les pays, il est essentiel que, grâce à la stratégie d&rsquo;échantillonnage, l&rsquo;enquête porte sur le même type d&rsquo;unités dans chaque pays. La qualité des registres d&rsquo;adresses disponibles varie en fonction des pays participants au regard:</p>
+          <ul>
+           <li>de la couverture (en particulier les secteurs d&rsquo;activité inclus);</li>
+           <li>de la disponibilité et de l&rsquo;exactitude des informations contextuelles nécessaires (telles que le secteur d&rsquo;activité et le nombre d&rsquo;employés).</li>
+          </ul>
+          <p>Les registres d&rsquo;adresses existants n&rsquo;étant pas comparables entre les pays, des efforts considérables ont été déployés afin de constituer des échantillons qui présentent la qualité requise et qui garantissent la comparabilité transnationale. Ces efforts ont nécessité la mise en place d&rsquo;une procédure de sélection dans les pays dans lesquels les registres d&rsquo;adresses disponibles fournissent des informations au niveau de l&rsquo;entreprise plutôt qu&rsquo;à celui de l&rsquo;établissement.</p>
+          <p>La stratification de l&rsquo;échantillon se fonde sur une matrice composée de quatre classes de tailles et huit groupes de secteurs. Si l&rsquo;approche générale suivie pour l&rsquo;échantillonnage était largement identique dans les deux premières vagues de l&rsquo;enquête ESENER, certains changements ont été introduits au fil des années, notamment en ce qui concerne l&rsquo;édition&nbsp;2009. Les détails sont disponibles sur <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER&nbsp;2009</a> et <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Matrice d&rsquo;échantillonnage de l&rsquo;édition&nbsp;2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Groupe de secteurs&nbsp;- Sections de la NACE&nbsp;Rév.&nbsp;2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Taille - nombre d&rsquo;employés</th>
+                   </tr>
+                   <tr>
+                      <th>5-9</th>
+                      <th>10-49</th>
+                      <th>50-249</th>
+                      <th>+250</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Agriculture, sylviculture et pêche</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Construction, gestion des déchets, distribution d&rsquo;eau et d&apos;électricité</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Industrie manufacturière</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Commerce, transports, restauration /hébergement et activités récréatives</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: Informatique, activités financières, activités immobilières, et autres activités scientifiques et techniques ou activités de services personnels</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Administration publique</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Enseignement</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Santé humaine et action sociale</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Élaboration du questionnaire</h2>
+          <p>Le questionnaire de l&rsquo;édition&nbsp;2019 de l&rsquo;enquête ESENER est en grande partie identique à celui utilisé lors de la précédente vague (ESENER&nbsp;2014), qui était lui-même initialement fondé sur la structure de la version du questionnaire de l&rsquo;édition&nbsp;2009 de l&rsquo;enquête ESENER destinée au personnel d&rsquo;encadrement. Toutefois, la quasi-totalité des questions ont été modifiées entre 2009 et 2014 et, de ce fait, les analyses de tendances sont possibles à partir de l&rsquo;édition&nbsp;2014. Le questionnaire de l&rsquo;enquête ESENER est élaboré et révisé dans le cadre d&rsquo;une coopération étroite entre l&rsquo;EU-OSHA, le contractant principal de l&rsquo;enquête ESENER, un groupe de chercheurs sur la problématique de la santé et de la sécurité au travail issus de différents pays et les parties prenantes de l&rsquo;EU-OSHA.</p>
+          <p>Les questionnaires de l&rsquo;enquête ESENER ont fait l&rsquo;objet de plusieurs tests:</p>
+
+          <ol type=\"a\" >
+            <li>un <strong>test cognitif préalable</strong> en Allemagne, en Lettonie et aux Pays-Bas, avec environ 40&nbsp;entretiens approfondis réalisés en face à face. L&rsquo;objectif principal de ce test préalable est de vérifier la compréhension et la clarté des questions. Plusieurs questions cognitives sont également destinées à vérifier si les répondants de différents pays et différents types d&rsquo;organisations interprètent les questions normalisées de la façon souhaitée et si ces questions sont pertinentes à leur égard. Le test cognitif préalable donne généralement lieu à un certain nombre de modifications du questionnaire;</li>
+            <li>une <strong>évaluation de la traduisibilité</strong> de la version anglaise du questionnaire principal. Des traducteurs expérimentés issus de divers groupes linguistiques élaborent des ébauches de traductions du projet de questionnaire principal afin d&rsquo;identifier toute ambiguïté ou autre difficulté de traduction. Lorsque de telles difficultés sont identifiées, les traducteurs proposent des formulations alternatives de la version originale, qui est révisée en conséquence;</li>
+            <li>un <strong>test pilote en conditions réelles</strong> est réalisé dans tous les pays, avec environ 50&nbsp;entretiens par pays. Utilisant la même infrastructure que l&rsquo;enquête principale, ce test pilote est effectué en mode CATI (enquête téléphonique assistée par ordinateur), mais les personnes qui refusent de réaliser l&rsquo;enquête par téléphone peuvent y participer en ligne (CAWI: enquête en ligne assistée par ordinateur). Ce test pilote en conditions réelles donne lieu à un certain nombre de changements du questionnaire principal et à la production des différentes versions nationales de celui-ci.</li>
+          </ol>
+
+        <h2>Traduction</h2>        
+          <p>Différentes versions nationales du questionnaire sont élaborées pour les pays couverts par l&rsquo;enquête (disponibles ici: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> et ESENER 2019). Une stratégie de traduction optimale est essentielle pour garantir que chaque version nationale du questionnaire comporte des questions de qualité qu&rsquo;il est possible d&rsquo;adresser à tous les types d&rsquo;entreprises dans le pays concerné, et que ce questionnaire génère des informations qui peuvent être comparées entre les pays. La traduction du questionnaire de l&rsquo;enquête ESENER suit l&rsquo;approche TRAPD, acronyme de <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> (traduction, révision, compromis, test préalable et documentation) [Harkness, J. A. (2003). Questionnaire translation. dans J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (p.&nbsp;35-56). Hoboken, NJ: John Wiley &amp; Sons], sauf pour la première vague (disponible ici: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Pour les langues communes à deux pays ou plus, des versions nationales différentes sont élaborées en tenant compte des pratiques liées au travail, telles que la représentation des travailleurs ou l&rsquo;inspection du travail, qui requièrent des questions et une terminologie différentes. Davantage de détails sur le processus de traduction sont disponibles dans le <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">rapport relatif à la traduction</a> - voir ci-dessous.</p>
+          <p>Les étapes de base qui jalonnent la traduction de l&rsquo;enquête ESENER sont les suivantes:</p>
+           
+          <ol type=\"1\" >
+            <li>deux traductions indépendantes dans chaque langue réalisées par des traducteurs professionnels, dont la langue cible est la langue maternelle et qui n&rsquo;ont pas été en contact l&rsquo;un avec l&rsquo;autre pendant leur travail de traduction;</li>
+            <li>une révision des traductions indépendantes par une personne chargée de parvenir à un compromis entre les deux versions, qui rédige une nouvelle version;</li>
+            <li>des réunions d&rsquo;examen entre cette personne et les deux traducteurs afin de discuter conjointement du nouveau projet et de convenir d&rsquo;une version finale résultant d&rsquo;un compromis;</li>
+            <li>un contrôle des versions ayant fait l&rsquo;objet d&rsquo;un compromis par le <a href=\"https://osha.europa.eu/fr/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">réseau de points focaux</a> de l&rsquo;EU-OSHA, un accent particulier étant placé sur la terminologie relative à la santé et à la sécurité au travail (SST), y compris les questions liées aux instances de représentation des travailleurs.</li>
+          </ol>
+
+        <h2>Tailles des échantillons nationaux</h2>
+          <p>C&rsquo;est lors de l&rsquo;édition&nbsp;2014 de l&rsquo;enquête ESENER que les autorités nationales ont eu pour la première fois la possibilité de financer une expansion de la taille de leurs échantillons nationaux. L&rsquo;Espagne, la Slovénie et le Royaume-Uni ont saisi cette occasion pour accroître la taille de leurs échantillons respectifs. Pour l&rsquo;édition&nbsp;2019 de l&rsquo;enquête ESENER, trois pays ont accepté cette possibilité (l&rsquo;Irlande, la Norvège et la Slovénie), qui, cette fois, leur permettait également d&rsquo;ajouter deux à trois questions présentant un intérêt national à leurs questionnaires respectifs. La Suisse a financé entièrement toutes les vagues de l&rsquo;enquête ESENER.</p>
+           
+          <h3>Tailles des échantillons obtenues dans le cadre de l&rsquo;enquête ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Pays</th>
+                    <th class=\"center-text\">ESENER 2009 (entretiens avec le personnel d&rsquo;encadrement)</th>
+                    <th class=\"center-text\">ESENER&nbsp;2014</th>
+                    <th>ESENER&nbsp;2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Autriche</th>
+                    <td>1&nbsp;034</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgique</th>
+                    <td>1&nbsp;069</td>
+                    <td>1&nbsp;504</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgarie</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Croatie</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Chypre</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>République tchèque</th>
+                    <td>1&nbsp;015</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Danemark</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estonie</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finlande</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>France</th>
+                    <td>1&nbsp;497</td>
+                    <td>2&nbsp;256</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Allemagne</th>
+                    <td>1&nbsp;510</td>
+                    <td>2&nbsp;261</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Grèce</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Hongrie</th>
+                    <td>1&nbsp;031</td>
+                    <td>1&nbsp;514</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Irlande</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2&nbsp;000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Italie</th>
+                    <td>1&nbsp;501</td>
+                    <td>2&nbsp;254</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lettonie</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lituanie</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luxembourg</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malte</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Pays-Bas</th>
+                    <td>1&nbsp;009</td>
+                    <td>1&nbsp;519</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Pologne</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;257</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugal</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Roumanie</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovaquie</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovénie</th>
+                    <td>529</td>
+                    <td><em>1&nbsp;051</em></td>
+                    <td><em>1&nbsp;050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Espagne</th>
+                    <td>1&nbsp;566</td>
+                    <td><em>3&nbsp;162</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Suède</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;521</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Royaume-Uni</th>
+                    <td>1&nbsp;500</td>
+                    <td><em>4&nbsp;250</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norvège</th>
+                    <td>951</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Suisse</th>
+                    <td>1&nbsp;019</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Islande</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbie</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Macédoine du Nord</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turquie</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albanie</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Monténégro</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Total</th>
+                    <td><strong>28&nbsp;649</strong></td>
+                    <td><strong>49&nbsp;320</strong></td>
+                    <td><strong>45&nbsp;200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Documents et informations complémentaires à l&rsquo;intention des chercheurs</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER&nbsp;2009</a></h4>
+              <dl>
+                <dt>Cahier des charges:</dt>
+                <dd>Appel ouvert publié le 21&nbsp;août&nbsp;2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Lettre d&rsquo;accompagnement:</dt>
+                <dd>Des lettres décrivant le contexte et les objectifs de l&rsquo;enquête, ainsi que le soutien reçu des partenaires sociaux, ont été préparées dans toutes les langues de l&rsquo;enquête dans le but d&rsquo;encourager la participation à cette dernière.</dd>
+                <dt>Questionnaires principaux:</dt>
+                <dd>
+                  <ul>
+                    <li>Questionnaires à l&rsquo;intention des représentants du personnel d&rsquo;encadrement: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Questionnaires à l&rsquo;intention des représentants des travailleurs: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Rapports techniques:</dt>
+                <dd>
+                  <ul>
+                    <li>Enquête européenne sur les risques nouveaux et émergents - les risques psychosociaux (ESENER-PSR&nbsp;2009) - rapport technique: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Évaluation ex-post de l&rsquo;enquête européenne des entreprises sur les risques nouveaux et émergents: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Rapport d&rsquo;échantillonnage de l&rsquo;édition&nbsp;2009 de l&rsquo;enquête ESENER: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>L&rsquo;ensemble de données de l&rsquo;édition&nbsp;2009 de l&rsquo;enquête ESENER est accessible via le <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">service de données du Royaume-Uni de l&rsquo;université d&rsquo;Essex</a>, <a href=\"https://data.europa.eu/euodp/fr/data/dataset/esener-1\" target=\"_blank\">le portail de données européen</a> et <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER&nbsp;2014</a></h4>
+              <dl>
+                <dt>Cahier des charges:</dt>
+                <dd>Appel ouvert publié le 5&nbsp;décembre&nbsp;2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Lettre d&rsquo;accompagnement:</dt>
+                <dd>Des lettres décrivant le contexte et les objectifs de l&rsquo;enquête, ainsi que le soutien reçu des partenaires sociaux, ont été préparées dans toutes les langues de l&rsquo;enquête dans le but d&rsquo;encourager la participation à cette dernière.</dd>
+                <dt>Questionnaire principal:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Rapports techniques:</dt>
+                <dd>
+                  <ul>
+                    <li>Rapport technique: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Rapport relatif à la qualité: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Rapport relatif à la traduction: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>L&rsquo;ensemble de données de l&rsquo;édition&nbsp;2014 de l&rsquo;enquête ESENER est accessible via le <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">service de données du Royaume-Uni de l&rsquo;université d&rsquo;Essex</a>, <a href=\"https://data.europa.eu/euodp/fr/data/dataset/esener-2\" target=\"_blank\">le portail de données européen</a> et <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER&nbsp;2019</h4>
+              <dl>
+                <dt>Cahier des charges:</dt>
+                <dd>Appel ouvert publié le 5&nbsp;janvier&nbsp;2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/fr/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Lettre d&rsquo;accompagnement</dt>
+                <dd>Des lettres décrivant le contexte et les objectifs de l&rsquo;enquête, ainsi que le soutien reçu des partenaires sociaux, ont été préparées dans toutes les langues de l&rsquo;enquête dans le but d&rsquo;encourager la participation à cette dernière.</dd>
+                <dt>Questionnaire principal</dt>
+                <dt>Rapports techniques</dt>
+              </dl>
+              <p>Veuillez noter que tous les travaux se fondant sur l&rsquo;enquête ESENER ou s&rsquo;y référant doivent la mentionner au moyen d&rsquo;une référence bibliographique dans des notes de bas de pages ou dans la section des publications qui est consacrée aux références. De même, toutes les publications, qu&rsquo;elles soient sous forme imprimée ou électronique, ou qu&rsquo;elles fassent l&rsquo;objet d&rsquo;une radiodiffusion, basées en tout ou en partie sur l&rsquo;enquête ESENER, doivent faire mention de l&rsquo;Agence européenne pour la sécurité et la santé au travail (EU‑OSHA). Elles doivent également comporter une déclaration indiquant que l&rsquo;EU‑OSHA n&rsquo;est nullement responsable de leur analyse ou interprétation ultérieures.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Metodologija istraživanja ESENER</h1>
+        <h2>Statistički skup i jedinica analize</h2>
+          <p>Populacija istraživanja obuhvaća sve poslovne nastane u zemljama sudionicama koji zapo&scaron;ljavaju pet ili vi&scaron;e osoba, i to u svim sektorima gospodarske djelatnosti osim privatnih kućanstava (NACE T) i izvanteritorijalnih organizacija (NACE U). Poljoprivreda, &scaron;umarstvo i ribarstvo (NACE A) i poslovni nastani u kojima zaposleno manje od 10&nbsp;radnika nisu bili obuhvaćeni istraživanjem ESENER&nbsp;2009. Za potrebe istraživanja, poslovni nastan definira se tako da obuhvaća djelatnosti pojedinog poslodavca na jednom poslovnom prostoru (npr. u pojedinoj podružnici banke, tvornici automobila ili &scaron;koli).</p>
+          <p>Zemlje sudionice su sve države članice Europske unije te Norve&scaron;ka i Švicarska. Turska je bila obuhvaćena istraživanjima ESENER&nbsp;2009 i ESENER&nbsp;2014, Albanija i Crna Gora bile su obuhvaćene istraživanjem ESENER&nbsp;2014, a Island, Sjeverna Makedonija i Srbija bile su obuhvaćene istraživanjima ESENER&nbsp;2014 i ESENER&nbsp;2019.</p>
+           
+          <h3>Zemlje obuhvaćene istraživanjem ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER&nbsp;2009</th>
+                      <th>ESENER&nbsp;2014</th>
+                      <th>ESENER&nbsp;2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Europska unija (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norve&scaron;ka</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Švicarska</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Island</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Sjeverna Makedonija</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Srbija</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turska</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albanija</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Crna Gora</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Uključujući Hrvatsku i Ujedinjenu Kraljevinu</p>
+
+        <h2>Ispitanici</h2>
+          <p>U svakom ispitanom poslovnom nastanu razgovara se s <em>&bdquo;osobom koja ima najvi&scaron;e znanja o načinu na koji se na njihovom radnom mjestu upravlja rizicima u pogledu sigurnosti i zdravlja.&ldquo;</em> Taj se pristup ispitivanju razlikuje od onoga u istraživanju ESENER&nbsp;2009 u kojemu je ciljana osoba bila <em>&bdquo;najvi&scaron;i rukovoditelj koji koordinira aktivnosti sigurnosti i zdravlja u tom poslovnom nastanu.&ldquo;</em> Osim toga, u istraživanju ESENER 2009 razgovor s predstavnikom radnika za zdravlje i sigurnost bio je obavljen u onim poslovnim nastanima gdje (1.) je obavljen razgovor s upravom; (2.) postoji formalno određeni predstavnik s posebnom odgovorno&scaron;ću za sigurnost i zdravlje radnika; i (3.) je ispitanik iz uprave dao dopu&scaron;tenje za razgovor.</p>
+          <p>Glavni razlog promjene bio je taj da se ispita osoba koja ima najvi&scaron;e znanja o svim zdravstvenim i sigurnosnim pitanjima, uključujući i pojedinosti o procjeni rizika i drugim konkretnim mjerama, bez obzira na funkciju ili ulogu te osobe u poslovnom nastanu &ndash; &scaron;to je ionako sadržano u naknadnom pitanju.</p>
+             
+        <h2>Strategija uzorkovanja</h2>
+          <p>Kako bi rezultati istraživanja bili usporedivi na međunarodnoj razini, strategijom uzorkovanja mora se predvidjeti jednaka vrsta jedinica koje će se ispitivati u svakoj zemlji. Kvaliteta dostupnih adresnih registara razlikuje se među zemljama sudionicama s obzirom na:</p>
+          <ul>
+           <li>pokrivenost (posebno vezano za obuhvaćene sektore djelatnosti);</li>
+           <li>dostupnost i točnost potrebnih osnovnih informacija (kao &scaron;to su sektor djelatnosti i broj zaposlenika).</li>
+          </ul>
+          <p>Postojeći adresni registri nisu usporedivi među zemljama te su znatni napori uloženi u stvaranje uzoraka koji pružaju potrebnu kvalitetu i osiguravaju usporedivost na međunarodnoj razini. Ti su napori obuhvaćali postupke pregleda u onim zemljama u kojima dostupni adresni registri pružaju informacije na razini dru&scaron;tva, a ne na razini poslovnog nastana.</p>
+          <p>Stratifikacija uzorka temelji se na matrici četiriju razreda veličine i osam skupina sektora. Iako je opći pristup uzorkovanju u prva dva vala istraživanja ESENER bio uglavnom jednak, do&scaron;lo je do nekih promjena tijekom godina, posebno u odnosu na ESENER&nbsp;2009. Pojedinosti su dostupne na <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> i <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Matrica uzorkovanja istraživanja ESENER&nbsp;2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Sektorska skupina &ndash; područja u klasifikaciji NACE Rev. 2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Veličina &ndash; broj zaposlenika</th>
+                   </tr>
+                   <tr>
+                      <th>5&ndash;9</th>
+                      <th>10&ndash;49</th>
+                      <th>50&ndash;249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Poljoprivreda, &scaron;umarstvo i ribarstvo</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Građevinarstvo, zbrinjavanje otpada, opskrba vodom i električnom energijom</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Prerađivačka industrija</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Trgovina, prijevoz, pripremanje i usluživanje hrane&nbsp;/&nbsp;pružanje smje&scaron;taja i rekreacija</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: Informacijske tehnologije, financije, nekretnine i ostale tehničke znanstvene ili osobne usluge</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Javna uprava</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Obrazovanje</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Djelatnosti zdravstvene za&scaron;tite i socijalne skrbi</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Razvoj upitnika</h2>
+          <p>Upitnik za istraživanje ESENER&nbsp;2019 uglavnom je jednak kao i onaj koji je upotrijebljen u prethodnom valu istraživanja (ESENER&nbsp;2014), a koji se temeljio na strukturi inačice upitnika za istraživanje ESENER&nbsp;2009 za upravu. No gotovo su sva pitanja preoblikovana između 2009. i 2014. te su stoga analize trendova moguće od istraživanja ESENER 2014 nadalje. Razvoj i revizija upitnika za istraživanje ESENER obavljaju se u bliskoj suradnji između agencije EU-OSHA, koja je glavni ugovaratelj istraživanja ESENER, i skupine istraživača u području zdravlja i sigurnosti na radu iz različitih zemalja, kao i dionika agencije EU-OSHA.</p>
+          <p>Upitnik za istraživanje ESENER podvrgnut je nekoliko ispitivanja:</p>
+
+          <ol type=\"a\" >
+            <li><strong>Kognitivno prethodno ispitivanje</strong> u Njemačkoj, Latviji i Nizozemskoj, s oko 40 detaljnih neposrednih razgovora. Glavni cilj kognitivnog prethodnog ispitivanja bio je provjeriti razumljivost i jasnoću pitanja. Također postoje određena kognitivna pitanja kako bi se provjerilo hoće li ispitanici iz različitih zemalja i različitih vrsta organizacija protumačiti standardizirana pitanja na željeni način i jesu li pitanja relevantna za njih. Kognitivno prethodno ispitivanje obično dovodi do nekih promjena upitnika.</li>
+            <li><strong>Procjena mogućnosti prevođenja</strong> inačice osnovnog upitnika na engleskom jeziku. Iskusni prevoditelji koji rade u različitim jezičnim porodicama izrađuju grube prijevode nacrta osnovnog upitnika kako bi se odredile moguće nejasnoće ili druge pote&scaron;koće u prevođenju. Ako se utvrde takve pote&scaron;koće, prevoditelji predlažu druge formulacije za inačicu osnovnog upitnika, koja se revidira na odgovarajući način.</li>
+            <li><strong>Probno terensko ispitivanje</strong> provodi se u svim zemljama, s otprilike 50 razgovora po zemlji. Upotrebljavajući jednaku infrastrukturu kao i u glavnom ispitivanju, probno ispitivanje obavlja se primjenom metode CATI (računalno potpomognuto telefonsko&nbsp;anketiranje), no ponuđena je i mogućnost sudjelovanja putem interneta (metoda CAWI: računalno potpomognuto anketiranje putem interneta) onim osobama koje odbijaju obaviti razgovor putem telefona. Probno terensko ispitivanje dovodi do određenih promjena osnovnog upitnika i njegovih pojedinačnih nacionalnih inačica.</li>
+          </ol>
+
+        <h2>Prijevod</h2>        
+          <p>Izrađuju se nacionalne inačice upitnika za zemlje obuhvaćene istraživanjem (dostupno ovdje: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER&nbsp;2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER&nbsp;2014</a> i ESENER&nbsp;2019. Nužna je optimalna strategija prevođenja kako bi svaka nacionalna inačica upitnika sadržavala visokokvalitetna pitanja koja se mogu postaviti u svim vrstama poduzeća unutar pojedine zemlje i kako bi se prikupile informacije koje su usporedive na međunarodnoj razini. Prilikom prijevoda upitnika za istraživanje ESENER primjenjuje se pristup TRAPD, &scaron;to je na engleskom jeziku pokrata za <em>prijevod, reviziju, odlučivanje, prethodno testiranje i dokumentaciju</em> (Harkness, J. A. (2003)). Prijevod upitnika. Vidjeti: J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (ured.), Cross-cultural survey methods (str. 35.&ndash;56.). Hoboken, NJ: John Wiley &amp; Sons), osim u prvom valu (dostupno ovdje: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Izrađene su različite nacionalne inačice za one jezike koji se upotrebljavaju u vi&scaron;e zemalja, uzimajući u obzir prakse povezane s radom, kao &scaron;to su predstavljanje radnika ili inspekcija rada, koji zahtijevaju različita pitanja i terminologiju. Vi&scaron;e pojedinosti o postupku prevođenja možete pronaći u <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Izvje&scaron;ću o prevođenju</a> &ndash; vidjeti u nastavku.</p>
+          <p>Osnovni su koraci prijevoda za potrebe istraživanja ESENER sljedeći:</p>
+           
+          <ol type=\"1\" >
+            <li>Dva neovisna prijevoda na svaki jezik rade profesionalni prevoditelji &ndash; izvorni govornici ciljnog jezika &ndash; koji nisu međusobno u kontaktu za vrijeme izrade prijevoda.</li>
+            <li>Reviziju neovisnih prijevoda obavlja presuditelj, koji izrađuje novu inačicu.</li>
+            <li>Revizijski sastanci između presuditelja i dvaju prevoditelja kako bi zajednički raspravili novi nacrt prijevoda i dogovorili se o konačnoj usugla&scaron;enoj inačici.</li>
+            <li>Provjera usugla&scaron;enih inačica provodi se putem <a href=\"https://osha.europa.eu/hr/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">mreže kontaktnih točaka</a> agencije EU-OSHA, a poseban je naglasak na nacionalnoj terminologiji u području sigurnosti i zdravlja na radu, uključujući i pitanja vezana za tijela predstavnika radnika.</li>
+          </ol>
+
+        <h2>Veličine nacionalnih uzoraka</h2>
+          <p>U istraživanju ESENER&nbsp;2014 nacionalnim nadležnim tijelima ponuđena je mogućnost financiranja pro&scaron;irenja svojih nacionalnih uzoraka. Španjolska, Slovenija i Ujedinjena Kraljevina prihvatile su tu ponudu za povećavanje veličina svojih uzoraka. U istraživanju ESENER&nbsp;2019 tri su zemlje prihvatile tu ponudu (Irska, Norve&scaron;ka i Slovenija), &scaron;to je ovaj put uključivalo i mogućnost dodavanja dvaju ili triju pitanja od nacionalnog interesa u upitnike za te države. Švicarska je u potpunosti financirala sve valove istraživanja ESENER.</p>
+           
+          <h3>Postignute veličine uzoraka u istraživanju ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Zemlja</th>
+                    <th class=\"center-text\">ESENER&nbsp;2009 (razgovori s upravom)</th>
+                    <th class=\"center-text\">ESENER&nbsp;2014</th>
+                    <th>ESENER&nbsp;2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Austrija</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgija</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bugarska</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Hrvatska</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Cipar</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Če&scaron;ka</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Danska</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estonija</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finska</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Francuska</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Njemačka</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Grčka</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Mađarska</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Irska</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Italija</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Latvija</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Litva</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luksemburg</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nizozemska</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Poljska</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugal</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rumunjska</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovačka</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovenija</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Španjolska</th>
+                    <td>1566</td>
+                    <td><em>3 162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Švedska</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ujedinjena Kraljevina</th>
+                    <td>1500</td>
+                    <td><em>4 250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norve&scaron;ka</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Švicarska</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Island</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Srbija</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Sjeverna Makedonija</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turska</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albanija</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Crna Gora</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Ukupno</th>
+                    <td><strong>28649</strong></td>
+                    <td><strong>49320</strong></td>
+                    <td><strong>45200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Dokumenti i dodatne informacije za istraživače</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER&nbsp;2009</a></h4>
+              <dl>
+                <dt>Specifikacija natječaja:</dt>
+                <dd>Otvoreni poziv objavljen 21.<sup></sup> kolovoza 2007.: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Pismo podr&scaron;ke:</dt>
+                <dd>Pisma u kojima se opisuju kontekst i ciljevi istraživanja te podr&scaron;ka socijalnih partnera sastavljena su na svim jezicima istraživanja s ciljem poticanja sudjelovanja u istraživanju.</dd>
+                <dt>Osnovni upitnici:</dt>
+                <dd>
+                  <ul>
+                    <li>Upitnik za predstavnike uprave: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Upitnik za predstavnike radnika: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Tehnička izvje&scaron;ća:</dt>
+                <dd>
+                  <ul>
+                    <li>Europsko istraživanje o novim rizicima i onima u nastajanju &ndash; Psihosocijalni rizici (ESENER-PSR 2009) &ndash; Tehničko izvje&scaron;će: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Ex-post evaluacija europskog istraživanja poduzeća o novim rizicima i onima u nastajanju <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Izvje&scaron;će o uzorkovanju za istraživanje ESENER 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Skupu podataka iz istraživanja ESENER&nbsp;2009 moguće je pristupiti putem <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Podatkovne arhive UK‑a Sveučili&scaron;ta u Essexu</a>, <a href=\"https://data.europa.eu/euodp/hr/data/dataset/esener-1\" target=\"_blank\">Europskog portala podataka</a> i baze podataka <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER&nbsp;2014</a></h4>
+              <dl>
+                <dt>Specifikacija natječaja:</dt>
+                <dd>Otvoreni poziv objavljen 5.<sup></sup> prosinca 2012.: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Pismo podr&scaron;ke:</dt>
+                <dd>Pisma u kojima se opisuju kontekst i ciljevi istraživanja te podr&scaron;ka socijalnih partnera sastavljena su na svim jezicima istraživanja s ciljem poticanja sudjelovanja u istraživanju.</dd>
+                <dt>Osnovni upitnik:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Tehnička izvje&scaron;ća:</dt>
+                <dd>
+                  <ul>
+                    <li>Tehničko izvje&scaron;će: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Izvje&scaron;će o kvaliteti: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Izvje&scaron;će o prijevodu: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Skupu podataka iz istraživanja ESENER&nbsp;2014 moguće je pristupiti putem <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Podatkovne arhive UK‑a Sveučili&scaron;ta u Essexu</a>, <a href=\"https://data.europa.eu/euodp/hr/data/dataset/esener-2\" target=\"_blank\">Europskog portala podataka</a> i baze podataka <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER&nbsp;2019</h4>
+              <dl>
+                <dt>Specifikacija natječaja:</dt>
+                <dd>Otvoreni poziv objavljen 5.<sup></sup> siječnja 2018.: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Pismo podr&scaron;ke</dt>
+                <dd>Pisma u kojima se opisuju kontekst i ciljevi istraživanja te podr&scaron;ka socijalnih partnera sastavljena su na svim jezicima istraživanja s ciljem poticanja sudjelovanja u istraživanju.</dd>
+                <dt>Osnovni upitnik</dt>
+                <dt>Tehnička izvje&scaron;ća</dt>
+              </dl>
+              <p>Napominjemo da u svim radovima koji upotrebljavaju istraživanje ESENER ili na njega upućuju treba navesti izvor u fusnoti ili u popisu literature. Nadalje, u svakom tiskanom, elektroničkom ili emitiranom radu koji se djelomično ili potpuno temelji na istraživanju ESENER treba navesti Europsku agenciju za sigurnost i zdravlje na radu (EU-OSHA). Također, ti radovi moraju sadržavati izjavu da agencija EU OSHA ne snosi nikakvu odgovornost za njihovu daljnju analizu i interpretaciju.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Aðferðafræði ESENER</h1>
+        <h2>Almengi og greiningareining</h2>
+          <p>Könnunarhópurinn samanstendur af öllum fyrirtækjum með fimm eða fleiri starfsmenn í þátttökulöndunum og nær yfir alla atvinnugreinar fyrir utan einkaheimili (NACE T) og fyrirtæki utan lögsögu (NACE U). Landbúnaður, skógrækt og fiskveiðar (NACE A) og fyrirtæki með færri en 10 starfsmenn voru ekki með í ESENER 2009. Fyrir könnunina er fyrirtæki skilgreint þannig að það samanstandi af einum vinnuveitenda á einum vinnustað (t.d. eitt bankaútibú, bílaverksmiðja eða skóli).</p>
+          <p>Þátttökulöndin samanstanda af öllum aðildarríkjum Evrópusambandsins, sem og Noregi og Sviss. Tyrkland var hluti af ESENER 2009 og 2014, Albanía og Svartfjallaland voru hluti af ESENER 2014 og Ísland, Norður-Makedónía og Serbía voru hluti af ESENER 2014 og 2019.</p>
+           
+          <h3>Lönd sem ESENER hefur náð yfir</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Evrópusambandið (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Noregur</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Sviss</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Ísland</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norður-Makedónía</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbía</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Tyrkland</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albanía</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Svartfjallaland</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Þar með talið Króatía og Bretland</p>
+
+        <h2>Svarendur</h2>
+          <p>Í hverju fyrirtæki sem er hluti af könnuninni er tekið viðtal við <em>&bdquo;einstaklinginn sem hefur besta þekkingu á hvernig tekist er á við áhættur varðandi öryggi og heilsu á sínum vinnustað&ldquo;</em> . Þetta er ólíkt ESENER 2009 þar sem reynt var að ná til <em>&bdquo;hæst setta stjórnandans sem samræmir vinnuverndarstarf í þessu fyrirtæki&ldquo;</em> . Að auki, í ESENER 2009, var viðtal við vinnuverndarfulltrúa starfsmanna sem beindist að þeim fyrirtækjum þar sem (1) stjórnendaviðtali var lokið; (2) formlega útnefndur fulltrúi með tiltekna ábyrgð varðandi vinnuvernd starfsmanna var til staðar; og (3) þátttakandi úr röðum stjórnenda hafði veitt leyfi fyrir viðtalinu.</p>
+          <p>Meginástæðan fyrir breytingunni var að ná til einstaklingsins sem hafði mesta þekkingu á öllum vinnuverndarmálum, þar með talið á ítarupplýsingum um áhættumat og aðrar einstakar ráðstafanir, án tillits til starfs hans eða hlutverks innan fyrirtækisins - sem spurt er um hvort eð er í næstu spurningu.</p>
+             
+        <h2>Úrtaksgerð</h2>
+          <p>Til þess að tryggja að niðurstöður könnunarinnar séu samanburðarhæfar á milli landa er mikilvægt að úrtaksgerðin leiði til að sömu tegundir eininga séu kannaðar í hverju landi. Gæði tiltækra heimilisfangaskráa eru misjöfn á milli þátttökulandanna hvað varðar:</p>
+          <ul>
+           <li>umfang (sérstaklega í þeim atvinnugreinum sem könnunin nær til);</li>
+           <li>aðgengi og nákvæmni á nauðsynlegum bakgrunnsupplýsingum (svo sem á atvinnugrein og fjölda starfsmanna).</li>
+          </ul>
+          <p>Núverandi heimilisfangaskrár eru ekki sambærilegar á milli landa og því hefur talsvert verið haft fyrir því að byggja upp úrtök sem bjóða upp á nauðsynlega eiginleika og tryggja samanburðarhæfni á milli landa. Þessi viðleitni hefur krafist vinsunaraðgerða í þeim löndum þar sem tiltækar heimilisfangaskrár bjóða upp á upplýsingar á fyrirtækjastigi fremur en á stofnanastigi.</p>
+          <p>Lagskipting á úrtakinu byggir á fylki með fjórum stærðarflokkum og átta hópum af atvinnugreinum. Þó að almenna aðferðin við úrtaksgerð í fyrstu tveimur ESENER könnunarbylgjunum hafi að stórum hluta verið sú sama, þá hafa verið gerðar nokkrar breytingar í gegnum árin, sér í lagi varðandi ESENER 2009. Ítarupplýsingarnar eru aðgengilegar á <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> og <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>ESENER 2019 Úrtaksfylki</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Atvinnugreinahópur - NACE Rev. 2 hlutar</th>
+                      <th  colspan=\"4\" class=\"center-text\">Stærð - fjöldi starfsmanna</th>
+                   </tr>
+                   <tr>
+                      <th>5-9</th>
+                      <th>10-49</th>
+                      <th>50-249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Landbúnaður, skógrækt og fiskveiðar</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Byggingarvinna, úrgangsstjórnun og vatns- og rafveita</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Framleiðsla</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Viðskipti, flutningar, matvæli/gisting og afþreying</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: Upplýsingatækni, fjármál, fasteignaþjónusta og önnur vísindatæknileg- eða persónuleg þjónusta</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Opinber stjórnsýsla</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Menntun</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Heilbrigði manna og félagsþjónusta</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Þróun spurningalistans</h2>
+          <p>ESENER 2019 spurningalistinn er að stórum hluta sá sami og var notaður í fyrri könnunarbylgju (ESENER 2014), sem var sjálfur upphaflega byggður á samsetningu stjórnendaútgáfunnar af ESENER 2009 spurningalistanum. Hinsvegar var nánast öllum spurningunum breytt á milli 2009 og 2014 og því eru leitnigreiningar mögulegar frá ESENER 2014 og áfram. Þróun og endurskoðun á ESNER spurningalistanum fer fram með náinni samvinnu á milli Evrópsku vinnuverndarstofnunarinnar, aðalverktaka ESENER og hóps rannsóknarfólks frá mismunandi löndum sem rannsaka vinnuvernd, sem og hagsmunaaðila Evrópsku vinnuverndarstofnunarinnar.</p>
+          <p>ESENER spurningalistarnir hafa settir í ýmsar prófanir:</p>
+
+          <ol type=\"a\" >
+            <li><strong>Vitsmunalega forprófun</strong> í Þýskalandi, Lettlandi og Hollandi, með um 40 ítarlegum viðtölum augliti til auglitis. Meginmarkmiðið með vitsmunalegu forprófununni er að athuga skilning á spurningunum og skýrleika þeirra. Það er einnig fjöldi vitsmunalegra spurninga sem miða að því að prófa hvort þátttakendur frá mismunandi löndum og mismunandi gerðum af fyrirtækjum túlki stöðluðu spurningarnar á þann hátt sem ætlað er og hvort þær eigi við. Vitsmunalega forprófunin leiðir venjulega til margvíslegra breytinga á spurningalistanum.</li>
+            <li><strong>Þýðanleikamat</strong> á ensku aðalútgáfu spurningalistans. Reyndir þýðendur frá mismunandi málættum gera grófar þýðingar á aðalútgáfu spurningalistans til að greina alla margræðni og aðra erfiðleika sem kunna að vera varðandi þýðingu. Þar sem slíkir erfiðleikar eru greindir gera þýðendurnir tillögur að annarskonar framsetningu á aðalútgáfunni, sem er endurskoðuð til samræmis við það.</li>
+            <li><strong>Tilraunavettvangsprófun</strong> er framkvæmd í öllum löndum með um 50 viðtölum í hverju landi. Sama uppbygging er notuð og í aðalkönnuninni og þessi tilraunaprófun er gerð með CATI (símaviðtöl með aðstoð tölvu) en valkosturinn að taka þátt á netinu (CAWI: vefviðtöl með aðstoð tölvu) var boðinn þeim sem neituðu að veita viðtalið í gegnum síma. Tilraunavettvangsprófunin leiðir til margvíslegra breytinga á aðalspurningalistanum og á einstökum landsútgáfum af spurningalistanum.</li>
+          </ol>
+
+        <h2>Þýðing</h2>        
+          <p>Mismunandi landsútgáfur af spurningalistanum eru þróaðar fyrir löndin sem könnunin nær til (tiltækar hér: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> og ESENER 2019). Góð stefna í þýðingarmálum er mjög mikilvæg til þess að tryggja að hver landsútgáfa spurningalistans búi yfir spurningum af miklum gæðum sem er hægt að beina að öllum hugsanlegum gerðum fyrirtækja í viðkomandi landi og nái fram upplýsingum sem hægt er að bera saman á milli landa. Þýðingin á ESENER spurningalistanum fylgir TRAPD aðferðinni, sem er skammstöfun á <em>Translation (þýðing), Review (endurskoðun), Adjudication (dómur), Pre-testing (forprófun) og Documentation (skjalfesting)</em> (Harkness, J. A. (2003). Þýðing á spurningalista. Í J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (bls. 35-56). Hoboken, NJ: John Wiley &amp; Sons), fyrir utan fyrstu könnunarbylgjuna (tiltæk hér: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Fyrir tungumál sem tvö eða fleiri lönd deila eru mismunandi landsútgáfur þróaðar, sem taka tillit til vinnutengdra aðferða eins og hver er í forsvari fyrir starfsfólk eða vinnueftirlits, sem krefjast mismunandi spurninga og íðorðaforða. Frekari upplýsingar um þýðingarferlið er hægt að finna í <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Þýðingarskýrslunni</a> - sjá að neðan.</p>
+          <p>Grunnskrefin sem eru tekin í þýðingunni á ESENER eru:</p>
+           
+          <ol type=\"1\" >
+            <li>Tvær sjálfstæðar þýðingar yfir á hvert tungumálanna eru gerðar af atvinnuþýðendum - heimamönnum með markmálið sem móðurmál - sem eru ekki í sambandi við hvern annan á meðan þýðingin er í vinnslu.</li>
+            <li>Sjálfstæðu þýðingarnar eru yfirfarnar af dómara, sem gerir uppkast að nýrri útgáfu.</li>
+            <li>Dómarinn og þýðendurnir hittast á fundum til að fjalla um nýja uppkastið og koma sér saman um úrskurðaða lokaútgáfu.</li>
+            <li>Athugun á úrskurðuðu lokaútgáfunum sem er framkvæmd af <a href=\"https://osha.europa.eu/is/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">tengiliðaneti</a> Evrópsku vinnuverndarstofnunarinnar, með sérstaka áherslu á íðorðaforða vinnuverndar innan landa, þar með talið spurningar sem tengjast samtökum sem eru í forsvari fyrir starfsfólk.</li>
+          </ol>
+
+        <h2>Úrtaksstærðir landa</h2>
+          <p>Í ESENER 2014 var innlendum yfirvöldum í fyrsta sinn boðinn sá möguleiki að fjármagna stækkun á úrtakinu í sínu landi. Spánn, Slóvenía og Bretland nýttu sér það til að stækka viðkomandi úrtök. Í ESENER 2019 nýttu þrjú lönd sér þetta (Írland, Noregur og Slóvenía), sem að þessu sinni bauð einnig upp á þann möguleika að bæta við tveimur til þremur spurningum sem vörðuðu þjóðarhag við viðkomandi spurningalista. Sviss hefur fjármagnað að fullu allar könnunarbylgjur ESENER.</p>
+           
+          <h3>Úrtaksstærðir sem hafa náðst í ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Land</th>
+                    <th class=\"center-text\">ESENER 2009 (stjórnendaviðtöl)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Austurríki</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgía</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Búlgaría</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Króatía</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kýpur</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Tékkland</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Danmörk</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Eistland</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finnland</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Frakkland</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Þýskaland</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Grikkland</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ungverjaland</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Írland</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ítalía</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lettland</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Litháen</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lúxemborg</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Holland</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Pólland</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portúgal</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rúmenía</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slóvakía</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slóvenía</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spánn</th>
+                    <td>1566</td>
+                    <td><em>3 162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Svíþjóð</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bretland</th>
+                    <td>1500</td>
+                    <td><em>4 250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Noregur</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Sviss</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ísland</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbía</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norður-Makedónía</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Tyrkland</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albanía</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Svartfjallaland</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Alls</th>
+                    <td><strong>28649</strong></td>
+                    <td><strong>49320</strong></td>
+                    <td><strong>45200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Skjöl og frekari upplýsingar fyrir rannsóknarfólk</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Útboðsskilmálar:</dt>
+                <dd>Opið útboð birt þann 21<sup>ta</sup> ágúst 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Útboðsskilmálar ESENER.pdf</a></dd>
+                <dt>Stuðningsbréf:</dt>
+                <dd>Bréf þar sem forsaga og markmið könnunarinnar koma fram auk upplýsinga um stuðning aðila vinnumarkaðarins voru gerð á öllum tungumálum könnunarinnar með það markmiði að hvetja til þátttöku í könnuninni.</dd>
+                <dt>Aðalspurningalistar:</dt>
+                <dd>
+                  <ul>
+                    <li>Spurningalisti fyrir fulltrúa stjórnenda: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Spurningalisti fyrir fulltrúa starfsmanna: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Fræðilegar skýrslur:</dt>
+                <dd>
+                  <ul>
+                    <li>Evrópsk könnun á nýjum og aðsteðjandi hættum - Sálfélagslegar hættur (ESENER-PSR 2009) - Fræðileg skýrsla: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Fræðileg skýrsla EUOSHA.pdf</a></li>
+                    <li>Eftirámat á Fyrirtækjakönnun Evrópu á nýjum og aðsteðjandi hættum: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Eftirámat á Esener.pdf</a></li>
+                    <li>ESENER Skýrsla um úrtaksgerð 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Skýrsla um úrtaksgerð-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>ESENER 2009 gagnasafnið er hægt að nálgast í gegnum <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Gagnaþjónustu Bretlands hjá Háskólanum í Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-1\" target=\"_blank\">Evrópsku gagnagáttina</a> og <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Útboðsskilmálar:</dt>
+                <dd>Opið útboð birt þann 5<sup>ta</sup> desember 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-útboðsskilmálar.pdf</a></dd>
+                <dt>Stuðningsbréf:</dt>
+                <dd>Bréf þar sem forsaga og markmið könnunarinnar koma fram auk upplýsinga um stuðning aðila vinnumarkaðarins voru gerð á öllum tungumálum könnunarinnar með það markmiði að hvetja til þátttöku í könnuninni.</dd>
+                <dt>Aðalspurningalisti:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Aðalspurningalisti2.pdf</a></dd>
+                <dt>Fræðilegar skýrslur:</dt>
+                <dd>
+                  <ul>
+                    <li>Fræðileg skýrsla: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Fræðileg skýrsla.pdf</a></li>
+                    <li>Gæðaskýrsla: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Gæðaskýrsla.pdf</a></li>
+                    <li>Þýðingarskýrsla: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Þýðingarskýrsla.pdf</a></li>
+                </dd>
+              </dl>
+              <p>ESENER 2014 gagnasafnið er hægt að nálgast í gegnum <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Gagnaþjónustu Bretlands hjá Háskólanum í Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-2\" target=\"_blank\">Evrópsku gagnagáttina</a> og <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Útboðsskilmálar:</dt>
+                <dd>Opið útboð birt þann 5<sup>ta</sup> janúar 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Stuðningsbréf</dt>
+                <dd>Bréf þar sem forsaga og markmið könnunarinnar koma fram auk upplýsinga um stuðning aðila vinnumarkaðarins voru gerð á öllum tungumálum könnunarinnar með það markmiði að hvetja til þátttöku í könnuninni.</dd>
+                <dt>Aðalspurningalisti</dt>
+                <dt>Tækniskýrslur</dt>
+              </dl>
+              <p>Vinsamlegast athugið að öll rit sem notast við eða vísa í ESENER ættu að geta heimilda með bókfræðilegri tilvitnun í neðanmálsgrein eða í heimildaskrá ritsins. Að sama skapi ætti allt útgefið efni, hvort sem það er prentað, rafrænt eða sent út og byggir í heild eða að hluta á ESENER að geta Evrópsku vinnuverndarstofnunarinnar (EU-OSHA). Einnig ætti að fylgja yfirlýsing um að Evrópska vinnuverndarstofnunin bera enga ábyrgð á frekari greiningu eða túlkun.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Metodologia ESENER</h1>
+        <h2>Universo e unità di analisi</h2>
+          <p>La popolazione dell&rsquo;indagine comprende tutti gli stabilimenti con cinque o più dipendenti nei paesi partecipanti, in rappresentanza di tutti i settori di attività economica, ad eccezione delle abitazioni private (NACE T) e delle organizzazioni extraterritoriali (NACE U). L&rsquo;agricoltura, la silvicoltura e la pesca (NACE A) nonché gli stabilimenti che danno lavoro a meno di 10 lavoratori non rientravano in ESENER 2009. Ai fini dell&rsquo;indagine, uno stabilimento è definito come comprendente le attività di un solo datore di lavoro in un&rsquo;unica serie di locali (ad esempio, un&rsquo;unica filiale di una banca, una fabbrica di automobili o una scuola).</p>
+          <p>I paesi partecipanti comprendono tutti gli Stati membri dell&rsquo;Unione europea, nonché la Norvegia e la Svizzera. La Turchia rientrava in ESENER 2009 e 2014, mentre l&rsquo;Albania e il Montenegro sono stati oggetti di studio in ESENER 2014. L&rsquo;Islanda, la Macedonia del Nord e la Serbia rientravano nei programmi ESENER 2014 e 2019.</p>
+           
+          <h3>Copertura geografica in ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Unione europea (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norvegia</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Svizzera</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Islanda</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Macedonia del Nord</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turchia</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albania</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Montenegro</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Compresi la Croazia e il Regno Unito</p>
+
+        <h2>Persone sottoposte all&rsquo;indagine</h2>
+          <p>In ogni stabilimento oggetto d&rsquo;indagine viene intervistata <em>&ldquo;la persona che meglio conosce le modalità di gestione dei rischi per la sicurezza e la salute sul luogo di lavoro&rdquo;.</em> Tale approccio differisce da ESENER 2009 in cui ci si rivolgeva al <em>&ldquo;più alto dirigente responsabile per il coordinamento delle attività in materia di sicurezza e salute nello stabilimento&rdquo;</em>. Inoltre, in ESENER 2009, s&rsquo;intervistava il rappresentante dei lavoratori incaricato della sicurezza e della salute in quelle imprese in cui (1) si era completato un colloquio con la dirigenza; (2) esisteva un rappresentante formalmente designato con responsabilità specifica per la sicurezza e la salute dei lavoratori; e (3) il dirigente intervistato aveva concesso l&rsquo;autorizzazione al colloquio.</p>
+          <p>La principale ragione del cambiamento consisteva nel rivolgersi alla persona con la migliore conoscenza di tutti le questioni inerenti alla sicurezza e alla salute, tra cui dettagli sulla valutazione del rischio e altre misure particolari, indipendentemente dalla loro funzione o dal loro ruolo nell&rsquo;impresa, comunque oggetto di una domanda integrativa.</p>
+             
+        <h2>Strategia di campionamento</h2>
+          <p>Al fine di garantire che i risultati dell&rsquo;indagine siano comparabili a livello nazionale, è essenziale che la strategia di campionamento abbia come risultato lo stesso tipo di unità oggetto dell&rsquo;indagine in ciascun paese. La qualità dei registri degli indirizzi disponibili varia a seconda dei paesi partecipanti in materia di:</p>
+          <ul>
+           <li>copertura (in particolare per quanto riguarda i settori di attività inclusi);</li>
+           <li>disponibilità e accuratezza delle informazioni di base (quali il settore di attività e il numero dei dipendenti).</li>
+          </ul>
+          <p>I registri degli indirizzi esistenti non sono comparabili tra i paesi e, pertanto, sono stati compiuti notevoli sforzi per mettere insieme campioni che forniscano la qualità necessaria e garantiscano la comparabilità transnazionale. Tali sforzi hanno richiesto una procedura di screening nei paesi in cui i registri degli indirizzi disponibili forniscono informazioni a livello aziendale anziché a livello di stabilimento.</p>
+          <p>La stratificazione del campione si basa su una matrice di quattro classi di dimensione e otto gruppi di settori. Sebbene l&rsquo;approccio generale adottato per il campionamento nelle prime due serie di ESENER fosse in gran parte lo stesso, nel corso degli anni si sono riscontrati alcuni cambiamenti, in particolare rispetto a ESENER 2009. Maggiori informazioni sono disponibili in <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> ed <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Matrice di campionamento ESENER 2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Gruppi di settore - sezioni NACE Rev. 2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Dimensioni - numero di dipendenti</th>
+                   </tr>
+                   <tr>
+                      <th>5-9</th>
+                      <th>10-49</th>
+                      <th>50-249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: agricoltura, silvicoltura e pesca</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: costruzioni, gestione dei rifiuti, distribuzione di acqua ed energia elettrica</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: produzione manifatturiera</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: commercio, trasporto, alloggio/ristorazione e divertimento</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: informatica, attività finanziarie, immobiliari e altre attività tecnico-scientifiche o di servizi personali</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: pubblica amministrazione</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: istruzione</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>sanità e assistenza sociale</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Elaborazione del questionario</h2>
+          <p>Il questionario ESENER 2019 è sostanzialmente identico a quello utilizzato nella precedente serie (ESENER 2014), che era originariamente basato sulla struttura della versione gestionale del questionario ESENER 2009. Tuttavia, quasi tutte le domande sono state modificate tra il 2009 e il 2014 e, pertanto, le analisi delle tendenze sono possibili a partire da ESENER 2014 in avanti. L&rsquo;elaborazione e la revisione del questionario ESENER avvengono in stretta cooperazione tra l&rsquo;EU-OSHA, il principale contraente ESENER, e un gruppo di ricercatori sulla salute e la sicurezza sul lavoro provenienti da diversi paesi, nonché tra le parti interessate dell&rsquo;EU-OSHA.</p>
+          <p>I questionari ESENER sono stati sottoposti a diverse prove.</p>
+
+          <ol type=\"a\" >
+            <li>Un <strong>pre-test cognitivo</strong> in Germania, Lettonia e Paesi Bassi, con circa 40 colloqui frontali. Il principale obiettivo del pre-test cognitivo è di verificare la comprensione e la chiarezza delle domande. Vi è anche una serie di domande cognitive volte a verificare se le persone sottoposte all&rsquo;indagine provenienti da paesi e tipi di organizzazioni diversi interpretino le domande standardizzate nel modo previsto e se siano loro pertinenti. Il pre-test cognitivo solitamente comporta una serie di modifiche al questionario.</li>
+            <li>Una <strong>valutazione sulla traducibilità</strong> della versione principale in inglese del questionario. Traduttori esperti provenienti da diverse famiglie linguistiche elaborano traduzioni approssimative della versione principale del questionario al fine di individuare eventuali ambiguità o altre difficoltà di traduzione. Qualora tali difficoltà vengano individuate, i traduttori presentano proposte di formulazione alternativa per la versione principale, che viene modificata di conseguenza.</li>
+            <li>In tutti i paesi viene effettuata una <strong>prova pilota sul campo</strong>, con circa 50 colloqui per paese. Utilizzando la stessa infrastruttura adottata per l&rsquo;indagine principale, la prova pilota è effettuata nella modalità CATI (<i>Computer Assisted Telephone Interview</i>), ma l&rsquo;opzione per la partecipazione online (CAWI: <i>Computer Assisted Web Interviewing</i>) è offerta a coloro che si rifiutano di effettuare il colloquio telefonico. La prova pilota sul campo comporta una serie di modifiche al questionario principale e alle sue singole versioni nazionali.</li>
+          </ol>
+
+        <h2>Traduzione</h2>        
+          <p>Per i paesi oggetto dell&rsquo;indagine sono state elaborate diverse versioni nazionali del questionario (disponibili qui: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> ed ESENER 2019). Una strategia di traduzione ottimale è essenziale per garantire che ogni versione nazionale del questionario comprenda domande di elevata qualità che possono essere rivolte a tutti i tipi di imprese all&rsquo;interno del paese in questione e che generano informazioni confrontabili a livello transnazionale. La traduzione del questionario ESENER segue l&rsquo;approccio TRAPD, acronimo di <em>traduzione, riesame, giudizio, pre-test e documentazione</em> [Harkness, J. A. (2003)]. Traduzione del questionario. In J. Hartness, F. van de Vijver, &amp; P. Mohler (Eds.), <i>Cross-cultural survey methods</i> (Metodi d&rsquo;indagine transculturali) (pagg. 35-56). Hoboken, NJ: John Wiley &amp; Sons), tranne che per la prima serie (disponibile qui: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Per le lingue condivise da due o più paesi sono sviluppate diverse versioni nazionali, tenendo conto delle prassi in materia occupazionale, quali la rappresentanza dei lavoratori o l&rsquo;ispezione del lavoro, che richiedono domande e terminologia differenti. Maggiori dettagli sul processo di traduzione sono disponibili nella <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">relazione sulla traduzione</a> - cfr. qui di seguito.</p>
+          <p>Le fasi fondamentali che rientrano nella traduzione di ESENER sono le seguenti.</p>
+           
+          <ol type=\"1\" >
+            <li>Due traduzioni indipendenti in ciascuna lingua effettuate da traduttori professionisti, madrelingua della lingua di arrivo, che non erano in contatto tra loro durante la realizzazione della traduzione.</li>
+            <li>Esame delle traduzioni indipendenti da parte di un giudice, che redige una nuova versione.</li>
+            <li>Riunioni di riesame tra il giudice e i due traduttori, al fine di discutere congiuntamente il nuovo progetto e concordare una versione definitiva elaborata dalle parti.</li>
+            <li>Verifica delle versioni definitive elaborate dalle parti a cura della <a href=\"https://osha.europa.eu/it/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">rete di punti focali</a> dell&rsquo;EU-OSHA, con un&rsquo;attenzione del tutto particolare alla terminologia nazionale per la salute e la sicurezza sul lavoro (SSL), comprese le domande relative agli organismi di rappresentanza dei lavoratori.</li>
+          </ol>
+
+        <h2>Dimensioni del campione nazionale</h2>
+          <p>Per la prima volta, nell&rsquo;ambito di ESENER 2014, alle autorità nazionali è stata offerta la possibilità di finanziare un ampliamento delle dimensioni dei loro campioni nazionali. La Spagna, la Slovenia e il Regno Unito hanno accettato l&rsquo;offerta di incrementare le dimensioni dei rispettivi campioni. In ESENER 2019, tre paesi hanno accettato questa offerta (Irlanda, Norvegia e Slovenia), che annoverava anche la possibilità di aggiungere da due a tre domande di interesse nazionale nei rispettivi questionari. La Svizzera ha finanziato integralmente tutte le serie di ESENER.</p>
+           
+          <h3>Dimensioni del campione portato a compimento in ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Paese</th>
+                    <th class=\"center-text\">ESENER 2009 (colloqui con la dirigenza)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Austria</th>
+                    <td>1&nbsp;034</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgio</th>
+                    <td>1&nbsp;069</td>
+                    <td>1&nbsp;504</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgaria</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Croazia</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Cipro</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Cechia</th>
+                    <td>1&nbsp;015</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Danimarca</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estonia</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finlandia</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Francia</th>
+                    <td>1&nbsp;497</td>
+                    <td>2&nbsp;256</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Germania</th>
+                    <td>1&nbsp;510</td>
+                    <td>2&nbsp;261</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Grecia</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ungheria</th>
+                    <td>1&nbsp;031</td>
+                    <td>1&nbsp;514</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Irlanda</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2&nbsp;000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Italia</th>
+                    <td>1&nbsp;501</td>
+                    <td>2&nbsp;254</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lettonia</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lituania</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lussemburgo</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Paesi Bassi</th>
+                    <td>1&nbsp;009</td>
+                    <td>1&nbsp;519</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Polonia</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;257</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portogallo</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Romania</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovacchia</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovenia</th>
+                    <td>529</td>
+                    <td><em>1&nbsp;051</em></td>
+                    <td><em>1&nbsp;050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spagna</th>
+                    <td>1&nbsp;566</td>
+                    <td><em>3&nbsp;162</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Svezia</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;521</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Regno Unito</th>
+                    <td>1&nbsp;500</td>
+                    <td><em>4&nbsp;250</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norvegia</th>
+                    <td>951</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Svizzera</th>
+                    <td>1&nbsp;019</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Islanda</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbia</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Macedonia del Nord</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turchia</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albania</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Montenegro</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Totale</th>
+                    <td><strong>28&nbsp;649</strong></td>
+                    <td><strong>49&nbsp;320</strong></td>
+                    <td><strong>45&nbsp;200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Documenti e ulteriori informazioni per i ricercatori</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Capitolato d&rsquo;oneri</dt>
+                <dd>Bando di gara con procedura aperta pubblicato il 21 agosto 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Lettere di accompagnamento</dt>
+                <dd>Lettere che definiscono il contesto e gli obiettivi dell&rsquo;indagine e il sostegno delle parti sociali sono state elaborate in tutte le lingue dell&rsquo;indagine, al fine di incoraggiare la partecipazione.</dd>
+                <dt>Questionari principali</dt>
+                <dd>
+                  <ul>
+                    <li>Questionario rivolto al rappresentante della dirigenza: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Questionario rivolto al rappresentante dei lavoratori: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Relazioni tecniche</dt>
+                <dd>
+                  <ul>
+                    <li>Indagine europea sui rischi nuovi ed emergenti - rischi psicosociali (ESENER-PSR 2009) - Relazione tecnica: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Valutazione ex-post della seconda indagine europea tra le imprese sui rischi nuovi ed emergenti: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Relazione sul campionamento ESENER 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Si può accedere all&rsquo;insieme dei dati ESENER 2009 tramite il <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">servizio dati del Regno Unito dell&rsquo;università di Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-1\" target=\"_blank\">il portale europeo dei dati</a> e <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>CAPITOLATO D&rsquo;ONERI</dt>
+                <dd>Bando di gara con procedura aperta pubblicato il 5 dicembre 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Lettere di accompagnamento</dt>
+                <dd>Lettere che definiscono il contesto e gli obiettivi dell&rsquo;indagine e il sostegno delle parti sociali sono state elaborate in tutte le lingue dell&rsquo;indagine, al fine di incoraggiare la partecipazione.</dd>
+                <dt>Questionario principale:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Relazioni tecniche</dt>
+                <dd>
+                  <ul>
+                    <li>Relazione tecnica: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Relazione sulla qualità: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Relazione sulla traduzione: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Si può accedere all&rsquo;insieme dei dati ESENER 2014 tramite il <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">servizio dati del Regno Unito dell&rsquo;università di Essex</a>, <a href=\"https://data.europa.eu/euodp/it/data/dataset/esener-2\" target=\"_blank\">il portale europeo dei dati</a> e <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Capitolato d&rsquo;oneri</dt>
+                <dd>Bando di gara con procedura aperta pubblicato il 5 gennaio 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Lettere di accompagnamento</dt>
+                <dd>Lettere che definiscono il contesto e gli obiettivi dell&rsquo;indagine e il sostegno delle parti sociali sono state elaborate in tutte le lingue dell&rsquo;indagine, al fine di incoraggiare la partecipazione a essa.</dd>
+                <dt>Questionario principale</dt>
+                <dt>Relazioni tecniche</dt>
+              </dl>
+              <p>Si noti che tutti i documenti che utilizzano o fanno riferimento a ESENER dovrebbero riconoscerne la fonte tramite riferimenti bibliografici nelle note a piè di pagina o nella sezione dei riferimenti delle pubblicazioni. Analogamente, ogni pubblicazione, sia essa stampata, elettronica o trasmessa, che si basa in tutto o in parte su ESENER, dovrebbe contenere un riconoscimento all&rsquo;Agenzia europea per la sicurezza e la salute sul lavoro (EU-OSHA). Dovrebbero inoltre riportare una dichiarazione secondo la quale l&rsquo;EU-OSHA non si assume alcuna responsabilità per quanto riguarda la loro ulteriore analisi o interpretazione.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1><i>ESENER</i> metodoloģija</h1>
+        <h2>Analīzes kopums un vienība</h2>
+          <p>Aptaujas dalībnieki ir visi nodibinājumi, kuriem iesaistītajās valstīs ir vismaz pieci darbinieki, un tā aptver visas saimnieciskās darbības nozares, izņemot privātās mājsaimniecības (<i>NACE&nbsp;T</i>) un eksteritoriālās organizācijas (<i>NACE&nbsp;U</i>). 2009.&nbsp;gada <i>ESENER</i> nebija ietverta lauksaimniecība, mežsaimniecība un zivsaimniecība (<i>NACE&nbsp;A</i>) un nodibinājumi ar mazāk nekā 10&nbsp;darbiniekiem. Aptaujas vajadzībām nodibinājumu definē kā struktūru, kas aptver viena darba devēja darbības vienā telpu kopumā (piemēram, viena bankas filiāle, automobiļu rūpnīca vai skola).</p>
+          <p>Iesaistītās valstis ir visas Eiropas Savienības dalībvalstis, kā arī Norvēģija un Šveice. Turcija bija ietverta 2009.&nbsp;gada un 2014.&nbsp;gada <i>ESENER</i>, Albānija un Melnkalne bija ietvertas 2014.&nbsp;gada <i>ESENER</i> un Islande, Ziemeļmaķedonija un Serbija bija ietvertas 2014.&nbsp;gada un 2019.&nbsp;gada <i>ESENER</i>.</p>
+           
+          <h3>Valstu aptvērums <i>ESENER</i></h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th><i>2009.&nbsp;gada ESENER</i></th>
+                      <th><i>2014.&nbsp;gada ESENER</i></th>
+                      <th><i>2019.&nbsp;gada ESENER</i></th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Eiropas Savienība (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norvēģija</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Šveice</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Islande</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Ziemeļmaķedonija</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbija</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turcija</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albānija</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Melnkalne</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Ieskaitot Horvātiju un Apvienoto Karalisti</p>
+
+        <h2>Respondenti</h2>
+          <p>Katrā aptaujātajā nodibinājumā intervē <em>&ldquo;personu, kura vislabāk pārzina dro&scaron;ības un veselības aizsardzības risku pārvaldību savā darbavietā&rdquo;</em>. Tas at&scaron;ķiras no 2009.&nbsp;gada <i>ESENER</i>, kurā intervēja <em>&ldquo;visaugstāko vadītāju, kur&scaron; nodibinājumā koordinē dro&scaron;ības un veselības aizsardzības darbības</em>. Papildus tam 2009.&nbsp;gada <i>ESENER</i> tika intervēts darbinieku dro&scaron;ības un veselības aizsardzības pārstāvis tādos nodibinājumos, kuros 1) bija pabeigta vadības intervija; 2) bija formāli iecelts pārstāvis, kas atbildīgs tie&scaron;i par darbinieku dro&scaron;ību un veselības aizsardzību, un 3) vadības respondents bija sniedzis atļauju veikt interviju.</p>
+          <p>Galvenais &scaron;ādu pārmaiņu iemesls bija veikt interviju ar personu, kura vislabāk pārzina visus dro&scaron;ības un veselības aizsardzības jautājumus, tostarp informāciju par riska novērtējumu un citiem īpa&scaron;iem pasākumiem, neatkarīgi no &scaron;īs personas funkcijām vai amata nodibinājumā (&scaron;ī informācija jebkurā gadījumā ir prasīta papildjautājumā).</p>
+             
+        <h2>Paraugu ņem&scaron;anas stratēģija</h2>
+          <p>Lai nodro&scaron;inātu, ka aptaujas rezultāti visās valstīs ir salīdzināmi, ir būtiski, lai paraugu ņem&scaron;anas rezultātā katrā valstī tiktu aptaujātas vienāda veida vienības. Pieejamo adre&scaron;u reģistru kvalitāte katrā iesaistītajā valstī ir at&scaron;ķirīga, vērtējot tos pēc:</p>
+          <ul>
+           <li>aptvēruma (īpa&scaron;i pēc iekļautajām darbības nozarēm);</li>
+           <li>nepiecie&scaron;amās pamatinformācijas pieejamības un precizitātes (piemēram, darbības nozarēm un darbinieku skaita).</li>
+          </ul>
+          <p>Dažādu valstu pastāvo&scaron;os adre&scaron;u reģistrus nevar salīdzināt, tāpēc ir pieliktas ievērojamas pūles, lai izveidotu paraugus, kuri nodro&scaron;ina nepiecie&scaron;amo kvalitāti un iespēju salīdzināt dažādas valstis. Lai to īstenotu, bija nepiecie&scaron;ama pārbaudes procedūra valstīs, kurās pieejamie adre&scaron;u reģistri sniedz informāciju uzņēmuma, nevis nodibinājuma līmenī.</p>
+          <p>Parauga iedalī&scaron;anas pamatā ir četru izmēru kla&scaron;u un astoņu nozaru grupu matrica. Pirmajos divos <i>ESENER</i> periodos paraugu ņem&scaron;anas vispārējā pieeja kopumā bija tāda pati, tomēr gadu gaitā ir ieviestas dažas izmaiņas, īpa&scaron;i attiecībā uz 2009.&nbsp;gada <i>ESENER</i>. Sīkāka informācija ir pieejama <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">2009.&nbsp;gada <i>ESENER</i></a> un <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">2014.&nbsp;gada <i>ESENER</i></a>.</p>
+            
+          <h3>2019.&nbsp;gada <i>ESENER</i> paraugu ņem&scaron;anas matrica</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Nozaru grupa&nbsp;&mdash; <i>NACE</i> 2.&nbsp;red. sekcijas</th>
+                      <th  colspan=\"4\" class=\"center-text\">Izmērs&nbsp;&mdash; darbinieku skaits</th>
+                   </tr>
+                   <tr>
+                      <th>5-9</th>
+                      <th>10-49</th>
+                      <th>50-249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: lauksaimniecība, mežsaimniecība un zivsaimniecība.</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: būvniecība, atkritumu apsaimnieko&scaron;ana, ūdensapgāde un elektroapgāde.</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: ražo&scaron;ana</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: tirdzniecība, transports, ēdinā&scaron;anas/izmitinā&scaron;anas un atpūtas darbības</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: IT pakalpojumi, finan&scaron;u darbības, operācijas ar nekustamo īpa&scaron;umu un pārējās tehniskās, zinātniskās un individuālo pakalpojumu snieg&scaron;anas darbības.</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: valsts pārvalde</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: izglītība</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>cilvēku veselības un sociālās aprūpes pasākumi</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Anketas izstrāde</h2>
+          <p>2019.&nbsp;gada <i>ESENER</i> anketa lielākoties ir tāda pati kā iepriek&scaron;ējā periodā (2014.&nbsp;gada <i>ESENER</i>) izmantotā anketa, kuras pamatā sākotnēji bija 2009.&nbsp;gada <i>ESENER</i> anketas vadības versijas struktūra. Tomēr laikā no 2009. līdz 2014.&nbsp;gadam gandrīz visas anketas tika grozītas, tādējādi no 2014.&nbsp;gada <i>ESENER</i> nodro&scaron;inot tendenču analīzi. <i>ESENER</i> anketu izstrādā un pārskata, cie&scaron;i sadarbojoties ar <i>EU-OSHA</i>, <i>ESENER</i> galveno darbuzņēmēju un darba aizsardzības jomas pētnieku grupu no dažādām valstīm, kā arī ar <i>EU-OSHA</i> ieinteresētajām personām.</p>
+          <p><i>ESENER</i> anketām ir veiktas vairākas pārbaudes:</p>
+
+          <ol type=\"a\" >
+            <li><strong>kognitīva iepriek&scaron;ējā pārbaude</strong> Vācijā, Latvijā un Nīderlandē, ietverot aptuveni 40&nbsp;padziļinātas intervijas klātienē. Galvenais kognitīvās iepriek&scaron;ējās pārbaudes mērķis ir pārbaudīt, vai jautājumi ir skaidri un saprotami. Pastāv arī vairāki kognitīvie jautājumi, kuru mērķis ir pārbaudīt, vai respondenti no dažādām valstīm un dažādu veidu organizācijām interpretē standartizētos jautājumus tam paredzētajā veidā un vai &scaron;ie jautājumi viņiem ir būtiski. Pēc kognitīvās iepriek&scaron;ējās pārbaudes parasti jāveic vairākas izmaiņas anketā;</li>
+            <li>anketas angļu valodas galvenās versijas <strong>tulkojamības novērtējums</strong>. Pieredzēju&scaron;i tulkotāji no dažādām valodu saimēm veic galvenās anketas melnraksta aptuvenus tulkojumus, lai tulkojumā identificētu jebkādas divdomības vai citas problēmas. Ja tiek identificētas &scaron;ādas problēmas, tulkotāji ierosina alternatīvus formulējumus galvenajā versijā, kas tiek attiecīgi rediģēta;</li>
+            <li><strong>izmēģinājuma pārbaudi uz vietas</strong> īsteno visās valstīs, veicot aptuveni 50&nbsp;intervijas katrā valstī. Izmantojot tādu pa&scaron;u infrastruktūru kā galvenajā aptaujā, &scaron;o izmēģinājuma pārbaudi veic <i>CATI</i> (datorizētas tālruņa intervijas) režīmā, tomēr tiem, kuri nevēlas veikt interviju pa tālruni, piedāvā iespēju piedalīties tie&scaron;saistē (<i>CAWI</i>&nbsp;&mdash; datorizēta tīmekļa intervija). Pēc izmēģinājuma pārbaudes uz vietas veic vairākas izmaiņas galvenajā anketā un izveido anketas individuālas valstu versijas.</li>
+          </ol>
+
+        <h2>Tulko&scaron;ana</h2>        
+          <p>Aptaujas aptvertajām valstīm izstrādā anketas dažādas valstu versijas (pieejamas &scaron;eit: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">2009.&nbsp;gada <i>ESENER</i></a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">2014.&nbsp;gada <i>ESENER</i></a> un 2019.&nbsp;gada <i>ESENER</i>). Būtiska ir optimāla tulko&scaron;anas stratēģija, lai nodro&scaron;inātu, ka katra anketas valstu versija ietver augstas kvalitātes jautājumus, kurus var uzdot visu veidu nodibinājumiem attiecīgajā valstī un kuri ģenerē informāciju, ko var salīdzināt starp dažādām valstīm. <i>ESENER</i> anketas tulko&scaron;anā ievēro <i>TRAPD</i> pieeju; <i>TRAPD</i> ir akronīms, ar ko apzīmē <em><i>Translation, Review, Adjudication, Pre-testing, Documentation</i></em> (tulko&scaron;ana, pārskatī&scaron;ana, lēmuma pieņem&scaron;ana, iepriek&scaron;ēja pārbaude un dokumentē&scaron;ana) (Harkness, J. A. (2003). Questionnaire translation. J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (35.-56.&nbsp;lpp.). Hoboken, NJ: John Wiley &amp; Sons), izņemot pirmo periodu (pieejams &scaron;eit: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">2009.&nbsp;gada <i>ESENER</i></a>).</p>
+          <p>Valodām, kuras ir divu vai vairāku valstu valodas, izstrādā dažādas valstu versijas, ņemot vērā ar darbu saistītu praksi, piemēram, darbinieku pārstāvību vai darba inspekciju, kam nepiecie&scaron;ami at&scaron;ķirīgi jautājumi un terminoloģija. Sīkāku informāciju par tulko&scaron;anas procesu skatīt <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Tulko&scaron;anas ziņojumā</a>&nbsp;&mdash; skatīt turpmāk.</p>
+          <p><i>ESENER</i> tulko&scaron;anas pamata posmi ir &scaron;ādi:</p>
+           
+          <ol type=\"1\" >
+            <li>divi neatkarīgi tulkojumi katrā no valodām, kurus veiku&scaron;i profesionāli tulkotāji, kam mērķvaloda ir dzimtā valoda un kas tulko&scaron;anas laikā viens ar otru nav sazināju&scaron;ies;</li>
+            <li>neatkarīgo tulkojumu pārskatī&scaron;ana, ko veic lēmuma pieņēmējs, kur&scaron; sagatavo jaunu versiju;</li>
+            <li>pārskatī&scaron;anas sanāksmes, kurās piedalās lēmuma pieņēmējs un abi tulkotāji, lai kopīgi apspriestu jauno melnrakstu un vienotos par galīgo pieņemto versiju;</li>
+            <li><i>EU-OSHA</i> <a href=\"https://osha.europa.eu/lv/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">kontaktpunktu tīkls</a> pārbauda pieņemtās versijas, īpa&scaron;i pievēr&scaron;oties valstu darba aizsardzības terminoloģijai, tostarp jautājumiem saistībā ar darbinieku pārstāvības struktūrām.</li>
+          </ol>
+
+        <h2>Valstu paraugu apmērs</h2>
+          <p>Pirmo reizi 2014.&nbsp;gada <i>ESENER</i> valstu iestādēm tika piedāvāta iespēja finansēt savu valstu paraugu apmēru papla&scaron;inā&scaron;anu. Spānija, Slovēnija un Apvienotā Karaliste pieņēma piedāvājumu papla&scaron;ināt savu attiecīgo paraugu apmēru. 2019.&nbsp;gada <i>ESENER</i> trīs valstis (Īrija, Norvēģija un Slovēnija) pieņēma &scaron;o piedāvājumu, kas &scaron;oreiz ietvēra arī iespēju pievienot divus vai trīs valsts intere&scaron;u mēroga jautājumus savām attiecīgajām anketām. Šveice ir pilnā mērā finansējusi visus <i>ESENER</i> periodus.</p>
+           
+          <h3>Iegūtie paraugu apmēri <i>ESENER</i></h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Valsts</th>
+                    <th class=\"center-text\">2009.&nbsp;gada <i>ESENER</i> (vadības intervijas)</th>
+                    <th class=\"center-text\"><i>2014.&nbsp;gada ESENER</i></th>
+                    <th><i>2019.&nbsp;gada ESENER</i></th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Austrija</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Beļģija</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgārija</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Horvātija</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kipra</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Čehija</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Dānija</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Igaunija</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Somija</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Francija</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Vācija</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Grieķija</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ungārija</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Īrija</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Itālija</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Latvija</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lietuva</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luksemburga</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nīderlande</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Polija</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugāle</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rumānija</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovākija</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovēnija</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spānija</th>
+                    <td>1566</td>
+                    <td><em>3162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Zviedrija</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Apvienotā Karaliste</th>
+                    <td>1500</td>
+                    <td><em>4250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norvēģija</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Šveice</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Islande</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbija</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ziemeļmaķedonija</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turcija</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albānija</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Melnkalne</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Kopā</th>
+                    <td><strong>28&nbsp;649</strong></td>
+                    <td><strong>49&nbsp;320</strong></td>
+                    <td><strong>45&nbsp;200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Dokumenti un papildu informācija pētniekiem</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\"><i>2009.&nbsp;gada ESENER</i></a></h4>
+              <dl>
+                <dt>Konkursa specifikācijas</dt>
+                <dd>Atklāta procedūra publicēta 2007.&nbsp;gada 21.&nbsp;augustā: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Atbalsta vēstule</dt>
+                <dd>Lai veicinātu dalību aptaujā, visās aptaujas valodās tika sagatavotas vēstules, kurās izklāstīta pamatinformācija par aptauju un tās mērķi un sniegta informācija par atbalstu no sociālajiem partneriem.</dd>
+                <dt>Galvenās anketas</dt>
+                <dd>
+                  <ul>
+                    <li>Vadības pārstāvju anketa: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Darbinieku pārstāvju anketa: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Tehniskie ziņojumi</dt>
+                <dd>
+                  <ul>
+                    <li>Eiropas uzņēmumu aptauja par jaunajiem un nākotnes riskiem&nbsp;&mdash; psihosociālie riski (2009.&nbsp;gada <i>ESENER-PSR</i>)&nbsp;&mdash; tehniskais ziņojums: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Eiropas uzņēmumu aptaujas par jaunajiem un nākotnes riskiem <i>ex&nbsp;post</i> novērtējums: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>2009.&nbsp;gada <i>ESENER</i> paraugu ņem&scaron;anas ziņojums: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>2009.&nbsp;gada <i>ESENER</i> datu kopai var piekļūt, ejot uz <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Apvienotās Karalistes Eseksas Universitātes datu dienesta mājas lapu</a>, <a href=\"https://data.europa.eu/euodp/lv/data/dataset/esener-1\" target=\"_blank\">Eiropas datu portālu</a> un <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\"><i>GESIS</i> mājas lapu</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\"><i>2014.&nbsp;gada ESENER</i></a></h4>
+              <dl>
+                <dt>Konkursa specifikācijas</dt>
+                <dd>Atklāta procedūra publicēta 2012.&nbsp;gada 5.&nbsp;decembrī: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Atbalsta vēstule</dt>
+                <dd>Lai veicinātu dalību aptaujā, visās aptaujas valodās tika sagatavotas vēstules, kurās izklāstīta pamatinformācija par aptauju un tās mērķi un sniegta informācija par atbalstu no sociālajiem partneriem.</dd>
+                <dt>Galvenā anketa</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Tehniskie ziņojumi</dt>
+                <dd>
+                  <ul>
+                    <li>Tehniskais ziņojums: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Kvalitātes ziņojums: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Tulko&scaron;anas ziņojums: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>2014.&nbsp;gada <i>ESENER</i> datu kopai var piekļūt, ejot uz <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Apvienotās Karalistes Eseksas Universitātes datu dienesta mājas lapu</a>, <a href=\"https://data.europa.eu/euodp/lv/data/dataset/esener-2\" target=\"_blank\">Eiropas datu portālu</a> un <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\"><i>GESIS</i> mājas lapu</a>.</p>
+            <h4><i>2019.&nbsp;gada ESENER</i></h4>
+              <dl>
+                <dt>Konkursa specifikācijas</dt>
+                <dd>Atklāta procedūra publicēta 2018.&nbsp;gada 5.&nbsp;janvārī: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Atbalsta vēstule</dt>
+                <dd>Lai veicinātu dalību aptaujā, visās aptaujas valodās tika sagatavotas vēstules, kurās izklāstīta pamatinformācija par aptauju un tās mērķi un sniegta informācija par atbalstu no sociālajiem partneriem.</dd>
+                <dt>Galvenā anketa</dt>
+                <dt>Tehniskie ziņojumi</dt>
+              </dl>
+              <p>Lūdzam ņemt vērā, ka visos darbos, kuros izmanto <i>ESENER</i> vai atsaucas uz to, jānorāda tās avots, zemsvītras piezīmē vai publikāciju atsauču sadaļā sniedzot bibliogrāfisku atsauci. Tāpat arī jebkurā publikācijā&nbsp;&mdash; drukātā, elektroniskā vai pārraidītā&nbsp;&mdash;, kura daļēji vai pilnībā ir balstīta uz <i>ESENER</i>, ir jāatsaucas uz Eiropas Darba dro&scaron;ības un veselības aizsardzības aģentūru (<i>EU-OSHA</i>). Tajā arī jānorāda, ka <i>EU-OSHA</i> neuzņemas nekādu atbildību par &scaron;o publikāciju turpmāku analīzi vai interpretāciju.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>ESENER metodika</h1>
+        <h2>Apimtis ir analizės vienetas</h2>
+          <p>Apklausoje dalyvavo visos dalyvaujančių &scaron;alių įmonės, kuriose dirba ne mažiau kaip penki darbuotojai, i&scaron; visų ekonominės veiklos sektorių, i&scaron;skyrus privačius namų ūkius (NACE&nbsp;T) ir ekstrateritorines organizacijas (NACE&nbsp;U). Žemės ūkio, mi&scaron;kininkystės ir žuvininkystės sektoriai (NACE A) ir įmonės, kuriose dirba mažiau nei 10&nbsp;darbuotojų, į 2009&nbsp;m. ESENER apklausą neįtraukti. Šios apklausos tikslais įmonė apibrėžiama kaip vienas darbdavys, vykdantis veiklą viename patalpų komplekse (pvz., atskiras banko filialas, automobilių gamykla ar mokykla).</p>
+          <p>Apklausoje dalyvavo visos Europos Sąjungos valstybės narės, Norvegija ir Šveicarija. Turkija įtraukta į 2009&nbsp;m. ir 2014&nbsp;m. ESENER, Albanija ir Juodkalnija &ndash; į 2014&nbsp;m. ESENER, o Islandija, Šiaurės Makedonija ir Serbija &ndash; į 2014&nbsp;m. ir 2019&nbsp;m. ESENER apklausas.</p>
+           
+          <h3>ESENER apklausose dalyvavusios &scaron;alys</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Europos Sąjunga (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norvegija</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Šveicarija</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Islandija</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Šiaurės Makedonija</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbija</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turkija</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albanija</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Juodkalnija</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Įskaitant Kroatiją ir Jungtinę Karalystę</p>
+
+        <h2>Respondentai</h2>
+          <p>Kiekvienoje dalyvavusioje įmonėje į klausimus atsako <em>&bdquo;asmuo, geriausiai žinantis, kaip darbo vietose valdomos saugos ir sveikatos grėsmės&ldquo;</em>. Tuo &scaron;i apklausa skiriasi nuo 2009&nbsp;m. ESENER apklausos, kai klausimai buvo pateikiami <em>auk&scaron;čiausias pareigas einančiam vadovui, koordinuojančiam įmonės darbuotojų saugos ir sveikatos srities veiklą</em>. Be to, vykdant 2009 m. ESENER apklausą pasikalbėti su darbuotojų sveikatos ir saugos klausimų atstovu, buvo stengiamasi tose įmonėse, kuriose: (1) buvo baigti pokalbiai su vadovybe, (2) buvo oficialiai paskirtas už darbuotojų saugą ir sveikatą atsakingas asmuo, ir (3) tokiam pokalbiui buvo gautas apklausoje dalyvavusios vadovybės leidimas.</p>
+          <p>Pokyčius i&scaron; esmės lėmė siekis pabendrauti su asmeniu, geriausiai i&scaron;manančiu visus sveikatos ir saugos klausimus, taip pat galinčiu suteikti i&scaron;samios informacijos apie rizikos vertinimą ir kitas konkrečias priemones, neatsižvelgiant į jo pareigas ar vaidmenį įmonėje &ndash; apie tai teiraujamasi tolesniame klausime.</p>
+             
+        <h2>Imties nustatymo strategija</h2>
+          <p>Kad būtų galima palyginti įvairiose valstybėse gautus apklausos rezultatus, labai svarbu imtis nustatyti taip, kad kiekvienos &scaron;alies tyrimo vienetai būtų vienodi. Dalyvaujančiose &scaron;alyse tvarkomų adresų registrų kokybė skiriasi, nes nesutampa:</p>
+          <ul>
+           <li>aprėptis (ypač todėl, kad įtraukti nevienodi veiklos sektoriai);</li>
+           <li>būtinos bendros informacijos (pvz., apie veiklos sektorių ir darbuotojų skaičių) kiekis ir tikslumas.</li>
+          </ul>
+          <p>Įvairiose &scaron;alyse veikiančių adresų registrų palyginti neįmanoma, todėl buvo labai stengiamasi parengti tokias imtis, kurios užtikrintų reikiamą kokybę ir leistų palyginti įvairių &scaron;alių duomenis. Tam reikėjo atlikti patikrinimus tose &scaron;alyse, kurių adresų registruose pateikiama informacija tik apie įmones, o ne apie jų padalinius.</p>
+          <p>Imtis suskirstyta pagal keturių dydžio klasių ir a&scaron;tuonių sektorių grupių matricą. Nors bendras imčių atrankos principas pirmose dviejose ESENER apklausose i&scaron; esmės buvo toks pat, ilgainiui jis keitėsi, ypač 2009&nbsp;m. ESENER apklausoje buvo tam tikrų pokyčių. I&scaron;samesnė informacija pateikiama <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> ir <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>ESENER 2019 imčių nustatymo matrica</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Sektorių grupė. NACE 2 red. skiltys</th>
+                      <th  colspan=\"4\" class=\"center-text\">Dydis pagal darbuotojų skaičių</th>
+                   </tr>
+                   <tr>
+                      <th>5&ndash;9</th>
+                      <th>10&ndash;49</th>
+                      <th>50&ndash;249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Žemės ūkis, mi&scaron;kininkystė ir žuvininkystė</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Statyba, atliekų tvarkymas, vandens ir elektros energijos tiekimas</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Gamyba</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Prekyba, transportas, maitinimo, apgyvendinimo ir poilsio organizavimo veikla</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: IT, finansai, nekilnojamasis turtas ir kita techninė mokslo ar asmeninių paslaugų srities veikla</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Vie&scaron;asis administravimas</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong> Švietimas</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Žmonių sveikatos priežiūra ir socialinis darbas</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Klausimyno rengimas</h2>
+          <p>2019 m. ESENER klausimynas yra i&scaron; esmės toks pat, kaip ir naudotas ankstesnėje &ndash; 2014&nbsp;m. ESENER &ndash; apklausoje, parengtoje pagal 2009&nbsp;m. vadovybei skirtą ESENER klausimyną. Tačiau nuo 2009&nbsp;m. iki 2014 m. beveik visi klausimai buvo patikslinti, tad nuo 2014&nbsp;m. ESENER apklausos galima atlikti tendencijų analizes. ESENER klausimynas rengiamas ir tikslinamas glaudžiai bendradarbiaujant EU-OSHA, pagrindiniam ESENER rangovui, įvairių &scaron;alių darbuotojų sveikatos ir saugos srities tyrėjų grupei ir EU-OSHA suinteresuotiesiems subjektams.</p>
+          <p>ESENER klausimynai i&scaron;bandyti atliekant kelias patikras:</p>
+
+          <ol type=\"a\" >
+            <li><strong>Pirminę kognityvinę patikrą</strong> Vokietijoje, Latvijoje ir Nyderlanduose, kur surengta maždaug 40 nuodugnių tiesioginių pokalbių. Pagrindinis pirminės kognityvinės patikros tikslas &ndash; įsitikinti, ar klausimai ai&scaron;kūs ir suprantami. Keletu kognityvinių klausimų taip pat siekiama patikrinti, ar respondentai i&scaron; skirtingų &scaron;alių ir skirtingų rū&scaron;ių organizacijų standartizuotus klausimus supranta teisingai ir ar jie jiems svarbūs. Po pirminės kognityvinės patikros klausimynas paprastai dar gerokai keičiamas.</li>
+            <li>Pagrindinės klausimyno versijos anglų kalba <strong>i&scaron;verčiamumo vertinimą</strong>. Patyrę įvairių kalbų &scaron;eimų vertėjai parengia juodra&scaron;tinius pagrindinio klausimyno vertimus ir įvardija visas neai&scaron;kias vietas ar kitus vertimo sunkumus. Jei i&scaron;kyla sunkumų, vertėjai pasiūlo performuluoti pagrindinio klausimyno klausimus, kurie atitinkamai keičiami.</li>
+            <li>Visose &scaron;alyse atliekamas <strong>praktinis bandymas</strong>: kiekvienoje &scaron;alyje surengiama maždaug 50 pokalbių. Naudojantis ta pačia infrastruktūra kaip ir pagrindinėje apklausoje, &scaron;is praktinis bandymas atliekamas kompiuterizuotos telefoninės apklausos būdu, o nesutinkantiems bendrauti telefonu pasiūloma galimybė į klausimus atsakyti internete. Gavus praktinio bandymo rezultatus, keičiamas ir pagrindinis klausimynas, ir atskiros nacionalinės klausimyno versijos.</li>
+          </ol>
+
+        <h2>Vertimas</h2>        
+          <p>Kiekvienai apklausoje dalyvaujančiai &scaron;aliai parengiama jai skirta klausimyno versija (pateikiama čia: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> ir ESENER 2019). Kad kiekvienai &scaron;aliai skirto klausimyno klausimai būtų tikslūs, juos būtų galima pateikti visų rū&scaron;ių atitinkamos &scaron;alies įmonėms ir i&scaron; atskirų &scaron;alių gautą informaciją būtų galima palyginti, būtina pasirinkti teisingą vertimo strategiją. Verčiant ESENER klausimyną vadovautasi TRAPD metodu (angl. <em>Translation, Review, Adjudication, Pre-testing and Documentation</em>): klausimai i&scaron;verčiami, vertimas tikrinamas, derinamas, i&scaron;bandomas ir įforminamas (Harkness, J. A. (2003). Questionnaire translation. J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), i&scaron;skyrus pirmą apklausą (daugiau informacijos: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Kai ta pačia kalba kalbama dviejose ar daugiau &scaron;alių, kiekvienai &scaron;aliai rengiamos atskiros klausimyno versijos, atsižvelgiant į skirtingas darbo praktikas, kaip antai darbuotojų atstovavimą arba patikrinimus darbo vietoje, pagal kurias derinami klausimai ir terminija. Daugiau informacijos apie vertimo procesą galima rasti <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Vertimo ataskaitoje</a>, žr. toliau.</p>
+          <p>ESENER klausimyno vertimas susideda i&scaron; &scaron;ių pagrindinių etapų:</p>
+           
+          <ol type=\"1\" >
+            <li>profesionalūs vertėjai, kuriems vertimo kalba yra gimtoji, ir kurie versdami klausimus tarpusavyje nesikonsultuoja, parengia du atskirus teksto vertimus į kiekvienos &scaron;alies kalbą.</li>
+            <li>Abu vertimus patikrina vertintojas, kuris paruo&scaron;ia naują dokumento versiją.</li>
+            <li>Vertintojas ir abu vertėjai susitikę apžvelgia rezultatus, kartu aptaria patikslintą dokumentą ir susitaria dėl galutinės teksto versijos.</li>
+            <li>Patvirtintas dokumentų versijas patikrina EU-OSHA <a href=\"https://osha.europa.eu/lt/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">ry&scaron;ių punktai</a>; ypatingas dėmesys skiriamas nacionalinei darbuotojų saugos ir sveikatos (DSS) terminijai, įskaitant klausimus, susijusius su darbuotojų atstovavimo įstaigomis.</li>
+          </ol>
+
+        <h2>Nacionalinių imčių dydžiai</h2>
+          <p>2014&nbsp;m. atliktoje ESENER apklausoje nacionalinėms valdžios institucijoms pirmą kartą buvo pasiūlyta galimybė finansuoti nacionalinių imčių didinimą. Galimybe i&scaron;plėsti savo &scaron;alies imčių dydžius pasinaudojo Ispanija, Slovėnija ir Jungtinė Karalystė. 2019&nbsp;m. ESENER apklausoje &scaron;iuo pasiūlymu pasinaudojo trys &scaron;alys (Airija, Norvegija ir Slovėnija). Šalims taip pat numatyta galimybė į klausimyną papildomai įtraukti du arba tris nacionalinės svarbos klausimus. Šveicarija skyrė visą reikiamą finansavimą visoms ESENER apklausoms.</p>
+           
+          <h3>ESENER apklausų imčių dydžiai</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Šalis</th>
+                    <th class=\"center-text\">ESENER 2009 (pokalbiai su vadovybe)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Austrija</th>
+                    <td>1&nbsp;034</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgija</th>
+                    <td>1&nbsp;069</td>
+                    <td>1&nbsp;504</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgarija</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kroatija</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kipras</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Čekija</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Danija</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estija</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Suomija</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Prancūzija</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Vokietija</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Graikija</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Vengrija</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Airija</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Italija</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Latvija</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lietuva</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Liuksemburgas</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nyderlandai</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lenkija</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugalija</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rumunija</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovakija</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovėnija</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ispanija</th>
+                    <td>1566</td>
+                    <td><em>3&nbsp;162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Švedija</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Jungtinė Karalystė</th>
+                    <td>1500</td>
+                    <td><em>4&nbsp;250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norvegija</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Šveicarija</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Islandija</th>
+                    <td>&ndash;</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbija</th>
+                    <td>&ndash;</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Šiaurės Makedonija</th>
+                    <td>&ndash;</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turkija</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>&ndash;</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albanija</th>
+                    <td>&ndash;</td>
+                    <td>750</td>
+                    <td>&ndash;</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Juodkalnija</th>
+                    <td>&ndash;</td>
+                    <td>452</td>
+                    <td>&ndash;</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>I&scaron; viso</th>
+                    <td><strong>28649</strong></td>
+                    <td><strong>49320</strong></td>
+                    <td><strong>45200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Tyrėjams skirti dokumentai ir papildoma informacija</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Konkurso specifikacija</dt>
+                <dd>Atviras kvietimas teikti parai&scaron;kas paskelbtas 2007 m. rugpjūčio 21 d.: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Paramos ra&scaron;tas:</dt>
+                <dd>Siekiant paskatinti dalyvavimą apklausoje, ra&scaron;tai, kuriuose i&scaron;dėstyta pagrindinė apklausos informacija ir tikslai, bei nurodyta socialinių partnerių parama, buvo parengti visomis apklausoje dalyvaujančių &scaron;alių kalbomis.</dd>
+                <dt>Pagrindiniai klausimynai:</dt>
+                <dd>
+                  <ul>
+                    <li>Klausimynas vadovybės atstovams: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Klausimynas darbuotojų atstovams: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Techninės ataskaitos:</dt>
+                <dd>
+                  <ul>
+                    <li>Europos įmonių apklausa apie naują ir kylančią riziką. Psichosocialinės grėsmės (ESENER-PSR 2009 m.). Techninė ataskaita: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Europos įmonių apklausos apie naują ir kylančią riziką <i>ex-post</i> vertinimas <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>2009&nbsp;m. ESENER apklausos imčių nustatymo ataskaita: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>ESENER 2009 duomenų rinkinį galima rasti <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Jungtinės Karalystės Esekso universiteto duomenų tarnyboje</a>, <a href=\"https://data.europa.eu/euodp/lt/data/dataset/esener-1\" target=\"_blank\">Europos duomenų portale</a> ir <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Konkurso specifikacija</dt>
+                <dd>Atviras kvietimas teikti parai&scaron;kas paskelbtas 2012 m. gruodžio 5 d.: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Paramos ra&scaron;tas:</dt>
+                <dd>Siekiant paskatinti dalyvavimą apklausoje, ra&scaron;tai, kuriuose i&scaron;dėstyta pagrindinė apklausos informacija ir tikslai, bei nurodyta socialinių partnerių parama, buvo parengti visomis apklausoje dalyvaujančių &scaron;alių kalbomis.</dd>
+                <dt>Pagrindinis klausimynas:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Techninės ataskaitos:</dt>
+                <dd>
+                  <ul>
+                    <li>Techninė ataskaita: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Kokybės ataskaita: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Vertimo ataskaita: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>ESENER 2014 duomenų rinkinį galima rasti <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Jungtinės Karalystės Esekso universiteto duomenų tarnyboje</a>, <a href=\"https://data.europa.eu/euodp/lt/data/dataset/esener-2\" target=\"_blank\">Europos duomenų portale</a> ir <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Konkurso specifikacija</dt>
+                <dd>Atviras kvietimas teikti parai&scaron;kas paskelbtas 2018 m. sausio mėn. 5 d.: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Paramos ra&scaron;tas</dt>
+                <dd>Siekiant paskatinti dalyvavimą apklausoje, ra&scaron;tai, kuriuose i&scaron;dėstyta pagrindinė apklausos informacija ir tikslai, bei nurodyta socialinių partnerių parama, buvo parengti visomis apklausoje dalyvaujančių &scaron;alių kalbomis.</dd>
+                <dt>Pagrindinis klausimynas</dt>
+                <dt>Techninės ataskaitos</dt>
+              </dl>
+              <p>Atkreipiame dėmesį, kad visuose darbuose, kuriuose naudojami arba minimi ESENER duomenys, &scaron;altinis turėtų būti nurodytas pateikiant bibliografinę nuorodą i&scaron;na&scaron;ose arba pagalbinės literatūros skiltyje. Lygiai taip pat bet kokiame spausdintiniame, elektroniniame ar transliuojamame leidinyje, kuriame panaudoti visi ar kai kurie ESENER duomenys, turėtų būti pateikta nuoroda į Europos darbuotojų saugos ir sveikatos agentūrą (EU-OSHA). Jame taip pat turėtų būti nurodyta, kad EU-OSHA neprisiima atsakomybės už tolesnę duomenų analizę ar ai&scaron;kinimą.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Az ESENER módszertana</h1>
+        <h2>Az elemzés hatóköre és egysége</h2>
+          <p>A felmérésbe bevont sokaság, azaz populáció a részt vevő országok összes, legalább öt alkalmazottat foglalkoztató létesítményét magában foglalja valamennyi gazdasági tevékenységi ágazatban, a háztartások (NACE T) és a területen kívüli szervezetek (NACE U) kivételével. A 2009.&nbsp;évi ESENER (az új és újonnan felmerülő kockázatokról szóló európai vállalati felmérés) nem terjedt ki a mezőgazdaságra, az erdőgazdálkodásra és a halászatra (NACE A) és a 10&nbsp;munkavállalónál kevesebbet foglalkoztató létesítményekre. A felméréshez a létesítmény fogalommeghatározása a következő: egyetlen munkáltató által egyetlen helyszínen (például egyetlen bankfiókban, autógyárban vagy iskolában) végzett tevékenységek összessége.</p>
+          <p>A részt vevő országok magukban foglalják az Európai Unió összes tagállamát, valamint Norvégiát és Svájcot. Törökországra a 2009. és a 2014.&nbsp;évi ESENER, Albániára és Montenegróra a 2014.&nbsp;évi ESENER, Izlandra, Észak-Macedóniára és Szerbiára pedig a 2014. és a 2019.&nbsp;évi ESENER tért ki.</p>
+           
+          <h3>Az országok lefedettsége az ESENER-ben</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>2009.&nbsp;évi ESENER</th>
+                      <th>2014.&nbsp;évi ESENER</th>
+                      <th>2019.&nbsp;évi ESENER</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Európai Unió (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norvégia</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Svájc</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Izland</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Észak-Macedónia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Szerbia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Törökország</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albánia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Montenegró</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Horvátországot és az Egyesült Királyságot is beleértve</p>
+
+        <h2>Válaszadók</h2>
+          <p>A felmérésbe bevont létesítmények mindegyikében az interjúalany <em>&bdquo;az a személy, aki a legjobban tudja, hogy a munkahelyén hogyan történik a biztonsági és egészségvédelmi kockázatok kezelése&rdquo;</em>. Ez eltér a 2009.&nbsp;évi ESENER-től, amely <em>&bdquo;a létesítményben felmerülő biztonsági és egészségvédelmi tevékenységeket koordináló legmagasabb szintű vezetőt&rdquo;</em> célozta meg. Ezenfelül a 2009.&nbsp;évi ESENER során az volt a cél, hogy a munkavállalók egészségvédelmi és biztonsági képviselőjével készüljön interjú azokban a létesítményekben, ahol (1) vezetői interjúra került sor; (2) létezett a munkavállalók egészségvédelméért és biztonságáért felelős, hivatalosan kijelölt képviselő, valamint (3) az interjúra a vezetőség részéről választ adó személy engedélyt adott.</p>
+          <p>A változás fő oka az volt, hogy el lehessen jutni ahhoz a személyhez, aki a legjobban ismer minden egészségvédelmi és biztonsági kérdést, többek között a kockázatértékeléssel és más konkrét intézkedésekkel kapcsolatos részleteket, függetlenül a létesítményben betöltött tisztségétől vagy szerepétől, amire egyébként egy nyomonkövetési kérdés rákérdez.</p>
+             
+        <h2>Mintavételi stratégia</h2>
+          <p>Annak érdekében, hogy a felmérés eredményei nemzetek között is összehasonlíthatók legyenek, elengedhetetlen, hogy a mintavételi stratégia alapján minden országban ugyanolyan típusú egységek vizsgálatára kerüljön sor. A rendelkezésre álló címnyilvántartások minősége változó a részt vevő országokban a következők tekintetében:</p>
+          <ul>
+           <li>lefedettség (különösen akkor, ha tevékenységi ágazatok szerepelnek);</li>
+           <li>a szükséges háttér-információk (például a tevékenységi ágazat és az alkalmazottak száma) rendelkezésre állása és pontossága.</li>
+          </ul>
+          <p>A meglévő címnyilvántartásokat nem lehet összehasonlítani az egyes országok között, emiatt jelentős erőfeszítések történtek olyan minták kialakítása érdekében, amelyek biztosítják a szükséges minőséget és a nemzetközi összehasonlíthatóságot. Ezek az erőfeszítések szűrési eljárást tettek szükségessé azokban az országokban, ahol a rendelkezésre álló címnyilvántartások inkább a vállalatok, mint a létesítmények szintjén szolgáltatnak információt.</p>
+          <p>A minta rétegzése négy méretosztályból és nyolc ágazatcsoportból álló mátrixon alapul. Bár az ESENER első két hullámában a mintavétel általános megközelítése nagyjából megegyezett, az évek során történt néhány változás, különösen a 2009.&nbsp;évi ESENER tekintetében. A részletek a <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">2009&nbsp;évi ESENER</a> és a <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">2014.&nbsp;évi ESENER</a> honlapján olvashatók.</p>
+            
+          <h3>A 2019.&nbsp;évi ESENER mintavételi mátrixa</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Ágazatcsoport &ndash; NACE Rev.&nbsp;2 nemzetgazdasági ágak</th>
+                      <th  colspan=\"4\" class=\"center-text\">Méret &ndash; alkalmazottak száma</th>
+                   </tr>
+                   <tr>
+                      <th>5&ndash;9</th>
+                      <th>10&ndash;49</th>
+                      <th>50&ndash;249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Mezőgazdaság, erdőgazdálkodás és halászat</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Építőipar, hulladékgazdálkodás, víz- és áramellátás</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Feldolgozóipar</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Kereskedelem, szállítás, szálloda- és vendéglátóipar és szabadidős szolgáltatások</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: Informatika, pénzügy, ingatlanügyletek és egyéb műszaki-tudományos vagy személyi szolgáltatási tevékenységek</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Közigazgatás</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Oktatás</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Humán-egészségügyi és szociális ellátás</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Kérdőívek kidolgozása</h2>
+          <p>A 2019.&nbsp;évi ESENER kérdőíve nagyjából megegyezett az előző hullámban (2014.&nbsp;évi ESENER) használt kérdőívvel, amely eredetileg a 2009.&nbsp;évi ESENER vezetői változatának felépítésén alapult. 2009 és 2014 között azonban szinte minden kérdés módosult, ezért a 2014.&nbsp;évi ESENER-től kezdődően lehetőség nyílik trendelemzésekre. Az ESENER-kérdőív kidolgozása és felülvizsgálata az Európai Munkahelyi Biztonsági és Egészségvédelmi Ügynökség (EU-OSHA) &ndash; az ESENER fő szerződő fele &ndash;, munkahelyi egészségvédelemmel és biztonsággal foglalkozó, különböző országbeli kutatók csoportja, valamint az EU-OSHA érdekelt felei közötti szoros együttműködés keretében történik.</p>
+          <p>Az ESENER-kérdőíveket többször tesztelték:</p>
+
+          <ol type=\"a\" >
+            <li>Németországban, Lettországban és Hollandiában <strong>előzetes kognitív tesztre</strong> került sor mintegy 40, mélyreható személyes interjúval. Az előzetes kognitív teszt elsődleges célja a kérdések megértésének és egyértelműségének az ellenőrzése. Ezenkívül létezik számos olyan kognitív kérdés, amelyek annak tesztelésére hivatottak, hogy a különböző országok és különböző szervezettípusok válaszadói a tervezett módon értelmezik-e a szabványosított kérdéseket, illetve azok relevánsak-e számukra. Az előzetes kognitív teszt általában a kérdőív több módosítását eredményezi.</li>
+            <li>A törzskérdőív angol nyelvű változatának <strong>fordíthatóságára irányuló vizsgálat</strong>. Különböző nyelvcsaládok tapasztalt fordítói nyersfordításokat készítenek a törzskérdőív tervezetéről az esetleges kétértelműségek vagy egyéb fordítási nehézségek feltárása érdekében. Ilyen nehézségek feltárása esetén a fordítók alternatív szövegjavaslatokat fogalmaznak meg a törzsváltozathoz, amely a javaslatoknak megfelelően felülvizsgálat tárgyát képezi.</li>
+            <li>Minden országban <strong>kísérleti helyszíni tesztre</strong> kerül sor, országonként kb.&nbsp;50&nbsp;interjú lebonyolításával. A fő felmérés infrastruktúrájával azonos infrastruktúrát használó kísérleti tesztre számítógéppel támogatott telefonos interjúztatás (CATI: Computer Assisted Telephone Interviewing) formájában kerül sor, de az online részvétel lehetősége számítógéppel támogatott webes interjúztatás (CAWI: Computer Assisted Web Interviewing) formájában biztosított azok számára, akik elutasítják a telefonos interjút. A kísérleti helyszíni teszt a törzskérdőívnek, valamint a kérdőív egyes nemzeti változatainak több módosítását eredményezi.</li>
+          </ol>
+
+        <h2>Fordítás</h2>        
+          <p>A felmérésbe bevont országok számára kidolgozzák a kérdőív (megtalálható itt: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">2009.&nbsp;évi ESENER</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">2014.&nbsp;évi ESENER</a> és 2019.&nbsp;évi ESENER) különböző nemzeti változatait. Alapvető fontosságú egy optimális fordítási stratégia kialakítása annak biztosítása érdekében, hogy a kérdőív minden nyelvi változata olyan, szigorú minőségi követelményeknek megfelelő kérdéseket tartalmazzon, amelyek az érintett országban minden vállalkozástípusra elfogadható módon alkalmazhatók, és általuk olyan információk nyerhetők, amelyeket nemzetközi szinten össze lehet hasonlítani. Az ESENER-kérdőív fordítása a TRAPD-megközelítést követi (a TRAPD rövidítés megfelelője: <em>Translation, Review, Adjudication, Pre-testing, Documentation</em>; fordítás, felülvizsgálat, döntés, előzetes tesztelés, dokumentáció) (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (szerk.), Cross-cultural survey methods (35&ndash;56.&nbsp;o.). Hoboken, NJ: John Wiley &amp; Sons), az első hullám kivételével (amely megtalálható itt: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">2009.&nbsp;évi ESENER</a>).</p>
+          <p>Egy vagy több ország közös nyelve esetén különböző nemzeti változatok kidolgozására kerül sor a munkával összefüggő gyakorlatok, például a munkavállalók képviselete vagy a munkaügyi felügyelet figyelembevételével, amelyekhez eltérő kérdések és terminusok szükségesek. A fordítási folyamattal kapcsolatos további részletek a <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">fordítási jelentésben</a> találhatók, lásd alább.</p>
+          <p>Az ESENER fordítása során követendő alapvető lépések a következők:</p>
+           
+          <ol type=\"1\" >
+            <li>Az egyes nyelvekre két-két, a fordítás elkészítése közben egymással kapcsolatban nem álló szakfordító &ndash; a célnyelv anyanyelvi beszélője &ndash; két, egymástól független fordítást készít.</li>
+            <li>A független fordítások független döntéshozó személy általi felülvizsgálata, aki új változatot dolgoz ki.</li>
+            <li>A döntéshozó személy és a két fordító felülvizsgálati célú találkozói az új tervezet megvitatása és az eldöntött végleges változat elfogadása érdekében.</li>
+            <li>Az eldöntött változatoknak az EU-OSHA <a href=\"https://osha.europa.eu/hu/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">nemzeti fókuszpontjait tömörítő hálózat</a> általi ellenőrzése, kifejezetten a nemzeti munkahelyi biztonsági és egészségvédelmi terminológiára, többek között a munkavállalók képviseletét ellátó testületekkel kapcsolatos kérdésekre helyezett hangsúllyal.</li>
+          </ol>
+
+        <h2>Nemzeti mintaméretek</h2>
+          <p>A 2014.&nbsp;évi ESENER keretében a nemzeti hatóságok számára első alkalommal ajánlották fel nemzeti mintaméretük bővítésének finanszírozhatóságát. Spanyolország, Szlovénia és az Egyesült Királyság elfogadta a felajánlást a mintamérete növeléséhez. A 2019.&nbsp;évi ESENER keretében három ország (Írország, Norvégia és Szlovénia) elfogadta ezt a felajánlást, amely ezúttal magában foglalta azt a lehetőséget, hogy a kérdőívüket két vagy három, nemzeti szinten érdeklődésre számot tartó kérdéssel egészítsék ki. Svájc az ESENER mindegyik hullámát teljes egészében finanszírozta.</p>
+           
+          <h3>Az ESENER során elért mintaméretek</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Ország</th>
+                    <th class=\"center-text\">2009.&nbsp;évi ESENER</th>
+                    <th class=\"center-text\">2014.&nbsp;évi ESENER</th>
+                    <th>2019.&nbsp;évi ESENER</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ausztria</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgium</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgária</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Horvátország</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ciprus</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Cseh Köztársaság</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Dánia</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Észtország</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finnország</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Franciaország</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Németország</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Görögország</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Magyarország</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Írország</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Olaszország</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lettország</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Litvánia</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luxemburg</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Málta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Hollandia</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lengyelország</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugália</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Románia</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Szlovákia</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Szlovénia</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spanyolország</th>
+                    <td>1566</td>
+                    <td><em>3162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Svédország</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Egyesült Királyság</th>
+                    <td>1500</td>
+                    <td><em>4250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norvégia</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Svájc</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Izland</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Szerbia</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Észak-Macedónia</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Törökország</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albánia</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Montenegró</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Összesen</th>
+                    <td><strong>28649</strong></td>
+                    <td><strong>49320</strong></td>
+                    <td><strong>45200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Kutatóknak szánt dokumentumok és további információk</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">2009.&nbsp;évi ESENER</a></h4>
+              <dl>
+                <dt>Ajánlattételhez szükséges dokumentáció:</dt>
+                <dd>2007.&nbsp;augusztus&nbsp;21-én<sup></sup> közzétett nyílt ajánlattételi felhívás: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Kísérőlevél:</dt>
+                <dd>A felmérésben való részvétel ösztönzése érdekében a felmérés hátterét és céljait, valamint a szociális partnerek által nyújtott támogatást ismertető levelek készültek a felmérés összes nyelvén.</dd>
+                <dt>Törzskérdőívek:</dt>
+                <dd>
+                  <ul>
+                    <li>A vezető tisztségviselőknek szánt reprezentatív kérdőív: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>A munkavállalóknak szánt reprezentatív kérdőív: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Technikai jelentések:</dt>
+                <dd>
+                  <ul>
+                    <li>Az új és újonnan felmerülő kockázatokról szóló európai vállalati felmérés &ndash; pszichoszociális kockázatok (2009.&nbsp;évi ESENER-PSR) &ndash; Technikai jelentés: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Az új és újonnan felmerülő kockázatokról szóló európai vállalati felmérés utólagos értékelése: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>A 2009.&nbsp;évi ESENER mintavételi jelentése: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>A 2009.&nbsp;évi ESENER adatkészletének hozzáférhetősége: <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">az Essexi Egyetem egyesült királysági adatarchívuma</a>, <a href=\"https://data.europa.eu/euodp/hu/data/dataset/esener-1\" target=\"_blank\">az Európai Adatportál</a> és a <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">2014.&nbsp;évi ESENER</a></h4>
+              <dl>
+                <dt>Ajánlattételhez szükséges dokumentáció:</dt>
+                <dd>2012.&nbsp;december&nbsp;5-én<sup></sup> közzétett nyílt ajánlattételi felhívás: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Kísérőlevél:</dt>
+                <dd>A felmérésben való részvétel ösztönzése érdekében a felmérés hátterét és céljait, valamint a szociális partnerek által nyújtott támogatást ismertető levelek készültek a felmérés összes nyelvén.</dd>
+                <dt>Törzskérdőív:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Technikai jelentések:</dt>
+                <dd>
+                  <ul>
+                    <li>Technikai jelentés: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Minőségjelentés: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Fordítási jelentés: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>A 2014.&nbsp;évi ESENER adatkészletének hozzáférhetősége: <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">az Essexi Egyetem egyesült királysági adatarchívuma</a>, <a href=\"https://data.europa.eu/euodp/hu/data/dataset/esener-2\" target=\"_blank\">az Európai Adatportál</a> és a <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>2019.&nbsp;évi ESENER</h4>
+              <dl>
+                <dt>Ajánlattételhez szükséges dokumentáció:</dt>
+                <dd>2018. január 5-én<sup></sup> közzétett nyílt ajánlattételi felhívás: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Kísérőlevél</dt>
+                <dd>A felmérésben való részvétel ösztönzése érdekében a felmérés hátterét és céljait, valamint a szociális partnerek által nyújtott támogatást ismertető levelek készültek a felmérés összes nyelvén.</dd>
+                <dt>Törzskérdőív</dt>
+                <dt>Technikai jelentések</dt>
+              </dl>
+              <p>Felhívjuk figyelmét, hogy minden olyan mű esetében, amely az ESENER felhasználásával készül vagy arra hivatkozik, lábjegyzet formájában vagy a kiadvány referenciákat tartalmazó szakaszában fel kell tüntetni az információk bibliográfiai forrását. Hasonlóképpen, bármely nyomtatott, elektronikus vagy műsorszórás keretében közvetített, teljes egészében vagy részben az ESENER-en alapuló kiadványban köszönetet kell mondani az Európai Munkahelyi Biztonsági és Egészségvédelmi Ügynökségnek (EU-OSHA). A kiadványoknak továbbá tartalmazniuk kell arra vonatkozó nyilatkozatot, hogy az EU-OSHA nem vállal felelősséget az elemzésükért vagy az értelmezésükért.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Metodoloġija ESENER</h1>
+        <h2>Univers u unità tal-analiżi</h2>
+          <p>Il-popolazzjoni tal-istħarriġ tinkludi l-istabbilimenti kollha li għandhom ħames impjegati jew aktar fil-pajjiżi parteċipanti, li jkopru s-setturi kollha tal-attività ekonomika ħlief għall-unitajiet domestiċi privati (NACE T) u organizzazzjonijiet extraterritorjali (NACE U). L-agrikoltura, il-forestrija u s-sajd (NACE A) u stabbilimenti li jimpjegaw inqas minn 10 ħaddiema ma kinux koperti f&rsquo;ESENER 2009. Għall-fini tal-istħarriġ, stabbiliment huwa definit bħala li jinkludi l-attivitajiet ta&rsquo; impjegatur wieħed f&rsquo;sett wieħed ta&rsquo; bini (eż. fergħa waħda ta&rsquo; bank, fabbrika tal-karozzi jew skola).</p>
+          <p>Il-pajjiżi parteċipanti jinkludu l-Istati Membri kollha tal-Unjoni Ewropea, kif ukoll in-Norveġja u l-Iżvizzera. It-Turkija kienet koperta f&rsquo;ESENER 2009 u 2014, l-Albanija u l-Montenegro kienu koperti f&rsquo;ESENER 2014 u l-Iżlanda, il-Maċedonja ta&rsquo; Fuq u s-Serbja kienu koperti f&rsquo;ESENER 2014 u 2019.</p>
+           
+          <h3>Il-kopertura tal-pajjiżi f&rsquo;ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Unjoni Ewropea (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>In-Norveġja</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>L-Iżvizzera</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>L-Iżlanda</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Il-Maċedonja ta&rsquo; Fuq</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Is-Serbja</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>It-Turkija</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>L-Albanija</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Il-Montenegro</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Inklużi l-Kroazja u r-Renju Unit</p>
+
+        <h2>Rispondenti</h2>
+          <p>F&rsquo;kull stabbiliment li ġie mistħarreġ, tiġi intervistata <em>&lsquo;il-persuna li taf bl-aħjar mod kif ir-riskji għas-sigurtà u s-saħħa jiġu mmaniġġjati fuq il-post tax-xogħol tagħhom&rsquo;.</em> Dan huwa differenti minn ESENER 2009 fejn kien immirat <em>&ldquo;l-aktar maniġer superjuri li jikkoordina l-attivitajiet tas-sigurtà u tas-saħħa f&rsquo;dan l-istabbiliment.</em> Barra minn hekk, f&rsquo;ESENER 2009, intervista mar-rappreżentanti tas-saħħa u s-sigurtà tal-ħaddiema kienet immirata f&rsquo;dawk l-istabbilimenti fejn (1) tlestiet intervista mal-maniġment; (2) eżista rappreżentant maħtur formalment b&rsquo;responsabbiltà speċifika għas-sigurtà u s-saħħa tal-ħaddiema; u (3) ir-rispondent maniġerjali kien ta permess għall-intervista.
+
+</p>
+          <p>Ir-raġuni ewlenija għall-bidla kienet li tasal għand il-persuna li għandha l-aħjar għarfien dwar il-kwistjonijiet kollha tas-saħħa u s-sigurtà, inklużi dettalji dwar il-valutazzjoni tar-riskju u miżuri oħra partikolari, irrispettivament mill-funzjoni jew ir-rwol tagħhom fl-istabbiliment &mdash; li huwa mitlub xorta waħda f&rsquo;mistoqsija ta&rsquo; segwitu.</p>
+             
+        <h2>Strateġija ta&rsquo; teħid ta&rsquo; kampjuni</h2>
+          <p>Sabiex jiġi żgurat li r-riżultati tal-istħarriġ ikunu komparabbli b&rsquo;modtransnazzjonali, huwa essenzjali li l-istrateġija ta&rsquo; teħid ta&apos; kampjuni tirriżulta fl-istess tip ta&rsquo; unitajiet li jiġu mistħarrġa f&rsquo;kull pajjiż. Il-kwalità tar-reġistri tal-indirizzi disponibbli tvarja fil-pajjiżi parteċipanti f&rsquo;termini ta&rsquo;:</p>
+          <ul>
+           <li>il-kopertura (speċjalment is-setturi ta&rsquo; attività inklużi);</li>
+           <li>id-disponibbiltà u l-preċiżjoni tal-informazzjoni ta&rsquo; sfond meħtieġa (bħas-settur tal-attività u l-għadd ta&rsquo; impjegati).</li>
+          </ul>
+          <p>Ir-reġistri tal-indirizzi eżistenti mhumiex komparabbli fost il-pajjiżi u għalhekk saru sforzi konsiderevoli biex jinbnew kampjuni li jipprovdu l-kwalità meħtieġa u jiżguraw il-komparabbiltà transnazzjonali. Dawn l-isforzi kienu jeħtieġu proċedura ta&rsquo; skrinjar f&rsquo;dawk il-pajjiżi fejn ir-reġistri tal-indirizzi disponibbli jipprovdu informazzjoni fil-livell tal-kumpanija aktar milli fil-livell tal-istabbiliment.</p>
+          <p>L-istratifikazzjoni tal-kampjun hija bbażata fuq matriċi ta&rsquo; erba&rsquo; klassijiet ta&rsquo; daqs u tmien gruppi ta&rsquo; setturi. Filwaqt li l-approċċ ġenerali għat-teħid ta&rsquo; kampjuni fl-ewwel żewġ mewġiet ta&rsquo; ESENER kien fil-biċċa l-kbira l-istess, kien hemm xi bidliet matul is-snin, b&rsquo;mod partikolari fir-rigward ta&rsquo; ESENER 2009. Id-dettalji huma disponibbli f&rsquo;<a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> u f&rsquo;<a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>ESENER 2019 Matriċi ta&rsquo; teħid ta&rsquo; kampjuni</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Grupp settorjali &mdash; it-taqsimiet tan-NACE Rev. 2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Daqs &mdash; għadd ta&rsquo; impjegati</th>
+                   </tr>
+                   <tr>
+                      <th>5-9</th>
+                      <th>10-49</th>
+                      <th>50-249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Agrikoltura, forestrija u sajd</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Kostruzzjoni, ġestjoni tal-iskart, provvista tal-ilma u l-elettriku</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Manifattura</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Kummerċ, trasport, ikel/akkomodazzjoni u attivitajiet ta&rsquo; rikreazzjoni</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: IT, Finanzi, Proprjetà immobbli u attivitajiet oħra tekniċi xjentifiċi jew ta&rsquo; servizz personali</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Amministrazzjoni pubblika</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong> Edukazzjoni</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Attivitajiet ta&rsquo; saħħa tal-bniedem u xogħol soċjali</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Żvilupp tal-kwestjonarju</h2>
+          <p>Il-kwestjonarju ESENER 2019 huwa fil-biċċa l-kbira l-istess bħal dak użat fl-mewġa preċedenti (ESENER 2014), li oriġinarjament huwa nnifsu kien ibbażat fuq l-istruttura tal-verżjoni maniġerjali tal-kwestjonarju ESENER 2009. Madankollu, kważi l-mistoqsijiet kollha ġew modifikati bejn l-2009 u l-2014 u għalhekk, analiżi tax-xejriet hija possibbli mill-ESENER 2014 &rsquo;il quddiem. L-iżvilupp u r-reviżjoni tal-kwestjonarju ta&rsquo; ESENER isir f&rsquo;kooperazzjoni mill-qrib bejn l-EU-OSHA, il-kuntrattur ewlieni tal-ESENER u grupp ta&rsquo; riċerkaturi dwar is-saħħa u s-sigurtà okkupazzjonali minn pajjiżi differenti, kif ukoll il-partijiet ikkonċernati tal-EU-OSHA.</p>
+          <p>Il-kwestjonarji ESENER ġew soġġetti għal diversi testijiet:</p>
+
+          <ol type=\"a\" >
+            <li><strong>Test konjittiv ta&rsquo; qabel</strong> fil-Ġermanja, il-Latvja u n-Netherlands, b&rsquo;madwar 40 intervista wiċċ imb wiċċ fil-fond. L-għan ewlieni tat-test konjittiv ta&rsquo; qabel huwa li jiġu kkontrollati l-fehim u ċ-ċarezza tal-mistoqsijiet. Hemm ukoll għadd ta&rsquo; mistoqsijiet konjittivi li għandhom l-għan li jittestjaw jekk ir-rispondenti li ġejjin minn pajjiżi differenti u tipi differenti ta&rsquo; organizzazzjonijiet jinterpretawx il-mistoqsijiet standardizzati kif suppost u jekk humiex rilevanti għalihom. Normalment, it-test konjittiv ta&rsquo; qabel iwassal għal għadd ta&rsquo; modifiki għall-kwestjonarju.</li>
+            <li><strong>Valutazzjoni ta&rsquo; kapaċità ta&rsquo; traduzzjoni</strong> tal-verżjoni tal-kwestjonarju prinċipali bl-Ingliż. Tradutturi b&rsquo;esperjenza minn familji b&rsquo;lingwa differenti jelaboraw traduzzjonijiet mhux preċiżi tal-abbozz tal-kwestjonarju prinċipali sabiex jiġu identifikati kwalunkwe ambigwità jew diffikultà oħra għat-traduzzjoni. Meta dawn id-diffikultajiet jiġu identifikati, it-tradutturi jagħmlu proposti għal formulazzjonijiet alternattivi għall-verżjoni prinċipali, li tiġi riveduta skont dan.</li>
+            <li><strong>Test pilota fuq il-post</strong> jitwettaq fil-pajjiżi kollha, b&rsquo;madwar 50 intervista għal kull pajjiż. Bl-użu tal-istess infrastruttura bħall-istħarriġ ewlieni, dan it-test pilota jsir fil-modalità CATI (Computer Assisted Telephone Interviewing-Intervista fuq it-Telefown Megħjuna mill-Kompjuter) iżda l-opzjoni li jipparteċipaw online (CAWI: Computer Assisted Web Interviewing - Intervista fuq il-Web Megħjuna mill-Kompjuter) hija offruta lil dawk li jirrifjutaw li jagħmlu l-intervista fuq it-telefown. It-test pilota fuq il-post jirriżulta f&rsquo;għadd ta&rsquo; bidliet għall-kwestjonarju prinċipali u għall-verżjonijiet nazzjonali individwali tal-kwestjonarju.</li>
+          </ol>
+
+        <h2>Traduzzjoni</h2>        
+          <p>Verżjonijiet nazzjonali differenti tal-kwestjonarju huma żviluppati għall-pajjiżi koperti mill-istħarriġ (disponibbli hawnhekk: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> u ESENER 2019). Strateġija ottimali ta&rsquo; traduzzjoni hija essenzjali biex tiżgura li kull verżjoni nazzjonali tal-kwestjonarju tinkludi mistoqsijiet ta&rsquo; kwalità għolja li jistgħu jiġu diretti lejn kull tip ta&rsquo; intrapriża fil-pajjiż ikkonċernat u tiġġenera informazzjoni li tista&rsquo; titqabbel b&rsquo;mod transnazzjonali. It-traduzzjoni tal-kwestjonarju ta&rsquo; ESENER ssegwi l-approċċ TRAPD, akronimu għal<em>Translation, Review, Adjudication, Pre-testing and Documentation (Traduzzjoni, Rieżami, Aġġudikazzjoni, Ittestjar minn qabel u Dokumentazzjoni)</em> (Harkoness, J. A. (2003). Traduzzjoni tal-kwestjonarju. F&rsquo;J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), metodi ta&rsquo; stħarriġ transkulturali (pp.&nbsp;35&ndash;56). Hoboken, NJ: John Wiley &amp; Sons), ħlief għall-ewwel grupp (disponibbli hawnhekk: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Għal-lingwi kondiviżi minn żewġ pajjiżi jew aktar, jiġu żviluppati verżjonijiet nazzjonali differenti, filwaqt li jitqiesu prattiki relatati max-xogħol bħar-rappreżentazzjoni tal-ħaddiema jew l-ispezzjoni tax-xogħol, li jeħtieġu mistoqsijiet u terminoloġija differenti. Aktar dettalji dwar il-proċess tat-traduzzjoni jistgħu jinstabu fir-<a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Rapport tat-Traduzzjoni</a> - ara hawn taħt.</p>
+          <p>Il-passi bażiċi inklużi fit-traduzzjoni ta&rsquo; ESENER huma:</p>
+           
+          <ol type=\"1\" >
+            <li>Żewġ traduzzjonijiet indipendenti f&rsquo;kull waħda mil-lingwi mwettqa minn tradutturi professjonali &mdash; kelliema nattivi tal-lingwa fil-mira &mdash; li ma kinux f&rsquo;kuntatt ma&rsquo; xulxin waqt li kienu qed jipproduċu t-traduzzjoni tagħhom.</li>
+            <li>Rieżami tat-traduzzjonijiet indipendenti minn aġġudikant, li jabbozza verżjoni ġdida.</li>
+            <li>Laqgħat ta&rsquo; rieżami bejn l-aġġudikant u ż-żewġ tradutturi sabiex flimkien jiddiskutu l-abbozz il-ġdid u jaqblu dwar verżjoni aġġudikata finali.</li>
+            <li>Kontroll tal-verżjonijiet aġġudikati min-<a href=\"https://osha.europa.eu/mt/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">netwerk tal-Punti Fokali </a> tal-EU-OSHA, b&rsquo;fokus speċifiku fuq it-terminoloġija nazzjonali dwar is-saħħa u s-sigurtà okkupazzjonali (OSH), inklużi l-mistoqsijiet relatati ma&rsquo; korpi ta&rsquo; rappreżentanza tal-ħaddiema.</li>
+          </ol>
+
+        <h2>Daqsijiet ta&rsquo; kampjuni nazzjonali</h2>
+          <p>Għall-ewwel darba f&rsquo;ESENER 2014, l-awtoritajiet nazzjonali ġew offruti l-possibbiltà li jiffinanzjaw espansjoni tad-daqsijiet tal-kampjuni nazzjonali tagħhom. Spanja, is-Slovenja u r-Renju Unit aċċettaw l-offerta biex jagħtu spinta lid-daqsijiet tal-kampjuni rispettivi tagħhom. F&rsquo;ESENER 2019, tliet pajjiżi aċċettaw din l-offerta (l-Irlanda, in-Norveġja u s-Slovenja), li din id-darba inkludew ukoll il-possibbiltà li jiżdiedu żewġ jew tliet mistoqsijiet ta&rsquo; interess nazzjonali għall-kwestjonarji rispettivi tagħhom. L-Iżvizzera ffinanzjat bis-sħiħ il-mewġiet kollha ta&rsquo; ESENER.</p>
+           
+          <h3>Daqsijiet ta&rsquo; kampjuni miksuba f&rsquo;ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Pajjiż</th>
+                    <th class=\"center-text\">ESENER 2009 (intervisti tal-maniġment)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>L-Awstrija</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Il-Belġju</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Il-Bulgarija</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Il-Kroazja</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ċipru</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ir-Repubblika Ċeka</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Id-Danimarka</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>L-Estonja</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Il-Finlandja</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Franza</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Il-Ġermanja</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Il-Greċja</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>L-Ungerija</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>L-Irlanda</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>L-Italja</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Il-Latvja</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Il-Litwanja</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Il-Lussemburgu</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>In-Netherlands</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Il-Polonja</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Il-Portugall</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ir-Rumanija</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Is-Slovakkja</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Is-Slovenja</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spanja</th>
+                    <td>1566</td>
+                    <td><em>3 162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>L-Iżvezja</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ir-Renju Unit</th>
+                    <td>1500</td>
+                    <td><em>4 250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>In-Norveġja</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>L-Iżvizzera</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>L-Iżlanda</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Is-Serbja</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Il-Maċedonja ta&rsquo; Fuq</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>It-Turkija</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>L-Albanija</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Il-Montenegro</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Total</th>
+                    <td><strong>28649</strong></td>
+                    <td><strong>49320</strong></td>
+                    <td><strong>45200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Dokumenti u aktar informazzjoni għar-riċerkaturi</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Speċifikazzjonijiet tal-offerta:</dt>
+                <dd>Sejħa miftuħa ppubblikata fil-21 ta&rsquo; Awwissu 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Ittra ta&rsquo; appoġġ:</dt>
+                <dd>Ġew prodotti ittri li jistabbilixxu l-isfond u l-għanijiet tal-istħarriġ u l-appoġġ mill-imsieħba soċjali fil-lingwi kollha tal-istħarriġ bil-għan li titħeġġeġ il-parteċipazzjoni fl-istħarriġ.</dd>
+                <dt>Kwestjonarji prinċipali:</dt>
+                <dd>
+                  <ul>
+                    <li>Kwestjonarju Rapreżentattiv tal-Maniġment: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Kwestjonarju Rappreżentattiv tal-Ħaddiema: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Rapporti tekniċi:</dt>
+                <dd>
+                  <ul>
+                    <li>Stħarriġ Ewropew dwar Riskji Ġodda u Emerġenti &mdash; Riskji Psikosoċjali (ESENER-PSR 2009) &mdash; Rapport Tekniku: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>L-evalwazzjoni ex-post taI-Istħarriġ Ewropew ta&rsquo; Intrapriżi dwar Riskji Ġodda u Emerġenti: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Rapport ta&rsquo; Teħid ta&rsquo; Kampjuni ta&rsquo; ESENER 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Is-sett ta&rsquo; data ta&rsquo; ESENER 2009 jista&rsquo; jiġi aċċessat permezz tas-<a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Servizz tad-Data tar-Renju Unit tal-Università ta&rsquo; Essex</a>, <a href=\"https://data.europa.eu/euodp/mt/data/dataset/esener-1\" target=\"_blank\">il-portal Ewropew tad-data</a> u <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Speċifikazzjonijiet tal-offerta:</dt>
+                <dd>Sejħa miftuħa ppubblikata fil-5 ta&rsquo; Diċembru 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Ittra ta&rsquo; appoġġ:</dt>
+                <dd>Ġew prodotti ittri li jistabbilixxu l-isfond u l-għanijiet tal-istħarriġ u l-appoġġ mill-imsieħba soċjali fil-lingwi kollha tal-istħarriġ bil-għan li titħeġġeġ il-parteċipazzjoni fl-istħarriġ.</dd>
+                <dt>Kwestjonarju prinċipali:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Rapporti tekniċi:</dt>
+                <dd>
+                  <ul>
+                    <li>Rapport tekniku: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Kwalità tar-rapport: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Rapport tat-traduzzjoni: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Is-sett ta&rsquo; data ta&rsquo; ESENER 2014 jista&rsquo; jiġi aċċessat permezz tas-<a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Servizz tad-Data tar-Renju Unit tal-Università ta&rsquo; Essex</a>, <a href=\"https://data.europa.eu/euodp/mt/data/dataset/esener-2\" target=\"_blank\">il-portal Ewropew tad-data</a> u <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Speċifikazzjonijiet tal-offerta:</dt>
+                <dd>Sejħa miftuħa ppubblikata fil-5 ta&rsquo; Jannar 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Ittra ta&rsquo; appoġġ:</dt>
+                <dd>Ġew prodotti ittri li jistabbilixxu l-isfond u l-għanijiet tal-istħarriġ u l-appoġġ mill-imsieħba soċjali fil-lingwi kollha tal-istħarriġ bil-għan li titħeġġeġ il-parteċipazzjoni fl-istħarriġ.</dd>
+                <dt>Kwestjonarju prinċipali</dt>
+                <dt>Rapporti tekniċi</dt>
+              </dl>
+              <p>Jekk jogħġbok innota li x-xogħlijiet kollha li jużaw jew li jirreferu għal ESENER għandhom jirrikonoxxu s-sors tiegħu permezz ta&rsquo; ċitazzjoni bibljografika fin-noti ta&rsquo; qiegħ il-paġna jew fit-taqsima ta&rsquo; referenza tal-pubblikazzjonijiet. B&rsquo;mod simili, kwalunkwe pubblikazzjoni, kemm jekk stampata, elettronika, jew imxandra, ibbażata kompletament jew parzjalment fuq ESENER għandha tirrikonoxxi l-Aġenzija Ewropea għas-Sigurtà u s-Saħħa fuq il-Post tax-Xogħol (EU-OSHA). Għandu wkoll ikollha dikjarazzjoni li l-EU-OSHA ma tkunx responsabbli għall-analiżi jew l-interpretazzjoni ulterjuri tagħhom.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Methodologie van Esener</h1>
+        <h2>Universum en analyse-eenheid</h2>
+          <p>De onderzoekspopulatie bestaat uit alle vestigingen met minstens vijf werknemers in de deelnemende landen, binnen alle sectoren van economische activiteit, met uitzondering van particuliere huishoudens (NACE T) en extraterritoriale organisaties (NACE U). In Esener&nbsp;2009 werden landbouw, bosbouw en visserij (NACE A) en vestigingen met minder dan tien werknemers buiten beschouwing gelaten. Voor de enquête wordt een vestiging gedefinieerd als alle activiteiten van een enkele werkgever in een enkel gebouw (bijvoorbeeld een enkel filiaal van een bank, een autofabriek of een school).</p>
+          <p>Tot de deelnemende landen behoren alle lidstaten van de Europese Unie, alsmede Noorwegen en Zwitserland. Verder nam Turkije deel aan Esener&nbsp;2009 en 2014, namen Albanië en Montenegro deel aan Esener&nbsp;2014 en namen IJsland, Noord-Macedonië en Servië deel aan Esener&nbsp;2014 en 2019.</p>
+           
+          <h3>Deelnemende landen in Esener</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>Esener&nbsp;2009</th>
+                      <th>Esener&nbsp;2014</th>
+                      <th>Esener&nbsp;2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Europese Unie (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Noorwegen</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Zwitserland</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>IJsland</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Noord-Macedonië</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Servië</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turkije</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albanië</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Montenegro</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) inclusief Kroatië en het Verenigd Koninkrijk</p>
+
+        <h2>Respondenten</h2>
+          <p>In elke ondervraagde vestiging was de respondent <em>&ldquo;de persoon die het best op de hoogte is van het beheer van veiligheids- en gezondheidsrisico&rsquo;s op de werkplek&rdquo;</em>. In Esener&nbsp;2009 was dit anders: toen werd <em>&ldquo;de hoogst geplaatste manager die de activiteiten op het vlak van gezondheid en veiligheid in de vestiging coördineert&rdquo;</em> geïnterviewd. Bovendien werd in Esener&nbsp;2009 gestreefd naar een interview met de arbofunctionaris/werknemersvertegenwoordiger veiligheid en gezondheid op het werk in vestigingen waar (1) een managementinterview was afgenomen; (2) er een formeel aangewezen vertegenwoordiger was met specifieke verantwoordelijkheid voor de veiligheid en gezondheid van medewerkers; en (3) de managementrespondent toestemming had gegeven voor het interview.</p>
+          <p>De voornaamste reden voor de verandering was om de persoon te interviewen die de meeste kennis heeft over alle gezondheids- en veiligheidsvraagstukken, waaronder bijzonderheden over risicobeoordeling en andere specifieke maatregelen, ongeacht diens functie of rol in de vestiging &ndash; waar in een vervolgvraag sowieso naar gevraagd wordt.</p>
+             
+        <h2>Steekproefstrategie</h2>
+          <p>Om te waarborgen dat de enquêteresultaten van verschillende landen vergeleken kunnen worden (transnationale vergelijkbaarheid), is het essentieel dat de steekproefstrategie ervoor zorgt dat in elk land hetzelfde soort eenheden wordt ondervraagd. De kwaliteit van de beschikbare adresbestanden loopt van land tot land uiteen in termen van:</p>
+          <ul>
+           <li>dekking (met name de opgenomen sectoren);</li>
+           <li>de beschikbaarheid en nauwkeurigheid van de benodigde achtergrondinformatie (zoals de sector en het aantal werknemers).</li>
+          </ul>
+          <p>Omdat de bestaande adresbestanden uit verschillende landen niet vergelijkbaar zijn, is er veel werk gestoken in het samenstellen van steekproeven die voldoen aan de vereiste kwaliteit en zorgen voor transnationale vergelijkbaarheid. Hiervoor was het nodig om een screeningsprocedure in te voeren voor die landen waar de beschikbare adresbestanden informatie bevatten op bedrijfsniveau in plaats van op vestigingsniveau.</p>
+          <p>De stratificatie van de steekproef is gebaseerd op een matrix van vier omvangscategorieën en acht groepen sectoren. Hoewel de eerste twee keer dat de enquête werd gehouden, de algemene aanpak van de steekproeftrekking grotendeels gelijk was, zijn er in de loop der jaren een aantal zaken veranderd, vooral ten opzichte van Esener&nbsp;2009. Bijzonderheden zijn te vinden bij <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">Esener&nbsp;2009</a> en <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">Esener&nbsp;2014</a>.</p>
+            
+          <h3>Steekproefmatrix Esener&nbsp;2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Sectorgroep &ndash; NACE Rev. 2 secties</th>
+                      <th  colspan=\"4\" class=\"center-text\">Omvang &ndash; aantal werknemers</th>
+                   </tr>
+                   <tr>
+                      <th>5-9</th>
+                      <th>10-49</th>
+                      <th>50-249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Landbouw, bosbouw en visserij</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Bouwnijverheid, afvalbeheer, water- en elektriciteitsvoorziening</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Industrie</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Handel, vervoer, horeca en recreatie</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: IT, financiële dienstverlening, onroerend goed en andere activiteiten op het gebied van techniek, wetenschap of persoonlijke diensten</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Overheidssector (openbaar bestuur)</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Onderwijs</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Menselijke gezondheidszorg en maatschappelijke dienstverlening</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Totstandkoming van de vragenlijst</h2>
+          <p>De vragenlijst van Esener 2019 is grotendeels gelijk aan die van de vorige ronde (Esener&nbsp;2014), die op zijn beurt oorspronkelijk gebaseerd was op de structuur van de managementversie van de Esener&nbsp;2009-vragenlijst. Tussen 2009 en 2014 zijn echter bijna alle vragen aangepast en daarom zijn trendanalyses alleen mogelijk vanaf Esener&nbsp;2014. Bij de totstandkoming en herziening van de Esener-vragenlijst wordt nauw samengewerkt tussen EU-OSHA, de voornaamste contractant van Esener en een groep onderzoekers op het gebied van gezondheid en veiligheid op het werk uit verschillende landen, alsmede belanghebbenden van EU-OSHA.</p>
+          <p>De Esener-vragenlijsten zijn aan verschillende testen onderworpen:</p>
+
+          <ol type=\"a\" >
+            <li>Een <strong>cognitieve pretest</strong> in Duitsland, Letland en Nederland, met ongeveer veertig uitvoerige persoonlijke interviews. De cognitieve pretest is vooral bedoeld om te controleren of de vragen begrijpelijk en duidelijk zijn. Bovendien wordt met een aantal cognitieve vragen getest of respondenten uit verschillende landen en verschillende soorten organisaties de gestandaardiseerde vragen opvatten zoals ze bedoeld zijn, en of ze voor hen relevant zijn. De cognitieve pretest geeft doorgaans aanleiding tot een aantal wijzigingen in de vragenlijst.</li>
+            <li>Een <strong>beoordeling van de vertaalbaarheid</strong> van de Engelstalige hoofdversie van de vragenlijst. Door ervaren vertalers van verschillende taalfamilies worden ruwe vertalingen gemaakt van de voorlopige tekst van de hoofdversie om zo eventuele meerduidigheden en andere vertaalproblemen op te sporen. Waar dergelijke problemen worden vastgesteld, doen de vertalers voorstellen voor alternatieve formuleringen van de hoofdversie, waarna deze aan de hand daarvan wordt herzien.</li>
+            <li>In alle landen vindt een <strong>praktijktest</strong> plaats, met ongeveer vijftig interviews per land. Deze praktijktest wordt uitgevoerd met behulp van computerondersteunde telefonische interviews (CATI: computer assisted telephone interviewing) met dezelfde infrastructuur als het hoofdonderzoek, maar de mogelijkheid om via internet deel te nemen (CAWI: Computer Assisted Web Interviewing) wordt aangeboden aan degenen die het interview niet telefonisch willen houden. Op basis van de resultaten van de praktijktest worden de nodige wijzigingen doorgevoerd in zowel de hoofdversie als de afzonderlijke nationale versies van de vragenlijst.</li>
+          </ol>
+
+        <h2>Vertaling</h2>        
+          <p>Voor de landen die door de enquête worden bestreken, worden verschillende nationale versies van de vragenlijst ontwikkeld (hier beschikbaar: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">Esener&nbsp;2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">Esener&nbsp;2014</a> en Esener&nbsp;2019). Een optimale vertaalstrategie is essentieel om te waarborgen dat elke nationale versie van de vragenlijst bestaat uit kwalitatief goede vragen die aan alle soorten bedrijven in het betreffende land kunnen worden gesteld, en informatie oplevert die transnationaal vergeleken kan worden. Bij de vertaling van de Esener-vragenlijst wordt de TRAPD-benadering gevolgd, een afkorting van <em>Translation, Review, Adjudication, Pre-testing, Documentation</em> (vertaling, revisie, definitieve vaststelling, pretesten en documentatie) (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), behalve voor de eerste ronde (hier beschikbaar: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">Esener&nbsp;2009</a>).</p>
+          <p>Voor talen die in twee of meer landen worden gesproken, worden verschillende nationale versies ontwikkeld, waarbij rekening wordt gehouden met praktijken op de werkvloer zoals werknemersvertegenwoordiging of arbeidsinspectie, die verschillende vragen en terminologie vereisen. Bijzonderheden over het vertaalproces zijn te vinden in het <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report</a> &ndash; zie onder.</p>
+          <p>In de vertaling van Esener kunnen de volgende stappen worden onderscheiden:</p>
+           
+          <ol type=\"1\" >
+            <li>Twee onafhankelijke vertalingen in elke taal, gemaakt door professionele vertalers &ndash; moedertaalsprekers van de doeltaal &ndash; die tijdens het vertalen geen contact met elkaar hebben gehad.</li>
+            <li>Revisie van de onafhankelijke vertalingen door een zogenoemde adjudicator, die een nieuwe versie opstelt.</li>
+            <li>Revisiemeetings waarbij de adjudicator en de twee vertalers de nieuwe versie samen bespreken en een definitieve versie vaststellen.</li>
+            <li>Controle van de definitieve versies door het <a href=\"https://osha.europa.eu/nl/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">netwerk van focal points</a> van EU-OSHA, met extra aandacht voor de nationale terminologie op het gebied van gezondheid en veiligheid op het werk, waaronder de vragen over organen voor werknemersvertegenwoordiging.</li>
+          </ol>
+
+        <h2>Nationale steekproefgrootten</h2>
+          <p>Vanaf Esener&nbsp;2014 kregen de nationale instanties de mogelijkheid om voor eigen rekening hun nationale steekproef uit te breiden. Spanje, Slovenië en het Verenigd Koninkrijk hebben toen van deze mogelijkheid gebruikgemaakt om hun steekproeven te vergroten. Ook in Esener&nbsp;2019 hebben drie landen van deze mogelijkheid gebruikgemaakt (Ierland, Noorwegen en Slovenië), waarbij zij ditmaal ook twee of drie vragen van nationaal belang aan hun vragenlijsten konden toevoegen. Zwitserland heeft alle ronden van Esener volledig zelf gefinancierd.</p>
+           
+          <h3>Verkregen steekproefgrootten in Esener</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Land</th>
+                    <th class=\"center-text\">Esener&nbsp;2009 (managementinterviews)</th>
+                    <th class=\"center-text\">Esener&nbsp;2014</th>
+                    <th>Esener&nbsp;2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Oostenrijk</th>
+                    <td>1&nbsp;034</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>België</th>
+                    <td>1&nbsp;069</td>
+                    <td>1&nbsp;504</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgarije</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kroatië</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Cyprus</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Tsjechië</th>
+                    <td>1&nbsp;015</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Denemarken</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estland</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finland</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Frankrijk</th>
+                    <td>1&nbsp;497</td>
+                    <td>2&nbsp;256</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Duitsland</th>
+                    <td>1&nbsp;510</td>
+                    <td>2&nbsp;261</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Griekenland</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Hongarije</th>
+                    <td>1&nbsp;031</td>
+                    <td>1&nbsp;514</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ierland</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2&nbsp;000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Italië</th>
+                    <td>1&nbsp;501</td>
+                    <td>2&nbsp;254</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Letland</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Litouwen</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luxemburg</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nederland</th>
+                    <td>1&nbsp;009</td>
+                    <td>1&nbsp;519</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Polen</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;257</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugal</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Roemenië</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slowakije</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovenië</th>
+                    <td>529</td>
+                    <td><em>1&nbsp;051</em></td>
+                    <td><em>1&nbsp;050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spanje</th>
+                    <td>1&nbsp;566</td>
+                    <td><em>3&nbsp;162</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Zweden</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;521</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Verenigd Koninkrijk</th>
+                    <td>1&nbsp;500</td>
+                    <td><em>4&nbsp;250</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Noorwegen</th>
+                    <td>951</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Zwitserland</th>
+                    <td>1&nbsp;019</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>IJsland</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Servië</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Noord-Macedonië</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turkije</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albanië</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Montenegro</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Totaal</th>
+                    <td><strong>28&nbsp;649</strong></td>
+                    <td><strong>49&nbsp;320</strong></td>
+                    <td><strong>45&nbsp;200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Documenten en nadere informatie voor onderzoekers</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">Esener&nbsp;2009</a></h4>
+              <dl>
+                <dt>Aanbestedingsspecificaties:</dt>
+                <dd>Open oproep gepubliceerd op 21<sup></sup>&nbsp;augustus 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Begeleidende brief:</dt>
+                <dd>In alle onderzoekstalen werden brieven opgesteld waarin de achtergrond en de doelen van de enquête en de steun van de sociale partners uiteen werden gezet, teneinde de deelname aan de enquête te stimuleren.</dd>
+                <dt>Hoofdversies van de vragenlijsten:</dt>
+                <dd>
+                  <ul>
+                    <li>Vragenlijst voor werkgeversvertegenwoordigers: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Vragenlijst voor werknemersvertegenwoordigers: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Technische verslagen:</dt>
+                <dd>
+                  <ul>
+                    <li>Europese bedrijvenenquête naar nieuwe en opkomende risico&rsquo;s &ndash; psychosociale risico&rsquo;s (Esener-PSR&nbsp;2009) &ndash; technisch verslag: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Evaluatie van de Europese bedrijvenenquête naar nieuwe en opkomende risico&rsquo;s: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Verslag over de steekproeftrekking 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>De gegevensset van Esener&nbsp;2009 is toegankelijk via de <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service van de Universiteit van Essex</a>, <a href=\"https://data.europa.eu/euodp/nl/data/dataset/esener-1\" target=\"_blank\">het opendataportaal van de EU</a> en <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">Esener&nbsp;2014</a></h4>
+              <dl>
+                <dt>Aanbestedingsspecificaties:</dt>
+                <dd>Open oproep gepubliceerd op 5<sup></sup>&nbsp;december 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Begeleidende brief:</dt>
+                <dd>In alle onderzoekstalen werden brieven opgesteld waarin de achtergrond en de doelen van de enquête en de steun van de sociale partners uiteen werden gezet, teneinde de deelname aan de enquête te stimuleren.</dd>
+                <dt>Hoofdversie van de vragenlijst:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Technische verslagen:</dt>
+                <dd>
+                  <ul>
+                    <li>Technisch verslag: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Kwaliteitsverslag: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Vertalingsverslag: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>De gegevensset van Esener&nbsp;2014 is toegankelijk via de <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service van de Universiteit van Essex</a>, <a href=\"https://data.europa.eu/euodp/nl/data/dataset/esener-2\" target=\"_blank\">het opendataportaal van de EU</a> en <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>Esener&nbsp;2019</h4>
+              <dl>
+                <dt>Aanbestedingsspecificaties:</dt>
+                <dd>Open oproep gepubliceerd op 5&nbsp;januari 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/nl/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Begeleidende brief:</dt>
+                <dd>In alle onderzoekstalen werden brieven opgesteld waarin de achtergrond en de doelen van de enquête en de steun van de sociale partners uiteen werden gezet, teneinde de deelname aan de enquête te stimuleren.</dd>
+                <dt>Hoofdversie van de vragenlijst</dt>
+                <dt>Technische verslagen</dt>
+              </dl>
+              <p>Er zij op gewezen dat in alle publicaties die gebruikmaken van of verwijzen naar Esener, deze bron moet worden vermeld door middel van een bibliografische verwijzing in voetnoten of in de referentielijst van de publicatie. Evenzo moet elke publicatie, op papier, elektronisch of uitgezonden, die geheel of gedeeltelijk op Esener gebaseerd is, het Europees Agentschap voor de veiligheid en de gezondheid op het werk (EU-OSHA) vermelden. Ook moet er een verklaring worden opgenomen dat EU-OSHA niet aansprakelijk is voor de verdere analyse of interpretatie van de gegevens.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Metodikk for ESENER</h1>
+        <h2>Univers og analyseenhet</h2>
+          <p>Populasjonen for undersøkelsen omfatter alle virksomheter som har fem eller flere ansatte i deltakerlandene, og dekker alle sektorer av økonomisk aktivitet bortsett fra private husholdninger (NACE T) og ekstraterritoriale organisasjoner (NACE U). Landbruk, skogbruk og fiske (NACE A), samt virksomheter som har færre enn 10 ansatte, var ikke dekket av ESENER 2009. For undersøkelsens formål defineres en virksomhet som en bedrift som omfatter aktivitetene til en enkelt arbeidsgiver ved ett enkelt sett med lokaler (f.eks. en enkelt filial av en bank, en bilfabrikk eller en skole).</p>
+          <p>Deltakerlandene omfatter alle statene i Den europeiske union, samt Norge og Sveits. Tyrkia ble dekket i ESENER 2009 og 2014, Albania og Montenegro ble dekket i ESENER 2014 og Island, Nord-Makedonia og Serbia ble dekket i ESENER 2014 og 2019.</p>
+           
+          <h3>Landsdekning i ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Den europeiske union (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norge</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Sveits</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Island</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Nord-Makedonia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Tyrkia</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albania</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Montenegro</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Inkludert Kroatia og Storbritannia</p>
+
+        <h2>Respondenter</h2>
+          <p>I hver virksomhet som deltar i undersøkelsen blir <em>«den personen som vet best hvordan sikkerhets- og helserisikoen styres på arbeidsplassen»</em> intervjuet. Dette er annerledes enn for ESENER 2009, der <em>«den øverste lederen som koordinerer sikkerhets- og helseaktiviteter i denne virksomheten»</em> ble målrettet. I ESENER 2009 ble det dessuten utført et intervju med de ansattes helse- og sikkerhetsrepresentant i de institusjonene hvor (1) et lederintervju ble utført; (2) det eksisterte en formelt utpekt representant med spesifikt ansvar for de ansattes sikkerhet og helse; og (3) ledelsesrespondenten hadde gitt tillatelse til intervjuet.</p>
+          <p>Hovedårsaken til endringen var å komme til den personen som har best kunnskap om alle helse- og sikkerhetsspørsmål, inkludert detaljer om risikovurdering og andre spesielle tiltak, uavhengig av vedkommendes funksjon eller rolle i virksomheten &ndash; noe det uansett blir spurt om i et oppfølgingsspørsmål.</p>
+             
+        <h2>Strategi for utvalg</h2>
+          <p>For å sikre at resultatene fra undersøkelsene er sammenlignbare på tvers av nasjoner, er det viktig at strategien for utvalget resulterer i at den samme typen enheter blir undersøkt i alle land. Kvaliteten på tilgjengelige adresseregistre varierer mellom deltakerlandene når det gjelder:</p>
+          <ul>
+           <li>dekning (spesielt aktivitetssektorene som er inkludert);</li>
+           <li>tilgjengelighet og nøyaktighet av nødvendig bakgrunnsinformasjon (slik som aktivitetssektor og antall ansatte).</li>
+          </ul>
+          <p>Eksisterende adresseregistre er ikke sammenlignbare mellom land, og det er derfor gjort betydelig innsats for å bygge et utvalg som gir nødvendig kvalitet og sikrer tverrnasjonal sammenlignbarhet. For denne innsatsen har det vært nødvendig med en screeningprosedyre i de land der tilgjengelige adresseregistre gir informasjon på virksomhetsnivå i stedet for på etableringsnivå.</p>
+          <p>Stratifisering av utvalget er basert på en matrise av fire størrelsesklasser og åtte grupper av sektorer. Mens den generelle tilnærmingen til utvalg i de to første bølgene av ESENER stort sett var den samme, har det blitt gjort noen endringer i løpet av årene, spesielt med hensyn til ESENER 2009. Detaljer er tilgjengelig på <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> og <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Utvalgsmatrise for ESENER 2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Sektorgruppe &ndash; NACE rev. 2 seksjoner</th>
+                      <th  colspan=\"4\" class=\"center-text\">Størrelse &ndash; antall ansatte</th>
+                   </tr>
+                   <tr>
+                      <th>5&ndash;9</th>
+                      <th>10&ndash;49</th>
+                      <th>50&ndash;249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Jordbruk, skogbruk og fiske</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Bygg og anlegg, avfallshåndtering og vann- og strømforsyning</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Industri</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Varehandel, transport, overnattings- og serveringsvirksomhet og kultur- og fritidsrelaterte virksomheter</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: IKT, finans, eiendom og annen teknisk vitenskapelig eller personlig serviceaktivitet</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Offentlig administrasjon</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Undervisning</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Helse- og sosialtjenester</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Utarbeidelse av spørreskjemaet</h2>
+          <p>Spørreskjemaet for ESENER 2019 er stort sett det samme som det som ble brukt i forrige bølge (ESENER 2014), som igjen opprinnelig var basert på strukturen til lederversjonen av spørreskjemaet for ESENER 2009. Imidlertid ble nesten alle spørsmålene modifisert mellom 2009 og 2014, og derfor er trendanalyser mulig fra ESENER 2014 og fremover. Utarbeidelse og revisjon av ESENER-spørreskjemaet gjøres i nært samarbeid mellom EU-OSHA, den viktigste ESENER-kontraktøren, og en gruppe helse- og sikkerhetsforskere fra forskjellige land, samt EU-OSHA-interessenter.</p>
+          <p>ESENER-spørreskjemaene har vært gjenstand for flere tester:</p>
+
+          <ol type=\"a\" >
+            <li>En <strong>kognitiv forhåndstest</strong> i Tyskland, Latvia og Nederland, med rundt 40 dybdeintervjuer, ansikt til ansikt. Hovedformålet med den kognitive forhåndstesten er å sjekke forståelse og klarhet av spørsmålene. Det er også en rekke kognitive spørsmål som tar sikte på å teste om respondenter fra forskjellige land og forskjellige typer organisasjoner tolker de standardiserte spørsmålene på den tiltenkte måten, og om de er relevante for dem. Den kognitive forhåndstesten fører vanligvis til en rekke modifikasjoner av spørreskjemaet.</li>
+            <li>En <strong>oversettelsesvurdering</strong> av den engelske masterkopien av spørreskjemaet. Erfarne oversettere fra forskjellige språkfamilier utarbeider grove oversettelser av utkastet til masterkopien av spørreskjemaet for å identifisere eventuelle uklarheter eller andre vanskeligheter for oversettelsen. Der slike vanskeligheter blir identifisert gir oversetterne forslag til alternative formuleringer for masterkopien, som revideres tilsvarende.</li>
+            <li>En <strong>pilot-felttest</strong> gjennomføres i alle land, med rundt 50 intervjuer pr. land. Pilottesten bruker den samme infrastrukturen som hovedundersøkelsen og utføres i CATI-modus (datamaskinassistert telefonintervju), men mulighet til å delta på Internett (CAWI: datamaskinassistert nettintervju) tilbys dem som ikke vil utføre intervjuet over telefon. Pilot-felttesten resulterer i en rekke endringer av masterkopien av spørreskjemaet og av de individuelle nasjonale versjonene av spørreskjemaet.</li>
+          </ol>
+
+        <h2>Oversettelse</h2>        
+          <p>Ulike nasjonale versjoner av spørreskjemaet er utarbeidet for landene som omfattes av undersøkelsen (tilgjengelig her: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> og ESENER 2019). En optimal oversettelsesstrategi er viktig for å sikre at hver nasjonale versjon av spørreskjemaet inneholder spørsmål av høy kvalitet som kan rettes mot alle typer foretak i det aktuelle landet og generere informasjon som kan sammenlignes tverrnasjonalt. Oversettelsen av ESENER-spørreskjemaet følger tilnærmingen, TRAPD, et akronym for <em>Translation (oversettelse), Review (gjennomgang), Adjudication (bedømmelse), Pre-testing (forhåndstesting) og Documentation (dokumentasjon)</em> (Harkness, J.A. (2003). Oversettelse av spørreskjema. I J. A. Harkness, F. van de Vijver og P. Ph. Mohler (Red.), Cross-cultural survey methods (s. 35&ndash;56). Hoboken, NJ: John Wiley &amp; Sons), bortsett fra den første bølgen (tilgjengelig her: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>For språk som deles av to eller flere land utarbeides forskjellige nasjonale versjoner som tar hensyn til arbeidsrelaterte praksiser, slik som arbeidstakerrepresentasjon eller arbeidskontroll, som krever ulike spørsmål og terminologi. Flere detaljer om oversettelsesprosessen finnes i <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">oversettelsesrapporten</a> &ndash; se nedenfor.</p>
+          <p>De grunnleggende trinnene som er inkludert i oversettelsen av ESENER er:</p>
+           
+          <ol type=\"1\" >
+            <li>To uavhengige oversettelser til hvert av språkene, utført av profesjonelle oversettere &ndash; med målspråket som morsmål &ndash; som ikke var i kontakt med hverandre mens de produserte oversettelsen.</li>
+            <li>Gjennomgang av de uavhengige oversettelsene av en dommer, som utarbeider et utkast til en ny versjon.</li>
+            <li>Gjennomgangsmøter mellom dommeren og de to oversetterne som sammen diskuterer det nye utkastet og kommer til enighet om en endelig bedømt versjon.</li>
+            <li>Kontroll av de bedømte versjonene av EU-OSHAs <a href=\"https://osha.europa.eu/no/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">nettverk av fokuspunkter</a>, med et spesifikt fokus på nasjonal terminologi for sikkerhet og helse på arbeidsplassen (OSH), inkludert spørsmålene som er relatert til representasjon for arbeiderorganisasjoner.</li>
+          </ol>
+
+        <h2>Nasjonale utvalgsstørrelser</h2>
+          <p>For første gang i ESENER 2014 fikk de nasjonale myndighetene tilbud om å finansiere en utvidelse av sine nasjonale utvalgstørrelser. Spania, Slovenia og Storbritannia aksepterte dette tilbudet om å øke sine respektive utvalgstørrelser. I ESENER 2019 aksepterte tre land dette tilbudet (Irland, Norge og Slovenia), som denne gangen også inkluderte muligheten til å legge til to til tre spørsmål av nasjonal interesse til de respektive spørreskjemaene. Sveits har fullt ut finansiert alle bølgene av ESENER.</p>
+           
+          <h3>Oppnådde utvalgsstørrelser i ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Land</th>
+                    <th class=\"center-text\">ESENER 2009 (intervjuer av ledelse)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Østerrike</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgia</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgaria</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kroatia</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kypros</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Tsjekkia</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Danmark</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estland</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finland</th>
+                    <td>1&nbsp;000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Frankrike</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Tyskland</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Hellas</th>
+                    <td>1&nbsp;000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ungarn</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Irland</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Italia</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Latvia</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Litauen</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luxembourg</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nederland</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Polen</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugal</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Romania</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovakia</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovenia</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spania</th>
+                    <td>1566</td>
+                    <td><em>3 162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Sverige</th>
+                    <td>1&nbsp;000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Storbritannia</th>
+                    <td>1500</td>
+                    <td><em>4 250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norge</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Sveits</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Island</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbia</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nord-Makedonia</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Tyrkia</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albania</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Montenegro</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Totalt</th>
+                    <td><strong>28649</strong></td>
+                    <td><strong>49320</strong></td>
+                    <td><strong>45200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Dokumenter og ytterligere informasjon for forskere</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Anbudsspesifikasjoner:</dt>
+                <dd>Åpen invitasjon publisert 21. august 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Støttebrev:</dt>
+                <dd>Brev som redegjorde for bakgrunnen og målene for undersøkelsen, og støtten fra sosiale partere, ble produsert på alle undersøkelsesspråkene med formål om å oppmuntre til deltakelse i undersøkelsen.</dd>
+                <dt>Masterkopier av spørreskjemaer:</dt>
+                <dd>
+                  <ul>
+                    <li>Spørreskjema for representanter for ledelsen: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Spørreskjema for representanter for arbeidere: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Tekniske rapporter:</dt>
+                <dd>
+                  <ul>
+                    <li>Europeisk undersøkelse om nye og fremvoksende risikoer &ndash; Psykososiale risikoer (ESENER-PSR 2009) &ndash; Teknisk rapport: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Etterevaluering av den europeiske bedriftsundersøkelsen om nye og fremvoksende risikoer: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Rapport for utvalg til ESENER 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Datasettet for ESENER 2009 er tilgjengelig via <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-1\" target=\"_blank\">the European data portal</a> og <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Anbudsspesifikasjoner:</dt>
+                <dd>Åpen invitasjon publisert 5. desember 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Støttebrev:</dt>
+                <dd>Brev som redegjorde for bakgrunnen og målene for undersøkelsen, og støtten fra sosiale partere, ble produsert på alle undersøkelsesspråkene med formål om å oppmuntre til deltakelse i undersøkelsen.</dd>
+                <dt>Masterkopi av spørreskjema:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Tekniske rapporter:</dt>
+                <dd>
+                  <ul>
+                    <li>Teknisk rapport: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Kvalitetsrapport: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Oversettelsesrapport: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Datasettet for ESENER 2014 er tilgjengelig via <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-2\" target=\"_blank\">the European data portal</a> og <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Anbudsspesifikasjoner:</dt>
+                <dd>Åpen invitasjon publisert 5. januar 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Støttebrev</dt>
+                <dd>Brev som redegjorde for bakgrunnen og målene for undersøkelsen, og støtten fra sosiale partere, ble produsert på alle undersøkelsesspråkene med formål om å oppmuntre til deltakelse i undersøkelsen.</dd>
+                <dt>Masterkopi av spørreskjema</dt>
+                <dt>Tekniske rapporter</dt>
+              </dl>
+              <p>Vær oppmerksom på at alle verk som bruker eller henviser til ESENER, skal anerkjenne kilden med bibliografiske sitater i fotnotene eller i referansedelen av publikasjonen. Likeledes skal enhver publisering, uansett om den er trykt, elektronisk eller kringkastet, som er basert helt eller delvis på ESENER, anerkjenne Det europeiske arbeidsmiljøorganet (EU-OSHA). Den skal også omfatte en uttalelse om at EU-OSHA ikke har noe ansvar for deres videre analyse eller tolkning.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Metodyka ESENER</h1>
+        <h2>Ogół i jednostka analizy</h2>
+          <p>Na populację objętą badaniem składają się wszystkie zakłady zatrudniające co najmniej pięciu pracowników w krajach uczestniczących, obejmujące wszystkie sektory działalności gospodarczej z wyjątkiem prywatnych gospodarstw domowych (NACE T) i organizacji eksterytorialnych (NACE U). ESENER 2009 nie objęto rolnictwa, leśnictwa i rybactwa (NACE A) oraz zakładów zatrudniających mniej niż 10 pracowników. Do celów badania uznaje się, że zakład obejmuje działalność jednego pracodawcy w jednym zespole pomieszczeń (np. jeden oddział banku, fabryka samochodów lub szkoła).</p>
+          <p>Państwa uczestniczące to wszystkie państwa członkowskie Unii Europejskiej oraz Norwegia i Szwajcaria. Turcję objęto badaniem ESENER w 2009 r. i 2014 r., Albanię i Czarnogórę &ndash; w 2014 r., a Islandię, Macedonię Północną i Serbię &ndash; w 2014 r. i 2019 r.</p>
+           
+          <h3>Zasięg ESENER wg krajów</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Unia Europejska (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norwegia</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Szwajcaria</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Islandia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Macedonia Północna</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turcja</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albania</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Czarnogóra</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) W tym Chorwacja i Zjednoczone Królestwo</p>
+
+        <h2>Respondenci</h2>
+          <p>W każdym badanym zakładzie przeprowadzono wywiad z <em>&bdquo;osobą, która najlepiej zna sposób zarządzania zagrożeniami dla zdrowia i bezpieczeństwa w danym miejscu pracy&rdquo;</em> . Stanowi to różnicę w porównaniu z ESENER 2009, w którym osobą tą był <em>&bdquo;kierownik najwyższego szczebla koordynujący działania w zakresie BHP&rdquo;</em> . Ponadto w ESENER 2009 przewidziano przeprowadzenie wywiadu z przedstawicielem pracowników odpowiedzialnym za BHP w tych zakładach, w których 1) ukończono wywiad z kierownictwem; 2) formalnie wyznaczono przedstawiciela, któremu powierzono konkretną odpowiedzialność w zakresie bezpieczeństwa i zdrowia pracowników; oraz 3) respondent z kierownictwa wyraził zgodę na wywiad.</p>
+          <p>Głównym powodem zmiany było dążenie do nawiązania kontaktu z osobą, która najlepiej zna wszystkie zagadnienia dotyczące BHP, w tym dysponuje szczegółowymi danymi na temat oceny ryzyka i innych konkretnych środków, niezależnie od jej funkcji lub roli w zakładzie &ndash; informację tę uzyskuje się i tak w pytaniu dodatkowym.</p>
+             
+        <h2>Strategia doboru próby</h2>
+          <p>W celu zapewnienia, aby wyniki badań były porównywalne między krajami, konieczne jest, aby strategia doboru próby prowadziła do zbadania tego samego rodzaju jednostek w każdym kraju. Jakość dostępnych rejestrów adresów była zróżnicowana w uczestniczących krajach pod względem:</p>
+          <ul>
+           <li>zasięgu (zwłaszcza objętych sektorów działalności);</li>
+           <li>dostępności i dokładności niezbędnych informacji (takich jak sektor działalności i liczba pracowników).</li>
+          </ul>
+          <p>Istniejące rejestry adresów nie są porównywalne pomiędzy krajami, dlatego dołożono starań, aby uzyskać próby zapewniające niezbędną jakość i porównywalność między krajami. Działania te objęły procedurę przeglądu w tych krajach, w których dostępne rejestry adresów dostarczają informacji na poziomie przedsiębiorstwa, a nie zakładu.</p>
+          <p>Stratyfikacja próby opiera się na schemacie czterech klas wielkości i ośmiu grup sektorów. Ogólne podejście do doboru próby w pierwszych dwóch badaniach ESENER było w głównej mierze takie samo, jednak na przestrzeni lat pojawiły się pewne zmiany, zwłaszcza w odniesieniu do ESENER 2009. Szczegółowe dane są dostępne na stronach dotyczących <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> i <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Schemat doboru próby ESENER 2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Grupa sektorów &ndash; sekcje NACE Rev. 2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Wielkość &ndash; liczba pracowników</th>
+                   </tr>
+                   <tr>
+                      <th>5-9</th>
+                      <th>10-49</th>
+                      <th>50-249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Rolnictwo, leśnictwo i rybactwo</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Budownictwo, gospodarowanie odpadami, dostawy wody i zaopatrywanie w energię elektryczną</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Przetwórstwo przemysłowe</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Handel, transport, działalność związana z zakwaterowaniem/usługami gastronomicznymi oraz rekreacją</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: IT, finanse, nieruchomości i innego rodzaju działalność naukowa i techniczna lub usługi osobiste</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Administracja publiczna</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Edukacja</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Opieka zdrowotna i pomoc społeczna</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Opracowanie kwestionariusza</h2>
+          <p>Kwestionariusz ESENER 2019 jest w dużej mierze taki sam jak ten wykorzystany w poprzednim badaniu (ESENER 2014), który pierwotnie opierał się na strukturze wersji kwestionariusza dla kadry kierowniczej z ESENER 2009. W latach 2009&ndash;2014 zmieniono jednak prawie wszystkie pytania, dlatego analizy tendencji są możliwe, począwszy od ESENER 2014 r. Opracowanie i przegląd kwestionariusza ESENER odbywa się w ścisłej współpracy między EU-OSHA, głównym wykonawcą ESENER oraz grupą naukowców zajmujących się bezpieczeństwem i higieną pracy w różnych państwach, a także zainteresowanymi stronami EU-OSHA.</p>
+          <p>Kwestionariusze ESENER zostały poddane kilku testom:</p>
+
+          <ol type=\"a\" >
+            <li><strong>Wstępnemu testowi poznawczemu</strong> w Niemczech, na Łotwie i w Holandii, gdzie przeprowadzono ok. 40 pogłębionych wywiadów bezpośrednich. Wstępny test poznawczy ma na celu przede wszystkim sprawdzenie zrozumienia i jasności pytań. Istnieje także szereg pytań poznawczych mających na celu sprawdzenie, czy respondenci z różnych krajów i różnych rodzajów organizacji interpretują standardowe pytania w zamierzony sposób i czy są one dla nich istotne. Wstępny test poznawczy zazwyczaj prowadzi do szeregu zmian w kwestionariuszu.</li>
+            <li><strong>Ocena przetłumaczalności</strong> podstawowej wersji kwestionariusza sporządzonej w języku angielskim. Doświadczeni tłumacze z różnych rodzin językowych opracowują wstępne tłumaczenia projektu głównego kwestionariusza w celu stwierdzenia ewentualnych niejasności lub innych trudności w tłumaczeniu. W przypadku stwierdzenia takich trudności tłumacze proponują alternatywne sformułowania w wersji podstawowej, która jest odpowiednio zmieniana.</li>
+            <li> <strong>Pilotażowy test terenowy</strong> jest przeprowadzany we wszystkich krajach (ok. 50 wywiadów na kraj). Korzystając z tej samej infrastruktury co badanie główne, test pilotażowy przeprowadza się w trybie CATI (wspomagany komputerowo wywiad telefoniczny), ale osobom odmawiającym udziału w wywiadzie telefonicznym oferuje się możliwość odbycia go online (CAWI: wspomagany komputerowo wywiad internetowy). Pilotażowe testy terenowe skutkują wprowadzeniem szeregu zmian w podstawowej wersji kwestionariusza i w poszczególnych wersjach krajowych.</li>
+          </ol>
+
+        <h2>Tłumaczenie</h2>        
+          <p>Opracowywane są różne wersje krajowe dla krajów objętych badaniem (dostępne tutaj: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> i ESENER 2019). Optymalna strategia w zakresie tłumaczeń ma zasadnicze znaczenie dla zapewnienia, aby każda wersja krajowa kwestionariusza zawierała wysokiej jakości pytania, które mogą być skierowane do wszystkich rodzajów przedsiębiorstw w danym kraju i generować informacje, które można porównać pomiędzy krajami. Tłumaczenie kwestionariusza ESENER jest zgodne z podejściem TRAPD (ang. Translation, Review, Adjudication, Pre-testing and Documentation &ndash; tłumaczenie, weryfikacja, redakcja, wstępne testowanie i dokumentacja) (Harkness, J. A. (2003). Questionnaire translation. w J. A. Harkness, F. van de Vijver, i P. Ph. Mohler (red.), Cross-cultural survey methods (s. 35-56). Hoboken, NJ: John Wiley &amp; Sons), z wyjątkiem pierwszej fali (dostępnej tutaj: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>W przypadku języków stosowanych w więcej niż jednym kraju opracowywane są różne wersje krajowe, z uwzględnieniem praktyk związanych z pracą, takich jak reprezentacja pracowników czy inspekcja pracy, które wymagają różnych pytań i terminologii. Więcej szczegółów na temat procesu tłumaczenia można znaleźć w <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">sprawozdaniu dotyczącym tłumaczenia</a> &ndash; zob. poniżej.</p>
+          <p>Podstawowe etapy tłumaczenia ESENER są następujące:</p>
+           
+          <ol type=\"1\" >
+            <li>Dwa niezależne tłumaczenia na każdy z języków wykonane przez zawodowych tłumaczy będących rodzimymi użytkownikami języka docelowego, którzy nie kontaktowali się ze sobą przy opracowywaniu tłumaczeń.</li>
+            <li>Weryfikacja niezależnych tłumaczeń przez redaktora, który sporządza nową wersję.</li>
+            <li>Spotkania redaktora i dwóch tłumaczy w celu wspólnego omówienia nowego projektu i uzgodnienia ostatecznej zredagowanej wersji.</li>
+            <li>Sprawdzenie skorygowanych wersji przez <a href=\"https://osha.europa.eu/pl/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">sieć punktów centralnych</a> EU-OSHA, ze szczególnym uwzględnieniem krajowej terminologii w zakresie bezpieczeństwa i higieny pracy (BHP), w tym pytań dotyczących organów reprezentujących pracowników.</li>
+          </ol>
+
+        <h2>Liczebność próby krajowej</h2>
+          <p>W ESENER 2014 organy krajowe po raz pierwszy otrzymały możliwość sfinansowania zwiększenia liczebności próby krajowej. Skorzystały z niej Hiszpania, Słowenia i Zjednoczone Królestwo. W przypadku ESENER 2019 z możliwości tej skorzystały trzy kraje (Irlandia, Norwegia i Słowenia). Tym razem możliwe było również dodanie do odpowiednich kwestionariuszy dwóch do trzech pytań o znaczeniu krajowym. Szwajcaria w pełni sfinansowała wszystkie fale ESENER.</p>
+           
+          <h3>Osiągnięte liczebności próby w ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Kraj</th>
+                    <th class=\"center-text\">ESENER 2009 (wywiady z kierownictwem)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Austria</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgia</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bułgaria</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Chorwacja</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Cypr</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Czechy</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Dania</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estonia</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finlandia</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Francja</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Niemcy</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Grecja</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Węgry</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Irlandia</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Włochy</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Łotwa</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Litwa</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luksemburg</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Holandia</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Polska</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugalia</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rumunia</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Słowacja</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Słowenia</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Hiszpania</th>
+                    <td>1566</td>
+                    <td><em>3162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Szwecja</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Wielka Brytania</th>
+                    <td>1500</td>
+                    <td><em>4250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norwegia</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Szwajcaria</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Islandia</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbia</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Macedonia Północna</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turcja</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albania</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Czarnogóra</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Razem</th>
+                    <td><strong>28649</strong></td>
+                    <td><strong>49320</strong></td>
+                    <td><strong>45200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Dokumenty i dalsze informacje dla badaczy</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Specyfikacja przetargowa:</dt>
+                <dd>Otwarte zaproszenie do składania wniosków opublikowane dnia 21 sierpnia 2007 r.: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Pismo towarzyszące:</dt>
+                <dd>Aby zachęcić do uczestnictwa w badaniu, we wszystkich językach badania sporządzono pisma, w których przedstawiono jego kontekst i cele oraz poparcie partnerów społecznych.</dd>
+                <dt>Kwestionariusze podstawowe:</dt>
+                <dd>
+                  <ul>
+                    <li>Kwestionariusz dla przedstawicieli kierownictwa: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Kwestionariusz dla przedstawicieli pracowników: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Sprawozdania techniczne:</dt>
+                <dd>
+                  <ul>
+                    <li>Europejskie badanie na temat nowych i pojawiających się zagrożeń (ESENER-PSR 2009) - sprawozdanie techniczne: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Ocena <i>ex post</i> drugiego europejskiego badania przedsiębiorstw na temat nowych i pojawiających się zagrożeń: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Sprawozdanie z doboru próby do ESENER 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Dostęp do zbioru danych ESENER 2009 można uzyskać za pośrednictwem <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">portalu UK Data Service prowadzonego przez Uniwersytet w Essex</a>, <a href=\"https://data.europa.eu/euodp/pl/data/dataset/esener-1\" target=\"_blank\">portalu danych UE</a> i <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Specyfikacja przetargowa:</dt>
+                <dd>Otwarte zaproszenie do składania wniosków opublikowane w dniu 5 grudnia 2012 r.: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Pismo towarzyszące:</dt>
+                <dd>Aby zachęcić do uczestnictwa w badaniu, we wszystkich językach badania sporządzono pisma, w których przedstawiono jego kontekst i cele oraz poparcie partnerów społecznych.</dd>
+                <dt>Kwestionariusz podstawowy:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Sprawozdania techniczne:</dt>
+                <dd>
+                  <ul>
+                    <li>Sprawozdanie techniczne: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Sprawozdanie dotyczące jakości: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Sprawozdanie dotyczące tłumaczenia: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Dostęp do zbioru danych ESENER 2014 można uzyskać za pośrednictwem <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">portalu UK Data Service prowadzonego przez Uniwersytet w Essex</a>, <a href=\"https://data.europa.eu/euodp/pl/data/dataset/esener-2\" target=\"_blank\">portalu danych UE</a> i <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Specyfikacja przetargowa:</dt>
+                <dd>Otwarte zaproszenie do składania wniosków opublikowane dnia 5 stycznia 2018 r.: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Pismo towarzyszące</dt>
+                <dd>Aby zachęcić do uczestnictwa w badaniu, we wszystkich językach badania sporządzono pisma, w których przedstawiono jego kontekst i cele oraz poparcie partnerów społecznych.</dd>
+                <dt>Podstawowy kwestionariusz</dt>
+                <dt>Sprawozdania techniczne</dt>
+              </dl>
+              <p>Należy zauważyć, że we wszystkich pracach wykorzystujących lub odnoszących się do ESENER należy wskazać źródło za pomocą cytatu bibliograficznego w przypisach lub w sekcji odniesień w publikacji. Podobnie w każdej publikacji, drukowanej, elektronicznej lub nadawanej, opartej w całości lub częściowo na ESENER, należy wskazać Europejską Agencję ds. Bezpieczeństwa i Zdrowia w Pracy (EU-OSHA) jako źródło. Należy także zawrzeć stwierdzenie, że EU-OSHA nie ponosi odpowiedzialności za ich dalszą analizę lub interpretację.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Metodologia do ESENER</h1>
+        <h2>Universo e unidade de análise</h2>
+          <p>A população inquirida inclui todos os estabelecimentos que tenham cinco ou mais trabalhadores nos países participantes, abrangendo todos os setores de atividade económica, com exceção das famílias (NACE T) e das instituições extraterritoriais (NACE U). A agricultura, a silvicultura e a pesca (NACE A) e os estabelecimentos que empregam menos de 10 trabalhadores não foram abrangidos pelo ESENER 2009. Para efeitos do inquérito, um estabelecimento inclui as atividades de um único empregador num único conjunto de instalações (por exemplo, uma sucursal de um banco, uma fábrica de automóveis ou uma escola).</p>
+          <p>Os países participantes incluem todos os Estados-Membros da União Europeia, bem como a Noruega e a Suíça. A Turquia foi abrangida pelo ESENER 2009 e 2014, a Albânia e o Montenegro foram abrangidos pelo ESENER 2014 e a Islândia, a Macedónia do Norte e a Sérvia foram abrangidas pelo ESENER 2014 e 2019.</p>
+           
+          <h3>Países abrangidos pelo ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>União Europeia (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Noruega</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Suíça</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Islândia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Macedónia do Norte</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Sérvia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turquia</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albânia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Montenegro</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Incluindo a Croácia e o Reino Unido</p>
+
+        <h2>Inquiridos</h2>
+          <p>Em cada estabelecimento inquirido, é entrevistada <em>«a pessoa que mais bem conhece a forma como os riscos de segurança e saúde são geridos no seu local de trabalho»</em>. Esta situação é diferente da do ESENER 2009, em que era visado o <em>«o responsável máximo pela coordenação das atividades de segurança e saúde neste estabelecimento»</em>. Além disso, no ESENER 2009, procurava-se agendar uma entrevista com o representante dos trabalhadores no domínio da saúde e segurança nos estabelecimentos onde (1) tinha sido realizada uma entrevista com a direção; (2) existia um representante formalmente designado com responsabilidade específica pela segurança e saúde dos trabalhadores; e (3) o inquirido pertencente à direção tinha autorizado a entrevista.</p>
+          <p>O principal objetivo desta mudança consistia em chegar à pessoa mais bem informada sobre todas as questões de saúde e segurança, nomeadamente sobre a avaliação de riscos e outras medidas específicas, independentemente da função ou do papel que desempenha no estabelecimento - uma questão que, de qualquer modo, é objeto de uma pergunta complementar.</p>
+             
+        <h2>Estratégia de amostragem</h2>
+          <p>A fim de assegurar a comparabilidade dos resultados dos inquéritos a nível transnacional, é essencial que a estratégia de amostragem resulte no mesmo tipo de unidades a inquirir em cada país. A qualidade dos registos de endereços disponíveis varia consoante os países participantes em termos de:</p>
+          <ul>
+           <li>cobertura (especialmente os setores de atividade incluídos);</li>
+           <li>disponibilidade e exatidão das informações de base necessárias (como o setor de atividade e o número de trabalhadores).</li>
+          </ul>
+          <p>Os registos de endereços existentes não são comparáveis entre os vários países, pelo que foram envidados esforços consideráveis para criar amostras que possuam a qualidade necessária e assegurem a comparabilidade transnacional. Estes esforços exigiram um procedimento de rastreio nos países em que os registos de endereços disponíveis fornecem informações ao nível da empresa e não ao nível do estabelecimento.</p>
+          <p>A estratificação da amostra baseia-se numa matriz de quatro classes de dimensão e oito grupos de setores. Embora a estratégia geral de amostragem nas duas primeiras edições do ESENER tenha sido, em grande medida, a mesma, verificaram-se algumas alterações ao longo dos anos, sobretudo em relação ao ESENER 2009. As informações estão disponíveis no <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> e no <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Matriz de amostragem do ESENER 2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Grupo do setor - seções da NACE Rev. 2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Dimensão - número de trabalhadores</th>
+                   </tr>
+                   <tr>
+                      <th>5-9</th>
+                      <th>10-49</th>
+                      <th>50-249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Agricultura, silvicultura e pesca</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Construção, gestão de resíduos, abastecimento de água e de eletricidade</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Indústria transformadora</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Comércio, transportes, alimentação/alojamento e atividades de lazer</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: Atividades nas áreas de TI, financeiras, imobiliárias e outros serviços técnicos, científicos ou personalizados</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Administração pública</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Educação</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Saúde humana e ação social</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Desenvolvimento do questionário</h2>
+          <p>O questionário ESENER 2019 é, em grande parte, idêntico ao utilizado na edição anterior (ESENER 2014), que se baseava, ele mesmo, na estrutura da versão do questionário ESENER 2009 destinado à direção. No entanto, quase todas as perguntas foram alteradas entre 2009 e 2014 e, por conseguinte, é possível efetuar análises de tendências a partir do ESENER 2014. O questionário ESENER é desenvolvido e revisto em estreita cooperação entre a EU-OSHA, a principal empresa contratada para o ESENER e um grupo de investigadores no domínio da saúde e segurança no trabalho de diferentes países, bem como partes interessadas da EU-OSHA.</p>
+          <p>Os questionários ESENER foram submetidos a vários testes:</p>
+
+          <ol type=\"a\" >
+            <li>Um <strong>pré-teste cognitivo</strong> na Alemanha, Letónia e Países Baixos, com cerca de 40 entrevistas presenciais aprofundadas. O principal objetivo do pré-teste cognitivo é verificar o grau de compreensão e clareza das perguntas. Há também uma série de perguntas cognitivas destinadas a testar se os inquiridos de diferentes países e de diferentes tipos de organizações interpretam as perguntas normalizadas da forma pretendida e se estas são relevantes para eles. O pré-teste cognitivo geralmente resulta na introdução de várias modificações no questionário.</li>
+            <li>Uma <strong>avaliação da tradutibilidade</strong> da versão inglesa do questionário principal. Tradutores experientes de diferentes famílias linguísticas elaboram traduções aproximadas do projeto do questionário principal, a fim de identificar eventuais ambiguidades ou outras dificuldades de tradução. Sempre que tais dificuldades sejam identificadas, os tradutores apresentam propostas de formulações alternativas para a versão principal, que é revista em conformidade.</li>
+            <li>Em todos os países é realizado um <strong>teste-piloto em condições reais</strong>, com cerca de 50 entrevistas por país. Usando a mesma infraestrutura do inquérito principal, esse teste-piloto é realizado através de uma entrevista telefónica assistida por computador (CATI - <i>Computer Assisted Telephone Interview</i>), mas a opção de participar em linha (CAWI - <i>Computer Assisted Web Interviews</i>) é oferecida a quem recusar realizar a entrevista por telefone. O teste-piloto em condições reais resulta numa série de alterações ao questionário principal e às versões nacionais do questionário.</li>
+          </ol>
+
+        <h2>Tradução</h2>        
+          <p>São desenvolvidas diferentes versões nacionais do questionário para os países abrangidos pelo inquérito (disponíveis aqui: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> e ESENER 2019). É essencial uma estratégia de tradução otimizada para garantir que cada versão nacional do questionário contenha perguntas de elevada qualidade que possam ser dirigidas a todos os tipos de empresas no país em causa e que gira informações comparáveis a nível transnacional. A tradução do questionário ESENER segue a metodologia TRAPD, o acrónimo de <em><i>Translation, Review, Adjudication, Pre-testing and Documentation</i></em> (Tradução, Revisão, Aprovação, Pré-teste e Documentação) (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (EE.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), exceto na primeira edição (disponível aqui: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Para as línguas partilhadas por dois ou mais países, são desenvolvidas diferentes versões nacionais, tendo em conta práticas relacionadas com o trabalho, tais como a representação dos trabalhadores ou a inspeção do trabalho, que exigem perguntas e terminologia diferentes. Estão disponíveis mais informações sobre o processo de tradução no <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Relatório de Tradução</a> - ver adiante.</p>
+          <p>As etapas básicas do processo de tradução do ESENER são as seguintes:</p>
+           
+          <ol type=\"1\" >
+            <li>Duas traduções independentes para cada uma das línguas, realizadas por tradutores profissionais - falantes nativos da língua-alvo - que não tenham estado em contacto um com o outro durante o trabalho de tradução.</li>
+            <li>Revisão das traduções independentes por um avaliador, que elabora uma nova versão.</li>
+            <li>Reuniões de revisão entre o avaliador e os dois tradutores, a fim de discutir em conjunto o novo texto e chegar a acordo sobre uma versão final aprovada.</li>
+            <li>Verificação das versões aprovadas pela <a href=\"https://osha.europa.eu/pt/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">rede de pontos focais</a> da EU-OSHA, com especial incidência na terminologia nacional de segurança e saúde no trabalho (SST), incluindo as perguntas relativas aos órgãos de representação dos trabalhadores.</li>
+          </ol>
+
+        <h2>Dimensão das amostras nacionais</h2>
+          <p>Pela primeira vez no ESENER 2014, foi oferecida às autoridades nacionais a possibilidade de financiarem uma expansão das suas amostras nacionais. A Espanha, a Eslovénia e o Reino Unido aceitaram a proposta de aumentar a dimensão das respetivas amostras. No ESENER 2019, três países aceitaram esta proposta (Irlanda, Noruega e Eslovénia), que, desta vez, contemplava também a possibilidade de acrescentar duas a três perguntas de interesse nacional aos respetivos questionários. A Suíça financiou integralmente todas as edições do ESENER.</p>
+           
+          <h3>Dimensão das amostras no ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>País</th>
+                    <th class=\"center-text\">ESENER 2009 (entrevistas com a direção)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Áustria</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bélgica</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgária</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Croácia</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Chipre</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>República Checa</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Dinamarca</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estónia</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finlândia</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>França</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Alemanha</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Grécia</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Hungria</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Irlanda</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Itália</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Letónia</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lituânia</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luxemburgo</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Países Baixos</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Polónia</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugal</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Roménia</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Eslováquia</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Eslovénia</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Espanha</th>
+                    <td>1566</td>
+                    <td><em>3&nbsp;162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Suécia</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Reino Unido</th>
+                    <td>1500</td>
+                    <td><em>4&nbsp;250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Noruega</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Suíça</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Islândia</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Sérvia</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Macedónia do Norte</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turquia</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albânia</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Montenegro</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Total</th>
+                    <td><strong>28649</strong></td>
+                    <td><strong>49320</strong></td>
+                    <td><strong>45200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Documentos e informações complementares para os investigadores</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Caderno de encargos:</dt>
+                <dd>Anúncio do concurso público publicado em 21 <sup></sup>de agosto de 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Carta de apoio:</dt>
+                <dd>Foram elaboradas cartas que descreviam os antecedentes e os objetivos do inquérito, bem como o apoio dos parceiros sociais, em todas as línguas dos inquéritos, com o objetivo de incentivar a participação no inquérito.</dd>
+                <dt>Questionários principais:</dt>
+                <dd>
+                  <ul>
+                    <li>Questionário do representante da direção: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Questionário do representante dos trabalhadores: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Relatórios técnicos:</dt>
+                <dd>
+                  <ul>
+                    <li>Inquérito Europeu sobre Riscos Novos e Emergentes - Riscos Psicossociais (ESENER-PSR 2009) - Relatório técnico: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Avaliação <i>ex-post</i> do segundo Inquérito Europeu às Empresas sobre Riscos Novos e Emergentes: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Relatório de amostragem do ESENER 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>O conjunto de dados do ESENER 2009 está disponível no <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service da Universidade de Essex</a>, no <a href=\"https://data.europa.eu/euodp/pt/data/dataset/esener-1\" target=\"_blank\">Portal Europeu de Dados</a> e no <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Caderno de encargos:</dt>
+                <dd>Anúncio do concurso público publicado em 5 <sup></sup>de dezembro de 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Carta de apoio:</dt>
+                <dd>Foram elaboradas cartas que descreviam os antecedentes e os objetivos do inquérito, bem como o apoio dos parceiros sociais, em todas as línguas dos inquéritos, com o objetivo de incentivar a participação no inquérito.</dd>
+                <dt>Questionário principal:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Relatórios técnicos:</dt>
+                <dd>
+                  <ul>
+                    <li>Relatório técnico: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Relatório de qualidade: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Relatório de tradução: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>O conjunto de dados do ESENER 2014 está disponível no <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service da Universidade de Essex</a>, no <a href=\"https://data.europa.eu/euodp/pt/data/dataset/esener-2\" target=\"_blank\">Portal Europeu de Dados</a> e no <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Caderno de encargos:</dt>
+                <dd>Anúncio do concurso público publicado em 5 <sup></sup>de janeiro de 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Carta de apoio</dt>
+                <dd>Foram elaboradas cartas que descreviam os antecedentes e os objetivos do inquérito, bem como o apoio dos parceiros sociais, em todas as línguas dos inquéritos, com o objetivo de incentivar a participação no inquérito.</dd>
+                <dt>Questionário principal</dt>
+                <dt>Relatórios técnicos</dt>
+              </dl>
+              <p>Chama-se a atenção para o facto de todas as obras que utilizem ou façam referência ao ESENER deverem mencionar a sua fonte através de citação bibliográfica nas notas de rodapé ou na secção de referências das publicações. Do mesmo modo, qualquer publicação, seja impressa, eletrónica ou difundida, que se baseie total ou parcialmente no ESENER, deverá mencionar a Agência Europeia para a Segurança e Saúde no Trabalho (EU-OSHA). Deverá também incluir uma declaração de que a EU-OSHA não assume qualquer responsabilidade por qualquer outra análise ou interpretação dos seus resultados.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Metodologia ESENER</h1>
+        <h2>Universul și unitatea de analiză</h2>
+          <p>Populația sondajului cuprinde toate unitățile cu cinci sau mai mulți angajați din țările participante, acoperind toate sectoarele de activitate economică, cu excepția gospodăriilor private (NACE T) și a organizațiilor extrateritoriale (NACE U). În ESENER 2009 nu au fost cuprinse agricultura, silvicultura și pescuitul (NACE A), nici unitățile cu mai puțin de 10&nbsp;lucrători. În cadrul sondajului, unitatea este definită ca fiind activitățile unui singur angajator la un singur punct de lucru (de exemplu, o singură sucursală a unei bănci, o fabrică de autoturisme sau o școală).</p>
+          <p>La sondaj participă toate statele membre ale Uniunii Europene, precum și Norvegia și Elveția. Turcia a fost inclusă în ESENER 2009 și 2014, Albania și Muntenegru au fost incluse în ESENER 2014, iar Islanda, Macedonia de Nord și Serbia au fost incluse în ESENER 2014 și 2019.</p>
+           
+          <h3>Țări vizate de ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Uniunea Europeană (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norvegia</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Elveția</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Islanda</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Macedonia de Nord</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turcia</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albania</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Muntenegru</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Inclusiv Croația și Regatul Unit</p>
+
+        <h2>Respondenți</h2>
+          <p>În cadrul fiecărei unități participante la sondaj a fost intervievată <em>&bdquo;persoana cea mai informată cu privire la modul în care sunt gestionate riscurile în materie de securitate și sănătate la locul de muncă&rdquo;</em>. În ESENER 2009 s-a procedat diferit, fiind vizat <em>&bdquo;managerul de la cel mai înalt nivel care coordonează activitățile legate de securitate și sănătate în cadrul unității&rdquo;</em>. În plus, în cadrul ESENER 2009 a existat obiectivul realizării unui interviu cu reprezentantul lucrătorilor pentru probleme de securitate și sănătate în acele unități în care: (1) fusese deja intervievat un manager; (2) exista un reprezentant desemnat oficial, având ca responsabilitate specifică securitatea și sănătatea lucrătorilor; și (3) managerul respondent își dăduse acordul pentru interviu.</p>
+          <p>Modificarea s-a datorat în principal dorinței de a se ajunge la persoana care cunoaște cel mai bine toate chestiunile legate de securitate și sănătate, inclusiv detalii privind evaluarea riscurilor și alte măsuri specifice, indiferent de funcția sau rolul pe care persoana respectivă îl deține în cadrul unității (rol care oricum este clarificat în întrebările ulterioare).</p>
+             
+        <h2>Strategia de eșantionare</h2>
+          <p>Pentru a asigura comparabilitatea rezultatelor sondajului la nivel transnațional, este esențial ca prin strategia de eșantionare să se selecteze același tip de unități în fiecare țară. Calitatea registrelor de adrese disponibile variază de la o țară participantă la alta, în ceea ce privește:</p>
+          <ul>
+           <li>acoperirea (în special sectoarele de activitate incluse);</li>
+           <li>disponibilitatea și corectitudinea informațiilor generale necesare (cum ar fi cele privind sectorul de activitate și numărul de angajați).</li>
+          </ul>
+          <p>Registrele de adrese existente ale fiecărei țări nu sunt comparabile, de aceea s-au depus eforturi considerabile pentru a realiza eșantioane care să aibă calitatea necesară și să asigure comparabilitate la nivel transnațional. Aceste eforturi au necesitat o procedură de triere în acele țări în care registrele de adrese disponibile ofereau informații la nivel de întreprindere și nu la nivel de unitate (punct de lucru).</p>
+          <p>Stratificarea eșantionului se bazează pe o matrice cu patru categorii de dimensiuni și opt grupuri de sectoare. Deși abordarea generală cu privire la eșantionare în cele două runde ale ESENER a fost în mare parte aceeași, de-a lungul anilor au fost efectuate unele modificări, în special față de ESENER 2009. Informații detaliate sunt disponibile pe paginile <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> și <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Matricea de eșantionare pentru ESENER 2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Grupuri de sectoare &ndash; secțiuni NACE Rev.&nbsp;2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Dimensiune &ndash; număr de angajați</th>
+                   </tr>
+                   <tr>
+                      <th>5-9</th>
+                      <th>10-49</th>
+                      <th>50-249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Agricultură, silvicultură și pescuit</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Construcții, gestionarea deșeurilor, alimentare cu apă și energie electrică</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Industria prelucrătoare</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Comerț, transporturi, alimentație publică/cazare și activități recreative</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: Activități în domeniul IT, financiar, imobiliar și alte activități tehnice, științifice sau în domeniul serviciilor personale</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Administrație publică</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Învățământ</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Activități în domeniul sănătății umane și asistenței sociale</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Elaborarea chestionarului</h2>
+          <p>Chestionarul ESENER 2019 este în mare parte la fel ca cel utilizat în runda precedentă (ESENER 2014), care la rândul său a avut la bază structura versiunii pentru manageri a chestionarului ESENER 2009. Cu toate acestea, din 2009 până în 2014 au fost modificate aproape toate întrebările și, din acest motiv, analizele privind tendințele sunt posibile numai începând cu ESENER 2014. Elaborarea și revizuirea chestionarului ESENER se realizează de EU-OSHA în strânsă cooperare cu contractantul principal ESENER și cu un grup de cercetători în materie de securitate și sănătate în muncă din diferite țări, precum și cu părțile interesate ale EU-OSHA.</p>
+          <p>Chestionarele ESENER au fost testate în mai multe rânduri:</p>
+
+          <ol type=\"a\" >
+            <li>O <strong>testare prealabilă cognitivă</strong> în Germania, Letonia și Țările de Jos, cu aproximativ 40 de interviuri aprofundate față în față. Scopul principal al testării prealabile cognitive este de a verifica dacă întrebările sunt clare și inteligibile. De asemenea, există și o serie de întrebări cognitive menite să testeze dacă respondenții din diferite țări și din diferite tipuri de organizații interpretează întrebările standardizate astfel cum au fost concepute și dacă acestea sunt relevante pentru ei. De obicei, testarea prealabilă cognitivă duce la o serie de modificări ale chestionarului.</li>
+            <li>O <strong>evaluare a traductibilității</strong> versiunii principale a chestionarului în engleză. Traducători experimentați cu competențe în diferite familii de limbi elaborează traduceri brute ale proiectului de chestionar principal, pentru a identifica ambiguitățile sau alte dificultăți de traducere. În cazul în care sunt identificate astfel de dificultăți, traducătorii propun formulări alternative ale versiunii principale, care este revizuită în consecință.</li>
+            <li>În toate țările se efectuează un <strong>test pilot pe teren</strong>, cu aproximativ 50 de interviuri pe țară. Utilizând infrastructura sondajului principal, acest test pilot se realizează prin metoda CATI (<i>Computer Assisted Telephone Interviewing</i> &ndash; intervievare prin telefon asistată de calculator), dar este disponibilă și opțiunea de a participa online (CAWI: <i>Computer Assisted Web Interviewing</i> &ndash; intervievare online asistată de calculator) pentru cei care refuză să răspundă prin telefon. Testul pilot pe teren duce la o serie de modificări ale chestionarului principal și ale versiunilor naționale individuale ale chestionarului.</li>
+          </ol>
+
+        <h2>Traducerea</h2>        
+          <p>Pentru țările cuprinse în sondaj se elaborează diferite versiuni naționale (disponibile aici: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> și ESENER 2019). Este esențială folosirea unei strategii optime de traducere, astfel încât fiecare versiune națională a chestionarului să cuprindă întrebări de înaltă calitate, care să poată fi adresate tuturor tipurilor de întreprinderi din țara vizată și care să genereze informații comparabile la nivel transnațional. Traducerea chestionarului ESENER se face conform metodei TRAPD, un acronim pentru <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> (traducere, revizie, adjudecare, testare prealabilă și documentare) [Harkness, J. A. (2003). Questionnaire translation (Traducerea chestionarelor) în J. A. Harkness, F. van de Vijver și P. Ph. Mohler (editori), Cross-cultural survey methods (Metode utilizate în sondaje transnaționale) (p. 35-56). Hoboken, NJ: John Wiley &amp; Sons)], cu excepția primei runde (disponibilă aici: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>În cazul limbilor care sunt oficiale în două sau mai multe țări, se elaborează versiuni naționale diferite, care țin cont de practicile legate de muncă, precum reprezentarea lucrătorilor sau inspecția muncii, care necesită întrebări și terminologie diferite. Mai multe detalii referitoare la procesul de traducere se găsesc în <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Raportul privind traducerea</a> &ndash; vezi mai jos.</p>
+          <p>Etapele de bază ale traducerii ESENER sunt următoarele:</p>
+           
+          <ol type=\"1\" >
+            <li>Două traduceri independente în fiecare limbă, efectuate de traducători profesioniști &ndash; vorbitori nativi ai limbii țintă &ndash; care nu au luat legătura unul cu celălalt pe durata traducerii.</li>
+            <li>Revizuirea traducerilor independente de către un evaluator, care redactează o nouă versiune.</li>
+            <li>Au loc întruniri de revizuire între evaluator și cei doi traducători, în care se discută noul proiect de traducere și se convine asupra unei versiuni finale.</li>
+            <li>Verificarea de către <a href=\"https://osha.europa.eu/ro/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">rețeaua de puncte focale</a> a EU-OSHA a versiunilor convenite, cu accent special pe terminologia națională în materie de securitate și sănătate în muncă (SSM). Se includ și întrebările legate de organismele de reprezentare a lucrătorilor.</li>
+          </ol>
+
+        <h2>Dimensiunile eșantioanelor naționale</h2>
+          <p>În cadrul ESENER 2014, autorităților naționale li s-a oferit pentru prima dată posibilitatea de a finanța o extindere a dimensiunii eșantioanelor naționale. Spania, Slovenia și Regatul Unit au profitat de ofertă pentru a mări dimensiunea eșantioanelor respective. Trei țări (Irlanda, Norvegia și Slovenia) au acceptat pentru ESENER 2019 această ofertă, care de această dată a inclus și posibilitatea de a se adăuga două-trei întrebări de interes național la chestionarele respective. Elveția a finanțat integral toate rundele ESENER.</p>
+           
+          <h3>Dimensiunile eșantioanelor obținute în ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Țară</th>
+                    <th class=\"center-text\">ESENER 2009 (interviuri adresate managerilor)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Austria</th>
+                    <td>1&nbsp;034</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgia</th>
+                    <td>1&nbsp;069</td>
+                    <td>1&nbsp;504</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgaria</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Croația</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Cipru</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Republica Cehă</th>
+                    <td>1&nbsp;015</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Danemarca</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estonia</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finlanda</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Franța</th>
+                    <td>1&nbsp;497</td>
+                    <td>2&nbsp;256</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Germania</th>
+                    <td>1&nbsp;510</td>
+                    <td>2&nbsp;261</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Grecia</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ungaria</th>
+                    <td>1&nbsp;031</td>
+                    <td>1&nbsp;514</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Irlanda</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2&nbsp;000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Italia</th>
+                    <td>1&nbsp;501</td>
+                    <td>2&nbsp;254</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Letonia</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lituania</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luxemburg</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Țările de Jos</th>
+                    <td>1&nbsp;009</td>
+                    <td>1&nbsp;519</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Polonia</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;257</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugalia</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>România</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovacia</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovenia</th>
+                    <td>529</td>
+                    <td><em>1&nbsp;051</em></td>
+                    <td><em>1&nbsp;050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spania</th>
+                    <td>1&nbsp;566</td>
+                    <td><em>3&nbsp;162</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Suedia</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;521</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Regatul Unit</th>
+                    <td>1&nbsp;500</td>
+                    <td><em>4&nbsp;250</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norvegia</th>
+                    <td>951</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Elveția</th>
+                    <td>1&nbsp;019</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Islanda</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbia</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Macedonia de Nord</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turcia</th>
+                    <td>1&nbsp;500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albania</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Muntenegru</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Total</th>
+                    <td><strong>28&nbsp;649</strong></td>
+                    <td><strong>49&nbsp;320</strong></td>
+                    <td><strong>45&nbsp;200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Documente și informații suplimentare pentru cercetători</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Caiet de sarcini:</dt>
+                <dd>Procedură deschisă publicată la 21&nbsp;august&nbsp;2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Scrisoare de asistență:</dt>
+                <dd>Scrisori care stabilesc contextul și obiectivele sondajului, precum și asistența oferită din partea partenerilor sociali. Acestea au fost întocmite în toate limbile sondajului, cu scopul de a încuraja participarea la sondaj.</dd>
+                <dt>Chestionare principale:</dt>
+                <dd>
+                  <ul>
+                    <li>Chestionar adresat reprezentanților conducerii: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Chestionar adresat reprezentaților lucrătorilor: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Rapoarte tehnice:</dt>
+                <dd>
+                  <ul>
+                    <li>Sondajul european privind riscurile noi și emergente &ndash; riscuri psihosociale (ESENER-PSR 2009) &ndash; Raport tehnic: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Evaluarea ex-post a Sondajului european în rândul întreprinderilor privind riscurile noi și emergente: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Raport de eșantionare ESENER 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Setul de date ESENER 2009 poate fi accesat prin intermediul platformelor <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a> (Serviciul de date din Regatul Unit al Universității Essex), <a href=\"https://data.europa.eu/euodp/ro/data/dataset/esener-1\" target=\"_blank\">European data portal</a> (Portalul european de date) și <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Caiet de sarcini:</dt>
+                <dd>Procedură deschisă publicată la 5&nbsp;decembrie&nbsp;2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Scrisoare de asistență:</dt>
+                <dd>Scrisori care stabilesc contextul și obiectivele sondajului, precum și asistența oferită din partea partenerilor sociali. Acestea au fost întocmite în toate limbile sondajului, cu scopul de a încuraja participarea la sondaj.</dd>
+                <dt>Chestionar principal:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Rapoarte tehnice:</dt>
+                <dd>
+                  <ul>
+                    <li>Raport tehnic: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Raport privind calitatea: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Raport privind traducerea: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Setul de date ESENER 2014 poate fi accesat prin intermediul platformelor <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a> (Serviciul de date din Regatul Unit al Universității Essex), <a href=\"https://data.europa.eu/euodp/ro/data/dataset/esener-2\" target=\"_blank\">European data portal</a> (Portalul european de date) și <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Caiet de sarcini:</dt>
+                <dd>Procedură deschisă publicată la 5&nbsp;ianuarie&nbsp;2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/ro/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Scrisoare de asistență</dt>
+                <dd>Scrisori care stabilesc contextul și obiectivele sondajului, precum și asistența oferită din partea partenerilor sociali. Acestea au fost întocmite în toate limbile sondajului, cu scopul de a încuraja participarea la sondaj.</dd>
+                <dt>Chestionar principal</dt>
+                <dt>Rapoarte tehnice</dt>
+              </dl>
+              <p>Vă rugăm să rețineți că toate lucrările care utilizează sondajul ESENER sau fac referire la acesta trebuie să menționeze sursa prin citare bibliografică în note de subsol sau în secțiunea de referințe a publicației. În mod similar, orice publicație apărută în format tipărit sau electronic sau difuzată, care se bazează în întregime sau parțial pe sondajul ESENER, trebuie să menționeze ca sursă Agenția Europeană pentru Securitate și Sănătate în Muncă (EU-OSHA). De asemenea, aceasta trebuie să fie însoțită de mențiunea că EU-OSHA nu poartă nicio răspundere pentru analizele sau interpretările ulterioare ale acestora.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Metodika ESENER</h1>
+        <h2>Svet a&nbsp;jednotka analýzy</h2>
+          <p>Súbor &scaron;tatistického zisťovania zahŕňa v&scaron;etky organizácie, ktoré majú päť alebo viacero zamestnancov v&nbsp;zúčastnených krajinách, a&nbsp;pokrýva v&scaron;etky sektory hospodárskej činnosti s&nbsp;výnimkou súkromných domácností (NACE T) a&nbsp;extrateritoriálnych organizácií (NACE U). Poľnohospodárstvo, lesníctvo a&nbsp;rybolov (NACE A) a&nbsp;organizácie zamestnávajúce menej ako 10 pracovníkov nie sú zahrnuté v&nbsp;ESENER 2009. Na účely zisťovania sa organizácia vymedzuje ako jednotka predstavujúca činnosti jedného zamestnávateľa v&nbsp;jednotnom súbore priestorov (napr. jediná pobočka banky, továreň na&nbsp;automobily alebo &scaron;kola).</p>
+          <p>Zúčastnené krajiny tvoria v&scaron;etky členské &scaron;táty Európskej únie, ako aj Nórsko a&nbsp;Švajčiarsko. Turecko bolo zahrnuté do ESENER 2009 a&nbsp;2014, Albánsko a&nbsp;Čierna Hora boli zahrnuté do ESENER 2014 a&nbsp;Island, Severné Macedónsko a&nbsp;Srbsko boli zahrnuté do ESENER 2014 a&nbsp;2019.</p>
+           
+          <h3>Pokrytie krajín v&nbsp;ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Európska únia (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Nórsko</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Švajčiarsko</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Island</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Severné Macedónsko</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Srbsko</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turecko</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albánsko</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Čierna Hora</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Vrátane Chorvátska a&nbsp;Spojeného kráľovstva</p>
+
+        <h2>Respondenti</h2>
+          <p>V&nbsp;každej skúmanej organizácii sa vypočula <em>&bdquo;osoba, ktorá najlep&scaron;ie pozná, ako sa bezpečnostné a&nbsp;zdravotné riziká riadia na jej pracovisku&ldquo;</em>. Lí&scaron;i sa to od ESENER 2009, pri ktorom sa cielilo na <em>&bdquo;služobne najstar&scaron;ieho vedúceho, ktorý koordinuje činnosti bezpečnosti a&nbsp;ochrany zdravia v&nbsp;tejto organizácii&ldquo;</em>. Okrem toho v&nbsp;ESENER 2009 bol pohovor so zástupcami pracovníkov v&nbsp;oblasti bezpečnosti a&nbsp;ochrany zdravia zameraný na tie organizácie, v&nbsp;ktorých 1) bol dokončený pohovor s&nbsp;riadením; 2) existuje formálne vymenovaný zástupca s&nbsp;osobitnou zodpovednosťou za pracovníkov v&nbsp;oblasti bezpečnosti a&nbsp;ochrany zdravia; a&nbsp;3) respondent riadenia poskytol povolenie na pohovor.</p>
+          <p>Hlavným dôvodom zmeny bolo zacieliť na osobu, ktorá má najlep&scaron;iu znalosť o&nbsp;v&scaron;etkých problémoch v&nbsp;oblasti zdravia a&nbsp;bezpečnosti vrátane podrobností o&nbsp;posudzovaní rizík a&nbsp;iných konkrétnych opatrení bez ohľadu na jej funkciu alebo úlohu v&nbsp;organizácii, ktorá sa aj tak zisťuje v&nbsp;následnej otázke.</p>
+             
+        <h2>Stratégia výberu vzoriek</h2>
+          <p>V záujme zaistenia medzinárodnej porovnateľnosti výsledkov zisťovania je nevyhnutné, aby stratégia výberu vzoriek viedla k&nbsp;rovnakému typu jednotiek zisťovaných v&nbsp;každej krajine. Kvalita dostupných registrov adries sa lí&scaron;i v&nbsp;rámci zúčastnených krajín z&nbsp;hľadiska:</p>
+          <ul>
+           <li>pokrytia (najmä začlenené sektory činnosti),</li>
+           <li>dostupnosti a&nbsp;presnosti potrebných základných informácií (napríklad sektor činnosti a&nbsp;počet zamestnancov).</li>
+          </ul>
+          <p>Existujúce registre adries nie sú porovnateľné medzi krajinami, a&nbsp;preto bolo vynaložené značné úsilie na vytvorenie vzoriek, ktoré poskytujú potrebnú kvalitu a&nbsp;zaisťujú medzinárodnú porovnateľnosť. Tieto snahy si vyžadovali postup preverovania v&nbsp;tých krajinách, v&nbsp;ktorých dostupné registre adries poskytujú informácie skôr na úrovni spoločnosti ako na úrovni organizácie.</p>
+          <p>Stratifikácia vzorky je založená na matici &scaron;tyroch tried veľkosti a&nbsp;ôsmych skupín sektorov. Zatiaľ čo v&scaron;eobecný prístup k&nbsp;výberu vzorky pri prvých dvoch vlnách ESENER bol prevažne rovnaký, postupom rokov nastali určité zmeny, najmä pokiaľ ide o&nbsp;ESENER 2009. Podrobnosti sú dostupné na <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> a&nbsp;<a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Matica výberu vzorky ESENER 2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Skupina sektorov &ndash; sekcie NACE Rev. 2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Veľkosť &ndash; počet zamestnancov</th>
+                   </tr>
+                   <tr>
+                      <th>5&nbsp;&ndash;&nbsp;9</th>
+                      <th>10&nbsp;&ndash;&nbsp;49</th>
+                      <th>50&nbsp;&ndash;&nbsp;249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Poľnohospodárstvo, lesníctvo a&nbsp;rybolov</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Výstavba, nakladanie s&nbsp;odpadom, dodávka vody a&nbsp;elektrickej energie</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Výroba</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Obchod, doprava, stravovanie/ubytovanie a&nbsp;rekreačné činnosti</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: Činnosti týkajúce sa IT, finančníctva, obchodovania s&nbsp;nehnuteľnosťami a&nbsp;ostatných technických, vedeckých alebo osobných služieb</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Verejná správa</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Vzdelávanie</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Činnosti v&nbsp;oblasti ľudského zdravia a&nbsp;sociálnej práce</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Vývoj dotazníka</h2>
+          <p>Dotazník ESENER 2019 je do značnej miery rovnaký s&nbsp;dotazníkom, ktorý sa používal v&nbsp;predchádzajúcej vlne (ESENER 2014), ktorý bol pôvodne založený na verzii &scaron;truktúry riadenia dotazníka ESENER 2009. Takmer v&scaron;etky dotazníky v&scaron;ak boli medzi rokmi 2009 a&nbsp;2014 upravené, a&nbsp;preto sú analýzy trendov možné od ESENER 2014. Vývoj a&nbsp;revízia dotazníka ESENER sa vykonali v&nbsp;úzkej spolupráci medzi EU-OSHA, hlavným dodávateľom ESENER a&nbsp;skupinou výskumných pracovníkov v&nbsp;oblasti ochrany zdravia a&nbsp;bezpečnosti pri práci z&nbsp;jednotlivých krajín, ako aj zainteresovanými stranami EU-OSHA.</p>
+          <p>Dotazníky ESENER pre&scaron;li niekoľkými testami:</p>
+
+          <ol type=\"a\" >
+            <li><strong>Kognitívny predbežný test</strong> v&nbsp;Nemecku, Loty&scaron;sku a&nbsp;Holandsku s&nbsp;asi 40 podrobnými osobnými pohovormi. Hlavným cieľom kognitívneho predbežného testu je kontrola pochopenia a&nbsp;jasnosti otázok. Má aj niekoľko kognitívnych otázok zameraných na testovanie toho, či si respondenti z&nbsp;rôznych krajín a&nbsp;rôznych typov organizácií vysvetľujú &scaron;tandardizované otázky potrebným spôsobom a&nbsp;či sú pre nich relevantné. Kognitívny predbežný test zvyčajne vedie k&nbsp;niekoľkým úpravám dotazníka.</li>
+            <li><strong>Hodnotenie preložiteľnosti</strong> hlavnej anglickej verzie dotazníka. Skúsení prekladatelia z&nbsp;jednotlivých jazykových skupín vypracujú hrubé preklady návrhu hlavnej verzie dotazníka s&nbsp;cieľom nájsť prípadné nejednoznačnosti alebo iné problémy prekladu. Ak prekladatelia zistia takéto problémy, navrhnú alternatívne formulácie hlavnej verzie, ktorá sa primerane zreviduje.</li>
+            <li><strong>Pilotný test v&nbsp;teréne</strong> sa vykoná vo v&scaron;etkých krajinách v&nbsp;rámci asi 50 pohovorov na krajinu. Pomocou rovnakej infra&scaron;truktúry ako pri hlavnom zisťovaní sa pilotný test uskutoční v&nbsp;režime CATI (Computer Assisted Telephone Interviewing &ndash; počítačom podporovaný telefonický pohovor), ale ponúkne sa možnosť zúčastniť sa online (CAWI: Computer Assisted Web Interviewing &ndash; počítačom podporovaný internetový pohovor) pre tých, ktorí odmietnu vykonať pohovor po&nbsp;telefóne. Výsledkom pilotného testu v&nbsp;teréne bude niekoľko zmien hlavného dotazníka a&nbsp;jednotlivé vnútro&scaron;tátne verzie dotazníka.</li>
+          </ol>
+
+        <h2>Preklad</h2>        
+          <p>Pre krajiny zahrnuté do zisťovania sa vytvorili rôzne vnútro&scaron;tátne verzie dotazníka (dostupné tu: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> a&nbsp;ESENER 2019). Ideálna stratégia prekladu je základom na zaistenie toho, aby každá vnútro&scaron;tátna verzia dotazníka obsahovala vysoko kvalitné otázky, ktoré je možné adresovať v&scaron;etkým druhom podnikov v&nbsp;predmetnej krajine a&nbsp;ktorá vytvára informácie, ktoré je možné porovnávať medzinárodne. Preklad dotazníka ESENER dodržiava prístup TRAPD, čo je skratka anglických pojmov <em>Translation, Review, Adjudication, Pre-testing and Documentation (preklad, revízia, posúdenie, predbežné testovanie a&nbsp;dokumentácia)</em> (Harkness, J. A. (2003). Questionnaire translation. V J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (s.&nbsp;35&ndash;56). Hoboken, NJ: John Wiley &amp; Sons) s&nbsp;výnimkou prvej vlny (dostupné tu: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Pri jazykoch, ktoré používajú dva alebo viaceré krajiny, sa vytvorili rôzne vnútro&scaron;tátne verzie pri zohľadnení pracovných postupov, ako sú zastúpenie pracovníkov alebo in&scaron;pekcia práce, ktoré si vyžadujú iné otázky a&nbsp;terminológiu. Viac podrobností o&nbsp;procese prekladu nájdete v&nbsp;<a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Správe k&nbsp;prekladu</a> &ndash; pozri niž&scaron;ie.</p>
+          <p>Základné kroky zahrnuté do prekladu ESENER sú:</p>
+           
+          <ol type=\"1\" >
+            <li>Dva nezávislé preklady do každého jazyka vykonané profesionálnymi prekladateľmi &ndash; rodenými hovoriacimi cieľového jazyka &ndash; ktorí neboli navzájom v&nbsp;kontakte počas vytvárania svojho prekladu.</li>
+            <li>Revízia nezávislých prekladov rozhodcom, ktorý navrhne novú verziu.</li>
+            <li>Revízne stretnutia rozhodcu s&nbsp;dvomi prekladateľmi s&nbsp;cieľom spoločne prediskutovať nový návrh a&nbsp;dohodnúť sa na konečnej posúdenej verzii.</li>
+            <li>Kontrola posúdených verzií <a href=\"https://osha.europa.eu/sk/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">sieťou kontaktných miest</a> EU-OSHA s&nbsp;osobitným zameraním na terminológiu vnútro&scaron;tátnej bezpečnosti a&nbsp;ochrany zdravia pri práci (BOZP) vrátane otázok súvisiacich s&nbsp;orgánmi zastúpenia pracovníkov.</li>
+          </ol>
+
+        <h2>Veľkosti vnútro&scaron;tátnych vzoriek</h2>
+          <p>Vnútro&scaron;tátnym orgánom bola v&nbsp;ESENER 2014 po prvýkrát ponúknutá možnosť financovať roz&scaron;írenie veľkosti ich vnútro&scaron;tátnej vzorky. Španielsko, Slovinsko a&nbsp;Spojené kráľovstvo prijali ponuku na&nbsp;posilnenie veľkostí svojich vlastných vzoriek. Pri ESENER 2019 tri krajiny prijali túto ponuku (Írsko, Nórsko a&nbsp;Slovinsko), ktorá tentokrát zahŕňala aj možnosť pridať do ich príslu&scaron;ných dotazníkov dve až tri otázky vnútro&scaron;tátneho záujmu. Švajčiarsko plne financovalo v&scaron;etky vlny ESENER.</p>
+           
+          <h3>Dosiahnuté veľkosti vzoriek v&nbsp;ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Krajina</th>
+                    <th class=\"center-text\">ESENER 2009 (pohovory riadenia)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rakúsko</th>
+                    <td>1&nbsp;034</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgicko</th>
+                    <td>1&nbsp;069</td>
+                    <td>1&nbsp;504</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulharsko</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Chorvátsko</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Cyprus</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Česká republika</th>
+                    <td>1&nbsp;015</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Dánsko</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estónsko</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Fínsko</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Francúzsko</th>
+                    <td>1&nbsp;497</td>
+                    <td>2&nbsp;256</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nemecko</th>
+                    <td>1&nbsp;510</td>
+                    <td>2&nbsp;261</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Grécko</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Maďarsko</th>
+                    <td>1&nbsp;031</td>
+                    <td>1&nbsp;514</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Írsko</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2&nbsp;000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Taliansko</th>
+                    <td>1&nbsp;501</td>
+                    <td>2&nbsp;254</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Loty&scaron;sko</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Litva</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luxembursko</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Holandsko</th>
+                    <td>1&nbsp;009</td>
+                    <td>1&nbsp;519</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Poľsko</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;257</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugalsko</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rumunsko</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovensko</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovinsko</th>
+                    <td>529</td>
+                    <td><em>1&nbsp;051</em></td>
+                    <td><em>1&nbsp;050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Španielsko</th>
+                    <td>1&nbsp;566</td>
+                    <td><em>3&nbsp;162</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Švédsko</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;521</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spojené kráľovstvo</th>
+                    <td>1&nbsp;500</td>
+                    <td><em>4&nbsp;250</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nórsko</th>
+                    <td>951</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Švajčiarsko</th>
+                    <td>1&nbsp;019</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Island</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Srbsko</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Severné Macedónsko</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turecko</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albánsko</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Čierna Hora</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Spolu</th>
+                    <td><strong>28&nbsp;649</strong></td>
+                    <td><strong>49&nbsp;320</strong></td>
+                    <td><strong>45&nbsp;200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Dokumenty a&nbsp;ďal&scaron;ie informácie pre výskumných pracovníkov</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Špecifikácie ponuky:</dt>
+                <dd>Verejná výzva na súťaž z&nbsp;21.&nbsp;augusta 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Sprievodný list:</dt>
+                <dd>Listy, v&nbsp;ktorých sa stanovujú základné informácie a&nbsp;ciele prieskumu, a&nbsp;podpora od sociálnych partnerov sa poskytla pri&nbsp;v&scaron;etkých jazykoch prieskumu s&nbsp;cieľom podporiť účasť na&nbsp;prieskume.</dd>
+                <dt>Hlavné dotazníky:</dt>
+                <dd>
+                  <ul>
+                    <li>Dotazník pre zástupcov riadenia: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Dotazník pre zástupcov pracovníkov: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Technické správy:</dt>
+                <dd>
+                  <ul>
+                    <li>Európsky prieskum v&nbsp;kontexte nových a&nbsp;vznikajúcich rizík &ndash; Psychosociálne riziká (ESENER-PSR 2009) &ndash; Technická správa: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Ex-post hodnotenie európskeho prieskumu podnikov v&nbsp;kontexte nových a&nbsp;vznikajúcich rizík: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Správa o&nbsp;výbere vzoriek z&nbsp;roku 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Dátový súbor ESENER 2009 môžete nájsť prostredníctvom <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sk/data/dataset/esener-1\" target=\"_blank\">Európskeho dátového portálu</a> a&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Špecifikácie ponuky:</dt>
+                <dd>Verejná výzva na súťaž z&nbsp;5.&nbsp;decembra 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Sprievodný list:</dt>
+                <dd>Listy, v&nbsp;ktorých sa stanovujú základné informácie a&nbsp;ciele prieskumu, a&nbsp;podpora od sociálnych partnerov sa poskytla pri&nbsp;v&scaron;etkých jazykoch prieskumu s&nbsp;cieľom podporiť účasť na&nbsp;prieskume.</dd>
+                <dt>Hlavný dotazník:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Technické správy:</dt>
+                <dd>
+                  <ul>
+                    <li>Technická správa: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Správa o&nbsp;kvalite: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Správa o&nbsp;preklade: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Dátový súbor ESENER 2014 môžete nájsť prostredníctvom <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sk/data/dataset/esener-2\" target=\"_blank\">Európskeho dátového portálu</a> a&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Špecifikácie ponuky:</dt>
+                <dd>Verejná výzva na súťaž z&nbsp;5.&nbsp;januára 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/sk/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Sprievodný list</dt>
+                <dd>Listy, v&nbsp;ktorých sa stanovujú základné informácie a&nbsp;ciele prieskumu, a&nbsp;podpora od sociálnych partnerov sa poskytla pri&nbsp;v&scaron;etkých jazykoch prieskumu s&nbsp;cieľom podporiť účasť na&nbsp;prieskume.</dd>
+                <dt>Hlavný dotazník</dt>
+                <dt>Technické správy</dt>
+              </dl>
+              <p>Upozorňujeme, že vo&nbsp;v&scaron;etkých prácach, ktoré využívajú alebo odkazujú na ESENER, sa musí uviesť zdroj prostredníctvom bibliografických citácií v&nbsp;poznámkach pod čiarou alebo v&nbsp;časti s&nbsp;odkazmi na publikácie. Podobne v&scaron;etky publikácie v&nbsp;tlačenej, elektronickej alebo vysielanej forme založené úplne alebo čiastočne na ESENER musia uviesť Európsku agentúru pre bezpečnosť a&nbsp;ochranu zdravia pri práci (EU-OSHA). Zároveň musia zahrnúť vyhlásenie, že EU-OSHA nenesie žiadnu zodpovednosť za ich ďal&scaron;iu analýzu alebo interpretáciu.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Metodika ESENER</h1>
+        <h2>Svet a&nbsp;jednotka analýzy</h2>
+          <p>Súbor &scaron;tatistického zisťovania zahŕňa v&scaron;etky organizácie, ktoré majú päť alebo viacero zamestnancov v&nbsp;zúčastnených krajinách, a&nbsp;pokrýva v&scaron;etky sektory hospodárskej činnosti s&nbsp;výnimkou súkromných domácností (NACE T) a&nbsp;extrateritoriálnych organizácií (NACE U). Poľnohospodárstvo, lesníctvo a&nbsp;rybolov (NACE A) a&nbsp;organizácie zamestnávajúce menej ako 10 pracovníkov nie sú zahrnuté v&nbsp;ESENER 2009. Na účely zisťovania sa organizácia vymedzuje ako jednotka predstavujúca činnosti jedného zamestnávateľa v&nbsp;jednotnom súbore priestorov (napr. jediná pobočka banky, továreň na&nbsp;automobily alebo &scaron;kola).</p>
+          <p>Zúčastnené krajiny tvoria v&scaron;etky členské &scaron;táty Európskej únie, ako aj Nórsko a&nbsp;Švajčiarsko. Turecko bolo zahrnuté do ESENER 2009 a&nbsp;2014, Albánsko a&nbsp;Čierna Hora boli zahrnuté do ESENER 2014 a&nbsp;Island, Severné Macedónsko a&nbsp;Srbsko boli zahrnuté do ESENER 2014 a&nbsp;2019.</p>
+           
+          <h3>Pokrytie krajín v&nbsp;ESENER</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Európska únia (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Nórsko</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Švajčiarsko</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Island</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Severné Macedónsko</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Srbsko</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turecko</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albánsko</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Čierna Hora</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Vrátane Chorvátska a&nbsp;Spojeného kráľovstva</p>
+
+        <h2>Respondenti</h2>
+          <p>V&nbsp;každej skúmanej organizácii sa vypočula <em>&bdquo;osoba, ktorá najlep&scaron;ie pozná, ako sa bezpečnostné a&nbsp;zdravotné riziká riadia na jej pracovisku&ldquo;</em>. Lí&scaron;i sa to od ESENER 2009, pri ktorom sa cielilo na <em>&bdquo;služobne najstar&scaron;ieho vedúceho, ktorý koordinuje činnosti bezpečnosti a&nbsp;ochrany zdravia v&nbsp;tejto organizácii&ldquo;</em>. Okrem toho v&nbsp;ESENER 2009 bol pohovor so zástupcami pracovníkov v&nbsp;oblasti bezpečnosti a&nbsp;ochrany zdravia zameraný na tie organizácie, v&nbsp;ktorých 1) bol dokončený pohovor s&nbsp;riadením; 2) existuje formálne vymenovaný zástupca s&nbsp;osobitnou zodpovednosťou za pracovníkov v&nbsp;oblasti bezpečnosti a&nbsp;ochrany zdravia; a&nbsp;3) respondent riadenia poskytol povolenie na pohovor.</p>
+          <p>Hlavným dôvodom zmeny bolo zacieliť na osobu, ktorá má najlep&scaron;iu znalosť o&nbsp;v&scaron;etkých problémoch v&nbsp;oblasti zdravia a&nbsp;bezpečnosti vrátane podrobností o&nbsp;posudzovaní rizík a&nbsp;iných konkrétnych opatrení bez ohľadu na jej funkciu alebo úlohu v&nbsp;organizácii, ktorá sa aj tak zisťuje v&nbsp;následnej otázke.</p>
+             
+        <h2>Stratégia výberu vzoriek</h2>
+          <p>V záujme zaistenia medzinárodnej porovnateľnosti výsledkov zisťovania je nevyhnutné, aby stratégia výberu vzoriek viedla k&nbsp;rovnakému typu jednotiek zisťovaných v&nbsp;každej krajine. Kvalita dostupných registrov adries sa lí&scaron;i v&nbsp;rámci zúčastnených krajín z&nbsp;hľadiska:</p>
+          <ul>
+           <li>pokrytia (najmä začlenené sektory činnosti),</li>
+           <li>dostupnosti a&nbsp;presnosti potrebných základných informácií (napríklad sektor činnosti a&nbsp;počet zamestnancov).</li>
+          </ul>
+          <p>Existujúce registre adries nie sú porovnateľné medzi krajinami, a&nbsp;preto bolo vynaložené značné úsilie na vytvorenie vzoriek, ktoré poskytujú potrebnú kvalitu a&nbsp;zaisťujú medzinárodnú porovnateľnosť. Tieto snahy si vyžadovali postup preverovania v&nbsp;tých krajinách, v&nbsp;ktorých dostupné registre adries poskytujú informácie skôr na úrovni spoločnosti ako na úrovni organizácie.</p>
+          <p>Stratifikácia vzorky je založená na matici &scaron;tyroch tried veľkosti a&nbsp;ôsmych skupín sektorov. Zatiaľ čo v&scaron;eobecný prístup k&nbsp;výberu vzorky pri prvých dvoch vlnách ESENER bol prevažne rovnaký, postupom rokov nastali určité zmeny, najmä pokiaľ ide o&nbsp;ESENER 2009. Podrobnosti sú dostupné na <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> a&nbsp;<a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>Matica výberu vzorky ESENER 2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Skupina sektorov &ndash; sekcie NACE Rev. 2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Veľkosť &ndash; počet zamestnancov</th>
+                   </tr>
+                   <tr>
+                      <th>5&nbsp;&ndash;&nbsp;9</th>
+                      <th>10&nbsp;&ndash;&nbsp;49</th>
+                      <th>50&nbsp;&ndash;&nbsp;249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Poľnohospodárstvo, lesníctvo a&nbsp;rybolov</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Výstavba, nakladanie s&nbsp;odpadom, dodávka vody a&nbsp;elektrickej energie</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Výroba</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Obchod, doprava, stravovanie/ubytovanie a&nbsp;rekreačné činnosti</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: Činnosti týkajúce sa IT, finančníctva, obchodovania s&nbsp;nehnuteľnosťami a&nbsp;ostatných technických, vedeckých alebo osobných služieb</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Verejná správa</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Vzdelávanie</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Činnosti v&nbsp;oblasti ľudského zdravia a&nbsp;sociálnej práce</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Vývoj dotazníka</h2>
+          <p>Dotazník ESENER 2019 je do značnej miery rovnaký s&nbsp;dotazníkom, ktorý sa používal v&nbsp;predchádzajúcej vlne (ESENER 2014), ktorý bol pôvodne založený na verzii &scaron;truktúry riadenia dotazníka ESENER 2009. Takmer v&scaron;etky dotazníky v&scaron;ak boli medzi rokmi 2009 a&nbsp;2014 upravené, a&nbsp;preto sú analýzy trendov možné od ESENER 2014. Vývoj a&nbsp;revízia dotazníka ESENER sa vykonali v&nbsp;úzkej spolupráci medzi EU-OSHA, hlavným dodávateľom ESENER a&nbsp;skupinou výskumných pracovníkov v&nbsp;oblasti ochrany zdravia a&nbsp;bezpečnosti pri práci z&nbsp;jednotlivých krajín, ako aj zainteresovanými stranami EU-OSHA.</p>
+          <p>Dotazníky ESENER pre&scaron;li niekoľkými testami:</p>
+
+          <ol type=\"a\" >
+            <li><strong>Kognitívny predbežný test</strong> v&nbsp;Nemecku, Loty&scaron;sku a&nbsp;Holandsku s&nbsp;asi 40 podrobnými osobnými pohovormi. Hlavným cieľom kognitívneho predbežného testu je kontrola pochopenia a&nbsp;jasnosti otázok. Má aj niekoľko kognitívnych otázok zameraných na testovanie toho, či si respondenti z&nbsp;rôznych krajín a&nbsp;rôznych typov organizácií vysvetľujú &scaron;tandardizované otázky potrebným spôsobom a&nbsp;či sú pre nich relevantné. Kognitívny predbežný test zvyčajne vedie k&nbsp;niekoľkým úpravám dotazníka.</li>
+            <li><strong>Hodnotenie preložiteľnosti</strong> hlavnej anglickej verzie dotazníka. Skúsení prekladatelia z&nbsp;jednotlivých jazykových skupín vypracujú hrubé preklady návrhu hlavnej verzie dotazníka s&nbsp;cieľom nájsť prípadné nejednoznačnosti alebo iné problémy prekladu. Ak prekladatelia zistia takéto problémy, navrhnú alternatívne formulácie hlavnej verzie, ktorá sa primerane zreviduje.</li>
+            <li><strong>Pilotný test v&nbsp;teréne</strong> sa vykoná vo v&scaron;etkých krajinách v&nbsp;rámci asi 50 pohovorov na krajinu. Pomocou rovnakej infra&scaron;truktúry ako pri hlavnom zisťovaní sa pilotný test uskutoční v&nbsp;režime CATI (Computer Assisted Telephone Interviewing &ndash; počítačom podporovaný telefonický pohovor), ale ponúkne sa možnosť zúčastniť sa online (CAWI: Computer Assisted Web Interviewing &ndash; počítačom podporovaný internetový pohovor) pre tých, ktorí odmietnu vykonať pohovor po&nbsp;telefóne. Výsledkom pilotného testu v&nbsp;teréne bude niekoľko zmien hlavného dotazníka a&nbsp;jednotlivé vnútro&scaron;tátne verzie dotazníka.</li>
+          </ol>
+
+        <h2>Preklad</h2>        
+          <p>Pre krajiny zahrnuté do zisťovania sa vytvorili rôzne vnútro&scaron;tátne verzie dotazníka (dostupné tu: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> a&nbsp;ESENER 2019). Ideálna stratégia prekladu je základom na zaistenie toho, aby každá vnútro&scaron;tátna verzia dotazníka obsahovala vysoko kvalitné otázky, ktoré je možné adresovať v&scaron;etkým druhom podnikov v&nbsp;predmetnej krajine a&nbsp;ktorá vytvára informácie, ktoré je možné porovnávať medzinárodne. Preklad dotazníka ESENER dodržiava prístup TRAPD, čo je skratka anglických pojmov <em>Translation, Review, Adjudication, Pre-testing and Documentation (preklad, revízia, posúdenie, predbežné testovanie a&nbsp;dokumentácia)</em> (Harkness, J. A. (2003). Questionnaire translation. V J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (s.&nbsp;35&ndash;56). Hoboken, NJ: John Wiley &amp; Sons) s&nbsp;výnimkou prvej vlny (dostupné tu: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Pri jazykoch, ktoré používajú dva alebo viaceré krajiny, sa vytvorili rôzne vnútro&scaron;tátne verzie pri zohľadnení pracovných postupov, ako sú zastúpenie pracovníkov alebo in&scaron;pekcia práce, ktoré si vyžadujú iné otázky a&nbsp;terminológiu. Viac podrobností o&nbsp;procese prekladu nájdete v&nbsp;<a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Správe k&nbsp;prekladu</a> &ndash; pozri niž&scaron;ie.</p>
+          <p>Základné kroky zahrnuté do prekladu ESENER sú:</p>
+           
+          <ol type=\"1\" >
+            <li>Dva nezávislé preklady do každého jazyka vykonané profesionálnymi prekladateľmi &ndash; rodenými hovoriacimi cieľového jazyka &ndash; ktorí neboli navzájom v&nbsp;kontakte počas vytvárania svojho prekladu.</li>
+            <li>Revízia nezávislých prekladov rozhodcom, ktorý navrhne novú verziu.</li>
+            <li>Revízne stretnutia rozhodcu s&nbsp;dvomi prekladateľmi s&nbsp;cieľom spoločne prediskutovať nový návrh a&nbsp;dohodnúť sa na konečnej posúdenej verzii.</li>
+            <li>Kontrola posúdených verzií <a href=\"https://osha.europa.eu/sl/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">sieťou kontaktných miest</a> EU-OSHA s&nbsp;osobitným zameraním na terminológiu vnútro&scaron;tátnej bezpečnosti a&nbsp;ochrany zdravia pri práci (BOZP) vrátane otázok súvisiacich s&nbsp;orgánmi zastúpenia pracovníkov.</li>
+          </ol>
+
+        <h2>Veľkosti vnútro&scaron;tátnych vzoriek</h2>
+          <p>Vnútro&scaron;tátnym orgánom bola v&nbsp;ESENER 2014 po prvýkrát ponúknutá možnosť financovať roz&scaron;írenie veľkosti ich vnútro&scaron;tátnej vzorky. Španielsko, Slovinsko a&nbsp;Spojené kráľovstvo prijali ponuku na&nbsp;posilnenie veľkostí svojich vlastných vzoriek. Pri ESENER 2019 tri krajiny prijali túto ponuku (Írsko, Nórsko a&nbsp;Slovinsko), ktorá tentokrát zahŕňala aj možnosť pridať do ich príslu&scaron;ných dotazníkov dve až tri otázky vnútro&scaron;tátneho záujmu. Švajčiarsko plne financovalo v&scaron;etky vlny ESENER.</p>
+           
+          <h3>Dosiahnuté veľkosti vzoriek v&nbsp;ESENER</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Krajina</th>
+                    <th class=\"center-text\">ESENER 2009 (pohovory riadenia)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rakúsko</th>
+                    <td>1&nbsp;034</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgicko</th>
+                    <td>1&nbsp;069</td>
+                    <td>1&nbsp;504</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulharsko</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Chorvátsko</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Cyprus</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Česká republika</th>
+                    <td>1&nbsp;015</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Dánsko</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;508</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estónsko</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Fínsko</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Francúzsko</th>
+                    <td>1&nbsp;497</td>
+                    <td>2&nbsp;256</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nemecko</th>
+                    <td>1&nbsp;510</td>
+                    <td>2&nbsp;261</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Grécko</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;503</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Maďarsko</th>
+                    <td>1&nbsp;031</td>
+                    <td>1&nbsp;514</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Írsko</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2&nbsp;000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Taliansko</th>
+                    <td>1&nbsp;501</td>
+                    <td>2&nbsp;254</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Loty&scaron;sko</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Litva</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luxembursko</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Holandsko</th>
+                    <td>1&nbsp;009</td>
+                    <td>1&nbsp;519</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Poľsko</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;257</td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugalsko</th>
+                    <td>1&nbsp;005</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rumunsko</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovensko</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovinsko</th>
+                    <td>529</td>
+                    <td><em>1&nbsp;051</em></td>
+                    <td><em>1&nbsp;050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Španielsko</th>
+                    <td>1&nbsp;566</td>
+                    <td><em>3&nbsp;162</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Švédsko</th>
+                    <td>1&nbsp;000</td>
+                    <td>1&nbsp;521</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spojené kráľovstvo</th>
+                    <td>1&nbsp;500</td>
+                    <td><em>4&nbsp;250</em></td>
+                    <td>2&nbsp;250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nórsko</th>
+                    <td>951</td>
+                    <td>1&nbsp;513</td>
+                    <td>1&nbsp;950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Švajčiarsko</th>
+                    <td>1&nbsp;019</td>
+                    <td>1&nbsp;511</td>
+                    <td>1&nbsp;500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Island</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Srbsko</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Severné Macedónsko</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turecko</th>
+                    <td>1&nbsp;500</td>
+                    <td>2&nbsp;251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albánsko</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Čierna Hora</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Spolu</th>
+                    <td><strong>28&nbsp;649</strong></td>
+                    <td><strong>49&nbsp;320</strong></td>
+                    <td><strong>45&nbsp;200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Dokumenty a&nbsp;ďal&scaron;ie informácie pre výskumných pracovníkov</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Špecifikácie ponuky:</dt>
+                <dd>Verejná výzva na súťaž z&nbsp;21.&nbsp;augusta 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Sprievodný list:</dt>
+                <dd>Listy, v&nbsp;ktorých sa stanovujú základné informácie a&nbsp;ciele prieskumu, a&nbsp;podpora od sociálnych partnerov sa poskytla pri&nbsp;v&scaron;etkých jazykoch prieskumu s&nbsp;cieľom podporiť účasť na&nbsp;prieskume.</dd>
+                <dt>Hlavné dotazníky:</dt>
+                <dd>
+                  <ul>
+                    <li>Dotazník pre zástupcov riadenia: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Dotazník pre zástupcov pracovníkov: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Technické správy:</dt>
+                <dd>
+                  <ul>
+                    <li>Európsky prieskum v&nbsp;kontexte nových a&nbsp;vznikajúcich rizík &ndash; Psychosociálne riziká (ESENER-PSR 2009) &ndash; Technická správa: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Ex-post hodnotenie európskeho prieskumu podnikov v&nbsp;kontexte nových a&nbsp;vznikajúcich rizík: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Správa o&nbsp;výbere vzoriek z&nbsp;roku 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Dátový súbor ESENER 2009 môžete nájsť prostredníctvom <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sk/data/dataset/esener-1\" target=\"_blank\">Európskeho dátového portálu</a> a&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Špecifikácie ponuky:</dt>
+                <dd>Verejná výzva na súťaž z&nbsp;5.&nbsp;decembra 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Sprievodný list:</dt>
+                <dd>Listy, v&nbsp;ktorých sa stanovujú základné informácie a&nbsp;ciele prieskumu, a&nbsp;podpora od sociálnych partnerov sa poskytla pri&nbsp;v&scaron;etkých jazykoch prieskumu s&nbsp;cieľom podporiť účasť na&nbsp;prieskume.</dd>
+                <dt>Hlavný dotazník:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Technické správy:</dt>
+                <dd>
+                  <ul>
+                    <li>Technická správa: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Správa o&nbsp;kvalite: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Správa o&nbsp;preklade: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Dátový súbor ESENER 2014 môžete nájsť prostredníctvom <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sk/data/dataset/esener-2\" target=\"_blank\">Európskeho dátového portálu</a> a&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Špecifikácie ponuky:</dt>
+                <dd>Verejná výzva na súťaž z&nbsp;5.&nbsp;januára 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/sk/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Sprievodný list</dt>
+                <dd>Listy, v&nbsp;ktorých sa stanovujú základné informácie a&nbsp;ciele prieskumu, a&nbsp;podpora od sociálnych partnerov sa poskytla pri&nbsp;v&scaron;etkých jazykoch prieskumu s&nbsp;cieľom podporiť účasť na&nbsp;prieskume.</dd>
+                <dt>Hlavný dotazník</dt>
+                <dt>Technické správy</dt>
+              </dl>
+              <p>Upozorňujeme, že vo&nbsp;v&scaron;etkých prácach, ktoré využívajú alebo odkazujú na ESENER, sa musí uviesť zdroj prostredníctvom bibliografických citácií v&nbsp;poznámkach pod čiarou alebo v&nbsp;časti s&nbsp;odkazmi na publikácie. Podobne v&scaron;etky publikácie v&nbsp;tlačenej, elektronickej alebo vysielanej forme založené úplne alebo čiastočne na ESENER musia uviesť Európsku agentúru pre bezpečnosť a&nbsp;ochranu zdravia pri práci (EU-OSHA). Zároveň musia zahrnúť vyhlásenie, že EU-OSHA nenesie žiadnu zodpovednosť za ich ďal&scaron;iu analýzu alebo interpretáciu.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Menetelmä ESENER-kyselytutkimuksessa</h1>
+        <h2>Analysointi kokonaisuudessaan ja analyysiyksiköittäin</h2>
+          <p>Tutkimuspopulaatio käsittää osallistuvissa jäsenvaltioissa kaikki yritykset, joissa on vähintään viisi työntekijää, ja kattaa kaikki taloudellista toimintaa harjoittavat toimialat, paitsi kotitaloudet (NACE-luokka T) ja ekstraterritoriaaliset organisaatiot (NACE-luokka U). Vuoden 2009 ESENER-kyselytutkimus ei sisältänyt maataloutta, metsätaloutta eikä kalastusta (NACE-luokka A) eikä alle kymmenen työntekijän yrityksiä. Tutkimuksessa yrityksellä tai laitoksella tarkoitetaan yksittäisen työnantajan toiminnallista kokonaisuutta yksissä toimitiloissa (joka voi olla esimerkiksi pankin sivukonttori, autotehtaan tuotantolaitos tai koulun toimipiste).</p>
+          <p>Mukana tutkimuksessa ovat kaikki Euroopan unionin jäsenvaltiot sekä Norja ja Sveitsi. Turkki oli mukana vuosien 2009 ja 2014 kyselytutkimuksissa, Albania ja Montenegro olivat vuoden 2014 tutkimuksessa ja Islanti, Pohjois-Makedonia ja Serbia vuosien 2014 ja 2019 tutkimuksissa.</p>
+           
+          <h3>ESENER-kyselytutkimuksissa mukana olevat maat</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>ESENER 2009</th>
+                      <th>ESENER 2014</th>
+                      <th>ESENER 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Euroopan unionin jäsenvaltiot (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norja</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Sveitsi</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Islanti</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Pohjois-Makedonia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbia</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turkki</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albania</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Montenegro</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Kroatia ja Yhdistynyt kuningaskunta mukaan lukien.</p>
+
+        <h2>Vastaajat</h2>
+          <p>Kullakin tutkimuksen kohteena olevalla työpaikalla haastateltiin henkilöä, joka on parhaiten perillä tavasta hallita työsuojeluriskejä. Tämä eroaa vuoden 2009 kyselytutkimuksesta, jossa kohteena oli <em>korkeimmassa asemassa oleva henkilö, joka koordinoi työpaikan työsuojelutoimia</em>. Lisäksi tuolloin pyrittiin haastattelemaan työsuojeluvaltuutettua työpaikoilla, joilla oli (1) haastateltu johtoa, (2) virallisesti nimetty työsuojeluvaltuutettu ja (3) johdon suostumus haastatteluun.</p>
+          <p>Tärkein syy muutokseen haastateltavissa oli pyrkimys tavoittaa tehtävään tai asemaan katsomatta henkilö, joka tuntee parhaiten kaikki työpaikan työsuojelukysymykset &ndash; mukaan lukien riskinarviointi ja muut erityiset toimet &ndash; joita seurantatutkimuksessa kysytään.</p>
+             
+        <h2>Otantamenetelmä</h2>
+          <p>Jotta tutkimustulokset olisivat vertailukelpoisia eri maiden välillä, on ratkaisevan tärkeää, että otantamenetelmän perusteella tarkasteltavaksi saatavat yksiköt kussakin maassa ovat samanlaisia. Esimerkiksi osallistuvien maiden osoitetiedoissa on laadullista kirjavuutta seuraavien osalta:</p>
+          <ul>
+           <li>kattavuus (erityisesti mukana olevien toimialojen osalta)</li>
+           <li>tarvittavien taustatietojen saatavuus ja tarkkuus (kuten toimiala ja työntekijöiden määrä).</li>
+          </ul>
+          <p>Nykyiset osoiterekisterit eivät ole vertailukelpoisia eri maiden kesken. Siksi on tehty paljon työtä otosten muokkaamiseksi laadukkaiksi maiden välisen vertailtavuuden varmistamiseksi. Tähän on tarvittu seulontamenettelyä maissa, joissa saatavilla olevissa osoiterekistereissä on tietoa ennemminkin koko yrityksestä kuin sen yksiköistä.</p>
+          <p>Otoksen ositus perustuu neljän kokoluokan ja kahdeksan toimialaryhmän matriisiin. Vaikka yleinen lähestymistapa kyselytutkimuksen kahdessa ensimmäisessä otannassa oli pitkälti sama, vuosien mittaan on tapahtunut joitakin muutoksia, erityisesti vuoden 2009 kyselytutkimukseen nähden. Lisätietoja: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> ja <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
+            
+          <h3>ESENER 2019, otantamatriisi</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Toimialaryhmä &ndash; NACE Rev.2 osiot</th>
+                      <th  colspan=\"4\" class=\"center-text\">Koko &ndash; työntekijöitä</th>
+                   </tr>
+                   <tr>
+                      <th>5&ndash;9</th>
+                      <th>10&ndash;49</th>
+                      <th>50&ndash;249</th>
+                      <th>yli 250</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Maatalous, metsätalous ja kalatalous</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Rakentaminen, jätehuolto, vesihuolto ja sähköhuolto</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Teollisuus</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Kauppa, liikenne, ravitsemus-/majoitustoiminta ja virkistystoiminta</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: Tietotekniikka-, rahoitus- ja kiinteistöalan toiminta sekä muu teknis-tieteellinen toiminta tai henkilökohtaiset palvelut</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Julkishallinto</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Koulutus</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Terveys ja sosiaalityö</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Kyselyn kehittäminen</h2>
+          <p>ESENER 2019 -kyselylomake on suurelta osin sama kuin se, jota käytettiin edellisessä tutkimuksessa (ESENER 2014), ja pohjautuu alun perin vuoden 2009 tutkimuksen johdolle tehtyyn versioon.  Lähes kaikkia kysymyksiä kuitenkin muutettiin vuosien 2009 ja 2014 välillä. Tämä tekee mahdolliseksi trendianalyysit ESENER 2014 -kyselytutkimuksesta eteenpäin. ESENER-kyselyä kehitetään ja tarkistetaan tiiviissä yhteistyössä EU-OSHAn, kyselytutkimuksen päätoimeksisaajan sekä eri maiden työterveys- ja työturvallisuusalan tutkijoista koostuvan ryhmän sekä EU-OSHAn sidosryhmien kesken.</p>
+          <p>Tutkimuksen kyselylomakkeita testataan monin tavoin:</p>
+
+          <ol type=\"a\" >
+            <li> <strong>Kognitiivinen esitestaus</strong> Saksassa, Latviassa ja Alankomaissa, joka käsittää noin 40 henkilökohtaista syvähaastattelua. Kognitiivisen esitestin keskeisimpänä tavoitteena on selvittää kysymysten ymmärrettävyys ja selkeys. Useissa kognitiivisissa kysymyksissä pyritään myös testaamaan, tulkitsevatko eri maiden ja eri organisaatioiden vastaajat standardoidut kysymykset tarkoitetulla tavalla ja ovatko kysymykset niiden kannalta olennaisia. Kognitiivisen esitestin jälkeen tehdään yleensä useita muutoksia kyselylomakkeeseen.</li>
+            <li>Kyselyn englanninkielisen version <strong>käännettävyyden arviointi</strong>. Kokeneet kääntäjät eri kielikunnista tekevät raakaversiot kyselylomakeluonnoksen keskeisimmistä osioista, jotta voitaisiin tunnistaa mahdolliset epäselvyydet tai muut kääntämisen ongelmat. Jos tällaisia ongelmia havaitaan, kääntäjät tekevät pääversioon vaihtoehtoisia ehdotuksia, ja pääversio tarkistetaan sen mukaisesti.</li>
+            <li><strong>Pilottitesti kentällä</strong>, jossa kaikissa maissa tehdään noin 50 haastattelua. Käytössä on sama infrastruktuuri kuin päätutkimuksessa. Tähän pilottitestiin voi osallistua tietokoneavusteisessa puhelinhaastattelussa, ja niille joille se ei sovi,  tarjotaan mahdollisuutta tietokoneavusteiseen haastatteluun verkossa. Pilottitesti johtaa joihinkin muutoksiin alkuperäisessä kyselylomakkeessa ja sen kansallisissa versioissa.</li>
+          </ol>
+
+        <h2>Kääntäminen</h2>        
+          <p>Kyselylomakkeesta on laadittu erilaiset kansalliset versiot tutkimukseen sisältyville maille (saatavissa täältä: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> ja ESENER 2019). Hyvää käännösstrategiaa tarvitaan varmistamaan kunkin kansallisen version kysymysten laadukkuus, jotta ne sopisivat asianomaisen maan kaikille yrityksille ja laitoksille ja että saataisiin tietoja, jotka ovat kansainvälisesti vertailukelpoisia. ESENER-kyselytutkimuksen kääntämisessä noudatetaan TRAPD-metodia, jossa teksti <em> käännetään, tarkistetaan, hyväksytään, testataan ja dokumentoidaan</em> (Harkness, J. A. (2003). Questionnaire translation. Teoksessa J. A. Harkness, F. van de Vijver ja P. Ph. Mohler (toim.), Cross-cultural survey methods (s. 35&ndash;56). Hoboken, NJ: John Wiley &amp; Sons), paitsi ensimmäinen kyselytutkimus (saatavissa täältä: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Kielestä, jota puhutaan yhdessä tai useammassa maassa, laaditaan erilaiset kansalliset versiot. Niissä otetaan huomioon työhön liittyvät käytännöt, kuten työntekijöiden edustus tai työsuojelutarkastukset, jotka vaativat erilaisia kysymyksiä ja erilaista terminologiaa. Lisätietoja kääntämisestä on <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">käännöskertomuksessa</a>  jäljempänä.</p>
+          <p>ESENER-kyselytutkimuksen kääntämisen vaiheet ovat seuraavat:</p>
+           
+          <ol type=\"1\" >
+            <li>Kaksi ammattikääntäjää, joiden äidinkieli on kohdekieli, tekee käännöksen itsenäisesti ilman keskinäistä yhteydenpitoa.</li>
+            <li>Kyseiset käännökset tarkastaa käännösten hyväksyjä, joka tekee niistä uuden version.</li>
+            <li>Käännöksen tarkastaja ja kyseiset kaksi kääntäjää keskustelevat uudesta luonnoksesta ja sopivat lopullisesta versiosta.</li>
+            <li>Tämän jälkeen EU-OSHAn <a href=\"https://osha.europa.eu/fi/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">koordinointikeskusten verkosto</a> tarkastaa hyväksytyt versiot. Sen painotus on erityisesti kansallisessa työsuojelun terminologiassa ja työntekijöiden edustuselimiin liittyvissä kysymyksissä.</li>
+          </ol>
+
+        <h2>Kansallisten otosten koot</h2>
+          <p>Vuoden 2014 ESENER-kyselytutkimuksen yhteydessä kansallisille viranomaisille tarjottiin ensimmäisen kerran mahdollisuutta laajentaa niiden kansallista otosta osallistumalla sen rahoitukseen. Espanja, Slovenia ja Yhdistynyt kuningaskunta halusivat kasvattaa otoksensa kokoa. ESENER 2019 -kyselytutkimuksessa kolme maata (Irlanti, Norja ja Slovenia) hyödynsi tätä tarjousta, johon sisältyi myös mahdollisuus lisätä kaksi tai kolme kysymystä kansallisten mielenkiinnon kohteiden mukaan. Sveitsi on rahoittanut täysimääräisesti kaikkia ESENER-kyselytutkimuksia.</p>
+           
+          <h3>ESENER-kyselytutkimuksen otoskoot</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Maa</th>
+                    <th class=\"center-text\">ESENER 2009 (johdon haastattelut)</th>
+                    <th class=\"center-text\">ESENER 2014</th>
+                    <th>ESENER 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Itävalta</th>
+                    <td>1 034</td>
+                    <td>1 503</td>
+                    <td>1 500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgia</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1 500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgaria</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kroatia</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kypros</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>T&scaron;ekki</th>
+                    <td>1 015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Tanska</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Viro</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Suomi</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ranska</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Saksa</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kreikka</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Unkari</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Irlanti</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Italia</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Latvia</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Liettua</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luxemburg</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Alankomaat</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Puola</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugali</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Romania</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovakia</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovenia</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Espanja</th>
+                    <td>1566</td>
+                    <td><em>3 162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ruotsi</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Yhdistynyt kuningaskunta</th>
+                    <td>1500</td>
+                    <td><em>4 250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norja</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Sveitsi</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Islanti</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbia</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Pohjois-Makedonia</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turkki</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albania</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Montenegro</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Yhteensä</th>
+                    <td><strong>28649</strong></td>
+                    <td><strong>49320</strong></td>
+                    <td><strong>45200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Asiakirjoja ja lisätietoja tutkijoille</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+              <dl>
+                <dt>Tarjouseritelmä:</dt>
+                <dd>Avoin tarjouspyyntö julkaistiin 21.<sup></sup> elokuuta 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tarjouseritelmä, ESENER.pdf</a></dd>
+                <dt>Taustatietoa sisältävä kirje:</dt>
+                <dd>Kirje, jossa selostetaan tutkimuksen tausta, tavoitteet ja sen työmarkkinaosapuolilta saama tuki, laadittiin kaikilla tutkimuksen kielillä. Sen tarkoituksena oli kannustaa osallistumaan tutkimukseen.</dd>
+                <dt>Kyselylomakkeet:</dt>
+                <dd>
+                  <ul>
+                    <li>Kyselylomake johdon (JO) edustajalle: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER JO, lopullinen, 20090219.pdf</a></li>
+                    <li>Kyselylomake työntekijöiden (TT) edustajalle: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER TT, lopullinen, 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Tekniset raportit:</dt>
+                <dd>
+                  <ul>
+                    <li>Kyselytutkimus Euroopan yrityksille uusista ja kehittyvistä riskeistä &ndash; psykososiaaliset riskit (ESENER-PSR 2009) &ndash; tekninen raportti: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Tekninen raportti, EUOSHA.pdf</a></li>
+                    <li>Euroopan yrityksille uusista ja kehittyvistä riskeistä tehdyn kyselytutkimuksen jälkiarviointi: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Esener-kyselytutkimuksen jälkiarviointi.pdf</a></li>
+                    <li>ESENERin otantaraportti 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-otantaraportti-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>ESENER 2009:n tiedostot saa nähtäväksi <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Yhdistyneen kuningaskunnan datapalvelun (Essexin yliopisto)</a>, <a href=\"https://data.europa.eu/euodp/fi/data/dataset/esener-1\" target=\"_blank\">Euroopan dataportaalin</a> ja <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>-tietoportaalin kautta.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Tarjouseritelmä:</dt>
+                <dd>Avoin tarjouspyyntö julkaistiin 5.<sup></sup> joulukuuta 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tarjouseritelmä.pdf</a></dd>
+                <dt>Taustatietoa sisältävä kirje:</dt>
+                <dd>Kirje, jossa selostetaan tutkimuksen tausta, tavoitteet ja sen työmarkkinaosapuolilta saama tuki, laadittiin kaikilla tutkimuksen kielillä. Sen tarkoituksena oli kannustaa osallistumaan tutkimukseen.</dd>
+                <dt>Kyselylomakkeet:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Kyselylomake2.pdf</a></dd>
+                <dt>Tekniset raportit:</dt>
+                <dd>
+                  <ul>
+                    <li>Tekninen raportti: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2, tekninen raportti.pdf</a></li>
+                    <li>Laatuselvitys: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2, laaturaportti.pdf</a></li>
+                    <li>Käännöskertomus: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Käännöskertomus.pdf</a></li>
+                </dd>
+              </dl>
+              <p>ESENER 2014:n tiedostot saa nähtäväksi <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Yhdistyneen kuningaskunnan datapalvelun (Essexin yliopisto)</a>, <a href=\"https://data.europa.eu/euodp/fi/data/dataset/esener-2\" target=\"_blank\">Euroopan dataportaalin</a> ja <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>-tietoportaalin kautta.</p>
+            <h4>ESENER 2019</h4>
+              <dl>
+                <dt>Tarjouseritelmä:</dt>
+                <dd>Avoin tarjouspyyntö julkaistiin 5<sup></sup>. tammikuuta 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Taustatietoa sisältävä kirje</dt>
+                <dd>Kirje, jossa selostetaan tutkimuksen tausta, tavoitteet ja sen työmarkkinaosapuolilta saama tuki, laadittiin kaikilla tutkimuksen kielillä. Sen tarkoituksena oli kannustaa osallistumaan tutkimukseen.</dd>
+                <dt>Kyselylomake</dt>
+                <dt>Tekniset selvitykset</dt>
+              </dl>
+              <p>On syytä huomata, että kaikissa ESENER-kyselytutkimusta käyttävissä tai siihen viittaavissa teoksissa on mainittava lähde käyttämällä bibliografisia viittauksia alaviitteissä tai julkaisujen lähteissä. Vastaavasti kaikissa kokonaan tai osittain ESENER-kyselytutkimusten tietoihin perustuvissa julkaisuissa &ndash; painetuissa, sähköisissä tai yleisölle lähetetyissä julkaisuissa &ndash; tulee mainita Euroopan työterveys- ja työturvallisuusvirasto (EU-OSHA). Niissä tulee myös mainita, ettei EU-OSHA vastaa tietojen myöhemmästä analysoinnista tai tulkinnasta.</p><!-- END LITERAL HTML --></body>
+</html>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<html>
+  <head>
+    <meta http-equiv=Content-Type content=\"text/html; charset=utf-8\">
+    <link rel=\"stylesheet\" href=\"https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css\" integrity=\"sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T\" crossorigin=\"anonymous\">
+    <style type=\"text/css\">
+      .container{
+        text-align: justify;: 
+      } 
+      .center-text{
+        text-align: center;
+      }
+      .data-table th{ text-align: left; }
+      table .data-table:last-child th, table .data-table:last-child td, table.table2 tr:last-child td{ border-bottom: 1px solid #dee2e6; }
+      .data-table td{ text-align: center; }
+    </style>
+  </head>
+  <body class=\"container\"><!-- INIT LITERAL HTML --><h1>Esener-undersökningens metod</h1>
+        <h2>Analys av sammanhang och enhet</h2>
+          <p>Populationen för Esener-undersökningen omfattar alla verksamheter med minst fem anställda i de deltagande länderna och alla näringsgrenar utom privathushåll (Nace&nbsp;T) och internationella organisationer (Nace&nbsp;U). Sektorerna jordbruk, skogsbruk och fiske (Nace&nbsp;A) och verksamheter med färre än tio anställda omfattades inte av Esener-undersökningen 2009. Inom ramen för undersökningen definieras verksamhet som de aktiviteter som en arbetsgivare utför i vissa avgränsade lokaler (t.ex. en bankfilial, en bilfabrik eller en skola).</p>
+          <p>De deltagande länderna omfattar alla Europeiska unionens medlemsstater samt Norge och Schweiz. Turkiet ingick i Esener-undersökningarna 2009 och 2014, Albanien och Montenegro ingick i Esener 2014 och Island, Nordmakedonien och Serbien omfattades av Esener 2014 och 2019.</p>
+           
+          <h3>Länders täckning i Esener</h3>
+             <table class=\"table table1\">
+                <tbody>
+                   <tr class=\"center-text\">
+                      <th>&nbsp;</th>
+                      <th>Esener 2009</th>
+                      <th>Esener 2014</th>
+                      <th>Esener 2019</th>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Europeiska unionen (*)</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Norge</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Schweiz</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>X</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Island</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Nordmakedonien</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Serbien</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>X</td>                      
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Turkiet</th>
+                      <td>X</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Albanien</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>                      
+                      <td>&nbsp;</td>
+                   </tr>
+                   <tr class=\"data-table\">
+                      <th>Montenegro</th>
+                      <td>&nbsp;</td>
+                      <td>X</td>
+                      <td>&nbsp;</td>
+                   </tr>
+                </tbody>
+             </table>         
+             <p class=\"footer-note\">(*) Inklusive Kroatien och Förenade kungariket</p>
+
+        <h2>Uppgiftslämnare</h2>
+          <p>Inom varje verksamhet intervjuas <em>&rdquo;den person som bäst vet hur arbetsmiljörisker hanteras på arbetsplatsen i fråga&rdquo;</em>. Detta är en skillnad jämfört med Esener 2009, där man riktade in sig på <em>&rdquo;den högsta chefen med samordningsansvar för arbetsmiljöfrågor inom verksamheten&rdquo;</em>. I Esener&nbsp;2009 intervjuades arbetstagarföreträdaren med ansvar för arbetsmiljöfrågor vid de verksamheter där 1) en intervju med ledningen genomförts, 2) det fanns en formellt utsedd företrädare med särskilt ansvar för arbetstagarnas säkerhet och hälsa, och 3) den svarande i ledande befattning hade gett tillstånd till intervjun.</p>
+          <p>Huvudsyftet med denna ändring är att nå den person som vet mest om arbetsmiljöfrågorna vid verksamheten, inklusive detaljer om riskbedömning och andra särskilda åtgärder, oavsett vilken funktion eller roll personen i fråga har inom verksamheten (något som det ändå frågas om i en uppföljningsfråga).</p>
+             
+        <h2>Urvalsstrategi</h2>
+          <p>För att säkerställa att undersökningsresultaten är jämförbara mellan olika länder är det nödvändigt att ha en urvalsstrategi som borgar för att samma typ av enheter undersöks i varje land. Kvaliteten på de tillgängliga adressregistren varierar mellan de deltagande länderna när det gäller</p>
+          <ul>
+           <li>täckning (särskilt i fråga om vilka sektorer som ingår),</li>
+           <li>tillgången till och detaljnivån på den bakgrundsinformation som krävs (till exempel verksamhetsområde och antal anställda).</li>
+          </ul>
+          <p>De befintliga adressregistren är inte jämförbara mellan länderna, varför det gjorts stora ansträngningar för att få fram ett urval som ger den kvalitet som krävs och som gör det möjligt att jämföra resultaten mellan länderna. För detta ändamål har det krävts ett screeningförfarande i de deltagande länder där de tillgängliga adressregistren tillhandahåller information på företagsnivå snarare än på verksamhetsnivå.</p>
+          <p>Stratifieringen av urvalet baseras på en matris med fyra storleksklasser och åtta sektorsgrupper. Urvalsmetoden i de två första upplagorna av Esener-undersökningen var visserligen i stort densamma, men vissa förändringar har ändå skett under årens lopp, särskilt om man ser tillbaka till Esener 2009. För ingående information, se <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">Esener 2009</a> och <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">Esener 2014</a>.</p>
+            
+          <h3>Urvalsmatris för Esener 2019</h3>
+
+            <table class=\"table table2\">
+                <tbody>
+                   <tr>
+                      <th rowspan=\"2\">Sektorsgrupp &ndash; kategorier i Nace Rev.&nbsp;2</th>
+                      <th  colspan=\"4\" class=\"center-text\">Storlek &ndash; antal anställda</th>
+                   </tr>
+                   <tr>
+                      <th>5&ndash;9</th>
+                      <th>10&ndash;49</th>
+                      <th>50&ndash;249</th>
+                      <th>250+</th>
+                   </tr>
+                   <tr>
+                      <td><strong>A</strong>: Jordbruk, skogsbruk och fiske</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>B, D, E, F</strong>: Byggverksamhet, avfallshantering, vatten- och elförsörjning</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>C</strong>: Tillverkning</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>G, H, I, R</strong>: Handel, transport, hotell- och restaurangverksamhet samt fritidsverksamheter</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>J, K, L, M, N, S</strong>: It-verksamhet, finansiell verksamhet, fastighetsverksamhet och andra tekniska och vetenskapliga verksamheter eller personliga tjänster</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>O</strong>: Offentlig förvaltning</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>P</strong>: Allmän utbildning</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                   <tr>
+                      <td><strong>Q: </strong>Vård och omsorg samt sociala tjänster</td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                   </tr>
+                </tbody>
+            </table>
+         
+        <h2>Frågeformulärets utformning</h2>
+          <p>Frågeformuläret i Esener 2019 är i stort sett detsamma som det som användes i den föregående undersökningen (Esener 2014), vilket i sin tur hade samma struktur som den version som användes för att intervjua chefer i Esener 2009. Nästan alla frågor ändrades dock mellan 2009 och 2014, vilket innebär att trendanalyser endast är möjliga från Esener 2014 och framåt. Esener-frågeformuläret utvecklas och ses över av EU-Osha i nära samarbete med den huvudsakliga uppdragstagaren för Esener-projektet, en grupp arbetsmiljöforskare från olika länder och EU-Oshas intressenter.</p>
+          <p>Esener-undersökningarnas frågeformulär har varit föremål för ett flertal tester:</p>
+
+          <ol type=\"a\" >
+            <li>Ett <strong>kognitivt förhandsprov</strong> i Tyskland, Lettland och Nederländerna bestående av omkring 40 djupgående personliga intervjuer. Det huvudsakliga syftet med de kognitiva förhandsproven har varit att kontrollera om frågorna är tydliga och begripliga. Det finns också ett antal kognitiva frågor som syftar till att pröva om de svarande från olika länder och organisationstyper tolkar de standardiserade frågorna på avsett sätt och om frågorna är relevanta för dem. Det kognitiva förhandsprovet leder vanligtvis till ett antal ändringar av frågeformuläret.</li>
+            <li>En <strong>bedömning av översättbarheten</strong> av den engelskspråkiga originalversionen. Erfarna översättare från olika språkgrupper utarbetar grovöversättningar av det engelskspråkiga utkastet till frågeformulär för att identifiera eventuella tvetydigheter eller andra översättningsmässiga svårigheter. Om sådana problematiska fall identifieras föreslår översättarna alternativa formuleringar för originalversionen, som sedan revideras i med detta i åtanke.</li>
+            <li>En <strong>pilotundersökning på fältet</strong> genomförs i alla länder, med cirka 50 intervjuer per land. Denna pilotundersökning utförs med samma infrastruktur som huvudundersökningen och görs som datorassisterade telefonintervjuer (CATI, Computer Assisted Telephone Interview), men för dem som inte vill ställa upp på en telefonintervju erbjuds också möjligheten att svara på frågorna som en onlineenkät (CAWI, Computer Assisted Web Interview). Pilotundersökningen utmynnar i ett antal ytterligare ändringar av originalversionen av frågeformuläret och i de nationella versionerna av frågeformuläret.</li>
+          </ol>
+
+        <h2>Översättning</h2>        
+          <p>De olika nationella versionerna av frågeformuläret tas fram för de länder som ska ingå i undersökningen (de finns tillgängliga här: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">Esener 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">Esener 2014</a> och Esener 2019). Översättningsstrategin måste vara optimal för att man ska kunna säkerställa att alla språkversioner innehåller högkvalitativa frågor som kan ställas till alla typer av företag i landet i fråga och att dessa frågor genererar information som kan jämföras mellan olika länder. Översättningen av Esener-frågeformuläret följer strategin TRAPD, en akronym för engelskans <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> (översättning, granskning, bedömning, förhandstestning och dokumentation) (Harkness, J. A., (2003), Questionnaire translation, ingår i Cross-Cultural survey methods (s.&nbsp;35&ndash;56), J. A. Harkness, F. van de Vijver och P. Ph. Mohler (red.). Hoboken, NJ: John Wiley &amp; Sons), utom för den första omgången av undersökningen (som finns här: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">Esener 2009</a>).</p>
+          <p>För språk som är gemensamma för två eller fler länder tas nationella versioner fram för varje land med hänsyn till nationell arbetsrelaterad praxis på områden som arbetstagarrepresentation eller yrkesinspektion, som kräver en anpassning av frågorna och terminologin. Mer information om översättningsprocessen finns i översättningsrapporten (<a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report</a>) nedan.</p>
+          <p>De viktigaste stegen i Esener-översättningsprocessen är följande:</p>
+           
+          <ol type=\"1\" >
+            <li>Två oberoende översättningar till vart och ett av språken görs av professionella översättare som har målspråket som modersmål. Dessa översättare får inte ha kontakt med varandra under översättningsarbetets gång.</li>
+            <li>Granskning av de oberoende översättningarna av en granskare som utarbetar en ny version utifrån dessa.</li>
+            <li>Granskningsmöten hålls mellan granskaren och de två översättarna för att diskutera det nya utkastet och enas om en gemensam version.</li>
+            <li>De gemensamma versionerna kontrolleras av EU-Oshas <a href=\"https://osha.europa.eu/sv/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">nätverk av kontaktpunkter</a>, med särskilt fokus på nationell arbetsmiljöterminologi, inbegripet frågor som rör arbetstagarnas representationsorgan.</li>
+          </ol>
+
+        <h2>Storleken på urvalet i varje land</h2>
+          <p>Under Esener-undersökningen 2014 gavs de nationella myndigheterna för första gången möjlighet att finansiera en utökning av sitt landspecifika urval. Spanien, Slovenien och Förenade kungariket utnyttjade detta för att utöka sina respektive urval. Under Esener 2019 accepterade tre länder att göra detta (Irland, Norge och Slovenien), och denna gång fick dessa länder även möjlighet att lägga till två till tre frågor av nationellt intresse i sina respektive frågeformulär. Schweiz har finansierat alla omgångar av Esener fullt ut.</p>
+           
+          <h3>Uppnådda urvalsstorlekar för Esener</h3>         
+            
+            <table class=\"table table3\">
+              <tbody>
+                 <tr>
+                    <th>Land</th>
+                    <th class=\"center-text\">Esener 2009 (chefsintervjuer)</th>
+                    <th class=\"center-text\">Esener 2014</th>
+                    <th>Esener 2019</th>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Österrike</th>
+                    <td>1034</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Belgien</th>
+                    <td>1069</td>
+                    <td>1504</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Bulgarien</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Kroatien</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Cypern</th>
+                    <td>500</td>
+                    <td>751</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Tjeckien</th>
+                    <td>1015</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Danmark</th>
+                    <td>1005</td>
+                    <td>1508</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Estland</th>
+                    <td>501</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Finland</th>
+                    <td>1000</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Frankrike</th>
+                    <td>1497</td>
+                    <td>2256</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Tyskland</th>
+                    <td>1510</td>
+                    <td>2261</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Grekland</th>
+                    <td>1000</td>
+                    <td>1503</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Ungern</th>
+                    <td>1031</td>
+                    <td>1514</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Irland</th>
+                    <td>506</td>
+                    <td>750</td>
+                    <td><em>2000</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Italien</th>
+                    <td>1501</td>
+                    <td>2254</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Lettland</th>
+                    <td>506</td>
+                    <td>753</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Litauen</th>
+                    <td>520</td>
+                    <td>774</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Luxemburg</th>
+                    <td>500</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Malta</th>
+                    <td>343</td>
+                    <td>452</td>
+                    <td>450</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nederländerna</th>
+                    <td>1009</td>
+                    <td>1519</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Polen</th>
+                    <td>1500</td>
+                    <td>2257</td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Portugal</th>
+                    <td>1005</td>
+                    <td>1513</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Rumänien</th>
+                    <td>518</td>
+                    <td>756</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovakien</th>
+                    <td>503</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Slovenien</th>
+                    <td>529</td>
+                    <td><em>1051</em></td>
+                    <td><em>1050</em></td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Spanien</th>
+                    <td>1566</td>
+                    <td><em>3162</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Sverige</th>
+                    <td>1000</td>
+                    <td>1521</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Förenade kungariket</th>
+                    <td>1500</td>
+                    <td><em>4250</em></td>
+                    <td>2250</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Norge</th>
+                    <td>951</td>
+                    <td>1513</td>
+                    <td>1950</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Schweiz</th>
+                    <td>1019</td>
+                    <td>1511</td>
+                    <td>1500</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Island</th>
+                    <td>-</td>
+                    <td>757</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Serbien</th>
+                    <td>-</td>
+                    <td>752</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Nordmakedonien</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>750</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Turkiet</th>
+                    <td>1500</td>
+                    <td>2251</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Albanien</th>
+                    <td>-</td>
+                    <td>750</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table\">
+                    <th>Montenegro</th>
+                    <td>-</td>
+                    <td>452</td>
+                    <td>-</td>
+                 </tr>
+                 <tr class=\"data-table Total\">
+                    <th>Totalt</th>
+                    <td><strong>28&nbsp;649</strong></td>
+                    <td><strong>49&nbsp;320</strong></td>
+                    <td><strong>45&nbsp;200</strong></td>
+                 </tr>
+              </tbody>
+            </table>
+
+          <h3>Dokument och mer information för forskare</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">Esener 2009</a></h4>
+              <dl>
+                <dt>Kravspecifikationer:</dt>
+                <dd>Öppen anbudsinfordran offentliggjord den 21&nbsp;augusti 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+                <dt>Stödjande brev:</dt>
+                <dd>Ett brev som uppmuntrar till deltagande i undersökningen skrevs och översattes till alla undersökningens språk. Där förklaras undersökningens bakgrund och syfte och där nämns även stödet från arbetsmarknadens parter.</dd>
+                <dt>Huvudfrågeformulär:</dt>
+                <dd>
+                  <ul>
+                    <li>Frågeformulär för intervju med chefsperson: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+                    <li>Frågeformulär för intervju med arbetstagarföreträdare: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+                  </ul>
+                </dd>
+                <dt>Tekniska rapporter:</dt>
+                <dd>
+                  <ul>
+                    <li>Europeisk undersökning av nya och framväxande risker &ndash; psykosociala risker (Esener-PSR 2009) &ndash; Teknisk rapport: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+                    <li>Efterhandsutvärdering av den europeiska företagsundersökningen om nya och framväxande risker: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+                    <li>Rapport om urvalet i Esener 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Datauppsättningen från Esener 2009 kan nås via <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sv/data/dataset/esener-1\" target=\"_blank\">europeiska dataportalen</a> och <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">Gesis</a>.</p>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">Esener 2014</a></h4>
+              <dl>
+                <dt>Kravspecifikationer:</dt>
+                <dd>Öppen anbudsinfordran offentliggjord den 5&nbsp;december 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Stödjande brev:</dt>
+                <dd>Ett brev som uppmuntrar till deltagande i undersökningen skrevs och översattes till alla undersökningens språk. Där förklaras undersökningens bakgrund och syfte och där nämns även stödet från arbetsmarknadens parter.</dd>
+                <dt>Huvudfrågeformulär:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Tekniska rapporter:</dt>
+                <dd>
+                  <ul>
+                    <li>Teknisk rapport: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Kvalitetsrapport: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Översättningsrapport: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                </dd>
+              </dl>
+              <p>Datauppsättningen från Esener 2014 kan nås via <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sv/data/dataset/esener-2\" target=\"_blank\">europeiska dataportalen</a> och <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">Gesis</a>.</p>
+            <h4>Esener 2019</h4>
+              <dl>
+                <dt>Kravspecifikationer:</dt>
+                <dd>Öppen anbudsinfordran offentliggjord den 5&nbsp;januari 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Stödjande brev:</dt>
+                <dd>Ett brev som uppmuntrar till deltagande i undersökningen skrevs och översattes till alla undersökningens språk. Där förklaras undersökningens bakgrund och syfte och där nämns även stödet från arbetsmarknadens parter.</dd>
+                <dt>Huvudfrågeformulär</dt>
+                <dt>Tekniska rapporter</dt>
+              </dl>
+              <p>Observera att alla verk som använder sig av eller hänvisar till Esener ska ange källan genom bibliografiska hänvisningar i fotnoter eller i dokumentets referensavsnitt. På samma sätt bör alla typer av publikationer som helt eller delvis bygger på uppgifter från Esener, oavsett om de är tryckta, elektroniska eller sprids av sändningsmedier, hänvisa till Europeiska arbetsmiljöbyrån (EU-Osha). Det ska också ingå en förklaring om att EU-Osha inte ansvarar för Esener-uppgifternas vidare analys eller tolkning.</p><!-- END LITERAL HTML --></body>
+</html>");
 

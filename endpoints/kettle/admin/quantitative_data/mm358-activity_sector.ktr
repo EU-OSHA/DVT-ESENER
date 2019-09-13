@@ -502,16 +502,16 @@
            </partitioning>
    <typefield>ActivitySector</typefield>
     <fields>      <field>        <name>Total</name>
-        <value>Total</value>
+        <value>All</value>
+        <norm>Value</norm>
+        </field>      <field>        <name>Public Services</name>
+        <value>Public Services</value>
         <norm>Value</norm>
         </field>      <field>        <name>Producing Industries</name>
         <value>Production sector</value>
         <norm>Value</norm>
         </field>      <field>        <name>Private Services</name>
         <value>Private Services</value>
-        <norm>Value</norm>
-        </field>      <field>        <name>Public Services</name>
-        <value>Public Services</value>
         <norm>Value</norm>
         </field>      </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>

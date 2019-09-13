@@ -277,7 +277,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM173_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Využili jste informací o BOZP od některého z těchto orgánů či institucí? Inspektorát práce");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM173_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Využili jste informací o BOZP od některého z těchto orgánů či institucí? Inspektorát práce");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Externí odborníci pro otázky zdraví a bezpečnosti při práci");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Externí odborníci pro otázky zdraví a bezpečnosti při práci");
 
@@ -688,256 +688,158 @@ SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE categor
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Gibt es in Ihrem Betrieb einen Arbeitsschutzausschuss?");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Αναλύει η επιχείρησή σας συστηματικά τα αίτια των αδειών ασθενείας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Αναλύει η επιχείρησή σας συστηματικά τα αίτια των αδειών ασθενείας;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Αναλύει η επιχείρησή σας συστηματικά τα αίτια των αδειών ασθενείας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Αναλύει η επιχείρησή σας συστηματικά τα αίτια των αδειών ασθενείας;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Αναλύει η επιχείρησή σας συστηματικά τα αίτια των αδειών ασθενείας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Αναλύει η επιχείρησή σας συστηματικά τα αίτια των αδειών ασθενείας;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Λαμβάνετε μέτρα για να στηρίξετε την επιστροφή των υπαλλήλων στην εργασία μετά από μακρά αναρρωτική άδεια");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Λαμβάνετε μέτρα για να στηρίξετε την επιστροφή των υπαλλήλων στην εργασία μετά από μακρά αναρρωτική άδεια;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Λαμβάνετε μέτρα για να στηρίξετε την επιστροφή των υπαλλήλων στην εργασία μετά από μακρά αναρρωτική άδεια");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Λαμβάνετε μέτρα για να στηρίξετε την επιστροφή των υπαλλήλων στην εργασία μετά από μακρά αναρρωτική άδεια;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Λαμβάνετε μέτρα για να στηρίξετε την επιστροφή των υπαλλήλων στην εργασία μετά από μακρά αναρρωτική άδεια");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Λαμβάνετε μέτρα για να στηρίξετε την επιστροφή των υπαλλήλων στην εργασία μετά από μακρά αναρρωτική άδεια;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Παρακολουθείτε την υγεία των υπαλλήλων με τακτικούς ιατρικούς ελέγχους");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Παρακολουθείτε την υγεία των υπαλλήλων με τακτικούς ιατρικούς ελέγχους;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Παρακολουθείτε την υγεία των υπαλλήλων με τακτικούς ιατρικούς ελέγχους");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Παρακολουθείτε την υγεία των υπαλλήλων με τακτικούς ιατρικούς ελέγχους;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Παρακολουθείτε την υγεία των υπαλλήλων με τακτικούς ιατρικούς ελέγχους");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Παρακολουθείτε την υγεία των υπαλλήλων με τακτικούς ιατρικούς ελέγχους;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Υπάρχει καταγεγραμμένη πολιτική, καθιερωμένο σύστημα διαχείρισης ή σχέδιο δράσης για την υγεία και την ασφάλεια στην επιχείρησή σας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Υπάρχει καταγεγραμμένη πολιτική, καθιερωμένο σύστημα διαχείρισης ή σχέδιο δράσης για την υγεία και την ασφάλεια στην επιχείρησή σας;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Υπάρχει καταγεγραμμένη πολιτική, καθιερωμένο σύστημα διαχείρισης ή σχέδιο δράσης για την υγεία και την ασφάλεια στην επιχείρησή σας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Υπάρχει καταγεγραμμένη πολιτική, καθιερωμένο σύστημα διαχείρισης ή σχέδιο δράσης για την υγεία και την ασφάλεια στην επιχείρησή σας;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Υπάρχει καταγεγραμμένη πολιτική, καθιερωμένο σύστημα διαχείρισης ή σχέδιο δράσης για την υγεία και την ασφάλεια στην επιχείρησή σας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Υπάρχει καταγεγραμμένη πολιτική, καθιερωμένο σύστημα διαχείρισης ή σχέδιο δράσης για την υγεία και την ασφάλεια στην επιχείρησή σας;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Συζητούνται τα θέματα για την υγεία και την ασφάλεια σε συναντήσεις των υψηλόβαθμων διοικητικών στελεχών τακτικά, περιστασιακά ή σχεδόν ποτέ");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Συζητούνται τα θέματα για την υγεία και την ασφάλεια σε συναντήσεις των υψηλόβαθμων διοικητικών στελεχών τακτικά, περιστασιακά ή σχεδόν ποτέ;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Συζητούνται τα θέματα για την υγεία και την ασφάλεια σε συναντήσεις των υψηλόβαθμων διοικητικών στελεχών τακτικά, περιστασιακά ή σχεδόν ποτέ");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Συζητούνται τα θέματα για την υγεία και την ασφάλεια σε συναντήσεις των υψηλόβαθμων διοικητικών στελεχών τακτικά, περιστασιακά ή σχεδόν ποτέ;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Συζητούνται τα θέματα για την υγεία και την ασφάλεια σε συναντήσεις των υψηλόβαθμων διοικητικών στελεχών τακτικά, περιστασιακά ή σχεδόν ποτέ");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Συζητούνται τα θέματα για την υγεία και την ασφάλεια σε συναντήσεις των υψηλόβαθμων διοικητικών στελεχών τακτικά, περιστασιακά ή σχεδόν ποτέ;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Γενικά, πώς θα αξιολογούσατε το βαθμό συμμετοχής των διευθυντών και προϊσταμένων στη διαχείριση θεμάτων υγείας και ασφάλειας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Γενικά, πώς θα αξιολογούσατε το βαθμό συμμετοχής των διευθυντών και προϊσταμένων στη διαχείριση θεμάτων υγείας και ασφάλειας; Είναι πολύ υψηλός, αρκετά υψηλός, αρκετά χαμηλός ή πολύ χαμηλός;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Γενικά, πώς θα αξιολογούσατε το βαθμό συμμετοχής των διευθυντών και προϊσταμένων στη διαχείριση θεμάτων υγείας και ασφάλειας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Γενικά, πώς θα αξιολογούσατε το βαθμό συμμετοχής των διευθυντών και προϊσταμένων στη διαχείριση θεμάτων υγείας και ασφάλειας; Είναι πολύ υψηλός, αρκετά υψηλός, αρκετά χαμηλός ή πολύ χαμηλός;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Γενικά, πώς θα αξιολογούσατε το βαθμό συμμετοχής των διευθυντών και προϊσταμένων στη διαχείριση θεμάτων υγείας και ασφάλειας; Είναι πολύ υψηλός, αρκετά υψηλός, αρκετά χαμηλός ή πολύ χαμηλός;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ελέγχονται οι χώροι εργασίας στην επιχείρησή σας τακτικά ως προς την ασφάλεια και την υγεία, στο πλαίσιο εκτίμησης κινδύνου ή παρόμοιου μέτρου");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ελέγχονται οι χώροι εργασίας στην επιχείρησή σας τακτικά ως προς την ασφάλεια και την υγεία, στο πλαίσιο εκτίμησης κινδύνου ή παρόμοιου μέτρου;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ελέγχονται οι χώροι εργασίας στην επιχείρησή σας τακτικά ως προς την ασφάλεια και την υγεία, στο πλαίσιο εκτίμησης κινδύνου ή παρόμοιου μέτρου");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ελέγχονται οι χώροι εργασίας στην επιχείρησή σας τακτικά ως προς την ασφάλεια και την υγεία, στο πλαίσιο εκτίμησης κινδύνου ή παρόμοιου μέτρου;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ελέγχονται οι χώροι εργασίας στην επιχείρησή σας τακτικά ως προς την ασφάλεια και την υγεία, στο πλαίσιο εκτίμησης κινδύνου ή παρόμοιου μέτρου");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ελέγχονται οι χώροι εργασίας στην επιχείρησή σας τακτικά ως προς την ασφάλεια και την υγεία, στο πλαίσιο εκτίμησης κινδύνου ή παρόμοιου μέτρου;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει επισκεφθεί το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε) αυτό το χώρο εργασίας τα τελευταία 3 χρόνια για να ελέγξει τις συνθήκες υγείας και ασφάλειας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει επισκεφθεί το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε) αυτό το χώρο εργασίας τα τελευταία 3 χρόνια για να ελέγξει τις συνθήκες υγείας και ασφάλειας;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει επισκεφθεί το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε) αυτό το χώρο εργασίας τα τελευταία 3 χρόνια για να ελέγξει τις συνθήκες υγείας και ασφάλειας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει επισκεφθεί το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε) αυτό το χώρο εργασίας τα τελευταία 3 χρόνια για να ελέγξει τις συνθήκες υγείας και ασφάλειας;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει επισκεφθεί το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε) αυτό το χώρο εργασίας τα τελευταία 3 χρόνια για να ελέγξει τις συνθήκες υγείας και ασφάλειας");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM173_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM173_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Επίσημες οργανώσεις για την υγεία και την ασφάλεια στο χώρο εργασίας");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM173_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM173_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ευρωπαϊκός Οργανισμός για την ασφάλεια και την υγεία στην εργασία ή Εθνικός Εστιακός Πόλος");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM173_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM173_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ενδοεταιρικές υπηρεσίες υγείας και ασφάλειας");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM173_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM173_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε)");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM173_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM173_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Οργανώσεις εργοδοτών");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM173_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM173_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Τα εργατικά σωματεία/ συνδικάτα");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM173_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM173_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ειδικούς υγείας και ασφάλειας με σύμβαση έργου");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM173_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM173_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Παροχείς ασφαλιστικών υπηρεσιών");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει επισκεφθεί το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε) αυτό το χώρο εργασίας τα τελευταία 3 χρόνια για να ελέγξει τις συνθήκες υγείας και ασφάλειας;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Γνωρίζετε την Ευρωπαϊκή εβδομάδα για την ασφάλεια και την υγεία στο χώρο εργασίας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Γνωρίζετε την Ευρωπαϊκή εβδομάδα για την ασφάλεια και την υγεία στο χώρο εργασίας;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Γνωρίζετε την Ευρωπαϊκή εβδομάδα για την ασφάλεια και την υγεία στο χώρο εργασίας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Γνωρίζετε την Ευρωπαϊκή εβδομάδα για την ασφάλεια και την υγεία στο χώρο εργασίας;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Γνωρίζετε την Ευρωπαϊκή εβδομάδα για την ασφάλεια και την υγεία στο χώρο εργασίας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Γνωρίζετε την Ευρωπαϊκή εβδομάδα για την ασφάλεια και την υγεία στο χώρο εργασίας;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Διαθέτει η επιχείρησή σας κάποια διαδικασία για την αντιμετώπιση του άγχους στην εργασία");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Διαθέτει η επιχείρησή σας κάποια διαδικασία για την αντιμετώπιση του άγχους στην εργασία;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Διαθέτει η επιχείρησή σας κάποια διαδικασία για την αντιμετώπιση του άγχους στην εργασία");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Διαθέτει η επιχείρησή σας κάποια διαδικασία για την αντιμετώπιση του άγχους στην εργασία;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Διαθέτει η επιχείρησή σας κάποια διαδικασία για την αντιμετώπιση του άγχους στην εργασία");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Διαθέτει η επιχείρησή σας κάποια διαδικασία για την αντιμετώπιση του άγχους στην εργασία;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Εφαρμόζεται κάποια διαδικασία για την αντιμετώπιση του εκφοβισμού ή της παρενόχλησης");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Εφαρμόζεται κάποια διαδικασία για την αντιμετώπιση του εκφοβισμού ή της παρενόχλησης;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Εφαρμόζεται κάποια διαδικασία για την αντιμετώπιση του εκφοβισμού ή της παρενόχλησης");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Εφαρμόζεται κάποια διαδικασία για την αντιμετώπιση του εκφοβισμού ή της παρενόχλησης;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Εφαρμόζεται κάποια διαδικασία για την αντιμετώπιση του εκφοβισμού ή της παρενόχλησης");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Εφαρμόζεται κάποια διαδικασία για την αντιμετώπιση του εκφοβισμού ή της παρενόχλησης;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Και έχετε κάποια διαδικασία για την αντιμετώπιση της βίας που σχετίζεται με την εργασία");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Και έχετε κάποια διαδικασία για την αντιμετώπιση της βίας που σχετίζεται με την εργασία;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Και έχετε κάποια διαδικασία για την αντιμετώπιση της βίας που σχετίζεται με την εργασία");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Και έχετε κάποια διαδικασία για την αντιμετώπιση της βίας που σχετίζεται με την εργασία;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Και έχετε κάποια διαδικασία για την αντιμετώπιση της βίας που σχετίζεται με την εργασία");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM253_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM253_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αλλαγές στον τρόπο οργάνωσης της εργασίας");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM253_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM253_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ανασχεδιασμό του χώρου εργασίας");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM253_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM253_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Παροχή εμπιστευτικών συμβουλευτικών υπηρεσιών για υπαλλήλους");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM253_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM253_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Συγκρότηση μιας διαδικασίας επίλυσης συγκρούσεων");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM253_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM253_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αλλαγές στις ρυθμίσεις του ωραρίου εργασίας");
-
-SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM253_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων");
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM253_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Παροχή εκπαίδευσης");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Και έχετε κάποια διαδικασία για την αντιμετώπιση της βίας που σχετίζεται με την εργασία;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Αναλαμβάνει δράση η επιχείρησή σας εάν μεμονωμένοι υπάλληλοι εργάζονται παρατεταμένες ή ακανόνιστες ώρες εργασίας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Αναλαμβάνει δράση η επιχείρησή σας εάν μεμονωμένοι υπάλληλοι εργάζονται παρατεταμένες ή ακανόνιστες ώρες εργασίας;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Αναλαμβάνει δράση η επιχείρησή σας εάν μεμονωμένοι υπάλληλοι εργάζονται παρατεταμένες ή ακανόνιστες ώρες εργασίας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Αναλαμβάνει δράση η επιχείρησή σας εάν μεμονωμένοι υπάλληλοι εργάζονται παρατεταμένες ή ακανόνιστες ώρες εργασίας;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Αναλαμβάνει δράση η επιχείρησή σας εάν μεμονωμένοι υπάλληλοι εργάζονται παρατεταμένες ή ακανόνιστες ώρες εργασίας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Αναλαμβάνει δράση η επιχείρησή σας εάν μεμονωμένοι υπάλληλοι εργάζονται παρατεταμένες ή ακανόνιστες ώρες εργασίας;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ενημερώνετε τους υπαλλήλους για τους ψυχοκοινωνικούς κίνδυνους και τον αντίκτυπό τους στην υγεία και την ασφάλεια");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ενημερώνετε τους υπαλλήλους για τους ψυχοκοινωνικούς κίνδυνους και τον αντίκτυπό τους στην υγεία και την ασφάλεια;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ενημερώνετε τους υπαλλήλους για τους ψυχοκοινωνικούς κίνδυνους και τον αντίκτυπό τους στην υγεία και την ασφάλεια");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ενημερώνετε τους υπαλλήλους για τους ψυχοκοινωνικούς κίνδυνους και τον αντίκτυπό τους στην υγεία και την ασφάλεια;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ενημερώνετε τους υπαλλήλους για τους ψυχοκοινωνικούς κίνδυνους και τον αντίκτυπό τους στην υγεία και την ασφάλεια");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ενημερώνετε τους υπαλλήλους για τους ψυχοκοινωνικούς κίνδυνους και τον αντίκτυπό τους στην υγεία και την ασφάλεια;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχουν ενημερωθεί σχετικά με το σε ποιον μπορούν να απευθυνθούν σε περίπτωση ψυχοκοινωνικών προβλημάτων που συνδέονται με την εργασία");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχουν ενημερωθεί σχετικά με το σε ποιον μπορούν να απευθυνθούν σε περίπτωση ψυχοκοινωνικών προβλημάτων που συνδέονται με την εργασία;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχουν ενημερωθεί σχετικά με το σε ποιον μπορούν να απευθυνθούν σε περίπτωση ψυχοκοινωνικών προβλημάτων που συνδέονται με την εργασία");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχουν ενημερωθεί σχετικά με το σε ποιον μπορούν να απευθυνθούν σε περίπτωση ψυχοκοινωνικών προβλημάτων που συνδέονται με την εργασία;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχουν ενημερωθεί σχετικά με το σε ποιον μπορούν να απευθυνθούν σε περίπτωση ψυχοκοινωνικών προβλημάτων που συνδέονται με την εργασία");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχουν ενημερωθεί σχετικά με το σε ποιον μπορούν να απευθυνθούν σε περίπτωση ψυχοκοινωνικών προβλημάτων που συνδέονται με την εργασία;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Σε σύγκριση με άλλα ζητήματα ασφάλειας και υγείας: είναι δυσκολότερο να αντιμετωπίσετε τους ψυχοκοινωνικούς κινδύνους, είναι λιγότερο δύσκολο, ή δεν υπάρχει διαφορά");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Σε σύγκριση με άλλα ζητήματα ασφάλειας και υγείας: είναι δυσκολότερο να αντιμετωπίσετε τους ψυχοκοινωνικούς κινδύνους, είναι λιγότερο δύσκολο, ή δεν υπάρχει διαφορά;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Σε σύγκριση με άλλα ζητήματα ασφάλειας και υγείας: είναι δυσκολότερο να αντιμετωπίσετε τους ψυχοκοινωνικούς κινδύνους, είναι λιγότερο δύσκολο, ή δεν υπάρχει διαφορά");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Σε σύγκριση με άλλα ζητήματα ασφάλειας και υγείας: είναι δυσκολότερο να αντιμετωπίσετε τους ψυχοκοινωνικούς κινδύνους, είναι λιγότερο δύσκολο, ή δεν υπάρχει διαφορά;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Σε σύγκριση με άλλα ζητήματα ασφάλειας και υγείας: είναι δυσκολότερο να αντιμετωπίσετε τους ψυχοκοινωνικούς κινδύνους, είναι λιγότερο δύσκολο, ή δεν υπάρχει διαφορά");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Σε σύγκριση με άλλα ζητήματα ασφάλειας και υγείας: είναι δυσκολότερο να αντιμετωπίσετε τους ψυχοκοινωνικούς κινδύνους, είναι λιγότερο δύσκολο, ή δεν υπάρχει διαφορά;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχετε χρησιμοποιήσει πληροφορίες ή υποστήριξη από εξωτερικές πηγές για το πώς να αντιμετωπίσετε ψυχοκοινωνικούς κινδύνους στο χώρο εργασίας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχετε χρησιμοποιήσει πληροφορίες ή υποστήριξη από εξωτερικές πηγές για το πώς να αντιμετωπίσετε ψυχοκοινωνικούς κινδύνους στο χώρο εργασίας;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχετε χρησιμοποιήσει πληροφορίες ή υποστήριξη από εξωτερικές πηγές για το πώς να αντιμετωπίσετε ψυχοκοινωνικούς κινδύνους στο χώρο εργασίας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχετε χρησιμοποιήσει πληροφορίες ή υποστήριξη από εξωτερικές πηγές για το πώς να αντιμετωπίσετε ψυχοκοινωνικούς κινδύνους στο χώρο εργασίας;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχετε χρησιμοποιήσει πληροφορίες ή υποστήριξη από εξωτερικές πηγές για το πώς να αντιμετωπίσετε ψυχοκοινωνικούς κινδύνους στο χώρο εργασίας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχετε χρησιμοποιήσει πληροφορίες ή υποστήριξη από εξωτερικές πηγές για το πώς να αντιμετωπίσετε ψυχοκοινωνικούς κινδύνους στο χώρο εργασίας;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Θα χρειαζόσασταν τυχόν πρόσθετες πληροφορίες ή υποστήριξη για το ζήτημα αυτό");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Θα χρειαζόσασταν τυχόν πρόσθετες πληροφορίες ή υποστήριξη για το ζήτημα αυτό;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Θα χρειαζόσασταν τυχόν πρόσθετες πληροφορίες ή υποστήριξη για το ζήτημα αυτό");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Θα χρειαζόσασταν τυχόν πρόσθετες πληροφορίες ή υποστήριξη για το ζήτημα αυτό;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Θα χρειαζόσασταν τυχόν πρόσθετες πληροφορίες ή υποστήριξη για το ζήτημα αυτό");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Θα χρειαζόσασταν τυχόν πρόσθετες πληροφορίες ή υποστήριξη για το ζήτημα αυτό;<br><br>Ερώτηση που απευθύνθηκε σε επιχειρήσεις οι οποίες αναφέρουν ότι έχουν χρησιμοποιήσει πληροφορίες ή υποστήριξη από εξωτερικές πηγές για την αντιμετώπιση των ψυχοκοινωνικών κινδύνων στην εργασία.\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχετε συμβούλιο εργαζομένων στην επιχείρηση αυτή");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχετε συμβούλιο εργαζομένων στην επιχείρηση αυτή;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχετε συμβούλιο εργαζομένων στην επιχείρηση αυτή");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχετε συμβούλιο εργαζομένων στην επιχείρηση αυτή;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχετε συμβούλιο εργαζομένων στην επιχείρηση αυτή");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχετε συμβούλιο εργαζομένων στην επιχείρηση αυτή;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Και, υπάρχει Επιχειρησιακό σωματείο στην επιχείρηση αυτή");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Και, υπάρχει Επιχειρησιακό σωματείο στην επιχείρηση αυτή;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Και, υπάρχει Επιχειρησιακό σωματείο στην επιχείρηση αυτή");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Και, υπάρχει Επιχειρησιακό σωματείο στην επιχείρηση αυτή;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Και, υπάρχει Επιχειρησιακό σωματείο στην επιχείρηση αυτή");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Και, υπάρχει Επιχειρησιακό σωματείο στην επιχείρηση αυτή;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Διαθέτει η επιχείρησή σας εσωτερικό εκπρόσωπο υγιεινής και ασφάλειας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Διαθέτει η επιχείρησή σας εσωτερικό εκπρόσωπο υγιεινής και ασφάλειας;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Διαθέτει η επιχείρησή σας εσωτερικό εκπρόσωπο υγιεινής και ασφάλειας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Διαθέτει η επιχείρησή σας εσωτερικό εκπρόσωπο υγιεινής και ασφάλειας;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Διαθέτει η επιχείρησή σας εσωτερικό εκπρόσωπο υγιεινής και ασφάλειας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Διαθέτει η επιχείρησή σας εσωτερικό εκπρόσωπο υγιεινής και ασφάλειας;<br><br>NL: Υπάρχει κάποιο μέλος εκπρόσωπος ασφάλειας και υγείας στη συγκεκριμένη επιχείρηση?\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Υπάρχει Επιτροπή υγιεινής και ασφάλειας στην επιχείρησή σας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Υπάρχει Επιτροπή υγιεινής και ασφάλειας στην επιχείρησή σας;\"");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Υπάρχει Επιτροπή υγιεινής και ασφάλειας στην επιχείρησή σας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Υπάρχει Επιτροπή υγιεινής και ασφάλειας στην επιχείρησή σας;\"");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Υπάρχει Επιτροπή υγιεινής και ασφάλειας στην επιχείρησή σας");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Υπάρχει Επιτροπή υγιεινής και ασφάλειας στην επιχείρησή σας;\"");
 
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM152");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Su establecimiento analiza de forma sistemática las causas de las bajas por enfermedad?");
@@ -3623,7 +3525,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId=(SELECT name_1_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Kan du tala om för mig om några av följande psykosociala risker förekommer på din arbetsplats.Tidspress");
 SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Kan du tala om för mig om några av följande psykosociala risker förekommer på din arbetsplats.Tidspress");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Tidspress");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "\"Flera faktorer kan bidra till stress, våld och trakasserier på arbetsplatsen. Dessa har att göra med arbetets organisation och kallas ofta \"\"psykosociala risker\"\". Kan du tala om för mig om några av följande psykosociala risker förekommer på din arbetsplats.Tidspress\"");
 
@@ -3933,34 +3835,34 @@ SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE categor
 UPDATE translation SET text="For each of the following issues, please tell me whether it is of major concern, some concern or no concern at all in your establishment. Bullying or harassment, i.e. abuse, humiliation or assault by colleagues or superiors" WHERE literal_id=@literalId AND language="EN";
 
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work" WHERE literal_id=@literalId AND language="EN";
+UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work; they concern the way work is organised and are often referred to as ‘psychosocial risks’. Please tell me whether any of the following psychosocial risks are a concern in your establishment. Time pressure\"" WHERE literal_id=@literalId AND language="EN";
 
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work" WHERE literal_id=@literalId AND language="EN";
+UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work; they concern the way work is organised and are often referred to as ‘psychosocial risks’. Please tell me whether any of the following psychosocial risks are a concern in your establishment. Poor communication between management and employees\"" WHERE literal_id=@literalId AND language="EN";
 
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work" WHERE literal_id=@literalId AND language="EN";
+UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work; they concern the way work is organised and are often referred to as ‘psychosocial risks’. Please tell me whether any of the following psychosocial risks are a concern in your establishment. Poor co-operation amongst colleagues\"" WHERE literal_id=@literalId AND language="EN";
 
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work" WHERE literal_id=@literalId AND language="EN";
+UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work; they concern the way work is organised and are often referred to as ‘psychosocial risks’. Please tell me whether any of the following psychosocial risks are a concern in your establishment. Lack of employee control in organising their work\"" WHERE literal_id=@literalId AND language="EN";
 
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work" WHERE literal_id=@literalId AND language="EN";
+UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work; they concern the way work is organised and are often referred to as ‘psychosocial risks’. Please tell me whether any of the following psychosocial risks are a concern in your establishment. Job insecurity\"" WHERE literal_id=@literalId AND language="EN";
 
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work" WHERE literal_id=@literalId AND language="EN";
+UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work; they concern the way work is organised and are often referred to as ‘psychosocial risks’. Please tell me whether any of the following psychosocial risks are a concern in your establishment. Having to deal with difficult customers, patients, pupils etc.\"" WHERE literal_id=@literalId AND language="EN";
 
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work" WHERE literal_id=@literalId AND language="EN";
+UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work; they concern the way work is organised and are often referred to as ‘psychosocial risks’. Please tell me whether any of the following psychosocial risks are a concern in your establishment. Problems in supervisor – employee relationships\"" WHERE literal_id=@literalId AND language="EN";
 
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work" WHERE literal_id=@literalId AND language="EN";
+UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work; they concern the way work is organised and are often referred to as ‘psychosocial risks’. Please tell me whether any of the following psychosocial risks are a concern in your establishment. Long or irregular working hours\"" WHERE literal_id=@literalId AND language="EN";
 
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work" WHERE literal_id=@literalId AND language="EN";
+UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work; they concern the way work is organised and are often referred to as ‘psychosocial risks’. Please tell me whether any of the following psychosocial risks are a concern in your establishment. An unclear human resources policy\"" WHERE literal_id=@literalId AND language="EN";
 
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work" WHERE literal_id=@literalId AND language="EN";
+UPDATE translation SET text="\"Several factors can contribute to stress, violence and harassment at work; they concern the way work is organised and are often referred to as ‘psychosocial risks’. Please tell me whether any of the following psychosocial risks are a concern in your establishment. Discrimination (for example due to gender, age or ethnicity)\"" WHERE literal_id=@literalId AND language="EN";
 
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_1");
 UPDATE translation SET text="In the last 3 years, has your establishment used any of the following measures to deal with psychosocial risks? Changes to the way work is organised" WHERE literal_id=@literalId AND language="EN";
@@ -5650,7 +5552,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Zeitdruck");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen; sie betreffen die Art, wie Arbeit organisiert wird, und werden oft \"\"psychosoziale Risiken\"\" genannt. Bitte sagen Sie mir für jedes der folgenden psychosozialen Risiken, ob dies ein Anliegen in Ihrem Betrieb ist.Zeitdruck\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Schlechte Kommunikation zwischen dem Management und den Beschäftigten");
@@ -5659,7 +5561,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Schlechte Kommunikation zwischen dem Management und den Beschäftigten");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen; sie betreffen die Art, wie Arbeit organisiert wird, und werden oft \"\"psychosoziale Risiken\"\" genannt. Bitte sagen Sie mir für jedes der folgenden psychosozialen Risiken, ob dies ein Anliegen in Ihrem Betrieb ist.Schlechte Kommunikation zwischen dem Management und den Beschäftigten\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Schlechte Kooperation unter den Kollegen");
@@ -5668,7 +5570,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Schlechte Kooperation unter den Kollegen");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen; sie betreffen die Art, wie Arbeit organisiert wird, und werden oft \"\"psychosoziale Risiken\"\" genannt. Bitte sagen Sie mir für jedes der folgenden psychosozialen Risiken, ob dies ein Anliegen in Ihrem Betrieb ist.Schlechte Kooperation unter den Kollegen\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Fehlende Kontrolle der Beschäftigten über die Organisation ihrer Arbeit");
@@ -5677,7 +5579,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Fehlende Kontrolle der Beschäftigten über die Organisation ihrer Arbeit");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen; sie betreffen die Art, wie Arbeit organisiert wird, und werden oft \"\"psychosoziale Risiken\"\" genannt. Bitte sagen Sie mir für jedes der folgenden psychosozialen Risiken, ob dies ein Anliegen in Ihrem Betrieb ist.Fehlende Kontrolle der Beschäftigten über die Organisation ihrer Arbeit\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Arbeitsplatzunsicherheit");
@@ -5686,7 +5588,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Arbeitsplatzunsicherheit");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen; sie betreffen die Art, wie Arbeit organisiert wird, und werden oft \"\"psychosoziale Risiken\"\" genannt. Bitte sagen Sie mir für jedes der folgenden psychosozialen Risiken, ob dies ein Anliegen in Ihrem Betrieb ist.Arbeitsplatzunsicherheit\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Umgang mit schwierigen Kunden, Patienten, Schülern etc.");
@@ -5695,7 +5597,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Umgang mit schwierigen Kunden, Patienten, Schülern etc.");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen; sie betreffen die Art, wie Arbeit organisiert wird, und werden oft \"\"psychosoziale Risiken\"\" genannt. Bitte sagen Sie mir für jedes der folgenden psychosozialen Risiken, ob dies ein Anliegen in Ihrem Betrieb ist.Umgang mit schwierigen Kunden, Patienten, Schülern etc.\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Probleme beim Verhältnis zwischen Mitarbeitern und Vorgesetzten");
@@ -5704,7 +5606,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Probleme beim Verhältnis zwischen Mitarbeitern und Vorgesetzten");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen; sie betreffen die Art, wie Arbeit organisiert wird, und werden oft \"\"psychosoziale Risiken\"\" genannt. Bitte sagen Sie mir für jedes der folgenden psychosozialen Risiken, ob dies ein Anliegen in Ihrem Betrieb ist.Probleme beim Verhältnis zwischen Mitarbeitern und Vorgesetzten\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Überstunden oder unregelmäßige Arbeitszeiten");
@@ -5713,7 +5615,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Überstunden oder unregelmäßige Arbeitszeiten");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen; sie betreffen die Art, wie Arbeit organisiert wird, und werden oft \"\"psychosoziale Risiken\"\" genannt. Bitte sagen Sie mir für jedes der folgenden psychosozialen Risiken, ob dies ein Anliegen in Ihrem Betrieb ist.Überstunden oder unregelmäßige Arbeitszeiten\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Eine unklare Personalpolitik");
@@ -5722,7 +5624,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Eine unklare Personalpolitik");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen; sie betreffen die Art, wie Arbeit organisiert wird, und werden oft \"\"psychosoziale Risiken\"\" genannt. Bitte sagen Sie mir für jedes der folgenden psychosozialen Risiken, ob dies ein Anliegen in Ihrem Betrieb ist.Eine unklare Personalpolitik\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Diskriminierung (z.B. aufgrund von Geschlecht, Alter oder ethnischer Herkunft)");
@@ -5731,7 +5633,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Diskriminierung (z.B. aufgrund von Geschlecht, Alter oder ethnischer Herkunft)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "\"Verschiedene Faktoren können zu Stress, Gewalt und Belästigung am Arbeitsplatz beitragen; sie betreffen die Art, wie Arbeit organisiert wird, und werden oft \"\"psychosoziale Risiken\"\" genannt. Bitte sagen Sie mir für jedes der folgenden psychosozialen Risiken, ob dies ein Anliegen in Ihrem Betrieb ist.Diskriminierung (z.B. aufgrund von Geschlecht, Alter oder ethnischer Herkunft)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -5922,7 +5824,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM150_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ιατρό εργασίας");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM150_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Τι είδους υπηρεσίες υγείας και ασφάλειας χρησιμοποιείτε στην επιχείρησή σας, είτε από ενδοεταιρικές πηγές είτε από εξωτερικούς παροχείς υπηρεσιών");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Τι είδους υπηρεσίες υγείας και ασφάλειας χρησιμοποιείτε στην επιχείρησή σας, είτε από ενδοεταιρικές πηγές είτε από εξωτερικούς παροχείς υπηρεσιών;Ιατρό εργασίας\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM150_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Τεχνικό ασφάλειας");
@@ -5931,7 +5833,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM150_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Τεχνικό ασφάλειας");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM150_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Τι είδους υπηρεσίες υγείας και ασφάλειας χρησιμοποιείτε στην επιχείρησή σας, είτε από ενδοεταιρικές πηγές είτε από εξωτερικούς παροχείς υπηρεσιών");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Τι είδους υπηρεσίες υγείας και ασφάλειας χρησιμοποιείτε στην επιχείρησή σας, είτε από ενδοεταιρικές πηγές είτε από εξωτερικούς παροχείς υπηρεσιών;Τεχνικό ασφάλειας\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM150_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ψυχολόγο");
@@ -5940,7 +5842,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM150_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ψυχολόγο");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM150_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Τι είδους υπηρεσίες υγείας και ασφάλειας χρησιμοποιείτε στην επιχείρησή σας, είτε από ενδοεταιρικές πηγές είτε από εξωτερικούς παροχείς υπηρεσιών");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Τι είδους υπηρεσίες υγείας και ασφάλειας χρησιμοποιείτε στην επιχείρησή σας, είτε από ενδοεταιρικές πηγές είτε από εξωτερικούς παροχείς υπηρεσιών;Ψυχολόγο\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM150_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ειδικό εργονομίας, ο οποίος ασχολείται με θέματα εργονομίας στο χώρο εργασίας");
@@ -5949,7 +5851,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM150_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ειδικό εργονομίας, ο οποίος ασχολείται με θέματα εργονομίας στο χώρο εργασίας");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM150_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Τι είδους υπηρεσίες υγείας και ασφάλειας χρησιμοποιείτε στην επιχείρησή σας, είτε από ενδοεταιρικές πηγές είτε από εξωτερικούς παροχείς υπηρεσιών");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Τι είδους υπηρεσίες υγείας και ασφάλειας χρησιμοποιείτε στην επιχείρησή σας, είτε από ενδοεταιρικές πηγές είτε από εξωτερικούς παροχείς υπηρεσιών;Ειδικό εργονομίας, ο οποίος ασχολείται με θέματα εργονομίας στο χώρο εργασίας\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM150_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Συμβούλους για την υγεία και την ασφάλεια");
@@ -5958,7 +5860,84 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM150_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Συμβούλους για την υγεία και την ασφάλεια");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM150_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Τι είδους υπηρεσίες υγείας και ασφάλειας χρησιμοποιείτε στην επιχείρησή σας, είτε από ενδοεταιρικές πηγές είτε από εξωτερικούς παροχείς υπηρεσιών");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Τι είδους υπηρεσίες υγείας και ασφάλειας χρησιμοποιείτε στην επιχείρησή σας, είτε από ενδοεταιρικές πηγές είτε από εξωτερικούς παροχείς υπηρεσιών;Συμβούλους για την υγεία και την ασφάλεια\"");
+
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM173_1"));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ;");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@fatherId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ;");
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM173_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Επίσημες οργανώσεις για την υγεία και την ασφάλεια στο χώρο εργασίας\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM173_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Επίσημες οργανώσεις για την υγεία και την ασφάλεια στο χώρο εργασίας\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM173_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Επίσημες οργανώσεις για την υγεία και την ασφάλεια στο χώρο εργασίας");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ;Επίσημες οργανώσεις για την υγεία και την ασφάλεια στο χώρο εργασίας\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM173_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ευρωπαϊκός Οργανισμός για την ασφάλεια και την υγεία στην εργασία ή Εθνικός Εστιακός Πόλος\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM173_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ευρωπαϊκός Οργανισμός για την ασφάλεια και την υγεία στην εργασία ή Εθνικός Εστιακός Πόλος\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM173_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ευρωπαϊκός Οργανισμός για την ασφάλεια και την υγεία στην εργασία ή Εθνικός Εστιακός Πόλος");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ;Ευρωπαϊκός Οργανισμός για την ασφάλεια και την υγεία στην εργασία ή Εθνικός Εστιακός Πόλος\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM173_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ενδοεταιρικές υπηρεσίες υγείας και ασφάλειας\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM173_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ενδοεταιρικές υπηρεσίες υγείας και ασφάλειας\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM173_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ενδοεταιρικές υπηρεσίες υγείας και ασφάλειας");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ;Ενδοεταιρικές υπηρεσίες υγείας και ασφάλειας\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM173_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε)\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM173_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε)\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM173_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε)");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ;Το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε)\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM173_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Οργανώσεις εργοδοτών\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM173_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Οργανώσεις εργοδοτών\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM173_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Οργανώσεις εργοδοτών");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ;Οργανώσεις εργοδοτών\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM173_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Τα εργατικά σωματεία/ συνδικάτα\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM173_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Τα εργατικά σωματεία/ συνδικάτα\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM173_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Τα εργατικά σωματεία/ συνδικάτα");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ;Τα εργατικά σωματεία/ συνδικάτα\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM173_7");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ειδικούς υγείας και ασφάλειας με σύμβαση έργου\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM173_7");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ειδικούς υγείας και ασφάλειας με σύμβαση έργου\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM173_7");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ειδικούς υγείας και ασφάλειας με σύμβαση έργου");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_7");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ;Ειδικούς υγείας και ασφάλειας με σύμβαση έργου\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM173_8");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Παροχείς ασφαλιστικών υπηρεσιών\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM173_8");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Παροχείς ασφαλιστικών υπηρεσιών\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM173_8");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Παροχείς ασφαλιστικών υπηρεσιών");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_8");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει χρησιμοποιήσει η επιχείρησή σας πληροφορίες για ζητήματα υγείας και ασφάλειας από οποιονδήποτε από τους ακόλουθους φορείς ;Παροχείς ασφαλιστικών υπηρεσιών\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM200_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -6123,138 +6102,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αρκετοί παράγοντες μπορούν να συντελέσουν στο άγχος, τη βία και την παρενόχληση στην εργασία. Έχουν να κάνουν με τον τρόπο οργάνωσης της εργασίας και συχνά αποκαλούνται «ψυχοκοινωνικοί κίνδυνοι». Παρακαλώ, πείτε μου αν κάποιος από τους ακόλουθους ψυχοκοινωνικούς κινδύνους απασχολεί την επιχείρησή σας.Διακρίσεις (για παράδειγμα, λόγω φύλου, ηλικίας ή εθνότητας)");
 
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Λόγοι για την ενασχόληση με θέματα υγείας και ασφάλειας σε μια επιχείρηση");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@fatherId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Λόγοι για την ενασχόληση με θέματα υγείας και ασφάλειας σε μια επιχείρηση");
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η εκπλήρωση νομικής υποχρέωσης");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η εκπλήρωση νομικής υποχρέωσης");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η εκπλήρωση νομικής υποχρέωσης");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Στην επιχείρησή σας, πόσο σημαντικοί είναι οι ακόλουθοι παράγοντες για την επίλυση ζητημάτων υγείας και ασφάλειας");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αίτημα των υπαλλήλων ή των εκπροσώπων τους");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αίτημα των υπαλλήλων ή των εκπροσώπων τους");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αίτημα των υπαλλήλων ή των εκπροσώπων τους");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Στην επιχείρησή σας, πόσο σημαντικοί είναι οι ακόλουθοι παράγοντες για την επίλυση ζητημάτων υγείας και ασφάλειας");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Διατήρηση του προσωπικού και διαχείριση/έλεγχος της απουσίας των εργαζομένων");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Διατήρηση του προσωπικού και διαχείριση/έλεγχος της απουσίας των εργαζομένων");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Διατήρηση του προσωπικού και διαχείριση/έλεγχος της απουσίας των εργαζομένων");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Στην επιχείρησή σας, πόσο σημαντικοί είναι οι ακόλουθοι παράγοντες για την επίλυση ζητημάτων υγείας και ασφάλειας");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Οικονομικά αίτια ή σχετικά με την απόδοση");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Οικονομικά αίτια ή σχετικά με την απόδοση");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Οικονομικά αίτια ή σχετικά με την απόδοση");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Στην επιχείρησή σας, πόσο σημαντικοί είναι οι ακόλουθοι παράγοντες για την επίλυση ζητημάτων υγείας και ασφάλειας");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αίτημα πελατών ή ανησυχία για τη φήμη της επιχείρησης");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αίτημα πελατών ή ανησυχία για τη φήμη της επιχείρησης");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αίτημα πελατών ή ανησυχία για τη φήμη της επιχείρησης");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Στην επιχείρησή σας, πόσο σημαντικοί είναι οι ακόλουθοι παράγοντες για την επίλυση ζητημάτων υγείας και ασφάλειας");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Πίεση από το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε)");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Πίεση από το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε)");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Πίεση από το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε)");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Στην επιχείρησή σας, πόσο σημαντικοί είναι οι ακόλουθοι παράγοντες για την επίλυση ζητημάτων υγείας και ασφάλειας");
-
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM172_1"));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Κύριες δυσκολίες στην αντιμετώπιση των ζητημάτων υγείας και ασφάλειας");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@fatherId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Κύριες δυσκολίες στην αντιμετώπιση των ζητημάτων υγείας και ασφάλειας");
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη πόρων όπως χρόνος, προσωπικό ή χρήματα");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM172_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη πόρων όπως χρόνος, προσωπικό ή χρήματα");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM172_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη πόρων όπως χρόνος, προσωπικό ή χρήματα");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM172_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ποια είναι τα κύρια εμπόδια που αντιμετωπίζει η επιχείρησή σας στην επίλυση ζητημάτων υγείας και ασφάλειας");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη ενημέρωσης");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM172_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη ενημέρωσης");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM172_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη ενημέρωσης");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM172_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ποια είναι τα κύρια εμπόδια που αντιμετωπίζει η επιχείρησή σας στην επίλυση ζητημάτων υγείας και ασφάλειας");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη εμπειρογνωμοσύνης");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM172_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη εμπειρογνωμοσύνης");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM172_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη εμπειρογνωμοσύνης");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM172_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ποια είναι τα κύρια εμπόδια που αντιμετωπίζει η επιχείρησή σας στην επίλυση ζητημάτων υγείας και ασφάλειας");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη τεχνικής υποστήριξης ή καθοδήγησης");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM172_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη τεχνικής υποστήριξης ή καθοδήγησης");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM172_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη τεχνικής υποστήριξης ή καθοδήγησης");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM172_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ποια είναι τα κύρια εμπόδια που αντιμετωπίζει η επιχείρησή σας στην επίλυση ζητημάτων υγείας και ασφάλειας");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η κουλτούρα εντός της επιχείρησης");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM172_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η κουλτούρα εντός της επιχείρησης");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM172_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η κουλτούρα εντός της επιχείρησης");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM172_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ποια είναι τα κύρια εμπόδια που αντιμετωπίζει η επιχείρησή σας στην επίλυση ζητημάτων υγείας και ασφάλειας");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η ευαισθησία του ζητήματος");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM172_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η ευαισθησία του ζητήματος");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM172_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η ευαισθησία του ζητήματος");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM172_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ποια είναι τα κύρια εμπόδια που αντιμετωπίζει η επιχείρησή σας στην επίλυση ζητημάτων υγείας και ασφάλειας");
-
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Utilización de servicios de salud y seguridad");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@fatherId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Utilización de servicios de salud y seguridad");
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM150_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Un médico del trabajo");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM150_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Un médico del trabajo");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM150_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Un médico del trabajo");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM150_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Qué servicios de seguridad y salud utiliza ya sean internos o externos?Un médico del trabajo");
-
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
@@ -6294,6 +6141,197 @@ SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@catego
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Řízení BOZP");
 SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Řízení BOZP");
+
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων;");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@fatherId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων;");
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM253_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αλλαγές στον τρόπο οργάνωσης της εργασίας\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM253_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αλλαγές στον τρόπο οργάνωσης της εργασίας\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM253_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αλλαγές στον τρόπο οργάνωσης της εργασίας");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων;Αλλαγές στον τρόπο οργάνωσης της εργασίας\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM253_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ανασχεδιασμό του χώρου εργασίας\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM253_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ανασχεδιασμό του χώρου εργασίας\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM253_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Ανασχεδιασμό του χώρου εργασίας");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων;Ανασχεδιασμό του χώρου εργασίας\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM253_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Παροχή εμπιστευτικών συμβουλευτικών υπηρεσιών για υπαλλήλους\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM253_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Παροχή εμπιστευτικών συμβουλευτικών υπηρεσιών για υπαλλήλους\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM253_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Παροχή εμπιστευτικών συμβουλευτικών υπηρεσιών για υπαλλήλους");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων;Παροχή εμπιστευτικών συμβουλευτικών υπηρεσιών για υπαλλήλους\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM253_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Συγκρότηση μιας διαδικασίας επίλυσης συγκρούσεων\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM253_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Συγκρότηση μιας διαδικασίας επίλυσης συγκρούσεων\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM253_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Συγκρότηση μιας διαδικασίας επίλυσης συγκρούσεων");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων;Συγκρότηση μιας διαδικασίας επίλυσης συγκρούσεων\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM253_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αλλαγές στις ρυθμίσεις του ωραρίου εργασίας\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM253_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αλλαγές στις ρυθμίσεις του ωραρίου εργασίας\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM253_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αλλαγές στις ρυθμίσεις του ωραρίου εργασίας");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων;Αλλαγές στις ρυθμίσεις του ωραρίου εργασίας\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM253_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Παροχή εκπαίδευσης\"");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM253_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Παροχή εκπαίδευσης\"");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM253_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Παροχή εκπαίδευσης");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Έχει εφαρμόσει η επιχείρησή σας τα τελευταία 3 χρόνια κάποιο από τα ακόλουθα μέτρα για την αντιμετώπιση ψυχοκοινωνικών κινδύνων;Παροχή εκπαίδευσης\"");
+
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Λόγοι για την ενασχόληση με θέματα υγείας και ασφάλειας σε μια επιχείρηση");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@fatherId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Λόγοι για την ενασχόληση με θέματα υγείας και ασφάλειας σε μια επιχείρηση");
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η εκπλήρωση νομικής υποχρέωσης");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η εκπλήρωση νομικής υποχρέωσης");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η εκπλήρωση νομικής υποχρέωσης");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Στην επιχείρησή σας, πόσο σημαντικοί είναι οι ακόλουθοι παράγοντες για την επίλυση ζητημάτων υγείας και ασφάλειας; Παρακαλούμε αναφέρετε για καθένα από τα ακόλουθα εάν αποτελεί σημαντικό παράγοντα, δευτερεύοντα παράγοντα ή καθόλου σημαντικό παράγοντα.Η εκπλήρωση νομικής υποχρέωσης\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αίτημα των υπαλλήλων ή των εκπροσώπων τους");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αίτημα των υπαλλήλων ή των εκπροσώπων τους");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αίτημα των υπαλλήλων ή των εκπροσώπων τους");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Στην επιχείρησή σας, πόσο σημαντικοί είναι οι ακόλουθοι παράγοντες για την επίλυση ζητημάτων υγείας και ασφάλειας; Παρακαλούμε αναφέρετε για καθένα από τα ακόλουθα εάν αποτελεί σημαντικό παράγοντα, δευτερεύοντα παράγοντα ή καθόλου σημαντικό παράγοντα.Αίτημα των υπαλλήλων ή των εκπροσώπων τους\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Διατήρηση του προσωπικού και διαχείριση/έλεγχος της απουσίας των εργαζομένων");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Διατήρηση του προσωπικού και διαχείριση/έλεγχος της απουσίας των εργαζομένων");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Διατήρηση του προσωπικού και διαχείριση/έλεγχος της απουσίας των εργαζομένων");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Στην επιχείρησή σας, πόσο σημαντικοί είναι οι ακόλουθοι παράγοντες για την επίλυση ζητημάτων υγείας και ασφάλειας; Παρακαλούμε αναφέρετε για καθένα από τα ακόλουθα εάν αποτελεί σημαντικό παράγοντα, δευτερεύοντα παράγοντα ή καθόλου σημαντικό παράγοντα.Διατήρηση του προσωπικού και διαχείριση/έλεγχος της απουσίας των εργαζομένων\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Οικονομικά αίτια ή σχετικά με την απόδοση");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Οικονομικά αίτια ή σχετικά με την απόδοση");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Οικονομικά αίτια ή σχετικά με την απόδοση");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Στην επιχείρησή σας, πόσο σημαντικοί είναι οι ακόλουθοι παράγοντες για την επίλυση ζητημάτων υγείας και ασφάλειας; Παρακαλούμε αναφέρετε για καθένα από τα ακόλουθα εάν αποτελεί σημαντικό παράγοντα, δευτερεύοντα παράγοντα ή καθόλου σημαντικό παράγοντα.Οικονομικά αίτια ή σχετικά με την απόδοση\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αίτημα πελατών ή ανησυχία για τη φήμη της επιχείρησης");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αίτημα πελατών ή ανησυχία για τη φήμη της επιχείρησης");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Αίτημα πελατών ή ανησυχία για τη φήμη της επιχείρησης");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Στην επιχείρησή σας, πόσο σημαντικοί είναι οι ακόλουθοι παράγοντες για την επίλυση ζητημάτων υγείας και ασφάλειας; Παρακαλούμε αναφέρετε για καθένα από τα ακόλουθα εάν αποτελεί σημαντικό παράγοντα, δευτερεύοντα παράγοντα ή καθόλου σημαντικό παράγοντα.Αίτημα πελατών ή ανησυχία για τη φήμη της επιχείρησης\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Πίεση από το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε)");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Πίεση από το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε)");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Πίεση από το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε)");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Στην επιχείρησή σας, πόσο σημαντικοί είναι οι ακόλουθοι παράγοντες για την επίλυση ζητημάτων υγείας και ασφάλειας; Παρακαλούμε αναφέρετε για καθένα από τα ακόλουθα εάν αποτελεί σημαντικό παράγοντα, δευτερεύοντα παράγοντα ή καθόλου σημαντικό παράγοντα.Πίεση από το Σώμα Επιθεώρησης Εργασίας (Σ.ΕΠ.Ε)\"");
+
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM172_1"));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Κύριες δυσκολίες στην αντιμετώπιση των ζητημάτων υγείας και ασφάλειας");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@fatherId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Κύριες δυσκολίες στην αντιμετώπιση των ζητημάτων υγείας και ασφάλειας");
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη πόρων όπως χρόνος, προσωπικό ή χρήματα");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM172_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη πόρων όπως χρόνος, προσωπικό ή χρήματα");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM172_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη πόρων όπως χρόνος, προσωπικό ή χρήματα");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM172_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ποια είναι τα κύρια εμπόδια που αντιμετωπίζει η επιχείρησή σας στην επίλυση ζητημάτων υγείας και ασφάλειας; Παρακαλώ πείτε μου για καθένα από τα παρακάτω εάν αποτελεί σημαντικό εμπόδιο, δευτερεύον εμπόδιο ή καθόλου σημαντικό εμπόδιο.Έλλειψη πόρων όπως χρόνος, προσωπικό ή χρήματα\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη ενημέρωσης");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM172_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη ενημέρωσης");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM172_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη ενημέρωσης");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM172_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ποια είναι τα κύρια εμπόδια που αντιμετωπίζει η επιχείρησή σας στην επίλυση ζητημάτων υγείας και ασφάλειας; Παρακαλώ πείτε μου για καθένα από τα παρακάτω εάν αποτελεί σημαντικό εμπόδιο, δευτερεύον εμπόδιο ή καθόλου σημαντικό εμπόδιο.Έλλειψη ενημέρωσης\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη εμπειρογνωμοσύνης");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM172_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη εμπειρογνωμοσύνης");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM172_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη εμπειρογνωμοσύνης");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM172_3");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ποια είναι τα κύρια εμπόδια που αντιμετωπίζει η επιχείρησή σας στην επίλυση ζητημάτων υγείας και ασφάλειας; Παρακαλώ πείτε μου για καθένα από τα παρακάτω εάν αποτελεί σημαντικό εμπόδιο, δευτερεύον εμπόδιο ή καθόλου σημαντικό εμπόδιο.Έλλειψη εμπειρογνωμοσύνης\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη τεχνικής υποστήριξης ή καθοδήγησης");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM172_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη τεχνικής υποστήριξης ή καθοδήγησης");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM172_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Έλλειψη τεχνικής υποστήριξης ή καθοδήγησης");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM172_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ποια είναι τα κύρια εμπόδια που αντιμετωπίζει η επιχείρησή σας στην επίλυση ζητημάτων υγείας και ασφάλειας; Παρακαλώ πείτε μου για καθένα από τα παρακάτω εάν αποτελεί σημαντικό εμπόδιο, δευτερεύον εμπόδιο ή καθόλου σημαντικό εμπόδιο.Έλλειψη τεχνικής υποστήριξης ή καθοδήγησης\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η κουλτούρα εντός της επιχείρησης");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM172_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η κουλτούρα εντός της επιχείρησης");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM172_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η κουλτούρα εντός της επιχείρησης");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM172_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ποια είναι τα κύρια εμπόδια που αντιμετωπίζει η επιχείρησή σας στην επίλυση ζητημάτων υγείας και ασφάλειας; Παρακαλώ πείτε μου για καθένα από τα παρακάτω εάν αποτελεί σημαντικό εμπόδιο, δευτερεύον εμπόδιο ή καθόλου σημαντικό εμπόδιο.Η κουλτούρα εντός της επιχείρησης\"");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η ευαισθησία του ζητήματος");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM172_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η ευαισθησία του ζητήματος");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM172_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Η ευαισθησία του ζητήματος");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM172_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"Ποια είναι τα κύρια εμπόδια που αντιμετωπίζει η επιχείρησή σας στην επίλυση ζητημάτων υγείας και ασφάλειας; Παρακαλώ πείτε μου για καθένα από τα παρακάτω εάν αποτελεί σημαντικό εμπόδιο, δευτερεύον εμπόδιο ή καθόλου σημαντικό εμπόδιο.Η ευαισθησία του ζητήματος\"");
+
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Utilización de servicios de salud y seguridad");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@fatherId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Utilización de servicios de salud y seguridad");
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM150_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Un médico del trabajo");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM150_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Un médico del trabajo");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM150_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Un médico del trabajo");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM150_1");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Qué servicios de seguridad y salud utiliza ya sean internos o externos?Un médico del trabajo");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM150_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Un experto en seguridad");
@@ -6955,7 +6993,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Ajasurve");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid; need puudutavad töökorraldust ja neist räägitakse sageli kui \"\"psühhosotsiaalsetest riskidest\"\". Palun öelge, kas mõni järgmistest psühhosotsiaalsetest riskidest on teie ettevõttes valupunktiks.Ajasurve\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Puudulik kommunikatsioon juhtkonna ja töötajate vahel");
@@ -6964,7 +7002,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Puudulik kommunikatsioon juhtkonna ja töötajate vahel");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid; need puudutavad töökorraldust ja neist räägitakse sageli kui \"\"psühhosotsiaalsetest riskidest\"\". Palun öelge, kas mõni järgmistest psühhosotsiaalsetest riskidest on teie ettevõttes valupunktiks.Puudulik kommunikatsioon juhtkonna ja töötajate vahel\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Halb koostöö kolleegide vahel");
@@ -6973,7 +7011,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Halb koostöö kolleegide vahel");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid; need puudutavad töökorraldust ja neist räägitakse sageli kui \"\"psühhosotsiaalsetest riskidest\"\". Palun öelge, kas mõni järgmistest psühhosotsiaalsetest riskidest on teie ettevõttes valupunktiks.Halb koostöö kolleegide vahel\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötajate vähene kontroll oma töökorralduse üle");
@@ -6982,7 +7020,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötajate vähene kontroll oma töökorralduse üle");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid; need puudutavad töökorraldust ja neist räägitakse sageli kui \"\"psühhosotsiaalsetest riskidest\"\". Palun öelge, kas mõni järgmistest psühhosotsiaalsetest riskidest on teie ettevõttes valupunktiks.Töötajate vähene kontroll oma töökorralduse üle\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töösuhte ebakindlus");
@@ -6991,7 +7029,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töösuhte ebakindlus");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid; need puudutavad töökorraldust ja neist räägitakse sageli kui \"\"psühhosotsiaalsetest riskidest\"\". Palun öelge, kas mõni järgmistest psühhosotsiaalsetest riskidest on teie ettevõttes valupunktiks.Töösuhte ebakindlus\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Vajadus tegeleda raskete klientide, patsientide, õpilastega jne.");
@@ -7000,7 +7038,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Vajadus tegeleda raskete klientide, patsientide, õpilastega jne.");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid; need puudutavad töökorraldust ja neist räägitakse sageli kui \"\"psühhosotsiaalsetest riskidest\"\". Palun öelge, kas mõni järgmistest psühhosotsiaalsetest riskidest on teie ettevõttes valupunktiks.Vajadus tegeleda raskete klientide, patsientide, õpilastega jne.\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Probleemid ülemuse - töötaja suhetes");
@@ -7009,7 +7047,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Probleemid ülemuse - töötaja suhetes");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid; need puudutavad töökorraldust ja neist räägitakse sageli kui \"\"psühhosotsiaalsetest riskidest\"\". Palun öelge, kas mõni järgmistest psühhosotsiaalsetest riskidest on teie ettevõttes valupunktiks.Probleemid ülemuse - töötaja suhetes\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Pikk või ebaregulaarne tööaeg");
@@ -7018,7 +7056,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Pikk või ebaregulaarne tööaeg");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid; need puudutavad töökorraldust ja neist räägitakse sageli kui \"\"psühhosotsiaalsetest riskidest\"\". Palun öelge, kas mõni järgmistest psühhosotsiaalsetest riskidest on teie ettevõttes valupunktiks.Pikk või ebaregulaarne tööaeg\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Ebaselge inimressursside poliitika");
@@ -7027,7 +7065,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Ebaselge inimressursside poliitika");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid; need puudutavad töökorraldust ja neist räägitakse sageli kui \"\"psühhosotsiaalsetest riskidest\"\". Palun öelge, kas mõni järgmistest psühhosotsiaalsetest riskidest on teie ettevõttes valupunktiks.Ebaselge inimressursside poliitika\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Diskrimineerimine (nt soost, vanusest või etnilisest päritolust tingitud)");
@@ -7036,7 +7074,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Diskrimineerimine (nt soost, vanusest või etnilisest päritolust tingitud)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "\"Stressi, vägivalda ja kiusamist töökohal mõjutavad mitmed tegurid; need puudutavad töökorraldust ja neist räägitakse sageli kui \"\"psühhosotsiaalsetest riskidest\"\". Palun öelge, kas mõni järgmistest psühhosotsiaalsetest riskidest on teie ettevõttes valupunktiks.Diskrimineerimine (nt soost, vanusest või etnilisest päritolust tingitud)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -7119,6 +7157,54 @@ SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötajate või nende esindajate soovid");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kuivõrd olulised on teie ettevõttele järgmised põhjused tervishoiu- ja ohutusalaste küsimustega tegelemiseks? Palun öelge iga põhjuse puhul, kas see on oluline põhjus, väheoluline põhjus või ei ole üldse põhjuseks.Töötajate või nende esindajate soovid");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Psychosociální rizika a jejich řízení");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Psychosociální rizika a jejich řízení");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Motivační faktory a překážky");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Motivační faktory a překážky");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Účast zaměstnanců");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Účast zaměstnanců");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Håndtering af arbejdsmiljø");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Håndtering af arbejdsmiljø");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Psykosociale risici og håndtering heraf");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Psykosociale risici og håndtering heraf");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Incitamenter og barrierer");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Incitamenter og barrierer");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Personali säilitamine ja puudumistega tegelemine");
@@ -7332,54 +7418,6 @@ SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Terveys- ja turvallisuuspalveluiden asiantuntijat, joiden kanssa on tehty sopimus");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Onko toimipaikkanne käyttänyt terveys- tai turvallisuusasioita koskevaa tietoa, jonka olette saaneet joltakin seuraavista elimistä tai instituutioista?Terveys- ja turvallisuuspalveluiden asiantuntijat, joiden kanssa on tehty sopimus");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Psychosociální rizika a jejich řízení");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Psychosociální rizika a jejich řízení");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Motivační faktory a překážky");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Motivační faktory a překážky");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Účast zaměstnanců");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Účast zaměstnanců");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Håndtering af arbejdsmiljø");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Håndtering af arbejdsmiljø");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Psykosociale risici og håndtering heraf");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Psykosociale risici og håndtering heraf");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Incitamenter og barrierer");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Incitamenter og barrierer");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM173_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Vakuutusyhtiöt");
@@ -7937,7 +7975,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Pression liée au temps");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail; ils concernent la façon dont le travail est organisé et sont souvent qualifiés de ’risques psychosociaux\"\". Pourriez-vous me dire si les risques psychosociaux suivants sont une préoccupation dans votre établissement?Pression liée au temps\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "auvaise communication entre la direction et les salariés");
@@ -7946,7 +7984,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Mauvaise communication entre la direction et les salariés");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail; ils concernent la façon dont le travail est organisé et sont souvent qualifiés de ’risques psychosociaux\"\". Pourriez-vous me dire si les risques psychosociaux suivants sont une préoccupation dans votre établissement?Mauvaise communication entre la direction et les salariés\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Mauvaise coopération entre collègues");
@@ -7955,7 +7993,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Mauvaise coopération entre collègues");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail; ils concernent la façon dont le travail est organisé et sont souvent qualifiés de ’risques psychosociaux\"\". Pourriez-vous me dire si les risques psychosociaux suivants sont une préoccupation dans votre établissement?Mauvaise coopération entre collègues\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "anque de contrôle de la part des salariés sur l’organisation de leur travail");
@@ -7964,7 +8002,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Manque de contrôle de la part des salariés sur l’organisation de leur travail");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail; ils concernent la façon dont le travail est organisé et sont souvent qualifiés de ’risques psychosociaux\"\". Pourriez-vous me dire si les risques psychosociaux suivants sont une préoccupation dans votre établissement?Manque de contrôle de la part des salariés sur l’organisation de leur travail\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "nsécurité du travail");
@@ -7973,7 +8011,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Insécurité du travail");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail; ils concernent la façon dont le travail est organisé et sont souvent qualifiés de ’risques psychosociaux\"\". Pourriez-vous me dire si les risques psychosociaux suivants sont une préoccupation dans votre établissement?Insécurité du travail\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "onfrontation avec des clients, des patients, des élèves difficiles, etc.");
@@ -7982,7 +8020,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Confrontation avec des clients, des patients, des élèves difficiles, etc.");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail; ils concernent la façon dont le travail est organisé et sont souvent qualifiés de ’risques psychosociaux\"\". Pourriez-vous me dire si les risques psychosociaux suivants sont une préoccupation dans votre établissement?Confrontation avec des clients, des patients, des élèves difficiles, etc.\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "roblèmes dans les relations supérieurs - salariés");
@@ -7991,7 +8029,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Problèmes dans les relations supérieurs - salariés");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail; ils concernent la façon dont le travail est organisé et sont souvent qualifiés de ’risques psychosociaux\"\". Pourriez-vous me dire si les risques psychosociaux suivants sont une préoccupation dans votre établissement?Problèmes dans les relations supérieurs - salariés\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "oraires de travail longs ou irréguliers");
@@ -8000,7 +8038,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Horaires de travail longs ou irréguliers");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail; ils concernent la façon dont le travail est organisé et sont souvent qualifiés de ’risques psychosociaux\"\". Pourriez-vous me dire si les risques psychosociaux suivants sont une préoccupation dans votre établissement?Horaires de travail longs ou irréguliers\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "ne politique des ressources humaines pas claire");
@@ -8009,7 +8047,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Une politique des ressources humaines pas claire");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail; ils concernent la façon dont le travail est organisé et sont souvent qualifiés de ’risques psychosociaux\"\". Pourriez-vous me dire si les risques psychosociaux suivants sont une préoccupation dans votre établissement?Une politique des ressources humaines pas claire\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "iscrimination (par ex. due au sexe, à l’âge ou à l’origine ethnique)");
@@ -8018,7 +8056,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Discrimination (par ex. due au sexe, à l’âge ou à l’origine ethnique)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "\"Plusieurs facteurs peuvent contribuer au stress, à la violence et au harcèlement au travail; ils concernent la façon dont le travail est organisé et sont souvent qualifiés de ’risques psychosociaux\"\". Pourriez-vous me dire si les risques psychosociaux suivants sont une préoccupation dans votre établissement?Discrimination (par ex. due au sexe, à l’âge ou à l’origine ethnique)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -8078,6 +8116,54 @@ SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Formations");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Au cours des trois dernières années, votre établissement a-t-il mis en place une ou plusieurs des mesures suivantes pour traiter les risques psychosociaux?Formations");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Medarbejderdeltagelse");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Medarbejderdeltagelse");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Sicherheits- und Gesundheitsschutzmanagement");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Sicherheits- und Gesundheitsschutzmanagement");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Psychosoziale Risiken und ihr Management");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Psychosoziale Risiken und ihr Management");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Antriebskräfte und Hemmnisse");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Antriebskräfte und Hemmnisse");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Arbeitnehmerbeteiligung");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Arbeitnehmerbeteiligung");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Διαχείριση ΕΑΥ");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Διαχείριση ΕΑΥ");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -8237,54 +8323,6 @@ SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Stručnjak za ergonomiju, koji se bavi podešavanjem mjesta rada");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM150_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Koje usluge zaštite na radu koristite, bilo u okviru samog poduzeća ili na osnovu ugovora s vanjskim pružateljem?Stručnjak za ergonomiju, koji se bavi podešavanjem mjesta rada");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Medarbejderdeltagelse");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Medarbejderdeltagelse");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Sicherheits- und Gesundheitsschutzmanagement");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Sicherheits- und Gesundheitsschutzmanagement");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Psychosoziale Risiken und ihr Management");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Psychosoziale Risiken und ihr Management");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Antriebskräfte und Hemmnisse");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Antriebskräfte und Hemmnisse");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Arbeitnehmerbeteiligung");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Arbeitnehmerbeteiligung");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Διαχείριση ΕΑΥ");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Διαχείριση ΕΑΥ");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM150_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Opće savjetništvo o zaštiti na radu");
@@ -8452,7 +8490,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Vremenski pritisak");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu; oni se odnose na način na koji je organiziran rad i često se nazivaju 'psihosocijalnim rizicima'. Molim Vas, recite mi je li bilo koji od sljedećih psihosocijalnih rizika razlog za zabrinutost u Vašem poduzeću.Vremenski pritisak\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Slaba komunikacija između menadžmenta i zaposlenika");
@@ -8461,7 +8499,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Slaba komunikacija između menadžmenta i zaposlenika");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu; oni se odnose na način na koji je organiziran rad i često se nazivaju 'psihosocijalnim rizicima'. Molim Vas, recite mi je li bilo koji od sljedećih psihosocijalnih rizika razlog za zabrinutost u Vašem poduzeću.Slaba komunikacija između menadžmenta i zaposlenika\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Slaba suradnja između kolega");
@@ -8470,7 +8508,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Slaba suradnja između kolega");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu; oni se odnose na način na koji je organiziran rad i često se nazivaju 'psihosocijalnim rizicima'. Molim Vas, recite mi je li bilo koji od sljedećih psihosocijalnih rizika razlog za zabrinutost u Vašem poduzeću.Slaba suradnja između kolega\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Nedostatak kontrole zaposlenika u organiziranju njihovog posla");
@@ -8479,7 +8517,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Nedostatak kontrole zaposlenika u organiziranju njihovog posla");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu; oni se odnose na način na koji je organiziran rad i često se nazivaju 'psihosocijalnim rizicima'. Molim Vas, recite mi je li bilo koji od sljedećih psihosocijalnih rizika razlog za zabrinutost u Vašem poduzeću.Nedostatak kontrole zaposlenika u organiziranju njihovog posla\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Nesigurnost zaposlenja");
@@ -8488,7 +8526,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Nesigurnost zaposlenja");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu; oni se odnose na način na koji je organiziran rad i često se nazivaju 'psihosocijalnim rizicima'. Molim Vas, recite mi je li bilo koji od sljedećih psihosocijalnih rizika razlog za zabrinutost u Vašem poduzeću.Nesigurnost zaposlenja\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Obveza bavljenja napornim kupcima, pacijentima, učenicima, itd.");
@@ -8497,7 +8535,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Obveza bavljenja napornim kupcima, pacijentima, učenicima, itd.");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu; oni se odnose na način na koji je organiziran rad i često se nazivaju 'psihosocijalnim rizicima'. Molim Vas, recite mi je li bilo koji od sljedećih psihosocijalnih rizika razlog za zabrinutost u Vašem poduzeću.Obveza bavljenja napornim kupcima, pacijentima, učenicima, itd.\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Problemi u odnosima između nadzornika i zaposlenika");
@@ -8506,7 +8544,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Problemi u odnosima između nadzornika i zaposlenika");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu; oni se odnose na način na koji je organiziran rad i često se nazivaju 'psihosocijalnim rizicima'. Molim Vas, recite mi je li bilo koji od sljedećih psihosocijalnih rizika razlog za zabrinutost u Vašem poduzeću.Problemi u odnosima između nadzornika i zaposlenika\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Dugo ili nepravilno radno vrijeme");
@@ -8515,7 +8553,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Dugo ili nepravilno radno vrijeme");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu; oni se odnose na način na koji je organiziran rad i često se nazivaju 'psihosocijalnim rizicima'. Molim Vas, recite mi je li bilo koji od sljedećih psihosocijalnih rizika razlog za zabrinutost u Vašem poduzeću.Dugo ili nepravilno radno vrijeme\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Nejasna politika ljudskih resursa");
@@ -8524,7 +8562,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Nejasna politika ljudskih resursa");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu; oni se odnose na način na koji je organiziran rad i često se nazivaju 'psihosocijalnim rizicima'. Molim Vas, recite mi je li bilo koji od sljedećih psihosocijalnih rizika razlog za zabrinutost u Vašem poduzeću.Nejasna politika ljudskih resursa\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Diskriminacija (na primjer na osnovu spola, godina života ili etničke pripadnosti)");
@@ -8533,7 +8571,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Diskriminacija (na primjer na osnovu spola, godina života ili etničke pripadnosti)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "\"Brojni čimbenici mogu doprinijeti stresu, nasilju i uznemiravanju na poslu; oni se odnose na način na koji je organiziran rad i često se nazivaju 'psihosocijalnim rizicima'. Molim Vas, recite mi je li bilo koji od sljedećih psihosocijalnih rizika razlog za zabrinutost u Vašem poduzeću.Diskriminacija (na primjer na osnovu spola, godina života ili etničke pripadnosti)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -8919,7 +8957,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Az idő által gyakorolt nyomás");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat; ezek érintik a munka szervezését és gyakran ’pszichológiai kockázatokként’ említik őket. Kérem, mondja meg, hogy az alábbi pszichológiai kockázatok közül jelent-e gondot valamelyik az intézménynél/telephelyénél: Az idő által gyakorolt nyomás\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Gyenge kommunikáció a vezetés és a munkavállalók között");
@@ -8928,7 +8966,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Gyenge kommunikáció a vezetés és a munkavállalók között");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat; ezek érintik a munka szervezését és gyakran ’pszichológiai kockázatokként’ említik őket. Kérem, mondja meg, hogy az alábbi pszichológiai kockázatok közül jelent-e gondot valamelyik az intézménynél/telephelyénél: Gyenge kommunikáció a vezetés és a munkavállalók között\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Gyenge együttműködés a kollégák között");
@@ -8937,7 +8975,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Gyenge együttműködés a kollégák között");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat; ezek érintik a munka szervezését és gyakran ’pszichológiai kockázatokként’ említik őket. Kérem, mondja meg, hogy az alábbi pszichológiai kockázatok közül jelent-e gondot valamelyik az intézménynél/telephelyénél: Gyenge együttműködés a kollégák között\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "A munkavállalói irányítás hiánya a munkájuk megszervezésében");
@@ -8946,7 +8984,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "A munkavállalói irányítás hiánya a munkájuk megszervezésében");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat; ezek érintik a munka szervezését és gyakran ’pszichológiai kockázatokként’ említik őket. Kérem, mondja meg, hogy az alábbi pszichológiai kockázatok közül jelent-e gondot valamelyik az intézménynél/telephelyénél: A munkavállalói irányítás hiánya a munkájuk megszervezésében\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Az állások bizonytalansága");
@@ -8955,7 +8993,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Az állások bizonytalansága");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat; ezek érintik a munka szervezését és gyakran ’pszichológiai kockázatokként’ említik őket. Kérem, mondja meg, hogy az alábbi pszichológiai kockázatok közül jelent-e gondot valamelyik az intézménynél/telephelyénél: Az állások bizonytalansága\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Fárasztó ügyfelekkel, páciensekkel, tanulókkal, stb. kell foglalkozni");
@@ -8964,7 +9002,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Fárasztó ügyfelekkel, páciensekkel, tanulókkal, stb. kell foglalkozni");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat; ezek érintik a munka szervezését és gyakran ’pszichológiai kockázatokként’ említik őket. Kérem, mondja meg, hogy az alábbi pszichológiai kockázatok közül jelent-e gondot valamelyik az intézménynél/telephelyénél: Fárasztó ügyfelekkel, páciensekkel, tanulókkal, stb. kell foglalkozni\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_7"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -8978,7 +9016,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Problémák a felügyelő - munkavállaló viszonyban");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat; ezek érintik a munka szervezését és gyakran ’pszichológiai kockázatokként’ említik őket. Kérem, mondja meg, hogy az alábbi pszichológiai kockázatok közül jelent-e gondot valamelyik az intézménynél/telephelyénél: Problémák a felügyelő - munkavállaló viszonyban\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Hosszú vagy szabálytalan munkaidő");
@@ -8987,7 +9025,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Hosszú vagy szabálytalan munkaidő");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat; ezek érintik a munka szervezését és gyakran ’pszichológiai kockázatokként’ említik őket. Kérem, mondja meg, hogy az alábbi pszichológiai kockázatok közül jelent-e gondot valamelyik az intézménynél/telephelyénél: Hosszú vagy szabálytalan munkaidő\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Homályos humán erőforrás politika");
@@ -8996,7 +9034,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Homályos humán erőforrás politika");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat; ezek érintik a munka szervezését és gyakran ’pszichológiai kockázatokként’ említik őket. Kérem, mondja meg, hogy az alábbi pszichológiai kockázatok közül jelent-e gondot valamelyik az intézménynél/telephelyénél: Homályos humán erőforrás politika\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Diszkrimináció (például nemi, életkori vagy etnikai hovatartozás miatt)");
@@ -9005,7 +9043,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Diszkrimináció (például nemi, életkori vagy etnikai hovatartozás miatt)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "\"A munkahelyi stresszhez, erőszakhoz és zaklatáshoz számos tényező hozzájárulhat; ezek érintik a munka szervezését és gyakran ’pszichológiai kockázatokként’ említik őket. Kérem, mondja meg, hogy az alábbi pszichológiai kockázatok közül jelent-e gondot valamelyik az intézménynél/telephelyénél: Diszkrimináció (például nemi, életkori vagy etnikai hovatartozás miatt)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -9020,6 +9058,15 @@ SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "A munka megszervezés módjának változtatása");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Az elmúlt 3 évben az Önök intézménye/telephelye alkalmazta-e az alábbi intézkedések bármelyikét a pszichológiai kockázatok kezelése érdekében?A munka megszervezés módjának változtatása");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM253_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "A munkaterület átépítése");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM253_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "A munkaterület átépítése");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM253_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "A munkaterület átépítése");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Az elmúlt 3 évben az Önök intézménye/telephelye alkalmazta-e az alábbi intézkedések bármelyikét a pszichológiai kockázatok kezelése érdekében?A munkaterület átépítése");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
@@ -9060,15 +9107,6 @@ SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@catego
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Riesgos psicosociales y su gestión");
 SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Riesgos psicosociales y su gestión");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM253_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "A munkaterület átépítése");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM253_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "A munkaterület átépítése");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM253_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "A munkaterület átépítése");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM253_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Az elmúlt 3 évben az Önök intézménye/telephelye alkalmazta-e az alábbi intézkedések bármelyikét a pszichológiai kockázatok kezelése érdekében?A munkaterület átépítése");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM253_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Bizalmas tanácsadás munkavállalóknak");
@@ -9431,7 +9469,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Pressioni per scadenze");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici; riguardano il modo in cui il lavoro è organizzato e rientrano in quelli che vengono chiamati ‘rischi psicosociali’. La prego di dirmi se qualcuno tra i seguenti rischi psicosociali sono motivo di preoccupazione nella vostra azienda.Pressioni per scadenze\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Poca comunicazione tra dipendenti e direzione");
@@ -9440,7 +9478,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Poca comunicazione tra dipendenti e direzione");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici; riguardano il modo in cui il lavoro è organizzato e rientrano in quelli che vengono chiamati ‘rischi psicosociali’. La prego di dirmi se qualcuno tra i seguenti rischi psicosociali sono motivo di preoccupazione nella vostra azienda.Poca comunicazione tra dipendenti e direzione\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Poca collaborazione tra colleghi");
@@ -9449,7 +9487,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Poca collaborazione tra colleghi");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici; riguardano il modo in cui il lavoro è organizzato e rientrano in quelli che vengono chiamati ‘rischi psicosociali’. La prego di dirmi se qualcuno tra i seguenti rischi psicosociali sono motivo di preoccupazione nella vostra azienda.Poca collaborazione tra colleghi\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Mancanza di controllo da parte dei dipendenti sull'organizzazione del loro lavoro");
@@ -9458,7 +9496,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Mancanza di controllo da parte dei dipendenti sull'organizzazione del loro lavoro");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici; riguardano il modo in cui il lavoro è organizzato e rientrano in quelli che vengono chiamati ‘rischi psicosociali’. La prego di dirmi se qualcuno tra i seguenti rischi psicosociali sono motivo di preoccupazione nella vostra azienda.Mancanza di controllo da parte dei dipendenti sull'organizzazione del loro lavoro\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Insicurezza dell'impiego");
@@ -9467,7 +9505,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Insicurezza dell'impiego");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici; riguardano il modo in cui il lavoro è organizzato e rientrano in quelli che vengono chiamati ‘rischi psicosociali’. La prego di dirmi se qualcuno tra i seguenti rischi psicosociali sono motivo di preoccupazione nella vostra azienda.Insicurezza dell'impiego\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Il dover affrontare difficili clienti, pazienti, allievi ecc");
@@ -9476,7 +9514,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Il dover affrontare difficili clienti, pazienti, allievi ecc");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici; riguardano il modo in cui il lavoro è organizzato e rientrano in quelli che vengono chiamati ‘rischi psicosociali’. La prego di dirmi se qualcuno tra i seguenti rischi psicosociali sono motivo di preoccupazione nella vostra azienda.Il dover affrontare difficili clienti, pazienti, allievi ecc\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Problemi nel rapporto tra dipendenti e superiori");
@@ -9485,7 +9523,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Problemi nel rapporto tra dipendenti e superiori");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici; riguardano il modo in cui il lavoro è organizzato e rientrano in quelli che vengono chiamati ‘rischi psicosociali’. La prego di dirmi se qualcuno tra i seguenti rischi psicosociali sono motivo di preoccupazione nella vostra azienda.Problemi nel rapporto tra dipendenti e superiori\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Orari troppo lunghi o irregolari");
@@ -9494,7 +9532,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Orari troppo lunghi o irregolari");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici; riguardano il modo in cui il lavoro è organizzato e rientrano in quelli che vengono chiamati ‘rischi psicosociali’. La prego di dirmi se qualcuno tra i seguenti rischi psicosociali sono motivo di preoccupazione nella vostra azienda.Orari troppo lunghi o irregolari\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Mancanza di trasparenza nella politica delle risorse umane");
@@ -9503,7 +9541,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Mancanza di trasparenza nella politica delle risorse umane");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici; riguardano il modo in cui il lavoro è organizzato e rientrano in quelli che vengono chiamati ‘rischi psicosociali’. La prego di dirmi se qualcuno tra i seguenti rischi psicosociali sono motivo di preoccupazione nella vostra azienda.Mancanza di trasparenza nella politica delle risorse umane\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Discriminazione (per es. dovuta a età, sesso, gruppo etnico ecc.)");
@@ -9512,7 +9550,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Discriminazione (per es. dovuta a età, sesso, gruppo etnico ecc.)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "\"I fattori che possono contribuire allo stress, alla violenza o alle minacce sul lavoro sono molteplici; riguardano il modo in cui il lavoro è organizzato e rientrano in quelli che vengono chiamati ‘rischi psicosociali’. La prego di dirmi se qualcuno tra i seguenti rischi psicosociali sono motivo di preoccupazione nella vostra azienda.Discriminazione (per es. dovuta a età, sesso, gruppo etnico ecc.)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -9898,7 +9936,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Laiko trūkumo keliamas stresas");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių; jie yra susiję su darbo organizavimo pobūdžiu ir dažnai vadinami „psichologiniais ir socialiniais rizikos veiksniais“. Prašome pasakyti, ar kurie nors iš šių psichosocialinių rizikos veiksnių kelia susirūpinimą Jūsų įmonėje.Laiko trūkumo keliamas stresas\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Nepakankama komunikacija tarp vadovybės ir darbuotojų");
@@ -9907,7 +9945,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Nepakankama komunikacija tarp vadovybės ir darbuotojų");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių; jie yra susiję su darbo organizavimo pobūdžiu ir dažnai vadinami „psichologiniais ir socialiniais rizikos veiksniais“. Prašome pasakyti, ar kurie nors iš šių psichosocialinių rizikos veiksnių kelia susirūpinimą Jūsų įmonėje.Nepakankama komunikacija tarp vadovybės ir darbuotojų\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Nepakankamas bendradarbiavimas tarp bendradarbių");
@@ -9916,7 +9954,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Nepakankamas bendradarbiavimas tarp bendradarbių");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių; jie yra susiję su darbo organizavimo pobūdžiu ir dažnai vadinami „psichologiniais ir socialiniais rizikos veiksniais“. Prašome pasakyti, ar kurie nors iš šių psichosocialinių rizikos veiksnių kelia susirūpinimą Jūsų įmonėje.Nepakankamas bendradarbiavimas tarp bendradarbių\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Nepakankama darbuotojų kontrolė organizuojant jų darbą");
@@ -9925,7 +9963,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Nepakankama darbuotojų kontrolė organizuojant jų darbą");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių; jie yra susiję su darbo organizavimo pobūdžiu ir dažnai vadinami „psichologiniais ir socialiniais rizikos veiksniais“. Prašome pasakyti, ar kurie nors iš šių psichosocialinių rizikos veiksnių kelia susirūpinimą Jūsų įmonėje.Nepakankama darbuotojų kontrolė organizuojant jų darbą\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Darbo saugumas");
@@ -9934,7 +9972,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Darbo saugumas");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių; jie yra susiję su darbo organizavimo pobūdžiu ir dažnai vadinami „psichologiniais ir socialiniais rizikos veiksniais“. Prašome pasakyti, ar kurie nors iš šių psichosocialinių rizikos veiksnių kelia susirūpinimą Jūsų įmonėje.Darbo saugumas\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Būtinybė turėti reikalų su problemiškais klientais, pacientais, mokiniais ir pan.");
@@ -9943,7 +9981,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Būtinybė turėti reikalų su problemiškais klientais, pacientais, mokiniais ir pan.");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių; jie yra susiję su darbo organizavimo pobūdžiu ir dažnai vadinami „psichologiniais ir socialiniais rizikos veiksniais“. Prašome pasakyti, ar kurie nors iš šių psichosocialinių rizikos veiksnių kelia susirūpinimą Jūsų įmonėje.Būtinybė turėti reikalų su problemiškais klientais, pacientais, mokiniais ir pan.\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Vadovybės ir darbuotojų santykių problemos");
@@ -9952,7 +9990,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Vadovybės ir darbuotojų santykių problemos");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių; jie yra susiję su darbo organizavimo pobūdžiu ir dažnai vadinami „psichologiniais ir socialiniais rizikos veiksniais“. Prašome pasakyti, ar kurie nors iš šių psichosocialinių rizikos veiksnių kelia susirūpinimą Jūsų įmonėje.Vadovybės ir darbuotojų santykių problemos\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ilgai trunkančios arba nereguliarios darbo valandos");
@@ -9961,7 +9999,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ilgai trunkančios arba nereguliarios darbo valandos");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių; jie yra susiję su darbo organizavimo pobūdžiu ir dažnai vadinami „psichologiniais ir socialiniais rizikos veiksniais“. Prašome pasakyti, ar kurie nors iš šių psichosocialinių rizikos veiksnių kelia susirūpinimą Jūsų įmonėje.Ilgai trunkančios arba nereguliarios darbo valandos\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Neaiški žmogiškųjų išteklių politika");
@@ -9970,7 +10008,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Neaiški žmogiškųjų išteklių politika");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių; jie yra susiję su darbo organizavimo pobūdžiu ir dažnai vadinami „psichologiniais ir socialiniais rizikos veiksniais“. Prašome pasakyti, ar kurie nors iš šių psichosocialinių rizikos veiksnių kelia susirūpinimą Jūsų įmonėje.Neaiški žmogiškųjų išteklių politika\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Diskriminacija (pvz., dėl lyties, amžiaus arba tautinės kilmės)");
@@ -9979,7 +10017,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Diskriminacija (pvz., dėl lyties, amžiaus arba tautinės kilmės)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "\"Prie streso, prievartos arba priekabiavimo darbe gali prisidėti keletas veiksnių; jie yra susiję su darbo organizavimo pobūdžiu ir dažnai vadinami „psichologiniais ir socialiniais rizikos veiksniais“. Prašome pasakyti, ar kurie nors iš šių psichosocialinių rizikos veiksnių kelia susirūpinimą Jūsų įmonėje.Diskriminacija (pvz., dėl lyties, amžiaus arba tautinės kilmės)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -10231,6 +10269,54 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūsu uzņēmuma vienība ir izmantojusi šādu organizāciju vai iestāžu sniegtu informāciju par darba drošību un veselības aizsardzību?Eiropas Darba drošības un veselības aizsardzības aģentūra");
 
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Factores impulsores y obstáculos");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Factores impulsores y obstáculos");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Participación de los trabajadores");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Participación de los trabajadores");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötervishoiu ja tööohutuse juhtimine");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötervishoiu ja tööohutuse juhtimine");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Psühhosotsiaalsed riskid ja nende ohjamine");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Psühhosotsiaalsed riskid ja nende ohjamine");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Ajendid ja tõkked");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Ajendid ja tõkked");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötaja osalus");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötaja osalus");
+
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM173_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Uzņēmuma iekšējie darba drošības un veselības aizsardzības dienesti");
 SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM173_3");
@@ -10299,54 +10385,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM200_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Par katru no šiem faktoriem, sakiet, lūdzu, vai Jūsu uzņēmuma vienībā tiem tiek pievērsta liela uzmanība, zināma uzmanība vai netiek pievērsta uzmanība nemaz?Bīstamas vielas (Intervētājam: nepieciešamības gadījumā paskaidrojiet: piemēram, putekļi, ķīmiskas, bioloģiskas vai radioaktīvas vielas)");
 
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Factores impulsores y obstáculos");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Factores impulsores y obstáculos");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Participación de los trabajadores");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Participación de los trabajadores");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötervishoiu ja tööohutuse juhtimine");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötervishoiu ja tööohutuse juhtimine");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Psühhosotsiaalsed riskid ja nende ohjamine");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Psühhosotsiaalsed riskid ja nende ohjamine");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Ajendid ja tõkked");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Ajendid ja tõkked");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötaja osalus");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Töötaja osalus");
-
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM200_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Nelaimes gadījumi");
 SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM200_2");
@@ -10413,7 +10451,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Laika trūkums");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori; tie saistīti ar darba organizāciju un tos bieži dēvē par \"\"psihosociāliem riskiem\"\". Lūdzu, sakiet, kurš no šiem psihosociālajiem riskiem attiecas uz Jūsu uzņēmuma vienību?Laika trūkums\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Slikta komunikācija starp vadību un darbiniekiem");
@@ -10422,7 +10460,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Slikta komunikācija starp vadību un darbiniekiem");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori; tie saistīti ar darba organizāciju un tos bieži dēvē par \"\"psihosociāliem riskiem\"\". Lūdzu, sakiet, kurš no šiem psihosociālajiem riskiem attiecas uz Jūsu uzņēmuma vienību?Slikta komunikācija starp vadību un darbiniekiem\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vāja sadarbība kolēģu starpā");
@@ -10431,7 +10469,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vāja sadarbība kolēģu starpā");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori; tie saistīti ar darba organizāciju un tos bieži dēvē par \"\"psihosociāliem riskiem\"\". Lūdzu, sakiet, kurš no šiem psihosociālajiem riskiem attiecas uz Jūsu uzņēmuma vienību?Vāja sadarbība kolēģu starpā\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Darbinieku nespēja ietekmēt sava darba organizāciju");
@@ -10440,7 +10478,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Darbinieku nespēja ietekmēt sava darba organizāciju");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori; tie saistīti ar darba organizāciju un tos bieži dēvē par \"\"psihosociāliem riskiem\"\". Lūdzu, sakiet, kurš no šiem psihosociālajiem riskiem attiecas uz Jūsu uzņēmuma vienību?Darbinieku nespēja ietekmēt sava darba organizāciju\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Darbavietas nedrošība/nepastāvība");
@@ -10449,7 +10487,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Darbavietas nedrošība/nepastāvība");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori; tie saistīti ar darba organizāciju un tos bieži dēvē par \"\"psihosociāliem riskiem\"\". Lūdzu, sakiet, kurš no šiem psihosociālajiem riskiem attiecas uz Jūsu uzņēmuma vienību?Darbavietas nedrošība/nepastāvība\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Darbs ar sarežģītiem klientiem, pacientiem, skolniekiem utt.");
@@ -10458,7 +10496,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Darbs ar sarežģītiem klientiem, pacientiem, skolniekiem utt.");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori; tie saistīti ar darba organizāciju un tos bieži dēvē par \"\"psihosociāliem riskiem\"\". Lūdzu, sakiet, kurš no šiem psihosociālajiem riskiem attiecas uz Jūsu uzņēmuma vienību?Darbs ar sarežģītiem klientiem, pacientiem, skolniekiem utt.\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Problemas vadības un darbinieku attiecības");
@@ -10467,7 +10505,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Problemas vadības un darbinieku attiecības");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori; tie saistīti ar darba organizāciju un tos bieži dēvē par \"\"psihosociāliem riskiem\"\". Lūdzu, sakiet, kurš no šiem psihosociālajiem riskiem attiecas uz Jūsu uzņēmuma vienību?Problemas vadības un darbinieku attiecības\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Garas vai neregulāras darba stundas");
@@ -10476,7 +10514,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Garas vai neregulāras darba stundas");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori; tie saistīti ar darba organizāciju un tos bieži dēvē par \"\"psihosociāliem riskiem\"\". Lūdzu, sakiet, kurš no šiem psihosociālajiem riskiem attiecas uz Jūsu uzņēmuma vienību?Garas vai neregulāras darba stundas\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Neskaidra cilvēkresursu politika");
@@ -10485,7 +10523,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Neskaidra cilvēkresursu politika");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori; tie saistīti ar darba organizāciju un tos bieži dēvē par \"\"psihosociāliem riskiem\"\". Lūdzu, sakiet, kurš no šiem psihosociālajiem riskiem attiecas uz Jūsu uzņēmuma vienību?Neskaidra cilvēkresursu politika\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Diskriminācija (piemēram, dzimuma, vecuma vai etniskā diskriminācija)");
@@ -10494,7 +10532,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Diskriminācija (piemēram, dzimuma, vecuma vai etniskā diskriminācija)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "\"Stresu, vardarbību un psiholoģisko teroru darbā var sekmēt dažādi faktori; tie saistīti ar darba organizāciju un tos bieži dēvē par \"\"psihosociāliem riskiem\"\". Lūdzu, sakiet, kurš no šiem psihosociālajiem riskiem attiecas uz Jūsu uzņēmuma vienību?Diskriminācija (piemēram, dzimuma, vecuma vai etniskā diskriminācija)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -10880,7 +10918,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Pressjoni ta’ ħin");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol; dawn jikkonċernaw il-mod kif ix-xogħol huwa organizzat u huma ta’ spiss imsejjħa ’riskji psikosoċjali’. Jekk jogħġbok għidli jekk xi wieħed minn dawn ir-riskji psikosoċjali li ġejjin huma ta’ tħassib fil-post tax-xogħol tiegħek.Pressjoni ta’ ħin\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Komunikazzjoni batuta bejn il-management u l-impjegati");
@@ -10889,7 +10927,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Komunikazzjoni batuta bejn il-management u l-impjegati");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol; dawn jikkonċernaw il-mod kif ix-xogħol huwa organizzat u huma ta’ spiss imsejjħa ’riskji psikosoċjali’. Jekk jogħġbok għidli jekk xi wieħed minn dawn ir-riskji psikosoċjali li ġejjin huma ta’ tħassib fil-post tax-xogħol tiegħek.Komunikazzjoni batuta bejn il-management u l-impjegati\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Kooperazzjoni fqira fost il-kollegi");
@@ -10898,7 +10936,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Kooperazzjoni fqira fost il-kollegi");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol; dawn jikkonċernaw il-mod kif ix-xogħol huwa organizzat u huma ta’ spiss imsejjħa ’riskji psikosoċjali’. Jekk jogħġbok għidli jekk xi wieħed minn dawn ir-riskji psikosoċjali li ġejjin huma ta’ tħassib fil-post tax-xogħol tiegħek.Kooperazzjoni fqira fost il-kollegi\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Nuqqas ta’ kontroll ta’ impjegati meta jorganizzaw ix-xogħol tagħhom");
@@ -10907,7 +10945,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Nuqqas ta’ kontroll ta’ impjegati meta jorganizzaw ix-xogħol tagħhom");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol; dawn jikkonċernaw il-mod kif ix-xogħol huwa organizzat u huma ta’ spiss imsejjħa ’riskji psikosoċjali’. Jekk jogħġbok għidli jekk xi wieħed minn dawn ir-riskji psikosoċjali li ġejjin huma ta’ tħassib fil-post tax-xogħol tiegħek.Nuqqas ta’ kontroll ta’ impjegati meta jorganizzaw ix-xogħol tagħhom\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_5"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -10921,7 +10959,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Nuqqas ta’ sigurtà tax-xogħol");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol; dawn jikkonċernaw il-mod kif ix-xogħol huwa organizzat u huma ta’ spiss imsejjħa ’riskji psikosoċjali’. Jekk jogħġbok għidli jekk xi wieħed minn dawn ir-riskji psikosoċjali li ġejjin huma ta’ tħassib fil-post tax-xogħol tiegħek.Nuqqas ta’ sigurtà tax-xogħol\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Li jkollhom jittrattaw ma’ klijenti, pazjenti, studenti eċċ diffiċli");
@@ -10930,7 +10968,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Li jkollhom jittrattaw ma’ klijenti, pazjenti, studenti eċċ diffiċli");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol; dawn jikkonċernaw il-mod kif ix-xogħol huwa organizzat u huma ta’ spiss imsejjħa ’riskji psikosoċjali’. Jekk jogħġbok għidli jekk xi wieħed minn dawn ir-riskji psikosoċjali li ġejjin huma ta’ tħassib fil-post tax-xogħol tiegħek.Li jkollhom jittrattaw ma’ klijenti, pazjenti, studenti eċċ diffiċli\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Problemi fir-relazzjoni bejn is-supervisor u l-impjegat");
@@ -10939,7 +10977,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Problemi fir-relazzjoni bejn is-supervisor u l-impjegat");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol; dawn jikkonċernaw il-mod kif ix-xogħol huwa organizzat u huma ta’ spiss imsejjħa ’riskji psikosoċjali’. Jekk jogħġbok għidli jekk xi wieħed minn dawn ir-riskji psikosoċjali li ġejjin huma ta’ tħassib fil-post tax-xogħol tiegħek.Problemi fir-relazzjoni bejn is-supervisor u l-impjegat\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Siegħat tax-xogħol twal jew irregolari");
@@ -10948,7 +10986,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Siegħat tax-xogħol twal jew irregolari");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol; dawn jikkonċernaw il-mod kif ix-xogħol huwa organizzat u huma ta’ spiss imsejjħa ’riskji psikosoċjali’. Jekk jogħġbok għidli jekk xi wieħed minn dawn ir-riskji psikosoċjali li ġejjin huma ta’ tħassib fil-post tax-xogħol tiegħek.Siegħat tax-xogħol twal jew irregolari\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Policy tar-riżorsi umani mhux ċara");
@@ -10957,7 +10995,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Policy tar-riżorsi umani mhux ċara");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol; dawn jikkonċernaw il-mod kif ix-xogħol huwa organizzat u huma ta’ spiss imsejjħa ’riskji psikosoċjali’. Jekk jogħġbok għidli jekk xi wieħed minn dawn ir-riskji psikosoċjali li ġejjin huma ta’ tħassib fil-post tax-xogħol tiegħek.Policy tar-riżorsi umani mhux ċara\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Diskriminazzjoni (per eżempju minħabba sess, età jew etniċità)");
@@ -10966,7 +11004,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Diskriminazzjoni (per eżempju minħabba sess, età jew etniċità)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "\"Diversi fatturi jistgħu jikkontribwixxu għall-stress, vjolenza u fastidju fuq ix-xogħol; dawn jikkonċernaw il-mod kif ix-xogħol huwa organizzat u huma ta’ spiss imsejjħa ’riskji psikosoċjali’. Jekk jogħġbok għidli jekk xi wieħed minn dawn ir-riskji psikosoċjali li ġejjin huma ta’ tħassib fil-post tax-xogħol tiegħek.Diskriminazzjoni (per eżempju minħabba sess, età jew etniċità)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -11118,6 +11156,54 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM172_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Fil-post tax-xogħol tiegħek, liema huma d-diffikultajiet prinċipali meta tittrattaw mas-saħħa u s-sigurtà? Jekk jogħġbok għidli għal kull wieħed minn dawn li ġejjin jekk hijiex diffikultà kbira, diffikultà żgħira, jew ta’ ebda diffikultà.Nuqqas ta’ kompetenza");
 
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Työsuojelun hallinta");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Työsuojelun hallinta");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Psykososiaaliset riskit ja niiden hallinta");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Psykososiaaliset riskit ja niiden hallinta");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Edistäjät ja esteet");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Edistäjät ja esteet");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Työntekijöiden osallistuminen");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Työntekijöiden osallistuminen");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Gestion de la santé et de la sécurité sur le lieu de travail");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Gestion de la santé et de la sécurité sur le lieu de travail");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Les risques psychosociaux et leur gestion");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Les risques psychosociaux et leur gestion");
+
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Nuqqas ta’ appoġġ tekniku jew gwida");
 SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM172_4");
@@ -11226,54 +11312,6 @@ SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Bedrijfsinterne diensten voor veiligheid en gezondheid");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM173_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Bedrijfsinterne diensten voor veiligheid en gezondheid");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Työsuojelun hallinta");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Työsuojelun hallinta");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Psykososiaaliset riskit ja niiden hallinta");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Psykososiaaliset riskit ja niiden hallinta");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Edistäjät ja esteet");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Edistäjät ja esteet");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Työntekijöiden osallistuminen");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Työntekijöiden osallistuminen");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Gestion de la santé et de la sécurité sur le lieu de travail");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Gestion de la santé et de la sécurité sur le lieu de travail");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Les risques psychosociaux et leur gestion");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Les risques psychosociaux et leur gestion");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM173_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "De Arbeidsinspectie");
@@ -11400,7 +11438,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Tijdsdruk");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk; ze hebben betrekking op de manier waarop het werk is georganiseerd en worden vaak ’psychosociale risico’s’ genoemd. Kunt u mij zeggen of een van de volgende psychosociale risico’s voor u een punt van zorg vormt binnen uw vestiging?Tijdsdruk\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Slechte communicatie tussen management en werknemers");
@@ -11409,7 +11447,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Slechte communicatie tussen management en werknemers");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk; ze hebben betrekking op de manier waarop het werk is georganiseerd en worden vaak ’psychosociale risico’s’ genoemd. Kunt u mij zeggen of een van de volgende psychosociale risico’s voor u een punt van zorg vormt binnen uw vestiging?Slechte communicatie tussen management en werknemers\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Slechte samenwerking tussen collega’s");
@@ -11418,7 +11456,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Slechte samenwerking tussen collega’s");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk; ze hebben betrekking op de manier waarop het werk is georganiseerd en worden vaak ’psychosociale risico’s’ genoemd. Kunt u mij zeggen of een van de volgende psychosociale risico’s voor u een punt van zorg vormt binnen uw vestiging?Slechte samenwerking tussen collega’s\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Gebrek aan controle van de werknemers in de organisatie van hun werk");
@@ -11427,7 +11465,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Gebrek aan controle van de werknemers in de organisatie van hun werk");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk; ze hebben betrekking op de manier waarop het werk is georganiseerd en worden vaak ’psychosociale risico’s’ genoemd. Kunt u mij zeggen of een van de volgende psychosociale risico’s voor u een punt van zorg vormt binnen uw vestiging?Gebrek aan controle van de werknemers in de organisatie van hun werk\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Baanonzekerheid");
@@ -11436,7 +11474,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Baanonzekerheid");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk; ze hebben betrekking op de manier waarop het werk is georganiseerd en worden vaak ’psychosociale risico’s’ genoemd. Kunt u mij zeggen of een van de volgende psychosociale risico’s voor u een punt van zorg vormt binnen uw vestiging?Baanonzekerheid\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Moeten omgaan met moeilijke klanten, patiënten, leerlingen, enz.");
@@ -11445,7 +11483,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Moeten omgaan met moeilijke klanten, patiënten, leerlingen, enz.");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk; ze hebben betrekking op de manier waarop het werk is georganiseerd en worden vaak ’psychosociale risico’s’ genoemd. Kunt u mij zeggen of een van de volgende psychosociale risico’s voor u een punt van zorg vormt binnen uw vestiging?Moeten omgaan met moeilijke klanten, patiënten, leerlingen, enz.\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Problemen in de relaties leidinggevende - werknemer");
@@ -11454,7 +11492,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Problemen in de relaties leidinggevende - werknemer");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk; ze hebben betrekking op de manier waarop het werk is georganiseerd en worden vaak ’psychosociale risico’s’ genoemd. Kunt u mij zeggen of een van de volgende psychosociale risico’s voor u een punt van zorg vormt binnen uw vestiging?Problemen in de relaties leidinggevende - werknemer\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Lange of onregelmatige werkuren");
@@ -11463,7 +11501,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Lange of onregelmatige werkuren");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk; ze hebben betrekking op de manier waarop het werk is georganiseerd en worden vaak ’psychosociale risico’s’ genoemd. Kunt u mij zeggen of een van de volgende psychosociale risico’s voor u een punt van zorg vormt binnen uw vestiging?Lange of onregelmatige werkuren\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Een onduidelijk personeelsbeleid");
@@ -11472,7 +11510,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Een onduidelijk personeelsbeleid");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk; ze hebben betrekking op de manier waarop het werk is georganiseerd en worden vaak ’psychosociale risico’s’ genoemd. Kunt u mij zeggen of een van de volgende psychosociale risico’s voor u een punt van zorg vormt binnen uw vestiging?Een onduidelijk personeelsbeleid\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Discriminatie (bv: in geslacht, in leeftijd of in etnische afkomst)");
@@ -11481,7 +11519,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Discriminatie (bv: in geslacht, in leeftijd of in etnische afkomst)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "\"Een aantal factoren kan bijdragen aan stress, geweld en pesterijen op het werk; ze hebben betrekking op de manier waarop het werk is georganiseerd en worden vaak ’psychosociale risico’s’ genoemd. Kunt u mij zeggen of een van de volgende psychosociale risico’s voor u een punt van zorg vormt binnen uw vestiging?Discriminatie (bv: in geslacht, in leeftijd of in etnische afkomst)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -12334,7 +12372,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Presja czasu");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników; dotyczą one sposobu organizacji pracy i określa się je często mianem \"\"ryzyka psychospołecznego\"\". Proszę powiedzieć, czy niżej wymienione zagrożenia psychospołeczne stanowią kwestię w Pana(i) oddziale.Presja czasu\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Słaba komunikacja pomiędzy kadrą kierowniczą a pracownikami");
@@ -12343,7 +12381,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Słaba komunikacja pomiędzy kadrą kierowniczą a pracownikami");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników; dotyczą one sposobu organizacji pracy i określa się je często mianem \"\"ryzyka psychospołecznego\"\". Proszę powiedzieć, czy niżej wymienione zagrożenia psychospołeczne stanowią kwestię w Pana(i) oddziale.Słaba komunikacja pomiędzy kadrą kierowniczą a pracownikami\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Słaba współpraca między współpracownikami");
@@ -12352,7 +12390,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Słaba współpraca między współpracownikami");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników; dotyczą one sposobu organizacji pracy i określa się je często mianem \"\"ryzyka psychospołecznego\"\". Proszę powiedzieć, czy niżej wymienione zagrożenia psychospołeczne stanowią kwestię w Pana(i) oddziale.Słaba współpraca między współpracownikami\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Brak kontroli pracowników nad organizacją swojej pracy");
@@ -12361,7 +12399,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Brak kontroli pracowników nad organizacją swojej pracy");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników; dotyczą one sposobu organizacji pracy i określa się je często mianem \"\"ryzyka psychospołecznego\"\". Proszę powiedzieć, czy niżej wymienione zagrożenia psychospołeczne stanowią kwestię w Pana(i) oddziale.Brak kontroli pracowników nad organizacją swojej pracy\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Niepewność pracy");
@@ -12370,7 +12408,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Niepewność pracy");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników; dotyczą one sposobu organizacji pracy i określa się je często mianem \"\"ryzyka psychospołecznego\"\". Proszę powiedzieć, czy niżej wymienione zagrożenia psychospołeczne stanowią kwestię w Pana(i) oddziale.Niepewność pracy\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Konieczność kontaktów z trudnymi klientami, pacjentami, uczniami itp.");
@@ -12379,7 +12417,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Konieczność kontaktów z trudnymi klientami, pacjentami, uczniami itp.");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników; dotyczą one sposobu organizacji pracy i określa się je często mianem \"\"ryzyka psychospołecznego\"\". Proszę powiedzieć, czy niżej wymienione zagrożenia psychospołeczne stanowią kwestię w Pana(i) oddziale.Konieczność kontaktów z trudnymi klientami, pacjentami, uczniami itp.\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Problemy w relacjach przełożony - podwładny");
@@ -12388,7 +12426,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Problemy w relacjach przełożony - podwładny");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników; dotyczą one sposobu organizacji pracy i określa się je często mianem \"\"ryzyka psychospołecznego\"\". Proszę powiedzieć, czy niżej wymienione zagrożenia psychospołeczne stanowią kwestię w Pana(i) oddziale.Problemy w relacjach przełożony - podwładny\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Długie lub nieregularne godziny pracy");
@@ -12397,7 +12435,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Długie lub nieregularne godziny pracy");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników; dotyczą one sposobu organizacji pracy i określa się je często mianem \"\"ryzyka psychospołecznego\"\". Proszę powiedzieć, czy niżej wymienione zagrożenia psychospołeczne stanowią kwestię w Pana(i) oddziale.Długie lub nieregularne godziny pracy\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Niejasna polityka kadrowa");
@@ -12406,7 +12444,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Niejasna polityka kadrowa");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników; dotyczą one sposobu organizacji pracy i określa się je często mianem \"\"ryzyka psychospołecznego\"\". Proszę powiedzieć, czy niżej wymienione zagrożenia psychospołeczne stanowią kwestię w Pana(i) oddziale.Niejasna polityka kadrowa\"");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
@@ -12463,7 +12501,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Dyskryminacja (na przykład ze względu na płeć, wiek lub pochodzenie etniczne)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "\"Na stres, przemoc czy prześladowanie w pracy może mieć wpływ kilka czynników; dotyczą one sposobu organizacji pracy i określa się je często mianem \"\"ryzyka psychospołecznego\"\". Proszę powiedzieć, czy niżej wymienione zagrożenia psychospołeczne stanowią kwestię w Pana(i) oddziale.Dyskryminacja (na przykład ze względu na płeć, wiek lub pochodzenie etniczne)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -12849,7 +12887,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Pressão de tempo");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho; dizem respeito à forma como o trabalho é organizado e são geralmente referidos como 'riscos psicossociais'. Diga-me se algum dos seguintes riscos psicossociais são uma preocupação no seu estabelecimento.Pressão de tempo\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Má comunicação entre a direcção e os trabalhadores");
@@ -12858,7 +12896,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Má comunicação entre a direcção e os trabalhadores");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho; dizem respeito à forma como o trabalho é organizado e são geralmente referidos como 'riscos psicossociais'. Diga-me se algum dos seguintes riscos psicossociais são uma preocupação no seu estabelecimento.Má comunicação entre a direcção e os trabalhadores\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Fraca cooperação entre os colegas");
@@ -12867,7 +12905,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Fraca cooperação entre os colegas");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho; dizem respeito à forma como o trabalho é organizado e são geralmente referidos como 'riscos psicossociais'. Diga-me se algum dos seguintes riscos psicossociais são uma preocupação no seu estabelecimento.Fraca cooperação entre os colegas\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Falta de controlo dos trabalhadores na organização do seu trabalho");
@@ -12876,7 +12914,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Falta de controlo dos trabalhadores na organização do seu trabalho");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho; dizem respeito à forma como o trabalho é organizado e são geralmente referidos como 'riscos psicossociais'. Diga-me se algum dos seguintes riscos psicossociais são uma preocupação no seu estabelecimento.Falta de controlo dos trabalhadores na organização do seu trabalho\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_5"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -12890,7 +12928,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Insegurança no trabalho");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho; dizem respeito à forma como o trabalho é organizado e são geralmente referidos como 'riscos psicossociais'. Diga-me se algum dos seguintes riscos psicossociais são uma preocupação no seu estabelecimento.Insegurança no trabalho\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Ter de lidar com clientes difíceis, doentes, crianças, etc.");
@@ -12899,7 +12937,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Ter de lidar com clientes difíceis, doentes, crianças, etc.");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho; dizem respeito à forma como o trabalho é organizado e são geralmente referidos como 'riscos psicossociais'. Diga-me se algum dos seguintes riscos psicossociais são uma preocupação no seu estabelecimento.Ter de lidar com clientes difíceis, doentes, crianças, etc.\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Problemas nas relações entre o supervisor e o empregado");
@@ -12908,7 +12946,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Problemas nas relações entre o supervisor e o empregado");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho; dizem respeito à forma como o trabalho é organizado e são geralmente referidos como 'riscos psicossociais'. Diga-me se algum dos seguintes riscos psicossociais são uma preocupação no seu estabelecimento.Problemas nas relações entre o supervisor e o empregado\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Horários de trabalho longos ou irregulares");
@@ -12917,7 +12955,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Horários de trabalho longos ou irregulares");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho; dizem respeito à forma como o trabalho é organizado e são geralmente referidos como 'riscos psicossociais'. Diga-me se algum dos seguintes riscos psicossociais são uma preocupação no seu estabelecimento.Horários de trabalho longos ou irregulares\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Uma política de recursos humanos pouco clara");
@@ -12926,7 +12964,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Uma política de recursos humanos pouco clara");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho; dizem respeito à forma como o trabalho é organizado e são geralmente referidos como 'riscos psicossociais'. Diga-me se algum dos seguintes riscos psicossociais são uma preocupação no seu estabelecimento.Uma política de recursos humanos pouco clara\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Discriminação (por exemplo, devido ao sexo, idade ou etnia)");
@@ -12935,7 +12973,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Discriminação (por exemplo, devido ao sexo, idade ou etnia)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "\"Vários factores podem contribuir para o stresse, violência ou assédio no local de trabalho; dizem respeito à forma como o trabalho é organizado e são geralmente referidos como 'riscos psicossociais'. Diga-me se algum dos seguintes riscos psicossociais são uma preocupação no seu estabelecimento.Discriminação (por exemplo, devido ao sexo, idade ou etnia)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -13321,16 +13359,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Munca sub presiunea timpului");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "omunicarea proastă dintre management şi angajaţi");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "omunicarea proastă dintre management şi angajaţi");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Comunicarea proastă dintre management şi angajaţi");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ; aceÅŸtia se referÄƒ la felul Ã®n care este organizatÄƒ munca ÅŸi deseori sunt cunoscuÅ£i sub denumirea de \"\" riscuri psihosociale\"\". VÄƒ rog sÄƒ indicaÅ£i dacÄƒ vreunul din urmÄƒtoarele riscuri psihosociale reprezintÄƒ o Ã®ngrijorare Ã®n Ã®ntreprinderea dvs.?: Munca sub presiunea timpului\"");
 
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
@@ -13380,6 +13409,15 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Rischi psicosociali e loro gestione");
 
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "omunicarea proastă dintre management şi angajaţi");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM202_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "omunicarea proastă dintre management şi angajaţi");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Comunicarea proastă dintre management şi angajaţi");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ; aceÅŸtia se referÄƒ la felul Ã®n care este organizatÄƒ munca ÅŸi deseori sunt cunoscuÅ£i sub denumirea de \"\" riscuri psihosociale\"\". VÄƒ rog sÄƒ indicaÅ£i dacÄƒ vreunul din urmÄƒtoarele riscuri psihosociale reprezintÄƒ o Ã®ngrijorare Ã®n Ã®ntreprinderea dvs.?: Comunicarea proastÄƒ dintre management ÅŸi angajaÅ£i\"");
+
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "ooperarea proastă între colegi");
 SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM202_3");
@@ -13387,7 +13425,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Cooperarea proastă între colegi");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ; aceÅŸtia se referÄƒ la felul Ã®n care este organizatÄƒ munca ÅŸi deseori sunt cunoscuÅ£i sub denumirea de \"\" riscuri psihosociale\"\". VÄƒ rog sÄƒ indicaÅ£i dacÄƒ vreunul din urmÄƒtoarele riscuri psihosociale reprezintÄƒ o Ã®ngrijorare Ã®n Ã®ntreprinderea dvs.?: Cooperarea proastÄƒ Ã®ntre colegi\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "ipsa controlului angajaţilor în organizarea muncii lor");
@@ -13396,7 +13434,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Lipsa controlului angajaţilor în organizarea muncii lor");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ; aceÅŸtia se referÄƒ la felul Ã®n care este organizatÄƒ munca ÅŸi deseori sunt cunoscuÅ£i sub denumirea de \"\" riscuri psihosociale\"\". VÄƒ rog sÄƒ indicaÅ£i dacÄƒ vreunul din urmÄƒtoarele riscuri psihosociale reprezintÄƒ o Ã®ngrijorare Ã®n Ã®ntreprinderea dvs.?: Lipsa controlului angajaÅ£ilor Ã®n organizarea muncii lor\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "nsecuritatea muncii");
@@ -13405,7 +13443,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Insecuritatea muncii");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ; aceÅŸtia se referÄƒ la felul Ã®n care este organizatÄƒ munca ÅŸi deseori sunt cunoscuÅ£i sub denumirea de \"\" riscuri psihosociale\"\". VÄƒ rog sÄƒ indicaÅ£i dacÄƒ vreunul din urmÄƒtoarele riscuri psihosociale reprezintÄƒ o Ã®ngrijorare Ã®n Ã®ntreprinderea dvs.?: Insecuritatea muncii\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "ontactul cu unii clienţi dificili, pacienţi, elevi, etc.");
@@ -13414,7 +13452,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Contactul cu unii clienţi dificili, pacienţi, elevi, etc.");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ; aceÅŸtia se referÄƒ la felul Ã®n care este organizatÄƒ munca ÅŸi deseori sunt cunoscuÅ£i sub denumirea de \"\" riscuri psihosociale\"\". VÄƒ rog sÄƒ indicaÅ£i dacÄƒ vreunul din urmÄƒtoarele riscuri psihosociale reprezintÄƒ o Ã®ngrijorare Ã®n Ã®ntreprinderea dvs.?: Contactul cu unii clienÅ£i dificili, pacienÅ£i, elevi, etc.\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "robleme în relaţiile şef-angajat");
@@ -13423,7 +13461,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Probleme în relaţiile şef-angajat");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ; aceÅŸtia se referÄƒ la felul Ã®n care este organizatÄƒ munca ÅŸi deseori sunt cunoscuÅ£i sub denumirea de \"\" riscuri psihosociale\"\". VÄƒ rog sÄƒ indicaÅ£i dacÄƒ vreunul din urmÄƒtoarele riscuri psihosociale reprezintÄƒ o Ã®ngrijorare Ã®n Ã®ntreprinderea dvs.?: Probleme Ã®n relaÅ£iile ÅŸef-angajat\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "rograme de lucru prelungite sau neregulate");
@@ -13432,7 +13470,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Programe de lucru prelungite sau neregulate");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ; aceÅŸtia se referÄƒ la felul Ã®n care este organizatÄƒ munca ÅŸi deseori sunt cunoscuÅ£i sub denumirea de \"\" riscuri psihosociale\"\". VÄƒ rog sÄƒ indicaÅ£i dacÄƒ vreunul din urmÄƒtoarele riscuri psihosociale reprezintÄƒ o Ã®ngrijorare Ã®n Ã®ntreprinderea dvs.?: Programe de lucru prelungite sau neregulate\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, " politică neclară cu privire la resursele umane");
@@ -13441,7 +13479,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "O politică neclară cu privire la resursele umane");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ; aceÅŸtia se referÄƒ la felul Ã®n care este organizatÄƒ munca ÅŸi deseori sunt cunoscuÅ£i sub denumirea de \"\" riscuri psihosociale\"\". VÄƒ rog sÄƒ indicaÅ£i dacÄƒ vreunul din urmÄƒtoarele riscuri psihosociale reprezintÄƒ o Ã®ngrijorare Ã®n Ã®ntreprinderea dvs.?: O politicÄƒ neclarÄƒ cu privire la resursele umane\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "iscriminare (de ex. pe bază de gen, vârstă sau etnie)");
@@ -13450,7 +13488,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Discriminare (de ex. pe bază de gen, vârstă sau etnie)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "\"O serie de factori pot contribui la stres, violenÅ£Äƒ ÅŸi hÄƒrÅ£uire Ã®n muncÄƒ; aceÅŸtia se referÄƒ la felul Ã®n care este organizatÄƒ munca ÅŸi deseori sunt cunoscuÅ£i sub denumirea de \"\" riscuri psihosociale\"\". VÄƒ rog sÄƒ indicaÅ£i dacÄƒ vreunul din urmÄƒtoarele riscuri psihosociale reprezintÄƒ o Ã®ngrijorare Ã®n Ã®ntreprinderea dvs.?: Discriminare (de ex. pe bazÄƒ de gen, vÃ¢rstÄƒ sau etnie)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -14235,7 +14273,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM200_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Nevarne snovi (npr. prah, kemikalije, biološke ali radioaktivne snovi)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM200_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "\"Za vsako od sledečih zadev mi prosim povejte, ali povrzoča veliko skrbi, nekaj skrbi ali ne povzroča skrbi v vaši poslovni enoti?Nevarne snovi (anketar: po potrebi razloži");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "\"Za vsako od sledečih zadev mi prosim povejte, ali povrzoča veliko skrbi, nekaj skrbi ali ne povzroča skrbi v vaši poslovni enoti?Nevarne snovi (anketar: po potrebi razloži; npr. prah, kemikalije, biološke ali radioaktivne snovi)\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM200_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Nezgode pri delu");
@@ -14504,6 +14542,54 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Kako pomembni so sledeči razlogi za obravnavo varnosti in zdravja pri delu v vaši poslovni enoti? Prosim povejte mi za vsakega, ali gre za pomemben razlog, manj pomemben razlog ali sploh ni razlog?Pritisk (inšpektorata za delo)*");
 
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Incentivi e ostacoli");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Incentivi e ostacoli");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Partecipazione dei dipendenti");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Partecipazione dei dipendenti");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "DSS valdymas");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "DSS valdymas");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Psichosocialinė rizika ir jos valdymas");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Psichosocialinė rizika ir jos valdymas");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Paskatos ir kliūtys");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Paskatos ir kliūtys");
+
+SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
+SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
+SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Darbuotojų dalyvavimas");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Darbuotojų dalyvavimas");
+
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM172_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Glavne težave pri obravnavi vprašanj varnosti in zdravja pri delu");
@@ -14576,54 +14662,6 @@ SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "En företagshälsovårdsläkare");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM150_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Vilka arbetsmiljötjänster använder ni, oavsett om det är internt eller extern anlitade tjänster?En företagshälsovårdsläkare");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Incentivi e ostacoli");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Incentivi e ostacoli");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Partecipazione dei dipendenti");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Partecipazione dei dipendenti");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "DSS valdymas");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "DSS valdymas");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM202_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM202_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Psichosocialinė rizika ir jos valdymas");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Psichosocialinė rizika ir jos valdymas");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM171_1")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM171_1"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Paskatos ir kliūtys");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Paskatos ir kliūtys");
-
-SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM350")));
-SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM350"));
-SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Darbuotojų dalyvavimas");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Darbuotojų dalyvavimas");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM150_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "En säkerhetsexpert");
@@ -15271,7 +15309,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Zaman baskısı");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_1");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir; bunlar işin düzenlenme şekli ile ilgilidir ve çoğunlukla 'psikososyal risk' olarak adlandırılırlar. Lütfen şimdi okuyacağım psikososyal risklerin her birinin sizin işyerinizde bir mesele olup olmadığını söyler misiniz?Zaman baskısı\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Yönetim ve çalışanlar arasındaki yetersiz iletişim");
@@ -15280,7 +15318,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_2");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Yönetim ve çalışanlar arasındaki yetersiz iletişim");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_2");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir; bunlar işin düzenlenme şekli ile ilgilidir ve çoğunlukla 'psikososyal risk' olarak adlandırılırlar. Lütfen şimdi okuyacağım psikososyal risklerin her birinin sizin işyerinizde bir mesele olup olmadığını söyler misiniz?Yönetim ve çalışanlar arasındaki yetersiz iletişim\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Meslektaşlar arasındaki yetersiz işbirliği");
@@ -15289,7 +15327,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Meslektaşlar arasındaki yetersiz işbirliği");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_3");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir; bunlar işin düzenlenme şekli ile ilgilidir ve çoğunlukla 'psikososyal risk' olarak adlandırılırlar. Lütfen şimdi okuyacağım psikososyal risklerin her birinin sizin işyerinizde bir mesele olup olmadığını söyler misiniz?Meslektaşlar arasındaki yetersiz işbirliği\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İşlerini organize etme konusunda çalışanların kontrol sahibi olmaması");
@@ -15298,7 +15336,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_4");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İşlerini organize etme konusunda çalışanların kontrol sahibi olmaması");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir; bunlar işin düzenlenme şekli ile ilgilidir ve çoğunlukla 'psikososyal risk' olarak adlandırılırlar. Lütfen şimdi okuyacağım psikososyal risklerin her birinin sizin işyerinizde bir mesele olup olmadığını söyler misiniz?İşlerini organize etme konusunda çalışanların kontrol sahibi olmaması\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İş güvencesi olmaması");
@@ -15307,7 +15345,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_5");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İş güvencesi olmaması");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir; bunlar işin düzenlenme şekli ile ilgilidir ve çoğunlukla 'psikososyal risk' olarak adlandırılırlar. Lütfen şimdi okuyacağım psikososyal risklerin her birinin sizin işyerinizde bir mesele olup olmadığını söyler misiniz?İş güvencesi olmaması\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Zor müşterilerle, hastalarla ve öğrencilerle vs. uğraşmak zorunda olmak");
@@ -15316,7 +15354,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_6");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Zor müşterilerle, hastalarla ve öğrencilerle vs. uğraşmak zorunda olmak");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir; bunlar işin düzenlenme şekli ile ilgilidir ve çoğunlukla 'psikososyal risk' olarak adlandırılırlar. Lütfen şimdi okuyacağım psikososyal risklerin her birinin sizin işyerinizde bir mesele olup olmadığını söyler misiniz?Zor müşterilerle, hastalarla ve öğrencilerle vs. uğraşmak zorunda olmak\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Yönetici-çalışan ilişkilerinde sorunlar");
@@ -15325,7 +15363,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_7");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Yönetici-çalışan ilişkilerinde sorunlar");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_7");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir; bunlar işin düzenlenme şekli ile ilgilidir ve çoğunlukla 'psikososyal risk' olarak adlandırılırlar. Lütfen şimdi okuyacağım psikososyal risklerin her birinin sizin işyerinizde bir mesele olup olmadığını söyler misiniz?Yönetici-çalışan ilişkilerinde sorunlar\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Uzun veya düzensiz çalışma saatleri");
@@ -15334,7 +15372,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_8");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Uzun veya düzensiz çalışma saatleri");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_8");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir; bunlar işin düzenlenme şekli ile ilgilidir ve çoğunlukla 'psikososyal risk' olarak adlandırılırlar. Lütfen şimdi okuyacağım psikososyal risklerin her birinin sizin işyerinizde bir mesele olup olmadığını söyler misiniz?Uzun veya düzensiz çalışma saatleri\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Açık / net olmayan bir insan kaynakları politikası");
@@ -15343,7 +15381,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_9");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Açık / net olmayan bir insan kaynakları politikası");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_9");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir; bunlar işin düzenlenme şekli ile ilgilidir ve çoğunlukla 'psikososyal risk' olarak adlandırılırlar. Lütfen şimdi okuyacağım psikososyal risklerin her birinin sizin işyerinizde bir mesele olup olmadığını söyler misiniz?Açık / net olmayan bir insan kaynakları politikası\"");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Ayrımcılık (örneğin cinsiyet, yaş veya etnik köken yüzünden)");
@@ -15352,7 +15390,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM202_10");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Ayrımcılık (örneğin cinsiyet, yaş veya etnik köken yüzünden)");
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM202_10");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "\"Çeşitli faktörler işyerinde stres, şiddet veya tacize neden olabilir; bunlar işin düzenlenme şekli ile ilgilidir ve çoğunlukla 'psikososyal risk' olarak adlandırılırlar. Lütfen şimdi okuyacağım psikososyal risklerin her birinin sizin işyerinizde bir mesele olup olmadığını söyler misiniz?Ayrımcılık (örneğin cinsiyet, yaş veya etnik köken yüzünden)\"");
 
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM253_1"));
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@fatherId);
@@ -15440,33 +15478,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_3");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Şimdi size okuyacağım sebepler, işyerinizde, sağlık ve güvenlik meselelerinin ele alınmasında ne derece önemli? Lütfen her biri için, büyük öneme sahip bir sebep mi olduğunu mu, küçük öneme sahip bir sebep mi olduğunu yoksa hiç önemli bir sebep olmadığını mı söyler misiniz?Çalışanları elde tutmak ve devamsızlık yönetimi");
 
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Ekonomik ya da performansla ilgili sebepler");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Ekonomik ya da performansla ilgili sebepler");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Ekonomik ya da performansla ilgili sebepler");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_4");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Şimdi size okuyacağım sebepler, işyerinizde, sağlık ve güvenlik meselelerinin ele alınmasında ne derece önemli? Lütfen her biri için, büyük öneme sahip bir sebep mi olduğunu mu, küçük öneme sahip bir sebep mi olduğunu yoksa hiç önemli bir sebep olmadığını mı söyler misiniz?Ekonomik ya da performansla ilgili sebepler");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Müşterilerden gelen talepler veya kurumun itibariyle ilgili kaygılar");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Müşterilerden gelen talepler veya kurumun itibariyle ilgili kaygılar");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Müşterilerden gelen talepler veya kurumun itibariyle ilgili kaygılar");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_5");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Şimdi size okuyacağım sebepler, işyerinizde, sağlık ve güvenlik meselelerinin ele alınmasında ne derece önemli? Lütfen her biri için, büyük öneme sahip bir sebep mi olduğunu mu, küçük öneme sahip bir sebep mi olduğunu yoksa hiç önemli bir sebep olmadığını mı söyler misiniz?Müşterilerden gelen talepler veya kurumun itibariyle ilgili kaygılar");
-
-SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İş Teftiş Kurulu’ndan gelen baskılar");
-SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İş Teftiş Kurulu’ndan gelen baskılar");
-SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İş Teftiş Kurulu’ndan gelen baskılar");
-SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_6");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Şimdi size okuyacağım sebepler, işyerinizde, sağlık ve güvenlik meselelerinin ele alınmasında ne derece önemli? Lütfen her biri için, büyük öneme sahip bir sebep mi olduğunu mu, küçük öneme sahip bir sebep mi olduğunu yoksa hiç önemli bir sebep olmadığını mı söyler misiniz?İş Teftiş Kurulu’ndan gelen baskılar");
-
 SET @grandfatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE id=(SELECT father_id FROM esener_category WHERE category="MM150_1")));
 SET @fatherId = (SELECT ec.id FROM esener_category ec WHERE ec.id=(SELECT father_id FROM esener_category WHERE category="MM150_1"));
 SET @categoryId = (SELECT IFNULL(@grandfatherId, @fatherId));
@@ -15514,6 +15525,33 @@ SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@catego
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Riskji psikosoċjali u l-kontroll tagħhom");
 SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Riskji psikosoċjali u l-kontroll tagħhom");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Ekonomik ya da performansla ilgili sebepler");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Ekonomik ya da performansla ilgili sebepler");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Ekonomik ya da performansla ilgili sebepler");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_4");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Şimdi size okuyacağım sebepler, işyerinizde, sağlık ve güvenlik meselelerinin ele alınmasında ne derece önemli? Lütfen her biri için, büyük öneme sahip bir sebep mi olduğunu mu, küçük öneme sahip bir sebep mi olduğunu yoksa hiç önemli bir sebep olmadığını mı söyler misiniz?Ekonomik ya da performansla ilgili sebepler");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Müşterilerden gelen talepler veya kurumun itibariyle ilgili kaygılar");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Müşterilerden gelen talepler veya kurumun itibariyle ilgili kaygılar");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Müşterilerden gelen talepler veya kurumun itibariyle ilgili kaygılar");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_5");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Şimdi size okuyacağım sebepler, işyerinizde, sağlık ve güvenlik meselelerinin ele alınmasında ne derece önemli? Lütfen her biri için, büyük öneme sahip bir sebep mi olduğunu mu, küçük öneme sahip bir sebep mi olduğunu yoksa hiç önemli bir sebep olmadığını mı söyler misiniz?Müşterilerden gelen talepler veya kurumun itibariyle ilgili kaygılar");
+
+SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM171_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İş Teftiş Kurulu’ndan gelen baskılar");
+SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE category="MM171_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İş Teftiş Kurulu’ndan gelen baskılar");
+SET @literalId = (SELECT name_3_literal_id FROM esener_category WHERE category="MM171_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İş Teftiş Kurulu’ndan gelen baskılar");
+SET @literalId=(SELECT bottom_text_literal_id FROM esener_category WHERE category="MM171_6");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Şimdi size okuyacağım sebepler, işyerinizde, sağlık ve güvenlik meselelerinin ele alınmasında ne derece önemli? Lütfen her biri için, büyük öneme sahip bir sebep mi olduğunu mu, küçük öneme sahip bir sebep mi olduğunu yoksa hiç önemli bir sebep olmadığını mı söyler misiniz?İş Teftiş Kurulu’ndan gelen baskılar");
 
 SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE category="MM172_1");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Konuya ilişkin zaman, personel veya para gibi kaynakların eksikliği");
@@ -15872,1626 +15910,4 @@ SET @literalId = (SELECT name_1_literal_id FROM esener_category WHERE id=@catego
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Çalışan katılımı");
 SET @literalId = (SELECT name_2_literal_id FROM esener_category WHERE id=@categoryId);
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Çalışan katılımı");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Във Вашето предприятие анализират ли се регулярно причините за отсъствие от работа поради болест?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Предприемате ли някакви мерки, за да подпомагате работници и служители да се върнат на работа след дълго отсъствие поради болест ?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Следи ли се здравето на работниците и служителите, чрез регулярни медицински прегледи ?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Има ли във Вашето предприятие документирана политика, установена управленска система или план за действие, отнасящи се до безопасността и здравето при работа?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Колко често се повдигат въпроси, относно безопасността и здравето при работа по време на срещите на управителите? Дали това се случва редовно, от време на време или почти никога ?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Като цяло, как бихте оценили степента на ангажираност на управителите и ръководителите в управлението на безопасността и здравето при работа? Дали тя е много висока, по-скоро висока, по-скоро ниска или много ниска?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Дали работните места във Вашето предприятие редовно са проверявани за съответствие с изискванията за безопасност и здраве при работа като част от някаква система за оценка на риска или нещо подобно?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Посещавани ли са работните помещения на предприятието от Инспекцията по труда през последните 3 години, за да се направи проверка на условията на безопасност и здраве при работа?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Чували ли сте за Европейската седмица за безопасност и здраве при работа?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Има ли във Вашето предприятие някакви процедури за справяне със стреса на работното място?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Има ли някакви процедури за справяне с малтретиране или тормоз в работния колектив?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "А имате ли някакви процедури за справяне с насилие на работното място от страна на клиенти, пациенти, ученици и др.?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Предприемат ли се някакви действия във Вашето предприятия в случай, че отделни работници или служители работят на удължено или ненормирано работно време?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Информирате ли работниците и служителите си за психосоциалните рискове и тяхното влияние върху здравето и безопасността?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "А те информирани ли са за това към кого биха могли да се обърнат в случай на поява на психосоциални проблеми на работното място?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "В сравнение с други проблеми на безопасност и здравето при работа, дали справянето с психосоциалните рискове е по-трудно, по-лесно или няма разлика?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Ползвали ли сте информация от външни източници за това как да се справяте с психосоциалните рискове на работното място?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Дали ще имате нужда от някаква допълнителна информация или подкрепа за справяне с този проблем?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "В това предприятие имате ли представители за информиране и консултиране на работниците и служителите?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "А има ли синдикална организация във Вашето предприятие ?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Има ли във Вашето предприятие вътрешнофирмен представител, който да защитава интересите на работниците и служителите във връзка с въпросите на безопасността и здравето?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Има ли във Вашето предприятие Комитет/и по условия на труд?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Provádí Vaše pracoviště běžně analýzu příčin absencí kvůli nemoci?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Přijímáte opatření podporující návrat zaměstnanců do práce po dlouhodobé nepřítomnosti z důvodu nemoci?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Sleduje se zdraví pracovníků prostřednictvím pravidelných lékařských kontrol?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Existuje nějaká zdokumentovaná politika, zavedený systém řízení nebo akční plán pro zdraví a bezpečnost při práci ve Vašem podniku?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Hovoří se o otázkách zdraví a bezpečnosti při práci na pravidelných schůzích vysokého managementu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Jak byste celkově hodnotili stupeň zapojení přímých nadřízených a vedoucích pracovníků do managementu bezpečnosti a ochrany zdraví? Je velmi vysoké, docela vysoké, docela nízké nebo velmi nízké?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Jsou pracoviště ve Vašem podniku pravidelně kontrolována z bezpečnostního a zdravotního hlediska v rámci hodnocení rizika nebo nějakého podobného opatření?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Navštívil inspektorát práce někdy v posledních 3 letech toto pracoviště s cílem zkontrolovat pracovní prostředí nebo pracovní podmínky?");
-
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Slyšel(a) jste někdy o tom, že se koná Evropský týden pro bezpečnost a zdraví při práci?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Má Váš podnik zavedený postup pro řešení pracovního stresu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Máte nějaký zavedený postup pro řešení šikany nebo obtěžování?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "A máte nějaký postup pro řešení násilí v souvislosti s prací?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Dělá Váš podnik nějaké kroky, pokud jednotliví zaměstnanci pracují příliš dlouho nebo v nepravidelných časech?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Informujete zaměstnance o psychosociálních rizicích a jejich dopadu na zdraví a bezpečnost při práci?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Byli informováni o tom, na koho se mohou obrátit v případě psychosociálních problémů souvisejících s prací?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Ve srovnání s ostatními otázkami zdraví a bezpečnosti při práci: Je obtížnější řešit psychosociální rizika, nebo je to méně obtížné, nebo v tom není žádný rozdíl?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Využívali jste informací nebo podpory z externích zdrojů o tom, jak řešit psychosociální rizika na pracovišti?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Potřebovali byste nějaké dodatečné informace nebo podporu v této oblasti?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Máte v tomto podniku radu zaměstnanců?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "A existuje ve Vašem podniku nějaká odborová organizace?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Má Váš podnik interního zástupce pro bezpečnost práce a ochranu zdraví?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Existuje ve Vašem podniku výbor BOZP - Bezpečnost ochrany zdraví při práci?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Analyserer jeres virksomhed rutinemæssigt årsagerne til sygdomsfravær?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Hjælper virksomheden medarbejdere med at vende tilbage til arbejdet efter et længere sygdomsfravær?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Føres der tilsyn med medarbejdernes sundhed via regelmæssige lægeundersøgelser?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Har I en skriftlig politik, et fastlagt ledelsessystem eller en handlingsplan for arbejdsmiljøet i jeres virksomhed?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Tages arbejdsmiljøspørgsmål op på ledelsesmøder regelmæssigt, en gang imellem eller stort set aldrig?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "I det store hele, hvordan vil du vurdere mellemledernes involvering i forvaltningen af arbejdsmiljøet på virksomheden? Er den meget stor, temmelig stor, temmelig lille eller meget lille?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Gennemfører I regelmæssigt en arbejdspladsvurdering (APV) i jeres virksomhed?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Har Arbejdstilsynet besøgt denne arbejdsplads inden for de seneste 3 år for at kontrollere arbejdsmiljøet?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Kender du til den europæiske arbejdsmiljø-uge?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Har jeres virksomhed en fast fremgangsmåde til at håndtere arbejdsrelateret stress?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Har jeres virksomhed en fast fremgangsmåde til at håndtere mobning og chikane?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Og har I en fast fremgangsmåde til at håndtere arbejdsrelateret vold?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Træffer jeres virksomhed foranstaltninger, hvis en enkelt medarbejder arbejder uforholdsmæssigt lang tid over eller har uregelmæssige arbejdstider?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Informerer I medarbejderne om psykosociale risici og disses indvirkning på sundhed og sikkerhed?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Er jeres medarbejdere blevet informeret om, hvem de skal henvende sig til, hvis der opstår arbejdsrelaterede psykosociale problemer?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Sammenlignet med andre områder i arbejdsmiljøet, er det da sværere at tackle psykosociale risici, er det mindre svært eller er der ingen forskel?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Har I brugt information eller støtte fra eksterne kilder om, hvordan man tackler psykosociale risici på arbejdspladsen?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Har du brug for yderligere oplysninger eller støtte i forbindelse med dette emne?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Har I et samarbejdsudvalg eller et MED-udvalg i jeres virksomhed?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Og er der en tillidsrepræsentant i jeres virksomhed?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Har jeres virksomhed en intern sikkerhedsrepræsentant?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Har I et sikkerhedsudvalg i jeres virksomhed?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Analysiert Ihr Betrieb routinemäßig die Gründe für krankheitsbedingte Fehlzeiten?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Treffen Sie Maßnahmen zur Unterstützung der Wiedereingliederung von Beschäftigten, die nach langem krankheitsbedingten Fehlen zurückkehren?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Wird die Gesundheit der Beschäftigten durch regelmäßige Gesundheitschecks überprüft?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Gibt es eine schriftlich dokumentierte Richtlinie, ein etabliertes Managementsystem oder einen Aktionsplan zum Gesundheitsschutz und zur Sicherheit in Ihrem Betrieb?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Werden Gesundheitsschutz- und Sicherheitsfragen in Meetings des höheren Managements regelmäßig, gelegentlich oder praktisch nie thematisiert?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Wie würden Sie insgesamt den Grad bewerten, in dem sich direkte und andere Vorgesetzte am Management von Gesundheitsschutz- und Sicherheitsfragen beteiligen? Ist er sehr hoch, ziemlich hoch, ziemlich gering oder sehr gering?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Werden die Arbeitsplätze in Ihrem Betrieb im Rahmen einer Gefährdungsbeurteilung oder ähnlicher Maßnahmen regelmäßig auf Sicherheit und Gesundheitsschutz hin geprüft?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Hat die Gewerbeaufsicht oder die Berufsgenossenschaft in den letzten 3 Jahren diesen Betrieb aufgesucht, um die Gesundheitsschutz- und die Arbeitssicherheitsbedinungen zu prüfen?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Ist Ihnen bekannt, dass es eine Europäische Woche für Sicherheit und Gesundheitsschutz am Arbeitsplatz gibt?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Gibt es in Ihrem Betrieb ein Verfahren zum Umgang mit arbeitsbedingtem Stress?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Gibt es ein Verfahren zum Umgang mit Mobbing und Belästigung?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Und haben Sie ein Verfahren zum Umgang mit arbeitsbedingter Gewalt?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Greift Ihr Betrieb ein, wenn einzelne Mitarbeiter zu lange oder zu ständig wechselnden Zeiten arbeiten?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Informieren Sie die Beschäftigten über psychosoziale Risiken und deren Auswirkungen auf die Gesundheit und Sicherheit?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Wurden die Beschäftigten darüber informiert, an wen sie sich bei arbeitsbedingten psychosozialen Problemen wenden können?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Im Vergleich zu anderen Themen des Gesundheitsschutzes und der Sicherheit am Arbeitsplatz: Ist der Umgang mit psychosozialen Risiken schwieriger, ist er leichter oder besteht da kein Unterschied?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Haben Sie von externen Quellen stammende Informationen oder Hilfen zum Umgang mit psychosozialen Risiken am Arbeitsplatz in Anspruch genommen?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Würden Sie zu diesem Thema zusätzliche Informationen oder Unterstützung benötigen?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Gibt es in diesem Betrieb einen Betriebs- oder Personalrat?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Gibt es in Ihrem Betrieb auch eine Gewerkschaftsvertretung der Werksmitarbeiter?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Gibt es in Ihrem Betrieb eine(n) interne(n) Sicherheitsbeauftragte(n)?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Gibt es in Ihrem Betrieb einen Arbeitsschutzausschuss?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, " Είναι πολύ υψηλός, αρκετά υψηλός, αρκετά χαμηλός ή πολύ χαμηλός");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-
-
-
-
-
-
-
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-
-
-
-
-
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "\"");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Su establecimiento analiza de forma sistemática las causas de las bajas por enfermedad?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Toma usted medidas para facilitar la reincorporación de los empleados al trabajo después de una baja por enfermedad de larga duración?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Se realizan chequeos médicos con regularidad para controlar la salud de los empleados?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Hay una política documentada, un sistema de gestión establecido o un plan de acción sobre seguridad y salud en su establecimiento?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿La seguridad y la salud son temas que se abordan en las reuniones de la dirección a alto nivel con frecuencia, ocasionalmente o prácticamente nunca?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "En general, ¿cómo valoraría el grado de implicación de los jefes intermedios y supervisores en la gestión de la seguridad y la salud? ¿Es muy elevado, bastante elevado, bastante bajo o muy bajo?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿En su centro de trabajo, se comprueban regularmente los riesgos de seguridad y salud como parte de un plan de evaluación de riesgos u otro similar?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿La inspección de trabajo ha visitado este establecimiento en los últimos 3 años para comprobar las condiciones de seguridad y salud?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Conoce la Semana Europea para la Seguridad y la Salud en el Trabajo?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿En su establecimiento hay algún procedimiento para tratar el estrés laboral?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Hay algún procedimiento para abordar la intimidación o el acoso?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Hay algún procedimiento para abordar al violencia laboral?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Su establecimiento emprende acciones si algún empleado trabaja demasiadas horas o tiene horarios irregulares?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Informa a sus trabajadores sobre los riesgos psicosociales y sus consecuencias en la seguridad y salud?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Se ha informado a los trabajadores de a quién deben dirigirse en caso de problemas psicosociales relacionados con el trabajo?¿Los empleados están informados de a quién deben dirigirse en caso de problemas psicosociales relacionados con el trabajo?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Comparado con otros temas de seguridad y salud: ¿es más difícil tratar los riesgos psicosociales, menos difícil o no hay diferencia?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Utiliza información o apoyo de fuentes externas para abordar los riesgos psicosociales en el trabajo?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Necesita información adicional o apoyo sobre este tema?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Hay un delegado de personal, Comité de Empresa o Junta de personal en este establecimiento?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Hay una delegación sindical en su establecimiento?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Hay en su establecimiento un delegado de prevención?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "¿Hay un Comité de Seguridad y Salud en este establecimiento?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas teie ettevõte tavaliselt uurib haigestumisest tingitud töölt puudumise põhjuseid?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas rakendate meetmeid, et toetada töötajate tagasipöördumist tööle pärast haigusest tingitud pikemat puudumist?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas te viite läbi regulaarselt töötajate meditsiinikontrolli?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas teie ettevõttes on olemas tervishoiu- ja ohutusalane strateegiadokument, välja töötatud juhtimissüsteem või tegevusplaan?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas tervishoiu- ja ohutusalaseid küsimusi käsitletakse kõrgema juhtkonna koosolekutel regulaarselt, mõnikord või praktiliselt mitte kunagi?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kuidas te üldiselt hindate vahetute juhtide ja ülemuste panust tervishoiu- ja ohutusalasesse juhtimisse? Kas see on väga kõrge, üsna kõrge, üsna madal või väga madal?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas teie ettevõttes kontrollitakse regulaarselt töökohtade ohutust ja tervislikkust riskianalüüsi vms meetmete raames?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas tööinspektsioon on seda töökohta viimase 3 aasta jooksul külastanud, et kontrollida tervishoiu- ja ohutusalaseid tingimusi?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas olete teadlik Euroopa tööohutuse ja -tervishoiu nädalast?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas teie ettevõttel on kindlad tavad tööst tingitud stressiga tegelemiseks?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas on kindlad tavad mõnitamise või kiusamisega tegelemiseks?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas teil on kindlad tavad tööga seotud vägivallaga tegelemiseks?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas teie ettevõttes võetakse midagi ette, kui üksikud töötajad teevad liiga pikki tööpäevi või töötavad ebaregulaarse tööajaga?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas teavitate töötajaid psühhosotsiaalsetest riskidest ning nende mõjust tervisele ja ohutusele?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas neile öeldi, kelle poole pöörduda, kui esineb psühhosotsiaalseid probleeme?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas võrreldes muude ohutus- ja tervishoiualaste küsimustega on psühhosotsiaalsete riskidega tegelemine raskem, vähem raske või ei ole vahet?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas te olete kasutanud välisallikate infot või tuge, et tegelda tööl esinevate psühhosotsiaalsete riskidega?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas vajaksite selles küsimuses lisainfot või tuge?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas teie ettevõttes on olemas töönõukogu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Ning kas teie ettevõttes on ametiühing?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas teie ettevõttel on töökeskkonna volinik?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Kas teie ettevõttes on olemas töökeskkonna nõukogu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Analysoidaanko toimipaikassanne järjestelmällisesti sairauspoissaolojen syitä?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Tuetteko pitkältä sairauslomalta palaavien työntekijöiden työhönpaluuta?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Seurataanko työntekijöiden terveyttä säännöllisin terveystarkastuksin?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Onko toimipaikallanne terveys- ja turvallisuusasioita koskien käytössä dokumentoitu (kirjallinen) menettelytapa, vakiintunut johtamisjärjestelmä tai toimintasuunnitelma?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Käsitelläänkö terveys- ja turvallisuusasioita korkean tason johdon kokouksissa toimipaikassanne säännöllisesti, satunnaisesti vai käytännössä ei koskaan?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Missä määrin arvioisitte kaiken kaikkiaan linjajohdon ja esimiesten osallistuvan toimipaikassanne terveys- ja turvallisuusasioiden hallintaan? Osallistuvatko he siihen erittäin paljon, melko paljon, melko vähän vai erittäin vähän?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Tarkistetaanko toimipaikan työpisteiden terveys- ja turvallisuusasiat säännöllisesti osana riskinarviointia tai vastaavaa toimenpidettä?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Onko Työsuojelupiiri tehnyt terveys- ja turvallisuusolojen tarkastuksia tässä toimipaikassa viimeisten 3 vuoden aikana?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Oletteko tietoinen Euroopan työterveys- ja työturvallisuusviikosta?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Onko toimipaikassanne jokin toimintatapa, jonka avulla käsitellään työperäistä stressiä?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Onko käytössänne toimintatapa, jonka avulla puututaan kiusaamiseen tai häirintään?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Ja onko teillä toimintatapa työhön liittyvän väkivallan käsittelyyn?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Ryhtyykö toimipaikkanne toimenpiteisiin, jos yksittäiset työntekijät työskentelevät liian pitkiä työpäiviä tai epäsäännöllisiä työaikoja?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Kerrotteko työntekijöille mahdollisista psykososiaalisista riskeistä ja niiden vaikutuksesta terveyteen ja turvallisuuteen?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Onko heille kerrottu, keneen he voivat ottaa yhteyden työperäisten psykososiaalisten ongelmien ilmetessä?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Verrattuna muihin työterveys- ja turvallisuuskysymyksiin: Onko psykososiaalisiin riskeihin vaikeampaa vai helpompaa puuttua vai eikö siinä ole eroa?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Oletteko käyttäneet ulkoisista lähteistä saatavaa tietoa tai tukea psykososiaalisten riskien käsittelyyn työpaikalla?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Tarvitsisitteko lisätietoja tai -tukea tässä aiheessa?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Onko tässä toimipaikassanne YT-toimikunta?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Ja onko toimipaikassanne työntekijäpuolen ammattiosasto/luottamusmies?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Onko toimipaikassanne sisäinen työsuojeluvaltuutettu.");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Onko toimipaikassanne työsuojelutoimikunta?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Votre établissement analyse-t-il de façon régulière les causes des absences pour maladie?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Prenez-vous des mesures pour soutenir le retour au travail des salariés après une absence pour maladie de longue durée?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "La santé des salariés est-elle contrôlée par des examens médicaux réguliers?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Existe-t-il dans votre établissement une politique documentée, un système de gestion établi ou un plan d’action sur la santé et la sécurité ?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Les questions de santé et de sécurité sont-elles évoquées régulièrement, de temps en temps ou presque jamais dans les réunions de direction de haut niveau?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Dans l’ensemble, comment évalueriez-vous le degré d’implication des responsables opérationnels et du personnel d’encadrement dans la gestion de la santé et de la sécurité ? Diriez-vous qu’il est très élevé, plutôt élevé, plutôt faible ou très faible?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Dans votre établissement, les postes de travail sont-ils soumis à un contrôle régulier des conditions de sécurité et de santé dans le cadre d’une évaluation des risques ou d’une procédure similaire?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Est-ce que l’inspection du travail a visité cet établissement au cours des trois dernières années afin de contrôler les conditions de santé et de sécurité?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Avez-vous déjà entendu parler de la Semaine européenne de la sécurité et de la santé au travail?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Votre établissement dispose-t-il d’une procédure permettant de traiter le stress lié au travail?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Une procédure est-elle en place pour traiter les brimades ou le harcèlement?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Et disposez-vous d’une procédure pour traiter la violence liée au travail?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Votre établissement prend-t-il des mesures si un salarié effectue des horaires de travail particulièrement longs ou irréguliers?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Informez-vous les salariés à propos des risques psychosociaux et de leur influence sur la santé et la sécurité?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Ont-il été informés des personnes à qui s’adresser en cas de problèmes psychosociaux liés au travail?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Par rapport à d’autres problèmes de sécurité et de santé, est-il plus difficile ou moins difficile de combattre les risques psychosociaux ou n’y a-t-il pas de différence?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Avez-vous utilisé des informations ou le soutien de la part de sources externes sur la façon de traiter les risques psychosociaux au travail?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Auriez-vous besoin d’information ou de soutien supplémentaire dans ce domaine?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Existe-t-il un délégué du personnel ou comité d’entreprise dans cet établissement?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Et existe-t-il une délégation syndicale dans votre établissement?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Votre établissement dispose-t-il d’un délégué du personnel chargé de l’hygiène, de la sécurité et des conditions de travail?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Existe-t-il un comité d’hygiène, de sécurité et des conditions de travail (CHSCT) dans votre établissement?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Da li Vaše poduzeće rutinski analizira uzroke bolovanja?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Poduzimate li mjere kojima bi se pružila podrška zaposlenicima za povratak na posao nakon dugotrajnog bolovanja?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Nadgleda li se zdravlje zaposlenika putem redovitih zdravstvenih pregleda?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Postoji li u Vašem poduzeću dokumentirana politika, uspostavljen sustav upravljanja ili akcioni plan o zaštiti na radu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Razgovara li se na sastancima visokog menadžmenta o pitanjima zaštite na radu redovito, povremeno ili praktički nikad?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "U cjelini, kako biste ocijenili stupanj uključenosti linijskih menadžera i nadzornika u upravljanje zaštitom na radu? Je li on vrlo visok, prilično visok, prilično nizak ili vrlo nizak?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Provjerava li se nivo zaštite na radu na radnim mjestima u Vašem poduzeću redovito, kao dio procjene opasnosti ili slične mjere?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Je li inspekcija rada posjetila ovo radno mjesto u posljednje 3 godine radi provjere uvjeta zaštite na radu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Znate li za Europski tjedan sigurnosti i zdravlja na radu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Ima li Vaše poduzeće proceduru za rješavanje stresa vezanog za rad?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Postoji li utvrđena procedura za rješavanje maltretiranja ili uznemiravanja?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "A imate li proceduru za rješavanje nasilja vezanog za rad?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Reagira li Vaše poduzeće ako pojedinačni zaposlenici imaju prekomjerno dugo ili nepravilno radno vrijeme?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Informirate li zaposlenike o psihosocijalnim opasnostima i njihovom učinku na zdravlje i sigurnost?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Jesu li oni informirani o tome kome se trebaju obratiti u slučaju psihosocijalnih problema vezanih za rad?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "U usporedbi s ostalim pitanjima zaštite na radu: Je li se teže ili lakše uhvatiti u koštac s psihosocijalnim opasnostima, ili nema razlike?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Jeste li koristili informacije ili podršku iz vanjskih izvora o tome kako se nositi s psihosocijalnim opasnostima na poslu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Da li bi Vam trebale bilo koje dodatne informacije ili dodatna podrška u vezi s tim pitanjem?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Imate li RADNIČKO VIJEĆE u ovom poduzeću?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "A postoji li SINDIKAT u Vašem poduzeću?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Ima li Vaše poduzeće povjerenika radnika za zaštitu na radu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Postoji li odbor za zaštitu na radu u Vašem poduzeću?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Az intézménynél/telephelynél általában elemzik a betegség miatti hiányzások okát?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Tesznek intézkedéseket annak érdekében, hogy a munkavállalókat támogassák a munkába való visszatérésben hosszú, betegség miatti hiányzást követően?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Figyelik a munkavállalók egészségi állapotát rendszeres orvosi vizsgálatokkal?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Van az intézménynél dokumentált politika, vezetési rendszer vagy intézkedés a munkavédelemre vonatkozóan?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "A felsővezetői értekezleteken munkavédelmi ügyeket rendszeresen, néha vagy gyakorlatilag soha nem hoznak fel?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Összességében hogyan értékelné a műszaki vezetők és felügyelők bevonásának mértékét a munkavédelem irányításába? Nagyon nagy mértékben bevonják őket, elég nagy mértékben, elég kis mértékben vagy nagyon kis mértékben?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Az intézménynél/telephelynél ellenőrzik rendszeresen a munkahelyeket munkavédelmi szempontból a kockázatértékelés részeként vagy hasonló intézkedés során?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Járt az intézménynél/telephelyen az elmúlt 3 évben a Munkavédelmi Felügyelőség, hogy ellenőrizze a munkavédelmi feltételeket?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Ismeri Ön az Európai Munkavédelmi Hét intézményét?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Létezik az intézménynek/telephelynek munkahelyi stressz kezelésére vonatkozó eljárási rendje?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Létezik az erőszakoskodás vagy zaklatás kezelésére vonatkozó eljárási rend?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Létezik munkahelyi erőszak kezelése vonatkozó eljárási rend?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Tesz az intézmény/telephely lépéseket, ha az egyes munkavállalók különösen hosszú vagy szabálytalan munkaidőben dolgoznak?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Az intézmény tájékoztatja a munkavállalókat a pszichológiai kockázatokról és azoknak az egészségre és biztonságra gyakorolt hatásairól?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Tájékoztatták őket arról, hogy kihez fordulhatnak munkahelyi pszichológiai problémák esetén?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Más munkavédelmi kérdésekkel összehasonlítva: Nehezebb vagy könnyebb a pszichológiai kockázatok kezelése, vagy nincs különbség?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Igénybe vettek külső forrásból származó információt arra vonatkozóan, hogy miként kell kezelni a munkahelyi pszichológiai kockázatokat?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Szüksége lenne további információra vagy támogatásra ebben a kérdésben?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Van üzemi megbízott vagy üzemi tanács az intézménynél/telephelynél?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Van szakszervezet az intézménynél/telephelyen?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Van az intézménynél belső munkavédelmi képviselő?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Van munkavédelmi bizottság az intézménynél?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "La Sua sede si occupa sistematicamente di analizzare le cause di assenza dal lavoro per malattia?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "La sua azienda adotta misure per favorire il reinserimento lavorativo di dipendenti che rientrano dopo una lunga assenza dovuta a malattia?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "La salute dei dipendenti viene monitorata attraverso esami medici regolari?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Esiste nella vostra sede una politica documentata, un sistema di gestione definito o un programma specifico per la salute e la sicurezza?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Nelle riunioni a livello dirigenziale della vostra azienda si sollevano regolarmente, qualche volta o quasi mai questioni relative alla sicurezza e alla salute?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Nel complesso come definirebbe il coinvolgimento della direzione e dei dirigenti nella gestione della sicurezza e della salute? Molto alto, abbastanza alto, abbastanza basso o molto basso?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "I luoghi di lavoro nella vostra azienda sono regolarmente controllati per ciò che riguarda aspetti della sicurezza e della tutela della salute come parte della valutazione del rischio o misure simili?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Gli organi di vigilanza hanno mai svolto controlli o ispezioni in questa azienda negli ultimi 3 anni allo scopo di verificare le condizioni di salute e sicurezza?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "E' a conoscenza della Settimana Europea per la sicurezza e la salute sul lavoro?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Nella vostra azienda esiste una procedura o un regolamento da seguire nel caso di stress lavoro-correlato?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Nella vostra azienda esiste una procedura o un regolamento da seguire nel caso di bullismo o mobbing?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "E una procedura o un regolamento da seguire nel caso di violenza sul lavoro?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "La sua azienda intraprende azioni nel caso in cui alcuni dipendenti abbiano il problema di orari di lavoro troppo lunghi o irregolari?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "La sua azienda informa il personale sui rischi psicosociali potenziali e sul loro impatto su salute e sicurezza?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Sono stati informati sulle persone a cui rivolgersi in caso di problematiche psicosociali?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "In confronto ad altre questioni relative a sicurezza e salute, è più difficile, meno difficile o non c'è differenza nel gestire il rischio psicosociale?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Avete mai utilizzato informazioni o supporto da qualche fonte esterna su come gestire il rischio psicosociale?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Pensa che dovreste avere più informazioni o supporto su questo argomento?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Avete una Rappresentanza Sindacale Unitaria o Aziendale (RSU or RSA) nella vostra azienda?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Avete una organizzazione sindacale in azienda?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "La vostra sede ha un rappresentante dei lavoratori per la sicurezza (RLS) interno?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Esiste un Comitato per la Salute e la Sicurezza in azienda?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar Jūsų įmonėje nebuvimo darbe dėl ligos priežastys yra nagrinėjamos?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar imatės priemonių, kurios padėtų darbuotojams grįžti į darbą po ilgalaikio nebuvimo darbe dėl ligos?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar darbuotojų sveikata stebima atliekant reguliarias medicinines patikras?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar Jūsų įmonė turi dokumentais patvirtintą politiką, įdiegtą valdymo sistemą arba veiksmų planą sveikatos ir darbų saugos klausimais?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar aukšto lygio vadovybės posėdžiuose sveikatos ir darbų saugos klausimai yra keliami nuolat, kartais, o gal nekeliami niekada?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "O kaip Jūs bendrai įvertintumėte kitų vadovaujančių asmenų Jūsų įmonėje dalyvavimą sveikatos ir darbų saugos priežiūroje? Ar jis yra labai aktyvus, gana aktyvus, gana pasyvus arba labai pasyvus?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar įmonėje yra reguliariai atliekama darbo vietų patikra sveikatos ir darbų saugos požiūriu, kuomet yra įvertinami rizikos veiksniai?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar per paskutinius 3 metus Darbo inspekcija nors kartą tikrino darbo saugos ir sveikatos laikymąsi Jūsų įmonėje?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar žinote apie Europos saugos ir sveikatos darbe savaitę?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar Jūsų įmonė turi nustatytą tvarką, kaip spręsti su darbu susijusio streso klausimus?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar yra nustatyta tvarka, kaip spręsti klausimus, susijusius su darbuotojų persekiojimu arba priekabiavimu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar Jūsų įmonė turi procedūras, nurodančias kaip spręsti su darbu susijusios prievartos klausimus?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar Jūsų įmonė imasi kokių nors veiksmų, jei pavieniai darbuotojai dirba pernelyg ilgai arba nereguliariai?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar informuojate darbuotojus apie psichologinius ir socialinius rizikos veiksnius ir jų poveikį sveikatai ir darbų saugai?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar jie yra informuoti, į ką turėtų kreiptis, jei iškiltų su darbu susijusios psichologinės ir socialinės problemos?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Palyginus su kitais darbų saugos ir sveikatos klausimais, ar psichologinius ir socialinius rizikos veiksnius suvaldyti yra sunkiau, lengviau, o gal nėra jokio skirtumo?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar naudojotės informacija arba parama iš išorės šaltinių, apie tai kaip spręsti klausimus, susijusius su psichologiniais ir socialiniais rizikos veiksniais darbe?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar Jums norėtumėte papildomos informacijos arba paramos šiais klausimais?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar įmonėje turite Darbo tarybą?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar Jūsų įmonėje yra darbuotojų profesinės sąjungos atstovas?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar Jūsų įmonė turi darbuotojų atstovą darbų saugos ir sveikatos klausimams?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Ar Jūsų įmonėje yra Darbuotojų saugos ir sveikatos komitetas?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūsu uzņēmuma vienībā regulāri tiek analizēti darba kavējuma iemesli slimības dēļ?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūs veicat pasākumus, lai veicinātu darbinieku atgriešanos darbā pēc ilgstoša darba kavējuma slimības dēļ?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai tiek veiktas regulāras medicīniskās pārbaudes, lai apzinātu darbinieku veselības stāvokli?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūsu uzņēmuma vienībā ir dokumentēta politika, pārvaldības sistēma vai rīcības plāns attiecībā uz darba drošību un veselības aizsardzību?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai darba drošības un veselības aizsardzības jautājumi Jūsu uzņēmuma vienības augstākās vadības sanāksmēs tiek apskatīti regulāri, laiku pa laikam vai praktiski nekad?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Kopumā, kā jūs vērtējat vidējā līmeņa vadītāju un vadības pārstāvju iesaistības pakāpi ar darba drošību un veselības aizsardzību saistītu jautājumu risināšanā? Vai tā ir ļoti augsta, diezgan augsta, diezgan zema vai ļoti zema?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūsu uzņēmuma vienībā regulāri risku novērtējuma vai līdzīgu pasākumu ietvaros tiek pārbaudīta darbavietu atbilstība drošībai un veselībai?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai Valsts darba inspekcija pēdējo 3 gadu laikā ir veikusi Jūsu uzņēmuma vienībā darba drošības un veselības aizsardzības pārbaudi?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūs zināt kaut ko par Eiropas darba drošības un veselības aizsardzības nedēļu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūsu pārstāvētajā uzņēmuma vienībā ir noteikta kārtība, kā mazināt stresu, kas saistīts ar darba pienākumu izpildi?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūsu pārstāvētajā uzņēmuma vienībā ir noteikta kārtība, kā risināt iebiedēšanas vai psiholoģiskā terora problēmas?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūsu pārstāvētajā uzņēmuma vienībā ir noteikta kārtība, kā risināt problēmas, kas saistītas ar vardarbību darba vietā?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūsu uzņēmuma vienībā tiek veikti kaut kādi pasākumi, ja atsevišķi darbinieki strādā pārāk garas vai neregulāras darba stundas?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūs informējat darbiniekus par psihosociālajiem riskiem un to ietekmi uz drošību un veselību?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai darbinieki ir informēti, kur vērsties ar darbu saistīto psihosociālo problēmu gadījumā ?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Salīdzinot ar citiem ar darba drošību un veselības aizsardzību saistītiem jautājumiem: Vai novērst psihosociālos riskus ir grūtāk, vieglāk vai nav atšķirības");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūsu esat izmantojuši ārēju avotu informāciju vai atbalstu psihosociālo risku novēršanai?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jums būtu nepieciešama papildus informācija vai atbalsts šajā jautājumā?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūsu uzņēmuma vienībā ir darbinieku pilnvarotais pārstāvis vai Darba padome?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Un vai jūsu uzņēmuma vienībā ir arodbiedrība?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūsu uzņēmuma vienībā ir nodarbināto uzticības persona?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Vai jūsu uzņēmuma vienībā ir nodarbināto uzticības personu komiteja?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Il-post tax-xogħol tiegħek janalizza b’mod regolari l-kawżi tal-assenza minħabba mard?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Tieħu miżuri sabiex tappoġġja r-ritorn fuq il-post tax-xogħol wara assenza ta’ żmien twil minħabba mard?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Is-saħħa tal-impjegati hija ssorveljata permezz ta’ eżaminazzjonijiet mediċi regolari?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Hemm xi policy dokumentata, management system stabbilita jew pjan ta’ azzjoni dwar is-saħħa u s-sigurtà fuq il-post tax-xogħol tiegħek?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Suġġetti ta’ saħħa u sigurtà jitqajjmu f’laqgħat tal-management fuq livell għoli b’mod regolari, xi kultant jew prattikament qatt?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "B’mod ġenerali, kif tikklassifika l-grad ta’ involviment tal-’line’ maniġers u supervisors fl-immaniġjar tas-saħħa u s-sigurtà? Huwa għoli ħafna, pjuttost għoli, pjuttost baxx jew baxx ħafna?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Il-postijiet ta’ ħidma fil-post tax-xogħol tiegħek huma iċċekjati regolarment għas-saħħa u s-sigurtà bħala parti minn risk assesment jew miżura simili?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "L-ispettorat tax-xogħol żar il-post tax-xogħol f’dawn l-aħħar 3 snin biex jiċċekkja l-kondizzjonijiet tas-saħħa u s-sigurtà?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Inti konxju mill-Ġimgħa Ewropea dwar is-saħħa u s-sigurtà fuq ix-xogħol?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Il-post tax-xogħol tiegħek għandu proċedura sabiex jittratta ma’ stress relatat max-xogħol?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Hemm proċedura fis-seħħ sabiex titratta l-bullying jew il-fastidu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "U għandkom proċedura li titratta l-vjolenza relatata max-xogħol?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Il-post tax-xogħol tiegħek jieħu azzjoni jekk ikun hemm impjegati individwali li jaħdmu siegħat eċċessivi li huma twal jew irregolari?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Inti tinforma lill-impjegati dwar riskji psikolsoċjali u l-effett tagħhom fuq is-saħħa u sigurtà?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Ġew infurmati dwar lil min għandhom jindirizzaw f’każ ta’ problemi psikosoċjali relatati max-xogħol?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Meta mqabbel ma’ suġġetti oħra ta’ saħħa u sigurtà: Huwa aktar diffiċli li tittratta riskji psikosoċjali, huwa inqas diffiċli, jew ma hemmx differenza?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Inti użajt informazzjoni jew appoġġ minn sorsi esterni dwar kif titratta ma’ riskji psikosoċjali fuq ix-xogħol?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Għandek bżonn xi informazzjoni oħra dwar dan is-suġġett?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "F’dan l-istabbiliment għandkom kunsill tax-xogħlijiet?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "U hemm rappreżentant rikonoxxut tal-unjin fil-post tax-xogħol tiegħek?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Il-post tax-xogħol tiegħek għandu rappreżentant intern tas-saħħa u s-sigurtà?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Hemm kumitat tas-saħħa u s-sigurtà fl-istabbiliment tiegħek?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Analyseert uw vestiging routinematig de oorzaken van ziekteverzuim?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Neemt u maatregelen om de terugkeer naar het werk van werknemers na een lange periode van ziekteverzuim te ondersteunen?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Wordt de gezondheid van het personeel gecontroleerd via regelmatig medisch onderzoek?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Is er een gedocumenteerd beleid, een managementsysteem of actieplan op het gebied van arbeidsomstandigheden, veiligheid en gezondheid in uw vestiging?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Worden problemen op het vlak van arbeidsomstandigheden, gezondheid en veiligheid (arbo) regelmatig, af en toe of bijna nooit besproken op vergaderingen van het management?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Hoe schat u over het algemeen de mate van betrokkenheid in van de direct leidinggevende en het hogere management bij de aanpak van de arbeidsomstandigheden, gezondheid en de veiligheid ? Zeer hoog, vrij hoog, vrij laag of zeer laag?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Worden de werkplekken in uw vestiging regelmatig gecontroleerd op arbeidsomstandigheden, gezondheid en de veiligheid als onderdeel van een risico inventarisatie en -evaluatie (RI&E) of een vergelijkbare maatregel?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Heeft de Arbeidsinspectie in de afgelopen drie jaar de werkvloer bezocht om de arbeids- en veiligheidsomstandigheden en de gezondheid te controleren?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Bent op de hoogte van de Europese week voor veiligheid en gezondheid op het werk ?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Beschikt uw vestiging over een procedure om werkgerelateerde stress aan te pakken?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Bestaat er een procedure om intimidatie of pesterijen aan te pakken?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "En bestaat er een procedure om met werkgerelateerd geweld om te gaan?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Onderneemt uw vestiging iets wanneer individuele werknemers uitermate lange werkdagen maken of onregelmatige uren werken?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Informeert u werknemers over psychosociale risico’s en over het effect ervan op veiligheid en gezondheid?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Hebt u hen meegedeeld bij wie ze terecht kunnen in geval van werkgerelateerde psychosociale problemen ?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Vergeleken met andere arborisico’s: is het moeilijker, of minder moeilijk om psychosociale risico’s aan te pakken of is er geen verschil?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Heeft u gebruik gemaakt van informatie of steun van externe bronnen over hoe men moet omgaan met psychosociale risico’s op het werk?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Heeft u extra informatie of ondersteuning nodig over dit onderwerp?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Heeft u een Ondernemingsraad, of Personeelsvertegenwoordiging of een Medezeggenschap Orgaan in deze vestiging?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "En is er een vertegenwoordiging van de vakbond in deze vestiging?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Heeft uw organisatie een interne veiligheids- en gezondheidsvertegenwoordiger?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Is er een Commissie voor Veiligheid, Gezondheid en Welzijn of VGW Commissie in uw vestiging?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Foretar dere rutinemessig analyse av årsakene til sykdomsfravær?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Har dere tiltak for å hjelpe ansatte som kommer tilbake i arbeid etter lang tids sykefravær?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Blir de ansattes helse regelmessig kontrollert ved legeundersøkelser?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Har dere en dokumentert politikk, et fastsatt ledelsessystem eller en fastsatt handlingsplan for arbeidsmiljø?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Blir arbeidsmiljøsaker tatt opp under møter i ledelsen på høyere nivå? Skjer dette regelmessig, fra tid til annen, eller så og si aldri?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Generelt sett, hvordan vurderer du involveringen av linjeledere og tilsynspersoner i arbeidsmiljøstyringen? Er involveringen svært stor, ganske stor, ganske liten eller svært liten?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Blir arbeidsplassene hos dere regelmessig kontrollert når det gjelder sikkerhet og helse, som del av risikovurdering eller lignende?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Har Arbeidstilsynet besøkt virksomheten de siste 3 årene for å sjekke arbeidsmiljøet?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Kjenner du til den Europeiske arbeidsmiljøuken?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Har dere prosedyre for håndtering av arbeidsrelatert stress?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Har dere prosedyre for å håndtere mobbing eller sjikanering?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Og har dere prosedyre for håndtering av arbeidsrelatert vold?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Iverksettes det tiltak når enkeltpersoner arbeider for lange dager, eller har uregelmessig arbeidstid?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Blir de ansatte informert om psykososiale risikoer og innvirkningen på helse og sikkerhet?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Har de blitt informert om hvem de skal kontakte dersom de støter på psykososiale problemer?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Sammenlignet med andre arbeidsmiljøfaktorer, vil du si at det er vanskeligere å takle psykososiale risikoer, er det mindre vanskelig, eller er det ingen forskjell?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Har du brukt informasjon eller støtte fra eksterne kilder for håndtering av psykososiale risikoer på arbeidsplassen?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Trenger du ytterligere informasjon eller støtte når det gjelder dette emnet?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Har virksomheten bedriftsutvalg?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Finnes det en tillitsvalgt i bedriften?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Har dere et internt verneombud?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Finnes det et arbeidsmiljøutvalg i bedriften?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy Pana(i) oddział rutynowo analizuje przyczyny absencji chorobowej?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy oddział podejmuje kroki wspierające powrót pracowników do pracy po długiej chorobie?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy zdrowie pracowników jest monitorowane przez regularne badania zdrowotne?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy w Pana(i) oddziale istnieje udokumentowana polityka, przyjęty system zarządzania lub plan działania w zakresie zdrowia i bezpieczeństwa w pracy?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy kwestie zdrowia i bezpieczeństwa są omawiane na spotkaniach kadry kierowniczej wysokiego szczebla regularnie, czasami czy praktycznie w ogóle nie są omawiane?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Ogólnie rzecz biorąc, jak ocenił(a)by Pan(i) stopień zaangażowania kierowników liniowych i przełożonych w zarządzanie sprawami bezpieczeństwa i zdrowia w pracy? Czy jest ono bardzo wysokie, dość wysokie, dość niskie czy bardzo niskie?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy stanowiska pracy w Pana(i) oddziale są regularnie kontrolowane pod kątem bezpieczeństwa i zdrowia w pracy jako element oceny ryzyka lub w ramach podobnych działań?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy w ciągu ostatnich 3 lat Państwowa Inspekcja Pracy odwiedziła ten oddział w celu skontrolowania warunków bezpieczeństwa i zdrowia?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy słyszał Pan(i) o Europejskim Tygodniu bezpieczeństwa i zdrowia w pracy?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy w Pana(i) oddziale istnieją procedury postępowania ze stresem związanym z pracą?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy istnieje procedura postępowania z mobbingiem lub prześladowaniem?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy istnieje procedura postępowania z przemocą w miejscu pracy?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy Pana(i) oddział podejmuje działania, jeżeli poszczególni pracownicy pracują zbyt długo lub mają nieregularne godziny pracy?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy informuje Pan(i) pracowników o czynnikach ryzyka psychospołecznego i ich wpływie na zdrowie i bezpieczeństwo?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy pracownicy zostali poinformowani, do kogo mogą się zwrócić z problemami psychospołecznymi związanymi z pracą?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "W porównaniu z innymi zagadnieniami z zakresu bezpieczeństwa i higieny pracy - czy zajmowanie się ryzykiem psychospołecznym jest trudniejsze, łatwiejsze czy nie ma różnicy?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy korzystał(a) Pana(i) z informacji lub wsparcia z zewnętrznych źródeł na temat postępowania z ryzykiem psychospołecznym w pracy?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy potrzebne byłyby Panu(i) dodatkowe informacje lub wsparcie w tym zakresie?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy w Pana(i) oddziale istnieje rada pracowników?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy w Pana(i) oddziale istnieje zakładowa organizacja związkowa?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy Pana(i) oddział ma wewnętrznego społecznego inspektora pracy?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Czy w Pana(i) oddziale jest komisja BHP?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "O seu estabelecimento analisa de forma rotineira as causas das faltas por doença?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Toma medidas para apoiar o regresso dos trabalhadores ao trabalho depois de um longo período de baixa médica?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "A saúde dos trabalhadores é monitorizada através de exames médicos regulares?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Existe alguma política documentada, sistema de gestão estabelecido ou plano de acção para a segurança e saúde no seu estabelecimento?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "As questões da saúde e da segurança e saúde são abordadas em reuniões da direcção de alto nível regularmente, de vez em quando ou praticamente nunca?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "De uma forma geral, como classificaria o envolvimento dos directores e supervisores imediatos na gestão da segurança e saúde ? É muito elevado, elevado, baixo ou muito baixo?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Os locais de trabalho neste estabelecimento são regularmente verificados no que respeita à segurança e saúde como parte da avaliação dos riscos ou medidas similares?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "A Inspecção do Trabalho visitou este local de trabalho nos últimos 3 anos a fim de verificar as condições de segurança e saúde?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Tem conhecimento da Semana Europeia para a Segurança e Saúde no Trabalho?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "O seu estabelecimento possui um procedimento para lidar com o stresse relacionado com o trabalho?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Existe algum procedimento implementado para lidar com as intimidações ou o assédio?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "E possui um procedimento para lidar com a violência relacionada com o trabalho?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "O seu estabelecimento toma acções se os trabalhadores individuais trabalharem durante muito tempo ou durante horas irregulares?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Informa os trabalhadores sobre os riscos psicossociais e o seu efeito na saúde e na segurança?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Foram informados sobre quem devem contactar em caso de problemas psicossociais relacionados com o trabalho?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Comparando com outras questões de segurança e saúde, é mais difícil lidar com os riscos psicossociais, menos difícil, ou não existem diferenças?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Usou informações ou apoio de fontes externas sobre como lidar com os riscos psicossociais no trabalho?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Necessita de informações ou apoio adicionais sobre este assunto?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Existe uma comissão de trabalhadores neste estabelecimento?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "E existe uma comissão sindical ou intersindical no seu estabelecimento?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "O seu estabelecimento possui um representante dos trabalhadores para a segurança, higiene e saúde no trabalho?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Existe uma Comissão de Segurança, Higiene e Saúde no Trabalho no seu estabelecimento?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Întreprinderea dvs. analizează de obicei cauzele concediilor de boală?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Întreprindeţi măsuri pentru a susţine întoarcerea la serviciu a angajaţilor după un concediu de boală de lungă durată?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Starea sănătăţii angajaţilor este monitorizată regulat prin investigaţii medicale?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Există o politică documentată, un sistem stabilit de management, sau vreun plan de acţiuni în domeniul securităţiii şi sănătăţii în muncă în întreprinderea dvs.?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Problemele referitoare la sănătate şi securitate sunt discutate în şedinţele management-ului la nivel înalt în mod regulat, ocazional sau practic niciodată?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "În general, cum aţi evalua gradul de implicare al managerilor şi supervizorilor în gestiunea problemelor de sănătate şi securitate? Foarte ridicat, destul de ridicat, destul de scăzut, foarte scăzut?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Locurile de muncă din întreprinderea dvs.sunt verificate periodic cu privire la sănătate şi securitate ca parte a procesului de evaluare a riscurilor sau a altei măsuri similare?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Inspectoratul de Muncă a vizitat această întreprindere în ultimii 3 ani pentru a verifica condiţiile de sănătate şi securitate?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Aţi auzit de Săptămâna Europeană pentru Securitate şi Sănătate în Muncă?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "În întreprinderea dvs. exista o procedură pentru abordarea stresului legat de muncă ?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Există vreo procedură în vigoare care să soluţioneze situaţiile de intimidare sau hărţuire?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Şi aveţi vreo procedură în vigoare care să soluţioneze situaţiile de violenţă la locul de muncă?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Întreprinderea dvs. ia măsuri dacă unii angajaţi lucrează excesiv ore suplimentare sau neregulate?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Îi informaţi pe angajaţi cu privire la riscurile psihosociale şi efectul lor asupra sănătăţii şi securităţii?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Aţi fost informat la cine să vă adresaţi în caz de probleme psihosociale legate de serviciu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "În comparaţie cu alte probleme de sănătate şi securitate: Este mai dificil să gestionezi riscurile psihosociale, mai puţin dificil, sau nu există nicio diferenţă?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Aţi folosit informaţii sau suport din surse externe pentru gestionarea riscurilor psihosociale la locul de muncă?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Aţi avea nevoie de informaţii sau asistenţă adiţională cu privire la aceste probleme?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Există reprezentanţi ai salariaţIlor în întreprinderea dvs.?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Există în întreprinderea dvs. vreun sindicat?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Există în întreprinderea dvs. reprezentanţi pentru sănătate şi securitate în muncă?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Există vreun comitet pentru securitate şi sănătate în muncă în întreprinderea dvs.?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Kontroluje váš podnik pravidelne príčiny absencií z dôvodu práceneschopnosti?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Podnikáte opatrenia na podporu návratu zamestnancov do práce po dlhodobej práceneschopnosti?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Sleduje sa zdravie zamestnancov prostredníctvom pravidelných lekárskych prehliadok?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Existuje vo vašom podniku zdokumentovaná politika, zavedený systém riadenia alebo akčný plán ohľadom bezpečnosti a ochrany zdravia pri práci?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Problematika bezpečnosti a ochrany zdravia pri práci sa na schôdzach top manažmentu spomína pravidelne, príležitostne alebo prakticky nikdy?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Ako by ste celkovo ohodnotili mieru zapojenia líniových manažérov a vedúcich pracovníkov do riadenia bezpečnosti a ochrany zdravia pri práci? Je veľmi vysoká, skôr vysoká, skôr nízka alebo veľmi nízka?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Kontrolujú sa pracoviská vo vašom podniku pravidelne z hľadiska bezpečnosti a ochrany zdravia pri práci ako súčasť posudzovania rizík alebo podobného opatrenia?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Navštívil {Inšpektorát Práce}* za posledné 3 roky toto pracovisko s cieľom skontrolovať podmienky bezpečnosti a ochrany zdravia pri práci?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Viete o Európskom týždni bezpečnosti a ochrany zdravia pri práci?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Má váš podnik postup riešenia stresu súvisiaceho s prácou?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Má váš podnik zavedený postup riešenia šikany alebo obťažovania?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "A máte postup riešenia násilia súvisiaceho s prácou?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Používa váš podnik nejaké opatrenia, ak jednotliví zamestnanci pracujú nadmerne dlho alebo v nepravidelnej pracovnej dobe?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Informujete zamestnancov o psychosociálnych rizikách a ich vplyve na zdravie a bezpečnosť pri práci?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Boli informovaní, na koho sa majú obrátiť v prípade psychosociálnych problémov súvisiacich s prácou?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "V porovnaní s ostatnými otázkami bezpečnosti a ochrany zdravia: je zvládanie psychosociálnych rizík ťažšie, ľahšie alebo v tom nie je rozdiel?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Využili ste informácie alebo podporu z externých zdrojov na riešenie psychociálnych rizík pri práci?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Potrebovali by ste doplňujúce informácie alebo podporu k tejto problematike?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Máte v tomto podniku {zamestnaneckého dôverníka alebo zamestnaneckú radu}*?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "A máte v podniku {základnú organizáciu odborového zväzu}*?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Má váš podnik interného {zástupcu pre bezpečnosť a ochranu zdravia}*?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Máte v podniku {komisiu bezpečnosti a ochrany zdravia pri práci}*?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali vaša poslovna enota redno analizira vzroke odstotnosti zaradi bolezni?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali ste sprejeli ukrepe, ki bi olajšali vrnitev zaposlenih na delovno mesto po dolgotrajni odstotnosti z dela zaradi bolezni?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali je zdravje zaposlenih spremljate z rednimi zdravniškimi pregledi?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali v vaši poslovni enoti obstaja dokumentirana politika, izdelan sistem upravljanja ali akcijski načrt varnosti in zdravja pri delu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali se na najvišjih sestankih vodstva redno, občasno ali praktično nikoli ne razpravlja o vprašanjih varnosti in zdravja pri delu ?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Gledano celovito, kako bi ocenili stopnjo vključenosti vodilnih in vodstvenih delavcev ter nadzornikov v upravljanje varnosti in zdravja pri delu? Ali je njihova vključenost zelo visoka, dokaj visoka, dokaj nizka ali zelo nizka?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali varnost in zdravje na delovnih mestih v vaši poslovni enoti redno preverjajo v sklopu ocenitve tveganja ali podobnih meritev?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali je v zadnjih 3 letih (inšpektorat za delo) obiskal delovna mesta, da bi preveril zdravstvene in varnostne pogoje?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali poznate Evropski teden varnosti in zdravja pri delu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali imate v vaši poslovni enoti postopek upravljanja s stresom, povezanim z delom?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali obstaja postopek za obvladovanje ustrahovanja ali nadlegovanja?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "In, ali obstaja postopek za obvladovanje nasilja v zvezi z delom?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali vaša poslovna enota ukrepa, če posamezni delavec dela prekomerno dolgo ali ima nereden delovni čas?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali obveščate zaposlene o psihosocialnih tveganjih in njihovem učinku na zdravje in varnost?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali so bili obveščeni na koga se naj obrnejo v primeru psihosocialnih težav, povezanih z delom?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "V primerjavi z drugimi vprašanji varnosti in zdravja pri delu: Ali je psihosocialna tveganja težje ali lažje reševati ali pri tem ni razlike?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali ste uporabili zunanje informacije ali podporo pri upravljanju s psihosocialnimi tveganji pri delu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali bi potrebovali dodatne informacije ali podporo v tej zadevi?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali imate svet delavcev v tej poslovni enoti?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "In, ali imate sindikalnega zaupnika v tej poslovni enoti?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali ima vaša poslovna enota internega delavskega zaupnika za varnost in zdravje pri delu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Ali imate v vaši ustanovi {odbor za varnost in zdravje delavcev}*?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Analyseras orsakerna till sjukfrånvaro rutinmässigt på din arbetsplats?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Vidtar ni åtgärder för att stödja anställdas återgång till arbetet efter en lång tids sjukfrånvaro?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Kontrolleras de anställdas hälsa genom regelbundna läkarundersökningar?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Finns det en dokumenterad arbetsmiljöpolicy, ett fastställt ledningssystem eller en åtgärdsplan för arbetsmiljöarbetet på er arbetsplats?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Är arbetsmiljöfrågor något som regelbundet, ibland, eller nästan aldrig diskuteras vid möten där högre chefer deltar?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Totalt sett, hur skulle du bedöma graden av deltagande i hanteringen av arbetsmiljöfrågor bland chefer med personalansvar och arbetsledare? Är den mycket hög, ganska hög, ganska låg eller mycket låg?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Kontrolleras arbetsstationerna på arbetsplatsen regelbundet ur hälso- och säkerhetssynpunkt inom ramen för en riskbedömning eller liknande åtgärder?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Har Arbetsmiljöverket besökt denna arbetsplats de senaste 3 åren för att kontrollera arbetsmiljön?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Har du hört talas om Europaveckan för säkerhet och hälsa i arbetet?");
-
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Finns det något förfarande på din arbetsplats för att ta itu med arbetsrelaterad stress?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Finns det något förfarande på plats för att ta itu med mobbning eller trakasserier?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Och finns det något förfarande för att ta itu med arbetsrelaterat våld?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Vidtar din arbetsplats åtgärder om enskilda arbetstagare arbetar enormt långa eller oregelbundna arbetspass?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Informeras de anställda om psykosociala risker och hur de påverkar säkerheten och hälsan?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Har de informerats om vem de ska kontakta när det gäller arbetsrelaterade psykosociala problem?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Jämfört med andra arbetsmiljöfrågor: Är det svårare, mindre svårt eller ingen skillnad när det gäller att ta itu med psykosociala risker?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Har du använt information eller stöd från externa källor om hur man kan hantera psykosociala risker på arbetsplatsen?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Skulle du behöva någon ytterligare information eller stöd i fråga om detta?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Finns det ett företagsråd på din arbetsplats?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Finns det en facklig förtroendeman på din arbetsplats?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Finns det ett internt skyddsombud på din arbetsplats?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Finns det en arbetsmiljökommitté på din arbetsplats?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM152");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İşyeriniz, hastalık kaynaklı devamsızlığın sebeplerini düzenli olarak inceliyor mu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM153");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Çalışanlarınıza, hastalık kaynaklı uzun süreli devamsızlıkları sonrasında, işe dönmelerini destekleyecek imkanları sağlıyor musunuz?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM154");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Çalışanların sağlık durumu düzenli yapılan sağlık kontrolleriyle izleniyor mu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM155");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İşyerinizin, sağlık ve güvenliğe dair belgelenmiş bir politikası, kurulu bir yönetim sistemi veya eylem planı var mı?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM158");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Sağlık ve güvenlik meseleleri, üst düzey yönetim toplantılarında düzenli olarak mı görüşülüyor, ara sıra mı görüşülüyor, yoksa neredeyse hiç görüşülmüyor mu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM159");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Genel olarak, bölüm müdürlerinin ya da yöneticilerin sağlık ve güvenlik yönetimine katılım oranlarını nasıl değerlendirirsiniz? Çok yüksek oranda mı, oldukça yüksek oranda mı, oldukça düşük oranda mı, çok düşük oranda mı?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM161");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İşyerinizdeki çalışma mekanları, risk değerlendirmesi ya da benzeri bir tedbir kapsamında düzenli olarak kontrol ediliyor mu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM170");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Geçtiğimiz üç sene içerisinde, İş Teftiş Kurulu, çalışma mekanlarındaki sağlık ve güvenlik koşullarını kontrol etmek için burayı ziyaret etti mi?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM175");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Avrupa İş Sağlığı ve Güvenliği Haftası'ndan haberiniz var mı?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM250");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İşyerinizde, iş kaynaklı stresle başa çıkma konusunda bir prosedür var mı?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM251");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İşyerinizde, zorbalık veya tacizle başa çıkma konusunda bir prosedür var mı?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM252");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İşyerinizde, iş kaynaklı şiddetle başa çıkma konusunda bir prosedür var mı?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM256");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Herhangi bir çalışanınız aşırı uzun veya düzensiz saatlerde çalışırsa, işyeriniz bu konuda harekete geçip, önlem alıyor mu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM259");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Çalışanlarınızı psikososyal riskler ve bunların sağlık ve güvenlik üzerindeki etkileri konusunda bilgilendiriyor musunuz?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM260");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Çalışanlarınız, iş kaynaklı psikososyal sorunlar yaşamaları durumunda kime başvuracakları konusunda bilgilendirildiler mi?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM300");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Diğer sağlık ve güvenlik meseleleriyle karşılaştırıldığı zaman: sizce, psikososyal risklere çare bulmak daha mı zor, daha mı kolay yoksa aralarında bir fark yok mu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM302");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İşyerinde psikososyal risklerle nasıl başa çıkacağınıza ilişkin dış kaynaklardan hiç bilgi veya destek aldınız mı?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM303a");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Peki, sizce, bu meseleyle ilgili ek bilgi veya desteğe ihtiyacınız olur muydu?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM350");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Bu işyerinde bir çalışma konseyi var mıdır?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM351");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İşyerinizde sendika var mıdır?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM355all");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İşyerinizin kendi içinde bir sağlık ve güvenlik işçi temsilcisi var mıdır?");
-
-SET @literalId=(SELECT name_3_literal_id FROM esener_category WHERE category="MM358");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "İşyerinizde bir iş sağlığı ve güvenliği kurulu var mıdır?");
 

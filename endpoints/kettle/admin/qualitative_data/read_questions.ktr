@@ -144,7 +144,7 @@
     <filename_field/>
     <rownum_field/>
     <include_filename>N</include_filename>
-    <separator>&#x3b;</separator>
+    <separator>&#x7c;&#x23;&#x23;&#x7c;</separator>
     <enclosure/>
     <header>Y</header>
     <buffer_size>50000</buffer_size>
