@@ -116,7 +116,7 @@ define (function (require) {
                                         if(resolution<=768){
                                             return 1.5
                                         }
-                                        return 3;
+                                        return 2;
                                     })
                                     .left(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
@@ -151,7 +151,7 @@ define (function (require) {
                                     if(resolution<=768){
                                         return 1.5
                                     }
-                                    return 2.5;
+                                    return 2;
                                 })
                                 .left(function(scene){
                                     var baseScale = this.getContext().chart.axes.base.scale;
