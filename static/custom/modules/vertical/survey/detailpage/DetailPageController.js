@@ -592,6 +592,12 @@ define(function (require) {
 			var topic = '';
 			$scope.pQuestion = question.category;
 
+			var answer = question.answer_id;
+
+			if($scope.pChart == 'european-bar-chart'){
+				var answer = 0;
+			}
+
 			if(anchor != null){
 				$scope.pTopic = anchor;
 				if(question.category != null){
@@ -601,7 +607,7 @@ define(function (require) {
 						pTopic: $scope.pTopic, //Category
 						pChart: $scope.pChart, //Type of chart
 						pQuestion: $scope.pQuestion, //Question name
-						pAnswer: question.answer_id, //Split answer
+						pAnswer: answer, //Split answer
 						pSectorSize: $scope.pSectorSize,
 						pActivityFilter: $scope.pActivityFilter,
 						pCompanyFilter: $scope.pCompanyFilter,
