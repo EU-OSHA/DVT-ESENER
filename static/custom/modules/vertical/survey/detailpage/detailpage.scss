@@ -1119,15 +1119,6 @@
       .no-event{
         display: none;
       }
-      &.selected-chart{
-        .no-event{
-          background: transparent;
-          display: block;
-          width: 100%;
-          position: absolute;
-          height: 5rem;
-        }
-      }
     }
   }
   a#eu-only-mobile{
@@ -1444,6 +1435,13 @@ and (max-width : 768px) {
         }
         &.selected-chart{
           display: block;
+          .no-event{
+            background: transparent;
+            display: block;
+            width: 100%;
+            position: absolute;
+            height: 5rem;
+          }
           &:after{
             content: "\f107";
             font-family: FontAwesome;
