@@ -92,7 +92,7 @@ define (function (require) {
 
                             return dvtUtils.getChartLightGrayColor();
                         },
-                        bar_call: function(){
+                        bar_call: function(scene){
                             var resolution = screen.width;
 
                             $(window).on("resize",function(e){
@@ -113,18 +113,45 @@ define (function (require) {
                                     .width(null)  // clear any inherited value
                                     .strokeStyle('black')
                                     .lineWidth(function(scene){
-                                        if(resolution<=768){
-                                            return 1.5
+                                        var countryKey = scene.firstAtoms.category;
+                                        if(scene.previousSibling != null){
+                                            var previousSibling = scene.previousSibling.firstAtoms.category;
                                         }
-                                        return 2;
+                                        
+                                        if(countryKey.label.match('(CH)')){
+                                            if(resolution<=768){
+                                                return 1.5
+                                            }
+                                            return 2;
+                                        }else{
+                                            if(countryKey.label.match('(NO)') && !previousSibling.label.match('CH') ){
+                                                return 2;
+                                            }
+                                        }
+                                        return 0;
+                                        
                                     })
                                     .left(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
-                                        //$log.warn(scene);
                                         var countryKey = scene.firstAtoms.category;
                                         var panelWidth = this.root.width();
-                                        
-                                        if(baseScale('Switzerland (CH)') < 20){
+
+                                        var switzerlandC = countryKey.label.match('(CH)')!=null?countryKey.label:null;
+                                        var norwayC = countryKey.label.match('(NO)')!=null?countryKey.label:null;
+
+                                        if(switzerlandC!=null){
+                                            if(resolution<=768){
+                                                return baseScale(switzerlandC) - this.sign.panel.barWidth + 4;
+                                            }
+                                            return baseScale(switzerlandC) - this.sign.panel.barWidth - 2;
+                                        }else{
+                                            if(resolution<=768){
+                                                return baseScale(norwayC) - this.sign.panel.barWidth + 4;
+                                            }
+                                            return baseScale(norwayC) - this.sign.panel.barWidth - 2;
+                                        }
+
+                                        /*if(baseScale('Switzerland (CH)') < 20){
                                             if(resolution<=768){
                                                 return baseScale('Norway (NO)') - this.sign.panel.barWidth + 4;
                                             }
@@ -134,7 +161,7 @@ define (function (require) {
                                         if(resolution<=768){
                                             return baseScale('Switzerland (CH)') - this.sign.panel.barWidth + 4;
                                         }
-                                        return baseScale('Switzerland (CH)') - this.sign.panel.barWidth - 2; 
+                                        return baseScale('Switzerland (CH)') - this.sign.panel.barWidth - 2; */
                                         
                                     });
                             }
