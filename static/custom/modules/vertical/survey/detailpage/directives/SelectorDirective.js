@@ -437,10 +437,10 @@ define(function (require) {
 						reload: true
 					});
 				}
-
+	$('.questions--list--wrapper').addClass('open');
 				scope.openOptions = function(i,e) {
 					
-					
+				
 				 	var parentNode = e.target.parentElement;
 				 	var nodeName = e.target.nodeName;
 				 	$log.warn(e.target.className);
