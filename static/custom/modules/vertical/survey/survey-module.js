@@ -20,6 +20,10 @@ define(function (require) {
         // Literals / i18n
         var i18n = configService.getLiterals();
 
+        console.log(document.location.href.match('2009'));
+
+        var country = document.location.href.match('2009')!=null?'EU27':'EU28';
+
         $uiViewScrollProvider.useAnchorScroll();
 
         $stateProvider.state('overview', {
@@ -232,8 +236,8 @@ define(function (require) {
                     squash: 'european-map'
                 },
                 pCountry: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: country,
+                    squash: country
                 },
                 pCountry2: {
                     value: 'AT',
@@ -296,8 +300,8 @@ define(function (require) {
                     squash: 'european-bar-chart'
                 },
                 pCountry: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: country,
+                    squash: country
                 },
                 pCountry2: {
                     value: 'AT',
@@ -347,8 +351,8 @@ define(function (require) {
                     squash: 'MM161'
                 },                
                 pCountry: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: country,
+                    squash: country
                 },                
                 pSectorSize: {
                     value: 'company-size',
@@ -418,8 +422,8 @@ define(function (require) {
                     squash: '11'
                 },
                 pCountry: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: country,
+                    squash: country
                 },
                 pCountry2: {
                     value: 'AT',
@@ -473,8 +477,8 @@ define(function (require) {
                     squash: 'MM161'
                 },
                 pCountry: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: country,
+                    squash: country
                 },
                 pChart: {
                     value: 'pie-chart',

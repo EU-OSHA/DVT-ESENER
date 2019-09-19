@@ -28,6 +28,7 @@ define(function (require) {
         $scope.pChart = '';
         $scope.pQuestion = '';
         $scope.pAnswer = '';
+        $scope.pCountry = '';
 
 
         $(window).on("resize",function(e){
@@ -54,15 +55,16 @@ define(function (require) {
                 $event.target.parentElement.classList.remove('disabled');
                 $event.target.parentElement.classList.add('selected');
 
-                    if(configService.isMobile()) {
-                        $event.target.parentElement.classList.add('tablet');
-                    }
+                if(configService.isMobile()) {
+                    $event.target.parentElement.classList.add('tablet');
+                }
 
             }
 
-
             $scope.pTopic = topic;
-            //$scope.pQuestion = question;
+
+            // Provisional because EU27 will change to EU28
+            $scope.pCountry = $scope.pIndicator == '2009' ? 'EU27': 'EU28';
 
             if($scope.pTopic == 'osh-management'){
                 $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM161':'Q250';

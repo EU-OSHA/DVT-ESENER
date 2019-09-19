@@ -443,7 +443,7 @@ define(function (require) {
 					
 				 	var parentNode = e.target.parentElement;
 				 	var nodeName = e.target.nodeName;
-				 	$log.warn(e.target.className);
+				 	//$log.warn(e.target.className);
 
 				 	if( e.target.className == "no-event" ){
 				 		var parentNode = e.target.parentElement.parentElement;

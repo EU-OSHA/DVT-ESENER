@@ -460,29 +460,73 @@ define(function (require) {
 				if($rootScope.nationalBarChartIndicators == undefined || questionOrFilterChanged){
 					questionOrFilterChanged = false;
 
-					dataService.getNationalBarChartIndicators($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, $scope.pSectorSize).then(function (data) 
-					{
-						var list = [];
-						data.data.resultset.map(function (elem) 
+					if($scope.pSectorSize == 'activity-sector'){
+						dataService.getActivitySectorsSelect($scope.pQuestion).then(function (data) 
 						{
-							list.push({
-								id: elem[0],
-								name: elem[1]
+							var list = [];
+							data.data.resultset.map(function (elem) 
+							{
+								if(elem[0] != 14){
+									list.push({
+										id: elem[0],
+										name: elem[1]
+									});
+								}else{
+									$scope.all = {
+										id: elem[0],
+										name: elem[1]
+									};
+								}
 							});
-						});
 
-						//$scope.indicators = $rootScope.nationalBarChartIndicators;
-						$scope.indicators.data = list;
-						$scope.indicators.pQuestion = $scope.pQuestion;
-						$scope.indicators.sectorsize = $scope.pSectorSize;
-						$rootScope.nationalBarChartIndicators = $scope.indicators;
-						
-						//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:[];
-						
-					}).catch(function (err) 
-					{
-						throw err;
-					});
+							list.push($scope.all);
+
+							//$scope.indicators = $rootScope.nationalBarChartIndicators;
+							$scope.indicators.data = list;
+							$scope.indicators.pQuestion = $scope.pQuestion;
+							$scope.indicators.sectorsize = $scope.pSectorSize;
+							$rootScope.nationalBarChartIndicators = $scope.indicators;
+							
+							//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:[];
+							
+						}).catch(function (err) 
+						{
+							throw err;
+						});
+					}else{
+						dataService.getEstablishmentSizesSelect($scope.pQuestion).then(function (data) 
+						{
+							var list = [];
+							data.data.resultset.map(function (elem) 
+							{
+								if(elem[0] != 11){
+									list.push({
+										id: elem[0],
+										name: elem[1]
+									});
+								}else{
+									$scope.all = {
+										id: elem[0],
+										name: elem[1]
+									};
+								}
+							});
+
+							list.push($scope.all);
+
+							//$scope.indicators = $rootScope.nationalBarChartIndicators;
+							$scope.indicators.data = list;
+							$scope.indicators.pQuestion = $scope.pQuestion;
+							$scope.indicators.sectorsize = $scope.pSectorSize;
+							$rootScope.nationalBarChartIndicators = $scope.indicators;
+							
+							//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:[];
+							
+						}).catch(function (err) 
+						{
+							throw err;
+						});
+					}
 
 					//$scope.indicators = [];
 					//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:$rootScope.indicatorsActivity;
