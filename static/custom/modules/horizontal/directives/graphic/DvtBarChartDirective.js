@@ -622,8 +622,19 @@ define(function (require) {
                     definition.chartDefinition.valuesVisible = true;
                     definition.chartDefinition.legend = true;
                     definition.chartDefinition.valuesAnchor = 'center';
-                    definition.chartDefinition.valuesLabelStyle= 'inside';
-                    //definition.chartDefinition.explodedSliceRadius = '3%'
+                    definition.chartDefinition.valuesLabelStyle = 'inside';
+                    definition.chartDefinition.label_textAlign = 'center';
+                    definition.chartDefinition.label_textBaseline = function(scene){
+                        var value = scene.firstAtoms.value;
+
+                        if(scene.previousSibling == null){
+                            if(value.value < 7 && scene.nextSibling.firstAtoms.value.value < 7){
+                                return 'top';
+                            }
+                        }
+
+                        return 'bottom';
+                    };
                     if (scope.isMaximized) {
                         definition.chartDefinition.valuesFont= '20px OpenSans-bold';
                     }else {
