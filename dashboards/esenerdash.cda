@@ -319,7 +319,7 @@
     <Query>
       SELECT DISTINCT(a.id), a.literal_id 
       FROM split_activity_sector a
-      INNER JOIN profile p ON a.id=p.activity_sector_id AND a.id NOT IN (5, 8)
+      INNER JOIN profile p ON a.id=p.activity_sector_id AND a.id NOT IN (1,5, 8)
       INNER JOIN value v ON p.id=v.profile_id
       INNER JOIN indicator i ON v.indicator_id=i.id
       WHERE i.name=${pQuestion}
