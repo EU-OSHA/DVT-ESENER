@@ -195,29 +195,65 @@ define(function (require) {
 			promiseShape: mapProvider.getEuropeShape()
 		};
 
-		
+		$scope.pExcelFileName = "xls_";
+
 		if($scope.pChart == 'european-map'){
 			$scope.chartCitation = 'L100623';
 			$scope.promiseToExport = dataService.getMapExportData($scope.pIndicator, $scope.pQuestion, $scope.answer, 
 				$scope.actualDataset, $scope.pSectorSize, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU);
+			$scope.pExcelFileName = $scope.pExcelFileName + "heatMap-";
 		}else if($scope.pChart == 'european-bar-chart'){
 			$scope.chartCitation = 'L100622';
 			$scope.promiseToExport = dataService.getEuropeanBarCharData($scope.actualDataset, $scope.pQuestion, 
 				$scope.dashboard.parameters.pFilters.activitySector, $scope.dashboard.parameters.pFilters.establishmentSize,
 				$scope.dashboard.parameters.pFilters.euOnly);
+			$scope.pExcelFileName = $scope.pExcelFileName + "euBars-";
 		}else if($scope.pChart == 'national-bar-chart'){
 			$scope.chartCitation = 'L100624';
 			$scope.promiseToExport = dataService.getNationalBarChartExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
 				$scope.dashboard.parameters.pFilters.sectorSize, $scope.dashboard.parameters.pFilters.country, 0);
+			$scope.pExcelFileName = $scope.pExcelFileName + "inCountry-";
 		}else if($scope.pChart == 'national-comparisons'){
 			$scope.chartCitation = 'L100621';
 			$scope.promiseToExport = dataService.getNationalComparisonsExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
 				$scope.dashboard.parameters.pFilters.activitySector, $scope.dashboard.parameters.pFilters.establishmentSize,
 				$scope.dashboard.parameters.pFilters.country, $scope.dashboard.parameters.pFilters.country2, 0, $scope.dashboard.parameters.pFilters.sectorSize);			
+			$scope.pExcelFileName = $scope.pExcelFileName + "crossCountry-";
 		}else if($scope.pChart == 'pie-chart'){
 			$scope.chartCitation = 'L101033';
 			$scope.promiseToExport = dataService.getPieChartData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, 
 				$scope.dashboard.parameters.pFilters.country);
+		}
+
+		if ($scope.pIndicator == 2009)
+		{
+			$scope.pExcelFileName = $scope.pExcelFileName + "esener1-";
+		}
+		else if ($scope.pIndicator == 2014)
+		{
+			$scope.pExcelFileName = $scope.pExcelFileName + "esener2-";
+		}
+		$scope.pExcelFileName = $scope.pExcelFileName + $scope.pSectorSize + "-";
+		if ($scope.pSectorSize == "activity-sector" && $scope.pChart != "national-bar-chart")
+		{
+			$scope.pExcelFileName = $scope.pExcelFileName + $scope.pActivityFilter + "-";
+		}
+		else if ($scope.pChart != "national-bar-chart")
+		{
+			$scope.pExcelFileName = $scope.pExcelFileName + $scope.pCompanyFilter + "-";
+		}
+		$scope.pExcelFileName = $scope.pExcelFileName + $scope.pQuestion;
+		if ($scope.pChart == "european-map")
+		{
+			$scope.pExcelFileName = $scope.pExcelFileName + "-" + $scope.answer;
+		}
+		else if ($scope.pChart == "national-bar-chart")
+		{
+			$scope.pExcelFileName = $scope.pExcelFileName + "-" + $scope.pCountry;
+		}
+		else if ($scope.pChart == "national-comparisons")
+		{
+			$scope.pExcelFileName = $scope.pExcelFileName + "-" + $scope.pCountry + "-" +$scope.pCountry2;
 		}
 
 		if($scope.pChart == 'european-map'){
