@@ -612,6 +612,7 @@ define(function (require) {
 						pActivityFilter: $scope.pActivityFilter,
 						pCompanyFilter: $scope.pCompanyFilter,
 						pCountry: $scope.dashboard.parameters.pFilters.country,
+						pLanguage: $scope.pLanguage,
 						pLocale: $scope.pLocale
 					},
 					{
