@@ -117,7 +117,7 @@
 	        	<span class="establishment-size" data-ng-bind="i18n.L100574"></span> 
 	        </p> -->
              <p data-ng-if="chart != 'pie-chart'" data-ng-bind="i18n.L101026" ></p>  
-            <form class="block--filter--wrapper">
+            <form class="block--filter--wrapper" data-ng-class="{'national-comparisons-wrapper':(chart == 'national-comparisons')}">
                 <!-- Activity sector -->
                 <div data-ng-class="{'active':(filters.sectorSize == 'activity-sector')}" class="filter-text activity-sector" data-ng-if="chart != 'national-comparisons' && chart != 'pie-chart'">
                     <label class="activity-sector" data-ng-bind="i18n.L100573" ></label> 

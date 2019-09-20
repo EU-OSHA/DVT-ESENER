@@ -1207,14 +1207,17 @@ and (max-width : 1250px) {
 
   .detail-page{
     .block--filter--wrapper{
-      flex-wrap: wrap;
-      justify-content: space-between;
+
+      &.national-comparisons-wrapper{
+        flex-wrap: wrap;
+        justify-content: space-between; 
+      }
       filter-text{
         min-width: 40%;
         width: 40%;
       }
       .or-text {
-        margin: 4rem 0% 2% 0;
+        margin: 4rem 3% 2% 0;
       }
       .filter-text-button{
         min-width:auto;
