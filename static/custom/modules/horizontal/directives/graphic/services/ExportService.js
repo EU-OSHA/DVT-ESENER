@@ -245,7 +245,7 @@ define(function(require){
                     for(i=0;i<exportComponent.dataComponent[j].data.resultset.length;i++) {
 
                         var dataTMP=exportComponent.dataComponent[j].data.resultset[i];
-                        $log.warn(dataTMP);
+                        //$log.warn(dataTMP);
                         for(a=0;a<dataTMP.length;a++) {
 
                             var value=exportComponent.dataComponent[j].data.resultset[i][a];

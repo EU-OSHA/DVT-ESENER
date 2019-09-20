@@ -204,25 +204,23 @@ define(function (require) {
 			$scope.pExcelFileName = $scope.pExcelFileName + "heatMap-";
 		}else if($scope.pChart == 'european-bar-chart'){
 			$scope.chartCitation = 'L100622';
-			$scope.promiseToExport = dataService.getEuropeanBarCharData($scope.actualDataset, $scope.pQuestion, 
-				$scope.dashboard.parameters.pFilters.activitySector, $scope.dashboard.parameters.pFilters.establishmentSize,
-				$scope.dashboard.parameters.pFilters.euOnly);
+			$scope.promiseToExport = dataService.getEuropeanBarCharExportData($scope.actualDataset, $scope.pQuestion, 
+				$scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU, $scope.pSectorSize);
 			$scope.pExcelFileName = $scope.pExcelFileName + "euBars-";
 		}else if($scope.pChart == 'national-bar-chart'){
 			$scope.chartCitation = 'L100624';
 			$scope.promiseToExport = dataService.getNationalBarChartExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
-				$scope.dashboard.parameters.pFilters.sectorSize, $scope.dashboard.parameters.pFilters.country, 0);
+				$scope.pSectorSize, $scope.dashboard.parameters.pFilters.country, 0);
 			$scope.pExcelFileName = $scope.pExcelFileName + "inCountry-";
 		}else if($scope.pChart == 'national-comparisons'){
 			$scope.chartCitation = 'L100621';
 			$scope.promiseToExport = dataService.getNationalComparisonsExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
-				$scope.dashboard.parameters.pFilters.activitySector, $scope.dashboard.parameters.pFilters.establishmentSize,
-				$scope.dashboard.parameters.pFilters.country, $scope.dashboard.parameters.pFilters.country2, 0, $scope.dashboard.parameters.pFilters.sectorSize);			
+				$scope.pActivityFilter, $scope.pCompanyFilter, $scope.pCountry, $scope.pCountry2, $scope.pSectorSize);			
 			$scope.pExcelFileName = $scope.pExcelFileName + "crossCountry-";
 		}else if($scope.pChart == 'pie-chart'){
 			$scope.chartCitation = 'L101033';
 			$scope.promiseToExport = dataService.getPieChartData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, 
-				$scope.dashboard.parameters.pFilters.country);
+				$scope.pCountry);
 		}
 
 		if ($scope.pIndicator == 2009)
