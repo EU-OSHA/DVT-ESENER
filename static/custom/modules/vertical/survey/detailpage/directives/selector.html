@@ -137,7 +137,7 @@
 
 
                 <!-- Activity sector for national comparison -->
-                <div class="filter-text activity-sector filter-national-comparisons" data-ng-if="chart == 'national-comparisons'" data-ng-class="{'disabled':(chart == 'pie-chart')}">
+                <div class="filter-text activity-sector filter-national-comparisons" data-ng-if="chart == 'national-comparisons'" data-ng-class="{'active':(filters.sectorSize == 'activity-sector')}">
                     <label class="activity-sector" data-ng-bind="i18n.L100573" ></label> 
                     <select id="sector" class="" ng-change="updateChart('activitySector')" ng-model="filters.activitySector" ng-selected="filters.activitySector" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
                         <!--<option data-ng-bind="i18n.L100573" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>-->
@@ -146,7 +146,7 @@
                 </div>
                 <span data-ng-if="chart == 'national-comparisons' && chart != 'pie-chart'" class="or-text" data-ng-bind="i18n.L101027"></span>
                 <!-- Establishment size for national comparison -->
-                <div class="filter-text establishment-size filter-national-comparisons" data-ng-if="chart == 'national-comparisons'" data-ng-class="{'disabled':(chart == 'pie-chart')}">
+                <div class="filter-text establishment-size filter-national-comparisons" data-ng-if="chart == 'national-comparisons'" data-ng-class="{'active':(filters.sectorSize == 'company-size')}">
                   <label class="establishment-size" data-ng-bind="i18n.L100574"></label> 
                     <select id="establishment" class="" ng-change="updateChart('establishmentSize')" ng-model="filters.establishmentSize" ng-selected="filters.establishmentSize">
                         <option data-ng-repeat='size in establishmentSizes' value="{{size.id}}" data-ng-bind="i18n['L'+size.literal]"></option>
