@@ -242,6 +242,20 @@ define(function () {
                 return promise(url);
             },
 
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getPieChartExportData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns data of a particular question
+             */
+            getPieChartExportData: function (pDataset, pQuestion, pYear, pCountry) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getPieChartExportData" + "&parampDataset=" + pDataset + "&parampQuestion=" + pQuestion + "&parampYear=" + pYear 
+                + "&parampCountry=" + pCountry;
+                $log.debug('getPieChartExportData url:' + url);
+                return promise(url);
+            },
+
             /***************************************** HOME *******************************************/
 
             getStrategiesCountries: function(){

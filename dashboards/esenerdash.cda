@@ -102,10 +102,10 @@
     </Parameters>
     <Query>
       SELECT n.country_code as Country,
-      i.literal_id as Indicator, 
-      sa.literal_id as Answer,
-      IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) as Split,
-      (ROUND(v.value*100,1)) as Value 
+      i.name as Question, 
+      IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) as Subset,
+      sa.literal_id as Answer,      
+      (ROUND(v.value*100,1)) as Percentage 
       FROM esener_category ec, indicator i, profile p, value v, split_answer sa, translation t, nuts n, split_activity_sector sas,
       split_company_size scs
       WHERE ec.year = ${pYear}
@@ -393,9 +393,11 @@
       <Parameter default="EN" name="pLocale" type="String" />
     </Parameters>
     <Query>
-      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(t2.text, " (", n.country_code, ")")) as Country, t.text as Answer, 
-      IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) as Split,
-      v.value*100 as Value
+      SELECT n.country_code as Country, 
+      i.name as Question, 
+      IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) as Subset, 
+      t.text as Answer, 
+      v.value*100 as Percentage
       FROM nuts n, profile p, value v, translation t, translation t2, split_answer sa, indicator i, esener_answer_order eao, split_activity_sector sas, split_company_size scs
       WHERE n.id = p.nuts_id
       AND i.name = ${pIndicator}
@@ -414,7 +416,7 @@
       AND t2.literal_id = n.literal_id
       AND t2.language = ${pLocale}
       AND v.dataset_id = ${pDataset}
-      ORDER BY FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC
+      ORDER BY FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC;
     </Query>
   </DataAccess>
 
@@ -491,7 +493,11 @@
         <Parameter default="14" name="pIndicator" type="Numeric"/>
       </Parameters>
       <Query>
-        SELECT DISTINCT ${pCountry} as Country, sa.literal_id as Answer, IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) Split, v.value*100 as Value
+        SELECT DISTINCT ${pCountry} as Country, 
+        i.name as Question, 
+        IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) Subset, 
+        sa.literal_id as Answer, 
+        v.value*100 as Percentage
         FROM nuts n, profile p, value v, indicator i, split_answer sa, split_activity_sector sas, split_company_size scs, esener_answer_order eao
         WHERE n.id = p.nuts_id
         AND i.name = ${pQuestion}
@@ -506,7 +512,7 @@
         ELSE (p.company_size_id IN(11, 12, 13, 14, 15) AND p.activity_sector_id IS NULL AND p.company_size_id = scs.id) END
         AND sas.id IN (14, 15, 16, 17) AND scs.id IN(11, 12, 13, 14, 15)
         AND n.country_code = ${pCountry}
-        ORDER BY eao.order_position DESC;
+        ORDER BY Subset Asc, eao.order_position ASC;
       </Query>
     </DataAccess>
 
@@ -619,7 +625,11 @@
       <Parameter default="activity-sector" name="pSectorSize" type="String" />
     </Parameters>
     <Query>
-      SELECT n.country_code as Country, i.name as Question, IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) as Split, t.text as Answer, v.value*100 as Value
+      SELECT n.country_code as Country, 
+      i.name as Question, 
+      IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) as Subsector, 
+      t.text as Answer, 
+      v.value*100 as Percentage
       FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i, split_activity_sector sas, split_company_size scs
       WHERE i.name = ${pQuestion}
       AND v.indicator_id = i.id
@@ -664,6 +674,36 @@
       AND t.language = ${pLocale}
       AND v.dataset_id = ${pDataset}
       ORDER BY eao.order_position DESC;
+    </Query>
+  </DataAccess>
+
+  <DataAccess access="public" connection="dvt_conn" id="getPieChartExportData" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="15" name="pDataset" type="Numeric"/>
+      <Parameter default="MM161" name="pQuestion" type="String"/>
+      <Parameter default="2009" name="pYear" type="Numeric"/>
+      <Parameter default="AT" name="pCountry" type="String"/>
+      <Parameter default="EN" name="pLocale" type="String"/>
+    </Parameters>
+    <Query>
+      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Answer, v.value*100 as Value
+      FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i, esener_answer_order eao
+      WHERE n.id = p.nuts_id
+      AND i.name = ${pQuestion}
+      AND v.indicator_id = i.id
+      AND i.id = eao.indicator_id
+      AND v.profile_id = p.id
+      AND p.answer_id=sa.id
+      AND sa.id = eao.answer_id
+      AND t.literal_id = sa.literal_id
+      AND p.activity_sector_id = 14
+      AND n.id = p.nuts_id
+      AND n.country_code = ${pCountry}
+      AND t.language = ${pLocale}
+      AND v.dataset_id = ${pDataset}
+      ORDER BY eao.order_position ASC;
     </Query>
   </DataAccess>
 
