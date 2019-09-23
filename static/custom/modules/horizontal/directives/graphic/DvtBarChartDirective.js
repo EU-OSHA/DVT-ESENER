@@ -635,7 +635,7 @@ define(function (require) {
 
                         return 'bottom';
                     };
-                    //definition.chartDefinition.explodedSliceRadius = '3%'
+                    
                     if (scope.isMaximized) {
                         definition.chartDefinition.valuesFont= '20px OpenSans-bold';
                     }else {

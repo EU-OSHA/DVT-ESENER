@@ -200,7 +200,7 @@ define(function(require){
         };
 
         var exportRadarChartData = function(promises, titleChart, id){
-            $log.warn(promises);
+            //$log.warn(promises);
             var list = [];
 
             Promise.all([promises]).then(function(res)
@@ -227,7 +227,7 @@ define(function(require){
 
                 //exportComponent.dashboard = dashboard.dashboard;
 
-                $log.warn(exportComponent);
+                //$log.warn(exportComponent);
 
                 var columns="";
                 var numberColumns=exportComponent.dataComponent[0].data.metadata.length;
@@ -245,7 +245,7 @@ define(function(require){
                     for(i=0;i<exportComponent.dataComponent[j].data.resultset.length;i++) {
 
                         var dataTMP=exportComponent.dataComponent[j].data.resultset[i];
-                        $log.warn(dataTMP);
+                        //$log.warn(dataTMP);
                         for(a=0;a<dataTMP.length;a++) {
 
                             var value=exportComponent.dataComponent[j].data.resultset[i][a];

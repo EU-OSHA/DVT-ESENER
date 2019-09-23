@@ -195,31 +195,6 @@ define(function (require) {
 			promiseShape: mapProvider.getEuropeShape()
 		};
 
-		
-		if($scope.pChart == 'european-map'){
-			$scope.chartCitation = 'L100623';
-			$scope.promiseToExport = dataService.getMapExportData($scope.pIndicator, $scope.pQuestion, $scope.answer, 
-				$scope.actualDataset, $scope.pSectorSize, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU);
-		}else if($scope.pChart == 'european-bar-chart'){
-			$scope.chartCitation = 'L100622';
-			$scope.promiseToExport = dataService.getEuropeanBarCharData($scope.actualDataset, $scope.pQuestion, 
-				$scope.dashboard.parameters.pFilters.activitySector, $scope.dashboard.parameters.pFilters.establishmentSize,
-				$scope.dashboard.parameters.pFilters.euOnly);
-		}else if($scope.pChart == 'national-bar-chart'){
-			$scope.chartCitation = 'L100624';
-			$scope.promiseToExport = dataService.getNationalBarChartExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
-				$scope.dashboard.parameters.pFilters.sectorSize, $scope.dashboard.parameters.pFilters.country, 0);
-		}else if($scope.pChart == 'national-comparisons'){
-			$scope.chartCitation = 'L100621';
-			$scope.promiseToExport = dataService.getNationalComparisonsExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
-				$scope.dashboard.parameters.pFilters.activitySector, $scope.dashboard.parameters.pFilters.establishmentSize,
-				$scope.dashboard.parameters.pFilters.country, $scope.dashboard.parameters.pFilters.country2, 0, $scope.dashboard.parameters.pFilters.sectorSize);			
-		}else if($scope.pChart == 'pie-chart'){
-			$scope.chartCitation = 'L101033';
-			$scope.promiseToExport = dataService.getPieChartData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, 
-				$scope.dashboard.parameters.pFilters.country);
-		}
-
 		if($scope.pChart == 'european-map'){
 			$scope.dataPromises = [
 			  	mapProvider.getEuropeShape(),
@@ -636,6 +611,12 @@ define(function (require) {
 			var topic = '';
 			$scope.pQuestion = question.category;
 
+			var answer = question.answer_id;
+
+			if($scope.pChart == 'european-bar-chart'){
+				var answer = 0;
+			}
+
 			if(anchor != null){
 				$scope.pTopic = anchor;
 				if(question.category != null){
@@ -645,11 +626,12 @@ define(function (require) {
 						pTopic: $scope.pTopic, //Category
 						pChart: $scope.pChart, //Type of chart
 						pQuestion: $scope.pQuestion, //Question name
-						pAnswer: question.answer_id, //Split answer
+						pAnswer: answer, //Split answer
 						pSectorSize: $scope.pSectorSize,
 						pActivityFilter: $scope.pActivityFilter,
 						pCompanyFilter: $scope.pCompanyFilter,
 						pCountry: $scope.dashboard.parameters.pFilters.country,
+						pLanguage: $scope.pLanguage,
 						pLocale: $scope.pLocale
 					},
 					{
@@ -819,8 +801,66 @@ define(function (require) {
         	document.execCommand("copy");
         }
 
-        $scope.exportData = function(promise, title, id){
-        	exportService.exportDataManually(promise, title, id);
+        $scope.exportData = function(id){
+        	$scope.pExcelFileName = "xls_";
+
+			if($scope.pChart == 'european-map'){
+				$scope.chartCitation = 'L100623';
+				$scope.promiseToExport = dataService.getMapExportData($scope.pIndicator, $scope.pQuestion, $scope.answer, 
+					$scope.actualDataset, $scope.pSectorSize, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU);
+				$scope.pExcelFileName = $scope.pExcelFileName + "heatMap-";
+			}else if($scope.pChart == 'european-bar-chart'){
+				$scope.chartCitation = 'L100622';
+				$scope.promiseToExport = dataService.getEuropeanBarCharExportData($scope.actualDataset, $scope.pQuestion, 
+					$scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU, $scope.pSectorSize);
+				$scope.pExcelFileName = $scope.pExcelFileName + "euBars-";
+			}else if($scope.pChart == 'national-bar-chart'){
+				$scope.chartCitation = 'L100624';
+				$scope.promiseToExport = dataService.getNationalBarChartExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
+					$scope.pSectorSize, $scope.dashboard.parameters.pFilters.country, 0);
+				$scope.pExcelFileName = $scope.pExcelFileName + "inCountry-";
+			}else if($scope.pChart == 'national-comparisons'){
+				$scope.chartCitation = 'L100621';
+				$scope.promiseToExport = dataService.getNationalComparisonsExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
+					$scope.pActivityFilter, $scope.pCompanyFilter, $scope.pCountry, $scope.pCountry2, $scope.pSectorSize);			
+				$scope.pExcelFileName = $scope.pExcelFileName + "crossCountry-";
+			}else if($scope.pChart == 'pie-chart'){
+				$scope.chartCitation = 'L101033';
+				$scope.promiseToExport = dataService.getPieChartExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, 
+					$scope.pCountry);
+			}
+
+			if ($scope.pIndicator == 2009)
+			{
+				$scope.pExcelFileName = $scope.pExcelFileName + "esener1-";
+			}
+			else if ($scope.pIndicator == 2014)
+			{
+				$scope.pExcelFileName = $scope.pExcelFileName + "esener2-";
+			}
+			$scope.pExcelFileName = $scope.pExcelFileName + $scope.pSectorSize + "-";
+			if ($scope.pSectorSize == "activity-sector" && $scope.pChart != "national-bar-chart")
+			{
+				$scope.pExcelFileName = $scope.pExcelFileName + $scope.pActivityFilter + "-";
+			}
+			else if ($scope.pChart != "national-bar-chart")
+			{
+				$scope.pExcelFileName = $scope.pExcelFileName + $scope.pCompanyFilter + "-";
+			}
+			$scope.pExcelFileName = $scope.pExcelFileName + $scope.pQuestion;
+			if ($scope.pChart == "european-map")
+			{
+				$scope.pExcelFileName = $scope.pExcelFileName + "-" + $scope.answer;
+			}
+			else if ($scope.pChart == "national-bar-chart")
+			{
+				$scope.pExcelFileName = $scope.pExcelFileName + "-" + $scope.pCountry;
+			}
+			else if ($scope.pChart == "national-comparisons")
+			{
+				$scope.pExcelFileName = $scope.pExcelFileName + "-" + $scope.pCountry + "-" +$scope.pCountry2;
+			}
+        	exportService.exportDataManually($scope.promiseToExport, $scope.pExcelFileName, id);
         }
 
         $scope.exportPNG = function(){
@@ -840,6 +880,9 @@ define(function (require) {
 			{
 				$scope.pActivityFilter = $scope.dashboard.parameters.pFilters.activitySector == null ? 0 : $scope.dashboard.parameters.pFilters.activitySector;
 				$scope.pCompanyFilter = $scope.dashboard.parameters.pFilters.establishmentSize == null ? 0 : $scope.dashboard.parameters.pFilters.establishmentSize;
+				
+				$scope.pCountry = $scope.dashboard.parameters.pFilters.country;
+				//$log.warn('Cambia algo: '+$scope.pCountry);
 
 				$state.transitionTo($state.current.name, {
 					pIndicator: $scope.pIndicator, //Year
@@ -850,6 +893,8 @@ define(function (require) {
 					pSectorSize: $scope.pSectorSize,
 					pActivityFilter: $scope.pActivityFilter,
 					pCompanyFilter: $scope.pCompanyFilter,
+					pCountry: $scope.dashboard.parameters.pFilters.country,
+					pCountry2: $scope.dashboard.parameters.pFilters.country2,
 					pEuOnly: $scope.nonEU
 				},
 				{

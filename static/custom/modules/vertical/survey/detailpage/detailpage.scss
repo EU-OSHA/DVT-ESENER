@@ -262,17 +262,6 @@
 }
 
 
-/*.tags{
-  .activity-sector{
-    margin: 0px 0px 0px 55px;
-  }
-  .or{
-    margin: 0px 40px 0px 80px;
-  }
-  .establishment-size{
-    margin: 0px 40px 0px 25px;
-  }
-}*/
 .questions--list--wrapper{
   .filter--questions--group--wrapper{
     > p{
@@ -640,7 +629,7 @@
   }
   .filter-text{
     margin: 0 2rem 0 0;
-    min-width: 25%;
+    min-width: 22%;
     position: relative;
     select{
       -webkit-appearance: none;
@@ -1212,32 +1201,56 @@ ul.question--by--question {
 }
 
 
-
 @media only screen 
-and (max-width : 1240px){
+and (min-width : 768px)  
+and (max-width : 1250px) {
+
   .detail-page{
     .block--filter--wrapper{
+
+      &.national-comparisons-wrapper{
         flex-wrap: wrap;
-        filter-text{
-          min-width: 40%;
-          width: 40%;
+        justify-content: space-between; 
+      }
+      filter-text{
+        min-width: 40%;
+        width: 40%;
+      }
+      .or-text {
+        margin: 4rem 3% 2% 0;
+      }
+      .filter-text-button{
+        min-width:auto;
+        width: auto;
+        margin-right: 2rem;
+      }
+     .filter-text, .filter-text-button{
+        select{
+          width: 100%;
         }
-        .filter-text-button{
-          min-width:auto;
-          width: auto;
-          margin-right: 2rem;
-        }
-       .filter-text, .filter-text-button{
-          select{
-            width: 100%;
-          }
-       }
+      }
+      .filter-national-comparisons{
+        width: 45%;
+        margin: 0;
+      }
+      .countryComparison{
+        width: 45%;
+        margin: 0;
+      }
+      .countryComparisonWith{
+        width: 45%;
+        margin: 0;
+      }
+      .block--typechart--wrapper{
+        width: calc(80% + 6rem);
+      }
     }
   }
   .european-bar-chart{
     padding: 0rem;
   }
 }
+
 
 @media only screen 
 and (max-width : 1024px) { 
@@ -1364,6 +1377,7 @@ and (max-width : 1024px) {
     }
   }
 }
+
 
 @media only screen 
 and (max-width : 768px) { 
