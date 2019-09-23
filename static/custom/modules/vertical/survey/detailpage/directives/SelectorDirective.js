@@ -56,7 +56,8 @@ define(function (require) {
 					answer: scope.answer,
 					euOnly: scope.noneu,
 					sectorSize: scope.sectorSize,
-					locale: scope.pLocale
+					locale: scope.pLocale,
+					sortBy: '0'
 				};
 
 				scope.trim = function(text, type){
@@ -418,6 +419,8 @@ define(function (require) {
 						scope.filters.country2 = 'EU27';
 						scope.filters.country = 'AT'
 					}*/
+
+					$log.warn(scope.filters.answer);
 
 					$state.transitionTo('detailpage-national-comparisons', {
 						pIndicator: scope.dataset, //Year
