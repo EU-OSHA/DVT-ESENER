@@ -142,7 +142,7 @@
         <div class="national-bar-chart-wrapper" data-ng-if="pChart == 'national-bar-chart'">
           <div class="xxs-w1 xs-w1 w1 center-text">
               <div class="card--block--chart">
-                  <div data-ng-repeat="indicator in indicators.data" class="chart--block">
+                  <div data-ng-repeat="indicator in indicators.data" class="chart--block chart-{{$index}}">
                       <dvt-bar-chart
                         data-ng-cloak
                         query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
@@ -175,7 +175,7 @@
         <div class="" data-ng-if="pChart == 'national-comparisons'">
           <div class="xxs-w1 xs-w1 w1 center-text">
             <div class="card--block--chart">
-              <div data-ng-repeat="answer in answers.data" class="chart--block">
+              <div data-ng-repeat="answer in answers.data" class="chart--block chart-{{$index}}">
                 <dvt-bar-chart
                   data-ng-cloak
                   query="getNationalComparisonsData" cda="{{::cdaEsenerDash}}"

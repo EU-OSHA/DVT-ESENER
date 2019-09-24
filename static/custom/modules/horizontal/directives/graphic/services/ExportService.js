@@ -20,54 +20,187 @@ define(function(require){
 
     var exportImage = function (scope) {
 
-            var node = $('.card--block--chart');
-            $log.warn(node);
+            if (scope.pChart=="european-map")
+            {
+                // MAP
+                var svg = document.querySelector('.map--block svg');
+                var viewBox = svg.getAttribute("viewBox");
+                svg.removeAttribute("viewBox");
+                svg.setAttribute("width","450");
+                svg.setAttribute("height","450");
+                var xml = Utf8Encode(new XMLSerializer().serializeToString(svg));
+                var svg64 = btoa(xml);
+                var b64Start = "data:image/svg+xml;base64,";
+                var image64 = b64Start + svg64;
+                angular.element('.map--block dvt-map').after("<img id='svg2image-map' widht='450' height='450'>");
+                var img = document.getElementById('svg2image-map');
+                img.src = image64;
+                angular.element('.map--block dvt-map').attr("style","display:none");
+                svg.removeAttribute("width");
+                svg.removeAttribute("height");
+                svg.setAttribute("viewBox", viewBox);
 
-            //---------------------------------
-            // 1 dom-to-image
-            //convierto el svg a imagen...
-            var svg = document.querySelector('.chart--wrapper svg');
-            $log.warn($('.card--block--chart svg').length);
-            var xml = Utf8Encode(new XMLSerializer().serializeToString(svg)); //Created with Raphaël... creo que es por esto
+                // GAUSS
+                var svg = document.querySelector('.chart--wrapper svg');
+                var xml = Utf8Encode(new XMLSerializer().serializeToString(svg));
+                var svg64 = btoa(xml);
+                var b64Start = "data:image/svg+xml;base64,";
+                var image64 = b64Start + svg64;
+                angular.element('.chart--wrapper').after("<img id='svg2image'>");
+                var img = document.getElementById('svg2image');
+                angular.element('#svg2image').after('<image id="svg2imagegradient" preserveAspectRatio="none" style="position:absolute; left:65.07692307692308px; top:-24.2px; z-index:-1" width="698.2430769230768" height="24.2" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/color-range.png"></image>');
+                img.src = image64;
+                angular.element('.chart--wrapper').attr("style","display:none");
 
-            //console.log(xml);
-            var svg64 = btoa(xml);
+                $('.survey--map--block').attr('style','background-color:white');
+                var scroll = $(window).scrollTop();
+                $(window).scrollTop(0);
 
-            var b64Start = "data:image/svg+xml;base64,";
-            var image64 = b64Start + svg64;
+                var node = $(".survey--map--block");
 
+                html2canvas(node).then(function(canvas) {
+                    canvas.toBlob(function(blob){
 
-            angular.element('.chart--wrapper').after("<img id='svg2image'>");
-            var img = document.getElementById('svg2image');
-            img.src = image64;
-            angular.element(".chart--wrapper").attr("style","display:none");
+                        if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) 
+                        {
+                            scope.titleH2=node.parents().find("h2:eq(0)").text()
+                            var filename = scope.titleH2 + '.png';
+                        } 
+                        else 
+                        {
+                            var filename = scope.chartTitle + '.png';
+                        }
 
-            //$(".dropdown").hide();
-            angular.element("#popUpMessage").attr("style","display:none");
-            //angular.element(".legend-info").attr("style","display:none");
+                        saveAs(blob,filename);
 
-            var Promise = require('es6-promise').Promise;
-
-             html2canvas(node)
-             .then(function(canvas) {
-                 canvas.toBlob(function(blob){
-
-                     if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) {
-                         scope.titleH2=node.parents().find("h2:eq(0)").text()
-                         var filename = scope.titleH2 + '.png';
-                     } else {
-                         var filename = scope.chartTitle + '.png';
-                    }
-
-                     saveAs(blob,filename);
-
-                     //$(".dropdown").show();
-                     $("#svg2image").remove();
-                     angular.element(".chart--wrapper").removeAttr("style");
-                     angular.element("#popUpMessage").removeAttr("style");
+                        
+                        $("#svg2image-map").remove();
+                        // $("#svg2image").remove();
+                        // $("#svg2imagegradient").remove();
+                        angular.element('.map--block dvt-map').removeAttr("style");
+                        angular.element(".chart--wrapper").removeAttr("style");
+                        angular.element("#popUpMessage").removeAttr("style");
+                        $(window).scrollTop(scroll);
+                     });
+                 }, function(error) {            
                  });
-             }, function(error) {            
-             });
+            }
+            else if (scope.pChart=="national-bar-chart" || scope.pChart=="national-comparisons")
+            {
+                var node = $('.card--block--chart');
+
+                var Promise = require('es6-promise').Promise;
+
+                for (var i = 0; i < $('.chart--block').length; i++)
+                {
+                    var svg = document.querySelector('.chart--block.chart-'+i+' svg');
+                    var xml = Utf8Encode(new XMLSerializer().serializeToString(svg)); 
+
+                    var svg64 = btoa(xml);
+
+                    var b64Start = "data:image/svg+xml;base64,";
+                    var image64 = b64Start + svg64;
+
+                    angular.element('.chart--block.chart-'+i+' .chart--wrapper').after("<img id='svg2image-"+i+"'>");
+                    var img = document.getElementById('svg2image-'+i);
+                    img.src = image64;
+                    angular.element('.chart--block.chart-'+i+' .chart--wrapper').attr("style","display:none");
+
+                    svg = document.querySelector('.chart--wrapper svg');
+                    xml = Utf8Encode(new XMLSerializer().serializeToString(svg));
+                    svg64 = btoa(xml);
+                    b64Start = "data:image/svg+xml;base64,";
+                    image64 = b64Start + svg64;
+
+
+                    angular.element('.chart--wrapper').after("<img id='svg2image'>");
+                    img = document.getElementById('svg2image');
+                    img.src = image64;
+                    angular.element(".chart--wrapper").attr("style","display:none");
+                }
+
+                $('.card--block--chart').attr('style','background-color:white');
+                var scroll = $(window).scrollTop();
+                $(window).scrollTop(0);
+
+                html2canvas(node).then(function(canvas) {
+                    canvas.toBlob(function(blob){
+
+                        if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) {
+                            scope.titleH2=node.parents().find("h2:eq(0)").text()
+                            var filename = scope.titleH2 + '.png';
+                        } else {
+                            var filename = scope.chartTitle + '.png';
+                        }
+
+                        saveAs(blob,filename);
+
+                        for (var i = 0; i < $('.chart--block').length; i++)
+                        {
+                            $("#svg2image-"+i).remove();
+                        }
+
+                         angular.element(".chart--wrapper").removeAttr("style");
+                         angular.element("#popUpMessage").removeAttr("style");
+                         $('.card--block--chart').removeAttr("style");
+                         $(window).scrollTop(scroll);
+                     });
+                 }, function(error) {            
+                 });
+            }
+            else
+            {
+                var node = $('.card--block--chart');
+                $log.warn(node);
+
+                //---------------------------------
+                // 1 dom-to-image
+                //convierto el svg a imagen...
+                var svg = document.querySelector('.chart--wrapper svg');
+                $log.warn($('.card--block--chart svg').length);
+                var xml = Utf8Encode(new XMLSerializer().serializeToString(svg)); //Created with Raphaël... creo que es por esto
+
+                //console.log(xml);
+                var svg64 = btoa(xml);
+
+                var b64Start = "data:image/svg+xml;base64,";
+                var image64 = b64Start + svg64;
+
+
+                angular.element('.chart--wrapper').after("<img id='svg2image'>");
+                var img = document.getElementById('svg2image');
+                img.src = image64;
+                angular.element(".chart--wrapper").attr("style","display:none");
+
+                //$(".dropdown").hide();
+                angular.element("#popUpMessage").attr("style","display:none");
+                //angular.element(".legend-info").attr("style","display:none");
+
+                var Promise = require('es6-promise').Promise;
+
+                 html2canvas(node)
+                 .then(function(canvas) {
+                     canvas.toBlob(function(blob){
+
+                         if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) {
+                             scope.titleH2=node.parents().find("h2:eq(0)").text()
+                             var filename = scope.titleH2 + '.png';
+                         } else {
+                             var filename = scope.chartTitle + '.png';
+                        }
+
+                         saveAs(blob,filename);
+
+                         //$(".dropdown").show();
+                         $("#svg2image").remove();
+                         angular.element(".chart--wrapper").removeAttr("style");
+                         angular.element("#popUpMessage").removeAttr("style");
+                     });
+                 }, function(error) {            
+                 });
+            }
+
+            
         };
 
         /**
