@@ -22,6 +22,8 @@ define(function(require){
 
             if (scope.pChart=="european-map")
             {
+                var node = $(".survey--map--block");
+
                 // MAP
                 var svg = document.querySelector('.map--block svg');
                 var viewBox = svg.getAttribute("viewBox");
@@ -47,41 +49,58 @@ define(function(require){
                 var b64Start = "data:image/svg+xml;base64,";
                 var image64 = b64Start + svg64;
                 angular.element('.chart--wrapper').after("<img id='svg2image'>");
-                var img = document.getElementById('svg2image');
-                angular.element('#svg2image').after('<image id="svg2imagegradient" preserveAspectRatio="none" style="position:absolute; left:65.07692307692308px; top:-24.2px; z-index:-1" width="698.2430769230768" height="24.2" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/color-range.png"></image>');
+                var img = document.getElementById('svg2image');                
                 img.src = image64;
+                // angular.element('#svg2image').after('<img id="svg2imagegradient" style="position:relative; left:65.07692307692308px" width="698.2430769230768" height="24.2" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/color-range.png"></image>');
                 angular.element('.chart--wrapper').attr("style","display:none");
 
                 $('.survey--map--block').attr('style','background-color:white');
                 var scroll = $(window).scrollTop();
                 $(window).scrollTop(0);
 
-                var node = $(".survey--map--block");
-
                 html2canvas(node).then(function(canvas) {
-                    canvas.toBlob(function(blob){
+                    var context = canvas.getContext("2d");
 
-                        if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) 
-                        {
-                            scope.titleH2=node.parents().find("h2:eq(0)").text()
-                            var filename = scope.titleH2 + '.png';
-                        } 
-                        else 
-                        {
-                            var filename = scope.chartTitle + '.png';
-                        }
+                    var image = new Image();
+                    image.src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/color-range.png";
+                    image.onload = function()
+                    {
+                        var imageData = context.getImageData(0,0,canvas.width, canvas.height);
 
-                        saveAs(blob,filename);
+                        context.canvas.height = canvas.height+24;
 
-                        
-                        $("#svg2image-map").remove();
-                        // $("#svg2image").remove();
-                        // $("#svg2imagegradient").remove();
-                        angular.element('.map--block dvt-map').removeAttr("style");
-                        angular.element(".chart--wrapper").removeAttr("style");
-                        angular.element("#popUpMessage").removeAttr("style");
-                        $(window).scrollTop(scroll);
-                     });
+                        context.putImageData(imageData, 0, 0);
+
+                        context.drawImage(image, 65.07692307692308, canvas.height-24);
+
+
+                        canvas.toBlob(function(blob){
+
+                            if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) 
+                            {
+                                scope.titleH2=node.parents().find("h2:eq(0)").text()
+                                var filename = scope.titleH2 + '.png';
+                            } 
+                            else 
+                            {
+                                var filename = scope.chartTitle + '.png';
+                            }
+
+                            saveAs(blob,filename);
+
+                            
+                            $("#svg2image-map").remove();
+                            $("#svg2image").remove();
+                            $("#svg2imagegradient").remove();
+                            angular.element('.map--block dvt-map').removeAttr("style");
+                            angular.element(".chart--wrapper").removeAttr("style");
+                            angular.element("#popUpMessage").removeAttr("style");
+                            $(window).scrollTop(scroll);
+                        }); 
+                    }
+                    
+
+                    
                  }, function(error) {            
                  });
             }
