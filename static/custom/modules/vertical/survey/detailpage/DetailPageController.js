@@ -57,8 +57,9 @@ define(function (require) {
 		$scope.pCountry2 = $stateParams.pCountry2;
 		$scope.nonEU = $stateParams.pEuOnly;
 
-		$scope.sortBy = '0';
-        $log.warn($scope.answer);
+		$scope.sortBy = $stateParams.pSortBy;
+
+        //$log.warn($scope.answer);
 
 		var resolution = window.resolution;
 		$scope.angle = resolution > 768 ? 1 : 0;
