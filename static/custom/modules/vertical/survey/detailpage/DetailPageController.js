@@ -51,19 +51,21 @@ define(function (require) {
 		$scope.pQuestion = $stateParams.pQuestion; //Question (name)        
 		$scope.pCompanyFilter = $stateParams.pCompanyFilter; //Company size
 		$scope.pActivityFilter = $stateParams.pActivityFilter; //Activity sector
-		$scope.answer = ($scope.pChart == 'european-map' || $scope.pChart == 'european-bar-chart')?$stateParams.pAnswer:$rootScope.answer; //Answer
+		$scope.answer = $stateParams.pAnswer; //Answer
 		$scope.pSectorSize = $stateParams.pSectorSize; //Activity sector or company size
 		$scope.pCountry = $stateParams.pCountry != null ? $stateParams.pCountry : $stateParams.pCountry1;
 		$scope.pCountry2 = $stateParams.pCountry2;
 		$scope.nonEU = $stateParams.pEuOnly;
 
-		var resolution = screen.width;
+		$scope.sortBy = '0';
+        $log.warn($scope.answer);
+
+		var resolution = window.resolution;
 		$scope.angle = resolution > 768 ? 1 : 0;
 
 		$(window).on("resize",function(e){
-	      if(screen.width != resolution){
-	        resolution = screen.width;
-	        //$log.warn('Resolucion ha cambiado');
+	      if(window.outerWidth != resolution){
+	        resolution = window.resolution;
 	        $state.reload();
 	      }
 	    });
@@ -74,7 +76,6 @@ define(function (require) {
 		$scope.breadcrumb = '';
 
 		$scope.currentName = $state.current.name;
-		$log.warn($scope.currentName);
 
 		//Arrays
 		$scope.activitySectorFor =[];
@@ -159,7 +160,8 @@ define(function (require) {
 			        'country': $scope.pCountry,
 			        'sectorSize': $scope.pSectorSize,
 			        'euOnly': $scope.nonEU,
-			        'country2': $scope.pCountry2
+			        'country2': $scope.pCountry2,
+                    'sortBy': $scope.sortBy
 		        }
 	      	}
 	    };
@@ -614,7 +616,7 @@ define(function (require) {
 			var answer = question.answer_id;
 
 			if($scope.pChart == 'european-bar-chart'){
-				var answer = 0;
+				var answer = '0';
 			}
 
 			if(anchor != null){
@@ -626,7 +628,7 @@ define(function (require) {
 						pTopic: $scope.pTopic, //Category
 						pChart: $scope.pChart, //Type of chart
 						pQuestion: $scope.pQuestion, //Question name
-						pAnswer: answer, //Split answer
+                        pAnswer: question.answer_id, //Split answer
 						pSectorSize: $scope.pSectorSize,
 						pActivityFilter: $scope.pActivityFilter,
 						pCompanyFilter: $scope.pCompanyFilter,
