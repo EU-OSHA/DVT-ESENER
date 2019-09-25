@@ -39,7 +39,8 @@
 .tags{
   align-self: center;
   span{
-    margin: 0px 15px 0px 0px;
+    padding:1rem 1.5rem 0 0;
+    display: inline-block;
   }
 }
 
@@ -625,7 +626,7 @@
     color: $aquamarine;
   }
   .or-text{
-    margin: 4rem 2rem 2rem 0;
+    margin: 4.2rem 2rem 2rem 0;
   }
   .filter-text{
     margin: 0 2rem 0 0;
@@ -753,8 +754,8 @@
       min-width: auto;
       select{
         width: auto;
-        margin: 1.1rem 0 0;
-        padding: 1rem 2rem;
+        margin: 0.9rem 0 0;
+        padding: 1.1rem 2rem;
         background: $aquamarine;
         color: $white;
         position: relative;
@@ -833,8 +834,8 @@
       appearance: none;
       border: none;
       width:auto;
-      margin: 1rem 0;
-      padding: 1rem 2rem;
+      margin: 0.9rem 0;
+      padding: 1.1rem 2rem;
       background: #00a1a3;
       color: #FFF;
       position: relative;
