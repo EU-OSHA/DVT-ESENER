@@ -13,12 +13,18 @@ define(function (require) {
     return {
         generateController: function (module, ctrlName) {
             return angular.module(module)
-                .controller(ctrlName, function ($scope, $log, $window, $cookies, configService) {
+                .controller(ctrlName, function ($scope, $log, $window, $cookies, configService, $stateParams, $rootScope) {
 
                     // Literals
-                    $scope.i18n_cookies = require('json!dvt/cookies-disclaimer/i18n');
+                    //$scope.i18n_cookies = require('json!dvt/cookies-disclaimer/i18n');
                     var i18nLiterals = configService.getLiterals();
                     $scope.i18nLiterals = i18nLiterals;
+
+                    $rootScope.$on('$viewContentLoading', function(event, viewConfig) {
+                        $scope.pLanguage = $stateParams.pLanguage;
+                        i18nLiterals = ($stateParams.pLanguage == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($scope.pLanguage);
+                        $scope.i18nLiterals = i18nLiterals;
+                    }, $scope);
 
                     var cookieLife= new Date();
                     cookieLife.setDate(cookieLife.getDate() + 360);
