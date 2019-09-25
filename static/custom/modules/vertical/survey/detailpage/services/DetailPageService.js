@@ -380,79 +380,13 @@ define (function (require) {
                             var colors = this.sign.chart.axes.color._domainValues;
                             //$log.warn(colors);
 
-                            if(colors.length == 4 && series.value == colors[0]){
+                            if(colors.length == 4 && series.value == colors[3] ||
+                                colors.length == 5 && series.value == colors[3]){
                                 return 'black';
-                            }else if(colors.length == 5 && series.value == colors[1]){
-                                return 'black';
-                            }
+                            }   
                             return 'white';
                         },
-                        slice_fillStyle: function(scene){
-                            //$log.warn(this);
-                            var series = scene.firstAtoms.category;
-                            var colors = this.sign.chart.axes.color._domainValues;
-                            this.sign.chart.options.colors = [];
-                            //var colorLegend = this.sign.chart.options.colors;
-                            //$log.warn(colors);
-
-                            for(var i=0; i<colors.length; i++){
-                                if(colors.length == 2){
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
-
-                                    if(i == 0 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(22);
-                                    }else if(i == 1 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(1);
-                                    }
-                                }else if(colors.length == 3){
-                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
-
-                                    if(i == 0 && series.value == colors[i]){
-                                        return dvtUtils.getAccidentsColors(4);
-                                    }else if(i == 1 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(22);
-                                    }else if(i == 2 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(1);
-                                    }
-                                }else if(colors.length == 4){
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
-                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
-                                    if(i == 0 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(3);
-                                    }else if(i == 1 && series.value == colors[i]){
-                                        return dvtUtils.getAccidentsColors(4);
-                                    }else if(i == 2 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(22);
-                                    }else if(i == 3 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(1);
-                                    }
-                                }else if(colors.length == 5){
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(2));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
-                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
-                                    if(i == 0 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(2);
-                                    }else if(i == 1 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(3);
-                                    }else if(i == 2 && series.value == colors[i]){
-                                        return dvtUtils.getAccidentsColors(4);
-                                    }else if(i == 3 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(22);
-                                    }else if(i == 4 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(1);
-                                    }
-                                }
-                            }
-
-                            return dvtUtils.getChartLightGrayColor();
-                        },
+                        
                         valuesOptimizeLegibility: false,
                         visualRoles:{
                             series: 'series',
