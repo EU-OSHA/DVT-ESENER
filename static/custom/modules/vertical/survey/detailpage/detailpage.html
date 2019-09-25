@@ -272,7 +272,7 @@
                   <p class="text-center" data-ng-bind="i18n.L101029"></p>
                   <div class="export--data--modal" id="osha-menu-social">
                     <!-- URL -->
-                    <a href class="main-color text-center" target="_blank" data-ng-click="pageUrlActive = true" title="{{i18n.L100662}} > {{i18n.L100660}}">
+                    <a href class="main-color text-center" target="_blank" data-ng-class="{'active': pageUrlActive}"  data-ng-click="pageUrlActive = !pageUrlActive; pageCitationActive = false " title="{{i18n.L100662}} > {{i18n.L100660}}">
                       <i class="fa fa-link" aria-hidden="true"></i></i> <span data-ng-bind="i18n.L100660" ></span>
                     </a>
                     <!-- PNG -->
@@ -284,7 +284,7 @@
                       <i class="fa fa-file-pdf-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100656" ></span>
                     </a>-->
                     <!-- PAGE CITATION -->
-                    <a href class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100651}}" data-ng-click="pageCitationActive = true">
+                    <a href class="main-color text-center" data-ng-class="{'active': pageCitationActive}"  target="_blank" title="{{i18n.L100662}} > {{i18n.L100651}}" data-ng-click="pageCitationActive = !pageCitationActive; pageUrlActive = false">
                       <i class="fa fa-file-code-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100651"></span>
                     </a>
                     <!-- XLS -->
