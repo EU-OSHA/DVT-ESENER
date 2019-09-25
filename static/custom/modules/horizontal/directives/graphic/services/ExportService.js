@@ -34,7 +34,7 @@ define(function(require){
                 var svg64 = btoa(xml);
                 var b64Start = "data:image/svg+xml;base64,";
                 var image64 = b64Start + svg64;
-                angular.element('.map--block dvt-map').after("<img id='svg2image-map' widht='450' height='450'>");
+                angular.element('.map--gauss--block').after("<img id='svg2image-map'>");
                 var img = document.getElementById('svg2image-map');
                 img.src = image64;
                 angular.element('.map--block dvt-map').attr("style","display:none");
@@ -48,13 +48,14 @@ define(function(require){
                 var svg64 = btoa(xml);
                 var b64Start = "data:image/svg+xml;base64,";
                 var image64 = b64Start + svg64;
-                angular.element('.chart--wrapper').after("<img id='svg2image'>");
+                angular.element('#svg2image-map').after("<img id='svg2image' >");
                 var img = document.getElementById('svg2image');                
                 img.src = image64;
                 // angular.element('#svg2image').after('<img id="svg2imagegradient" style="position:relative; left:65.07692307692308px" width="698.2430769230768" height="24.2" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/color-range.png"></image>');
                 angular.element('.chart--wrapper').attr("style","display:none");
 
-                $('.survey--map--block').attr('style','background-color:white');
+                $('.survey--map--block').css({'background-color':'#FFF','width':'1024px'});
+
                 var scroll = $(window).scrollTop();
                 $(window).scrollTop(0);
 
@@ -71,7 +72,7 @@ define(function(require){
 
                         context.putImageData(imageData, 0, 0);
 
-                        context.drawImage(image, 65.07692307692308, canvas.height-24);
+                        context.drawImage(image, 125, canvas.height-24, $(".survey--map--block").width()-250, 24);
 
 
                         canvas.toBlob(function(blob){
@@ -92,6 +93,7 @@ define(function(require){
                             $("#svg2image-map").remove();
                             $("#svg2image").remove();
                             $("#svg2imagegradient").remove();
+                            $('.survey--map--block').removeAttr("style");
                             angular.element('.map--block dvt-map').removeAttr("style");
                             angular.element(".chart--wrapper").removeAttr("style");
                             angular.element("#popUpMessage").removeAttr("style");
