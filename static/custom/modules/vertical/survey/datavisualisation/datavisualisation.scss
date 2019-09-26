@@ -85,3 +85,24 @@
     }
   } 
 }
+
+/*** EXPORT PNG CLASS **/
+.survey--map--block{
+  &::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  #svg2image-map{
+    width:1024px !important;
+    height: auto !important;
+    margin:auto !important;
+    padding: 5rem !important;
+  }
+  #svg2image{
+    width:1024px !important;
+    height:auto !important;
+    margin:auto !important;
+    padding:0rem !important;
+  }
+}
