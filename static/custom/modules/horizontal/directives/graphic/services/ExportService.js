@@ -108,6 +108,7 @@ define(function(require){
             }
             else if (scope.pChart=="national-bar-chart" || scope.pChart=="national-comparisons")
             {
+                //debugger;
                 var node = $('.card--block--chart');
 
                 var Promise = require('es6-promise').Promise;
@@ -132,12 +133,6 @@ define(function(require){
                     svg64 = btoa(xml);
                     b64Start = "data:image/svg+xml;base64,";
                     image64 = b64Start + svg64;
-
-
-                    angular.element('.chart--wrapper').after("<img id='svg2image'>");
-                    img = document.getElementById('svg2image');
-                    img.src = image64;
-                    angular.element(".chart--wrapper").attr("style","display:none");
                 }
 
                 $('.card--block--chart').attr('style','background-color:white');
