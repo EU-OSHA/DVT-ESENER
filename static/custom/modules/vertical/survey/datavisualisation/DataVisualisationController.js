@@ -33,10 +33,9 @@ define(function (require) {
         $scope.pLocal = $scope.pLanguage;
 
         if($scope.pIndicator == '2009' && ($scope.pLanguage == 'is' || $scope.pLanguage == 'sv')){
-            $log.warn('entra');
+            //$log.warn('entra');
             $scope.pLocal = 'en';
         }
-
 
         $(window).on("resize",function(e){
             if( !configService.isMobile()) {
