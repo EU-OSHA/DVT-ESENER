@@ -626,7 +626,7 @@ define(function (require) {
                     definition.chartDefinition.label_textAlign = 'center';
                     definition.chartDefinition.label_textBaseline = function(scene){
                         var value = scene.firstAtoms.value;
-                        $log.warn(scene.nextSibling);
+                        //$log.warn(scene.nextSibling);
                         if(scene.nextSibling == null){
                             if(value.value < 7 && scene.previousSibling.firstAtoms.value.value < 7){
                                 return 'top';
@@ -635,12 +635,15 @@ define(function (require) {
 
                         return 'bottom';
                     };
+
+                    //definition.chartDefinition.valuesFont= '14px OpenSans-bold';
                     
-                    if (scope.isMaximized) {
+                    /*if (!!attributes.isMaximized) {
                         definition.chartDefinition.valuesFont= '20px OpenSans-bold';
                     }else {
                         definition.chartDefinition.valuesFont= '14px OpenSans-bold';
-                    }
+                    }*/
+
                     definition.chartDefinition.dimensions= {
                         value: {
                             format: {

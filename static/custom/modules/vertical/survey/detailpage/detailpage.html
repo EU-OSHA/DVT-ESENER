@@ -214,11 +214,12 @@
                   data-ng-cloak
                   query="getPieChartData" cda="{{::cdaEsenerDash}}"
                   type="pie" listen-to="['pFilters']"
-                  width="330" height="600" axis-percent="1"
+                  width="330" height="{{pieChartHeight}}" axis-percent="1"
                   params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pCountry', 'pFilters.country'],['pLocale',pLocale]]"
                   color-role="c" colors="[stories[4].color1, stories[4].color2, stories[4].color3, stories[4].color4,
                   stories[4].color5]" id="5" 
                   plots="stories[4].plots"
+                  values-font="{{pieChartFont}}"
                   multiple-label-colors="false"
                   dimensions="stories[4].dimensions"
                   legend="true" is-maximized="false"
