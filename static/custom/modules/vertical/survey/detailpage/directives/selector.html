@@ -250,7 +250,7 @@
 
                     <li data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" data-ng-click="openOptions($index,$event)">
                         <div class="no-event"></div>
-                        <a title="{{i18n.L100622}}" class="" data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" ui-sref="detailpage-european-bar-chart({pIndicator: dataset, pTopic: topic, pChart: 'european-bar-chart', pQuestion: indicator, pSectorSize: sectorSize, pCountry: filters.country, pCountry2: filters.country2, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pLanguage: pLanguage, pLocale: pLocale, pAnswer: 0, pEuOnly: filters.euOnly})"><span class="visible-xs"  data-ng-bind="i18n.L100622"></span></a>
+                        <a title="{{i18n.L100622}}" class="" data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" ui-sref="detailpage-european-bar-chart({pIndicator: dataset, pTopic: topic, pChart: 'european-bar-chart', pQuestion: indicator, pSectorSize: sectorSize, pCountry: filters.country, pCountry2: filters.country2, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer, pEuOnly: filters.euOnly})"><span class="visible-xs"  data-ng-bind="i18n.L100622"></span></a>
                     </li>
 
                     <li data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" data-ng-click="openOptions($index,$event)">
