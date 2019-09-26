@@ -72,7 +72,7 @@ define(function(require){
 
                         context.putImageData(imageData, 0, 0);
 
-                        context.drawImage(image, 125, canvas.height-24, $(".survey--map--block").width()-250, 24);
+                        context.drawImage(image, 90, canvas.height-24, $(".survey--map--block").width()-180, 24);
 
 
                         canvas.toBlob(function(blob){
