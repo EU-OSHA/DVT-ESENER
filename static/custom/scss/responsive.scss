@@ -1319,7 +1319,17 @@ and (max-width :620px) {
 
 @media only screen 
 and (max-width :550px){
-
+	.level3--wrapper{
+		.submenu--level3{
+			.submenu--items--wrapper{
+				li{
+					a{
+						font-size: 2.2rem;
+					}
+				}
+			}
+		}
+	}
 }
 
 @media only screen 
@@ -1330,7 +1340,7 @@ and (max-width :420px){
 
 
 @media only screen 
-and (max-width :370px){
+and (max-width :420px){
 	.hide-header {
 	  top: -20rem;
 	  -webkit-transition: all 0.8s;
@@ -1342,7 +1352,7 @@ and (max-width :370px){
 			.submenu--arrows--wrapper{
 				li{
 					a{
-						padding:1rem 0 !important;
+						padding:0.5rem 0 !important;
 						width: 3rem;
 						&:hover{
 						}
@@ -1360,13 +1370,14 @@ and (max-width :370px){
       .submenu--items--wrapper{
         li{
           a{
-          	padding: 0.5rem !important;
+          	padding: 0 0.5rem !important;
+          	line-height: 2.6rem;
             &.active {
             }
           }
           &.active{
             a, a.active, a:hover, a:focus, a:visited {
-						padding: 0.5rem !important;
+						padding: 0.5rem 2rem !important;
             }
           }
         }

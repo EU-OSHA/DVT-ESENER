@@ -172,14 +172,14 @@ define(function(require){
             else
             {
                 var node = $('.card--block--chart');
-                $log.warn(node);
+                //$log.warn(node);
 
                 //---------------------------------
                 // 1 dom-to-image
-                //convierto el svg a imagen...
+                // Did you mean: convertir de svg a imagen...
                 var svg = document.querySelector('.chart--wrapper svg');
                 $log.warn($('.card--block--chart svg').length);
-                var xml = Utf8Encode(new XMLSerializer().serializeToString(svg)); //Created with Raphaël... creo que es por esto
+                var xml = Utf8Encode(new XMLSerializer().serializeToString(svg)); //Created with Raphaël
 
                 //console.log(xml);
                 var svg64 = btoa(xml);
@@ -194,10 +194,13 @@ define(function(require){
                 angular.element(".chart--wrapper").attr("style","display:none");
 
                 //$(".dropdown").hide();
-                angular.element("#popUpMessage").attr("style","display:none");
+               // angular.element("#popUpMessage").attr("style","display:none");
                 //angular.element(".legend-info").attr("style","display:none");
 
                 var Promise = require('es6-promise').Promise;
+
+                var scroll = $(window).scrollTop();
+                $(window).scrollTop(0);
 
                  html2canvas(node)
                  .then(function(canvas) {
@@ -215,7 +218,8 @@ define(function(require){
                          //$(".dropdown").show();
                          $("#svg2image").remove();
                          angular.element(".chart--wrapper").removeAttr("style");
-                         angular.element("#popUpMessage").removeAttr("style");
+                         //angular.element("#popUpMessage").removeAttr("style");
+                         $(window).scrollTop(scroll);
                      });
                  }, function(error) {            
                  });
