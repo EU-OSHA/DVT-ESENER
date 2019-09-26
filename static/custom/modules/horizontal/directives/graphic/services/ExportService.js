@@ -20,54 +20,212 @@ define(function(require){
 
     var exportImage = function (scope) {
 
-            var node = $('.card--block--chart');
-            $log.warn(node);
+            if (scope.pChart=="european-map")
+            {
+                var node = $(".survey--map--block");
 
-            //---------------------------------
-            // 1 dom-to-image
-            //convierto el svg a imagen...
-            var svg = document.querySelector('.chart--wrapper svg');
-            $log.warn($('.card--block--chart svg').length);
-            var xml = Utf8Encode(new XMLSerializer().serializeToString(svg)); //Created with Raphaël... creo que es por esto
+                // MAP
+                var svg = document.querySelector('.map--block svg');
+                var viewBox = svg.getAttribute("viewBox");
+                svg.removeAttribute("viewBox");
+                svg.setAttribute("width","450");
+                svg.setAttribute("height","450");
+                var xml = Utf8Encode(new XMLSerializer().serializeToString(svg));
+                var svg64 = btoa(xml);
+                var b64Start = "data:image/svg+xml;base64,";
+                var image64 = b64Start + svg64;
+                angular.element('.map--gauss--block').after("<img id='svg2image-map'>");
+                var img = document.getElementById('svg2image-map');
+                img.src = image64;
+                angular.element('.map--block dvt-map').attr("style","display:none");
+                svg.removeAttribute("width");
+                svg.removeAttribute("height");
+                svg.setAttribute("viewBox", viewBox);
 
-            //console.log(xml);
-            var svg64 = btoa(xml);
+                // GAUSS
+                var svg = document.querySelector('.chart--wrapper svg');
+                var xml = Utf8Encode(new XMLSerializer().serializeToString(svg));
+                var svg64 = btoa(xml);
+                var b64Start = "data:image/svg+xml;base64,";
+                var image64 = b64Start + svg64;
+                angular.element('#svg2image-map').after("<img id='svg2image' >");
+                var img = document.getElementById('svg2image');                
+                img.src = image64;
+                // angular.element('#svg2image').after('<img id="svg2imagegradient" style="position:relative; left:65.07692307692308px" width="698.2430769230768" height="24.2" src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/color-range.png"></image>');
+                angular.element('.chart--wrapper').attr("style","display:none");
 
-            var b64Start = "data:image/svg+xml;base64,";
-            var image64 = b64Start + svg64;
+                $('.survey--map--block').css({'background-color':'#FFF','width':'1024px'});
+
+                var scroll = $(window).scrollTop();
+                $(window).scrollTop(0);
+
+                html2canvas(node).then(function(canvas) {
+                    var context = canvas.getContext("2d");
+
+                    var image = new Image();
+                    image.src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/color-range.png";
+                    image.onload = function()
+                    {
+                        var imageData = context.getImageData(0,0,canvas.width, canvas.height);
+
+                        context.canvas.height = canvas.height+24;
+
+                        context.putImageData(imageData, 0, 0);
+
+                        context.drawImage(image, 125, canvas.height-24, $(".survey--map--block").width()-250, 24);
 
 
-            angular.element('.chart--wrapper').after("<img id='svg2image'>");
-            var img = document.getElementById('svg2image');
-            img.src = image64;
-            angular.element(".chart--wrapper").attr("style","display:none");
+                        canvas.toBlob(function(blob){
 
-            //$(".dropdown").hide();
-            angular.element("#popUpMessage").attr("style","display:none");
-            //angular.element(".legend-info").attr("style","display:none");
+                            if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) 
+                            {
+                                scope.titleH2=node.parents().find("h2:eq(0)").text()
+                                var filename = scope.titleH2 + '.png';
+                            } 
+                            else 
+                            {
+                                var filename = scope.chartTitle + '.png';
+                            }
 
-            var Promise = require('es6-promise').Promise;
+                            saveAs(blob,filename);
 
-             html2canvas(node)
-             .then(function(canvas) {
-                 canvas.toBlob(function(blob){
-
-                     if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) {
-                         scope.titleH2=node.parents().find("h2:eq(0)").text()
-                         var filename = scope.titleH2 + '.png';
-                     } else {
-                         var filename = scope.chartTitle + '.png';
+                            
+                            $("#svg2image-map").remove();
+                            $("#svg2image").remove();
+                            $("#svg2imagegradient").remove();
+                            $('.survey--map--block').removeAttr("style");
+                            angular.element('.map--block dvt-map').removeAttr("style");
+                            angular.element(".chart--wrapper").removeAttr("style");
+                            angular.element("#popUpMessage").removeAttr("style");
+                            $(window).scrollTop(scroll);
+                        }); 
                     }
+                    
 
-                     saveAs(blob,filename);
-
-                     //$(".dropdown").show();
-                     $("#svg2image").remove();
-                     angular.element(".chart--wrapper").removeAttr("style");
-                     angular.element("#popUpMessage").removeAttr("style");
+                    
+                 }, function(error) {            
                  });
-             }, function(error) {            
-             });
+            }
+            else if (scope.pChart=="national-bar-chart" || scope.pChart=="national-comparisons")
+            {
+                var node = $('.card--block--chart');
+
+                var Promise = require('es6-promise').Promise;
+
+                for (var i = 0; i < $('.chart--block').length; i++)
+                {
+                    var svg = document.querySelector('.chart--block.chart-'+i+' svg');
+                    var xml = Utf8Encode(new XMLSerializer().serializeToString(svg)); 
+
+                    var svg64 = btoa(xml);
+
+                    var b64Start = "data:image/svg+xml;base64,";
+                    var image64 = b64Start + svg64;
+
+                    angular.element('.chart--block.chart-'+i+' .chart--wrapper').after("<img id='svg2image-"+i+"'>");
+                    var img = document.getElementById('svg2image-'+i);
+                    img.src = image64;
+                    angular.element('.chart--block.chart-'+i+' .chart--wrapper').attr("style","display:none");
+
+                    svg = document.querySelector('.chart--wrapper svg');
+                    xml = Utf8Encode(new XMLSerializer().serializeToString(svg));
+                    svg64 = btoa(xml);
+                    b64Start = "data:image/svg+xml;base64,";
+                    image64 = b64Start + svg64;
+
+
+                    angular.element('.chart--wrapper').after("<img id='svg2image'>");
+                    img = document.getElementById('svg2image');
+                    img.src = image64;
+                    angular.element(".chart--wrapper").attr("style","display:none");
+                }
+
+                $('.card--block--chart').attr('style','background-color:white');
+                var scroll = $(window).scrollTop();
+                $(window).scrollTop(0);
+
+                html2canvas(node).then(function(canvas) {
+                    canvas.toBlob(function(blob){
+
+                        if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) {
+                            scope.titleH2=node.parents().find("h2:eq(0)").text()
+                            var filename = scope.titleH2 + '.png';
+                        } else {
+                            var filename = scope.chartTitle + '.png';
+                        }
+
+                        saveAs(blob,filename);
+
+                        for (var i = 0; i < $('.chart--block').length; i++)
+                        {
+                            $("#svg2image-"+i).remove();
+                        }
+
+                         angular.element(".chart--wrapper").removeAttr("style");
+                         angular.element("#popUpMessage").removeAttr("style");
+                         $('.card--block--chart').removeAttr("style");
+                         $(window).scrollTop(scroll);
+                     });
+                 }, function(error) {            
+                 });
+            }
+            else
+            {
+                var node = $('.card--block--chart');
+                //$log.warn(node);
+
+                //---------------------------------
+                // 1 dom-to-image
+                // Did you mean: convertir de svg a imagen...
+                var svg = document.querySelector('.chart--wrapper svg');
+                $log.warn($('.card--block--chart svg').length);
+                var xml = Utf8Encode(new XMLSerializer().serializeToString(svg)); //Created with Raphaël
+
+                //console.log(xml);
+                var svg64 = btoa(xml);
+
+                var b64Start = "data:image/svg+xml;base64,";
+                var image64 = b64Start + svg64;
+
+
+                angular.element('.chart--wrapper').after("<img id='svg2image'>");
+                var img = document.getElementById('svg2image');
+                img.src = image64;
+                angular.element(".chart--wrapper").attr("style","display:none");
+
+                //$(".dropdown").hide();
+               // angular.element("#popUpMessage").attr("style","display:none");
+                //angular.element(".legend-info").attr("style","display:none");
+
+                var Promise = require('es6-promise').Promise;
+
+                var scroll = $(window).scrollTop();
+                $(window).scrollTop(0);
+
+                 html2canvas(node)
+                 .then(function(canvas) {
+                     canvas.toBlob(function(blob){
+
+                         if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) {
+                             scope.titleH2=node.parents().find("h2:eq(0)").text()
+                             var filename = scope.titleH2 + '.png';
+                         } else {
+                             var filename = scope.chartTitle + '.png';
+                        }
+
+                         saveAs(blob,filename);
+
+                         //$(".dropdown").show();
+                         $("#svg2image").remove();
+                         angular.element(".chart--wrapper").removeAttr("style");
+                         //angular.element("#popUpMessage").removeAttr("style");
+                         $(window).scrollTop(scroll);
+                     });
+                 }, function(error) {            
+                 });
+            }
+
+            
         };
 
         /**
