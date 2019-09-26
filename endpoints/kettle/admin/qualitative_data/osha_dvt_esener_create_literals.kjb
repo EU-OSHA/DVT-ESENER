@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <job>
-  <name>osha_dvt_barometer_literals_links</name>
+  <name>osha_dvt_esener_literals_links</name>
     <description/>
     <extended_description/>
     <job_version/>
@@ -116,7 +116,7 @@
       <parameters>        <pass_all_parameters>Y</pass_all_parameters>
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
-      <nr>1</nr>
+      <nr>0</nr>
       <xloc>624</xloc>
       <yloc>416</yloc>
       </entry>
@@ -135,7 +135,7 @@
       <from>START</from>
       <to>Links List</to>
       <from_nr>0</from_nr>
-      <to_nr>1</to_nr>
+      <to_nr>0</to_nr>
       <enabled>Y</enabled>
       <evaluation>Y</evaluation>
       <unconditional>Y</unconditional>
