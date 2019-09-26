@@ -385,6 +385,47 @@
     </Query>
   </DataAccess>
 
+  <DataAccess access="public" connection="dvt_conn" id="getEuropeanBarCharExportData" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="15" name="pDataset" type="Numeric"/>
+      <Parameter default="MM161" name="pIndicator" type="String"/>
+      <Parameter default="14" name="pActivityFilter" type="String" />
+      <Parameter default="11" name="pCompanyFilter" type="String" />
+      <Parameter default="0" name="pEUOnly" type="String" />
+      <Parameter default="activity-sector" name="pSectorSize" type="String" />
+      <Parameter default="0" name="pAnswer" type="Numeric" />
+      <Parameter default="EN" name="pLocale" type="String" />
+    </Parameters>
+    <Query>
+      SELECT n.country_code as Country, 
+      i.name as Question, 
+      IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) as Subset, 
+      t.text as Answer, 
+      v.value*100 as Percentage
+      FROM nuts n, profile p, value v, translation t, translation t2, split_answer sa, indicator i, esener_answer_order eao, split_activity_sector sas, split_company_size scs
+      WHERE n.id = p.nuts_id
+      AND i.name = ${pIndicator}
+      AND v.indicator_id = i.id
+      AND i.id = eao.indicator_id
+      AND v.profile_id = p.id
+      AND p.answer_id=sa.id
+      AND sa.id = eao.answer_id
+      AND t.literal_id =sa.literal_id
+      AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
+      ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('CH', 'NO', 'TR')) ELSE n.id = p.nuts_id END
+      AND sas.id = ${pActivityFilter}
+      AND scs.id = ${pCompanyFilter}
+      AND t.language = ${pLocale}
+      AND t2.literal_id = n.literal_id
+      AND t2.language = ${pLocale}
+      AND v.dataset_id = ${pDataset}
+      ORDER BY FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC;
+    </Query>
+  </DataAccess>
+
     <!--<DataAccess access="public" connection="dvt_conn" id="getNationalBarChartIndicators" type="sql">
       <Cache duration="3600" enabled="true"/>
       <Columns/>
