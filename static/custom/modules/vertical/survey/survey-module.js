@@ -312,6 +312,9 @@ define(function (require) {
                 },
                 pEuOnly: {
                     value: 0
+                },
+                pSortBy: {
+                    value: '0'
                 }
             },
             views: {

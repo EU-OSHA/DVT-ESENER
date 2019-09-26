@@ -39,7 +39,8 @@
 .tags{
   align-self: center;
   span{
-    margin: 0px 15px 0px 0px;
+    padding:1rem 1.5rem 0 0;
+    display: inline-block;
   }
 }
 
@@ -65,9 +66,9 @@
 .dvt-modal-social{
   display: block;
   background:$white;
-  width: 60%;
+  width: 70%;
   margin: auto;
-  height: 45%;
+  height:70%;
   border-radius: 6px;
   .modal-wrapper {
     height: auto;
@@ -214,12 +215,21 @@
     }
     .popUpMessage--exportData--text--block{
       background: $white;
-      width: 58vw;
+      width:100%;
       //height: 70vh;
       top: 0;      
       margin: 4vh 0vw; 
       padding: 4vh 2vw;
       position: relative;
+      #panel--url{
+        margin: 4rem 0;
+      }
+      #panel--url{
+        #urlTextArea {
+          font-style: italic;
+          color: $gray-light;
+        }
+      }
       .export--data--modal{
         > a{
           i{
@@ -227,11 +237,14 @@
             vertical-align: middle;
             margin-right: 1rem;
           }
+          &.active{
+            color: $orange !important;
+          }
         }
       }
       p{
         font-size: 1.6rem;
-        margin: 2rem;
+        margin: 2rem 0;
       }
       .close-popup{
         bottom: 5vh;
@@ -625,7 +638,7 @@
     color: $aquamarine;
   }
   .or-text{
-    margin: 4rem 2rem 2rem 0;
+    margin: 4.2rem 2rem 2rem 0;
   }
   .filter-text{
     margin: 0 2rem 0 0;
@@ -753,8 +766,8 @@
       min-width: auto;
       select{
         width: auto;
-        margin: 1.1rem 0 0;
-        padding: 1rem 2rem;
+        margin: 0.9rem 0 0;
+        padding: 1.1rem 2rem;
         background: $aquamarine;
         color: $white;
         position: relative;
@@ -833,8 +846,8 @@
       appearance: none;
       border: none;
       width:auto;
-      margin: 1rem 0;
-      padding: 1rem 2rem;
+      margin: 0.9rem 0;
+      padding: 1.1rem 2rem;
       background: #00a1a3;
       color: #FFF;
       position: relative;
@@ -1136,7 +1149,7 @@
     }
   }
 }
-.european-map, .european-bar-chart{
+.european-map{
   margin-top: 1rem;
 }
 .european-bar-chart{
@@ -1378,6 +1391,36 @@ and (max-width : 1024px) {
   }
 }
 
+@media only screen 
+and (min-width : 768px) 
+and (max-width : 1024px)  {
+
+  .detail-page{
+    #popUpMessage{
+      .dvt-modal-social {
+        display: block;
+        background: #FFF;
+        width: 90%;
+        margin: auto;
+        height: 85%;
+        border-radius: 6px;
+      }
+      .popUpMessage--exportData--text--block{
+        background: #FFF;
+        width: 100%;
+        height:100%;
+        margin: 5vh 0;
+        padding:5vh 0;
+        p{
+          margin: 2rem 0;
+        }
+        #panel--url{
+          padding: 4rem 2rem;
+        }     
+      }
+    }
+  }
+}
 
 @media only screen 
 and (max-width : 768px) { 
@@ -1533,7 +1576,6 @@ and (max-width : 768px) {
        }
     }
   }
-
 }
 
 @media only screen 
@@ -1560,10 +1602,61 @@ and (max-width : 767px){
       }
     }
   }  
-
+  .european-bar-chart{
+    padding: 4rem 0 0;
+  }
+  #popUpMessage{
+    .popUpMessage--exportData--text--block{
+      width: 100%;
+      > p{
+        font-size: 1.6rem;
+        margin: 0rem 0 2rem;
+      }
+      .export--data--modal{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        > a{
+          margin: 2rem 0;
+          width: 50%;
+          text-align: left;
+        }
+      }
+      #panel--url{
+        #urlTextArea {
+          height: auto;
+          font-size: 1.2rem;
+          font-style: italic;
+          color: $gray-light;
+        }
+        .pageUrl{
+          flex-direction: column;
+          .btn-default > span {
+            width: auto;
+            text-align: center;
+          }
+        }
+      }
+    }
+  } 
 }
 
-
+@media only screen and (max-width: 620px){
+  .detail--content--section{
+    #popUpMessage{
+      .popUpMessage--text--block {
+        width: 100%;
+        height: auto;
+        margin: 5vh 0vw;
+        padding: 5vh 0vw;
+        .social--network--modal {
+          margin-right: 0rem;
+          margin-left: 0rem;
+        }
+      }
+    } 
+  }
+}
 @media only screen 
 and (max-width : 375px){
 

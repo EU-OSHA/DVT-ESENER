@@ -47,6 +47,7 @@ define(function (require) {
 				scope.country2 = $stateParams.pCountry2;
 				scope.sectorSize = ($stateParams.pSectorSize == null && scope.chart == 'national-bar-chart') ? 'company-size':$stateParams.pSectorSize;
 				scope.noneu = $stateParams.pEuOnly;
+				scope.sortBy = $stateParams.pSortBy
 
 				scope.filters = {
 					activitySector: scope.activitySector,
@@ -56,7 +57,8 @@ define(function (require) {
 					answer: scope.answer,
 					euOnly: scope.noneu,
 					sectorSize: scope.sectorSize,
-					locale: scope.pLocale
+					locale: scope.pLocale,
+                    sortBy: scope.sortBy
 				};
 
 				scope.trim = function(text, type){
@@ -307,6 +309,7 @@ define(function (require) {
 							scope.filters.sectorSize = 'company-size';
 							scope.filters.activitySector = 14;
 						}*/
+						//$log.warn(scope.filters.sortBy);
 						$state.transitionTo(((scope.chart == 'european-map')?'detailpage-european-map':'detailpage-european-bar-chart'), {
 							pIndicator: scope.dataset, //Year
 							pLanguage: scope.pLanguage,
@@ -318,7 +321,8 @@ define(function (require) {
 							pSectorSize: scope.filters.sectorSize,
 							pActivityFilter: scope.filters.activitySector,
 							pCompanyFilter: scope.filters.establishmentSize,
-							pEuOnly: scope.noneu
+							pEuOnly: scope.noneu,
+							pSortBy: (scope.chart == 'european-bar-chart')?scope.filters.sortBy:'0'
 						},
 						{
 							reload: true
@@ -418,6 +422,8 @@ define(function (require) {
 						scope.filters.country2 = 'EU27';
 						scope.filters.country = 'AT'
 					}*/
+
+                    $log.warn(scope.filters.answer);
 
 					$state.transitionTo('detailpage-national-comparisons', {
 						pIndicator: scope.dataset, //Year
