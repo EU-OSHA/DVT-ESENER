@@ -321,6 +321,8 @@ define(function (require) {
 							pSectorSize: scope.filters.sectorSize,
 							pActivityFilter: scope.filters.activitySector,
 							pCompanyFilter: scope.filters.establishmentSize,
+							pCountry: scope.filters.country,
+							pCountry2: scope.filters.country2,
 							pEuOnly: scope.noneu,
 							pSortBy: (scope.chart == 'european-bar-chart')?scope.filters.sortBy:'0'
 						},
