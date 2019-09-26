@@ -827,7 +827,8 @@
         background: #00a1a3;
         color: #FFF;
         position: relative;
-        border: none;            
+        border: none;
+        pointer-events: none;            
       }  
     }
     span{
