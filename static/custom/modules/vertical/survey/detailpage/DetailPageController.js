@@ -57,16 +57,19 @@ define(function (require) {
 		$scope.pCountry2 = $stateParams.pCountry2;
 		$scope.nonEU = $stateParams.pEuOnly;
 
-		var resolution = screen.width;
+		var resolution = $(window).width();
 		$scope.angle = resolution > 768 ? 1 : 0;
 
+//$log.warn( window.screen.width +'---------->'+ window.outerWidth);
+//$log.warn('FUERA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
+
 		$(window).on("resize",function(e){
-	      if(screen.width != resolution){
-	        resolution = screen.width;
-	        //$log.warn('Resolucion ha cambiado');
-	        $state.reload();
-	      }
-	    });
+      if(window.outerWidth != resolution){
+      	//$log.warn('ENTRA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
+        resolution = window.outerWidth;
+        $state.reload();
+      }
+    });
 
 		//$log.warn($stateParams);
 

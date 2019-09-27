@@ -9,7 +9,6 @@
  * ############################################
  */
 
-var resolution = screen.width;
 
 define(function (require) {
     'use strict';
