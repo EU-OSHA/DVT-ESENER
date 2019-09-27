@@ -128,7 +128,6 @@
                         dimensions="stories[1].dimensions"
                         legend="true" is-maximized="false"
                         angle="{{angle}}" stacked="1"
-                        base-axis-size="100"
                         base-color="#FFFFFF" axis-style="#FFFFFF"
                         panel-color="#FFFFFF"
                         datasource-and-dates="[15,110,pActivityFilter]"
@@ -146,13 +145,13 @@
                       <dvt-bar-chart
                         data-ng-cloak
                         query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
-                        width="330" height="90" axis-percent="1"
+                        width="330" height="120" axis-percent="1"
                         orientation="horizontal" axis-fixed-min="0"
                         axis-fixed-max="100" step="20"
                         listen-to="['pFilters']"
                         params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', 'pFilters.sectorSize'],['pCountry', 'pFilters.country'], ['pIndicator', indicator.id]]"
                         color-role="c" chart-title="{{i18n['L'+indicator.name]}}"
-                        id="3" axis-label-font="12px 'OpenSans-bold'"
+                        id="3" axis-label-font="14px 'OpenSans-bold'"
                         plots="stories[2].plots" values-overflow="show"
                         values-visible="true" values-mask="{value}"                        
                         label-text-align="stories[2].alignment"
@@ -163,7 +162,7 @@
                         dimensions="stories[2].dimensions"
                         legend="false" is-maximized="false"
                         base-color="#FFFFFF" axis-style="#FFFFFF"
-                        panel-color="#FFFFFF"
+                        panel-color="#FFFFFF" base-axis-size="150"
                         datasource-and-dates="[15,110,pActivityFilter]"
                       ></dvt-bar-chart>
                   </div>
@@ -248,13 +247,13 @@
                 <div class="popUpMessage--text--block">
                   <p class="text-center title-share" data-ng-bind="i18n.L101028"></p>
                   <div class="social--network--modal" id="osha-menu-social">
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n.L370}}" socialshare-text="{{i18n[title]}}" socialshare-url="{{pathURLDVT}}">
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n.L370}}" socialshare-text="{{titleShare}}" socialshare-url="{{pathURLDVT}}">
                       <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L370)"></span>
                     </a>
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n.L371}}" socialshare-url="{{pathURLDVT}}">
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n.L371}}" socialshare-url="{{pathURLDVT}}" socialshare-quote="{{titleShare}}">
                       <i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L371)"></span>
                     </a>
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n.L372}}" socialshare-url="{{pathURLDVT}}">
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n.L372}}" socialshare-url="{{pathURLDVT}}" socialshare-text="{{titleShare}}">
                       <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L372)"></span>
                     </a>
                   </div>

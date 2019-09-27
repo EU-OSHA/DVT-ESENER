@@ -38,6 +38,13 @@ define(function (require) {
 		$scope.showPopUpSocialMedia = false;
 		$scope.showPopUpExportData = false;
 		$scope.pathURLDVT=$location.absUrl();
+
+		if($stateParams.pIndicator == 2009){
+			$scope.titleShare='ESENER-1 | Safety and health at work - EU-OSHA';
+		}else if($stateParams.pIndicator == 2014){
+			$scope.titleShare='ESENER-2 | Safety and health at work - EU-OSHA';
+		}
+
 		var titleStructure = require('json!dvt/directives/title-items');
 		$scope.title = titleStructure[$state.current.name];
 		$scope.pageUrlActive = false;
@@ -67,11 +74,11 @@ define(function (require) {
 		$scope.pieChartFont =  resolution > 600 ? '20px OpenSans-bold' : '14px OpenSans-bold';
 
 		$(window).on("resize",function(e){
-      if(window.outerWidth != resolution){
-        resolution = window.outerWidth;
-        $state.reload();
-      }
-    });
+	      if(window.outerWidth != resolution){
+	        resolution = window.outerWidth;
+	        $state.reload();
+	      }
+    	});
 
 		//$log.warn($stateParams);
 

@@ -45,9 +45,7 @@ define(function (require) {
             controller: ['$rootScope', '$scope', '$state', '$window' , 'configService', '$http', '$log','dataService', '$compile', '$sce', '$stateParams',
                 function ($rootScope, $scope, $state, $window, configService, $http, $log, dataService, $compile, $sce, $stateParams) {
                     // Load google translate element
-                    //new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-
-                    
+                    //new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');                   
 
                     $scope.changeLanguage = function(){
                         var local = $scope.pLanguage;
@@ -160,6 +158,13 @@ define(function (require) {
                             $scope.pLanguage = $stateParams.pLanguage;
 
                             $scope.pIndicator = $stateParams.pIndicator;
+
+                            if($stateParams.pIndicator == 2009){
+                                $scope.titleShare='ESENER-1 | Safety and health at work - EU-OSHA';
+                            }else if($stateParams.pIndicator == 2014){
+                                $scope.titleShare='ESENER-2 | Safety and health at work - EU-OSHA';
+                            }
+                            
                             $scope.currentName = $state.current.name;
 
                             var cadena = "";
