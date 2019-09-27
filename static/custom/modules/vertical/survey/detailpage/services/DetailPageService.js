@@ -120,7 +120,7 @@ define (function (require) {
                                         
                                         if(countryKey.label.match('(CH)')){
                                             if(resolution<=768){
-                                                return 1.5
+                                                return 2
                                             }
                                             return 2;
                                         }else{
@@ -128,7 +128,7 @@ define (function (require) {
                                                 return 2;
                                             }
                                         }
-                                        return 0;
+                                        return null;
                                     })
                                     .left(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
@@ -177,11 +177,12 @@ define (function (require) {
                                     if(resolution<=768){
                                         return 1.5
                                     }
-                                    return 2;
+                                    return 1.5;
                                 })
                                 .left(function(scene){
                                     var baseScale = this.getContext().chart.axes.base.scale;
-                                    //$log.warn(scene);
+                                    //$log.warn(this.proto.$properties[2]);
+                                    //$log.warn(baseScale(euC));
                                     if(!scene.firstAtoms.value.label.match('%')){
                                         scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                                     }

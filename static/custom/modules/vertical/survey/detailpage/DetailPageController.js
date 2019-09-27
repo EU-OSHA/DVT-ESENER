@@ -813,10 +813,15 @@ define(function (require) {
         	document.execCommand("copy");
         }
 
-        $scope.exportData = function(id){
-        	$scope.pExcelFileName = "xls_";
+        function createFileName(type){
 
-			if($scope.pChart == 'european-map'){
+        	if(type == 'xls'){
+        		$scope.pExcelFileName = "xls_";
+        	}else{
+        		$scope.pExcelFileName = "";
+        	}
+
+        	if($scope.pChart == 'european-map'){
 				$scope.chartCitation = 'L100623';
 				$scope.promiseToExport = dataService.getMapExportData($scope.pIndicator, $scope.pQuestion, $scope.answer, 
 					$scope.actualDataset, $scope.pSectorSize, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU);
@@ -840,6 +845,7 @@ define(function (require) {
 				$scope.chartCitation = 'L101033';
 				$scope.promiseToExport = dataService.getPieChartExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, 
 					$scope.pCountry);
+				$scope.pExcelFileName = $scope.pExcelFileName + "pieChart-";
 			}
 
 			if ($scope.pIndicator == 2009)
@@ -850,16 +856,22 @@ define(function (require) {
 			{
 				$scope.pExcelFileName = $scope.pExcelFileName + "esener2-";
 			}
-			$scope.pExcelFileName = $scope.pExcelFileName + $scope.pSectorSize + "-";
-			if ($scope.pSectorSize == "activity-sector" && $scope.pChart != "national-bar-chart")
+
+			if($scope.pChart != "pie-chart"){
+				$scope.pExcelFileName = $scope.pExcelFileName + $scope.pSectorSize + "-";
+			}
+
+			if ($scope.pSectorSize == "activity-sector" && $scope.pChart != "national-bar-chart" && $scope.pChart != "pie-chart")
 			{
 				$scope.pExcelFileName = $scope.pExcelFileName + $scope.pActivityFilter + "-";
 			}
-			else if ($scope.pChart != "national-bar-chart")
+			else if ($scope.pChart != "national-bar-chart" && $scope.pChart != "pie-chart")
 			{
 				$scope.pExcelFileName = $scope.pExcelFileName + $scope.pCompanyFilter + "-";
 			}
+
 			$scope.pExcelFileName = $scope.pExcelFileName + $scope.pQuestion;
+
 			if ($scope.pChart == "european-map")
 			{
 				$scope.pExcelFileName = $scope.pExcelFileName + "-" + $scope.answer;
@@ -872,11 +884,18 @@ define(function (require) {
 			{
 				$scope.pExcelFileName = $scope.pExcelFileName + "-" + $scope.pCountry + "-" +$scope.pCountry2;
 			}
+
+        }
+
+        $scope.exportData = function(id){
+        	createFileName('xls');
+
         	exportService.exportDataManually($scope.promiseToExport, $scope.pExcelFileName, id);
         }
 
         $scope.exportPNG = function(){
-        	exportService.exportImageAction($scope);
+        	createFileName('png');
+        	exportService.exportImageAction($scope, $scope.pExcelFileName);
         }
 
 		angular.element('body').mouseup(function(e){
