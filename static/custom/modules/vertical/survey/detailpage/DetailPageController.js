@@ -61,17 +61,17 @@ define(function (require) {
 
         //$log.warn($scope.answer);
 
-		var resolution = window.outerWidth;
+		var resolution = $(window).width();;
 		$scope.angle = resolution > 768 ? 1 : 0;
 		$scope.pieChartHeight = resolution > 600 ? 600 : 400;
 		$scope.pieChartFont =  resolution > 600 ? '20px OpenSans-bold' : '14px OpenSans-bold';
 
 		$(window).on("resize",function(e){
-	      if(window.outerWidth != resolution){
-	        resolution = window.resolution;
-	        $state.reload();
-	      }
-	    });
+      if(window.outerWidth != resolution){
+        resolution = window.outerWidth;
+        $state.reload();
+      }
+    });
 
 		//$log.warn($stateParams);
 
