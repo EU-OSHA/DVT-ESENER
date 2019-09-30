@@ -146,13 +146,13 @@
                       <dvt-bar-chart
                         data-ng-cloak
                         query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
-                        width="330" height="90" axis-percent="1"
+                        width="330" height="120" axis-percent="1"
                         orientation="horizontal" axis-fixed-min="0"
                         axis-fixed-max="100" step="20"
                         listen-to="['pFilters']"
                         params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', 'pFilters.sectorSize'],['pCountry', 'pFilters.country'], ['pIndicator', indicator.id]]"
                         color-role="c" chart-title="{{i18n['L'+indicator.name]}}"
-                        id="3" axis-label-font="12px 'OpenSans-bold'"
+                        id="3" axis-label-font="14px 'OpenSans-bold'"
                         plots="stories[2].plots" values-overflow="show"
                         values-visible="true" values-mask="{value}"                        
                         label-text-align="stories[2].alignment"
@@ -163,7 +163,7 @@
                         dimensions="stories[2].dimensions"
                         legend="false" is-maximized="false"
                         base-color="#FFFFFF" axis-style="#FFFFFF"
-                        panel-color="#FFFFFF"
+                        panel-color="#FFFFFF" base-axis-size="150"
                         datasource-and-dates="[15,110,pActivityFilter]"
                       ></dvt-bar-chart>
                   </div>
