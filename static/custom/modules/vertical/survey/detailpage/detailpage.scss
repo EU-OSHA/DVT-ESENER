@@ -576,13 +576,14 @@
   position: absolute;
   right: 10rem;
   top: 0;
-  width: 14rem;
+  width: 24rem;
   text-align: right;
-  margin: 2rem 0;
+  margin:0 0 2rem 0;
   form.compare--block--form{    
     label{
       font-family: 'OpenSans';
       font-size: 1rem;
+      width: 14rem;
     }
     > div{
       position: relative;
@@ -593,11 +594,13 @@
         border: none;
         font-family: 'OpenSans-Bold';
         font-size: 1.7rem;
-        text-align-last:center;
+        text-align-last:right;
         background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-down.svg);
         background-repeat: no-repeat;
         background-position: 100%;
         background-size: 2rem 2rem;
+        padding-right: 2.5rem;
+        width: 100% !important;
         &::-ms-expand {
           display: none;
         }
@@ -1390,6 +1393,20 @@ and (max-width : 1024px) {
       //padding-right: 5%;
     }
   }
+  .content--lang--wrapper{
+    margin:2rem 0;
+    form.compare--block--form{    
+      label{
+
+      }
+      > div{
+        position: relative;
+        select{
+
+        }    
+      }   
+    }
+  }
 }
 
 @media only screen 
@@ -1425,8 +1442,7 @@ and (max-width : 1024px)  {
 
 @media only screen 
 and (max-width : 768px) { 
-
-  .detail-page{
+  .detail-page{    
     .detail--page--wrapper{
       .detail--content--section{
         .selector--page--elements{
