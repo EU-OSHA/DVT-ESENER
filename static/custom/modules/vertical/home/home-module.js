@@ -40,7 +40,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "ESENER | Home",
-                //description: i18n.L4,
+                description: "ESENER | Home",
             }
         });
     });

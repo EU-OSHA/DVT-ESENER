@@ -72,7 +72,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -255,8 +255,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                title: "European map | ESENER",
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -325,7 +325,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Data Visualisation | ESENER",
+                title: "European bar chart | ESENER",
                 description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
@@ -384,8 +384,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                title: "National bar chart | ESENER",
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -451,8 +451,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                title: "National comparisons | ESENER",
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -510,8 +510,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                title: "Pie chart | ESENER",
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
     });

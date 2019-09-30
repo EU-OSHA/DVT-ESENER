@@ -147,7 +147,7 @@ define(function (require) {
                     };
                     $scope.titleS=titleStructure;
                     $scope.pathURLDVT=$location.absUrl();
-                    $scope.pathURLDVTGoogle = $scope.pathURLDVT.replace('#','?_escaped_fragment_=');
+                    //$scope.pathURLDVTGoogle = $scope.pathURLDVT.replace('#','?_escaped_fragment_=');
 
                     $rootScope.$on('$viewContentLoading', function(event, viewConfig) {
                             $log.debug('Loading $viewContentLoading');
@@ -163,6 +163,8 @@ define(function (require) {
                                 $scope.titleShare='ESENER-1 | Safety and health at work - EU-OSHA';
                             }else if($stateParams.pIndicator == 2014){
                                 $scope.titleShare='ESENER-2 | Safety and health at work - EU-OSHA';
+                            }else{
+                                $scope.titleShare='ESENER | Safety and health at work - EU-OSHA';
                             }
                             
                             $scope.currentName = $state.current.name;
