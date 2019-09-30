@@ -435,7 +435,7 @@ define(function (require) {
 
 				}
 
-				scope.cambiar = function(){
+				scope.changeTo = function(){
 
 					/*if(scope.filters.country == 'EU27'){
 						scope.filters.country2 = 'EU27';
