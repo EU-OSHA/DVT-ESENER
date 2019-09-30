@@ -183,7 +183,14 @@ define(function (require) {
 					dataService.getActivitySectorsSelect(scope.indicator).then(function(res) {
 						scope.activitySectors = [];
 						res.data.resultset.map(function(elem) {
-							scope.activitySectors.push({id:elem[0], literal:elem[1]});
+							if(elem[0] != 1){
+								scope.activitySectors.push({id:elem[0], literal:elem[1]});
+							}else{
+								if(scope.chart != 'european-map' && scope.chart != 'european-bar-chart'){
+									scope.activitySectors.push({id:elem[0], literal:elem[1]});
+								}
+							}
+							
 						});
 					});
 

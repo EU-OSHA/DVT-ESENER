@@ -126,7 +126,7 @@
       AND sas.id = ${pActivityFilter} AND scs.id = ${pCompanyFilter}
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
       AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
-      ORDER BY country_code ASC, eao.order_position ASC;
+      ORDER BY CASE WHEN ${pDataset} = 15 THEN FIELD('EU28', n.country_code) ELSE FIELD('EU27', n.country_code) END DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC, eao.order_position ASC;
     </Query>
   </DataAccess>
 
@@ -220,7 +220,7 @@
         AND ROUND(v.value*100,1) BETWEEN ((${pMaxValue} - ${pRange}) + 0.01) AND ${pMaxValue}
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
-        ORDER BY v.value ASC
+        ORDER BY FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC, v.value ASC
       )
     </Query>
   </DataAccess>
@@ -327,7 +327,7 @@
     <Query>
       SELECT DISTINCT(a.id), a.literal_id 
       FROM split_activity_sector a
-      INNER JOIN profile p ON a.id=p.activity_sector_id AND a.id NOT IN (1,5, 8)
+      INNER JOIN profile p ON a.id=p.activity_sector_id AND a.id NOT IN (5, 8)
       INNER JOIN value v ON p.id=v.profile_id
       INNER JOIN indicator i ON v.indicator_id=i.id
       WHERE i.name=${pQuestion}
@@ -422,7 +422,7 @@
       AND t2.literal_id = n.literal_id
       AND t2.language = ${pLocale}
       AND v.dataset_id = ${pDataset}
-      ORDER BY FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC;
+      ORDER BY CASE WHEN ${pDataset} = 15 THEN FIELD('EU28', n.country_code) ELSE FIELD('EU27', n.country_code) END DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC;
     </Query>
   </DataAccess>
 
@@ -693,7 +693,7 @@
       <Parameter default="EN" name="pLocale" type="String"/>
     </Parameters>
     <Query>
-      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Answer, v.value*100 as Value
+      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, i.name as Question, t.text as Answer, v.value*100 as Value
       FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i, esener_answer_order eao
       WHERE n.id = p.nuts_id
       AND i.name = ${pQuestion}
