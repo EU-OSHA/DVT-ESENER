@@ -163,9 +163,10 @@ define(function () {
              * @description
              * Returns data of a particular question
              */
-            getEuropeanBarCharExportData: function (pDataset, pQuestion, pActivityFilter, pCompanyFilter, pEuOnly, pSectorSize) {
+            getEuropeanBarCharExportData: function (pDataset, pQuestion, pActivityFilter, pCompanyFilter, pEuOnly, pSectorSize, pLocale) {
                 var url = configService.getEsenerDataPath() + "&dataAccessId=getEuropeanBarCharExportData" + "&parampDataset=" + pDataset + "&parampIndicator=" + pQuestion 
-                + "&parampActivityFilter=" + pActivityFilter + "&parampCompanyFilter=" + pCompanyFilter + "&parampEuOnly=" + pEuOnly + "&parampSectorSize=" + pSectorSize;
+                + "&parampActivityFilter=" + pActivityFilter + "&parampCompanyFilter=" + pCompanyFilter + "&parampEuOnly=" + pEuOnly + "&parampSectorSize=" + pSectorSize
+                + "&parampLocale=" + pLocale;
                 $log.debug('getEuropeanBarCharExportData url:' + url);
                 return promise(url);
             },

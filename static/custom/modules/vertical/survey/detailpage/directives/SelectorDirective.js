@@ -183,7 +183,14 @@ define(function (require) {
 					dataService.getActivitySectorsSelect(scope.indicator).then(function(res) {
 						scope.activitySectors = [];
 						res.data.resultset.map(function(elem) {
-							scope.activitySectors.push({id:elem[0], literal:elem[1]});
+							if(elem[0] != 1){
+								scope.activitySectors.push({id:elem[0], literal:elem[1]});
+							}else{
+								if(scope.chart != 'european-map' && scope.chart != 'european-bar-chart' && scope.chart != 'national-comparisons'){
+									scope.activitySectors.push({id:elem[0], literal:elem[1]});
+								}
+							}
+							
 						});
 					});
 
@@ -226,7 +233,17 @@ define(function (require) {
 						pLanguage: scope.pLanguage,
 						pLocale: scope.pLocale,
 						pQuestion: $stateParams.pQuestion,
-						pTopic: scope.topic
+						pTopic: scope.topic,
+						pIndicator: scope.dataset, //Year
+						pChart: scope.chart, //Type of chart
+						pAnswer: scope.filters.answer, //Split answer
+						pSectorSize: scope.filters.sectorSize,
+						pActivityFilter: scope.filters.activitySector,
+						pCompanyFilter: scope.filters.establishmentSize,
+						pCountry: scope.filters.country,
+						pCountry2: scope.filters.country2,
+						pEuOnly: scope.noneu,
+						pSortBy: (scope.chart == 'european-bar-chart')?scope.filters.sortBy:'0'
 					}, 
 					{
 						reload: true,
@@ -418,7 +435,7 @@ define(function (require) {
 
 				}
 
-				scope.cambiar = function(){
+				scope.changeTo = function(){
 
 					/*if(scope.filters.country == 'EU27'){
 						scope.filters.country2 = 'EU27';

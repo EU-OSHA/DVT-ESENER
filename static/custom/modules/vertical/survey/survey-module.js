@@ -361,6 +361,14 @@ define(function (require) {
                     value: 'company-size',
                     squash: 'company-size'
                 },
+                pActivityFilter: {
+                    value: '14',
+                    squash: '14'
+                },
+                pCompanyFilter: {
+                    value: '11',
+                    squash: '11'
+                },
                 pChart: {
                     value: 'national-bar-chart',
                     squash: 'national-bar-chart'
@@ -490,6 +498,14 @@ define(function (require) {
                 pSectorSize: {
                     value: 'company-size',
                     squash: 'company-size'
+                },
+                pActivityFilter: {
+                    value: '14',
+                    squash: '14'
+                },
+                pCompanyFilter: {
+                    value: '11',
+                    squash: '11'
                 },
                 pCountry2: {
                     value: 'AT',

@@ -66,7 +66,7 @@ define(function (require) {
 
 		$scope.sortBy = $stateParams.pSortBy;
 
-        //$log.warn($scope.answer);
+        $log.warn($scope.nonEU);
 
 		var resolution = $(window).width();;
 		$scope.angle = resolution > 768 ? 1 : 0;
@@ -147,6 +147,9 @@ define(function (require) {
 					questionOrFilterChanged = true;
 				}
 				if($rootScope.answersNationalComparisons.pCompanyFilter != $scope.pCompanyFilter){
+					questionOrFilterChanged = true;
+				}
+				if($rootScope.answersNationalComparisons.pLocale != $scope.pLocale){
 					questionOrFilterChanged = true;
 				}
 			}
@@ -545,8 +548,10 @@ define(function (require) {
 						$scope.answers.pCountry2 = $scope.pCountry2;
 						$scope.answers.pActivityFilter = $scope.pActivityFilter;
 						$scope.answers.pCompanyFilter = $scope.pCompanyFilter;
-						$scope.answers.data = list;
+						$scope.answers.pLocale = $scope.pLocale;
 						$rootScope.answersNationalComparisons = $scope.answers;
+						$scope.answers.data = list;
+						
 						
 					}).catch(function (err) 
 					{
@@ -750,6 +755,7 @@ define(function (require) {
         	$scope.currentDate = new Date();
 
         	var url = $state.current.url;
+        	//$log.warn(url);
         	var paramsUsed = url.substring(url.indexOf('pQuestion')+9);
         	var textParams = '';
 
@@ -793,8 +799,20 @@ define(function (require) {
         	}
 
         	if(paramsUsed.includes('pAnswer')){
-        		textParams = textParams + ', answer : ' + $scope.pAnswer + ' ';
+        		textParams = textParams + ', answer : ' + $scope.answer + ' ';
         	}
+
+        	if($scope.pChart == 'european-map'){
+				$scope.chartCitation = 'L100623';
+			}else if($scope.pChart == 'european-bar-chart'){
+				$scope.chartCitation = 'L100622';
+			}else if($scope.pChart == 'national-bar-chart'){
+				$scope.chartCitation = 'L100624';
+			}else if($scope.pChart == 'national-comparisons'){
+				$scope.chartCitation = 'L100621';
+			}else if($scope.pChart == 'pie-chart'){
+				$scope.chartCitation = 'L101033';
+			}
 
         	var text = '@ONLINE{OSHA:'+ $scope.currentDate.getFullYear() +':Online,\n' +
 				'author = {},\n' +
@@ -829,7 +847,7 @@ define(function (require) {
 			}else if($scope.pChart == 'european-bar-chart'){
 				$scope.chartCitation = 'L100622';
 				$scope.promiseToExport = dataService.getEuropeanBarCharExportData($scope.actualDataset, $scope.pQuestion, 
-					$scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU, $scope.pSectorSize);
+					$scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU, $scope.pSectorSize, $scope.pLocale);
 				$scope.pExcelFileName = $scope.pExcelFileName + "euBars-";
 			}else if($scope.pChart == 'national-bar-chart'){
 				$scope.chartCitation = 'L100624';
