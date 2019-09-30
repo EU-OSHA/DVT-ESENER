@@ -66,7 +66,7 @@ define(function (require) {
 
 		$scope.sortBy = $stateParams.pSortBy;
 
-        $log.warn($scope.pActivityFilter);
+        $log.warn($scope.nonEU);
 
 		var resolution = $(window).width();;
 		$scope.angle = resolution > 768 ? 1 : 0;
@@ -847,7 +847,7 @@ define(function (require) {
 			}else if($scope.pChart == 'european-bar-chart'){
 				$scope.chartCitation = 'L100622';
 				$scope.promiseToExport = dataService.getEuropeanBarCharExportData($scope.actualDataset, $scope.pQuestion, 
-					$scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU, $scope.pSectorSize);
+					$scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU, $scope.pSectorSize, $scope.pLocale);
 				$scope.pExcelFileName = $scope.pExcelFileName + "euBars-";
 			}else if($scope.pChart == 'national-bar-chart'){
 				$scope.chartCitation = 'L100624';

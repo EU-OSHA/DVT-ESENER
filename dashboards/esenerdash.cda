@@ -125,7 +125,7 @@
       AND t.language = 'EN'
       AND sas.id = ${pActivityFilter} AND scs.id = ${pCompanyFilter}
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
+      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27', 'EU28')) END
       ORDER BY CASE WHEN ${pDataset} = 15 THEN FIELD('EU28', n.country_code) ELSE FIELD('EU27', n.country_code) END DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC, eao.order_position ASC;
     </Query>
   </DataAccess>
@@ -393,9 +393,8 @@
       <Parameter default="MM161" name="pIndicator" type="String"/>
       <Parameter default="14" name="pActivityFilter" type="String" />
       <Parameter default="11" name="pCompanyFilter" type="String" />
-      <Parameter default="0" name="pEUOnly" type="String" />
+      <Parameter default="0" name="pEuOnly" type="String" />
       <Parameter default="activity-sector" name="pSectorSize" type="String" />
-      <Parameter default="0" name="pAnswer" type="Numeric" />
       <Parameter default="EN" name="pLocale" type="String" />
     </Parameters>
     <Query>
@@ -415,7 +414,7 @@
       AND t.literal_id =sa.literal_id
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
       ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('CH', 'NO', 'TR')) ELSE n.id = p.nuts_id END
+      AND CASE WHEN ${pEuOnly} = 1 THEN ( n.country_code NOT IN ('CH', 'NO', 'TR')) ELSE n.id = p.nuts_id END
       AND sas.id = ${pActivityFilter}
       AND scs.id = ${pCompanyFilter}
       AND t.language = ${pLocale}

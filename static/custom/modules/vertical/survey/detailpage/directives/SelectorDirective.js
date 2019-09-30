@@ -186,7 +186,7 @@ define(function (require) {
 							if(elem[0] != 1){
 								scope.activitySectors.push({id:elem[0], literal:elem[1]});
 							}else{
-								if(scope.chart != 'european-map' && scope.chart != 'european-bar-chart'){
+								if(scope.chart != 'european-map' && scope.chart != 'european-bar-chart' && scope.chart != 'national-comparisons'){
 									scope.activitySectors.push({id:elem[0], literal:elem[1]});
 								}
 							}
