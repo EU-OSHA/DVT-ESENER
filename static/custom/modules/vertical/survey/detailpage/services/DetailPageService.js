@@ -20,7 +20,7 @@ define (function (require) {
                     }
                 ];
             },
-            getGeneralEuropeanBarCharPlot: function(euonly, answer) {
+            getGeneralEuropeanBarCharPlot: function(euonly, answer, year) {
                 return [
                     {
                         name: "main",
@@ -139,10 +139,16 @@ define (function (require) {
                                         var norwayC = countryKey.label.match('(NO)')!=null?countryKey.label:null;
 
                                         if(switzerlandC!=null){
+                                            if(resolution == 1440){
+                                                return baseScale(switzerlandC) - this.proto.width() + 5;
+                                            }
+                                            if(year == '2014' && resolution == 1024){
+                                                return baseScale(switzerlandC) - this.proto.width() + 3;
+                                            }
                                             if(resolution<=768){
                                                 return baseScale(switzerlandC) - this.sign.panel.barWidth + 4;
                                             }
-                                            return baseScale(switzerlandC) - this.sign.panel.barWidth - 2;
+                                            return baseScale(switzerlandC) - this.proto.width();
                                         }else{
                                             if(resolution<=768){
                                                 return baseScale(norwayC) - this.sign.panel.barWidth + 4;
@@ -173,12 +179,7 @@ define (function (require) {
                                 .height(null) // clear any inherited value
                                 .width(null)  // clear any inherited value
                                 .strokeStyle('black')
-                                .lineWidth(function(scene){
-                                    if(resolution<=768){
-                                        return 1.5
-                                    }
-                                    return 1.5;
-                                })
+                                .lineWidth(1.5)
                                 .left(function(scene){
                                     var baseScale = this.getContext().chart.axes.base.scale;
                                     //$log.warn(this.proto.$properties[2]);
@@ -190,20 +191,29 @@ define (function (require) {
                                     var panelWidth = this.root.width();
 
                                     var euC = countryKey.label.match('EU2')!=null?countryKey.label.match('EU2').input:null;
-
-                                    /*if(baseScale('Austria (AT)') < 20){
-                                        return baseScale('Belgium (BE)') - this.sign.panel.barWidth - 3;
-                                    }
-
-                                    if(resolution<=768){
-                                        return baseScale('Austria (AT)') - this.sign.panel.barWidth + 4;
-                                    }
-                                    return baseScale('Austria (AT)') - this.sign.panel.barWidth - 3; */
                                     
-                                    if(resolution <= 768){
-                                        return baseScale(euC) + this.sign.panel.barWidth - 5;
+                                    /*if(resolution <= 768){
+                                        return baseScale(euC) + this.sign.panel.barWidth - this.proto.width();
+                                    }*/
+
+                                    if(resolution == 1440){
+                                        if(year == '2009'){
+                                            return baseScale(euC) + this.proto.width() - 3;
+                                        }else{
+                                            return baseScale(euC) + this.proto.width() - 5;
+                                        }
+                                    }else if(resolution == 768){
+                                        return baseScale(euC) + this.proto.width()/2 + 3;                                        
+                                    }else if(resolution < 768){
+                                        return baseScale(euC) + this.proto.width()/2
                                     }
-                                     return baseScale(euC) + this.sign.panel.barWidth + 1;
+
+                                    if(year == '2009'){
+                                        return baseScale(euC) + this.proto.width();
+                                    }else{
+                                        return baseScale(euC) + this.proto.width() - 2;
+                                    }
+                                    
                                 });
                         },
                         visualRoles:{

@@ -294,7 +294,7 @@ define(function (require) {
 		        color5: dvtUtils.getColorCountry(2),
 		        color6: dvtUtils.getColorCountry(12),
 		        color7: dvtUtils.getColorCountry(4),
-				plots: DetailPageService.getGeneralEuropeanBarCharPlot($scope.dashboard.parameters.pFilters.euOnly, $scope.sortBy),
+				plots: DetailPageService.getGeneralEuropeanBarCharPlot($scope.dashboard.parameters.pFilters.euOnly, $scope.sortBy, $scope.pIndicator),
 				dimensions: {
 				  	value: {
 						format: {
