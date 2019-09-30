@@ -634,11 +634,15 @@ define(function (require) {
 
                         return 'bottom';
                     };
-                    if (scope.isMaximized) {
+
+                    //definition.chartDefinition.valuesFont= '14px OpenSans-bold';
+                    
+                    /*if (!!attributes.isMaximized) {
                         definition.chartDefinition.valuesFont= '20px OpenSans-bold';
                     }else {
                         definition.chartDefinition.valuesFont= '14px OpenSans-bold';
-                    }
+                    }*/
+
                     definition.chartDefinition.dimensions= {
                         value: {
                             format: {

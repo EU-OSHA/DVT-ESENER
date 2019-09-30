@@ -57,21 +57,24 @@ define(function (require) {
 		$scope.pCountry2 = $stateParams.pCountry2;
 		$scope.nonEU = $stateParams.pEuOnly;
 
-		var resolution = $(window).width();
-		$scope.angle = resolution > 768 ? 1 : 0;
+		$scope.sortBy = $stateParams.pSortBy;
 
-//$log.warn( window.screen.width +'---------->'+ window.outerWidth);
-//$log.warn('FUERA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
+		var resolution = $(window).width();
+
+		$scope.angle = resolution > 768 ? 1 : 0;
+		$scope.pieChartHeight = resolution > 600 ? 600 : 400;
+		$scope.pieChartFont =  resolution > 600 ? '20px OpenSans-bold' : '14px OpenSans-bold';
+
+		//$log.warn( window.screen.width +'---------->'+ window.outerWidth);
+		//$log.warn('FUERA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
 
 		$(window).on("resize",function(e){
-      if(window.outerWidth != resolution){
-      	//$log.warn('ENTRA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
-        resolution = window.outerWidth;
-        $state.reload();
-      }
-    });
-
-		//$log.warn($stateParams);
+	      if(window.outerWidth != resolution){
+	      	//$log.warn('ENTRA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
+	        resolution = window.outerWidth;
+	        $state.reload();
+	      }
+    	});
 
 		// Main Category / Subcategory: Question or Main Category / Question
 		$scope.breadcrumb = '';
