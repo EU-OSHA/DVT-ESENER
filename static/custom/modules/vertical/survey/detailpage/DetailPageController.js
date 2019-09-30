@@ -144,6 +144,9 @@ define(function (require) {
 				if($rootScope.answersNationalComparisons.pCompanyFilter != $scope.pCompanyFilter){
 					questionOrFilterChanged = true;
 				}
+				if($rootScope.answersNationalComparisons.pLocale != $scope.pLocale){
+                    questionOrFilterChanged = true;
+                }
 			}
 		}
 
@@ -495,6 +498,7 @@ define(function (require) {
 						$scope.answers.pCountry2 = $scope.pCountry2;
 						$scope.answers.pActivityFilter = $scope.pActivityFilter;
 						$scope.answers.pCompanyFilter = $scope.pCompanyFilter;
+						$scope.answers.pLocale = $scope.pLocale;
 						$scope.answers.data = list;
 						$rootScope.answersNationalComparisons = $scope.answers;
 						
