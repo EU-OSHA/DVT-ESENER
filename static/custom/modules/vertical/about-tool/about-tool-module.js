@@ -34,8 +34,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L22019 +  " | " + i18n.L22001,
-                description: i18n.L22019,
+                title: "Methodology | ESENER",
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
