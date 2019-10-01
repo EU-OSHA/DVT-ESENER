@@ -800,6 +800,9 @@
         }
       }   
     }
+    &.countryComparisonWith{
+      display: none;
+    }
     &.active{
       select{
         background: $aquamarine;
@@ -900,14 +903,66 @@
     }
   }
 }
+
+
+.filters--and--typechart{
+  display: flex;
+  .countryComparisonWith{
+    min-width: auto;
+    position: relative;
+    top: -1.5rem;
+    label{
+      display:block;
+      max-width: 100%;
+      margin: 0;
+      font-weight: normal;
+      &.disabled{
+        visibility: hidden !important;
+        //display: none !important;
+      }
+    }
+    select{
+      width: auto;
+      margin: 0rem 0 0;
+      padding: 1.1rem 2rem;
+      background: $aquamarine;
+      color: $white;
+      position: relative;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none;
+      &::-ms-expand {
+        display: none;
+      }
+      option{
+        background: $white;
+        color: $gray;
+      }
+    }
+    &:after {
+      content: "\f107";
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-size: 2rem;
+      height: auto;
+      padding: 1rem;
+      position: absolute;
+      color: $white;
+      right: 0;
+      top: 1.5rem;
+      pointer-events: none;
+    }
+  }  
+}
+
 .note-select{
   color: $aquamarine;
 }
 .block--typechart--wrapper{
   display: flex;
   justify-content:flex-start;
-  width: 100%;
-  margin: 0;
+  margin-left: auto;
   .filter-text{
     position: relative;
     display: flex;
@@ -1258,9 +1313,15 @@ and (max-width : 1250px) {
       .countryComparisonWith{
         width: 45%;
         margin: 0;
+        display: block;
       }
       .block--typechart--wrapper{
         width: calc(80% + 6rem);
+      }
+    }
+    .filters--and--typechart{
+      .countryComparisonWith{
+        display: none;
       }
     }
   }
@@ -1293,6 +1354,16 @@ and (max-width : 1024px) {
       .questions--list--wrapper{
         width: 100%;
       }      
+    }
+    .block--filter--wrapper{
+      .countryComparisonWith{
+        display: block;
+      }
+    }
+    .filters--and--typechart{
+      .countryComparisonWith{
+        display: none;
+      }
     }
   }
   #select2-drop {
@@ -1467,11 +1538,15 @@ and (max-width : 768px) {
     }
   }   
   .block--typechart--wrapper{
-     flex-wrap: wrap;
-     .sort-by{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    .sort-by{
       width: 100%;
       margin: 0 0 4rem 0;
-     }
+    }
     .chart--selection--block{
       display: block;
       padding: 0 !important;
