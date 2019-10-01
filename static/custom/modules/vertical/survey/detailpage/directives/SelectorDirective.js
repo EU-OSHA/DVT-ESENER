@@ -86,16 +86,20 @@ define(function (require) {
 
 				scope.isNull = function(text, type){
 					if(scope.question != null){
-						if(scope.question.next == null && type == 'n'){
-							text = 'Use of health and safety services: An occupational health doctor';
-						}
-
-						if(scope.question.previous == null && type == 'p'){
-							text = 'Is there a health and safety committee in your establishment?';
-						}
-
-						if(scope.question.grandfather != undefined){
-							return scope.i18n['L'+scope.question.father] + ': ' + text;
+						if(scope.question.previousLevel != 1 && type == 'p'){
+							//$log.warn('scope.question.previousLevel != 1 && type == p');
+							if(scope.question.previous == null){
+								text = 'Is there a health and safety committee in your establishment?';
+							}else{
+								return scope.i18n['L'+scope.question.previousFatherName] + ': ' + text;
+							}
+						}else if(scope.question.nextLevel != 1 && type == 'n'){
+							if(scope.question.next == null && type == 'n'){
+								text = 'Use of health and safety services: An occupational health doctor';
+							}else{
+								return scope.i18n['L'+scope.question.nextFatherName] + ': ' + text;
+							}
+							//$log.warn('scope.question.nextLevel != 1 && type == n');
 						}
 					}
 					return text;
@@ -119,7 +123,13 @@ define(function (require) {
 							nextName: data[0][7],
 							father: data[0][8],
 							grandfather: data[0][9],
-							answer_id: data[0][10]
+							answer_id: data[0][10],
+							previousFatherID: data[0][11],
+							previousFatherName: data[0][12],
+							previousLevel: data[0][13],
+							nextFatherID: data[0][14],
+							nextFatherName: data[0][15],
+							nextLevel: data[0][16]
 						}
 					}
 
@@ -145,8 +155,15 @@ define(function (require) {
 							nextID: question.nextID,
 							father: question.father,
 							grandfather: question.grandfather,
-							answer: question.answer_id
+							answer: question.answer_id,
+							previousFatherID: question.previousFatherID,
+							previousFatherName: question.previousFatherName,
+							previousLevel: question.previousLevel,
+							nextFatherID: question.nextFatherID,
+							nextFatherName: question.nextFatherName,
+							nextLevel: question.nextLevel
 						}
+						$log.warn(scope.question);
 					}
 				});
 
