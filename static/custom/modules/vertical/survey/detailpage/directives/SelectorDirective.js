@@ -329,6 +329,7 @@ define(function (require) {
 							pLanguage: scope.pLanguage,
 							pLocale: scope.pLocale,
 							pChart: scope.chart, //Type of chart
+							pTopic: scope.topic,
 							pQuestion: scope.indicator, //Question name
 							pAnswer: scope.filters.answer, //Split answer
 							pSectorSize: scope.filters.sectorSize,
@@ -421,6 +422,7 @@ define(function (require) {
 
 					$state.transitionTo('detailpage-national-comparisons', {
 						pIndicator: scope.dataset, //Year
+						pTopic: scope.topic,
 						pChart: 'national-comparisons', //Type of chart
 						pQuestion: scope.indicator, //Question name
 						pAnswer: scope.filters.answer, //Split answer
