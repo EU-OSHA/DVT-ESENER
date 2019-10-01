@@ -375,6 +375,7 @@
             position: relative;
             &:after{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/download-icon.png);
+              background: url(none);
               position: absolute;
               right: 1rem;
             }
@@ -898,6 +899,58 @@
 
     }
   }
+}
+
+.filters--and--typechart{
+  display: flex;
+  align-items: center;
+  .countryComparisonWith{
+    min-width: auto;
+    position: relative;
+    top: -1.5rem;
+    label{
+      display:block;
+      max-width: 100%;
+      margin: 0;
+      font-weight: normal;
+      &.disabled{
+        visibility: hidden !important;
+        //display: none !important;
+      }
+    }
+    select{
+      width: auto;
+      margin: 0.5rem 0 0;
+      padding: 1.1rem 2rem;
+      background: $aquamarine;
+      color: $white;
+      position: relative;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none;
+      &::-ms-expand {
+        display: none;
+      }
+      option{
+        background: $white;
+        color: $gray;
+      }
+    }
+    &:after {
+      content: "\f107";
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-size: 2rem;
+      height: auto;
+      padding: 1rem;
+      position: absolute;
+      color: $white;
+      right: 0;
+      top: 1.5rem;
+      pointer-events: none;
+    }
+  }  
 }
 .note-select{
   color: $aquamarine;
