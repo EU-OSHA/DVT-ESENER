@@ -800,6 +800,9 @@
         }
       }   
     }
+    &.countryComparisonWith{
+      display: none;
+    }
     &.active{
       select{
         background: $aquamarine;
@@ -958,8 +961,7 @@
 .block--typechart--wrapper{
   display: flex;
   justify-content:flex-start;
-  width: 100%;
-  margin: 0;
+  margin-left: auto;
   .filter-text{
     position: relative;
     display: flex;
@@ -1310,9 +1312,15 @@ and (max-width : 1250px) {
       .countryComparisonWith{
         width: 45%;
         margin: 0;
+        display: block;
       }
       .block--typechart--wrapper{
         width: calc(80% + 6rem);
+      }
+    }
+    .filters--and--typechart{
+      .countryComparisonWith{
+        display: none;
       }
     }
   }
@@ -1345,6 +1353,16 @@ and (max-width : 1024px) {
       .questions--list--wrapper{
         width: 100%;
       }      
+    }
+    .block--filter--wrapper{
+      .countryComparisonWith{
+        display: block;
+      }
+    }
+    .filters--and--typechart{
+      .countryComparisonWith{
+        display: none;
+      }
     }
   }
   #select2-drop {
@@ -1516,11 +1534,15 @@ and (max-width : 768px) {
     }
   }   
   .block--typechart--wrapper{
-     flex-wrap: wrap;
-     .sort-by{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    .sort-by{
       width: 100%;
       margin: 0 0 4rem 0;
-     }
+    }
     .chart--selection--block{
       display: block;
       padding: 0 !important;

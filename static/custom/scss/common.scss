@@ -81,20 +81,32 @@
       color: $orange;
     }
     &.external{
-      &[target=_blank]{
-        margin-right: 0.5em;
-        word-wrap: break-word;
-        &:after{
-          background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/external_link.png) transparent right 30% no-repeat;
-          margin-left:0em;
-          padding-right: 0;
-          width: 15px;
-          height: 15px;
-          display: inline-block;
-          content: " ";
-        }
+      margin-right: 0.5em;
+      word-wrap: break-word;
+      &:after{
+        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/external_link.png) transparent right 30% no-repeat;
+        margin-left:0em;
+        padding-right: 0;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        content: " ";
       }
     }
+    &[target="_blank"], 
+    &[target="blank"]{
+      margin-right: 0.5em;
+      word-wrap: break-word;
+      &:after{
+        background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/external_link.png) transparent right 30% no-repeat;
+        margin-left:0em;
+        padding-right: 0;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+        content: " ";
+      }
+    }    
   }
   .affix {
     position: fixed;
@@ -1716,5 +1728,21 @@
    *::-ms-backdrop, .foo { color: red } /* IE11 */
   .survey--map--block .map--block .dvt--map--block svg, .survey--map--block .map--block div[id^='dvt_map'] svg{
     height:680px !important
+  }
+}
+
+
+.footer-elements, header{
+  a.external, 
+  a[target="_blank"], 
+  a[target="blank"]{
+    margin-right: 0em;
+    &:after{
+      background: url(none);
+      margin-left:0em;
+      padding-right: 0;
+      width: 1px;
+      height: 1px;
+    }
   }
 }
