@@ -19,7 +19,30 @@
         position: initial; 
         .content--intro--wrapper{
           position: initial;
-          width: 92%;    
+          width: 92%;
+          h1{
+            margin-bottom: 1rem;
+          }
+          > p{
+            font-style: italic;
+            font-size: 1.4rem;
+            .level1-bread{
+              color: $black;
+            }
+            .level2-bread{
+              color: $gray;
+            }
+          }   
+        }
+        .content--introchart--wrapper{
+          .title-question{
+            margin-bottom: 1rem;
+            margin-top: 3rem;
+          }
+          .description--question{
+            //font-style: italic;
+            padding: 0 0 2rem 0;
+          }
         }
       }
     }  
@@ -273,8 +296,6 @@
   box-shadow: none;
   resize: none; /*remove the resize handle on the bottom right*/
 }
-
-
 .questions--list--wrapper{
   .filter--questions--group--wrapper{
     > p{
@@ -373,11 +394,12 @@
             font-family: "OpenSans-bold";
             padding: 1.5rem;
             position: relative;
+            margin: 0;
             &:after{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/download-icon.png);
               background: url(none);
               position: absolute;
-              right: 1rem;
+              right: 1.5rem;
             }
             &:hover{
               opacity: 0.6;
@@ -510,7 +532,6 @@
     }
   }
 }
-
 #select2-drop{
   background-color:#666;
   color: #FFF;
@@ -566,7 +587,6 @@
     }
   }
 }
-
 .questions--list--wrapper{
     position: relative;
     z-index: 10;
@@ -633,7 +653,6 @@
     }   
   }
 }
-
 .block--filter--wrapper{
   display: flex;
   justify-content:flex-start;
@@ -904,8 +923,6 @@
     }
   }
 }
-
-
 .filters--and--typechart{
   display: flex;
   align-items: center;
@@ -957,7 +974,6 @@
     }
   }  
 }
-
 .note-select{
   color: $aquamarine;
 }
@@ -1274,6 +1290,7 @@ ul.question--by--question {
     }
   }
 }
+
 
 
 @media only screen 
