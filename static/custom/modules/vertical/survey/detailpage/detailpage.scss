@@ -24,8 +24,8 @@
             margin-bottom: 1rem;
           }
           > p{
-            font-style: italic;
-            font-size: 1.4rem;
+            //font-style: italic;
+            //font-size: 1.4rem;
             .level1-bread{
               color: $black;
             }
@@ -40,7 +40,7 @@
             margin-top: 3rem;
           }
           .description--question{
-            //font-style: italic;
+            font-style: italic;
             padding: 0 0 2rem 0;
           }
         }
