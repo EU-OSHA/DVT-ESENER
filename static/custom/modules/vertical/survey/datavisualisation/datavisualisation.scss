@@ -82,7 +82,6 @@
           background-position: 1rem center !important;
           &.icon--card{
             height:10rem;
-            word-break: break-all;
             &:hover{
               background-position: 1rem center !important;
             }
@@ -99,6 +98,40 @@
             right: 0;
             text-align: left;
             height: auto;
+          }
+        }
+      }
+    }
+    &.de{
+      .card--grid{
+        .card--item{
+          width: 100%;
+          &.min-height{
+            .title--card{
+              min-height: 14rem;
+            }
+          }
+          a{
+            background-position: 1rem 1rem !important;
+            &.icon--card{
+              height: 14rem;
+              &:hover{
+                background-position: 1rem 1rem !important;
+              }
+            }
+            span{
+              position: absolute;
+              bottom: auto;
+              top: 9rem;
+              left: auto;
+              min-height: auto;
+              width: 100%;
+              padding: 0 1.3rem;
+              display: block;
+              right: 0;
+              text-align: left;
+              height: auto;
+            }
           }
         }
       }
