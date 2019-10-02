@@ -10,7 +10,19 @@
   }
   .subtitle--section{
     font-size: 2rem;
-  } 
+  }
+}
+@media (max-width: 1200px) {
+  .datavisualisation-page{
+    &.de{
+      .card--grid{
+        flex-wrap: wrap;
+        .card--item{
+          width: 50%;
+        }
+      }
+    }
+  }
 }
 @media (max-width: 767px) {
   .datavisualisation-page{
@@ -43,6 +55,13 @@
             right: 0;
             text-align: left;
           }
+        }
+      }
+    }
+    &.de{
+      .card--grid{
+        .card--item{
+          width: 100%;
         }
       }
     }

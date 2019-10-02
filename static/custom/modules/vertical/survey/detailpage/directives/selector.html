@@ -4,7 +4,7 @@
         <h1 data-ng-if="dataset == '2009'" class="title--section second-color" data-ng-bind="i18n.L101007"></h1>
         <h1 data-ng-if="dataset == '2014'" class="title--section second-color" data-ng-bind="i18n.L101008"></h1>
         <!-- Breadcrumb -->        
-		<p data-ng-bind="question.breadcrumb"></p>
+		<p data-ng-bind-html="question.breadcrumb"></p>
         <ul class="question--by--question">
             <li><a data-ng-click="changeQuestion(question.previousID, 'p')" title="{{isNull(question.previous, 'p')}}" data-ng-bind="trim(question.previous, 'p')"></a></li>
             <li><a data-ng-click="changeQuestion(question.nextID, 'n')" title="{{isNull(question.next, 'n')}}" data-ng-bind="trim(question.next, 'n')"></a></li>

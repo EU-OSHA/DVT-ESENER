@@ -138,11 +138,11 @@ define(function (require) {
 						var breadcrumb = "";
 						if (question.level == 2)
 						{
-							breadcrumb = scope.i18n["L"+question.father] + " / " + scope.i18n["L"+question.name3];
+							breadcrumb = '<span class="level1-bread">' + scope.i18n["L"+question.father] + '</span>' + " / " + '<span class="level2-bread">' + scope.i18n["L"+question.name3] + "</span>";
 						}
 						else if (question.level == 3)
 						{
-							breadcrumb = scope.i18n["L"+question.grandfather] + " / " + scope.i18n["L"+question.father] + ": " + scope.i18n["L"+question.name2];
+							breadcrumb = '<span class="level1-bread">' + scope.i18n["L"+question.grandfather] + '</span>' + " / " + '<span class="level2-bread">' + scope.i18n["L"+question.father] + ": " + scope.i18n["L"+question.name2]  + "</span>";
 						}
 
 						scope.question = {
