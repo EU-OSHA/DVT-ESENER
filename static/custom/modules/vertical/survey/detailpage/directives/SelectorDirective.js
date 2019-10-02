@@ -241,7 +241,17 @@ define(function (require) {
 						pLanguage: scope.pLanguage,
 						pLocale: scope.pLocale,
 						pQuestion: $stateParams.pQuestion,
-						pTopic: scope.topic
+						pTopic: scope.topic,
+						pIndicator: scope.dataset, //Year
+						pChart: scope.chart, //Type of chart
+						pAnswer: scope.filters.answer, //Split answer
+						pSectorSize: scope.filters.sectorSize,
+						pActivityFilter: scope.filters.activitySector,
+						pCompanyFilter: scope.filters.establishmentSize,
+						pCountry: scope.filters.country,
+						pCountry2: scope.filters.country2,
+						pEuOnly: scope.noneu,
+						pSortBy: (scope.chart == 'european-bar-chart')?scope.filters.answer:'0'
 					}, 
 					{
 						reload: true,
