@@ -376,13 +376,13 @@
       AND t.literal_id =sa.literal_id
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
       ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('CH', 'NO', 'TR')) ELSE n.id = p.nuts_id END
+      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR')) ELSE n.id = p.nuts_id END
       AND t.language = ${pLocale}
       AND t2.literal_id = n.literal_id
       AND t2.language = ${pLocale}
       AND v.dataset_id = ${pDataset}
       ORDER BY CASE WHEN ${pDataset} = 15 THEN FIELD('EU28', n.country_code) ELSE FIELD('EU27', n.country_code) END DESC,
-      CASE WHEN ${pAnswer}=0 THEN FIELD(n.country_code, 'CH', 'NO', 'TR') END ASC, 
+      CASE WHEN ${pAnswer}=0 THEN FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR') END ASC, 
       CASE WHEN ${pAnswer}!=0 THEN FIELD(${pAnswer}, eao.answer_id) END DESC, CASE WHEN ${pAnswer}=0 THEN n.country_code END ASC, eao.order_position ASC, 
       CASE WHEN ${pAnswer}!=0 THEN Value END DESC
     </Query>

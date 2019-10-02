@@ -163,7 +163,7 @@ define(function (require) {
 							nextFatherName: question.nextFatherName,
 							nextLevel: question.nextLevel
 						}
-						$log.warn(scope.question);
+						//$log.warn(scope.question);
 					}
 				});
 
@@ -271,10 +271,18 @@ define(function (require) {
 				scope.changeQuestion = function (pQuestionID, type)
 				{
 					if(pQuestionID == null){
-						if(type == 'n'){
-							pQuestionID = 'MM150_1';
-						}else if(type == 'p'){
-							pQuestionID = 'MM358';
+						if(scope.dataset == 2009){
+							if(type == 'n'){
+								pQuestionID = 'MM150_1';
+							}else if(type == 'p'){
+								pQuestionID = 'MM358';
+							}
+						}else{
+							if(type == 'n'){
+								pQuestionID = 'Q150_1';
+							}else if(type == 'p'){
+								pQuestionID = 'Q358';
+							}
 						}
 					}
 
