@@ -134,6 +134,8 @@ define(function (require) {
                     var textObj = pathObj.paper.text(bbox.x + bbox.width / 2.6, bbox.y + bbox.height /2, text).attr(textattr);
                 }else if(pathObj.id == 'AT'){
                     var textObj = pathObj.paper.text(bbox.x + bbox.width / 1.5, bbox.y + bbox.height /2, text).attr(textattr);
+                }else if(pathObj.id == 'ME'){
+                    var textObj = pathObj.paper.text(bbox.x + bbox.width / 2, bbox.y + bbox.height /2.6, text).attr(textattr);
                 }else{
                     var textObj = pathObj.paper.text(bbox.x + bbox.width / 2, bbox.y + bbox.height / 2, text).attr(textattr);
                 }

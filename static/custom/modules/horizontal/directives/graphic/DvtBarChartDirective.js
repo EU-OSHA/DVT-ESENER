@@ -640,6 +640,13 @@ define(function (require) {
                             }
                         }
 
+                        if(scene.previousSibling != null){
+                            if(scene.previousSibling.previousSibling == null){
+                                return 'middle';
+                            }
+                            
+                        }
+
                         return 'bottom';
                     };
 

@@ -348,6 +348,49 @@ define (function (require) {
                                     }else if(i == 4 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(1);
                                     }
+                                }else if(colors.length == 6){
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(12));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(2));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
+                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+                                    if(i == 0 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(12);
+                                    }else if(i == 1 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(2);
+                                    }else if(i == 2 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(3);
+                                    }else if(i == 3 && series.value == colors[i]){
+                                        return dvtUtils.getAccidentsColors(4);
+                                    }else if(i == 4 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(22);
+                                    }else if(i == 5 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(1);
+                                    }
+                                }else if(colors.length == 7){
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(4));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(12));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(2));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
+                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+                                    if(i == 0 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(4);
+                                    }else if(i == 1 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(12);
+                                    }else if(i == 2 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(2);
+                                    }else if(i == 3 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(3);
+                                    }else if(i == 4 && series.value == colors[i]){
+                                        return dvtUtils.getAccidentsColors(4);
+                                    }else if(i == 5 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(22);
+                                    }else if(i == 6 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(1);
+                                    }
                                 }
                             }
 
