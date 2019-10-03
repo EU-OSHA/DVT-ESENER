@@ -106,7 +106,7 @@
         display: inline-block;
         content: " ";
       }
-    }    
+    }  
   }
   .affix {
     position: fixed;
@@ -1732,7 +1732,7 @@
 }
 
 
-.footer-elements, header{
+.footer-elements, header, .export--data--modal, .pageUrl{
   a.external, 
   a[target="_blank"], 
   a[target="blank"]{
@@ -1746,3 +1746,18 @@
     }
   }
 }
+a{
+  &.btn-default{
+    &[target="blank"]{
+      margin-right: 0em;
+      &:after{
+        background: url(none);
+        margin-left:0em;
+        padding-right: 0;
+        width: 1px;
+        height: 1px;
+      }
+    }
+  }    
+}
+
