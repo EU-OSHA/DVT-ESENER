@@ -136,6 +136,11 @@
             <p class="path" data-ng-if="breadCrumb.level == 0">
                 <span class='current-page' data-ng-bind="i18n_literals[breadCrumb.name]"></span>
             </p>
+            <p class="path" data-ng-if="breadCrumb.level == 1">
+                <span><a ui-sref='home({pLanguage: pLanguage})' data-ng-bind="i18n_literals.L355"></a></span>
+                <i class='fa fa-angle-right' aria-hidden='true'></i>
+                <span class='' data-ng-bind="i18n_literals[breadCrumb.name]"></span>
+            </p>
             <p class="path" data-ng-if="breadCrumb.level == 2">
                 <span><a ui-sref='home({pLanguage: pLanguage})' data-ng-bind="i18n_literals.L355"></a></span>
                 <i class='fa fa-angle-right' aria-hidden='true'></i>

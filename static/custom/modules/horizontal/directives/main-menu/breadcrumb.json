@@ -13,23 +13,23 @@
     },
     "about-tool":{
         "name":"L484",
-        "level":"0"
+        "level":"1"
     },
     "site-map":{
         "name":"L356",
-        "level":"0"
+        "level":"1"
     },
     "accessibility":{
         "name":"L358",
-        "level":"0"
+        "level":"1"
     },
     "privacy-policy":{
         "name":"L359",
-        "level":"0"
+        "level":"1"
     },
     "legal-notice":{
         "name":"L360",
-        "level":"0"
+        "level":"1"
     },
     "404":{
         "name":"L355",
