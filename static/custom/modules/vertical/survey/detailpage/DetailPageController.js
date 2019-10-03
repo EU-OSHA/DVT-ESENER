@@ -66,12 +66,13 @@ define(function (require) {
 
 		$scope.sortBy = $stateParams.pSortBy;
 
-        $log.warn($scope.nonEU);
+        //$log.warn($scope.nonEU);
 
-		var resolution = $(window).width();;
+		var resolution = $(window).width();
+		//$scope.heightNationalBarChart = $scope.pQuestion == 'Q254gr' ? 250: 100;
 		$scope.angle = resolution > 768 ? 1 : 0;
 		$scope.pieChartHeight = resolution > 600 ? 600 : 400;
-		$scope.pieChartFont =  resolution > 600 ? '20px OpenSans-bold' : '14px OpenSans-bold';
+		$scope.pieChartFont =  resolution > 600 ? '16px OpenSans-bold' : '14px OpenSans-bold';
 
 		$(window).on("resize",function(e){
 	      if(window.outerWidth != resolution){
