@@ -1732,7 +1732,7 @@
 }
 
 
-.footer-elements, header, .export--data--modal, .pageUrl{
+.footer-elements, header, .export--data--modal, .pageUrl, .social--network--modal{
   a.external, 
   a[target="_blank"], 
   a[target="blank"]{
@@ -1743,6 +1743,7 @@
       padding-right: 0;
       width: 1px;
       height: 1px;
+      display: none;
     }
   }
 }
@@ -1756,6 +1757,7 @@ a{
         padding-right: 0;
         width: 1px;
         height: 1px;
+        display: none;
       }
     }
   }    

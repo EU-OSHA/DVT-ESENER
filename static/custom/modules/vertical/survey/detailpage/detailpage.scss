@@ -1719,6 +1719,8 @@ and (max-width : 767px){
   #popUpMessage{
     .popUpMessage--exportData--text--block{
       width: 100%;
+      margin: 6vh 0vw;
+      padding: 0vh 2vw;
       > p{
         font-size: 1.6rem;
         margin: 0rem 0 2rem;
@@ -1770,7 +1772,6 @@ and (max-width : 767px){
 }
 @media only screen 
 and (max-width : 375px){
-
   .detail-page{
     .filter-text, .filter-text-button{
       button{
@@ -1778,6 +1779,15 @@ and (max-width : 375px){
         width: 100% !important;
       }
     }
+    #popUpMessage{
+      .popUpMessage--exportData--text--block{
+        .export--data--modal{
+          > a{
+            width: 100%;
+          }
+        }
+      }
+    }  
   }
 
   .block--typechart--wrapper{
@@ -1807,5 +1817,13 @@ and (max-width : 375px){
     svg{
       height: 400px !important;
     }
+  }
+}
+
+@media only screen 
+and (max-height:767px){
+  .dvt-modal-social .modal-wrapper {
+      height: 100vh;
+      overflow: auto;
   }
 }
