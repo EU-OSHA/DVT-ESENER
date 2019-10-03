@@ -105,7 +105,6 @@ define(function (require) {
                     var i18n_literals = configService.getLiterals();
 
                     var breadCrumbStructure = require('json!dvt/directives/breadcrumb-items');
-                    var breadCrumbStructure2 = require('json!dvt/directives/breadcrumb-items-2');
                     var titleStructure = require('json!dvt/directives/title-items');
 
                     var path = configService.getHorizontalDirectiveDataPath("main-menu", "menu");
@@ -183,7 +182,7 @@ define(function (require) {
                             $scope.breadCrumb = breadCrumbStructure[$state.current.name];
                             $scope.titleHeader = $scope.i18n_literals.L22020;
 
-                            /*if ($state.current.name == 'home') {
+                            if ($state.current.name == 'home') {
                                 $scope.isHome = true;                                
                                 $scope.title = titleStructure[$state.current.name];
                                 $scope.title = $scope.i18n_literals[$scope.title];
@@ -191,7 +190,7 @@ define(function (require) {
                                 var pathURL = path.split("/");
                                 $scope.isHome = false;
                                 $scope.isFooterPage = false;
-                                var setBreadCrumbs=function() {
+                                /*var setBreadCrumbs=function() {
                                     var _link = $compile((params == null)?breadCrumbStructure[$state.current.name]:breadCrumbStructure[$state.current.name+params])($scope);
                                     var breadcrumb = "";
                                     for (var i = 0; i < _link.size(); i++)
@@ -205,8 +204,8 @@ define(function (require) {
                                     $scope.anchorPath = $location.path().split("/")[1];
                                 };
 
-                                setBreadCrumbs();
-                            }*/
+                                setBreadCrumbs();*/
+                            }
 
                             $scope.isFooterPage = false;
 
