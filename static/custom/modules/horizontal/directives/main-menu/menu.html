@@ -145,19 +145,6 @@
                 <span data-ng-bind="i18n_literals[breadCrumb.name]"></span>
             </p>
         </div>
-        <div class="breadcrumbs">
-            <p class="path" data-ng-if="breadCrumb2.level == 0">
-                <span class='current-page' data-ng-bind="i18n_literals[breadCrumb2.name]"></span>
-            </p>
-            <p class="path" data-ng-if="breadCrumb2.level == 2">
-                <span><a ui-sref='home({pLanguage: pLanguage})' data-ng-bind="i18n_literals.L355"></a></span>
-                <i class='fa fa-angle-right' aria-hidden='true'></i>
-                <span class='current-page' data-ng-if="year == 2009"><a ui-sref='overview({pIndicator: 2009, pLanguage: pLanguage})' data-ng-bind="i18n_literals.L101007"></a></span>
-                <span class='current-page' data-ng-if="year == 2014"><a ui-sref='overview({pIndicator: 2014, pLanguage: pLanguage})' data-ng-bind="i18n_literals.L101008"></a></span>
-                <i class='fa fa-angle-right' aria-hidden='true'></i>
-                <span data-ng-bind="i18n_literals[breadCrumb2.name]"></span>
-            </p>
-        </div>
         <div class="social--network--nav" id="osha-menu-social">
             <label data-ng-bind="i18n_literals.L369"></label>
             <ul>
