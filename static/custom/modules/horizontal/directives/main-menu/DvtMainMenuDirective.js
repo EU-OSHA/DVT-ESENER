@@ -105,6 +105,7 @@ define(function (require) {
                     var i18n_literals = configService.getLiterals();
 
                     var breadCrumbStructure = require('json!dvt/directives/breadcrumb-items');
+                    var breadCrumbStructure2 = require('json!dvt/directives/breadcrumb-items-2');
                     var titleStructure = require('json!dvt/directives/title-items');
 
                     var path = configService.getHorizontalDirectiveDataPath("main-menu", "menu");
@@ -177,10 +178,12 @@ define(function (require) {
                             i18n_literals = ($stateParams.pLanguage == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLanguage);
                             $scope.i18n_literals = i18n_literals;
                             
-                            $scope.breadCrumb = (params == null)?breadCrumbStructure[$state.current.name]:breadCrumbStructure[$state.current.name+params];
+                            $scope.year = $state.params.pIndicator;
+
+                            $scope.breadCrumb = breadCrumbStructure[$state.current.name];
                             $scope.titleHeader = $scope.i18n_literals.L22020;
 
-                            if ($state.current.name == 'home') {
+                            /*if ($state.current.name == 'home') {
                                 $scope.isHome = true;                                
                                 $scope.title = titleStructure[$state.current.name];
                                 $scope.title = $scope.i18n_literals[$scope.title];
@@ -203,7 +206,7 @@ define(function (require) {
                                 };
 
                                 setBreadCrumbs();
-                            }
+                            }*/
 
                             $scope.isFooterPage = false;
 
