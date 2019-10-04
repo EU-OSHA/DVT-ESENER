@@ -35,6 +35,8 @@ define(function (require) {
         if($scope.pIndicator == '2009' && ($scope.pLanguage == 'is' || $scope.pLanguage == 'sv')){
             //$log.warn('entra');
             $scope.pLocale = 'en';
+        }else if($scope.pIndicator == '2014' && $scope.pLanguage == 'en'){
+            $scope.pLocale = 'en_1';
         }
 
         $(window).on("resize",function(e){

@@ -52,6 +52,8 @@ define(function (require) {
                         if ($state.current.name !== undefined) {
                             if($scope.pIndicator == '2009' && ($scope.pLanguage == 'is' || $scope.pLanguage == 'sv')){
                                 local = 'en';
+                            }else if($scope.pIndicator == '2014' && $scope.pLanguage == 'en'){
+                                local = 'en_1';
                             }
                             $state.go($state.current.name, {
                                 pLanguage: $scope.pLanguage,
