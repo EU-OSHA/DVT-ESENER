@@ -443,8 +443,75 @@ define(function (require) {
 				//With this only charges splits of company size. If we change to activity sector it is never reload.
 				if($rootScope.nationalBarChartIndicators == undefined || questionOrFilterChanged){
 					questionOrFilterChanged = false;
+					if($scope.pSectorSize == 'activity-sector'){
+						dataService.getActivitySectorsSelect($scope.pQuestion).then(function (data) 
+						{
+							var list = [];
+							data.data.resultset.map(function (elem) 
+							{
+								if(elem[0] != 14){
+									list.push({
+										id: elem[0],
+										name: elem[1]
+									});
+								}else{
+									$scope.all = {
+										id: elem[0],
+										name: elem[1]
+									};
+								}
+							});
 
-					dataService.getNationalBarChartIndicators($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, $scope.pSectorSize).then(function (data) 
+							list.push($scope.all);
+
+							//$scope.indicators = $rootScope.nationalBarChartIndicators;
+							$scope.indicators.data = list;
+							$scope.indicators.pQuestion = $scope.pQuestion;
+							$scope.indicators.sectorsize = $scope.pSectorSize;
+							$rootScope.nationalBarChartIndicators = $scope.indicators;
+							
+							//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:[];
+							
+						}).catch(function (err) 
+						{
+							throw err;
+						});
+					}else{
+						dataService.getEstablishmentSizesSelect($scope.pQuestion).then(function (data) 
+						{
+							var list = [];
+							data.data.resultset.map(function (elem) 
+							{
+								if(elem[0] != 11){
+									list.push({
+										id: elem[0],
+										name: elem[1]
+									});
+								}else{
+									$scope.all = {
+										id: elem[0],
+										name: elem[1]
+									};
+								}
+							});
+
+							list.push($scope.all);
+
+							//$scope.indicators = $rootScope.nationalBarChartIndicators;
+							$scope.indicators.data = list;
+							$scope.indicators.pQuestion = $scope.pQuestion;
+							$scope.indicators.sectorsize = $scope.pSectorSize;
+							$rootScope.nationalBarChartIndicators = $scope.indicators;
+							
+							//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:[];
+							
+						}).catch(function (err) 
+						{
+							throw err;
+						});
+					}
+
+					/*dataService.getNationalBarChartIndicators($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, $scope.pSectorSize).then(function (data) 
 					{
 						var list = [];
 						data.data.resultset.map(function (elem) 
@@ -466,7 +533,7 @@ define(function (require) {
 					}).catch(function (err) 
 					{
 						throw err;
-					});
+					});*/
 
 					//$scope.indicators = [];
 					//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:$rootScope.indicatorsActivity;
@@ -509,7 +576,7 @@ define(function (require) {
 					//$log.warn($rootScope.answersNationalComparisons);
 					$state.reload();
 				}else{
-					$scope.answers = [];
+					//$scope.answers = [];
 					$scope.answers = $rootScope.answersNationalComparisons; 
 					//$log.warn($scope.answers);
 				}
@@ -576,7 +643,7 @@ define(function (require) {
 		$scope.changeToQuestion = function(question, anchor){
 			var topic = '';
 			$scope.pQuestion = question.category;
-
+			//$log.warn(anchor);
 			var answer = question.answer_id;
 
 			if($scope.pChart == 'european-bar-chart'){
