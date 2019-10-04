@@ -576,7 +576,7 @@ define(function (require) {
 					//$log.warn($rootScope.answersNationalComparisons);
 					$state.reload();
 				}else{
-					//$scope.answers = [];
+					$scope.answers = [];
 					$scope.answers = $rootScope.answersNationalComparisons; 
 					//$log.warn($scope.answers);
 				}
