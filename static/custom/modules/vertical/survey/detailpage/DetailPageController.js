@@ -75,6 +75,7 @@ define(function (require) {
 		$scope.pieChartFont =  resolution > 600 ? '16px OpenSans-bold' : '14px OpenSans-bold';
 
 		$(window).on("resize",function(e){
+			$('.chart--wrapper').css('visibility','hidden');
 	      if(window.outerWidth != resolution){
 	        resolution = window.outerWidth;
 	        $state.reload();
