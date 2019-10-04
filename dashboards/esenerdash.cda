@@ -250,12 +250,15 @@
       <Parameter default="MM161" name="pQuestion" type="String" />
     </Parameters>
     <Query>
-      SELECT ec.LEVEL AS LEVEL, ec3.category AS previousID, ec3.name_3_literal_id AS previousName, ec.name_2_literal_id AS NAME2, ec.name_3_literal_id AS NAME3, ec.bottom_text_literal_id AS bottomText, ec4.category AS nextID, ec4.name_3_literal_id AS nextName, ec1.name_2_literal_id AS father, ec2.name_2_literal_id AS grandfather, IF(ec3.category IS NOT NULL,  eao.answer_id, NULL) as answer_id
+      SELECT ec.LEVEL AS LEVEL, ec3.category AS previousID, ec3.name_3_literal_id AS previousName, ec.name_2_literal_id AS NAME2, ec.name_3_literal_id AS NAME3, ec.bottom_text_literal_id AS bottomText, ec4.category AS nextID, ec4.name_3_literal_id AS nextName, ec1.name_2_literal_id AS father, ec2.name_2_literal_id AS grandfather, IF(ec3.category IS NOT NULL,  eao.answer_id, NULL) as answer_id,
+      ec5.id as previousFatherID, ec5.name_1_literal_id as previousFatherName, ec5.level as previousLevel, ec6.id as nextFatherID, ec6.name_1_literal_id as nextFatherName, ec6.level as nextLevel
       FROM esener_category ec
       INNER JOIN esener_category ec1 ON ec.father_id = ec1.id
       LEFT JOIN esener_category ec2 ON ec1.father_id=ec2.id
       LEFT JOIN esener_category ec3 ON ec.previous_id=ec3.id
       LEFT JOIN esener_category ec4 ON ec.next_id=ec4.id
+      LEFT JOIN esener_category ec5 ON ec3.father_id = ec5.id
+      LEFT JOIN esener_category ec6 ON ec4.father_id = ec6.id
       INNER JOIN indicator i ON i.name = ec.category
       INNER JOIN esener_answer_order eao ON i.id = eao.indicator_id AND eao.order_position = 1
       WHERE ec.category=${pQuestion};

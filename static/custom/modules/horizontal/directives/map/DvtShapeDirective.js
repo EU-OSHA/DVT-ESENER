@@ -184,10 +184,12 @@ define(function (require) {
 
                     for(index in this.answers){
                         var value = (this.answers[index].value != null)?this.answers[index].value:0;
-                        if(this.answers[index].id == scope.data.pAnswer){
+                        if(this.answers[index].id == scope.data.pAnswer && value!=0){
                             angular.element('.dvt-map-tooltip .data'+index).html( '<span><label><u>' + i18nLiterals['L'+this.answers[index].literal_id] +': </u></label><u>'+value+' </u>'+i18nLiterals['L283'] +'</span>');
                         }else{
-                            angular.element('.dvt-map-tooltip .data'+index).html( '<label>' + i18nLiterals['L'+this.answers[index].literal_id] +': </label>'+value+' '+i18nLiterals['L283'] );
+                            if(value!=0){
+                                angular.element('.dvt-map-tooltip .data'+index).html( '<label>' + i18nLiterals['L'+this.answers[index].literal_id] +': </label>'+value+' '+i18nLiterals['L283'] );
+                            }
                         }
                     }
 

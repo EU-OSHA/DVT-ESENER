@@ -236,6 +236,7 @@ define (function (require) {
                                     }else if(i == 1 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(1);
                                     }
+                                    this.sign.chart.options.height = 45*colors.length;
                                 }
                                 else if(colors.length == 3){
                                     this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
@@ -249,6 +250,7 @@ define (function (require) {
                                     }else if(i == 2 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(1);
                                     }
+                                    this.sign.chart.options.height = 45*colors.length;
                                 }else if(colors.length == 4){
                                     this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
                                     this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
@@ -263,6 +265,7 @@ define (function (require) {
                                     }else if(i == 3 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(1);
                                     }
+                                    this.sign.chart.options.height = 45*colors.length;
                                 }else if(colors.length == 5){
                                     this.sign.chart.options.colors.push(dvtUtils.getColorCountry(2));
                                     this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
@@ -280,6 +283,7 @@ define (function (require) {
                                     }else if(i == 4 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(1);
                                     }
+                                    this.sign.chart.options.height = 45*colors.length;
                                 }
                             }
 

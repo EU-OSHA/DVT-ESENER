@@ -187,7 +187,7 @@
 				background: $white;
 				height: 90px;
 		    .menu-tools-top--items{
-		    	padding: 1.5rem;
+		    	padding: 1.5rem 1.8rem 1.5rem 1.5rem;
 		    	margin: 0;
 					flex-direction: row-reverse;
 					display: flex;
@@ -861,7 +861,10 @@ and (max-width :767px)  {
     z-index: 1000;
   	.header--top{
 			.eu-osha-logo {
-
+				a{
+				  display: block;
+				  padding: 0;
+				}
 			}
 			.menu-tools-top{
 				//padding: 3.5rem 0 0;
@@ -1243,8 +1246,28 @@ and (max-width :620px) {
       margin: 1.4rem 0;
     }
   }
+}
+
+@media only screen 
+and (max-width :550px){
+	.level3--wrapper{
+		.submenu--level3{
+			.submenu--items--wrapper{
+				li{
+					a{
+						font-size: 2.2rem;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen 
+and (max-width :500px){
+
 	body{
-		padding-top: 18.5rem;
+		padding-top: 15rem;
 	}
 	.bar-header{
 		height:auto;
@@ -1257,10 +1280,11 @@ and (max-width :620px) {
 				> a{
 				  display: block;
 				  text-align: center;
+				  padding: 0rem;
 				  img{
 			  	  height: auto;
 						border-bottom: 1px solid #CCC;
-						padding-bottom: 1rem;
+						padding: 0rem;
 				  }
 				}
 			}
@@ -1315,26 +1339,6 @@ and (max-width :620px) {
 			}
 		}
 	}
-}
-
-@media only screen 
-and (max-width :550px){
-	.level3--wrapper{
-		.submenu--level3{
-			.submenu--items--wrapper{
-				li{
-					a{
-						font-size: 2.2rem;
-					}
-				}
-			}
-		}
-	}
-}
-
-@media only screen 
-and (max-width :420px){
-
 	
 }
 

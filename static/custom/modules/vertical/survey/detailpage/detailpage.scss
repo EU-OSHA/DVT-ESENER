@@ -19,7 +19,30 @@
         position: initial; 
         .content--intro--wrapper{
           position: initial;
-          width: 92%;    
+          width: 92%;
+          h1{
+            margin-bottom: 1rem;
+          }
+          > p{
+            //font-style: italic;
+            //font-size: 1.4rem;
+            .level1-bread{
+              color: $black;
+            }
+            .level2-bread{
+              color: $gray;
+            }
+          }   
+        }
+        .content--introchart--wrapper{
+          .title-question{
+            margin-bottom: 1rem;
+            margin-top: 3rem;
+          }
+          .description--question{
+            font-style: italic;
+            padding: 0 0 2rem 0;
+          }
         }
       }
     }  
@@ -273,8 +296,6 @@
   box-shadow: none;
   resize: none; /*remove the resize handle on the bottom right*/
 }
-
-
 .questions--list--wrapper{
   .filter--questions--group--wrapper{
     > p{
@@ -373,10 +394,12 @@
             font-family: "OpenSans-bold";
             padding: 1.5rem;
             position: relative;
+            margin: 0;
             &:after{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/download-icon.png);
+              background: url(none);
               position: absolute;
-              right: 1rem;
+              right: 1.5rem;
             }
             &:hover{
               opacity: 0.6;
@@ -509,7 +532,6 @@
     }
   }
 }
-
 #select2-drop{
   background-color:#666;
   color: #FFF;
@@ -565,7 +587,6 @@
     }
   }
 }
-
 .questions--list--wrapper{
     position: relative;
     z-index: 10;
@@ -576,15 +597,14 @@
   position: absolute;
   right: 10rem;
   top: 0;
-  //width: 14rem;
-  width: 35rem;
+  width: 24rem;
   text-align: right;
   margin:0 0 2rem 0;
   form.compare--block--form{    
     label{
       font-family: 'OpenSans';
       font-size: 1rem;
-      width: 50%;
+      width: 14rem;
     }
     > div{
       position: relative;
@@ -596,12 +616,13 @@
         font-family: 'OpenSans-Bold';
         font-size: 1.7rem;
         text-align-last:right;
-        padding-right: 3rem;
         background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-down.svg);
         background-repeat: no-repeat;
         background-position: 100%;
         background-size: 2rem 2rem;
         min-width: 21rem;
+        padding-right: 2.5rem;
+        width: 100% !important;
         &::-ms-expand {
           display: none;
         }
@@ -632,7 +653,6 @@
     }   
   }
 }
-
 .block--filter--wrapper{
   display: flex;
   justify-content:flex-start;
@@ -687,7 +707,7 @@
       select{
         width: 100%;
         margin: 1rem 0;
-        padding: 1rem 2rem;
+        padding:1rem 3rem 1rem 1rem;;
         background: $white;
         outline:1px solid $aquamarine;
         color: $aquamarine;
@@ -713,7 +733,7 @@
       select{
         width: 100%;
         margin: 1rem 0;
-        padding: 1rem 2rem;
+        padding:1rem 3rem 1rem 1rem;;
         background: $aquamarine;
         color:$white;
         position: relative;
@@ -728,7 +748,7 @@
       select{
         width: 100%;
         margin: 1rem 0;
-        padding: 1rem 2rem;
+        padding:1rem 3rem 1rem 1rem;;
         background: $white;
         outline:1px solid $aquamarine;
         color: $aquamarine;
@@ -754,7 +774,7 @@
       select{
         width: 100%;
         margin: 1rem 0;
-        padding: 1rem 2rem;
+        padding:1rem 3rem 1rem 1rem;;
         background: $white;
         outline:1px solid $aquamarine !important;
         color: $aquamarine;
@@ -799,6 +819,9 @@
           cursor: not-allowed;                    
         }
       }   
+    }
+    &.countryComparisonWith{
+      display: none;
     }
     &.active{
       select{
@@ -900,14 +923,64 @@
     }
   }
 }
+.filters--and--typechart{
+  display: flex;
+  align-items: center;
+  .countryComparisonWith{
+    min-width: auto;
+    position: relative;
+    top: -1.5rem;
+    label{
+      display:block;
+      max-width: 100%;
+      margin: 0;
+      font-weight: normal;
+      &.disabled{
+        visibility: hidden !important;
+        //display: none !important;
+      }
+    }
+    select{
+      width: auto;
+      margin: 0.5rem 0 0;
+      padding: 1.1rem 2rem;
+      background: $aquamarine;
+      color: $white;
+      position: relative;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: none;
+      &::-ms-expand {
+        display: none;
+      }
+      option{
+        background: $white;
+        color: $gray;
+      }
+    }
+    &:after {
+      content: "\f107";
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-size: 2rem;
+      height: auto;
+      padding: 1rem;
+      position: absolute;
+      color: $white;
+      right: 0;
+      top: 2.5rem;
+      pointer-events: none;
+    }
+  }  
+}
 .note-select{
   color: $aquamarine;
 }
 .block--typechart--wrapper{
   display: flex;
   justify-content:flex-start;
-  width: 100%;
-  margin: 0;
+  margin-left: auto;
   .filter-text{
     position: relative;
     display: flex;
@@ -1219,6 +1292,7 @@ ul.question--by--question {
 }
 
 
+
 @media only screen 
 and (min-width : 768px)  
 and (max-width : 1250px) {
@@ -1258,9 +1332,15 @@ and (max-width : 1250px) {
       .countryComparisonWith{
         width: 45%;
         margin: 0;
+        display: block;
       }
       .block--typechart--wrapper{
         width: calc(80% + 6rem);
+      }
+    }
+    .filters--and--typechart{
+      .countryComparisonWith{
+        display: none;
       }
     }
   }
@@ -1293,6 +1373,16 @@ and (max-width : 1024px) {
       .questions--list--wrapper{
         width: 100%;
       }      
+    }
+    .block--filter--wrapper{
+      .countryComparisonWith{
+        display: block;
+      }
+    }
+    .filters--and--typechart{
+      .countryComparisonWith{
+        display: none;
+      }
     }
   }
   #select2-drop {
@@ -1394,6 +1484,20 @@ and (max-width : 1024px) {
       //padding-right: 5%;
     }
   }
+  .content--lang--wrapper{
+    margin:2rem 0;
+    form.compare--block--form{    
+      label{
+
+      }
+      > div{
+        position: relative;
+        select{
+
+        }    
+      }   
+    }
+  }
 }
 
 @media only screen 
@@ -1429,8 +1533,7 @@ and (max-width : 1024px)  {
 
 @media only screen 
 and (max-width : 768px) { 
-
-  .detail-page{
+  .detail-page{    
     .detail--page--wrapper{
       .detail--content--section{
         .selector--page--elements{
@@ -1454,11 +1557,15 @@ and (max-width : 768px) {
     }
   }   
   .block--typechart--wrapper{
-     flex-wrap: wrap;
-     .sort-by{
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    .sort-by{
       width: 100%;
       margin: 0 0 4rem 0;
-     }
+    }
     .chart--selection--block{
       display: block;
       padding: 0 !important;

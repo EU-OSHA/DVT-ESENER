@@ -84,16 +84,20 @@ define(function (require) {
 
 				scope.isNull = function(text, type){
 					if(scope.question != null){
-						if(scope.question.next == null && type == 'n'){
-							text = 'Use of health and safety services: An occupational health doctor';
-						}
-
-						if(scope.question.previous == null && type == 'p'){
-							text = 'Is there a health and safety committee in your establishment?';
-						}
-
-						if(scope.question.grandfather != undefined){
-							return scope.i18n['L'+scope.question.father] + ': ' + text;
+						if(scope.question.previousLevel != 1 && type == 'p'){
+							//$log.warn('scope.question.previousLevel != 1 && type == p');
+							if(scope.question.previous == null){
+								text = 'Is there a health and safety committee in your establishment?';
+							}else{
+								return scope.i18n['L'+scope.question.previousFatherName] + ': ' + text;
+							}
+						}else if(scope.question.nextLevel != 1 && type == 'n'){
+							if(scope.question.next == null && type == 'n'){
+								text = 'Use of health and safety services: An occupational health doctor';
+							}else{
+								return scope.i18n['L'+scope.question.nextFatherName] + ': ' + text;
+							}
+							//$log.warn('scope.question.nextLevel != 1 && type == n');
 						}
 					}
 					return text;
@@ -117,7 +121,13 @@ define(function (require) {
 							nextName: data[0][7],
 							father: data[0][8],
 							grandfather: data[0][9],
-							answer_id: data[0][10]
+							answer_id: data[0][10],
+							previousFatherID: data[0][11],
+							previousFatherName: data[0][12],
+							previousLevel: data[0][13],
+							nextFatherID: data[0][14],
+							nextFatherName: data[0][15],
+							nextLevel: data[0][16]
 						}
 					}
 
@@ -126,11 +136,11 @@ define(function (require) {
 						var breadcrumb = "";
 						if (question.level == 2)
 						{
-							breadcrumb = scope.i18n["L"+question.father] + " / " + scope.i18n["L"+question.name3];
+							breadcrumb = '<span class="level1-bread">' + scope.i18n["L"+question.father] + '</span>' + " / " + '<span class="level2-bread">' + scope.i18n["L"+question.name3] + "</span>";
 						}
 						else if (question.level == 3)
 						{
-							breadcrumb = scope.i18n["L"+question.grandfather] + " / " + scope.i18n["L"+question.father] + ": " + scope.i18n["L"+question.name2];
+							breadcrumb = '<span class="level1-bread">' + scope.i18n["L"+question.grandfather] + '</span>' + " / " + '<span class="level2-bread">' + scope.i18n["L"+question.father] + ": " + scope.i18n["L"+question.name2]  + "</span>";
 						}
 
 						scope.question = {
@@ -143,8 +153,15 @@ define(function (require) {
 							nextID: question.nextID,
 							father: question.father,
 							grandfather: question.grandfather,
-							answer: question.answer_id
+							answer: question.answer_id,
+							previousFatherID: question.previousFatherID,
+							previousFatherName: question.previousFatherName,
+							previousLevel: question.previousLevel,
+							nextFatherID: question.nextFatherID,
+							nextFatherName: question.nextFatherName,
+							nextLevel: question.nextLevel
 						}
+						//$log.warn(scope.question);
 					}
 				});
 
@@ -155,10 +172,24 @@ define(function (require) {
 						scope.answers.push({id:elem[0], literal:elem[1]});
 					});
 
-					if(scope.filters.answer == 0 && scope.chart == 'european-map'){
+					//if(scope.filters.answer == 0 && scope.chart == 'european-map'){
+					if((scope.filters.answer == 0 || scope.filters.answer == 1) && scope.answers[0].id != scope.filters.answer 
+						&& scope.chart == 'european-map'){
 						$state.transitionTo($state.current.name, {
 							pLanguage: scope.pLanguage,
-							pAnswer: scope.answers[0].id
+							pLocale: scope.pLocale,
+							pIndicator: scope.dataset, //Year
+							pChart: scope.chart, //Type of chart
+							pTopic: scope.topic,
+							pQuestion: $stateParams.pQuestion,
+							pSectorSize: scope.filters.sectorSize,
+							pActivityFilter: scope.filters.activitySector,
+							pCompanyFilter: scope.filters.establishmentSize,
+							pCountry: scope.filters.country,
+							pCountry2: scope.filters.country2,
+							pEuOnly: scope.noneu,
+							pAnswer: scope.answers[0].id,
+							//pSortBy: (scope.chart == 'european-bar-chart')?scope.filters.answer:'0'
 						}, 
 						{
 							reload: true
@@ -224,7 +255,17 @@ define(function (require) {
 						pLanguage: scope.pLanguage,
 						pLocale: scope.pLocale,
 						pQuestion: $stateParams.pQuestion,
-						pTopic: scope.topic
+						pTopic: scope.topic,
+						pIndicator: scope.dataset, //Year
+						pChart: scope.chart, //Type of chart
+						pAnswer: scope.filters.answer, //Split answer
+						pSectorSize: scope.filters.sectorSize,
+						pActivityFilter: scope.filters.activitySector,
+						pCompanyFilter: scope.filters.establishmentSize,
+						pCountry: scope.filters.country,
+						pCountry2: scope.filters.country2,
+						pEuOnly: scope.noneu,
+						pSortBy: (scope.chart == 'european-bar-chart')?scope.filters.answer:'0'
 					}, 
 					{
 						reload: true,
@@ -329,6 +370,7 @@ define(function (require) {
 							pLanguage: scope.pLanguage,
 							pLocale: scope.pLocale,
 							pChart: scope.chart, //Type of chart
+							pTopic: scope.topic,
 							pQuestion: scope.indicator, //Question name
 							pAnswer: scope.filters.answer, //Split answer
 							pSectorSize: scope.filters.sectorSize,
@@ -421,6 +463,7 @@ define(function (require) {
 
 					$state.transitionTo('detailpage-national-comparisons', {
 						pIndicator: scope.dataset, //Year
+						pTopic: scope.topic,
 						pChart: 'national-comparisons', //Type of chart
 						pQuestion: scope.indicator, //Question name
 						pAnswer: scope.filters.answer, //Split answer
@@ -443,7 +486,7 @@ define(function (require) {
 				
 				 	var parentNode = e.target.parentElement;
 				 	var nodeName = e.target.nodeName;
-				 	$log.warn(e.target.className);
+				 	//$log.warn(e.target.className);
 
 				 	if( e.target.className == "no-event" ){
 				 		var parentNode = e.target.parentElement.parentElement;

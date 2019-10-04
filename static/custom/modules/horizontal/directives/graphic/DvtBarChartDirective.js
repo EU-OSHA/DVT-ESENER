@@ -430,6 +430,13 @@ define(function (require) {
 
                 };
 
+                if(!!attributes.baseAxisSize){
+                    //definition.chartDefinition.baseAxisSize = attributes.bandAxisSize;
+                    definition.chartDefinition.baseAxisSize = attributes.baseAxisSize;
+                }else{
+                    //definition.chartDefinition.baseAxisSize = 40;
+                }
+
                 if(!!attributes.showEuroMask){
                     definition.chartDefinition.yAxisLabel_text= function(){
                         return this.scene.vars.tick.label+' €';
@@ -634,11 +641,15 @@ define(function (require) {
 
                         return 'bottom';
                     };
-                    if (scope.isMaximized) {
+
+                    //definition.chartDefinition.valuesFont= '14px OpenSans-bold';
+                    
+                    /*if (!!attributes.isMaximized) {
                         definition.chartDefinition.valuesFont= '20px OpenSans-bold';
                     }else {
                         definition.chartDefinition.valuesFont= '14px OpenSans-bold';
-                    }
+                    }*/
+
                     definition.chartDefinition.dimensions= {
                         value: {
                             format: {

@@ -29,11 +29,10 @@ define(function (require) {
         $scope.pQuestion = '';
         $scope.pAnswer = '';
 
-        $scope.pLocal = $scope.pLanguage;
+        $scope.pLocale = $scope.pLanguage;
 
         if($scope.pIndicator == '2009' && ($scope.pLanguage == 'is' || $scope.pLanguage == 'sv')){
-            $log.warn('entra');
-            $scope.pLocal = 'en';
+            $scope.pLocale = 'en';
         }
 
 
