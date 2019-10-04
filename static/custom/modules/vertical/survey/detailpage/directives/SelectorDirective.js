@@ -174,10 +174,24 @@ define(function (require) {
 						scope.answers.push({id:elem[0], literal:elem[1]});
 					});
 
-					if(scope.filters.answer == 0 && scope.chart == 'european-map'){
+					//if(scope.filters.answer == 0 && scope.chart == 'european-map'){
+					if((scope.filters.answer == 0 || scope.filters.answer == 1) && scope.answers[0].id != scope.filters.answer 
+                    && scope.chart == 'european-map'){
 						$state.transitionTo($state.current.name, {
 							pLanguage: scope.pLanguage,
-							pAnswer: scope.answers[0].id
+							pLocale: scope.pLocale,
+                            pIndicator: scope.dataset, //Year
+                            pChart: scope.chart, //Type of chart
+                            pTopic: scope.topic,
+                            pQuestion: $stateParams.pQuestion,
+                            pSectorSize: scope.filters.sectorSize,
+                            pActivityFilter: scope.filters.activitySector,
+                            pCompanyFilter: scope.filters.establishmentSize,
+                            pCountry: scope.filters.country,
+                            pCountry2: scope.filters.country2,
+                            pEuOnly: scope.noneu,
+                            pAnswer: scope.answers[0].id,
+                            pSortBy: (scope.chart == 'european-bar-chart')?scope.answers[0].id:'0'
 						}, 
 						{
 							reload: true
