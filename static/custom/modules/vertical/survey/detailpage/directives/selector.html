@@ -261,7 +261,7 @@
 
                     <li data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" data-ng-click="openOptions($index,$event)">
                         <div class="no-event"></div>
-                        <a title="{{i18n.L100624}}" class="" data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" ui-sref="detailpage-national-bar-chart({pIndicator: dataset, pTopic: topic, pChart: 'national-bar-chart', pSectorSize: sectorSize, pCountry: filters.country, pCountry2: filters.country2, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer, pEuOnly: filters.euOnly})" ><span class="visible-xs"  data-ng-bind="i18n.L100624"></span></a>
+                        <a title="{{i18n.L100624}}" class="" data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" ui-sref="detailpage-national-bar-chart({pIndicator: dataset, pTopic: topic, pChart: 'national-bar-chart', pSectorSize: sectorSize, pCountry: filters.country, pCountry2: filters.country2, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer, pEuOnly: filters.euOnly})" ><span class="visible-xs"  data-ng-bind="i18n.L100624"></span></a>
 
                     </li>
 
@@ -273,7 +273,7 @@
 
                     <li data-ng-class="{'selected-chart':(chart == 'pie-chart')}" data-ng-click="openOptions($index,$event)">
                         <div class="no-event"></div>
-                        <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pIndicator: dataset, pTopic: topic, pChart: 'pie-chart', pCountry: filters.country, pCountry2: filters.country2, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer, pSectorSize: sectorSize, pEuOnly: filters.euOnly})"><span class="visible-xs"  data-ng-bind="i18n.L101033"></span>
+                        <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pIndicator: dataset, pTopic: topic, pChart: 'pie-chart', pCountry: filters.country, pCountry2: filters.country2, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer, pSectorSize: sectorSize, pEuOnly: filters.euOnly})"><span class="visible-xs"  data-ng-bind="i18n.L101033"></span>
                         </a>
                     </li>
                     
