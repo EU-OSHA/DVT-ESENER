@@ -125,8 +125,8 @@
       AND t.language = 'EN'
       AND sas.id = ${pActivityFilter} AND scs.id = ${pCompanyFilter}
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27', 'EU28')) END
-      ORDER BY CASE WHEN ${pDataset} = 15 THEN FIELD('EU28', n.country_code) ELSE FIELD('EU27', n.country_code) END DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC, eao.order_position ASC;
+      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
+      ORDER BY country_code ASC, eao.order_position ASC;
     </Query>
   </DataAccess>
 
@@ -220,7 +220,7 @@
         AND ROUND(v.value*100,1) BETWEEN ((${pMaxValue} - ${pRange}) + 0.01) AND ${pMaxValue}
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
         AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
-        ORDER BY FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC, v.value ASC
+        ORDER BY v.value ASC
       )
     </Query>
   </DataAccess>
@@ -364,7 +364,7 @@
       <Parameter default="EN" name="pLocale" type="String" />
     </Parameters>
     <Query>
-      SELECT t.text as Answer, IF(n.name REGEXP 'European Union', n.country_code, CONCAT(t2.text, " (", n.country_code, ")")) as Country, v.value*100 as Value
+      SELECT t.text as Answer, IF(n.name REGEXP 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(t2.text, " (", n.country_code, ")"))) as Country, v.value*100 as Value
       FROM nuts n, profile p, value v, translation t, translation t2, split_answer sa, indicator i, esener_answer_order eao
       WHERE n.id = p.nuts_id
       AND i.name = ${pIndicator}
@@ -376,13 +376,12 @@
       AND t.literal_id =sa.literal_id
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
       ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR')) ELSE n.id = p.nuts_id END
+      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('CH', 'NO', 'TR')) ELSE n.id = p.nuts_id END
       AND t.language = ${pLocale}
       AND t2.literal_id = n.literal_id
       AND t2.language = ${pLocale}
       AND v.dataset_id = ${pDataset}
-      ORDER BY CASE WHEN ${pDataset} = 15 THEN FIELD('EU28', n.country_code) ELSE FIELD('EU27', n.country_code) END DESC,
-      CASE WHEN ${pAnswer}=0 THEN FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR') END ASC, 
+      ORDER BY FIELD('EU27', n.country_code) DESC, CASE WHEN ${pAnswer}=0 THEN FIELD(n.country_code, 'CH', 'NO', 'TR') END ASC, 
       CASE WHEN ${pAnswer}!=0 THEN FIELD(${pAnswer}, eao.answer_id) END DESC, CASE WHEN ${pAnswer}=0 THEN n.country_code END ASC, eao.order_position ASC, 
       CASE WHEN ${pAnswer}!=0 THEN Value END DESC
     </Query>
@@ -396,8 +395,9 @@
       <Parameter default="MM161" name="pIndicator" type="String"/>
       <Parameter default="14" name="pActivityFilter" type="String" />
       <Parameter default="11" name="pCompanyFilter" type="String" />
-      <Parameter default="0" name="pEuOnly" type="String" />
+      <Parameter default="0" name="pEUOnly" type="String" />
       <Parameter default="activity-sector" name="pSectorSize" type="String" />
+      <Parameter default="0" name="pAnswer" type="Numeric" />
       <Parameter default="EN" name="pLocale" type="String" />
     </Parameters>
     <Query>
@@ -417,18 +417,18 @@
       AND t.literal_id =sa.literal_id
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
       ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEuOnly} = 1 THEN ( n.country_code NOT IN ('CH', 'NO', 'TR')) ELSE n.id = p.nuts_id END
+      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('CH', 'NO', 'TR')) ELSE n.id = p.nuts_id END
       AND sas.id = ${pActivityFilter}
       AND scs.id = ${pCompanyFilter}
       AND t.language = ${pLocale}
       AND t2.literal_id = n.literal_id
       AND t2.language = ${pLocale}
       AND v.dataset_id = ${pDataset}
-      ORDER BY CASE WHEN ${pDataset} = 15 THEN FIELD('EU28', n.country_code) ELSE FIELD('EU27', n.country_code) END DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC;
+      ORDER BY FIELD('EU27', n.country_code) DESC, FIELD(n.country_code, 'CH', 'NO', 'TR') ASC, n.country_code ASC;
     </Query>
   </DataAccess>
 
-    <!--<DataAccess access="public" connection="dvt_conn" id="getNationalBarChartIndicators" type="sql">
+    <DataAccess access="public" connection="dvt_conn" id="getNationalBarChartIndicators" type="sql">
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
@@ -454,7 +454,8 @@
           AND CASE WHEN ${pYear} = '2009' 
             THEN scs.id IN (12,13,14,15,11) ELSE scs.id IN (11,7,8,14,10) END) END
       </Query>
-    </DataAccess>-->
+      <!-- ORDER BY FIELD(sas.id,15,16,17,14,1,3,2,4,18,6,7), FIELD(scs.id,12,13,7,8,14,15,10,11); -->
+    </DataAccess>
 
     <DataAccess access="public" connection="dvt_conn" id="getNationalBarChartData" type="sql">
       <Cache duration="3600" enabled="true"/>
@@ -514,10 +515,11 @@
         AND v.profile_id = p.id
         AND p.answer_id = sa.id
         AND sa.id = eao.answer_id
-        AND CASE WHEN ${pSectorSize} = 'activity-sector' 
-          THEN (p.activity_sector_id IN (14, 15, 16, 17) AND p.company_size_id IS NULL AND p.activity_sector_id = sas.id) 
-        ELSE (p.company_size_id IN(11, 12, 13, 14, 15) AND p.activity_sector_id IS NULL AND p.company_size_id = scs.id) END
-        AND sas.id IN (14, 15, 16, 17) AND scs.id IN(11, 12, 13, 14, 15)
+        AND CASE WHEN 'company-size' = 'activity-sector' 
+        THEN (p.activity_sector_id = sas.id AND p.company_size_id IS NULL AND CASE WHEN ${pYear} = 2009 
+          THEN p.activity_sector_id IN (14, 15, 16, 17) ELSE p.activity_sector_id IN (1,3,2,4,18,11,7,14) END)
+        ELSE (p.company_size_id = scs.id AND p.activity_sector_id IS NULL AND CASE WHEN ${pYear} = 2009 
+          THEN p.company_size_id IN(11, 12, 13, 14, 15) ELSE scs.id IN (7,8,14,10,11) END) END
         AND n.country_code = ${pCountry}
         ORDER BY Subset Asc, eao.order_position ASC;
       </Query>
@@ -549,6 +551,7 @@
       ELSE (p.company_size_id = scs.id
         AND CASE WHEN ${pYear} = '2009' 
           THEN scs.id IN (12,13,14,15,6) ELSE scs.id IN (6,7,8,14,10) END) END
+      AND sas.id IN (14, 15, 16, 17) AND scs.id IN(11, 12, 13, 14, 15)
       AND n.country_code = ${pCountry}
       ORDER BY FIELD(sas.id, 15,16,17,8) DESC, FIELD(scs.id, 12,13,14,15,6) DESC, 
       FIELD(sa.id, 1, 34, 3, 38, 39, 2, 36, 37) ASC, sa.id ASC;
@@ -695,7 +698,7 @@
       <Parameter default="EN" name="pLocale" type="String"/>
     </Parameters>
     <Query>
-      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, i.name as Question, t.text as Answer, v.value*100 as Value
+      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Answer, v.value*100 as Value
       FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i, esener_answer_order eao
       WHERE n.id = p.nuts_id
       AND i.name = ${pQuestion}
