@@ -482,9 +482,20 @@ define (function (require) {
                         dataPart: "0",
                         valuesOverflow: 'trim',
                         label_textMargin: function(scene){
+                            var resolution = screen.width;
+
+                            $(window).on("resize",function(e){
+                              resolution = screen.width;
+                            });
+
                             var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLocale);
                             var answer = scene.firstAtoms.series;
                             var sector = scene.firstAtoms.category;
+
+                            if(resolution <= 425){
+                                $log.warn(this.sign.chart.options.legendItemSize);
+                                this.sign.chart.options.legendItemSize = 250;
+                            }
 
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
