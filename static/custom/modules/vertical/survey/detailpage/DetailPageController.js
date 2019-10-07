@@ -69,7 +69,6 @@ define(function (require) {
 		//$log.warn('FUERA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
 
 		$(window).on("resize",function(e){
-			$('.chart--wrapper').css('visibility','hidden');
 	      if(window.outerWidth != resolution){
 	      	//$log.warn('ENTRA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
 	        resolution = window.outerWidth;
