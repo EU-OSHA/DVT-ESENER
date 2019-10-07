@@ -386,7 +386,6 @@ define (function (require) {
                             var sector = scene.firstAtoms.category;
 
                             if(resolution <= 425){
-                                $log.warn(this.sign.chart.options.legendItemSize);
                                 this.sign.chart.options.legendItemSize = 250;
                             }
 
