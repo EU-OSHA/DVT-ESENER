@@ -616,6 +616,7 @@
         font-family: 'OpenSans-Bold';
         font-size: 1.7rem;
         text-align-last:right;
+        direction: rtl;
         background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-down.svg);
         background-repeat: no-repeat;
         background-position: 100%;
@@ -633,7 +634,7 @@
         }
         */
         option{
-          text-align: center;
+          direction: ltr;
           font-family: 'OpenSans';
           font-size: 1.4rem;
         }
