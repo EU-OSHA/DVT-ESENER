@@ -616,11 +616,11 @@
         font-family: 'OpenSans-Bold';
         font-size: 1.7rem;
         text-align-last:right;
+        direction: rtl;
         background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-down.svg);
         background-repeat: no-repeat;
         background-position: 100%;
         background-size: 2rem 2rem;
-        min-width: 21rem;
         padding-right: 2.5rem;
         width: 100% !important;
         &::-ms-expand {
@@ -634,7 +634,7 @@
         }
         */
         option{
-          text-align: center;
+          direction: ltr;
           font-family: 'OpenSans';
           font-size: 1.4rem;
         }
@@ -1366,7 +1366,7 @@ and (max-width : 1024px) {
         padding: 0 2rem;
         .selector--page--elements{
           position: relative;
-          padding-top: 5rem;
+          padding-top: 9rem;
           .content--intro--wrapper{ 
             width: 100%; 
           }
@@ -1549,9 +1549,6 @@ and (max-width : 768px) {
             text-align: right;
             form.compare--block--form{
               text-align: right;
-              label{
-                width: 100%;
-              }
             }
           }
         }
@@ -1725,6 +1722,8 @@ and (max-width : 767px){
   #popUpMessage{
     .popUpMessage--exportData--text--block{
       width: 100%;
+      margin: 6vh 0vw;
+      padding: 0vh 2vw;
       > p{
         font-size: 1.6rem;
         margin: 0rem 0 2rem;
@@ -1796,7 +1795,6 @@ and (max-width : 767px){
 }
 @media only screen 
 and (max-width : 375px){
-
   .detail-page{
     .filter-text, .filter-text-button{
       button{
@@ -1804,6 +1802,15 @@ and (max-width : 375px){
         width: 100% !important;
       }
     }
+    #popUpMessage{
+      .popUpMessage--exportData--text--block{
+        .export--data--modal{
+          > a{
+            width: 100%;
+          }
+        }
+      }
+    }  
   }
 
   .block--typechart--wrapper{
@@ -1833,5 +1840,13 @@ and (max-width : 375px){
     svg{
       height: 400px !important;
     }
+  }
+}
+
+@media only screen 
+and (max-height:767px){
+  .dvt-modal-social .modal-wrapper {
+      height: 100vh;
+      overflow: auto;
   }
 }

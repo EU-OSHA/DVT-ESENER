@@ -17,7 +17,7 @@
             <form action="" class="compare--block--form">
                 <label for="searchFilter" class="" data-ng-bind="i18n.L101032"></label>
                 <div data-ng-show="dataset == '2009'" id="searchFilter">
-                    <select style="width:140px" dir="rtl" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-change="changeLocale()" data-ng-model="pLocale">
+                    <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-change="changeLocale()" data-ng-model="pLocale">
                             <!-- Select esener 2009 languages -->
                             <option value="bg" data-ng-selected="pLocale == 'bg'">Български</option> <!-- Bulgary -->
                             <option value="cs" data-ng-selected="pLocale == 'cs'">Čeština</option>
@@ -45,7 +45,7 @@
                     </select>
                 </div>
                 <div data-ng-show="dataset == '2014'">
-                    <select style="width:140px" dir="rtl" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-if="dataset == '2014'" data-ng-change="changeLocale()" data-ng-model="pLocale">
+                    <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-change="changeLocale()" data-ng-model="pLocale">
                         <!-- Select esener 2014 languages -->
                         <option value="al">Albania (AL)</option>
                         <option value="at">Austria (AT)</option>
