@@ -664,6 +664,7 @@ define(function (require) {
 						pActivityFilter: $scope.pActivityFilter,
 						pCompanyFilter: $scope.pCompanyFilter,
 						pCountry: $scope.dashboard.parameters.pFilters.country,
+						pCountry2: $scope.pCountry2,
 						pLanguage: $scope.pLanguage,
 						pLocale: $scope.pLocale
 					},
@@ -693,7 +694,16 @@ define(function (require) {
 						$state.go($state.current.name, {
 							pTopic : topic,
 							pQuestion: question, //Question name,
-							pAnswer: $scope.answer
+							pAnswer: $scope.answer,
+							pIndicator: $scope.pIndicator, //Year
+							pChart: $scope.pChart, //Type of chart
+							pSectorSize: $scope.pSectorSize,
+							pActivityFilter: $scope.pActivityFilter,
+							pCompanyFilter: $scope.pCompanyFilter,
+							pCountry: $scope.dashboard.parameters.pFilters.country,
+							pCountry2: $scope.pCountry2,
+							pLanguage: $scope.pLanguage,
+							pLocale: $scope.pLocale
 						},
 						{
 							reload: true
