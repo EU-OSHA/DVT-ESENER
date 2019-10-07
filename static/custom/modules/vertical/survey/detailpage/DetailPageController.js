@@ -69,6 +69,7 @@ define(function (require) {
 		//$log.warn('FUERA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
 
 		$(window).on("resize",function(e){
+			$('.chart--wrapper').css('visibility','hidden');
 	      if(window.outerWidth != resolution){
 	      	//$log.warn('ENTRA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
 	        resolution = window.outerWidth;
@@ -291,7 +292,7 @@ define(function (require) {
 		        color5: dvtUtils.getColorCountry(2),
 		        color6: dvtUtils.getColorCountry(12),
 		        color7: dvtUtils.getColorCountry(4),
-				plots: DetailPageService.getGeneralEuropeanBarCharPlot($scope.dashboard.parameters.pFilters.euOnly, $scope.answer),
+				plots: DetailPageService.getGeneralEuropeanBarCharPlot($scope.dashboard.parameters.pFilters.euOnly, /*$scope.answer*/0),
 				dimensions: {
 				  	value: {
 						format: {

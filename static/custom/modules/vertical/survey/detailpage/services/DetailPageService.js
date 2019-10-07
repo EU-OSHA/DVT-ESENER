@@ -128,7 +128,7 @@ define (function (require) {
                                                 return 2;
                                             }
                                         }
-                                        return 0;
+                                        return null;
                                         
                                     })
                                     .left(function(scene){
@@ -140,17 +140,19 @@ define (function (require) {
                                         var norwayC = countryKey.label.match('(NO)')!=null?countryKey.label:null;
 
                                         if(switzerlandC!=null){
+                                            if(resolution == 1440){
+                                                return baseScale(switzerlandC) - this.proto.width() + 5;
+                                            }
                                             if(resolution<=768){
                                                 return baseScale(switzerlandC) - this.sign.panel.barWidth + 4;
                                             }
-                                            return baseScale(switzerlandC) - this.sign.panel.barWidth - 2;
+                                            return baseScale(switzerlandC) - this.proto.width();
                                         }else{
                                             if(resolution<=768){
                                                 return baseScale(norwayC) - this.sign.panel.barWidth + 4;
                                             }
                                             return baseScale(norwayC) - this.sign.panel.barWidth - 2;
                                         }
-
                                         /*if(baseScale('Switzerland (CH)') < 20){
                                             if(resolution<=768){
                                                 return baseScale('Norway (NO)') - this.sign.panel.barWidth + 4;
@@ -182,25 +184,29 @@ define (function (require) {
                                 })
                                 .left(function(scene){
                                     var baseScale = this.getContext().chart.axes.base.scale;
-                                    //$log.warn(scene);
+                                    //$log.warn(this.proto.$properties[2]);
+                                    //$log.warn(baseScale(euC));
                                     if(!scene.firstAtoms.value.label.match('%')){
                                         scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                                     }
                                     var countryKey = scene.firstAtoms.category;
                                     var panelWidth = this.root.width();
 
-                                    /*if(baseScale('Austria (AT)') < 20){
-                                        return baseScale('Belgium (BE)') - this.sign.panel.barWidth - 3;
+                                    var euC = countryKey.label.match('EU2')!=null?countryKey.label.match('EU2').input:null;
+                                    
+                                    /*if(resolution <= 768){
+                                        return baseScale(euC) + this.sign.panel.barWidth - this.proto.width();
+                                    }*/
+
+                                    if(resolution == 1440){
+                                        return baseScale(euC) + this.proto.width() - 3;                                        
+                                    }else if(resolution == 768){
+                                        return baseScale(euC) + this.proto.width()/2 + 3;                                        
+                                    }else if(resolution < 768){
+                                        return baseScale(euC) + this.proto.width()/2
                                     }
 
-                                    if(resolution<=768){
-                                        return baseScale('Austria (AT)') - this.sign.panel.barWidth + 4;
-                                    }
-                                    return baseScale('Austria (AT)') - this.sign.panel.barWidth - 3; */
-                                    if(resolution <= 768){
-                                        return baseScale('EU27') + this.sign.panel.barWidth - 5;
-                                    }
-                                     return baseScale('EU27') + this.sign.panel.barWidth + 3;
+                                    return baseScale(euC) + this.proto.width();
                                     
                                 });
                         },
