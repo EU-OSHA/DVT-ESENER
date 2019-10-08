@@ -729,16 +729,6 @@
             &:hover, &:focus{
               color:$orange!important;
             }
-            &[target=_blank]{
-              margin-right: 0em;
-              &:after{
-                background: url(none);
-                margin-left:0em;
-                padding-right: 0;
-                width: 1px;
-                height: 1px;
-              }
-            }
           }
         }
       }
@@ -1435,7 +1425,7 @@
     color: #666;
     .text {
       float:left;
-      width:70%
+      width:68%
     }
     .buttons {
 
@@ -1743,7 +1733,7 @@
 }
 
 
-.footer-elements, header, .export--data--modal, .pageUrl{
+.footer-elements, header, .export--data--modal, .pageUrl, .social--network--modal{
   a.external, 
   a[target="_blank"], 
   a[target="blank"]{
@@ -1754,6 +1744,7 @@
       padding-right: 0;
       width: 1px;
       height: 1px;
+      display: none;
     }
   }
 }
@@ -1767,6 +1758,7 @@ a{
         padding-right: 0;
         width: 1px;
         height: 1px;
+        display: none;
       }
     }
   }    
