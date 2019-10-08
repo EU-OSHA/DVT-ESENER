@@ -23,6 +23,13 @@
         $('body').addClass('plus');
     }
 
+    function gotoTop() {
+        $('html,body').animate({ 'scrollTop': 0 }, 'slow');
+        return false;
+    };
+
+
+
 define(function (require) {
     'use strict';
 
@@ -66,28 +73,40 @@ define(function (require) {
                     var prevScrollpos = $window.pageYOffset;
 
                     $window.onscroll = function() {
-                      
-                      var currentScrollPos = $window.pageYOffset;
-                     //console.log(currentScrollPos);
-                    if( currentScrollPos > 165){
-                      if (prevScrollpos > currentScrollPos) {
-                        angular.element(".bar-header").addClass('show-header');
-                        angular.element(".affix").addClass('show-header');
 
-                        angular.element(".affix").removeClass('hide-header');
-                        angular.element(".bar-header").removeClass('hide-header');
-                      } else {
-                        angular.element(".bar-header").addClass('hide-header');
-                        angular.element(".affix").addClass('hide-header');
+                        var currentScrollPos = $window.pageYOffset;
+                        //console.log(currentScrollPos);
+                        if( currentScrollPos > 158)
+                        {
+                          if (prevScrollpos > currentScrollPos)
+                          {
+                            angular.element(".bar-header").addClass('show-header');
+                            angular.element(".affix").addClass('show-header');
 
-                        angular.element(".affix").removeClass('show-header');
-                        angular.element(".bar-header").removeClass('show-header');
-                      }
+                            angular.element(".affix").removeClass('hide-header');
+                            angular.element(".bar-header").removeClass('hide-header');
+                          }
+                          else
+                          {
+                            angular.element(".bar-header").addClass('hide-header');
+                            angular.element(".affix").addClass('hide-header');
+
+                            angular.element(".affix").removeClass('show-header');
+                            angular.element(".bar-header").removeClass('show-header');
+                          }
+                        }
+                        prevScrollpos = currentScrollPos;
+                        var gotopVisible = $(window).height() + $(window).height()/2;
+                        if( currentScrollPos > gotopVisible )
+                        {
+                            $('.go-to').css('display','block');
+                        }
+                        else
+                        {
+                            $('.go-to').css('display','none');
+                        }
                     }
-                      prevScrollpos = currentScrollPos;
 
-                    } 
-                    
                     $( window ).resize(function() {
                       angular.element(".bar-header").removeClass('hide-header');
                     });
