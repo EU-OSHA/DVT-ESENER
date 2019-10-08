@@ -63,11 +63,11 @@ define(function (require) {
 					var trimText = '';
 					if(scope.question != null){
 						if(scope.question.next == null && type == 'n'){
-							text = 'An occupational health doctor';
+							text = i18n.L496; //'An occupational health doctor'
 						}
 
 						if(scope.question.previous == null && type == 'p'){
-							text = 'Is there a health and safety committee in your establishment?';
+							text = i18n.L556; //'Is there a health and safety committee in your establishment?';
 						}
 					}
 					
@@ -87,13 +87,14 @@ define(function (require) {
 						if(scope.question.previousLevel != 1 && type == 'p'){
 							//$log.warn('scope.question.previousLevel != 1 && type == p');
 							if(scope.question.previous == null){
-								text = 'Is there a health and safety committee in your establishment?';
+								text = i18n.L556; //'Is there a health and safety committee in your establishment?';
 							}else{
 								return scope.i18n['L'+scope.question.previousFatherName] + ': ' + text;
 							}
 						}else if(scope.question.nextLevel != 1 && type == 'n'){
 							if(scope.question.next == null && type == 'n'){
-								text = 'Use of health and safety services: An occupational health doctor';
+								//text = 'Use of health and safety services: An occupational health doctor';
+								text = i18n.L100003 + ': ' + i18n.L496;
 							}else{
 								return scope.i18n['L'+scope.question.nextFatherName] + ': ' + text;
 							}
