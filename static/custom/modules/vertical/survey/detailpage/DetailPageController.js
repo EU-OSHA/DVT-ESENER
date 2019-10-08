@@ -336,8 +336,8 @@ define(function (require) {
 			},
 			//3 - National Comparisons Plot
 			{
-				color1: ($scope.pCountry == 'EU27')?dvtUtils.getColorCountry():dvtUtils.getColorCountry(1),
-				color2: ($scope.pCountry2 == 'EU27')?dvtUtils.getColorCountry():dvtUtils.getColorCountry(2),
+				color1: ($scope.pCountry == 'EU28')?dvtUtils.getColorCountry():dvtUtils.getColorCountry(1),
+				color2: ($scope.pCountry2 == 'EU28')?dvtUtils.getColorCountry():dvtUtils.getColorCountry(2),
 				plots: DetailPageService.getNationalComparisonsPlot($scope.dashboard.parameters.pFilters.country, 
 					$scope.dashboard.parameters.pFilters.country2)
 			},

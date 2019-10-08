@@ -72,7 +72,8 @@ define(function (require) {
             $scope.pTopic = topic;
 
             // Provisional because EU27 will change to EU28
-            $scope.pCountry = $scope.pIndicator == '2009' ? 'EU27': 'EU28';
+            //$scope.pCountry = $scope.pIndicator == '2009' ? 'EU27': 'EU28';
+            $scope.pCountry = 'EU28';
 
             if($scope.pTopic == 'osh-management'){
                 $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM161':'Q250';

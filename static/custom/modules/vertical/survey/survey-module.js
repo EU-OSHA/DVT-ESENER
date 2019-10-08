@@ -20,9 +20,10 @@ define(function (require) {
         // Literals / i18n
         var i18n = configService.getLiterals();
 
-        console.log(document.location.href.match('2009'));
+        //console.log(document.location.href.match('2009'));
 
-        var country = document.location.href.match('2009')!=null?'EU27':'EU28';
+        //var country = document.location.href.match('2009')!=null?'EU27':'EU28';
+        var country = 'EU28';
 
         $uiViewScrollProvider.useAnchorScroll();
 
