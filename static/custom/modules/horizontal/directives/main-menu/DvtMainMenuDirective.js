@@ -170,7 +170,9 @@ define(function (require) {
                             i18n_literals = ($stateParams.pLanguage == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLanguage);
                             $scope.i18n_literals = i18n_literals;
                             
-                            $scope.breadCrumb = (params == null)?breadCrumbStructure[$state.current.name]:breadCrumbStructure[$state.current.name+params];
+                            $scope.year = $state.params.pIndicator;
+
+                            $scope.breadCrumb = breadCrumbStructure[$state.current.name];
                             $scope.titleHeader = $scope.i18n_literals.L22020;
 
                             if ($state.current.name == 'home') {
@@ -181,7 +183,7 @@ define(function (require) {
                                 var pathURL = path.split("/");
                                 $scope.isHome = false;
                                 $scope.isFooterPage = false;
-                                var setBreadCrumbs=function() {
+                                /*var setBreadCrumbs=function() {
                                     var _link = $compile((params == null)?breadCrumbStructure[$state.current.name]:breadCrumbStructure[$state.current.name+params])($scope);
                                     var breadcrumb = "";
                                     for (var i = 0; i < _link.size(); i++)
@@ -195,7 +197,7 @@ define(function (require) {
                                     $scope.anchorPath = $location.path().split("/")[1];
                                 };
 
-                                setBreadCrumbs();
+                                setBreadCrumbs();*/
                             }
 
                             $scope.isFooterPage = false;
