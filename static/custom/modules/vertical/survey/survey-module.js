@@ -232,8 +232,8 @@ define(function (require) {
                     squash: 'european-map'
                 },
                 pCountry: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: 'EU28',
+                    squash: 'EU28'
                 },
                 pCountry2: {
                     value: 'AT',
@@ -296,8 +296,8 @@ define(function (require) {
                     squash: 'european-bar-chart'
                 },
                 pCountry: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: 'EU28',
+                    squash: 'EU28'
                 },
                 pCountry2: {
                     value: 'AT',
@@ -347,8 +347,8 @@ define(function (require) {
                     squash: 'MM161'
                 },                
                 pCountry: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: 'EU28',
+                    squash: 'EU28'
                 },                
                 pSectorSize: {
                     value: 'company-size',
@@ -426,8 +426,8 @@ define(function (require) {
                     squash: '11'
                 },
                 pCountry: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: 'EU28',
+                    squash: 'EU28'
                 },
                 pCountry2: {
                     value: 'AT',
@@ -481,8 +481,8 @@ define(function (require) {
                     squash: 'MM161'
                 },
                 pCountry: {
-                    value: 'EU27',
-                    squash: 'EU27'
+                    value: 'EU28',
+                    squash: 'EU28'
                 },
                 pChart: {
                     value: 'pie-chart',

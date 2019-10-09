@@ -1243,7 +1243,7 @@ and (max-width :620px) {
     }
   }
 	body{
-		padding-top: 18.5rem;
+		padding-top: 15.8rem;
 	}
 	.bar-header{
 		height:auto;
@@ -1256,10 +1256,11 @@ and (max-width :620px) {
 				> a{
 				  display: block;
 				  text-align: center;
+				  padding:0; 
 				  img{
 			  	  height: auto;
 						border-bottom: 1px solid #CCC;
-						padding-bottom: 1rem;
+						padding-bottom: 0rem;
 				  }
 				}
 			}

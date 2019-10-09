@@ -1242,7 +1242,7 @@ ul.question--by--question {
     position: absolute;
     top: 0;
     left: 0;
-    width: 99.75%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     z-index:0;
@@ -1250,7 +1250,7 @@ ul.question--by--question {
       a{
         font-size: 1.3rem;
         display: block;
-        width: 7rem;
+        width: 8rem;
         height: 12rem;
         background: #666;
         color: #FFF;
@@ -1356,6 +1356,7 @@ and (max-width : 1250px) {
 and (max-width : 1024px) { 
 
   .detail-page{
+    margin-top: 0;
     .detail--page--wrapper{
       width: 100%;
       padding: 0;
@@ -1795,12 +1796,23 @@ and (max-width : 767px){
 }
 @media only screen 
 and (max-width : 375px){
+  .breadcrumbs--social--network{
+    .breadcrumbs{
+      margin: 1.5rem 0 0rem;
+    }
+  }  
   .detail-page{
     .filter-text, .filter-text-button{
+      margin-right: 0 !important;
       button{
         min-width: auto;
         width: 100% !important;
       }
+    }
+    .tags span {
+      padding: 1rem 1.5rem 0 0;
+      display: block;
+      text-align: center;
     }
     #popUpMessage{
       .popUpMessage--exportData--text--block{
@@ -1810,17 +1822,29 @@ and (max-width : 375px){
           }
         }
       }
-    }  
+    } 
   }
-
   .block--typechart--wrapper{
     flex-wrap: wrap;
     .chart--selection--block{
       width:100% !important;
+      li{
+        margin: 0 0rem 2rem 0rem;
+        &.selected-chart{
+          &:after{
+            right: 0;
+          }
+        }
+        a{
+          span{
+            padding: 1.1rem 2rem 1.1rem 0.5rem;
+          }
+        }
+      }
     }
     a#eu-only-mobile {
       width: 100% !important;
-      margin: 0 0 2rem 0;
+      margin: 1rem 0 2rem 0;
     }
   }
   ul.question--by--question{
@@ -1836,9 +1860,20 @@ and (max-width : 375px){
       }
     }
   }
+  .european-bar-chart {
+    padding: 0rem 0 0;
+  }
   div[query="getPieChartData"]{
     svg{
       height: 400px !important;
+    }
+  }
+  .footer-elements{
+    .copyright{
+      line-height: 2.4rem !important;
+      a{
+        display: block;
+      }        
     }
   }
 }
