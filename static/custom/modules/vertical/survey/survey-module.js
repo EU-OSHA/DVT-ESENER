@@ -43,7 +43,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Overview | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -68,7 +68,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -252,7 +252,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -319,7 +319,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -386,7 +386,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -453,7 +453,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -520,7 +520,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
     });
