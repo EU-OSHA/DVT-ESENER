@@ -101,9 +101,10 @@
     display: block;
     width: 4rem !important;
     height:4rem;
-    background:$aquamarine;
+    background:$gray;
     color:$white;
     line-height: 1rem;
+    margin: 0.5rem;
     &:before{
       content: "\f106";
       font-family: FontAwesome;
@@ -112,7 +113,7 @@
       text-align: center;
       display: block;
       position: relative;
-      top: 1.2rem;    
+      top:36%;    
     }
     &:hover{
       //color:$black;
