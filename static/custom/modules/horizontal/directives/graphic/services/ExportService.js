@@ -18,7 +18,7 @@ define(function(require){
     // expose saveAs
     require('common-exporting/file-saver');
 
-    var exportImage = function (scope) {
+    var exportImage = function (scope, titleChart) {
 
             if (scope.pChart=="european-map")
             {
@@ -72,19 +72,32 @@ define(function(require){
 
                         context.putImageData(imageData, 0, 0);
 
+<<<<<<< HEAD
                         context.drawImage(image, 125, canvas.height-24, $(".survey--map--block").width()-250, 24);
+=======
+                        context.drawImage(image, 90, canvas.height-24, $(".survey--map--block").width()-180, 24);
+>>>>>>> release-sprint_7
 
 
                         canvas.toBlob(function(blob){
 
+<<<<<<< HEAD
                             if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) 
+=======
+                            if(titleChart=="undefined" || titleChart==undefined) 
+>>>>>>> release-sprint_7
                             {
                                 scope.titleH2=node.parents().find("h2:eq(0)").text()
                                 var filename = scope.titleH2 + '.png';
                             } 
                             else 
                             {
+<<<<<<< HEAD
                                 var filename = scope.chartTitle + '.png';
+=======
+                                //var filename = scope.chartTitle + '.png';
+                                var filename = titleChart + '.png';
+>>>>>>> release-sprint_7
                             }
 
                             saveAs(blob,filename);
@@ -142,11 +155,20 @@ define(function(require){
                 html2canvas(node).then(function(canvas) {
                     canvas.toBlob(function(blob){
 
+<<<<<<< HEAD
                         if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) {
                             scope.titleH2=node.parents().find("h2:eq(0)").text()
                             var filename = scope.titleH2 + '.png';
                         } else {
                             var filename = scope.chartTitle + '.png';
+=======
+                        if(titleChart=="undefined" || titleChart==undefined) {
+                            scope.titleH2=node.parents().find("h2:eq(0)").text()
+                            var filename = scope.titleH2 + '.png';
+                        } else {
+                            //var filename = scope.chartTitle + '.png';
+                            var filename = titleChart + '.png';
+>>>>>>> release-sprint_7
                         }
 
                         saveAs(blob,filename);
@@ -201,11 +223,20 @@ define(function(require){
                  .then(function(canvas) {
                      canvas.toBlob(function(blob){
 
+<<<<<<< HEAD
                          if(scope.chartTitle=="undefined" || scope.chartTitle==undefined) {
                              scope.titleH2=node.parents().find("h2:eq(0)").text()
                              var filename = scope.titleH2 + '.png';
                          } else {
                              var filename = scope.chartTitle + '.png';
+=======
+                         if(titleChart=="undefined" || titleChart==undefined) {
+                            scope.titleH2=node.parents().find("h2:eq(0)").text()
+                            var filename = scope.titleH2 + '.png';
+                         } else {
+                            //var filename = scope.chartTitle + '.png';
+                            var filename = titleChart + '.png';
+>>>>>>> release-sprint_7
                         }
 
                          saveAs(blob,filename);

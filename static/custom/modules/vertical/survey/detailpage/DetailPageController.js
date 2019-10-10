@@ -38,6 +38,13 @@ define(function (require) {
 		$scope.showPopUpSocialMedia = false;
 		$scope.showPopUpExportData = false;
 		$scope.pathURLDVT=$location.absUrl();
+
+		if($stateParams.pIndicator == 2009){
+			$scope.titleShare='ESENER-1 | Safety and health at work - EU-OSHA';
+		}else if($stateParams.pIndicator == 2014){
+			$scope.titleShare='ESENER-2 | Safety and health at work - EU-OSHA';
+		}
+
 		var titleStructure = require('json!dvt/directives/title-items');
 		$scope.title = titleStructure[$state.current.name];
 		$scope.pageUrlActive = false;
@@ -59,17 +66,16 @@ define(function (require) {
 
 		$scope.sortBy = $stateParams.pSortBy;
 
+        //$log.warn($scope.nonEU);
+
 		var resolution = $(window).width();
+		//$scope.heightNationalBarChart = $scope.pQuestion == 'Q254gr' ? 250: 100;
 		$scope.angle = resolution > 768 ? 1 : 0;
 		$scope.pieChartHeight = resolution > 600 ? 600 : 400;
-		$scope.pieChartFont =  resolution > 600 ? '20px OpenSans-bold' : '14px OpenSans-bold';
-
-		//$log.warn( window.screen.width +'---------->'+ window.outerWidth);
-		//$log.warn('FUERA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
+		$scope.pieChartFont =  resolution > 600 ? '16px OpenSans-bold' : '14px OpenSans-bold';
 
 		$(window).on("resize",function(e){
 	      if(window.outerWidth != resolution){
-	      	//$log.warn('ENTRA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
 	        resolution = window.outerWidth;
 	        $state.reload();
 	      }
@@ -79,7 +85,6 @@ define(function (require) {
 		$scope.breadcrumb = '';
 
 		$scope.currentName = $state.current.name;
-		//$log.warn($scope.currentName);
 
 		//Arrays
 		$scope.activitySectorFor =[];
@@ -144,8 +149,8 @@ define(function (require) {
 					questionOrFilterChanged = true;
 				}
 				if($rootScope.answersNationalComparisons.pLocale != $scope.pLocale){
-                    questionOrFilterChanged = true;
-                }
+					questionOrFilterChanged = true;
+				}
 			}
 		}
 
@@ -291,7 +296,7 @@ define(function (require) {
 		        color5: dvtUtils.getColorCountry(2),
 		        color6: dvtUtils.getColorCountry(12),
 		        color7: dvtUtils.getColorCountry(4),
-				plots: DetailPageService.getGeneralEuropeanBarCharPlot($scope.dashboard.parameters.pFilters.euOnly, /*$scope.answer*/0),
+				plots: DetailPageService.getGeneralEuropeanBarCharPlot($scope.dashboard.parameters.pFilters.euOnly, $scope.sortBy, $scope.pIndicator),
 				dimensions: {
 				  	value: {
 						format: {
@@ -609,8 +614,9 @@ define(function (require) {
 						$scope.answers.pActivityFilter = $scope.pActivityFilter;
 						$scope.answers.pCompanyFilter = $scope.pCompanyFilter;
 						$scope.answers.pLocale = $scope.pLocale;
-						$scope.answers.data = list;
 						$rootScope.answersNationalComparisons = $scope.answers;
+						$scope.answers.data = list;
+						
 						
 					}).catch(function (err) 
 					{
@@ -702,7 +708,7 @@ define(function (require) {
 						pTopic: $scope.pTopic, //Category
 						pChart: $scope.pChart, //Type of chart
 						pQuestion: $scope.pQuestion, //Question name
-						pAnswer: question.answer_id, //Split answer
+                        pAnswer: question.answer_id, //Split answer
 						pSectorSize: $scope.pSectorSize,
 						pActivityFilter: $scope.pActivityFilter,
 						pCompanyFilter: $scope.pCompanyFilter,
@@ -824,6 +830,7 @@ define(function (require) {
         	$scope.currentDate = new Date();
 
         	var url = $state.current.url;
+        	//$log.warn(url);
         	var paramsUsed = url.substring(url.indexOf('pQuestion')+9);
         	var textParams = '';
 
@@ -867,8 +874,20 @@ define(function (require) {
         	}
 
         	if(paramsUsed.includes('pAnswer')){
-        		textParams = textParams + ', answer : ' + $scope.pAnswer + ' ';
+        		textParams = textParams + ', answer : ' + $scope.answer + ' ';
         	}
+
+        	if($scope.pChart == 'european-map'){
+				$scope.chartCitation = 'L100623';
+			}else if($scope.pChart == 'european-bar-chart'){
+				$scope.chartCitation = 'L100622';
+			}else if($scope.pChart == 'national-bar-chart'){
+				$scope.chartCitation = 'L100624';
+			}else if($scope.pChart == 'national-comparisons'){
+				$scope.chartCitation = 'L100621';
+			}else if($scope.pChart == 'pie-chart'){
+				$scope.chartCitation = 'L101033';
+			}
 
         	var text = '@ONLINE{OSHA:'+ $scope.currentDate.getFullYear() +':Online,\n' +
 				'author = {},\n' +
@@ -887,10 +906,15 @@ define(function (require) {
         	document.execCommand("copy");
         }
 
-        $scope.exportData = function(id){
-        	$scope.pExcelFileName = "xls_";
+        function createFileName(type){
 
-			if($scope.pChart == 'european-map'){
+        	if(type == 'xls'){
+        		$scope.pExcelFileName = "xls_";
+        	}else{
+        		$scope.pExcelFileName = "";
+        	}
+
+        	if($scope.pChart == 'european-map'){
 				$scope.chartCitation = 'L100623';
 				$scope.promiseToExport = dataService.getMapExportData($scope.pIndicator, $scope.pQuestion, $scope.answer, 
 					$scope.actualDataset, $scope.pSectorSize, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU);
@@ -898,7 +922,7 @@ define(function (require) {
 			}else if($scope.pChart == 'european-bar-chart'){
 				$scope.chartCitation = 'L100622';
 				$scope.promiseToExport = dataService.getEuropeanBarCharExportData($scope.actualDataset, $scope.pQuestion, 
-					$scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU, $scope.pSectorSize);
+					$scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU, $scope.pSectorSize, $scope.pLocale);
 				$scope.pExcelFileName = $scope.pExcelFileName + "euBars-";
 			}else if($scope.pChart == 'national-bar-chart'){
 				$scope.chartCitation = 'L100624';
@@ -914,6 +938,7 @@ define(function (require) {
 				$scope.chartCitation = 'L101033';
 				$scope.promiseToExport = dataService.getPieChartExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, 
 					$scope.pCountry);
+				$scope.pExcelFileName = $scope.pExcelFileName + "pieChart-";
 			}
 
 			if ($scope.pIndicator == 2009)
@@ -924,16 +949,22 @@ define(function (require) {
 			{
 				$scope.pExcelFileName = $scope.pExcelFileName + "esener2-";
 			}
-			$scope.pExcelFileName = $scope.pExcelFileName + $scope.pSectorSize + "-";
-			if ($scope.pSectorSize == "activity-sector" && $scope.pChart != "national-bar-chart")
+
+			if($scope.pChart != "pie-chart"){
+				$scope.pExcelFileName = $scope.pExcelFileName + $scope.pSectorSize + "-";
+			}
+
+			if ($scope.pSectorSize == "activity-sector" && $scope.pChart != "national-bar-chart" && $scope.pChart != "pie-chart")
 			{
 				$scope.pExcelFileName = $scope.pExcelFileName + $scope.pActivityFilter + "-";
 			}
-			else if ($scope.pChart != "national-bar-chart")
+			else if ($scope.pChart != "national-bar-chart" && $scope.pChart != "pie-chart")
 			{
 				$scope.pExcelFileName = $scope.pExcelFileName + $scope.pCompanyFilter + "-";
 			}
+
 			$scope.pExcelFileName = $scope.pExcelFileName + $scope.pQuestion;
+
 			if ($scope.pChart == "european-map")
 			{
 				$scope.pExcelFileName = $scope.pExcelFileName + "-" + $scope.answer;
@@ -946,11 +977,18 @@ define(function (require) {
 			{
 				$scope.pExcelFileName = $scope.pExcelFileName + "-" + $scope.pCountry + "-" +$scope.pCountry2;
 			}
+
+        }
+
+        $scope.exportData = function(id){
+        	createFileName('xls');
+
         	exportService.exportDataManually($scope.promiseToExport, $scope.pExcelFileName, id);
         }
 
         $scope.exportPNG = function(){
-        	exportService.exportImageAction($scope);
+        	createFileName('png');
+        	exportService.exportImageAction($scope, $scope.pExcelFileName);
         }
 
 		angular.element('body').mouseup(function(e){

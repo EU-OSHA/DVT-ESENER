@@ -20,7 +20,7 @@ define (function (require) {
                     }
                 ];
             },
-            getGeneralEuropeanBarCharPlot: function(euonly, answer) {
+            getGeneralEuropeanBarCharPlot: function(euonly, answer, year) {
                 return [
                     {
                         name: "main",
@@ -98,6 +98,49 @@ define (function (require) {
                                     }else if(i == 4 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(1);
                                     }
+                                }else if(colors.length == 6){
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(12));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(2));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
+                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+                                    if(i == 0 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(12);
+                                    }else if(i == 1 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(2);
+                                    }else if(i == 2 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(3);
+                                    }else if(i == 3 && series.value == colors[i]){
+                                        return dvtUtils.getAccidentsColors(4);
+                                    }else if(i == 4 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(22);
+                                    }else if(i == 5 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(1);
+                                    }
+                                }else if(colors.length == 7){
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(4));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(12));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(2));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
+                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+                                    if(i == 0 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(4);
+                                    }else if(i == 1 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(12);
+                                    }else if(i == 2 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(2);
+                                    }else if(i == 3 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(3);
+                                    }else if(i == 4 && series.value == colors[i]){
+                                        return dvtUtils.getAccidentsColors(4);
+                                    }else if(i == 5 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(22);
+                                    }else if(i == 6 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(1);
+                                    }
                                 }
                             }
 
@@ -125,20 +168,24 @@ define (function (require) {
                                     .strokeStyle('black')
                                     .lineWidth(function(scene){
                                         var countryKey = scene.firstAtoms.category;
-                                        if(scene.previousSibling != null){
-                                            var previousSibling = scene.previousSibling.firstAtoms.category;
-                                        }
-                                        
-                                        if(countryKey.label.match('(CH)')){
-                                            if(resolution<=768){
-                                                return 1.5
+                                        if(year == 2009){
+                                            if(scene.previousSibling != null){
+                                                var previousSibling = scene.previousSibling.firstAtoms.category;
                                             }
-                                            return 2;
+                                            
+                                            if(countryKey.label.match('(CH)')){
+                                                return 2;
+                                            }else{
+                                                if(countryKey.label.match('(NO)') && !previousSibling.label.match('CH') ){
+                                                    return 2;
+                                                }
+                                            }
                                         }else{
-                                            if(countryKey.label.match('(NO)') && !previousSibling.label.match('CH') ){
+                                            if(countryKey.label.match('(AL)')){
                                                 return 2;
                                             }
                                         }
+
                                         return null;
                                     })
                                     .left(function(scene){
@@ -148,20 +195,32 @@ define (function (require) {
 
                                         var switzerlandC = countryKey.label.match('(CH)')!=null?countryKey.label:null;
                                         var norwayC = countryKey.label.match('(NO)')!=null?countryKey.label:null;
+                                        var albaniaC = countryKey.label.match('(AL)')!=null?countryKey.label:null;
 
-                                        if(switzerlandC!=null){
-                                            if(resolution == 1440){
-                                                return baseScale(switzerlandC) - this.proto.width() + 5;
+                                        //$log.warn(baseScale(albaniaC));
+
+                                        if(year == 2009){
+                                            if(switzerlandC!=null){
+                                                if(resolution == 1440){
+                                                    return baseScale(switzerlandC) - this.proto.width() + 5;
+                                                }
+                                                if(year == '2014' && resolution == 1024){
+                                                    return baseScale(switzerlandC) - this.proto.width() + 3;
+                                                }
+                                                if(resolution<=768){
+                                                    return baseScale(switzerlandC) - this.sign.panel.barWidth + 4;
+                                                }
+                                                return baseScale(switzerlandC) - this.proto.width();
+                                            }else{
+                                                if(resolution<=768){
+                                                    return baseScale(norwayC) - this.sign.panel.barWidth + 4;
+                                                }
+                                                return baseScale(norwayC) - this.sign.panel.barWidth - 2;
                                             }
-                                            if(resolution<=768){
-                                                return baseScale(switzerlandC) - this.sign.panel.barWidth + 4;
-                                            }
-                                            return baseScale(switzerlandC) - this.proto.width();
                                         }else{
-                                            if(resolution<=768){
-                                                return baseScale(norwayC) - this.sign.panel.barWidth + 4;
+                                            if(albaniaC != null){
+                                                return baseScale(albaniaC) - this.proto.width() + 2;
                                             }
-                                            return baseScale(norwayC) - this.sign.panel.barWidth - 2;
                                         }
                                         /*if(baseScale('Switzerland (CH)') < 20){
                                             if(resolution<=768){
@@ -186,12 +245,7 @@ define (function (require) {
                                 .height(null) // clear any inherited value
                                 .width(null)  // clear any inherited value
                                 .strokeStyle('black')
-                                .lineWidth(function(scene){
-                                    if(resolution<=768){
-                                        return 1.5
-                                    }
-                                    return 2;
-                                })
+                                .lineWidth(1.5)
                                 .left(function(scene){
                                     var baseScale = this.getContext().chart.axes.base.scale;
                                     //$log.warn(this.proto.$properties[2]);
@@ -209,14 +263,22 @@ define (function (require) {
                                     }*/
 
                                     if(resolution == 1440){
-                                        return baseScale(euC) + this.proto.width() - 3;                                        
+                                        if(year == '2009'){
+                                            return baseScale(euC) + this.proto.width() - 3;
+                                        }else{
+                                            return baseScale(euC) + this.proto.width() - 5;
+                                        }
                                     }else if(resolution == 768){
                                         return baseScale(euC) + this.proto.width()/2 + 3;                                        
                                     }else if(resolution < 768){
                                         return baseScale(euC) + this.proto.width()/2
                                     }
 
-                                    return baseScale(euC) + this.proto.width();
+                                    if(year == '2009'){
+                                        return baseScale(euC) + this.proto.width();
+                                    }else{
+                                        return baseScale(euC) + this.proto.width() - 2;
+                                    }
                                 });
                         },
                         visualRoles:{
@@ -296,6 +358,51 @@ define (function (require) {
                                     }else if(i == 3 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(22);
                                     }else if(i == 4 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(1);
+                                    }
+                                    this.sign.chart.options.height = 45*colors.length;
+                                }else if(colors.length == 6){
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(12));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(2));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
+                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+                                    if(i == 0 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(12);
+                                    }else if(i == 1 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(2);
+                                    }else if(i == 2 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(3);
+                                    }else if(i == 3 && series.value == colors[i]){
+                                        return dvtUtils.getAccidentsColors(4);
+                                    }else if(i == 4 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(22);
+                                    }else if(i == 5 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(1);
+                                    }
+                                    this.sign.chart.options.height = 45*colors.length;
+                                }else if(colors.length == 7){
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(4));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(12));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(2));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
+                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+                                    if(i == 0 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(4);
+                                    }else if(i == 1 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(12);
+                                    }else if(i == 2 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(2);
+                                    }else if(i == 3 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(3);
+                                    }else if(i == 4 && series.value == colors[i]){
+                                        return dvtUtils.getAccidentsColors(4);
+                                    }else if(i == 5 && series.value == colors[i]){
+                                        return dvtUtils.getColorCountry(22);
+                                    }else if(i == 6 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(1);
                                     }
                                     this.sign.chart.options.height = 45*colors.length;
@@ -410,7 +517,9 @@ define (function (require) {
                             //$log.warn(colors);
 
                             if(colors.length == 4 && series.value == colors[3] ||
-                                colors.length == 5 && series.value == colors[3]){
+                                colors.length == 5 && series.value == colors[3] ||
+                                colors.length == 6 && series.value == colors[3] ||
+                                colors.length == 7 && series.value == colors[3]){
                                 return 'black';
                             }   
                             return 'white';

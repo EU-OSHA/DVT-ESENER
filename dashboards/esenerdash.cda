@@ -330,7 +330,7 @@
     <Query>
       SELECT DISTINCT(a.id), a.literal_id 
       FROM split_activity_sector a
-      INNER JOIN profile p ON a.id=p.activity_sector_id AND a.id NOT IN (1,5, 8)
+      INNER JOIN profile p ON a.id=p.activity_sector_id AND a.id NOT IN (5, 8)
       INNER JOIN value v ON p.id=v.profile_id
       INNER JOIN indicator i ON v.indicator_id=i.id
       WHERE i.name=${pQuestion}
@@ -364,7 +364,7 @@
       <Parameter default="EN" name="pLocale" type="String" />
     </Parameters>
     <Query>
-      SELECT t.text as Answer, IF(n.name REGEXP 'European Union', n.country_code, CONCAT(t2.text, " (", n.country_code, ")")) as Country, v.value*100 as Value
+      SELECT t.text as Answer, IF(n.name REGEXP 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(t2.text, " (", n.country_code, ")"))) as Country, v.value*100 as Value
       FROM nuts n, profile p, value v, translation t, translation t2, split_answer sa, indicator i, esener_answer_order eao
       WHERE n.id = p.nuts_id
       AND i.name = ${pIndicator}
@@ -377,6 +377,50 @@
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
       ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
       AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR')) ELSE n.id = p.nuts_id END
+      AND t.language = ${pLocale}
+      AND t2.literal_id = n.literal_id
+      AND t2.language = ${pLocale}
+      AND v.dataset_id = ${pDataset}
+      ORDER BY CASE WHEN ${pDataset} = 15 THEN FIELD('EU28', n.country_code) ELSE FIELD('EU27', n.country_code) END DESC,
+      CASE WHEN ${pAnswer}=0 THEN FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR') END ASC,  
+      CASE WHEN ${pAnswer}!=0 THEN FIELD(${pAnswer}, eao.answer_id) END DESC, CASE WHEN ${pAnswer}=0 THEN n.country_code END ASC, eao.order_position ASC, 
+      CASE WHEN ${pAnswer}!=0 THEN Value END DESC
+    </Query>
+  </DataAccess>
+
+  <DataAccess access="public" connection="dvt_conn" id="getEuropeanBarCharExportData" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="15" name="pDataset" type="Numeric"/>
+      <Parameter default="MM161" name="pIndicator" type="String"/>
+      <Parameter default="14" name="pActivityFilter" type="String" />
+      <Parameter default="11" name="pCompanyFilter" type="String" />
+      <Parameter default="0" name="pEUOnly" type="String" />
+      <Parameter default="activity-sector" name="pSectorSize" type="String" />
+      <Parameter default="0" name="pAnswer" type="Numeric" />
+      <Parameter default="EN" name="pLocale" type="String" />
+    </Parameters>
+    <Query>
+      SELECT n.country_code as Country, 
+      i.name as Question, 
+      IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) as Subset, 
+      t.text as Answer, 
+      v.value*100 as Percentage
+      FROM nuts n, profile p, value v, translation t, translation t2, split_answer sa, indicator i, esener_answer_order eao, split_activity_sector sas, split_company_size scs
+      WHERE n.id = p.nuts_id
+      AND i.name = ${pIndicator}
+      AND v.indicator_id = i.id
+      AND i.id = eao.indicator_id
+      AND v.profile_id = p.id
+      AND p.answer_id=sa.id
+      AND sa.id = eao.answer_id
+      AND t.literal_id =sa.literal_id
+      AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
+      ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR')) ELSE n.id = p.nuts_id END
+      AND sas.id = ${pActivityFilter}
+      AND scs.id = ${pCompanyFilter}
       AND t.language = ${pLocale}
       AND t2.literal_id = n.literal_id
       AND t2.language = ${pLocale}
@@ -458,7 +502,8 @@
           AND CASE WHEN ${pYear} = '2009' 
             THEN scs.id IN (12,13,14,15,11) ELSE scs.id IN (11,7,8,14,10) END) END
       </Query>
-    </DataAccess>-->
+      <!-- ORDER BY FIELD(sas.id,15,16,17,14,1,3,2,4,18,6,7), FIELD(scs.id,12,13,7,8,14,15,10,11); -->
+    </DataAccess>
 
     <DataAccess access="public" connection="dvt_conn" id="getNationalBarChartData" type="sql">
       <Cache duration="3600" enabled="true"/>

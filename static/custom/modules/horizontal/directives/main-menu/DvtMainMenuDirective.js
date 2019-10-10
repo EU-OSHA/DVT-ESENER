@@ -52,15 +52,15 @@ define(function (require) {
             controller: ['$rootScope', '$scope', '$state', '$window' , 'configService', '$http', '$log','dataService', '$compile', '$sce', '$stateParams',
                 function ($rootScope, $scope, $state, $window, configService, $http, $log, dataService, $compile, $sce, $stateParams) {
                     // Load google translate element
-                    //new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-
-                    
+                    //new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');                   
 
                     $scope.changeLanguage = function(){
                         var local = $scope.pLanguage;
                         if ($state.current.name !== undefined) {
                             if($scope.pIndicator == '2009' && ($scope.pLanguage == 'is' || $scope.pLanguage == 'sv')){
                                 local = 'en';
+                            }else if($scope.pIndicator == '2014' && $scope.pLanguage == 'en'){
+                                local = 'en_1';
                             }
                             $state.go($state.current.name, {
                                 pLanguage: $scope.pLanguage,
@@ -168,7 +168,7 @@ define(function (require) {
                     };
                     $scope.titleS=titleStructure;
                     $scope.pathURLDVT=$location.absUrl();
-                    $scope.pathURLDVTGoogle = $scope.pathURLDVT.replace('#','?_escaped_fragment_=');
+                    //$scope.pathURLDVTGoogle = $scope.pathURLDVT.replace('#','?_escaped_fragment_=');
 
                     $rootScope.$on('$viewContentLoading', function(event, viewConfig) {
                             $log.debug('Loading $viewContentLoading');
@@ -179,6 +179,15 @@ define(function (require) {
                             $scope.pLanguage = $stateParams.pLanguage;
 
                             $scope.pIndicator = $stateParams.pIndicator;
+
+                            if($stateParams.pIndicator == 2009){
+                                $scope.titleShare='ESENER-1 | Safety and health at work - EU-OSHA';
+                            }else if($stateParams.pIndicator == 2014){
+                                $scope.titleShare='ESENER-2 | Safety and health at work - EU-OSHA';
+                            }else{
+                                $scope.titleShare='ESENER | Safety and health at work - EU-OSHA';
+                            }
+                            
                             $scope.currentName = $state.current.name;
 
                             var cadena = "";

@@ -142,7 +142,7 @@
         <div class="national-bar-chart-wrapper" data-ng-if="pChart == 'national-bar-chart'">
           <div class="xxs-w1 xs-w1 w1 center-text">
               <div class="card--block--chart">
-                  <div data-ng-repeat="indicator in indicators.data" class="chart--block">
+                  <div data-ng-repeat="indicator in indicators.data" class="chart--block chart-{{$index}}">
                       <dvt-bar-chart
                         data-ng-cloak
                         query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
@@ -175,7 +175,7 @@
         <div class="" data-ng-if="pChart == 'national-comparisons'">
           <div class="xxs-w1 xs-w1 w1 center-text">
             <div class="card--block--chart">
-              <div data-ng-repeat="answer in answers.data" class="chart--block">
+              <div data-ng-repeat="answer in answers.data" class="chart--block chart-{{$index}}">
                 <dvt-bar-chart
                   data-ng-cloak
                   query="getNationalComparisonsData" cda="{{::cdaEsenerDash}}"
@@ -214,14 +214,10 @@
                   data-ng-cloak
                   query="getPieChartData" cda="{{::cdaEsenerDash}}"
                   type="pie" listen-to="['pFilters']"
-<<<<<<< HEAD
-                  width="330" height="600" axis-percent="1"
-=======
                   width="330" height="{{pieChartHeight}}" axis-percent="1"
->>>>>>> release-sprint_5
                   params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pCountry', 'pFilters.country'],['pLocale',pLocale]]"
                   color-role="c" colors="[stories[4].color1, stories[4].color2, stories[4].color3, stories[4].color4,
-                  stories[4].color5]" id="5" 
+                  stories[4].color5, stories[4].color6, stories[4].color7]" id="5" 
                   plots="stories[4].plots"
                   values-font="{{pieChartFont}}"
                   multiple-label-colors="false"
@@ -252,13 +248,13 @@
                 <div class="popUpMessage--text--block">
                   <p class="text-center title-share" data-ng-bind="i18n.L101028"></p>
                   <div class="social--network--modal" id="osha-menu-social">
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n.L370}}" socialshare-text="{{i18n[title]}}" socialshare-url="{{pathURLDVT}}">
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n.L370}}" socialshare-text="{{titleShare}}" socialshare-url="{{pathURLDVT}}">
                       <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L370)"></span>
                     </a>
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n.L371}}" socialshare-url="{{pathURLDVT}}">
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n.L371}}" socialshare-url="{{pathURLDVT}}" socialshare-quote="{{titleShare}}">
                       <i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L371)"></span>
                     </a>
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n.L372}}" socialshare-url="{{pathURLDVT}}">
+                    <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n.L372}}" socialshare-url="{{pathURLDVT}}" socialshare-text="{{titleShare}}">
                       <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L372)"></span>
                     </a>
                   </div>

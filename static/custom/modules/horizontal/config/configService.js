@@ -23,6 +23,8 @@ define(function (require) {
 
     // LITERALS
     var i18n = require('json!horizontal/model/literals');
+
+    //ESENER 2009
     var i18nBG = require('json!horizontal/model/literals/BG');
     var i18nCS = require('json!horizontal/model/literals/CS');
     var i18nDA = require('json!horizontal/model/literals/DA');
@@ -48,6 +50,31 @@ define(function (require) {
     var i18nFI = require('json!horizontal/model/literals/FI');
     var i18nSV = require('json!horizontal/model/literals/SV');
     var i18nTR = require('json!horizontal/model/literals/TR');
+
+    //ESENER 2014
+    var i18nAL = require('json!horizontal/model/literals/AL');
+    var i18nDE1 = require('json!horizontal/model/literals/DE_1');
+    var i18nFR1 = require('json!horizontal/model/literals/FR_1');
+    var i18nNL1 = require('json!horizontal/model/literals/NL_1');
+    var i18nEL1 = require('json!horizontal/model/literals/EL_1');
+    var i18nRU1 = require('json!horizontal/model/literals/RU_1');
+    var i18nFI = require('json!horizontal/model/literals/FI');
+    var i18nSV1 = require('json!horizontal/model/literals/SV_1');
+    var i18nAL1 = require('json!horizontal/model/literals/AL_1');
+    var i18nMK = require('json!horizontal/model/literals/MK');
+    var i18nEN1 = require('json!horizontal/model/literals/EN_1');
+    var i18nRU1 = require('json!horizontal/model/literals/RU_1');
+    var i18nRU3 = require('json!horizontal/model/literals/RU_3');
+    var i18nDE2 = require('json!horizontal/model/literals/DE_2');
+    var i18nFR2 = require('json!horizontal/model/literals/FR_2');
+    var i18nLU = require('json!horizontal/model/literals/LU');
+    var i18nEN2 = require('json!horizontal/model/literals/EN_2');
+    var i18nME = require('json!horizontal/model/literals/ME');
+    var i18nSR = require('json!horizontal/model/literals/SR');
+    var i18nDE2 = require('json!horizontal/model/literals/DE_2');
+    var i18nFR3 = require('json!horizontal/model/literals/FR_3');
+    var i18nIT1 = require('json!horizontal/model/literals/IT_1');
+
 
     var datasets = require('json!horizontal/model/datasets');
 
@@ -434,6 +461,48 @@ define(function (require) {
                 return i18nSV;
             }else if(language == 'tr'){
                 return i18nTR;
+            }else if(language == 'al'){
+                return i18nAL;
+            }else if(language == 'de_1'){
+                return i18nDE1;
+            }else if(language == 'fr_1'){
+                return i18nFR1;
+            }else if(language == 'nl_1'){
+                return i18nNL1;
+            }else if(language == 'el_1'){
+                return i18nEL1;
+            }else if(language == 'fi'){
+                return i18nFI;
+            }else if(language == 'sv_1'){
+                return i18nSV1;
+            }else if(language == 'al_1'){
+                return i18nAL1;
+            }else if(language == 'mk'){
+                return i18nMK;
+            }else if(language == 'en_1'){
+                return i18nEN1;
+            }else if(language == 'ru_1'){
+                return i18nRU1;
+            }else if(language == 'ru_3'){
+                return i18nRU3;
+            }else if(language == 'de_2'){
+                return i18nDE2;
+            }else if(language == 'fr_2'){
+                return i18nFR2;
+            }else if(language == 'lu'){
+                return i18nLU;
+            }else if(language == 'en_2'){
+                return i18nEN2;
+            }else if(language == 'me'){
+                return i18nME;
+            }else if(language == 'sr'){
+                return i18nSR;
+            }else if(language == 'de_2'){
+                return i18nDE2;
+            }else if(language == 'fr_3'){
+                return i18nFR3;
+            }else if(language == 'it_1'){
+                return i18nFR3;
             }
 
             return i18n;

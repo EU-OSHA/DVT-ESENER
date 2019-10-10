@@ -255,7 +255,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Data Visualisation | ESENER",
+                title: "European map | ESENER",
                 description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
@@ -312,6 +312,9 @@ define(function (require) {
                 },
                 pEuOnly: {
                     value: 0
+                },
+                pSortBy: {
+                    value: '0'
                 }
             },
             views: {
@@ -322,7 +325,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Data Visualisation | ESENER",
+                title: "European bar chart | ESENER",
                 description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
@@ -389,7 +392,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Data Visualisation | ESENER",
+                title: "National bar chart | ESENER",
                 description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
@@ -456,7 +459,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Data Visualisation | ESENER",
+                title: "National comparisons | ESENER",
                 description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
@@ -523,7 +526,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Data Visualisation | ESENER",
+                title: "Pie chart | ESENER",
                 description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });

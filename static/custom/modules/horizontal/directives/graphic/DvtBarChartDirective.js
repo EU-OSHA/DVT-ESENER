@@ -633,10 +633,18 @@ define(function (require) {
                     definition.chartDefinition.label_textAlign = 'center';
                     definition.chartDefinition.label_textBaseline = function(scene){
                         var value = scene.firstAtoms.value;
+
                         if(scene.nextSibling == null){
                             if(value.value < 7 && scene.previousSibling.firstAtoms.value.value < 7){
                                 return 'top';
                             }
+                        }
+
+                        if(scene.previousSibling != null){
+                            if(scene.previousSibling.previousSibling == null){
+                                return 'middle';
+                            }
+                            
                         }
 
                         return 'bottom';
