@@ -23,6 +23,13 @@
         $('body').addClass('plus');
     }
 
+    function gotoTop() {
+        $('html,body').animate({ 'scrollTop': 0 }, 'slow');
+        return false;
+    };
+
+
+
 define(function (require) {
     'use strict';
 
@@ -66,28 +73,40 @@ define(function (require) {
                     var prevScrollpos = $window.pageYOffset;
 
                     $window.onscroll = function() {
-                      
-                      var currentScrollPos = $window.pageYOffset;
-                     //console.log(currentScrollPos);
-                    if( currentScrollPos > 165){
-                      if (prevScrollpos > currentScrollPos) {
-                        angular.element(".bar-header").addClass('show-header');
-                        angular.element(".affix").addClass('show-header');
 
-                        angular.element(".affix").removeClass('hide-header');
-                        angular.element(".bar-header").removeClass('hide-header');
-                      } else {
-                        angular.element(".bar-header").addClass('hide-header');
-                        angular.element(".affix").addClass('hide-header');
+                        var currentScrollPos = $window.pageYOffset;
+                        //console.log(currentScrollPos);
+                        if( currentScrollPos > 158)
+                        {
+                          if (prevScrollpos > currentScrollPos)
+                          {
+                            angular.element(".bar-header").addClass('show-header');
+                            angular.element(".affix").addClass('show-header');
 
-                        angular.element(".affix").removeClass('show-header');
-                        angular.element(".bar-header").removeClass('show-header');
-                      }
+                            angular.element(".affix").removeClass('hide-header');
+                            angular.element(".bar-header").removeClass('hide-header');
+                          }
+                          else
+                          {
+                            angular.element(".bar-header").addClass('hide-header');
+                            angular.element(".affix").addClass('hide-header');
+
+                            angular.element(".affix").removeClass('show-header');
+                            angular.element(".bar-header").removeClass('show-header');
+                          }
+                        }
+                        prevScrollpos = currentScrollPos;
+                        var gotopVisible = $(window).height() + $(window).height()/2;
+                        if( currentScrollPos > gotopVisible )
+                        {
+                            $('.go-to').css('display','block');
+                        }
+                        else
+                        {
+                            $('.go-to').css('display','none');
+                        }
                     }
-                      prevScrollpos = currentScrollPos;
 
-                    } 
-                    
                     $( window ).resize(function() {
                       angular.element(".bar-header").removeClass('hide-header');
                     });
@@ -170,7 +189,9 @@ define(function (require) {
                             i18n_literals = ($stateParams.pLanguage == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLanguage);
                             $scope.i18n_literals = i18n_literals;
                             
-                            $scope.breadCrumb = (params == null)?breadCrumbStructure[$state.current.name]:breadCrumbStructure[$state.current.name+params];
+                            $scope.year = $state.params.pIndicator;
+
+                            $scope.breadCrumb = breadCrumbStructure[$state.current.name];
                             $scope.titleHeader = $scope.i18n_literals.L22020;
 
                             if ($state.current.name == 'home') {
@@ -181,7 +202,7 @@ define(function (require) {
                                 var pathURL = path.split("/");
                                 $scope.isHome = false;
                                 $scope.isFooterPage = false;
-                                var setBreadCrumbs=function() {
+                                /*var setBreadCrumbs=function() {
                                     var _link = $compile((params == null)?breadCrumbStructure[$state.current.name]:breadCrumbStructure[$state.current.name+params])($scope);
                                     var breadcrumb = "";
                                     for (var i = 0; i < _link.size(); i++)
@@ -195,7 +216,7 @@ define(function (require) {
                                     $scope.anchorPath = $location.path().split("/")[1];
                                 };
 
-                                setBreadCrumbs();
+                                setBreadCrumbs();*/
                             }
 
                             $scope.isFooterPage = false;

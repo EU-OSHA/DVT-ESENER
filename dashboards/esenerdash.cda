@@ -69,10 +69,13 @@
       sa.id as answer_id,
       sa.literal_id as answer,
       i.id as indicator 
-      FROM esener_category ec, indicator i, profile p, value v, split_answer sa, translation t, nuts n
+      FROM esener_category ec, indicator i, profile p, value v, split_answer sa, translation t, nuts n,
+      esener_answer_order eao 
       WHERE ec.year = ${pYear}
       AND ec.category = ${pQuestion}
       AND ec.category = i.name
+      AND eao.indicator_id = i.id
+      AND eao.answer_id = sa.id
       AND i.id = v.indicator_id
       AND v.profile_id = p.id
       AND p.nuts_id = n.id
@@ -81,8 +84,8 @@
       AND sa.literal_id = t.literal_id
       AND t.language = 'EN'
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
-      ORDER BY country_code ASC, FIELD(sa.id, 1, 53, 34, 3, 38, 39, 2, 36, 37), sa.id ASC;
+      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
+      ORDER BY country_code ASC, eao.order_position ASC;
     </Query>
   </DataAccess>
 
@@ -107,10 +110,12 @@
       sa.literal_id as Answer,      
       (ROUND(v.value*100,1)) as Percentage 
       FROM esener_category ec, indicator i, profile p, value v, split_answer sa, translation t, nuts n, split_activity_sector sas,
-      split_company_size scs
+      split_company_size scs, esener_answer_order eao 
       WHERE ec.year = ${pYear}
       AND ec.category = ${pQuestion}
       AND ec.category = i.name
+      AND eao.indicator_id = i.id
+      AND eao.answer_id = sa.id
       AND i.id = v.indicator_id
       AND v.profile_id = p.id
       AND p.nuts_id = n.id
@@ -120,8 +125,8 @@
       AND t.language = 'EN'
       AND sas.id = ${pActivityFilter} AND scs.id = ${pCompanyFilter}
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
-      ORDER BY country_code ASC, FIELD(sa.id, 1, 53, 34, 3, 38, 39, 2, 36, 37), sa.id ASC;
+      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'EU28', 'AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
+      ORDER BY CASE WHEN ${pDataset} = 15 THEN FIELD('EU28', n.country_code) ELSE FIELD('EU28', n.country_code) END DESC, FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR') ASC, n.country_code ASC, eao.order_position ASC;
     </Query>
   </DataAccess>
 
@@ -145,7 +150,7 @@
       (SELECT CONCAT(ROUND(${pMinValue},1), '%') as Distribution, COUNT(ROUND(v.value*100,1)) as Total
         FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
-        AND n.country_code NOT IN ('EU27')
+        AND n.country_code NOT IN ('EU28')
         AND v.profile_id = p.id 
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
@@ -154,13 +159,13 @@
         AND v.indicator_id = i.id
         AND ROUND(v.value*100,1) = ${pMinValue}
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
+        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
         ORDER BY v.value ASC
       )UNION(
         SELECT CONCAT(ROUND(${pMinValue}+${pRange},1), '%'), COUNT(ROUND(v.value*100,1))
         FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
-        AND n.country_code NOT IN ('EU27')
+        AND n.country_code NOT IN ('EU28')
         AND v.profile_id = p.id
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
@@ -169,13 +174,13 @@
         AND v.indicator_id = i.id
         AND (ROUND(v.value*100,1) BETWEEN (${pMinValue} + 0.01) AND (${pMinValue} + ${pRange}))
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
+        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
         ORDER BY v.value ASC
       )UNION(
         SELECT CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), '%'), COUNT(ROUND(v.value*100,1))
         FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
-        AND n.country_code NOT IN ('EU27')
+        AND n.country_code NOT IN ('EU28')
         AND v.profile_id = p.id 
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
@@ -184,13 +189,13 @@
         AND v.indicator_id = i.id
         AND ROUND(v.value*100, 1) BETWEEN ((${pMinValue}+${pRange}) + 0.01) AND (${pMinValue}+${pRange}*2)
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
+        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
         ORDER BY v.value ASC
       )UNION(
         SELECT CONCAT(ROUND(${pMaxValue} - ${pRange},1), '%'), COUNT(ROUND(v.value*100,1))
         FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
-        AND n.country_code NOT IN ('EU27')
+        AND n.country_code NOT IN ('EU28')
         AND v.profile_id = p.id 
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
@@ -199,13 +204,13 @@
         AND v.indicator_id = i.id
         AND ROUND(v.value*100,1) BETWEEN ((${pMinValue}+${pRange}*2) + 0.01) AND (${pMaxValue} - ${pRange})
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
+        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
         ORDER BY v.value ASC
       )UNION(
         SELECT CONCAT(ROUND(${pMaxValue},1), '%'), COUNT(ROUND(v.value*100,1))
         FROM nuts n, profile p, value v, split_answer sa, indicator i
         WHERE n.id = p.nuts_id 
-        AND n.country_code NOT IN ('EU27')
+        AND n.country_code NOT IN ('EU28')
         AND v.profile_id = p.id 
         AND p.answer_id = sa.id
         AND sa.id = ${pAnswer}
@@ -214,7 +219,7 @@
         AND v.indicator_id = i.id
         AND ROUND(v.value*100,1) BETWEEN ((${pMaxValue} - ${pRange}) + 0.01) AND ${pMaxValue}
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU27', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU27')) END
+        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
         ORDER BY v.value ASC
       )
     </Query>
@@ -245,12 +250,15 @@
       <Parameter default="MM161" name="pQuestion" type="String" />
     </Parameters>
     <Query>
-      SELECT ec.LEVEL AS LEVEL, ec3.category AS previousID, ec3.name_3_literal_id AS previousName, ec.name_2_literal_id AS NAME2, ec.name_3_literal_id AS NAME3, ec.bottom_text_literal_id AS bottomText, ec4.category AS nextID, ec4.name_3_literal_id AS nextName, ec1.name_2_literal_id AS father, ec2.name_2_literal_id AS grandfather, IF(ec3.category IS NOT NULL,  eao.answer_id, NULL) as answer_id
+      SELECT ec.LEVEL AS LEVEL, ec3.category AS previousID, ec3.name_3_literal_id AS previousName, ec.name_2_literal_id AS NAME2, ec.name_3_literal_id AS NAME3, ec.bottom_text_literal_id AS bottomText, ec4.category AS nextID, ec4.name_3_literal_id AS nextName, ec1.name_2_literal_id AS father, ec2.name_2_literal_id AS grandfather, IF(ec3.category IS NOT NULL,  eao.answer_id, NULL) as answer_id,
+      ec5.id as previousFatherID, ec5.name_1_literal_id as previousFatherName, ec5.level as previousLevel, ec6.id as nextFatherID, ec6.name_1_literal_id as nextFatherName, ec6.level as nextLevel
       FROM esener_category ec
       INNER JOIN esener_category ec1 ON ec.father_id = ec1.id
       LEFT JOIN esener_category ec2 ON ec1.father_id=ec2.id
       LEFT JOIN esener_category ec3 ON ec.previous_id=ec3.id
       LEFT JOIN esener_category ec4 ON ec.next_id=ec4.id
+      LEFT JOIN esener_category ec5 ON ec3.father_id = ec5.id
+      LEFT JOIN esener_category ec6 ON ec4.father_id = ec6.id
       INNER JOIN indicator i ON i.name = ec.category
       INNER JOIN esener_answer_order eao ON i.id = eao.indicator_id AND eao.order_position = 1
       WHERE ec.category=${pQuestion};
@@ -290,7 +298,7 @@
       INNER JOIN indicator i ON v.indicator_id=i.id
       INNER JOIN translation t ON n.literal_id = t.literal_id AND t.language = ${pLanguage}
       WHERE i.name=${pQuestion}
-      ORDER BY FIELD(country_code, 'EU27') DESC, country_code ASC;
+      ORDER BY FIELD(country_code, 'EU28') DESC, country_code ASC;
     </Query>
   </DataAccess>
 
@@ -338,7 +346,7 @@
           FROM strategies_page sp
           INNER JOIN nuts n
           ON n.id = sp.nuts_id
-          ORDER BY FIELD('EU27', country_code), country_code ASC
+          ORDER BY FIELD('EU28', country_code), country_code ASC
         </Query>
   </DataAccess>
 
@@ -368,19 +376,63 @@
       AND t.literal_id =sa.literal_id
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
       ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('CH', 'NO', 'TR')) ELSE n.id = p.nuts_id END
+      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR')) ELSE n.id = p.nuts_id END
       AND t.language = ${pLocale}
       AND t2.literal_id = n.literal_id
       AND t2.language = ${pLocale}
       AND v.dataset_id = ${pDataset}
-      ORDER BY CASE WHEN ${pDataset} = 15 THEN FIELD('EU28', n.country_code) ELSE FIELD('EU27', n.country_code) END DESC,
-      CASE WHEN ${pAnswer}=0 THEN FIELD(n.country_code, 'CH', 'NO', 'TR') END ASC, 
+      ORDER BY FIELD('EU28', n.country_code) DESC,
+      CASE WHEN ${pAnswer}=0 THEN FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR') END ASC,  
       CASE WHEN ${pAnswer}!=0 THEN FIELD(${pAnswer}, eao.answer_id) END DESC, CASE WHEN ${pAnswer}=0 THEN n.country_code END ASC, eao.order_position ASC, 
       CASE WHEN ${pAnswer}!=0 THEN Value END DESC
     </Query>
   </DataAccess>
 
     <!--<DataAccess access="public" connection="dvt_conn" id="getNationalBarChartIndicators" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="15" name="pDataset" type="Numeric"/>
+      <Parameter default="MM161" name="pIndicator" type="String"/>
+      <Parameter default="14" name="pActivityFilter" type="String" />
+      <Parameter default="11" name="pCompanyFilter" type="String" />
+      <Parameter default="0" name="pEUOnly" type="String" />
+      <Parameter default="activity-sector" name="pSectorSize" type="String" />
+      <Parameter default="0" name="pAnswer" type="Numeric" />
+      <Parameter default="EN" name="pLocale" type="String" />
+    </Parameters>
+    <Query>
+      SELECT n.country_code as Country, 
+      i.name as Question, 
+      IF(${pSectorSize} = 'activity-sector', sas.literal_id, scs.literal_id) as Subset, 
+      t.text as Answer, 
+      v.value*100 as Percentage
+      FROM nuts n, profile p, value v, translation t, translation t2, split_answer sa, indicator i, esener_answer_order eao, split_activity_sector sas, split_company_size scs
+      WHERE n.id = p.nuts_id
+      AND i.name = ${pIndicator}
+      AND v.indicator_id = i.id
+      AND i.id = eao.indicator_id
+      AND v.profile_id = p.id
+      AND p.answer_id=sa.id
+      AND sa.id = eao.answer_id
+      AND t.literal_id =sa.literal_id
+      AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
+      ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
+      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR')) ELSE n.id = p.nuts_id END
+      AND sas.id = ${pActivityFilter}
+      AND scs.id = ${pCompanyFilter}
+      AND t.language = ${pLocale}
+      AND t2.literal_id = n.literal_id
+      AND t2.language = ${pLocale}
+      AND v.dataset_id = ${pDataset}
+      ORDER BY FIELD('EU28', n.country_code) DESC,
+      CASE WHEN ${pAnswer}=0 THEN FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR') END ASC,  
+      CASE WHEN ${pAnswer}!=0 THEN FIELD(${pAnswer}, eao.answer_id) END DESC, CASE WHEN ${pAnswer}=0 THEN n.country_code END ASC, eao.order_position ASC, 
+      CASE WHEN ${pAnswer}!=0 THEN Value END DESC
+    </Query>
+  </DataAccess>
+
+    <DataAccess access="public" connection="dvt_conn" id="getNationalBarChartIndicators" type="sql">
       <Cache duration="3600" enabled="true"/>
       <Columns/>
       <Parameters>
@@ -416,7 +468,7 @@
         <Parameter default="MM161" name="pQuestion" type="String"/>
         <Parameter default="2009" name="pYear" type="Numeric"/>
         <Parameter default="company-size" name="pSectorSize" type="String" />
-        <Parameter default="EU27" name="pCountry" type="String"/>
+        <Parameter default="EU28" name="pCountry" type="String"/>
         <Parameter default="14" name="pIndicator" type="Numeric"/>
       </Parameters>
       <Query>
@@ -448,7 +500,7 @@
         <Parameter default="MM161" name="pQuestion" type="String"/>
         <Parameter default="2009" name="pYear" type="Numeric"/>
         <Parameter default="company-size" name="pSectorSize" type="String" />
-        <Parameter default="EU27" name="pCountry" type="String"/>
+        <Parameter default="EU28" name="pCountry" type="String"/>
         <Parameter default="14" name="pIndicator" type="Numeric"/>
       </Parameters>
       <Query>
@@ -467,9 +519,10 @@
         AND p.answer_id = sa.id
         AND sa.id = eao.answer_id
         AND CASE WHEN ${pSectorSize} = 'activity-sector' 
-          THEN (p.activity_sector_id IN (14, 15, 16, 17) AND p.company_size_id IS NULL AND p.activity_sector_id = sas.id) 
-        ELSE (p.company_size_id IN(11, 12, 13, 14, 15) AND p.activity_sector_id IS NULL AND p.company_size_id = scs.id) END
-        AND sas.id IN (14, 15, 16, 17) AND scs.id IN(11, 12, 13, 14, 15)
+        THEN (p.activity_sector_id = sas.id AND p.company_size_id IS NULL AND CASE WHEN ${pYear} = 2009 
+          THEN p.activity_sector_id IN (14, 15, 16, 17) ELSE p.activity_sector_id IN (1,3,2,4,18,11,7,14) END)
+        ELSE (p.company_size_id = scs.id AND p.activity_sector_id IS NULL AND CASE WHEN ${pYear} = 2009 
+          THEN p.company_size_id IN(11, 12, 13, 14, 15) ELSE scs.id IN (7,8,14,10,11) END) END
         AND n.country_code = ${pCountry}
         ORDER BY Subset Asc, eao.order_position ASC;
       </Query>
@@ -483,7 +536,7 @@
       <Parameter default="MM161" name="pQuestion" type="String"/>
       <Parameter default="2009" name="pYear" type="Numeric"/>
       <Parameter default="activity-sector" name="pSectorSize" type="String" />
-      <Parameter default="EU27" name="pCountry" type="String"/>
+      <Parameter default="EU28" name="pCountry" type="String"/>
     </Parameters>
     <Query>
       SELECT (sa.literal_id) as Answer,IF(p.activity_sector_id IS NULL, scs.literal_id, sas.literal_id) as Sector, v.value*100 as Value
@@ -501,6 +554,7 @@
       ELSE (p.company_size_id = scs.id
         AND CASE WHEN ${pYear} = '2009' 
           THEN scs.id IN (12,13,14,15,6) ELSE scs.id IN (6,7,8,14,10) END) END
+      AND sas.id IN (14, 15, 16, 17) AND scs.id IN(11, 12, 13, 14, 15)
       AND n.country_code = ${pCountry}
       ORDER BY FIELD(sas.id, 15,16,17,8) DESC, FIELD(scs.id, 12,13,14,15,6) DESC, 
       FIELD(sa.id, 1, 34, 3, 38, 39, 2, 36, 37) ASC, sa.id ASC;
@@ -547,7 +601,7 @@
       <Parameter default="8" name="pActivityFilter" type="String" />
       <Parameter default="6" name="pCompanyFilter" type="String" />
       <Parameter default="AT" name="pCountry1" type="String"/>
-      <Parameter default="EU27" name="pCountry2" type="String"/>
+      <Parameter default="EU28" name="pCountry2" type="String"/>
       <Parameter default="1" name="pAnswer" type="Numeric"/>
       <Parameter default="activity-sector" name="pSectorSize" type="String" />
     </Parameters>
@@ -566,7 +620,7 @@
       AND t.language = 'EN'
       AND v.dataset_id = ${pDataset}
       AND CASE WHEN ${pAnswer} != 0 THEN (sa.id = ${pAnswer} AND p.answer_id=sa.id) ELSE p.answer_id=sa.id END
-      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU27') DESC;
+      ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC;
     </Query>
   </DataAccess>
 
@@ -580,7 +634,7 @@
       <Parameter default="14" name="pActivityFilter" type="String" />
       <Parameter default="11" name="pCompanyFilter" type="String" />
       <Parameter default="AT" name="pCountry1" type="String"/>
-      <Parameter default="EU27" name="pCountry2" type="String"/>
+      <Parameter default="EU28" name="pCountry2" type="String"/>
       <Parameter default="activity-sector" name="pSectorSize" type="String" />
     </Parameters>
     <Query>
@@ -632,7 +686,7 @@
       AND n.country_code = ${pCountry}
       AND t.language = ${pLocale}
       AND v.dataset_id = ${pDataset}
-      ORDER BY eao.order_position DESC;
+      ORDER BY eao.order_position ASC;
     </Query>
   </DataAccess>
 

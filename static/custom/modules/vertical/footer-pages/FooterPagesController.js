@@ -11,7 +11,7 @@
 define(function (require) {
     'use strict';
 
-    function controller($scope, $stateParams, $state, $document, $http, configService, $cookies) {
+    function controller($scope, $stateParams, $state, $document, $http, configService, $cookies, $log) {
 
         // Literals / i18n
         //$scope.i18n_literals = configService.getLiterals();
@@ -33,10 +33,22 @@ define(function (require) {
         });
 
         $scope.valueCheck=1;
-        $scope.textBox=i18n.youMayChooseNot;
-        $scope.textCheck=i18n.textCheck1;
+        $scope.textBox = $scope.i18n_literals.L101061;
+        $scope.textCheck = $scope.i18n_literals.L101062;
 
+        var check=angular.element('#box1 > p:nth-child(2) > input[type=checkbox]')[0];
 
+        if(check != null){
+            if($cookies.get("piwikX")=="activate" || $cookies.get("piwikX")==undefined){
+                check.checked=true;
+                $scope.textBox = $scope.i18n_literals.L101061;
+                $scope.textCheck = $scope.i18n_literals.L101062;
+            }else{
+                check.checked=false;
+                $scope.textBox = $scope.i18n_literals.L101074;
+                $scope.textCheck = $scope.i18n_literals.L101075;
+            }
+        }
 
         /* como se ponga on load
 
@@ -56,39 +68,37 @@ define(function (require) {
 
 
         $scope.oculta = function() {
+            //$log.warn(check);
+            //$log.warn(check.checked);
+            var now = new Date(),
+            // this will set the expiration to 12 months
+                exp = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate());
+            if (check.checked == true) {
+                //$log.warn('Entra en $scope.valueCheck == 1');
+                configService.tooglePiwik(true);
+                //$scope.valueCheck = 2;
+                $scope.textBox = $scope.i18n_literals.L101061;
+                $scope.textCheck = $scope.i18n_literals.L101062;
+                $cookies.remove('piwikX');
+                $cookies.put('piwikX', 'activate', {
+                    expires: exp
+                });
+            } else {
+                //$log.warn('Entra en else');
+                configService.tooglePiwik(false);
+                //$scope.valueCheck = 1;
+                $scope.textBox = $scope.i18n_literals.L101074;
+                $scope.textCheck = $scope.i18n_literals.L101075;
+                $cookies.remove('piwikX');
+                $cookies.put('piwikX', 'desactivate', {
+                    expires: exp
+                });
 
-                var now = new Date(),
-                // this will set the expiration to 12 months
-                    exp = new Date(now.getFullYear() + 1, now.getMonth(), now.getDate());
-
-                if ($scope.valueCheck == 1) {
-                    configService.tooglePiwik(true);
-                    $scope.valueCheck = 2;
-                    $scope.textBox = i18n.optOutComplete;
-                    $scope.textCheck = i18n.textCheck2;
-                    $cookies.remove('piwikX');
-                    $cookies.put('piwikX', 'desactivate', {
-                        expires: exp
-                    });
-                } else {
-                    configService.tooglePiwik(false);
-                    $scope.valueCheck = 1;
-                    $scope.textBox = i18n.youMayChooseNot;
-                    $scope.textCheck = i18n.textCheck1;
-                    $cookies.remove('piwikX');
-                    $cookies.put('piwikX', 'activate', {
-                        expires: exp
-                    });
-
-                }
-
-            //alert($cookies.get("piwikX"));
-
-            
+            }
         };
 
     }
 
-    controller.$inject= ['$scope', '$stateParams', '$state', '$document','$http','configService','$cookies'];
+    controller.$inject= ['$scope', '$stateParams', '$state', '$document','$http','configService','$cookies', '$log'];
     return controller;
 });

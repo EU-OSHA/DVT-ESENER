@@ -128,7 +128,7 @@
                         dimensions="stories[1].dimensions"
                         legend="true" is-maximized="false"
                         angle="{{angle}}" stacked="1"
-                        base-axis-size="100"
+                        base-axis-size="150"
                         base-color="#FFFFFF" axis-style="#FFFFFF"
                         panel-color="#FFFFFF"
                         datasource-and-dates="[15,110,pActivityFilter]"
@@ -146,13 +146,13 @@
                       <dvt-bar-chart
                         data-ng-cloak
                         query="getNationalBarChartData" cda="{{::cdaEsenerDash}}"
-                        width="330" height="90" axis-percent="1"
+                        width="330" height="120" axis-percent="1"
                         orientation="horizontal" axis-fixed-min="0"
                         axis-fixed-max="100" step="20"
                         listen-to="['pFilters']"
                         params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pSectorSize', 'pFilters.sectorSize'],['pCountry', 'pFilters.country'], ['pIndicator', indicator.id]]"
                         color-role="c" chart-title="{{i18n['L'+indicator.name]}}"
-                        id="3" axis-label-font="12px 'OpenSans-bold'"
+                        id="3" axis-label-font="14px 'OpenSans-bold'"
                         plots="stories[2].plots" values-overflow="show"
                         values-visible="true" values-mask="{value}"                        
                         label-text-align="stories[2].alignment"
@@ -163,7 +163,7 @@
                         dimensions="stories[2].dimensions"
                         legend="false" is-maximized="false"
                         base-color="#FFFFFF" axis-style="#FFFFFF"
-                        panel-color="#FFFFFF"
+                        panel-color="#FFFFFF" base-axis-size="150"
                         datasource-and-dates="[15,110,pActivityFilter]"
                       ></dvt-bar-chart>
                   </div>
@@ -183,7 +183,7 @@
                   orientation="horizontal" axis-fixed-min="0"
                   axis-fixed-max="100" step="20"
                   params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pActivityFilter', 'pFilters.activitySector'], ['pCompanyFilter', 'pFilters.establishmentSize'],['pCountry1', 'pFilters.country'], ['pCountry2', 'pFilters.country2'], ['pAnswer', answer.id], ['pSectorSize', 'pFilters.sectorSize'],['pLocale', pLocale]]"
-                  color-role="c" colors="[stories[3].color1, stories[3].color2]"
+                  color-role="c" colors="[stories[3].color2, stories[3].color1]"
                   id="4" axis-label-font="14px 'OpenSans-bold'"
                   chart-title="{{i18n.L100588}}: {{answer.name}}"
                   plots="stories[3].plots" values-overflow="show"
@@ -214,16 +214,21 @@
                   data-ng-cloak
                   query="getPieChartData" cda="{{::cdaEsenerDash}}"
                   type="pie" listen-to="['pFilters']"
+<<<<<<< HEAD
                   width="330" height="600" axis-percent="1"
+=======
+                  width="330" height="{{pieChartHeight}}" axis-percent="1"
+>>>>>>> release-sprint_5
                   params="[['pDataset',actualDataset],['pQuestion',pQuestion],['pYear', pIndicator],['pCountry', 'pFilters.country'],['pLocale',pLocale]]"
                   color-role="c" colors="[stories[4].color1, stories[4].color2, stories[4].color3, stories[4].color4,
                   stories[4].color5]" id="5" 
                   plots="stories[4].plots"
+                  values-font="{{pieChartFont}}"
                   multiple-label-colors="false"
                   dimensions="stories[4].dimensions"
                   legend="true" is-maximized="false"
                   base-color="#FFFFFF" axis-style="#FFFFFF"
-                  panel-color="#FFFFFF"
+                  panel-color="#FFFFFF" legend-click-mode="none"
                   datasource-and-dates="[15,110,pActivityFilter]"
                 ></dvt-bar-chart>
               </div>
@@ -231,13 +236,13 @@
           </div>
         </div>
 
-        <div class="export--button--wrapper">
+        <!--<div class="export--button--wrapper">
           <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="showSharePopUp($event)">
             <span data-ng-bind="i18n.L101028"></span>
             <span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
           </button>
           <button id="btnExport" class="btn-default btn-main-color" data-ng-click="showSharePopUp($event)"><span data-ng-bind="i18n.L101029"></span></button>
-        </div>
+        </div>-->
 
         <section id="popUpMessage" data-ng-if="showPopUpSocialMedia" data-ng-click="ok()">
           <div class="modal fade dvt-modal-social in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10}" ng-transclude="" modal-window="" window-class="dvt-modal" index="0" style="z-index: 1050;">
@@ -272,7 +277,7 @@
                   <p class="text-center" data-ng-bind="i18n.L101029"></p>
                   <div class="export--data--modal" id="osha-menu-social">
                     <!-- URL -->
-                    <a href class="main-color text-center" target="_blank" data-ng-click="pageUrlActive = true" title="{{i18n.L100662}} > {{i18n.L100660}}">
+                    <a href class="main-color text-center" target="_blank" data-ng-class="{'active': pageUrlActive}"  data-ng-click="pageUrlActive = !pageUrlActive; pageCitationActive = false " title="{{i18n.L100662}} > {{i18n.L100660}}">
                       <i class="fa fa-link" aria-hidden="true"></i></i> <span data-ng-bind="i18n.L100660" ></span>
                     </a>
                     <!-- PNG -->
@@ -284,7 +289,7 @@
                       <i class="fa fa-file-pdf-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100656" ></span>
                     </a>-->
                     <!-- PAGE CITATION -->
-                    <a href class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100651}}" data-ng-click="pageCitationActive = true">
+                    <a href class="main-color text-center" data-ng-class="{'active': pageCitationActive}"  target="_blank" title="{{i18n.L100662}} > {{i18n.L100651}}" data-ng-click="pageCitationActive = !pageCitationActive; pageUrlActive = false">
                       <i class="fa fa-file-code-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100651"></span>
                     </a>
                     <!-- XLS -->

@@ -22,7 +22,7 @@ define(function (require) {
 
         console.log(document.location.href.match('2009'));
 
-        var country = document.location.href.match('2009')!=null?'EU27':'EU28';
+        // var country = document.location.href.match('2009')!=null?'EU27':'EU28';
 
         $uiViewScrollProvider.useAnchorScroll();
 
@@ -47,7 +47,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Overview | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -72,7 +72,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -236,8 +236,8 @@ define(function (require) {
                     squash: 'european-map'
                 },
                 pCountry: {
-                    value: country,
-                    squash: country
+                    value: 'EU28',
+                    squash: 'EU28'
                 },
                 pCountry2: {
                     value: 'AT',
@@ -256,7 +256,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -300,8 +300,8 @@ define(function (require) {
                     squash: 'european-bar-chart'
                 },
                 pCountry: {
-                    value: country,
-                    squash: country
+                    value: 'EU28',
+                    squash: 'EU28'
                 },
                 pCountry2: {
                     value: 'AT',
@@ -323,7 +323,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -351,12 +351,20 @@ define(function (require) {
                     squash: 'MM161'
                 },                
                 pCountry: {
-                    value: country,
-                    squash: country
+                    value: 'EU28',
+                    squash: 'EU28'
                 },                
                 pSectorSize: {
                     value: 'company-size',
                     squash: 'company-size'
+                },
+                pActivityFilter: {
+                    value: '14',
+                    squash: '14'
+                },
+                pCompanyFilter: {
+                    value: '11',
+                    squash: '11'
                 },
                 pChart: {
                     value: 'national-bar-chart',
@@ -382,7 +390,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -422,8 +430,8 @@ define(function (require) {
                     squash: '11'
                 },
                 pCountry: {
-                    value: country,
-                    squash: country
+                    value: 'EU28',
+                    squash: 'EU28'
                 },
                 pCountry2: {
                     value: 'AT',
@@ -449,7 +457,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -477,8 +485,8 @@ define(function (require) {
                     squash: 'MM161'
                 },
                 pCountry: {
-                    value: country,
-                    squash: country
+                    value: 'EU28',
+                    squash: 'EU28'
                 },
                 pChart: {
                     value: 'pie-chart',
@@ -487,6 +495,14 @@ define(function (require) {
                 pSectorSize: {
                     value: 'company-size',
                     squash: 'company-size'
+                },
+                pActivityFilter: {
+                    value: '14',
+                    squash: '14'
+                },
+                pCompanyFilter: {
+                    value: '11',
+                    squash: '11'
                 },
                 pCountry2: {
                     value: 'AT',
@@ -508,7 +524,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
     });

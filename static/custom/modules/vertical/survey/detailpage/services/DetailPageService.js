@@ -34,6 +34,17 @@ define (function (require) {
                             //var colorLegend = this.sign.chart.options.colors;
                             //$log.warn(colors);
 
+                            var resolution = screen.width;
+
+                            $(window).on("resize",function(e){
+                              resolution = screen.width;
+                            });
+                            if(resolution <= 425){
+                                //$log.warn(this.sign.chart.options.legendItemSize);
+                                this.sign.chart.options.legendItemSize = 250;
+                            }
+
+
                             for(var i=0; i<colors.length; i++){
                                 if(colors.length == 2){
                                     this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
@@ -128,7 +139,7 @@ define (function (require) {
                                                 return 2;
                                             }
                                         }
-                                        return 0;
+                                        return null;
                                     })
                                     .left(function(scene){
                                         var baseScale = this.getContext().chart.axes.base.scale;
@@ -139,17 +150,19 @@ define (function (require) {
                                         var norwayC = countryKey.label.match('(NO)')!=null?countryKey.label:null;
 
                                         if(switzerlandC!=null){
+                                            if(resolution == 1440){
+                                                return baseScale(switzerlandC) - this.proto.width() + 5;
+                                            }
                                             if(resolution<=768){
                                                 return baseScale(switzerlandC) - this.sign.panel.barWidth + 4;
                                             }
-                                            return baseScale(switzerlandC) - this.sign.panel.barWidth - 2;
+                                            return baseScale(switzerlandC) - this.proto.width();
                                         }else{
                                             if(resolution<=768){
                                                 return baseScale(norwayC) - this.sign.panel.barWidth + 4;
                                             }
                                             return baseScale(norwayC) - this.sign.panel.barWidth - 2;
                                         }
-
                                         /*if(baseScale('Switzerland (CH)') < 20){
                                             if(resolution<=768){
                                                 return baseScale('Norway (NO)') - this.sign.panel.barWidth + 4;
@@ -181,7 +194,8 @@ define (function (require) {
                                 })
                                 .left(function(scene){
                                     var baseScale = this.getContext().chart.axes.base.scale;
-                                    //$log.warn(scene);
+                                    //$log.warn(this.proto.$properties[2]);
+                                    //$log.warn(baseScale(euC));
                                     if(!scene.firstAtoms.value.label.match('%')){
                                         scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                                     }
@@ -189,20 +203,20 @@ define (function (require) {
                                     var panelWidth = this.root.width();
 
                                     var euC = countryKey.label.match('EU2')!=null?countryKey.label.match('EU2').input:null;
-
-                                    /*if(baseScale('Austria (AT)') < 20){
-                                        return baseScale('Belgium (BE)') - this.sign.panel.barWidth - 3;
-                                    }
-
-                                    if(resolution<=768){
-                                        return baseScale('Austria (AT)') - this.sign.panel.barWidth + 4;
-                                    }
-                                    return baseScale('Austria (AT)') - this.sign.panel.barWidth - 3; */
                                     
-                                    if(resolution <= 768){
-                                        return baseScale(euC) + this.sign.panel.barWidth - 5;
+                                    /*if(resolution <= 768){
+                                        return baseScale(euC) + this.sign.panel.barWidth - this.proto.width();
+                                    }*/
+
+                                    if(resolution == 1440){
+                                        return baseScale(euC) + this.proto.width() - 3;                                        
+                                    }else if(resolution == 768){
+                                        return baseScale(euC) + this.proto.width()/2 + 3;                                        
+                                    }else if(resolution < 768){
+                                        return baseScale(euC) + this.proto.width()/2
                                     }
-                                     return baseScale(euC) + this.sign.panel.barWidth + 1;
+
+                                    return baseScale(euC) + this.proto.width();
                                 });
                         },
                         visualRoles:{
@@ -237,6 +251,7 @@ define (function (require) {
                                     }else if(i == 1 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(1);
                                     }
+                                    this.sign.chart.options.height = 45*colors.length;
                                 }
                                 else if(colors.length == 3){
                                     this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
@@ -250,6 +265,7 @@ define (function (require) {
                                     }else if(i == 2 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(1);
                                     }
+                                    this.sign.chart.options.height = 45*colors.length;
                                 }else if(colors.length == 4){
                                     this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
                                     this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
@@ -264,6 +280,7 @@ define (function (require) {
                                     }else if(i == 3 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(1);
                                     }
+                                    this.sign.chart.options.height = 45*colors.length;
                                 }else if(colors.length == 5){
                                     this.sign.chart.options.colors.push(dvtUtils.getColorCountry(2));
                                     this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
@@ -281,6 +298,7 @@ define (function (require) {
                                     }else if(i == 4 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(1);
                                     }
+                                    this.sign.chart.options.height = 45*colors.length;
                                 }
                             }
 
@@ -341,13 +359,13 @@ define (function (require) {
                         bar_fillStyle: function(scene){
                             var country = scene.firstAtoms.category;
                             if(country.label.match('('+pCountry1+')')){
-                                if(pCountry1 == 'EU27'){
+                                if(pCountry1 == 'EU28'){
                                     return dvtUtils.getColorCountry();
                                 }else{
                                     return dvtUtils.getColorCountry(1);
                                 }
                             }else if(country.label.match('('+pCountry2+')')){
-                                if(pCountry2 == 'EU27'){
+                                if(pCountry2 == 'EU28'){
                                     return dvtUtils.getColorCountry();
                                 }else{
                                     return dvtUtils.getColorCountry(2);
@@ -366,9 +384,19 @@ define (function (require) {
                         dataPart: "0",
                         valuesOverflow: 'trim',
                         label_textMargin: function(scene){
+                            var resolution = screen.width;
+
+                            $(window).on("resize",function(e){
+                              resolution = screen.width;
+                            });
+
                             var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLocale);
                             var answer = scene.firstAtoms.series;
                             var sector = scene.firstAtoms.category;
+
+                            if(resolution <= 425){
+                                this.sign.chart.options.legendItemSize = 250;
+                            }
 
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
@@ -381,79 +409,13 @@ define (function (require) {
                             var colors = this.sign.chart.axes.color._domainValues;
                             //$log.warn(colors);
 
-                            if(colors.length == 4 && series.value == colors[0]){
+                            if(colors.length == 4 && series.value == colors[3] ||
+                                colors.length == 5 && series.value == colors[3]){
                                 return 'black';
-                            }else if(colors.length == 5 && series.value == colors[1]){
-                                return 'black';
-                            }
+                            }   
                             return 'white';
                         },
-                        slice_fillStyle: function(scene){
-                            //$log.warn(this);
-                            var series = scene.firstAtoms.category;
-                            var colors = this.sign.chart.axes.color._domainValues;
-                            this.sign.chart.options.colors = [];
-                            //var colorLegend = this.sign.chart.options.colors;
-                            //$log.warn(colors);
-
-                            for(var i=0; i<colors.length; i++){
-                                if(colors.length == 2){
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
-
-                                    if(i == 0 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(22);
-                                    }else if(i == 1 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(1);
-                                    }
-                                }else if(colors.length == 3){
-                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
-
-                                    if(i == 0 && series.value == colors[i]){
-                                        return dvtUtils.getAccidentsColors(4);
-                                    }else if(i == 1 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(22);
-                                    }else if(i == 2 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(1);
-                                    }
-                                }else if(colors.length == 4){
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
-                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
-                                    if(i == 0 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(3);
-                                    }else if(i == 1 && series.value == colors[i]){
-                                        return dvtUtils.getAccidentsColors(4);
-                                    }else if(i == 2 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(22);
-                                    }else if(i == 3 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(1);
-                                    }
-                                }else if(colors.length == 5){
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(2));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
-                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
-                                    if(i == 0 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(2);
-                                    }else if(i == 1 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(3);
-                                    }else if(i == 2 && series.value == colors[i]){
-                                        return dvtUtils.getAccidentsColors(4);
-                                    }else if(i == 3 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(22);
-                                    }else if(i == 4 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(1);
-                                    }
-                                }
-                            }
-
-                            return dvtUtils.getChartLightGrayColor();
-                        },
+                        
                         valuesOptimizeLegibility: false,
                         visualRoles:{
                             series: 'series',

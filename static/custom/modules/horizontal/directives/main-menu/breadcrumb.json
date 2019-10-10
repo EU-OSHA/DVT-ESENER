@@ -7,34 +7,64 @@
         "non-fatal-accidents-estimation":"eu-countries",
         "non-fatal-accidents-reporting-level":"eu-countries"
     },
-    "home": "<span class='current-page'>Home</span>",
-
-    "_SECCTION-ABOUT-TOOL": null,
-    "about-tool": "<span>About ESENER</span>",
-
-    "_SECCTION-FOOTER-PAGES": null,
-    "site-map": "<span class='current-page'>Site map</span>",
-    "accessibility": "<span class='current-page'>Accessibility info</span>",
-    "privacy-policy":"<span class='current-page'>Privacy notice</span>",
-    "legal-notice":"<span class='current-page'>Legal notice</span>",
-
-    "404": "<span class='current-page'>Page not found</span>",
-
-    "_SECTION-SURVEY": null,
-    "overview2009": "<span><a ui-sref='home({pLanguage: pLanguage})' >Home</a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2009, pLanguage: pLanguage})'> ESENER 2009 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Overview</span>",
-    "overview2014": "<span><a ui-sref='home({pLanguage: pLanguage})' >Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2014, pLanguage: pLanguage})'> ESENER 2014 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Overview</span>",
-    "datavisualisation2009": "<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2009, pLanguage: pLanguage})'> ESENER 2009 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>",
-    "datavisualisation2014": "<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2014, pLanguage: pLanguage})'> ESENER 2014 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>",
-    "detailpage2009": "<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2009, pLanguage: pLanguage})'> ESENER 2009 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>",
-    "detailpage2014": "<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2014, pLanguage: pLanguage})'> ESENER 2014 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>",
-    "detailpage-european-map2009":"<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2009, pLanguage: pLanguage})'> ESENER 2009 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>",
-    "detailpage-european-map2014":"<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2014, pLanguage: pLanguage})'> ESENER 2014 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>",
-    "detailpage-european-bar-chart2009":"<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2009, pLanguage: pLanguage})'> ESENER 2009 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>",
-    "detailpage-european-bar-chart2014":"<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2014, pLanguage: pLanguage})'> ESENER 2014 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>",
-    "detailpage-national-bar-chart2009":"<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2009, pLanguage: pLanguage})'> ESENER 2009 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>",
-    "detailpage-national-bar-chart2014":"<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2014, pLanguage: pLanguage})'> ESENER 2014 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>",
-    "detailpage-national-comparisons2009":"<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2009, pLanguage: pLanguage})'> ESENER 2009 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>",
-    "detailpage-national-comparisons2014":"<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2014, pLanguage: pLanguage})'> ESENER 2014 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>",
-    "detailpage-pie-chart2009":"<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2009, pLanguage: pLanguage})'> ESENER 2009 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>",
-    "detailpage-pie-chart2014":"<span><a ui-sref='home({pLanguage: pLanguage})'>Home</a><i class='fa fa-angle-right' aria-hidden='true'></i><span class='current-page'><a ui-sref='overview({pIndicator: 2014, pLanguage: pLanguage})'> ESENER 2014 </a></span><i class='fa fa-angle-right' aria-hidden='true'></i><span>Data Visualisation</span>"
+    "home":{
+        "name":"L355",
+        "level":"0"
+    },
+    "about-tool":{
+        "name":"L484",
+        "level":"1"
+    },
+    "site-map":{
+        "name":"L356",
+        "level":"1"
+    },
+    "accessibility":{
+        "name":"L358",
+        "level":"1"
+    },
+    "privacy-policy":{
+        "name":"L359",
+        "level":"1"
+    },
+    "legal-notice":{
+        "name":"L360",
+        "level":"1"
+    },
+    "404":{
+        "name":"L355",
+        "level":"0"
+    },
+    "overview":{
+        "name":"L101076",
+        "level":"2"
+    },
+    "datavisualisation":{
+        "name":"L101077",
+        "level":"2"
+    },
+    "detailpage":{
+        "name":"L101077",
+        "level":"2"
+    },
+    "detailpage-european-map":{
+        "name":"L101077",
+        "level":"2"
+    },
+    "detailpage-european-bar-chart":{
+        "name":"L101077",
+        "level":"2"
+    },
+    "detailpage-national-bar-chart":{
+        "name":"L101077",
+        "level":"2"
+    },
+    "detailpage-national-comparisons":{
+        "name":"L101077",
+        "level":"2"
+    },
+    "detailpage-pie-chart":{
+        "name":"L101077",
+        "level":"2"
+    }
 }

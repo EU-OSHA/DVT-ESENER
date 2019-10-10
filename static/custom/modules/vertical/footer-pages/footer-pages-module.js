@@ -34,8 +34,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L360 +  " | ESENER"/*,
-                description: i18n.L9,*/
+                title: i18n.L360 +  " | ESENER",
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -55,8 +55,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L358 +  " | ESENER"/*,
-                description: i18n.L10,*/
+                title: i18n.L358 +  " | ESENER",
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -76,8 +76,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L359 +  " | ESENER" /*,
-                description: i18n.L8,*/
+                title: i18n.L359 +  " | ESENER",
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -97,8 +97,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: i18n.L356 +  " | ESENER"/*,
-                description: i18n.L7,*/
+                title: i18n.L356 +  " | ESENER",
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 
@@ -116,8 +116,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Page not found | ESENER"/*,
-                description: i18n.L135,*/
+                title: "Page not found | ESENER",
+                description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
 

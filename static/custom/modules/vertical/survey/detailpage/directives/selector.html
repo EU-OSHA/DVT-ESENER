@@ -4,7 +4,7 @@
         <h1 data-ng-if="dataset == '2009'" class="title--section second-color" data-ng-bind="i18n.L101007"></h1>
         <h1 data-ng-if="dataset == '2014'" class="title--section second-color" data-ng-bind="i18n.L101008"></h1>
         <!-- Breadcrumb -->        
-		<p data-ng-bind="question.breadcrumb"></p>
+		<p data-ng-bind-html="question.breadcrumb"></p>
         <ul class="question--by--question">
             <li><a data-ng-click="changeQuestion(question.previousID, 'p')" title="{{isNull(question.previous, 'p')}}" data-ng-bind="trim(question.previous, 'p')"></a></li>
             <li><a data-ng-click="changeQuestion(question.nextID, 'n')" title="{{isNull(question.next, 'n')}}" data-ng-bind="trim(question.next, 'n')"></a></li>
@@ -15,8 +15,8 @@
         <!-- National version select -->
         <div class="national-version-select">
             <form action="" class="compare--block--form">
-                <label for="search" class="" data-ng-bind="i18n.L101032"></label>
-                <div data-ng-show="dataset == '2009'">
+                <label for="searchFilter" class="" data-ng-bind="i18n.L101032"></label>
+                <div data-ng-show="dataset == '2009'" id="searchFilter">
                     <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-change="changeLocale()" data-ng-model="pLocale">
                             <!-- Select esener 2009 languages -->
                             <option value="bg" data-ng-selected="pLocale == 'bg'">Български</option> <!-- Bulgary -->
@@ -45,7 +45,7 @@
                     </select>
                 </div>
                 <div data-ng-show="dataset == '2014'">
-                    <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-if="dataset == '2014'" data-ng-change="changeLocale()" data-ng-model="pLocale">
+                    <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-change="changeLocale()" data-ng-model="pLocale">
                         <!-- Select esener 2014 languages -->
                         <option value="al">Albania (AL)</option>
                         <option value="at">Austria (AT)</option>
@@ -120,7 +120,7 @@
             <form class="block--filter--wrapper" data-ng-class="{'national-comparisons-wrapper':(chart == 'national-comparisons')}">
                 <!-- Activity sector -->
                 <div data-ng-class="{'active':(filters.sectorSize == 'activity-sector')}" class="filter-text activity-sector" data-ng-if="chart != 'national-comparisons' && chart != 'pie-chart'">
-                    <label class="activity-sector" data-ng-bind="i18n.L100573" ></label> 
+                    <label for="sector" class="activity-sector" data-ng-bind="i18n.L100573" ></label> 
                     <select id="sector" class="" ng-change="updateChart('activitySector')" ng-model="filters.activitySector" ng-selected="filters.activitySector" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
                         <!--<option data-ng-bind="i18n.L100573" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>-->
                         <option data-ng-repeat='sector in activitySectors' value="{{sector.id}}" data-ng-bind="i18n['L'+sector.literal]"></option>
@@ -129,7 +129,7 @@
                 <span data-ng-if="chart != 'national-comparisons' && chart != 'pie-chart'" class="or-text" data-ng-bind="i18n.L101027"></span>
                 <!-- Establishment size -->
                 <div data-ng-class="{'active':(filters.sectorSize == 'company-size')}" class="filter-text establishment-size" data-ng-if="chart != 'national-comparisons' && chart != 'pie-chart'">
-                    <label class="establishment-size" data-ng-bind="i18n.L100574"></label> 
+                    <label for="establishment" class="establishment-size" data-ng-bind="i18n.L100574"></label> 
                     <select id="establishment" class="" ng-change="updateChart('establishmentSize')" ng-model="filters.establishmentSize" ng-selected="filters.establishmentSize">
                         <option data-ng-repeat='size in establishmentSizes' value="{{size.id}}" data-ng-bind="i18n['L'+size.literal]"></option>
                     </select>
@@ -138,7 +138,7 @@
 
                 <!-- Activity sector for national comparison -->
                 <div class="filter-text activity-sector filter-national-comparisons" data-ng-if="chart == 'national-comparisons'" data-ng-class="{'active':(filters.sectorSize == 'activity-sector')}">
-                    <label class="activity-sector" data-ng-bind="i18n.L100573" ></label> 
+                    <label for="sector" class="activity-sector" data-ng-bind="i18n.L100573" ></label> 
                     <select id="sector" class="" ng-change="updateChart('activitySector')" ng-model="filters.activitySector" ng-selected="filters.activitySector" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
                         <!--<option data-ng-bind="i18n.L100573" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>-->
                         <option data-ng-repeat='sector in activitySectors' value="{{sector.id}}" data-ng-bind="i18n['L'+sector.literal]"></option>
@@ -147,7 +147,7 @@
                 <span data-ng-if="chart == 'national-comparisons' && chart != 'pie-chart'" class="or-text" data-ng-bind="i18n.L101027"></span>
                 <!-- Establishment size for national comparison -->
                 <div class="filter-text establishment-size filter-national-comparisons" data-ng-if="chart == 'national-comparisons'" data-ng-class="{'active':(filters.sectorSize == 'company-size')}">
-                  <label class="establishment-size" data-ng-bind="i18n.L100574"></label> 
+                  <label for="establishment" class="establishment-size" data-ng-bind="i18n.L100574"></label> 
                     <select id="establishment" class="" ng-change="updateChart('establishmentSize')" ng-model="filters.establishmentSize" ng-selected="filters.establishmentSize">
                         <option data-ng-repeat='size in establishmentSizes' value="{{size.id}}" data-ng-bind="i18n['L'+size.literal]"></option>
                     </select>
@@ -156,43 +156,42 @@
 
                 <!-- Activity sector for pie chart -->
                 <div class="filter-text activity-sector" data-ng-if="chart == 'pie-chart'" data-ng-class="{'disabled':(chart == 'pie-chart')}">
-                    <label class="activity-sector" data-ng-bind="i18n.L100573" data-ng-class="{'disabled':(chart == 'pie-chart')}"></label> 
+                    <label for="sector" class="activity-sector" data-ng-bind="i18n.L100573" data-ng-class="{'disabled':(chart == 'pie-chart')}"></label> 
                     <select id="sector" class="" data-ng-change="updateChart('activitySector')" data-ng-model="filters.activitySector" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
                         <option data-ng-bind="i18n.L100573" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>
                     </select>
                 </div>
                 <!-- Establishment size for pie chart -->
                 <div class="filter-text establishment-size" data-ng-if="chart == 'pie-chart'" data-ng-class="{'disabled':(chart == 'pie-chart')}">
-                    <label class="establishment-size" data-ng-bind="i18n.L100574" data-ng-class="{'disabled':(chart == 'pie-chart')}"></label>
+                    <label for="sector" class="establishment-size" data-ng-bind="i18n.L100574" data-ng-class="{'disabled':(chart == 'pie-chart')}"></label>
                     <select id="sector" class="" data-ng-change="updateChart('establishmentSize')" data-ng-model="filters.establishmentSize" data-ng-class="{'disabled':(chart == 'pie-chart')}" data-ng-disabled="chart == 'pie-chart'">
                         <option data-ng-bind="i18n.L100574" data-ng-value="0" data-ng-selected="chart == 'pie-chart'"></option>
                     </select>
                 </div>
                 <!-- Country disabled -->
                 <div class="filter-text country-items" data-ng-if="chart=='european-map' || chart=='european-bar-chart'" data-ng-class="{'disabled':(chart=='european-map' || chart=='european-bar-chart')}">
-                    <label class="disabled" data-ng-bind="i18n.L100589"></label>
+                    <label for="datafor" class="disabled" data-ng-bind="i18n.L100589"></label>
                     <select id="datafor" class="" disabled="disabled">
                     	<option value="" data-ng-bind="i18n.L100589" data-ng-selected="true"></option>
                     </select>
                 </div>
                 <!-- Country enabled -->
                 <div class="filter-text country-items" data-ng-if="chart == 'pie-chart'">
-                    <label class="" data-ng-bind="i18n.L100589"></label>
+                    <label for="datafor" class="" data-ng-bind="i18n.L100589"></label>
                     <select data-ng-class="{'comparisons':(chart == 'national-comparisons')}" id="datafor" ng-change="updateChart('country')" ng-model="filters.country" ng-selected="filters.country" >
                         <option data-ng-repeat='country in countries' value="{{country.id}}" data-ng-bind="country.literal"></option>
                     </select>
                 </div>
-
                 <!-- Country enabled for country comparision -->
                 <div class="filter-text country-items countryComparison" data-ng-if="chart == 'national-comparisons'">
-                    <label class="" data-ng-bind="i18n.L100589"></label>
+                    <label for="datafor" class="" data-ng-bind="i18n.L100589"></label>
                     <select data-ng-class="{'comparisons':(chart == 'national-comparisons')}" id="datafor" ng-change="updateChart('country')" ng-model="filters.country" ng-selected="filters.country" >
                         <option data-ng-repeat='country in countries' value="{{country.id}}" data-ng-bind="country.literal"></option>
                     </select>
                 </div>
                 <!-- Country national comparison -->
                 <div class="filter-text country-items countryComparisonWith" data-ng-if="chart=='national-comparisons'">
-                    <label class="" data-ng-bind="i18n.L100590"></label>
+                    <label for="comparewith" class="" data-ng-bind="i18n.L100590"></label>
                     <select id="comparewith" ng-change="updateChart('country2')" ng-model="filters.country2" ng-selected="filters.country2">
                         <option data-ng-repeat='country in countriesCompareWith' value="{{country.id}}" data-ng-bind="country.literal"></option>
                     </select>
@@ -225,7 +224,14 @@
         </div>
     <hr>
         <!-- Select split answers and charts -->
-        <div>
+        <div class="filters--and--typechart">
+            <!-- Country national comparison -->
+            <div class="filter-text country-items countryComparisonWith" data-ng-if="chart=='national-comparisons'">
+                <label for="comparewith" class="" data-ng-bind="i18n.L100590"></label>
+                <select id="comparewith" ng-change="updateChart('country2')" ng-model="filters.country2" ng-selected="filters.country2">
+                    <option data-ng-repeat='country in countriesCompareWith' value="{{country.id}}" data-ng-bind="country.literal"></option>
+                </select>
+            </div>
             <form class="block--typechart--wrapper">
                 <!-- Answer selection -->
                 <div class="filter-text sort-by" data-ng-if="chart == 'european-map'">
@@ -255,7 +261,7 @@
 
                     <li data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" data-ng-click="openOptions($index,$event)">
                         <div class="no-event"></div>
-                        <a title="{{i18n.L100624}}" class="" data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" ui-sref="detailpage-national-bar-chart({pIndicator: dataset, pTopic: topic, pChart: 'national-bar-chart', pSectorSize: sectorSize, pCountry: filters.country, pCountry2: filters.country2, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer, pEuOnly: filters.euOnly})" ><span class="visible-xs"  data-ng-bind="i18n.L100624"></span></a>
+                        <a title="{{i18n.L100624}}" class="" data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" ui-sref="detailpage-national-bar-chart({pIndicator: dataset, pTopic: topic, pChart: 'national-bar-chart', pSectorSize: sectorSize, pCountry: filters.country, pCountry2: filters.country2, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer, pEuOnly: filters.euOnly})" ><span class="visible-xs"  data-ng-bind="i18n.L100624"></span></a>
 
                     </li>
 
@@ -267,7 +273,7 @@
 
                     <li data-ng-class="{'selected-chart':(chart == 'pie-chart')}" data-ng-click="openOptions($index,$event)">
                         <div class="no-event"></div>
-                        <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pIndicator: dataset, pTopic: topic, pChart: 'pie-chart', pCountry: filters.country, pCountry2: filters.country2, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer, pSectorSize: sectorSize, pEuOnly: filters.euOnly})"><span class="visible-xs"  data-ng-bind="i18n.L101033"></span>
+                        <a title="{{i18n.L101033}}" data-ng-class="{'selected-chart':(chart == 'pie-chart')}" ui-sref="detailpage-pie-chart({pIndicator: dataset, pTopic: topic, pChart: 'pie-chart', pCountry: filters.country, pCountry2: filters.country2, pActivityFilter: filters.activitySector, pCompanyFilter: filters.establishmentSize, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer, pSectorSize: sectorSize, pEuOnly: filters.euOnly})"><span class="visible-xs"  data-ng-bind="i18n.L101033"></span>
                         </a>
                     </li>
                     

@@ -57,20 +57,23 @@ define(function (require) {
 		$scope.pCountry2 = $stateParams.pCountry2;
 		$scope.nonEU = $stateParams.pEuOnly;
 
-		$scope.sortBy = '0';
-		$log.warn($scope.answer);
+		$scope.sortBy = $stateParams.pSortBy;
 
-		var resolution = screen.width;
+		var resolution = $(window).width();
 		$scope.angle = resolution > 768 ? 1 : 0;
+		$scope.pieChartHeight = resolution > 600 ? 600 : 400;
+		$scope.pieChartFont =  resolution > 600 ? '20px OpenSans-bold' : '14px OpenSans-bold';
+
+		//$log.warn( window.screen.width +'---------->'+ window.outerWidth);
+		//$log.warn('FUERA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
 
 		$(window).on("resize",function(e){
-	      if(screen.width != resolution){
-	        resolution = screen.width;
+	      if(window.outerWidth != resolution){
+	      	//$log.warn('ENTRA: ' + $(window).width() + '----------------------->' + window.outerWidth + '------------->' + window.screen.width );
+	        resolution = window.outerWidth;
 	        $state.reload();
 	      }
-	    });
-
-		//$log.warn($stateParams);
+    	});
 
 		// Main Category / Subcategory: Question or Main Category / Question
 		$scope.breadcrumb = '';
@@ -140,6 +143,9 @@ define(function (require) {
 				if($rootScope.answersNationalComparisons.pCompanyFilter != $scope.pCompanyFilter){
 					questionOrFilterChanged = true;
 				}
+				if($rootScope.answersNationalComparisons.pLocale != $scope.pLocale){
+                    questionOrFilterChanged = true;
+                }
 			}
 		}
 
@@ -285,7 +291,7 @@ define(function (require) {
 		        color5: dvtUtils.getColorCountry(2),
 		        color6: dvtUtils.getColorCountry(12),
 		        color7: dvtUtils.getColorCountry(4),
-				plots: DetailPageService.getGeneralEuropeanBarCharPlot($scope.dashboard.parameters.pFilters.euOnly, $scope.answer),
+				plots: DetailPageService.getGeneralEuropeanBarCharPlot($scope.dashboard.parameters.pFilters.euOnly, /*$scope.answer*/0),
 				dimensions: {
 				  	value: {
 						format: {
@@ -323,8 +329,8 @@ define(function (require) {
 			},
 			//3 - National Comparisons Plot
 			{
-				color1: ($scope.pCountry == 'EU27')?dvtUtils.getColorCountry():dvtUtils.getColorCountry(1),
-				color2: ($scope.pCountry2 == 'EU27')?dvtUtils.getColorCountry():dvtUtils.getColorCountry(2),
+				color1: ($scope.pCountry == 'EU28')?dvtUtils.getColorCountry():dvtUtils.getColorCountry(1),
+				color2: ($scope.pCountry2 == 'EU28')?dvtUtils.getColorCountry():dvtUtils.getColorCountry(2),
 				plots: DetailPageService.getNationalComparisonsPlot($scope.dashboard.parameters.pFilters.country, 
 					$scope.dashboard.parameters.pFilters.country2)
 			},
@@ -437,7 +443,6 @@ define(function (require) {
 				//With this only charges splits of company size. If we change to activity sector it is never reload.
 				if($rootScope.nationalBarChartIndicators == undefined || questionOrFilterChanged){
 					questionOrFilterChanged = false;
-
 					if($scope.pSectorSize == 'activity-sector'){
 						dataService.getActivitySectorsSelect($scope.pQuestion).then(function (data) 
 						{
@@ -506,6 +511,73 @@ define(function (require) {
 						});
 					}
 
+					if($scope.pSectorSize == 'activity-sector'){
+						dataService.getActivitySectorsSelect($scope.pQuestion).then(function (data) 
+						{
+							var list = [];
+							data.data.resultset.map(function (elem) 
+							{
+								if(elem[0] != 14){
+									list.push({
+										id: elem[0],
+										name: elem[1]
+									});
+								}else{
+									$scope.all = {
+										id: elem[0],
+										name: elem[1]
+									};
+								}
+							});
+
+							list.push($scope.all);
+
+							//$scope.indicators = $rootScope.nationalBarChartIndicators;
+							$scope.indicators.data = list;
+							$scope.indicators.pQuestion = $scope.pQuestion;
+							$scope.indicators.sectorsize = $scope.pSectorSize;
+							$rootScope.nationalBarChartIndicators = $scope.indicators;
+							
+							//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:[];
+							
+						}).catch(function (err) 
+						{
+							throw err;
+						});
+					}else{
+						dataService.getEstablishmentSizesSelect($scope.pQuestion).then(function (data) 
+						{
+							var list = [];
+							data.data.resultset.map(function (elem) 
+							{
+								if(elem[0] != 11){
+									list.push({
+										id: elem[0],
+										name: elem[1]
+									});
+								}else{
+									$scope.all = {
+										id: elem[0],
+										name: elem[1]
+									};
+								}
+							});
+							list.push($scope.all);
+
+							//$scope.indicators = $rootScope.nationalBarChartIndicators;
+							$scope.indicators.data = list;
+							$scope.indicators.pQuestion = $scope.pQuestion;
+							$scope.indicators.sectorsize = $scope.pSectorSize;
+							$rootScope.nationalBarChartIndicators = $scope.indicators;
+							
+							//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:[];
+							
+						}).catch(function (err) 
+						{
+							throw err;
+						});
+					}
+
 					//$scope.indicators = [];
 					//$scope.indicators = ($scope.pSectorSize == 'company-size')?$rootScope.indicatorsCompany:$rootScope.indicatorsActivity;
 					//$log.warn($scope.indicators);
@@ -536,6 +608,7 @@ define(function (require) {
 						$scope.answers.pCountry2 = $scope.pCountry2;
 						$scope.answers.pActivityFilter = $scope.pActivityFilter;
 						$scope.answers.pCompanyFilter = $scope.pCompanyFilter;
+						$scope.answers.pLocale = $scope.pLocale;
 						$scope.answers.data = list;
 						$rootScope.answersNationalComparisons = $scope.answers;
 						
@@ -613,7 +686,7 @@ define(function (require) {
 		$scope.changeToQuestion = function(question, anchor){
 			var topic = '';
 			$scope.pQuestion = question.category;
-
+			//$log.warn(anchor);
 			var answer = question.answer_id;
 
 			if($scope.pChart == 'european-bar-chart'){
@@ -634,6 +707,7 @@ define(function (require) {
 						pActivityFilter: $scope.pActivityFilter,
 						pCompanyFilter: $scope.pCompanyFilter,
 						pCountry: $scope.dashboard.parameters.pFilters.country,
+						pCountry2: $scope.pCountry2,
 						pLanguage: $scope.pLanguage,
 						pLocale: $scope.pLocale
 					},
@@ -663,7 +737,16 @@ define(function (require) {
 						$state.go($state.current.name, {
 							pTopic : topic,
 							pQuestion: question, //Question name,
-							pAnswer: $scope.answer
+							pAnswer: $scope.answer,
+							pIndicator: $scope.pIndicator, //Year
+							pChart: $scope.pChart, //Type of chart
+							pSectorSize: $scope.pSectorSize,
+							pActivityFilter: $scope.pActivityFilter,
+							pCompanyFilter: $scope.pCompanyFilter,
+							pCountry: $scope.dashboard.parameters.pFilters.country,
+							pCountry2: $scope.pCountry2,
+							pLanguage: $scope.pLanguage,
+							pLocale: $scope.pLocale
 						},
 						{
 							reload: true
