@@ -364,7 +364,7 @@
       <Parameter default="EN" name="pLocale" type="String" />
     </Parameters>
     <Query>
-      SELECT t.text as Answer, IF(n.name REGEXP 'European Union', n.country_code, IF(n.name = 'Macedonia, The former Yugoslav Rep. of', CONCAT('Macedonia', " (", n.country_code, ")"), CONCAT(t2.text, " (", n.country_code, ")"))) as Country, v.value*100 as Value
+      SELECT t.text as Answer, IF(n.name REGEXP 'European Union', n.country_code, CONCAT(t2.text, " (", n.country_code, ")")) as Country, v.value*100 as Value
       FROM nuts n, profile p, value v, translation t, translation t2, split_answer sa, indicator i, esener_answer_order eao
       WHERE n.id = p.nuts_id
       AND i.name = ${pIndicator}
@@ -381,7 +381,7 @@
       AND t2.literal_id = n.literal_id
       AND t2.language = ${pLocale}
       AND v.dataset_id = ${pDataset}
-      ORDER BY CASE WHEN ${pDataset} = 15 THEN FIELD('EU28', n.country_code) ELSE FIELD('EU27', n.country_code) END DESC,
+      ORDER BY FIELD('EU28', n.country_code) DESC,
       CASE WHEN ${pAnswer}=0 THEN FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR') END ASC,  
       CASE WHEN ${pAnswer}!=0 THEN FIELD(${pAnswer}, eao.answer_id) END DESC, CASE WHEN ${pAnswer}=0 THEN n.country_code END ASC, eao.order_position ASC, 
       CASE WHEN ${pAnswer}!=0 THEN Value END DESC
