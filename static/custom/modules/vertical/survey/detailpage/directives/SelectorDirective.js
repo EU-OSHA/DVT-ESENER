@@ -58,11 +58,7 @@ define(function (require) {
 					euOnly: scope.noneu,
 					sectorSize: scope.sectorSize,
 					locale: scope.pLocale,
-<<<<<<< HEAD
-					sortBy: '0'
-=======
                     sortBy: scope.sortBy
->>>>>>> release-sprint_7
 				};
 
 				scope.trim = function(text, type){
@@ -181,24 +177,6 @@ define(function (require) {
 
 					//if(scope.filters.answer == 0 && scope.chart == 'european-map'){
 					if((scope.filters.answer == 0 || scope.filters.answer == 1) && scope.answers[0].id != scope.filters.answer 
-<<<<<<< HEAD
-						&& scope.chart == 'european-map'){
-						$state.transitionTo($state.current.name, {
-							pLanguage: scope.pLanguage,
-							pLocale: scope.pLocale,
-							pIndicator: scope.dataset, //Year
-							pChart: scope.chart, //Type of chart
-							pTopic: scope.topic,
-							pQuestion: $stateParams.pQuestion,
-							pSectorSize: scope.filters.sectorSize,
-							pActivityFilter: scope.filters.activitySector,
-							pCompanyFilter: scope.filters.establishmentSize,
-							pCountry: scope.filters.country,
-							pCountry2: scope.filters.country2,
-							pEuOnly: scope.noneu,
-							pAnswer: scope.answers[0].id,
-							//pSortBy: (scope.chart == 'european-bar-chart')?scope.filters.answer:'0'
-=======
                     && scope.chart == 'european-map'){
 						$state.transitionTo($state.current.name, {
 							pLanguage: scope.pLanguage,
@@ -215,7 +193,6 @@ define(function (require) {
                             pEuOnly: scope.noneu,
                             pAnswer: scope.answers[0].id,
                             pSortBy: (scope.chart == 'european-bar-chart')?scope.answers[0].id:'0'
->>>>>>> release-sprint_7
 						}, 
 						{
 							reload: true
@@ -298,11 +275,7 @@ define(function (require) {
 						pCountry: scope.filters.country,
 						pCountry2: scope.filters.country2,
 						pEuOnly: scope.noneu,
-<<<<<<< HEAD
-						pSortBy: (scope.chart == 'european-bar-chart')?scope.filters.answer:'0'
-=======
 						pSortBy: (scope.chart == 'european-bar-chart')?scope.filters.sortBy:'0'
->>>>>>> release-sprint_7
 					}, 
 					{
 						reload: true,
@@ -509,12 +482,6 @@ define(function (require) {
 						scope.filters.country2 = 'EU27';
 						scope.filters.country = 'AT'
 					}*/
-
-<<<<<<< HEAD
-					$log.warn(scope.filters.answer);
-=======
-                    $log.warn(scope.filters.answer);
->>>>>>> release-sprint_7
 
 					$state.transitionTo('detailpage-national-comparisons', {
 						pIndicator: scope.dataset, //Year

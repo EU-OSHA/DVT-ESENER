@@ -34,11 +34,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-<<<<<<< HEAD
-                title: i18n.L360 +  " | ESENER",
-=======
                 title: "Page not found | ESENER",
->>>>>>> release-sprint_7
                 description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
@@ -59,11 +55,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-<<<<<<< HEAD
-                title: i18n.L358 +  " | ESENER",
-=======
                 title: "Accessibility | ESENER",
->>>>>>> release-sprint_7
                 description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
@@ -84,11 +76,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-<<<<<<< HEAD
-                title: i18n.L359 +  " | ESENER",
-=======
                 title: "Privacy policy | ESENER",
->>>>>>> release-sprint_7
                 description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
@@ -109,11 +97,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-<<<<<<< HEAD
-                title: i18n.L356 +  " | ESENER",
-=======
                 title: "Site map | ESENER",
->>>>>>> release-sprint_7
                 description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });

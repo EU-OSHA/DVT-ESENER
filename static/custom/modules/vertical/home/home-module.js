@@ -40,11 +40,7 @@ define(function (require) {
             },
             metaTags: {
                 title: "ESENER | Home",
-<<<<<<< HEAD
-                description: 'ESENER | Safety and health at work - EU-OSHA'
-=======
-                description: "ESENER | Home",
->>>>>>> release-sprint_7
+                description: "ESENER | Home"
             }
         });
     });
