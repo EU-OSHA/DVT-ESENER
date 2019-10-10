@@ -34,6 +34,17 @@ define (function (require) {
                             //var colorLegend = this.sign.chart.options.colors;
                             //$log.warn(colors);
 
+                            var resolution = screen.width;
+
+                            $(window).on("resize",function(e){
+                              resolution = screen.width;
+                            });
+                            if(resolution <= 425){
+                                //$log.warn(this.sign.chart.options.legendItemSize);
+                                this.sign.chart.options.legendItemSize = 250;
+                            }
+
+
                             for(var i=0; i<colors.length; i++){
                                 if(colors.length == 2){
                                     this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
