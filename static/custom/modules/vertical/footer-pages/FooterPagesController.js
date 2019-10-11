@@ -49,7 +49,6 @@ define(function (require) {
                 $scope.textCheck = $scope.i18n_literals.L101075;
             }
         }
-<<<<<<< HEAD
 
         /* como se ponga on load
 
@@ -66,9 +65,6 @@ define(function (require) {
 
 
          */
-
-=======
->>>>>>> release-sprint_7
 
         $scope.oculta = function() {
             //$log.warn(check);
