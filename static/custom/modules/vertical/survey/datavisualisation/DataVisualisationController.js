@@ -32,7 +32,7 @@ define(function (require) {
 
         $scope.pLocale = $scope.pLanguage;
 
-        if($scope.pIndicator == '2009' && ($scope.pLanguage == 'is' || $scope.pLanguage == 'sv')){
+        if($scope.pIndicator == '2009' && $scope.pLanguage == 'is'){
             //$log.warn('entra');
             $scope.pLocale = 'en';
         }else if($scope.pIndicator == '2014' && $scope.pLanguage == 'en'){
