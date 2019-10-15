@@ -1878,6 +1878,10 @@ and (max-width : 375px){
   }
 }
 
+td.ccc-tt-dimLabel{
+  display: none;
+}
+
 @media only screen 
 and (max-height:767px){
   .dvt-modal-social .modal-wrapper {

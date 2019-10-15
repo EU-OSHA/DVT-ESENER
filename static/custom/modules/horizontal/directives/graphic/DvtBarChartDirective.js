@@ -425,10 +425,81 @@ define(function (require) {
                         panel_fillStyle: attributes.panelColor || '',
                         axisLabelWordBreak: attributes.axisLabelWordBreak || 0,
                         //customTooltip: attributes.customTooltip || 0,
-                        datasourceAndDates: scope.datasourceAndDates || []
+                        datasourceAndDates: scope.datasourceAndDates || [],
+                        customTooltip: attributes.customTooltip || 0
                     }
 
                 };
+
+                if(definition.chartDefinition.customTooltip == '1'){
+                    definition.chartDefinition.tooltipFormat = function(scene){
+                        // Atoms of the first datum
+                        var atoms = scene.firstAtoms;
+                        var key = atoms.category.key;
+
+                        var dimension = scene.firstAtoms.category.dimension.type.label;
+                        $log.warn(dimension);
+
+                        if(i18n['L'+key] != undefined){
+                            key = i18n['L'+key];
+                        }
+
+                        return '<div class="ccc-tt">'+
+                                    '<table class="ccc-tt-ds ccc-tt-plot ccc-tt-plot-bar ccc-tt-chartOrient-v" data-ccc-color="rgb(68,159,162)">'+
+                                        '<tbody>'+
+                                            '<tr class="ccc-tt-dim ccc-tt-dimValueType-Any ccc-tt-dimDiscrete">'+
+                                                '<td class="ccc-tt-dimLabel">'+
+                                                    '<span>'+dimension+'</span>'+
+                                                '</td>'+
+                                                '<td class="ccc-tt-dimRoles">'+
+                                                    '<span class="ccc-tt-role ccc-tt-role-color">'+
+                                                        '<span class="ccc-tt-roleIcon"></span>'+
+                                                        '<span class="ccc-tt-roleLabel">Color</span>'+
+                                                    '</span>'+
+                                                    '<span class="ccc-tt-role ccc-tt-role-series">'+
+                                                        '<span class="ccc-tt-roleIcon"></span>'+
+                                                        '<span class="ccc-tt-roleLabel">Series</span>'+
+                                                    '</span>'+
+                                                '</td>'+
+                                                '<td class="ccc-tt-dimValue">'+
+                                                    '<span class="ccc-tt-value">'+key+'</span>'+
+                                                '</td>'+
+                                            '</tr>'+
+                                            '<tr class="ccc-tt-dim ccc-tt-dimValueType-Any ccc-tt-dimDiscrete">'+
+                                                '<td class="ccc-tt-dimLabel"><span>Country</span></td>'+
+                                                '<td class="ccc-tt-dimRoles">'+
+                                                    '<span class="ccc-tt-role ccc-tt-role-category">'+
+                                                        '<span class="ccc-tt-roleIcon"></span>'+
+                                                        '<span class="ccc-tt-roleLabel">Category</span>'+
+                                                    '</span>'+
+                                                    '</td>'+
+                                                '<td class="ccc-tt-dimValue">'+
+                                                    '<span class="ccc-tt-value">'+atoms.series.key+'</span>'+
+                                                '</td>'+
+                                            '</tr>'+
+                                            '<tr class="ccc-tt-dim ccc-tt-dimValueType-Number ccc-tt-dimContinuous">'+
+                                                '<td class="ccc-tt-dimLabel"><span>Value</span></td>'+
+                                                '<td class="ccc-tt-dimRoles">'+
+                                                    '<span class="ccc-tt-role ccc-tt-role-value">'+
+                                                        '<span class="ccc-tt-roleIcon"></span>'+
+                                                        '<span class="ccc-tt-roleLabel">Value</span>'+
+                                                    '</span>'+
+                                                '</td>'+
+                                                '<td class="ccc-tt-dimValue">'+
+                                                    '<span class="ccc-tt-value">'+atoms.value.label+'</span>'+
+                                                '</td>'+
+                                            '</tr>'+
+                                        '</tbody>'+
+                                    '</table>'+
+                                '</div>';
+                        /*
+                        return "<div style='text-align:left'>" + 
+                                 "<b>Answer</b>: "  + atoms.series.label   + "<br/>" + 
+                                 "<b>Country</b>: "   + atoms.category.label + "<br/>" + 
+                                 "<b>Value</b>: " + atoms.value.label   + 
+                               "</div>";*/
+                    }
+                }
 
                 if(!!attributes.baseAxisSize){
                     //definition.chartDefinition.baseAxisSize = attributes.bandAxisSize;
