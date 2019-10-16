@@ -238,24 +238,28 @@ define(function (require) {
 
 		  	if (data != undefined)
 		  	{
-				for (var index in data) 
+				for (var index in data) // index: country code
 				{
-					for(var answerInData in data[index].answers)
-					{
-						answerId = data[index].answers[answerInData].id;
-						answerValue = data[index].answers[answerInData].value;
-						if(answerId == $scope.answer)
+					if(data[index].answers.length > 0){
+						for(var answerInData in data[index].answers) // answerInData: Each row of answer in country code
 						{
-							if(answerValue < minValue)
+							answerId = data[index].answers[answerInData].id;
+							answerValue = data[index].answers[answerInData].value;
+							if(answerId == $scope.answer)
 							{
-								minValue = answerValue;
-							}
+								if(answerValue < minValue)
+								{
+									minValue = answerValue;
+								}
 
-							if(answerValue > maxValue)
-							{
-								maxValue = answerValue;
+								if(answerValue > maxValue)
+								{
+									maxValue = answerValue;
+								}
 							}
 						}
+					}else{
+						$state.reload();
 					}
 				}
 
@@ -411,24 +415,24 @@ define(function (require) {
 						res[0].data.resultset.map(function (elem) 
 						{
 							row = elem;
-							if(!$scope.data.questionData[row[1]])
+							if(!$scope.data.questionData[row[0]])
 							{
-								$scope.data.questionData[row[1]]={};
-								$scope.data.questionData[row[1]].answers = [];
+								$scope.data.questionData[row[0]]={};
+								$scope.data.questionData[row[0]].answers = [];
 							}
-							$scope.data.questionData[row[1]].answers.push({
-								id: row[4],
-								literal_id: row[5],
-								value: row[3]
+							$scope.data.questionData[row[0]].answers.push({
+								id: row[3],
+								literal_id: row[4],
+								value: row[2]
 							});
-							$scope.data.questionData[row[1]].country_code = row[1];
-							$scope.data.questionData[row[1]].country_name = row[2];
-							$scope.data.questionData[row[1]].indicator = row[6];
+							$scope.data.questionData[row[0]].country_code = row[0];
+							$scope.data.questionData[row[0]].country_name = row[1];
+							$scope.data.questionData[row[0]].indicator = row[5];
 						});
 
 						$scope.data.indicator = $scope.pIndicator;
 						$scope.data.question = $scope.pQuestion;
-						$scope.data.pAnswer = $scope.pAnswer;
+						$scope.data.pAnswer = $scope.answer;
 						$scope.data.sectorsize = $scope.pSectorSize;
 						$scope.data.activityFilter = $scope.pActivityFilter;
 						$scope.data.companyFilter = $scope.pCompanyFilter;
@@ -807,18 +811,19 @@ define(function (require) {
 		$scope.changeToQuestion = function(question, anchor){
 			var topic = '';
 
-			var pQuestionID = question.category;
+			//var pQuestionID = question.category;
 
-			var answer = question.answer_id;
+			var answer = $scope.answer;
 			//var exception = false;
-
-			var exception = rulesForTooltip(pQuestionID);
-
-			if($scope.pChart == 'european-bar-chart'){
-				var answer = '0';
-			}
+			var exception = rulesForTooltip(question.category);
 
 			if(!exception){
+				answer = question.answer_id;
+
+				if($scope.pChart == 'european-bar-chart'){
+					answer = '0';
+				}
+
 				$scope.pQuestion = question.category;
 				if(anchor != null){
 					$scope.pTopic = anchor;
