@@ -438,7 +438,6 @@ define(function (require) {
                         var key = atoms.category.key;
 
                         var dimension = scene.firstAtoms.category.dimension.type.label;
-                        $log.warn(dimension);
 
                         if(i18n['L'+key] != undefined){
                             key = i18n['L'+key];

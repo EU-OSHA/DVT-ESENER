@@ -23,8 +23,9 @@ define(function () {
              * @description
              * Returns the activity sectors list for the select combo
              */
-            getActivitySectorsSelect: function (pQuestion) {
-                var url = configService.getEsenerDataPath() + "&dataAccessId=getActivitySectorsSelect" + "&parampQuestion=" + pQuestion;
+            getActivitySectorsSelect: function (pQuestion, pCountry) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getActivitySectorsSelect" + "&parampQuestion=" + pQuestion +
+                "&parampCountry=" + pCountry;
                 $log.debug('getActivitySectorsSelect url:' + url);
                 return promise(url);
             },

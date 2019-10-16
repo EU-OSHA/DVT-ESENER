@@ -689,63 +689,147 @@ define(function (require) {
 			});
 		}
 
+		/* Method to implement the popup when changing question in the question menu*/
+		function rulesForTooltip(pQuestionID){
+			//RULES ESENER 2009
+			if($scope.pChart == 'national-bar-chart' || $scope.pChart == 'national-comparisons'){
+				if((pQuestionID == 'MM303a' && ($scope.pCountry == 'CY' || $scope.pCountry == 'EE' 
+					|| $scope.pCountry == 'MT' || $scope.pCountry2 == 'CY' || $scope.pCountry2 == 'EE' 
+					|| $scope.pCountry2 == 'MT')) ||
+					(pQuestionID == 'MM350' && ($scope.pCountry == 'CY' || $scope.pCountry == 'MT' 
+					|| $scope.pCountry == 'SE' || $scope.pCountry2 == 'CY' || $scope.pCountry2 == 'MT' 
+					|| $scope.pCountry2 == 'SE')) ||
+					(pQuestionID == 'MM351' && ($scope.pCountry == 'AT' || $scope.pCountry == 'DE' 
+					|| $scope.pCountry == 'LU' || $scope.pCountry2 == 'AT' || $scope.pCountry2 == 'DE' 
+					|| $scope.pCountry2 == 'LU')) ||
+					(pQuestionID == 'MM355' && ($scope.pCountry == 'CH' || $scope.pCountry2 == 'CH')) ||
+					(pQuestionID == 'MM358' && ($scope.pCountry== 'LU' || $scope.pCountry == 'SI' 
+					|| $scope.pCountry2 == 'LU' || $scope.pCountry2 == 'SI'))){
+					alert($scope.i18n.L100576);
+					return true;
+				}
+			}
+
+			//RULES ESENER 2014
+			if(($scope.pChart == 'european-map' || $scope.pChart == 'european-bar-chart') && $scope.pIndicator == 2014)
+			{
+				if(pQuestionID == 'Q202_2' || pQuestionID == 'Q202_3' || pQuestionID == 'Q202_5'
+					|| pQuestionID == 'Q202_6' || pQuestionID == 'Q202_8' || pQuestionID == 'Q202_9'
+					|| pQuestionID == 'Q202_11' || pQuestionID == 'Q202_12' || pQuestionID == 'Q202_13'
+					|| pQuestionID == 'Q202_15' || pQuestionID.match('Q251') != undefined 
+					|| pQuestionID.match('Q252') != undefined || pQuestionID == 'Q254gr' 
+					|| pQuestionID == 'Q255' || pQuestionID.match('Q256') != undefined
+					|| pQuestionID == 'Q258b' || pQuestionID == 'Q259' || pQuestionID == 'Q308_1'
+					|| pQuestionID == 'Q354')
+				{
+					if($scope.pSectorSize == 'activity-sector' && $scope.pActivityFilter == 6)
+					{
+						alert($scope.i18n.L100576);
+						return true;
+					}
+				}else if(pQuestionID.match('Q261') != undefined)
+				{
+					if($scope.pSectorSize == 'activity-sector')
+					{
+						alert($scope.i18n.L100576);
+						return true;
+					}else
+					{
+						if($scope.pCompanyFilter == 14 || $scope.pCompanyFilter == 10)
+						{
+							alert($scope.i18n.L100576);
+							return true;
+						}
+					}
+				}
+			}else if($scope.pChart == 'national-bar-chart' && $scope.pIndicator == 2014){
+				if(pQuestionID.match('Q261') != undefined)
+				{
+					if($scope.pSectorSize == 'activity-sector')
+					{
+						alert($scope.i18n.L100576);
+						return true;
+					}else
+					{
+						if($scope.pCompanyFilter == 14 || $scope.pCompanyFilter == 10)
+						{
+							alert($scope.i18n.L100576);
+							return true;
+						}
+					}
+				}
+			}else if($scope.pChart == 'national-comparisons' && $scope.pIndicator == 2014){
+				if(pQuestionID.match('Q261') != undefined)
+				{
+					if($scope.pSectorSize == 'activity-sector')
+					{
+						alert($scope.i18n.L100576);
+						return true;
+					}else
+					{
+						if($scope.pCompanyFilter == 10)
+						{
+							alert($scope.i18n.L100576);
+							return true;
+						}else if($scope.pCompanyFilter == 14 && ($scope.pCountry == 'AL' || $scope.pCountry2 == 'AL'
+							|| $scope.pCountry == 'ME' || $scope.pCountry2 == 'ME' || $scope.pCountry == 'BG' 
+							|| $scope.pCountry2 == 'BG' || $scope.pCountry == 'DK' || $scope.pCountry2 == 'DK'
+							|| $scope.pCountry == 'EE' || $scope.pCountry2 == 'EE' || $scope.pCountry == 'ES' 
+							|| $scope.pCountry2 == 'ES' || $scope.pCountry == 'HR' || $scope.pCountry2 == 'HR'
+							|| $scope.pCountry == 'IT' || $scope.pCountry2 == 'IT' || $scope.pCountry == 'LV' 
+							|| $scope.pCountry2 == 'LV' || $scope.pCountry == 'RO' || $scope.pCountry2 == 'RO'
+							|| $scope.pCountry == 'SE' || $scope.pCountry2 == 'SE' || $scope.pCountry == 'SI' 
+							|| $scope.pCountry2 == 'SI' || $scope.pCountry == 'UK' || $scope.pCountry2 == 'UK')){
+							alert($scope.i18n.L100576);
+							return true;
+						}
+					}
+				}else if((pQuestionID == 'Q251' || (pQuestionID.match('Q252') != undefined && pQuestionID != 'Q252_2')
+					|| pQuestionID == 'Q254gr' || pQuestionID == 'Q255' || pQuestionID.match('Q256') != undefined
+					|| pQuestionID == 'Q258b' || pQuestionID == 'Q259') && ($scope.pCountry == 'AL' 
+					|| $scope.pCountry2 == 'AL' || $scope.pCountry == 'IS' || $scope.pCountry2 == 'IS'
+					|| $scope.pCountry == 'ME' || $scope.pCountry2 == 'ME' || $scope.pCountry == 'MK' 
+					|| $scope.pCountry2 == 'MK' || $scope.pCountry == 'CY' || $scope.pCountry2 == 'CY'
+					|| $scope.pCountry == 'EL' || $scope.pCountry2 == 'EL' || $scope.pCountry == 'HR' 
+					|| $scope.pCountry2 == 'HR' || $scope.pCountry == 'LT' || $scope.pCountry2 == 'LT'
+					|| $scope.pCountry == 'LU' || $scope.pCountry2 == 'LU' || $scope.pCountry == 'MT' 
+					|| $scope.pCountry2 == 'MT')){
+					if($scope.pSectorSize == 'activity-sector' && $scope.pActivityFilter == 6){
+						alert($scope.i18n.L100576);
+						return true;
+					}
+				}
+			}
+
+			return false;
+		}
+
 		$scope.changeToQuestion = function(question, anchor){
 			var topic = '';
-			$scope.pQuestion = question.category;
-			//$log.warn(anchor);
+
+			var pQuestionID = question.category;
+
 			var answer = question.answer_id;
+			//var exception = false;
+
+			var exception = rulesForTooltip(pQuestionID);
 
 			if($scope.pChart == 'european-bar-chart'){
 				var answer = '0';
 			}
 
-			if(anchor != null){
-				$scope.pTopic = anchor;
-				if(question.category != null){
-					$rootScope.answer = question.answer_id;
-					$state.transitionTo($state.current.name, {
-						pIndicator: $scope.pIndicator, //Year
-						pTopic: $scope.pTopic, //Category
-						pChart: $scope.pChart, //Type of chart
-						pQuestion: $scope.pQuestion, //Question name
-                        pAnswer: question.answer_id, //Split answer
-						pSectorSize: $scope.pSectorSize,
-						pActivityFilter: $scope.pActivityFilter,
-						pCompanyFilter: $scope.pCompanyFilter,
-						pCountry: $scope.dashboard.parameters.pFilters.country,
-						pCountry2: $scope.pCountry2,
-						pLanguage: $scope.pLanguage,
-						pLocale: $scope.pLocale
-					},
-					{
-						reload: true
-					});
-				}
-			}else{
-				dataService.getQuestionSelectorData(question).then(function(res) {
-					var data = res.data.resultset;
-					if (data.length == 1)
-					{
-						var questionObj = {
-							father: data[0][8],
-							grandfather: data[0][9],
-							answer_id: data[0][10]
-						}
-						if(questionObj.grandfather != null){
-							topic = i18nEN['L'+questionObj.grandfather].toLowerCase().replace(/[\,\ ]/g, '-');
-						}else{
-							topic = i18nEN['L'+questionObj.father].toLowerCase().replace(/[\,\ ]/g, '-');
-						}
-
-						$scope.answer = questionObj.answer_id;
-						$rootScope.answer = questionObj.answer_id;
-
-						$state.go($state.current.name, {
-							pTopic : topic,
-							pQuestion: question, //Question name,
-							pAnswer: $scope.answer,
+			if(!exception){
+				$scope.pQuestion = question.category;
+				if(anchor != null){
+					$scope.pTopic = anchor;
+					if(question.category != null){
+						$rootScope.answer = question.answer_id;
+						$state.transitionTo($state.current.name, {
 							pIndicator: $scope.pIndicator, //Year
+							pTopic: $scope.pTopic, //Category
 							pChart: $scope.pChart, //Type of chart
+							pQuestion: $scope.pQuestion, //Question name
+	                        pAnswer: question.answer_id, //Split answer
 							pSectorSize: $scope.pSectorSize,
 							pActivityFilter: $scope.pActivityFilter,
 							pCompanyFilter: $scope.pCompanyFilter,
@@ -756,18 +840,39 @@ define(function (require) {
 						},
 						{
 							reload: true
-						})
+						});
 					}
-				})
-			}
-			
+				}else{
+					dataService.getQuestionSelectorData(question).then(function(res) {
+						var data = res.data.resultset;
+						if (data.length == 1)
+						{
+							var questionObj = {
+								father: data[0][8],
+								grandfather: data[0][9],
+								answer_id: data[0][10]
+							}
+							if(questionObj.grandfather != null){
+								topic = i18nEN['L'+questionObj.grandfather].toLowerCase().replace(/[\,\ ]/g, '-');
+							}else{
+								topic = i18nEN['L'+questionObj.father].toLowerCase().replace(/[\,\ ]/g, '-');
+							}
 
-			/*if($scope.pQuestion == 'MM200_1' || $scope.pQuestion == 'MM200_2' || $scope.pQuestion == 'MM200_3' ||
-				$scope.pQuestion == 'MM200_4' || $scope.pQuestion == 'MM200_5' || $scope.pQuestion == 'MM200_6' || $scope.pQuestion == 'MM200_7' ){
-				$scope.answer = 50;
-			}else{
-				$scope.answer = 1;
-			}*/
+							$scope.answer = questionObj.answer_id;
+							$rootScope.answer = questionObj.answer_id;
+
+							$state.go($state.current.name, {
+								pTopic : topic,
+								pQuestion: question, //Question name,
+								pAnswer: $scope.answer
+							},
+							{
+								reload: true
+							})
+						}
+					})
+				}
+			}
 		}
 
 		$scope.openAccordion = function(i,e) {
@@ -997,6 +1102,57 @@ define(function (require) {
 		    angular.element('.submenu--items--wrapper').removeClass('open'); 
 		  }
 		});
+
+		/* Method to show or hide sectors or sizes for national bar chart */
+		$scope.rulesForSelects = function($index, id){
+			if($index != undefined && id == 1 && $scope.pSectorSize == 'activity-sector'){
+				if($scope.pQuestion.match('Q261') != undefined){
+					return false;
+				}
+
+				if($scope.pCountry == 'AL' || $scope.pCountry == 'CH'
+				|| $scope.pCountry == 'ME' || $scope.pCountry == 'MK' || $scope.pCountry == 'NO'
+				|| $scope.pCountry == 'RS' || $scope.pCountry == 'AT' || $scope.pCountry == 'BE'
+				|| $scope.pCountry == 'CY' || $scope.pCountry == 'HR' || $scope.pCountry == 'IE'
+				|| $scope.pCountry == 'LT' || $scope.pCountry == 'LU' || $scope.pCountry == 'MT' 
+				|| $scope.pCountry == 'SE'){
+					return false;
+				}else if($scope.pQuestion.match('Q202') != undefined && $scope.pQuestion != 'Q202_1'
+					&& ($scope.pCountry == 'EE' || $scope.pCountry == 'EL' || $scope.pCountry == 'FI' 
+						|| $scope.pCountry == 'FR' || $scope.pCountry == 'SK')){
+					return false;
+				}else if(($scope.pQuestion == 'Q251' || ($scope.pQuestion.match('Q252') != undefined && $scope.pQuestion != 'Q252_2')
+					|| $scope.pQuestion == 'Q254gr' || $scope.pQuestion == 'Q255' || $scope.pQuestion.match('Q256') 
+					||$scope.pQuestion == 'Q258b'	|| $scope.pQuestion == 'Q259') && ($scope.pCountry == 'EE' 
+					|| $scope.pCountry == 'EL' || $scope.pCountry == 'FI' || $scope.pCountry == 'FR' || $scope.pCountry == 'SK'
+					|| $scope.pCountry == 'IS')){
+					return false;
+				}
+			}else if($index != undefined && id == 6 && $scope.pSectorSize == 'activity-sector'){
+				if($scope.pQuestion.match('Q261') != undefined){
+					return false;
+				}
+				if(($scope.pQuestion == 'Q251' || ($scope.pQuestion.match('Q252') != undefined && $scope.pQuestion != 'Q252_2')
+					|| $scope.pQuestion == 'Q254gr' || $scope.pQuestion == 'Q255' || $scope.pQuestion.match('Q256') 
+					|| $scope.pQuestion == 'Q258b' || $scope.pQuestion == 'Q259') && ($scope.pCountry == 'AL' 
+					|| $scope.pCountry == 'IS' || $scope.pCountry == 'ME' || $scope.pCountry == 'MK' || $scope.pCountry == 'CY'
+					|| $scope.pCountry == 'EL' || $scope.pCountry == 'HR' || $scope.pCountry == 'LT' || $scope.pCountry == 'LU'
+					|| $scope.pCountry == 'MT')){
+					return false;
+				}
+				
+			}
+
+			if($index != undefined && $scope.pSectorSize == 'company-size'){
+				if(id == 10 && $scope.pQuestion.match('Q261') != undefined){
+					return false;
+				}else if(id == 14 && $scope.pQuestion.match('Q261') != undefined){
+					return false;
+				}
+			}
+
+			return true;
+		}
 		
 		var firstLoad = true;
 		$scope.$watch("dashboard.parameters.pFilters", function(){

@@ -207,22 +207,38 @@ define(function (require) {
 					dataService.getEstablishmentSizesSelect(scope.indicator).then(function(res) {
 						scope.establishmentSizes = [];
 						res.data.resultset.map(function(elem) {
-							scope.establishmentSizes.push({id:elem[0], literal:elem[1]});
+							//scope.establishmentSizes.push({id:elem[0], literal:elem[1]});
+							if(scope.chart == 'european-map' || scope.chart == 'european-bar-chart'){
+								rulesForSelects(elem, 'es');
+							}else{
+								rulesForSelects(elem, 'es');
+								//scope.establishmentSizes.push({id:elem[0], literal:elem[1]});
+							}
+							
 						});
 					});
 
 					// Load the activity sectors for the select combo
 					dataService.getActivitySectorsSelect(scope.indicator).then(function(res) {
 						scope.activitySectors = [];
+						if(res.data.resultset.length == 0){
+							scope.activitySectors.push({id:14, literal:'100573'});
+							angular.element('div.filter-text.activity-sector').addClass('disabled');
+							angular.element('div.activity-sector select#sector').addClass('disabled');
+							angular.element('div.activity-sector select#sector')[0].disabled = true;
+						}
 						res.data.resultset.map(function(elem) {
 							if(elem[0] != 1){
-								scope.activitySectors.push({id:elem[0], literal:elem[1]});
-							}else{
+								//if(scope.chart == 'european-map' || scope.chart == 'european-bar-chart'){
+									rulesForSelects(elem, 'as');
+								/*}else{
+									scope.activitySectors.push({id:elem[0], literal:elem[1]});
+								}*/
+							}/*else{
 								if(scope.chart != 'european-map' && scope.chart != 'european-bar-chart' && scope.chart != 'national-comparisons'){
 									scope.activitySectors.push({id:elem[0], literal:elem[1]});
 								}
-							}
-							
+							}*/
 						});
 					});
 
@@ -233,19 +249,29 @@ define(function (require) {
 							scope.countriesCompareWith = [];
 							
 							res.data.resultset.map(function(elem) {
-								if(elem[0] != scope.country2){
+								/*if(elem[0] != scope.country2){
 									scope.countries.push({id:elem[0], literal:elem[1]});
 								}
 
 								if(elem[0] != scope.country){
 									scope.countriesCompareWith.push({id:elem[0], literal:elem[1]});
-								}
+								}*/
+								rulesForSelects(elem, 'cs');
 							});
 						});
 					}
 				}
-				else if (scope.chart=='national-bar-chart' || scope.chart == 'pie-chart')
+				else if (scope.chart == 'national-bar-chart')
 				{
+					// Load the countries for the select combo
+					dataService.getCountriesSelect(scope.indicator, scope.pLocale).then(function(res) {
+						scope.countries = [];
+						res.data.resultset.map(function(elem) {
+							//scope.countries.push({id:elem[0], literal:elem[1]});
+							rulesForSelects(elem, 'cs');
+						});
+					});
+				}else if(scope.chart == 'pie-chart'){
 					// Load the countries for the select combo
 					dataService.getCountriesSelect(scope.indicator, scope.pLocale).then(function(res) {
 						scope.countries = [];
@@ -253,6 +279,335 @@ define(function (require) {
 							scope.countries.push({id:elem[0], literal:elem[1]});
 						});
 					});
+				}
+
+				/* Method used to insert or not countries on selects*/
+				function rulesForSelects(elem, sector){
+					switch(scope.indicator){
+						case 'MM303a':
+							if(elem[0] != 'CY' && elem[0] != 'EE' && elem[0] != 'MT'){
+								if(scope.chart == 'national-comparisons'){
+									if(elem[0] != scope.country2){
+										scope.countries.push({id:elem[0], literal:elem[1]});
+									}
+
+									if(elem[0] != scope.country){
+										scope.countriesCompareWith.push({id:elem[0], literal:elem[1]});
+									}
+								}else if(scope.chart == 'national-bar-chart'){
+									scope.countries.push({id:elem[0], literal:elem[1]});
+								}
+							}
+							break;
+						case 'MM350':
+							if(elem[0] != 'CY' && elem[0] != 'MT' && elem[0] != 'SE'){
+								if(scope.chart == 'national-comparisons'){
+									if(elem[0] != scope.country2){
+										scope.countries.push({id:elem[0], literal:elem[1]});
+									}
+
+									if(elem[0] != scope.country){
+										scope.countriesCompareWith.push({id:elem[0], literal:elem[1]});
+									}
+								}else if(scope.chart == 'national-bar-chart'){
+									scope.countries.push({id:elem[0], literal:elem[1]});
+								}
+							}
+							break;
+						case 'MM351':
+							if(elem[0] != 'AT' && elem[0] != 'DE' && elem[0] != 'LU'){
+								if(scope.chart == 'national-comparisons'){
+									if(elem[0] != scope.country2){
+										scope.countries.push({id:elem[0], literal:elem[1]});
+									}
+
+									if(elem[0] != scope.country){
+										scope.countriesCompareWith.push({id:elem[0], literal:elem[1]});
+									}
+								}else if(scope.chart == 'national-bar-chart'){
+									scope.countries.push({id:elem[0], literal:elem[1]});
+								}
+							}
+							break;
+						case 'MM355':
+							if(elem[0] != 'CH'){
+								if(scope.chart == 'national-comparisons'){
+									if(elem[0] != scope.country2){
+										scope.countries.push({id:elem[0], literal:elem[1]});
+									}
+
+									if(elem[0] != scope.country){
+										scope.countriesCompareWith.push({id:elem[0], literal:elem[1]});
+									}
+								}else if(scope.chart == 'national-bar-chart'){
+									scope.countries.push({id:elem[0], literal:elem[1]});
+								}
+							}
+							break;
+						case 'MM358':
+							if(elem[0] != 'LU' && elem[0] != 'SI'){
+								if(scope.chart == 'national-comparisons'){
+									if(elem[0] != scope.country2){
+										scope.countries.push({id:elem[0], literal:elem[1]});
+									}
+
+									if(elem[0] != scope.country){
+										scope.countriesCompareWith.push({id:elem[0], literal:elem[1]});
+									}
+								}else if(scope.chart == 'national-bar-chart'){
+									scope.countries.push({id:elem[0], literal:elem[1]});
+								}
+							}
+							break;
+						default:
+							if(scope.chart == 'national-comparisons' && sector == 'cs'){
+
+								if(scope.dataset == 2009){
+									if(elem[0] != scope.country2){
+										scope.countries.push({id:elem[0], literal:elem[1]});
+									}
+
+									if(elem[0] != scope.country){
+										scope.countriesCompareWith.push({id:elem[0], literal:elem[1]});
+									}
+								}else if(scope.dataset == 2014){
+									//If 2014, company size, 50-249 not all countries in the select
+									if(scope.establishmentSize == 14){
+										if(elem[0] != 'AL' && elem[0] != 'ME' && elem[0] != 'BG' 
+											&& elem[0] != 'DK' && elem[0] != 'EE' && elem[0] != 'ES' 
+											&& elem[0] != 'HR' && elem[0] != 'IT' && elem[0] != 'LV' 
+											&& elem[0] != 'RO' && elem[0] != 'SE' && elem[0] != 'SI' 
+											&& elem[0] != 'UK' && scope.sectorSize == 'company-size'){
+											if(elem[0] != scope.country2){
+												scope.countries.push({id:elem[0], literal:elem[1]});
+											}
+
+											if(elem[0] != scope.country){
+												scope.countriesCompareWith.push({id:elem[0], literal:elem[1]});
+											}
+										}
+									}else if(scope.activitySector == 6){
+										if(scope.filters.country != 'AL' || scope.filters.country2 != 'AL' || scope.filters.country != 'IS' 
+										|| scope.filters.country2 != 'IS' || scope.filters.country != 'ME' || scope.filters.country2 != 'ME' 
+										|| scope.filters.country != 'MK' || scope.filters.country2 != 'MK' || scope.filters.country != 'CY' 
+										|| scope.filters.country2 != 'CY' || scope.filters.country != 'EL' || scope.filters.country2 != 'EL' 
+										|| scope.filters.country != 'HR' || scope.filters.country2 != 'HR' || scope.filters.country != 'LT' 
+										|| scope.filters.country2 != 'LT' || scope.filters.country != 'LU' || scope.filters.country2 != 'LU' 
+										|| scope.filters.country != 'MT' || scope.filters.country2 != 'MT'){
+											if(elem[0] != scope.country2){
+												scope.countries.push({id:elem[0], literal:elem[1]});
+											}
+
+											if(elem[0] != scope.country){
+												scope.countriesCompareWith.push({id:elem[0], literal:elem[1]});
+											}
+										}
+									}else{
+										if(elem[0] != scope.country2){
+											scope.countries.push({id:elem[0], literal:elem[1]});
+										}
+
+										if(elem[0] != scope.country){
+											scope.countriesCompareWith.push({id:elem[0], literal:elem[1]});
+										}
+									}
+								}
+							}else if(scope.chart == 'national-bar-chart' && sector == 'cs'){
+								scope.countries.push({id:elem[0], literal:elem[1]});
+							}
+							break;
+					}
+
+					//$log.warn(elem);
+
+					switch(true){
+						case scope.indicator.match('Q202') != undefined: 
+							if(sector == 'es'){
+								scope.establishmentSizes.push({id:elem[0], literal:elem[1]});
+							}else if(sector == 'as'){
+								if((scope.indicator == 'Q202_2' || scope.indicator == 'Q202_3' || scope.indicator == 'Q202_5'
+									|| scope.indicator == 'Q202_6' || scope.indicator == 'Q202_8' || scope.indicator == 'Q202_9'
+									|| scope.indicator == 'Q202_11' || scope.indicator == 'Q202_12' || scope.indicator == 'Q202_13'
+									|| scope.indicator == 'Q202_15') && scope.sectorSize == 'activity-sector' && elem[0] != 6){
+									scope.activitySectors.push({id:elem[0], literal:elem[1]});
+								}else{
+									scope.activitySectors.push({id:elem[0], literal:elem[1]});
+								}
+							}
+							break;
+						case (scope.indicator.match('Q251') != undefined || scope.indicator.match('Q252') != undefined 
+							|| scope.indicator == 'Q254gr' || scope.indicator == 'Q255' || scope.indicator.match('Q256') != undefined
+							|| scope.indicator == 'Q258b' || scope.indicator == 'Q259' || scope.indicator == 'Q308_1'
+							|| scope.indicator == 'Q354'):
+							if(scope.chart == 'national-comparisons'){
+								if(sector == 'as'){
+									if(scope.indicator != 'Q252_2' && scope.indicator != 'Q308_1' && scope.indicator != 'Q354'
+										&& (scope.filters.country != 'AL' || scope.filters.country2 != 'AL' || scope.filters.country != 'IS' 
+										|| scope.filters.country2 != 'IS' || scope.filters.country != 'ME' || scope.filters.country2 != 'ME' 
+										|| scope.filters.country != 'MK' || scope.filters.country2 != 'MK' || scope.filters.country != 'CY' 
+										|| scope.filters.country2 != 'CY' || scope.filters.country != 'EL' || scope.filters.country2 != 'EL' 
+										|| scope.filters.country != 'HR' || scope.filters.country2 != 'HR' || scope.filters.country != 'LT' 
+										|| scope.filters.country2 != 'LT' || scope.filters.country != 'LU' || scope.filters.country2 != 'LU' 
+										|| scope.filters.country != 'MT' || scope.filters.country2 != 'MT')){
+										scope.activitySectors.push({id:elem[0], literal:elem[1]});
+									}
+								}else if(sector == 'es'){
+									scope.establishmentSizes.push({id:elem[0], literal:elem[1]});
+								}
+							}else{
+								if(sector == 'es'){
+									scope.establishmentSizes.push({id:elem[0], literal:elem[1]});
+								}else if(sector == 'as'){
+									if(elem[0] != 6){
+										scope.activitySectors.push({id:elem[0], literal:elem[1]});
+									}/*else{
+										scope.activitySectors.push({id:elem[0], literal:elem[1]});
+									}*/
+								}
+							}			
+
+							break;
+						case (scope.indicator.match('Q261') != undefined):
+							//European map, european bar chart
+							if(sector == 'es'){
+								//If european map or european bar chart and not +250 or 50-249
+								if(scope.chart == 'european-map' || scope.chart == 'european-bar-chart'){
+									if(elem[0] != 14 && elem[0] != 10){
+										scope.establishmentSizes.push({id:elem[0], literal:elem[1]});
+									}
+								}else{
+									//If national comparisons, +250 not in select
+									if(elem[0] != 10){
+										//If national comparisons, selected countries 50-249 not in select
+										if(elem[0] == 14 && (scope.country != 'AL' && scope.country2 != 'AL'
+											&& scope.country != 'ME' && scope.country2 != 'ME' && scope.country != 'BG' 
+											&& scope.country2 != 'BG' && scope.country != 'DK' && scope.country2 != 'DK'
+											&& scope.country != 'EE' && scope.country2 != 'EE' && scope.country != 'ES' 
+											&& scope.country2 != 'ES' && scope.country != 'HR' && scope.country2 != 'HR'
+											&& scope.country != 'IT' && scope.country2 != 'IT' && scope.country != 'LV' 
+											&& scope.country2 != 'LV' && scope.country != 'RO' && scope.country2 != 'RO'
+											&& scope.country != 'SE' && scope.country2 != 'SE' && scope.country != 'SI' 
+											&& scope.country2 != 'SI' && scope.country != 'UK' && scope.country2 != 'UK')){
+											scope.establishmentSizes.push({id:elem[0], literal:elem[1]});
+										//Rest of countries
+										}else if(elem[0] != 14){
+											scope.establishmentSizes.push({id:elem[0], literal:elem[1]});
+										}
+									}
+								}
+							}
+
+							//If national comparisons public administration not in select
+							if(sector == 'as' && elem[0] != 6 && scope.chart == 'national-comparisons'){
+								scope.activitySectors.push({id:elem[0], literal:elem[1]});
+							}
+							break;
+						default: 
+							if(sector == 'es'){
+								scope.establishmentSizes.push({id:elem[0], literal:elem[1]});
+							}else if (sector == 'as'){
+								scope.activitySectors.push({id:elem[0], literal:elem[1]});
+							}
+							break;
+					}
+				}
+
+				/* Method used to show the tooltip when changing between previous and next question */
+				function rulesForTooltip(pQuestionID){
+					//RULES ESENER 2009
+					if(scope.chart == 'national-bar-chart' || scope.chart == 'national-comparisons'){
+						if((pQuestionID == 'MM303a' && (scope.filters.country == 'CY' || scope.filters.country == 'EE' 
+							|| scope.filters.country == 'MT' || scope.filters.country2 == 'CY' || scope.filters.country2 == 'EE' 
+							|| scope.filters.country2 == 'MT')) ||
+							(pQuestionID == 'MM350' && (scope.filters.country == 'CY' || scope.filters.country == 'MT' 
+							|| scope.filters.country == 'SE' || scope.filters.country2 == 'CY' || scope.filters.country2 == 'MT' 
+							|| scope.filters.country2 == 'SE')) ||
+							(pQuestionID == 'MM351' && (scope.filters.country == 'AT' || scope.filters.country == 'DE' 
+							|| scope.filters.country == 'LU' || scope.filters.country2 == 'AT' || scope.filters.country2 == 'DE' 
+							|| scope.filters.country2 == 'LU')) ||
+							(pQuestionID == 'MM355' && (scope.filters.country == 'CH' || scope.filters.country2 == 'CH')) ||
+							(pQuestionID == 'MM358' && (scope.filters.country == 'LU' || scope.filters.country == 'SI' 
+							|| scope.filters.country2 == 'LU' || scope.filters.country2 == 'SI'))){
+							alert(scope.i18n.L100576);
+							return true;
+						}
+					}
+
+					//RULES ESENER 2014
+					if((scope.chart == 'european-map' || scope.chart == 'european-bar-chart') && scope.dataset == 2014)
+					{
+						if(pQuestionID == 'Q202_2' || pQuestionID == 'Q202_3' || pQuestionID == 'Q202_5'
+							|| pQuestionID == 'Q202_6' || pQuestionID == 'Q202_8' || pQuestionID == 'Q202_9'
+							|| pQuestionID == 'Q202_11' || pQuestionID == 'Q202_12' || pQuestionID == 'Q202_13'
+							|| pQuestionID == 'Q202_15' || pQuestionID.match('Q251') != undefined 
+							|| pQuestionID.match('Q252') != undefined || pQuestionID == 'Q254gr' 
+							|| pQuestionID == 'Q255' || pQuestionID.match('Q256') != undefined
+							|| pQuestionID == 'Q258b' || pQuestionID == 'Q259' || pQuestionID == 'Q308_1'
+							|| pQuestionID == 'Q354')
+						{
+							if(scope.sectorSize == 'activity-sector' && scope.activitySector == 6)
+							{
+								alert(scope.i18n.L100576);
+								return true;
+							}
+						}else if(pQuestionID.match('Q261') != undefined)
+						{
+							if(scope.sectorSize == 'activity-sector')
+							{
+								alert(scope.i18n.L100576);
+								return true;
+							}else
+							{
+								if(scope.establishmentSize == 14 || scope.establishmentSize == 10)
+								{
+									alert(scope.i18n.L100576);
+									return true;
+								}
+							}
+						}
+					}
+
+					if(scope.chart == 'national-comparisons' && scope.dataset == 2014){
+						if((pQuestionID == 'Q251' || (pQuestionID.match('Q252') != undefined && pQuestionID != 'Q252_2')
+							|| pQuestionID == 'Q254gr' || pQuestionID == 'Q255' || pQuestionID.match('Q256') != undefined
+							|| pQuestionID == 'Q258b' || pQuestionID == 'Q259') && (scope.filters.country == 'AL' 
+							|| scope.filters.country2 == 'AL' || scope.filters.country == 'IS' || scope.filters.country2 == 'IS'
+							|| scope.filters.country == 'ME' || scope.filters.country2 == 'ME' || scope.filters.country == 'MK' 
+							|| scope.filters.country2 == 'MK' || scope.filters.country == 'CY' || scope.filters.country2 == 'CY'
+							|| scope.filters.country == 'EL' || scope.filters.country2 == 'EL' || scope.filters.country == 'HR' 
+							|| scope.filters.country2 == 'HR' || scope.filters.country == 'LT' || scope.filters.country2 == 'LT'
+							|| scope.filters.country == 'LU' || scope.filters.country2 == 'LU' || scope.filters.country == 'MT' 
+							|| scope.filters.country2 == 'MT')){
+							if(scope.sectorSize == 'activity-sector' && scope.activitySector == 6){
+								alert(scope.i18n.L100576);
+								return true;									
+							}
+						}else if(pQuestionID.match('Q261') != undefined){
+							if(scope.sectorSize == 'activity-sector'){
+								alert(scope.i18n.L100576);
+								return true;
+							}else if(scope.sectorSize == 'company-size'){
+								if(scope.establishmentSize == 10){
+									alert(scope.i18n.L100576);
+									return true;
+								}else if(scope.establishmentSize == 14 && (scope.filters.country == 'AL' 
+									|| scope.filters.country2 == 'AL' || scope.filters.country == 'ME' || scope.filters.country2 == 'ME'
+									|| scope.filters.country == 'BG' || scope.filters.country2 == 'BG' || scope.filters.country == 'DK' 
+									|| scope.filters.country2 == 'DK' || scope.filters.country == 'EE' || scope.filters.country2 == 'EE'
+									|| scope.filters.country == 'ES' || scope.filters.country2 == 'ES' || scope.filters.country == 'HR' 
+									|| scope.filters.country2 == 'HR' || scope.filters.country == 'IT' || scope.filters.country2 == 'IT'
+									|| scope.filters.country == 'LV' || scope.filters.country2 == 'LV' || scope.filters.country == 'RO' 
+									|| scope.filters.country2 == 'RO' || scope.filters.country == 'SE' || scope.filters.country2 == 'SE'
+									|| scope.filters.country == 'SI' || scope.filters.country2 == 'SI' || scope.filters.country == 'UK'
+									|| scope.filters.country2 == 'UK')){
+									alert(scope.i18n.L100576);
+									return true;	
+								}
+							}
+						}
+					}
+
+					return false;
 				}
 
 				scope.changeLocale = function(){
@@ -301,16 +656,6 @@ define(function (require) {
 						}
 					}
 
-					/*
-					if($state.current.name == 'detailpage-european-map' || $state.current.name == 'detailpage-european-bar-chart'){
-						if(pQuestionID == 'MM200_1' || pQuestionID == 'MM200_2' || pQuestionID == 'MM200_3' ||
-							pQuestionID == 'MM200_4' || pQuestionID == 'MM200_5' || pQuestionID == 'MM200_6' || pQuestionID == 'MM200_7' ){
-							scope.answer = 50;
-						}else{
-							scope.answer = 1;
-						}
-					}*/
-					//$log.warn(question);
 					var topic = '';
 
 					dataService.getQuestionSelectorData(pQuestionID).then(function(res) {
@@ -330,16 +675,41 @@ define(function (require) {
 
 							scope.answer = question.answer_id;
 
-							$state.go($state.current.name, {
-								pTopic : topic,
-								pQuestion: pQuestionID, //Question name,
-								pAnswer: scope.answer,
-								pLanguage: scope.pLanguage,
-								pLocale: scope.pLocale
-							},
-							{
-								reload: true
-							})
+							var exception = rulesForTooltip(pQuestionID);
+							//var exception = false;
+							//exception = rulesForTooltip(exception);
+
+							//RULES ESENER 2009
+							/*if(scope.chart == 'national-bar-chart' || scope.chart == 'national-comparisons'){
+								if((pQuestionID == 'MM303a' && (scope.filters.country == 'CY' || scope.filters.country == 'EE' 
+									|| scope.filters.country == 'MT' || scope.filters.country2 == 'CY' || scope.filters.country2 == 'EE' 
+									|| scope.filters.country2 == 'MT')) ||
+									(pQuestionID == 'MM350' && (scope.filters.country == 'CY' || scope.filters.country == 'MT' 
+									|| scope.filters.country == 'SE' || scope.filters.country2 == 'CY' || scope.filters.country2 == 'MT' 
+									|| scope.filters.country2 == 'SE')) ||
+									(pQuestionID == 'MM351' && (scope.filters.country == 'AT' || scope.filters.country == 'DE' 
+									|| scope.filters.country == 'LU' || scope.filters.country2 == 'AT' || scope.filters.country2 == 'DE' 
+									|| scope.filters.country2 == 'LU')) ||
+									(pQuestionID == 'MM355' && (scope.filters.country == 'CH' || scope.filters.country2 == 'CH')) ||
+									(pQuestionID == 'MM358' && (scope.filters.country == 'LU' || scope.filters.country == 'SI' 
+									|| scope.filters.country2 == 'LU' || scope.filters.country2 == 'SI'))){
+									exception = true;
+									alert($scope.i18n.L100576);
+								}
+							}*/
+
+							if(!exception){
+								$state.go($state.current.name, {
+									pTopic : topic,
+									pQuestion: pQuestionID, //Question name,
+									pAnswer: scope.answer,
+									pLanguage: scope.pLanguage,
+									pLocale: scope.pLocale
+								},
+								{
+									reload: true
+								})
+							}
 						}
 					})
 				}
@@ -422,6 +792,9 @@ define(function (require) {
 							case "country":
 								console.log("country changed");
 								$log.warn("country changed");
+								if(scope.chart == 'national-bar-chart'){
+
+								}
 								break;
 							case "country2":
 								console.log("country2 changed");
@@ -476,33 +849,48 @@ define(function (require) {
 
 				}
 
-				scope.changeTo = function(){
+				scope.changeChart = function(chart){
+					var exception = false;
 
-					/*if(scope.filters.country == 'EU27'){
-						scope.filters.country2 = 'EU27';
-						scope.filters.country = 'AT'
-					}*/
+					if((scope.indicator == 'Q202_2' || scope.indicator == 'Q202_3' || scope.indicator == 'Q202_5'
+						|| scope.indicator == 'Q202_6' || scope.indicator == 'Q202_8' || scope.indicator == 'Q202_9'
+						|| scope.indicator == 'Q202_11' || scope.indicator == 'Q202_12' || scope.indicator == 'Q202_13'
+						|| scope.indicator == 'Q202_15' || scope.indicator.match('Q251') != undefined 
+						|| scope.indicator.match('Q252') != undefined || scope.indicator == 'Q254gr' 
+						|| scope.indicator == 'Q255' || scope.indicator.match('Q256') != undefined
+						|| scope.indicator == 'Q258b' || scope.indicator == 'Q259' || scope.indicator == 'Q308_1'
+						|| scope.indicator == 'Q354') && scope.activitySector == 6 && (chart == 'european-map' || chart == 'european-bar-chart')){
+						alert(scope.i18n.L100576);
+						exception = true;
+					}
 
-					$state.transitionTo('detailpage-national-comparisons', {
-						pIndicator: scope.dataset, //Year
-						pTopic: scope.topic,
-						pChart: 'national-comparisons', //Type of chart
-						pQuestion: scope.indicator, //Question name
-						pAnswer: scope.filters.answer, //Split answer
-						pSectorSize: scope.filters.sectorSize,
-						pActivityFilter: scope.filters.activitySector,
-						pCompanyFilter: scope.filters.establishmentSize,
-						pCountry: scope.filters.country,
-						pCountry2: scope.filters.country2,
-						pLanguage: scope.pLanguage,
-						pLocale: scope.pLocale,
-						pEuOnly: scope.pEuOnly
-					},
-					{
-						reload: true
-					});
+					//$log.warn(angular.element('.chart--selection--block li')[2]);
+					if(scope.indicator.match('Q261') && chart == 'national-bar-chart'){
+						exception = true;
+					}
+
+                    if(!exception){
+                    	$state.transitionTo('detailpage-'+chart, {
+							pIndicator: scope.dataset, //Year
+							pTopic: scope.topic,
+							pChart: chart, //Type of chart
+							pQuestion: scope.indicator, //Question name
+							pAnswer: scope.filters.answer, //Split answer
+							pSectorSize: scope.filters.sectorSize,
+							pActivityFilter: scope.filters.activitySector,
+							pCompanyFilter: scope.filters.establishmentSize,
+							pCountry: scope.filters.country,
+							pCountry2: scope.filters.country2,
+							pLanguage: scope.pLanguage,
+							pLocale: scope.pLocale,
+							pEuOnly: scope.pEuOnly
+						},
+						{
+							reload: true
+						});
+                    }
 				}
-	$('.questions--list--wrapper').addClass('open');
+				$('.questions--list--wrapper').addClass('open');
 				scope.openOptions = function(i,e) {
 					
 				
@@ -521,7 +909,6 @@ define(function (require) {
 				 	}
 				  //angular.element(parentNode).toggleClass('open');
 				}
-
 			}
 		}
 	}
