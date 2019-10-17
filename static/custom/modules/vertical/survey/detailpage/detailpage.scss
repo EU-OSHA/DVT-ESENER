@@ -397,7 +397,7 @@
             margin: 0;
             &:after{
               content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/download-icon.png);
-              background: url(none);
+              background:none;
               position: absolute;
               right: 1.5rem;
             }
