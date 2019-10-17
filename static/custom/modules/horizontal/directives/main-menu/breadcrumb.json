@@ -1,11 +1,14 @@
 {
     "sections": {
-        "EU-challenges-response": "national-strategies",
-        "country-strategies": "national-strategies",
-        "accidents-trends":"eu-countries",
-        "fatal-accidents-ranking":"eu-countries",
-        "non-fatal-accidents-estimation":"eu-countries",
-        "non-fatal-accidents-reporting-level":"eu-countries"
+        "home":"home",
+        "overview": "survey",
+        "datavisualisation":"survey",
+        "detailpage-european-map":"survey",
+        "detailpage-european-bar-chart":"survey",
+        "detailpage-national-bar-chart":"survey",
+        "detailpage-national-comparisons":"survey",
+        "detailpage-pie-chart":"survey",
+        "about-tool": "about"
     },
     "home":{
         "name":"L355",
@@ -20,7 +23,7 @@
         "level":"1"
     },
     "accessibility":{
-        "name":"L358",
+        "name":"L101038",
         "level":"1"
     },
     "privacy-policy":{

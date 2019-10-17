@@ -151,6 +151,12 @@
       margin-top: 0px;
       .navbar-nav{
         > li{
+          &.main-menu-selected{                      
+            box-shadow: 0 6px 0 0px $orange;
+            > a{
+              color: $aquamarine;
+            }
+          }
           a{
             font-family: Oswald,sans-serif;
             color:$link-menu;
@@ -232,7 +238,12 @@
             }
           }
           .main-menu-selected{
-            color: $aquamarine;
+            box-shadow: 0 6px 0 0px $orange;
+            color: $aquamarine !important;
+            /*
+            > a{
+              color: $aquamarine !important;
+            }*/
           }
         }
         .dropdown-menu{

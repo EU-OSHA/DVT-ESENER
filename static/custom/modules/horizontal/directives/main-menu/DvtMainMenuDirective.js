@@ -131,17 +131,16 @@ define(function (require) {
                     var path = configService.getHorizontalDirectiveDataPath("main-menu", "menu");
                     $http.get(path, { data: "", headers: {"Content-Type": "application/json"}}).success(function (menuStructure) {
                         $scope.structure = menuStructure;
+                        //$log.warn($scope.structure);
                     });
 
                     $scope.isCurrentStateMenu = function (path) {
                         var lPath = $location.path().split("/");
-                        $log.debug("isCurrentStateMenu and menu variable  |  path: " + path + "  |  " + "lPath[1]: " + lPath[1]);
-                        return (path === lPath[1]
-                            || (lPath[1] == "" && path == "home")
-                            || (lPath[1] == "site-map" && path == "home")
-                            || (lPath[1] == "accessibility" && path == "home")
-                            || (lPath[1] == "privacy-notice" && path == "home")
-                            || (lPath[1] == "legal-notice" && path == "home") ) ? 'main-menu-selected' : '';
+                        //$log.warn(path);
+                        $log.debug("isCurrentStateMenu and menu variable  |  path: " + path + "  |  " + "lPath[2]: " + lPath[2]);
+                        return (path === lPath[2]
+                            || (lPath[2] == undefined && path == "home")
+                            || (lPath[2] == "about" && path == "about-tool")) ? 'main-menu-selected' : '';
 
                         //return (path === lPath[1] || (lPath[1] == "" && path == "home")) ? 'main-menu-selected' : '';
                     };
@@ -160,11 +159,12 @@ define(function (require) {
 
                     $scope.isCurrentSection = function (id) {
                         var lPath = $location.path().split("/");
-                        $log.debug("isCurrentSection and menu variable  |  " + id.replace(/\s+/g, '-') + "  |  " + breadCrumbStructure['sections'][lPath[1]]);
+                        $log.debug("isCurrentSection and menu variable  |  " + id.replace(/\s+/g, '-') + "  |  " + breadCrumbStructure['sections'][lPath[3]]);
                         $scope.pathURLDVT=$location.absUrl();
                         $scope.pathURLDVTGoogle = "https://plus.google.com/share?url=" + $scope.pathURLDVT;
-                        return ((id.replace(/\s+/g, '-') === breadCrumbStructure['sections'][lPath[1]])
-                            || (id.replace(/\s+/g, '-') === breadCrumbStructure['sections'][lPath[2]])) ? 'main-menu-selected' : '';
+                        return ((id.replace(/\s+/g, '-') === breadCrumbStructure['sections'][lPath[2]])
+                            || (id.replace(/\s+/g, '-') === breadCrumbStructure['sections'][lPath[3]])
+                            || (id === 'overview' && id === breadCrumbStructure['sections'][lPath[3]])) ? 'main-menu-selected' : '';
                     };
                     $scope.titleS=titleStructure;
                     $scope.pathURLDVT=$location.absUrl();
