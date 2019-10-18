@@ -16,12 +16,14 @@
                 "id":"overview",
                 "name":"L101007",
                 "sref":"overview",
-                "accesskey":"1"
+                "accesskey":"1",
+                "tabindex":"2"
             },{
                 "id":"overview",
                 "name":"L101008",
                 "sref":"overview",
-                "accesskey":"2"
+                "accesskey":"2",
+                "tabindex":"3"
             }
         ]
 
@@ -30,8 +32,8 @@
         "id": "about-tool",
         "name":"L484",
         "sref": "about-tool",
-        "accesskey": "T",
-        "tabindex":"3"
+        "accesskey": "3",
+        "tabindex":"4"
 
     }
 ]
