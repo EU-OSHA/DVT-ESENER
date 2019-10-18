@@ -16,6 +16,7 @@ define(function (require) {
         // Literals / i18n
         //$scope.i18n_literals = configService.getLiterals();
         $scope.i18n_literals = ($stateParams.pLanguage == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLanguage);
+        $scope.pLanguage = $stateParams.pLanguage;
 
         var i18n = require('json!vertical/footer-pages/i18n');
         $scope.i18n = i18n;
