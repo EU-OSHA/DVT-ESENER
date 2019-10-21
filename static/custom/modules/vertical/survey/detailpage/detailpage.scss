@@ -990,10 +990,11 @@
       text-align: left;
       padding: 0.9rem 0.5rem 0.8rem 0;
       margin: 0rem 0;
+      flex:1 1 auto;
     }
     select, select:focus{
-      flex:1;
-      width:90%;
+      flex:1 1 auto;;
+      //width:90%;
       margin: 0rem 0 0rem auto;
       padding: 0rem 3rem 0rem 1.3rem;
       background: #FFF;
