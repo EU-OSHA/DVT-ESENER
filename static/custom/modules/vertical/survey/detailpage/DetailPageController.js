@@ -66,6 +66,8 @@ define(function (require) {
 
 		$scope.sortBy = $stateParams.pSortBy;
 
+		$scope.previousQuestion = $scope.pQuestion;
+
         //$log.warn($scope.nonEU);
 
 		var resolution = $(window).width();
@@ -696,7 +698,7 @@ define(function (require) {
 		/* Method to implement the popup when changing question in the question menu*/
 		function rulesForTooltip(pQuestionID){
 			//RULES ESENER 2009
-			if($scope.pChart == 'national-bar-chart' || $scope.pChart == 'national-comparisons'){
+			if($scope.pChart == 'national-bar-chart' || $scope.pChart == 'national-comparisons' && $scope.pIndicator == 2009){
 				if((pQuestionID == 'MM303a' && ($scope.pCountry == 'CY' || $scope.pCountry == 'EE' 
 					|| $scope.pCountry == 'MT' || $scope.pCountry2 == 'CY' || $scope.pCountry2 == 'EE' 
 					|| $scope.pCountry2 == 'MT')) ||
@@ -815,17 +817,18 @@ define(function (require) {
 
 			var answer = $scope.answer;
 			//var exception = false;
-			var exception = rulesForTooltip(question.category);
+			var questionName = (question.category != undefined)?question.category:question;
+			var exception = rulesForTooltip(questionName);
 
 			if(!exception){
-				answer = question.answer_id;
 
 				if($scope.pChart == 'european-bar-chart'){
 					answer = '0';
 				}
 
 				$scope.pQuestion = question.category;
-				if(anchor != null){
+				if(anchor != undefined){
+					answer = question.answer_id;
 					$scope.pTopic = anchor;
 					if(question.category != null){
 						$rootScope.answer = question.answer_id;
@@ -876,6 +879,26 @@ define(function (require) {
 							})
 						}
 					})
+				}
+			}else{
+				if(anchor == undefined){
+					$state.transitionTo($state.current.name, {
+						pIndicator: $scope.pIndicator, //Year
+						pTopic: $scope.pTopic, //Category
+						pChart: $scope.pChart, //Type of chart
+						pQuestion: $scope.previousQuestion, //Question name
+	                    pAnswer: question.answer_id, //Split answer
+						pSectorSize: $scope.pSectorSize,
+						pActivityFilter: $scope.pActivityFilter,
+						pCompanyFilter: $scope.pCompanyFilter,
+						pCountry: $scope.dashboard.parameters.pFilters.country,
+						pCountry2: $scope.pCountry2,
+						pLanguage: $scope.pLanguage,
+						pLocale: $scope.pLocale
+					},
+					{
+						reload: true
+					});
 				}
 			}
 		}
