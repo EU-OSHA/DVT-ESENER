@@ -899,7 +899,9 @@ define(function (require) {
 		}
 
 		$scope.showSharePopUp = function(e){
-			if( e.currentTarget.attributes[0].nodeValue == 'btnSocial')
+			//console.log('EVENTO SHOW SHARE POPUP');
+			//console.log(e);
+			if(e.currentTarget.id == 'btnSocial')
 				$scope.showPopUpSocialMedia = true;
 			else
 				$scope.showPopUpExportData = true;
