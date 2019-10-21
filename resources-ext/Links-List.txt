@@ -28,6 +28,7 @@
 1018-http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue
 1018-https://data.europa.eu/euodp/en/data/dataset/esener-2
 1018-https://search.gesis.org/research_data/ZA6865
+1019-https://osha.europa.eu/en/tools-and-publications/publications/worker-participation-management-occupational-safety-health/view
 1019-https://osha.europa.eu/en/tools-and-publications/publications/l_en?text=Country%20report%20Worker%20participation%20in%20the%20management%20of%20occupational%20safety%20and%20health%20%E2%80%94%20qualitative%20evidence%20from%20ESENER-2&amp;sort_by=search_api_relevance&amp;direction=desc
 1019-https://osha.europa.eu/en/tools-and-publications/publications/worker-participation-management-occupational-safety-and-health/view
 1019-https://osha.europa.eu/en/tools-and-publications/publications/health-and-safety-risks-workplace-joint-analysis-three-major/view
