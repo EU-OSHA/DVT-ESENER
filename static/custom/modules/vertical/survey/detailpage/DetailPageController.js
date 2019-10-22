@@ -94,6 +94,14 @@ define(function (require) {
 		$scope.questions = []; //Question menu
 		//$scope.splitAnswers = []; //Select of split answers
 
+		var ua = window.navigator.userAgent;
+		var msie = ua.indexOf("MSIE ");
+		$scope.isIE = false;
+                        
+        if (msie > 0 || navigator.userAgent.match(/Trident.*rv:11\./) || navigator.userAgent.match(/Edge/)){
+        	$scope.isIE = true;
+        }
+
 		var questionOrFilterChanged = false;
 
 		if($scope.pChart == 'european-map'){
