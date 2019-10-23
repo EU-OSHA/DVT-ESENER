@@ -743,10 +743,17 @@ define(function (require) {
 					}
 				}else if(pQuestionID.match('Q261') != undefined)
 				{
+					//En vez de popup que cambie a company size si as = 14 y es = 11
 					if($scope.pSectorSize == 'activity-sector')
 					{
-						alert($scope.i18n.L100576);
-						return true;
+						if($scope.pActivityFilter == 14 && $scope.pCompanyFilter == 11){
+							$scope.pSectorSize = 'company-size';
+							return false;
+						}else{
+							alert($scope.i18n.L100576);
+							return true;							
+						}
+
 					}else
 					{
 						if($scope.pCompanyFilter == 14 || $scope.pCompanyFilter == 10)
@@ -759,26 +766,31 @@ define(function (require) {
 			}else if($scope.pChart == 'national-bar-chart' && $scope.pIndicator == 2014){
 				if(pQuestionID.match('Q261') != undefined)
 				{
-					if($scope.pSectorSize == 'activity-sector')
-					{
+					//if($scope.pSectorSize == 'activity-sector')
+					//{
 						alert($scope.i18n.L100576);
 						return true;
-					}else
+					/*}else
 					{
 						if($scope.pCompanyFilter == 14 || $scope.pCompanyFilter == 10)
 						{
 							alert($scope.i18n.L100576);
 							return true;
 						}
-					}
+					}*/
 				}
 			}else if($scope.pChart == 'national-comparisons' && $scope.pIndicator == 2014){
 				if(pQuestionID.match('Q261') != undefined)
 				{
 					if($scope.pSectorSize == 'activity-sector')
 					{
-						alert($scope.i18n.L100576);
-						return true;
+						if($scope.pActivityFilter == 14 && $scope.pCompanyFilter == 11){
+							$scope.pSectorSize = 'company-size';
+							return false;
+						}else{
+							alert($scope.i18n.L100576);
+							return true;							
+						}
 					}else
 					{
 						if($scope.pCompanyFilter == 10)

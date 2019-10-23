@@ -588,8 +588,15 @@ define(function (require) {
 						{
 							if(scope.sectorSize == 'activity-sector')
 							{
-								alert(scope.i18n.L100576);
-								return true;
+								//alert(scope.i18n.L100576);
+								//return true;
+								if(scope.activitySector == 14 && scope.establishmentSize == 11){
+									scope.sectorSize = 'company-size';
+									return false;
+								}else{
+									alert(scope.i18n.L100576);
+									return true;							
+								}
 							}else
 							{
 								if(scope.establishmentSize == 14 || scope.establishmentSize == 10)
@@ -744,6 +751,7 @@ define(function (require) {
 									pTopic : topic,
 									pQuestion: pQuestionID, //Question name,
 									pAnswer: scope.answer,
+									pSectorSize: scope.sectorSize,
 									pLanguage: scope.pLanguage,
 									pLocale: scope.pLocale
 								},
