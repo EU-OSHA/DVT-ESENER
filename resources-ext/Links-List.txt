@@ -3,7 +3,6 @@
 1014-https://osha.europa.eu/en/tools-and-publications/publications/reports/esener1_osh_management/view
 1014-https://osha.europa.eu/en/tools-and-publications/publications/reports/en_esener1-summary.pdf/view
 1014-https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx
-1014-https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx
 1014-http://oshwiki.eu/wiki/ESENER-1_Methodology
 1014-https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446
 1014-https://data.europa.eu/euodp/en/data/dataset/esener-1
