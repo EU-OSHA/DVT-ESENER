@@ -331,7 +331,7 @@ define(function (require) {
 								}
 							}
 							break;
-						case 'MM355':
+						case 'MM355all':
 							if(elem[0] != 'CH'){
 								if(scope.chart == 'national-comparisons'){
 									if(elem[0] != scope.country2 && sector == 'cs'){
@@ -547,7 +547,7 @@ define(function (require) {
 							(pQuestionID == 'MM351' && (scope.filters.country == 'AT' || scope.filters.country == 'DE' 
 							|| scope.filters.country == 'LU' || scope.filters.country2 == 'AT' || scope.filters.country2 == 'DE' 
 							|| scope.filters.country2 == 'LU')) ||
-							(pQuestionID == 'MM355' && (scope.filters.country == 'CH' || scope.filters.country2 == 'CH')) ||
+							(pQuestionID == 'MM355all' && (scope.filters.country == 'CH' || scope.filters.country2 == 'CH')) ||
 							(pQuestionID == 'MM358' && (scope.filters.country == 'LU' || scope.filters.country == 'SI' 
 							|| scope.filters.country2 == 'LU' || scope.filters.country2 == 'SI'))){
 							alert(scope.i18n.L100576);
@@ -560,7 +560,7 @@ define(function (require) {
 							|| scope.filters.country == 'SE')) ||
 							(pQuestionID == 'MM351' && (scope.filters.country == 'AT' || scope.filters.country == 'DE' 
 							|| scope.filters.country == 'LU')) ||
-							(pQuestionID == 'MM355' && scope.filters.country == 'CH') ||
+							(pQuestionID == 'MM355all' && scope.filters.country == 'CH') ||
 							(pQuestionID == 'MM358' && (scope.filters.country == 'LU' || scope.filters.country == 'SI'))){
 							alert(scope.i18n.L100576);
 							return true;

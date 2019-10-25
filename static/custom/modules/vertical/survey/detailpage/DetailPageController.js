@@ -706,7 +706,7 @@ define(function (require) {
 		/* Method to implement the popup when changing question in the question menu*/
 		function rulesForTooltip(pQuestionID){
 			//RULES ESENER 2009
-			if($scope.pChart == 'national-bar-chart' || $scope.pChart == 'national-comparisons' && $scope.pIndicator == 2009){
+			if($scope.pChart == 'national-comparisons' && $scope.pIndicator == 2009){
 				if((pQuestionID == 'MM303a' && ($scope.pCountry == 'CY' || $scope.pCountry == 'EE' 
 					|| $scope.pCountry == 'MT' || $scope.pCountry2 == 'CY' || $scope.pCountry2 == 'EE' 
 					|| $scope.pCountry2 == 'MT')) ||
@@ -716,9 +716,21 @@ define(function (require) {
 					(pQuestionID == 'MM351' && ($scope.pCountry == 'AT' || $scope.pCountry == 'DE' 
 					|| $scope.pCountry == 'LU' || $scope.pCountry2 == 'AT' || $scope.pCountry2 == 'DE' 
 					|| $scope.pCountry2 == 'LU')) ||
-					(pQuestionID == 'MM355' && ($scope.pCountry == 'CH' || $scope.pCountry2 == 'CH')) ||
+					(pQuestionID == 'MM355all' && ($scope.pCountry == 'CH' || $scope.pCountry2 == 'CH')) ||
 					(pQuestionID == 'MM358' && ($scope.pCountry== 'LU' || $scope.pCountry == 'SI' 
 					|| $scope.pCountry2 == 'LU' || $scope.pCountry2 == 'SI'))){
+					alert($scope.i18n.L100576);
+					return true;
+				}
+			}else if($scope.pChart == 'national-bar-chart' && $scope.pIndicator == 2009){
+				if((pQuestionID == 'MM303a' && ($scope.pCountry == 'CY' || $scope.pCountry == 'EE' 
+					|| $scope.pCountry == 'MT')) ||
+					(pQuestionID == 'MM350' && ($scope.pCountry == 'CY' || $scope.pCountry == 'MT' 
+					|| $scope.pCountry == 'SE')) ||
+					(pQuestionID == 'MM351' && ($scope.pCountry == 'AT' || $scope.pCountry == 'DE' 
+					|| $scope.pCountry == 'LU')) ||
+					(pQuestionID == 'MM355all' && ($scope.pCountry == 'CH')) ||
+					(pQuestionID == 'MM358' && ($scope.pCountry== 'LU' || $scope.pCountry == 'SI'))){
 					alert($scope.i18n.L100576);
 					return true;
 				}
