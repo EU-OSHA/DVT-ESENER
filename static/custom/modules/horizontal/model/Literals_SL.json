@@ -1354,7 +1354,7 @@
   "L100662":"Export visualization",
   "L100663":"Select a question",
   "L100664":"The National comparisons visualisation presents a comparative overview for the values of all answers between two selected countries.",
-  "L100665":"The European bar chart visualisation illustrates the values of all answers per country in a vertical stacked bar chart. The European Union average is also provided for comparative reasons in the left  hand side of the graph.",
+  "L100665":"Vizualizacija ponazarja odstotke odgovorov ali srednjo vrednost odgovora po evropskih državah in za vse evropske države za  določeno vprašanje.",
   "L100666":"The European map visualisation illustrates in a map the values of the answers per country.",
   "L100667":"The National bar chart visualisation illustrates the values of all answers per selected country and subset. The average among all subsets per answer is also provided at the end.",
   "L100668":"null",
