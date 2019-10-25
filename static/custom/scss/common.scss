@@ -98,6 +98,7 @@
     &[target="blank"]{
       margin-right: 0.5em;
       word-wrap: break-word;
+      display:inline-block;
       &:after{
         background: url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-ilo/static/custom/img/external_link.png) transparent right 30% no-repeat;
         margin-left:0em;
