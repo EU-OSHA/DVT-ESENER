@@ -1891,3 +1891,18 @@ and (max-height:767px){
       overflow: auto;
   }
 }
+
+@media screen and (max-height: 767px) {
+  .dvt-modal-social{
+    height: 95%;
+    .pull-right {
+      position: relative;
+      z-index: 99999;
+    }
+  }
+  #popUpMessage{
+    .popUpMessage--exportData--text--block{
+      margin: 6% 0vw !important;
+    }
+  }
+}

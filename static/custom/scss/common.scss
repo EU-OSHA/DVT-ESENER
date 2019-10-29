@@ -1205,7 +1205,7 @@
 }
 .see-more{
   margin: 2rem 0;
-  a{
+  a.see-more{
     text-decoration: none;
     color: #529FA2;
     padding: 0.5rem 0;
@@ -1214,9 +1214,36 @@
     &:hover, &:focus{
       color:$orange;
     }
-    i{
-      padding-left: 0.5rem;
-    } 
+    &:after{
+      content: "\f107";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin-left: 0.5rem;
+    }
+  }
+  a.see-less{
+    text-decoration: none;
+    color: #529FA2;
+    padding: 0.5rem 0;
+    position: relative;
+    font-family:'OpenSans-bold';
+    &:hover, &:focus{
+      color:$orange;
+    }
+    &:after{
+      content: "\f106";
+      display: inline-block;
+      font: normal normal normal 14px/1 FontAwesome;
+      font-size: inherit;
+      text-rendering: auto;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      margin-left: 0.5rem;
+    }
   }
 }
 

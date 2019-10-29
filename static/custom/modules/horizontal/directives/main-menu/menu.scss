@@ -162,6 +162,7 @@
             color:$link-menu;
             background:transparent !important;
             font-size:1.8rem;
+            //line-height: 25px;
             font-weight: 400;
             padding-top: 1.6rem;
             padding-bottom: 1.6rem;
@@ -217,7 +218,12 @@
               padding: 1.6rem 1.6rem 1.6rem 2.6rem;
               background: url(../img/home-icon.png) left center no-repeat !important;            
             }
-          } 
+          }
+          &:nth-child(2){
+            a, a:active, a:focus{
+              padding: 1.6rem 1.6rem 1.5rem 2.6rem;
+            }
+          }  
           &.dropdown{
             .fa-caret-down:before{
               color:$aquamarine;
@@ -226,7 +232,7 @@
               .dropdown-menu{
                 border-top: 0.6rem solid $orange;
                 display:block;
-                top:100%;
+                top:99%;
                 width: 100%;
                 li{
                   a{
