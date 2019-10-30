@@ -25,7 +25,6 @@
 
     function gotoTop() {
         $('html,body').animate({ 'scrollTop': 0 }, 'slow');
-        return false;
     };
 
 
@@ -94,13 +93,20 @@ define(function (require) {
                           }
                         }
                         prevScrollpos = currentScrollPos;
+
                         var gotopVisible = $(window).height() + $(window).height()/2;
-                        if( currentScrollPos > gotopVisible )
-                        {
-                            $('.go-to').css('display','block');
-                        }
-                        else
-                        {
+                        
+
+                        if( $(window).width() < 1024){                                            
+                            if( currentScrollPos > gotopVisible )
+                            {
+                                $('.go-to').css('display','block');
+                            }
+                            else
+                            {
+                                $('.go-to').css('display','none');
+                            }
+                        } else {
                             $('.go-to').css('display','none');
                         }
                     }
@@ -108,6 +114,10 @@ define(function (require) {
                     $( window ).resize(function() {
                       angular.element(".bar-header").removeClass('hide-header');
                     });
+
+                    if( $(window).width() > 1024){
+                        $('.go-to').css('display','none');
+                    }
                     
                     
                     //hide print icon in mobile

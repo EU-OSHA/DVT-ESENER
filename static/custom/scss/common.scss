@@ -1792,3 +1792,9 @@ a{
   }    
 }
 
+@-ms-viewport{
+width:auto!important;
+}
+body{
+  -ms-overflow-style: scrollbar;
+}
