@@ -159,7 +159,7 @@
                         values-font="14px 'OpenSans-bold'"
                         multiple-label-colors="false"
                         leaf-content-overflow='visible'
-                        ortho-axis-visible="true" tooltip-enabled="false"
+                        ortho-axis-visible="true" tooltip-enabled="true"
                         dimensions="stories[2].dimensions"
                         legend="false" is-maximized="false"
                         base-color="#FFFFFF" axis-style="#FFFFFF"
@@ -295,12 +295,12 @@
                     </a>
                   </div>
                   <div id="panel--url" data-ng-if="pageUrlActive">
-                    <p data-ng-bind="i18n.L100587 + ': ' + i18n.L100660"></p>
+                    <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="selectTextArea()">
+                      <span  data-ng-bind="i18n.L100640" ></span>
+                    </button>
                     <textarea id="urlTextArea" readonly="readonly" cols="80" rows="3" data-ng-bind="createURL()"></textarea>
                     <div class="pageUrl">
-                      <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="selectTextArea()">
-                        <span  data-ng-bind="i18n.L100640" ></span>
-                      </button>
+                      <p data-ng-bind="i18n.L100587 + ': ' + i18n.L100660"></p>
                       <a id="btnSocial" class="btn-default btn-main-color" href="{{pathURLDVT}}" target="_blank">
                         <span data-ng-bind="i18n.L100641"></span>
                       </a>
@@ -308,12 +308,12 @@
                     </div>
                   </div>
                   <div id="panel--url" data-ng-if="pageCitationActive">
-                    <p data-ng-bind="i18n.L100587 + ': ' + i18n.L100660"></p>
+                    <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="selectTextArea()">
+                      <span  data-ng-bind="i18n.L100640" ></span>
+                    </button>
                     <textarea id="urlTextArea" readonly="readonly" cols="80" rows="5" data-ng-bind="createCitation()"></textarea>
                     <div class="pageUrl">
-                      <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="selectTextArea()">
-                        <span  data-ng-bind="i18n.L100640" ></span>
-                      </button>
+                      <p data-ng-bind="i18n.L100587 + ': ' + i18n.L100660"></p>
                     </div>
                   </div>
                 </div>
