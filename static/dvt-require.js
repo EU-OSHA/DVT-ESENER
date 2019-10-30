@@ -143,6 +143,7 @@
     requirePaths['horizontal/model/literals/MK'] = horizontalModules + '/model/Literals_MK' + suffix + '.json' ;
     requirePaths['horizontal/model/literals/EN_1'] = horizontalModules + '/model/Literals_EN_1' + suffix + '.json' ;
     requirePaths['horizontal/model/literals/RU_1'] = horizontalModules + '/model/Literals_RU_1' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/RU_2'] = horizontalModules + '/model/Literals_RU_2' + suffix + '.json' ;
     requirePaths['horizontal/model/literals/RU_3'] = horizontalModules + '/model/Literals_RU_3' + suffix + '.json' ;
     requirePaths['horizontal/model/literals/DE_2'] = horizontalModules + '/model/Literals_DE_2' + suffix + '.json' ;
     requirePaths['horizontal/model/literals/FR_2'] = horizontalModules + '/model/Literals_FR_2' + suffix + '.json' ;

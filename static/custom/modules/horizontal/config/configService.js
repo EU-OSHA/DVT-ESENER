@@ -64,6 +64,7 @@ define(function (require) {
     var i18nMK = require('json!horizontal/model/literals/MK');
     var i18nEN1 = require('json!horizontal/model/literals/EN_1');
     var i18nRU1 = require('json!horizontal/model/literals/RU_1');
+    var i18nRU2 = require('json!horizontal/model/literals/RU_2');
     var i18nRU3 = require('json!horizontal/model/literals/RU_3');
     var i18nDE2 = require('json!horizontal/model/literals/DE_2');
     var i18nFR2 = require('json!horizontal/model/literals/FR_2');
@@ -483,6 +484,8 @@ define(function (require) {
                 return i18nEN1;
             }else if(language == 'ru_1'){
                 return i18nRU1;
+            }else if(language == 'ru_2'){
+                return i18nRU2;
             }else if(language == 'ru_3'){
                 return i18nRU3;
             }else if(language == 'de_2'){
@@ -502,7 +505,7 @@ define(function (require) {
             }else if(language == 'fr_3'){
                 return i18nFR3;
             }else if(language == 'it_1'){
-                return i18nFR3;
+                return i18nIT1;
             }
 
             return i18n;
