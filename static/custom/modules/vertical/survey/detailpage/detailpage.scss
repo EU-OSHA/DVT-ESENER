@@ -885,6 +885,7 @@
       color: #FFF;
       position: relative;
       border: none; 
+      border-radius: 0 !important;
       background: #00a1a3 url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/dropdown-arrow-down-white.svg) no-repeat 0 1px;
       background-size: 2rem 2rem;
       background-position: 96% 58%; 
@@ -1333,6 +1334,7 @@ and (max-width : 1250px) {
      .filter-text, .filter-text-button{
         select{
           width: 100%;
+          border-radius: 0 !important;
         }
       }
       .filter-national-comparisons{

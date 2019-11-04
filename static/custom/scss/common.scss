@@ -131,6 +131,28 @@
     top: -9999px;
     left:-9999px;
   }
+  .hide-header{
+    position: fixed;
+    top: -20rem;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    &.affix, &.affix-top{
+      top: -25rem;
+      background: $white;
+      width: 100%;
+    }
+  }
+  .show-header{
+    position: fixed;
+    top:0rem;
+    -webkit-transition: all 0.8s; 
+    transition: all 0.8s;
+    &.affix, &.affix-top{
+      top:9rem;
+      background: $white;
+      width: 100%;
+    }
+  }
   .show-mobile{
     display: none;
   }
