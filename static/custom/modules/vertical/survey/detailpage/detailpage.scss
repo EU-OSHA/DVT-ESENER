@@ -1208,6 +1208,10 @@
       .no-event{
         display: none;
       }
+      &.exception{
+        pointer-events: none;
+        cursor: default !important;
+      }
     }
   }
   a#eu-only-mobile{

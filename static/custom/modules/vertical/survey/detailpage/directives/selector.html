@@ -261,9 +261,9 @@
                         <a title="{{i18n.L100622}}" class="" data-ng-class="{'selected-chart':(chart == 'european-bar-chart')}" data-ng-click="changeChart('european-bar-chart')"><span class="visible-xs"  data-ng-bind="i18n.L100622"></span></a>
                     </li>
 
-                    <li data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" data-ng-click="openOptions($index,$event)">
+                    <li data-ng-class="{'selected-chart':(chart == 'national-bar-chart'), 'exception':indicator.match('Q261')}" data-ng-click="openOptions($index,$event)">
                         <div class="no-event"></div>
-                        <a title="{{i18n.L100624}}" class="" data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" data-ng-click="changeChart('national-bar-chart')"><span class="visible-xs"  data-ng-bind="i18n.L100624"></span></a>
+                        <a title="{{i18n.L100624}}" class="" data-ng-class="{'selected-chart':(chart == 'national-bar-chart')}" data-ng-click="changeChart('national-bar-chart',$event)"><span class="visible-xs"  data-ng-bind="i18n.L100624"></span></a>
 
                     </li>
 

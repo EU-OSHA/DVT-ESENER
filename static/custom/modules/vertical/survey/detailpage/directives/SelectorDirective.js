@@ -898,7 +898,7 @@ define(function (require) {
 
 				}
 
-				scope.changeChart = function(chart){
+				scope.changeChart = function(chart,e){
 					var exception = false;
 
 					if((scope.indicator == 'Q202_2' || scope.indicator == 'Q202_3' || scope.indicator == 'Q202_5'
@@ -916,6 +916,7 @@ define(function (require) {
 					//$log.warn(angular.element('.chart--selection--block li')[2]);
 					if(scope.indicator.match('Q261') && chart == 'national-bar-chart'){
 						exception = true;
+						//angular.element(e.currentTarget.parentNode).addClass('exception');
 					}
 
                     if(!exception){
