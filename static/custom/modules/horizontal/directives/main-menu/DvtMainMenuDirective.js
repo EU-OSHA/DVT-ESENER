@@ -119,7 +119,7 @@ define(function (require) {
                         $('.go-to').css('display','none');
                     }
                     
-                    
+                   
                     //hide print icon in mobile
                     if(configService.isMobile()) {
                         $(".print--block").addClass('hide');

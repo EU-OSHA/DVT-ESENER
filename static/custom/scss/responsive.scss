@@ -260,7 +260,7 @@
 						&:nth-child(1){
 							a{
 								padding: 2.2rem 1.6rem 1.6rem 3.2rem !important;
-								box-shadow: none;
+								box-shadow: none !important;
 							}
 						}
 						&:hover{
@@ -268,8 +268,8 @@
 					}
 					> a{
 						font-size:2.2rem !important;
-					  padding: 1rem 1rem 1rem 3rem;
-					  box-shadow: none;
+					  padding: 1rem 1rem 1rem 3rem !important;
+					  box-shadow: none !important;
 						&:hover{
 							border-bottom: 1px solid $aquamarine;
 						}

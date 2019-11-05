@@ -201,7 +201,7 @@
           }
           &:not( :hover ){
             .dropdown-menu{
-                display:none !important;
+                //display:none !important;
             }
           }
           &.open{
@@ -234,7 +234,10 @@
                 border-top: 0.6rem solid $orange;
                 display:block;
                 top:99%;
-                width: 100%;
+                min-width:100% !important;
+                width: auto !important;
+                overflow: visible;
+                height: auto;
                 li{
                   a{
                     //font-family: 'OpenSans';
@@ -254,8 +257,12 @@
           }
         }
         .dropdown-menu{
-          min-width: 100% !important;
-          width: auto !important;
+          min-width:0%;
+          width: 0;
+          height: 0px;
+          display: block !important;
+          overflow: hidden;
+          padding: 0;
         }
       }
       .navbar-toggle .icon-bar {
