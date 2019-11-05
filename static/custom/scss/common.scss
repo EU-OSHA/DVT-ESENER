@@ -133,7 +133,7 @@
   }
   .hide-header{
     position: fixed;
-    top: -20rem;
+    top: -20rem !important;
     -webkit-transition: all 0.8s;
     transition: all 0.8s;
     &.affix, &.affix-top{
