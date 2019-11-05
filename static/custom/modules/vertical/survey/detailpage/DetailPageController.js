@@ -1008,7 +1008,7 @@ define(function (require) {
         		title = $scope.i18n['L'+$scope.question.name2] + ': ' + $scope.i18n['L'+$scope.question.name3]+' ('+$scope.i18n['L'+$scope.question.grandfather]+')';
         	}
 
-        	if(paramsUsed.includes('pSectorSize')){
+        	if(paramsUsed.match('pSectorSize')){
         		if($scope.pSectorSize == 'activity-sector'){
         			textParams = textParams + 'Activity sector ';
         		}else{
@@ -1016,19 +1016,19 @@ define(function (require) {
         		}
         	}
 
-        	if(paramsUsed.includes('pActivityFilter')){
+        	if(paramsUsed.match('pActivityFilter')){
         		if($scope.pSectorSize == 'activity-sector'){
         			textParams = textParams + ', ' + $scope.pActivityFilter + ' ';
         		}
         	}
 
-        	if(paramsUsed.includes('pActivityFilter')){
+        	if(paramsUsed.match('pActivityFilter')){
         		if($scope.pSectorSize != 'activity-sector'){
         			textParams = textParams + ', ' + $scope.pCompanyFilter + ' ';
         		}
         	}
 
-        	if(paramsUsed.includes('pCountry')){
+        	if(paramsUsed.match('pCountry')){
         		if($scope.pChart == 'pie-chart'){
         			textParams = textParams + 'country : ' + $scope.pCountry + ' ';
         		}else{
@@ -1036,11 +1036,11 @@ define(function (require) {
         		}
         	}
 
-        	if(paramsUsed.includes('pCountry2')){
+        	if(paramsUsed.match('pCountry2')){
         		textParams = textParams + ', compare with : ' + $scope.pCountry2 + ' ';
         	}
 
-        	if(paramsUsed.includes('pAnswer')){
+        	if(paramsUsed.match('pAnswer')){
         		textParams = textParams + ', answer : ' + $scope.answer + ' ';
         	}
 
