@@ -91,6 +91,13 @@ define(function (require) {
                             angular.element(".affix").removeClass('show-header');
                             angular.element(".bar-header").removeClass('show-header');
                           }
+                        } else {
+                            angular.element(".bar-header").addClass('show-header');
+                            angular.element(".affix").addClass('show-header');
+
+                            angular.element(".affix").removeClass('hide-header');
+                            angular.element(".bar-header").removeClass('hide-header');
+                            
                         }
                         prevScrollpos = currentScrollPos;
 
