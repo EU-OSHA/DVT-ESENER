@@ -90,20 +90,21 @@
 /*** END FOOTEER **/
 
 .go-to{
-  //display: none;
-  position: relative;
+  display: none;
+  position: fixed;
   z-index: 9000;
   margin: 0;
-  text-align: right;
+  bottom: 3px;
+  right: 3px;
   a{
     padding: 0px;
-    display: inline-block;
+    display: block;
     width: 4rem !important;
-    height:4rem;
-    background:$gray;
-    color:$white;
+    height: 4rem;
+    background: #57575A;
+    color: #FFF;
     line-height: 1rem;
-    margin:0 0.5rem;
+    margin: 0;
     &:before{
       content: "\f106";
       font-family: FontAwesome;

@@ -101,8 +101,7 @@ define(function (require) {
                         }
                         prevScrollpos = currentScrollPos;
 
-                        var gotopVisible = $(window).height() + $(window).height()/2;
-                        
+                        var gotopVisible = $(window).height();                        
 
                         if( $(window).width() < 1024){                                            
                             if( currentScrollPos > gotopVisible )
@@ -122,9 +121,6 @@ define(function (require) {
                       angular.element(".bar-header").removeClass('hide-header');
                     });
 
-                    if( $(window).width() > 1024){
-                        $('.go-to').css('display','none');
-                    }
                     
                    
                     //hide print icon in mobile
