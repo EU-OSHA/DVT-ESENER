@@ -375,11 +375,21 @@ define(function (require) {
 								}else if(scope.dataset == 2014){
 									//If 2014, company size, 50-249 not all countries in the select
 									if(scope.establishmentSize == 14){
-										if(elem[0] != 'AL' && elem[0] != 'ME' && elem[0] != 'BG' 
-											&& elem[0] != 'DK' && elem[0] != 'EE' && elem[0] != 'ES' 
-											&& elem[0] != 'HR' && elem[0] != 'IT' && elem[0] != 'LV' 
-											&& elem[0] != 'RO' && elem[0] != 'SE' && elem[0] != 'SI' 
-											&& elem[0] != 'UK' && scope.sectorSize == 'company-size'){
+										if(scope.indicator.match('Q261') != undefined){
+											if(elem[0] != 'AL' && elem[0] != 'ME' && elem[0] != 'BG' 
+												&& elem[0] != 'DK' && elem[0] != 'EE' && elem[0] != 'ES' 
+												&& elem[0] != 'HR' && elem[0] != 'IT' && elem[0] != 'LV' 
+												&& elem[0] != 'RO' && elem[0] != 'SE' && elem[0] != 'SI' 
+												&& elem[0] != 'UK' && scope.sectorSize == 'company-size'){
+												if(elem[0] != scope.country2  && sector == 'cs'){
+													scope.countries.push({id:elem[0], literal:elem[1]});
+												}
+
+												if(elem[0] != scope.country  && sector == 'cs'){
+													scope.countriesCompareWith.push({id:elem[0], literal:elem[1]});
+												}
+											}
+										}else{
 											if(elem[0] != scope.country2  && sector == 'cs'){
 												scope.countries.push({id:elem[0], literal:elem[1]});
 											}
