@@ -913,7 +913,7 @@ define(function (require) {
 					})
 				}
 			}else{
-				if(anchor == undefined){
+				//if(anchor == undefined){
 					$state.transitionTo($state.current.name, {
 						pIndicator: $scope.pIndicator, //Year
 						pTopic: $scope.pTopic, //Category
@@ -931,7 +931,7 @@ define(function (require) {
 					{
 						reload: true
 					});
-				}
+				//}
 			}
 		}
 
