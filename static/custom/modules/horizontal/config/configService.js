@@ -72,7 +72,7 @@ define(function (require) {
     var i18nEN2 = require('json!horizontal/model/literals/EN_2');
     var i18nME = require('json!horizontal/model/literals/ME');
     var i18nSR = require('json!horizontal/model/literals/SR');
-    var i18nDE2 = require('json!horizontal/model/literals/DE_2');
+    var i18nDE3 = require('json!horizontal/model/literals/DE_3');
     var i18nFR3 = require('json!horizontal/model/literals/FR_3');
     var i18nIT1 = require('json!horizontal/model/literals/IT_1');
 
@@ -500,8 +500,8 @@ define(function (require) {
                 return i18nME;
             }else if(language == 'sr'){
                 return i18nSR;
-            }else if(language == 'de_2'){
-                return i18nDE2;
+            }else if(language == 'de_3'){
+                return i18nDE3;
             }else if(language == 'fr_3'){
                 return i18nFR3;
             }else if(language == 'it_1'){

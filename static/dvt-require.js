@@ -151,7 +151,7 @@
     requirePaths['horizontal/model/literals/EN_2'] = horizontalModules + '/model/Literals_EN_2' + suffix + '.json' ;
     requirePaths['horizontal/model/literals/ME'] = horizontalModules + '/model/Literals_ME' + suffix + '.json' ;
     requirePaths['horizontal/model/literals/SR'] = horizontalModules + '/model/Literals_SR' + suffix + '.json' ;
-    requirePaths['horizontal/model/literals/DE_2'] = horizontalModules + '/model/Literals_DE_2' + suffix + '.json' ;
+    requirePaths['horizontal/model/literals/DE_3'] = horizontalModules + '/model/Literals_DE_3' + suffix + '.json' ;
     requirePaths['horizontal/model/literals/FR_3'] = horizontalModules + '/model/Literals_FR_3' + suffix + '.json' ;
     requirePaths['horizontal/model/literals/IT_1'] = horizontalModules + '/model/Literals_IT_1' + suffix + '.json' ;
 
