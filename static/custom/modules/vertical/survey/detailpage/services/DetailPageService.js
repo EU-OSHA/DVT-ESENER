@@ -47,26 +47,76 @@ define (function (require) {
 
                             for(var i=0; i<colors.length; i++){
                                 if(colors.length == 2){
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+                                    if(answer == '0' || answer == '1'){
+                                        this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                        this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+                                        if(i == 0 && series.value == colors[i]){
+                                            return dvtUtils.getColorCountry(22);
+                                        }else if(i == 1 && series.value == colors[i]){
+                                            return dvtUtils.getColorCountry(1);
+                                        }
+                                    }else{
+                                        this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+                                        this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                        if(i == 0 && series.value == colors[i]){
+                                            return dvtUtils.getColorCountry(1);
+                                        }else if(i == 1 && series.value == colors[i]){
+                                            return dvtUtils.getColorCountry(22);
+                                        }
 
-                                    if(i == 0 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(22);
-                                    }else if(i == 1 && series.value == colors[i]){
-                                        return dvtUtils.getColorCountry(1);
                                     }
                                 }else if(colors.length == 3){
-                                    this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
-                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
 
-                                    if(i == 0 && series.value == colors[i]){
+                                    if(answer == '0' || answer == '1' || answer == '28' || answer == '44'
+                                        || answer == '47' || answer == '34'){
+                                        this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
+                                        this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                        this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1)); 
+
+                                        if(i == 0 && series.value == colors[i]){
+                                            return dvtUtils.getAccidentsColors(4);
+                                        }else if(i == 1 && series.value == colors[i]){
+                                            return dvtUtils.getColorCountry(22);
+                                        }else if(i == 2 && series.value == colors[i]){
+                                            return dvtUtils.getColorCountry(1);
+                                        }                                      
+                                    }else if(answer == '2' || answer == '29' || answer == '45' || answer == '48'
+                                        || answer == '20'){
+                                        this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
+                                        this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+                                        this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+
+                                         if(i == 0 && series.value == colors[i]){
+                                            return dvtUtils.getAccidentsColors(4);
+                                        }else if(i == 1 && series.value == colors[i]){
+                                            return dvtUtils.getColorCountry(1);
+                                        }else if(i == 2 && series.value == colors[i]){
+                                            return dvtUtils.getColorCountry(22);
+                                        }                                    
+                                    }else{
+                                        this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                        this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));
+                                        this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
+                                        if(i == 0 && series.value == colors[i]){
+                                            return dvtUtils.getColorCountry(22);
+                                        }else if(i == 1 && series.value == colors[i]){
+                                            return dvtUtils.getColorCountry(1);
+                                        }else if(i == 2 && series.value == colors[i]){
+                                            return dvtUtils.getAccidentsColors(4);
+                                        }                                     
+                                    }
+
+                                    /*this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(22));
+                                    this.sign.chart.options.colors.push(dvtUtils.getColorCountry(1));*/
+
+                                    /*if(i == 0 && series.value == colors[i]){
                                         return dvtUtils.getAccidentsColors(4);
                                     }else if(i == 1 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(22);
                                     }else if(i == 2 && series.value == colors[i]){
                                         return dvtUtils.getColorCountry(1);
-                                    }
+                                    }*/
                                 }else if(colors.length == 4){
                                     this.sign.chart.options.colors.push(dvtUtils.getColorCountry(3));
                                     this.sign.chart.options.colors.push(dvtUtils.getAccidentsColors(4));
