@@ -79,7 +79,7 @@ define(function (require) {
 		$(window).on("resize",function(e){
 	      if(window.outerWidth != resolution){
 	        resolution = window.outerWidth;
-	        $state.reload();
+	       // $state.reload();
 	      }
     	});
 

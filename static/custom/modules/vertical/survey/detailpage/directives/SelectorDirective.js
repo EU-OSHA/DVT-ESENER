@@ -61,6 +61,20 @@ define(function (require) {
                     sortBy: scope.sortBy
 				};
 
+		scope.langSize = [
+											[
+											"bg"
+											],
+											[
+											"hr",, "nl_1", "cy", "cz","is","nl","pt"
+											],
+											[
+											"al", "fr_1","hr","da","el_1","al_1","mk","hu","et","ru_1",
+											"sv_1","fr","el","it","lv","ru_2","fr_2","mt","no","pl","ro","sk","sl","es","sv","fr_3","it_1","tr"
+											]
+										];
+
+
 				scope.trim = function(text, type){
 					var trimText = '';
 					if(scope.question != null){

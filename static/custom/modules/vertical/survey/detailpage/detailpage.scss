@@ -62,7 +62,7 @@
 .tags{
   align-self: center;
   span{
-    padding:1rem 1.5rem 0 0;
+    padding:1rem 1rem 0 0;
     display: inline-block;
   }
 }
@@ -642,6 +642,9 @@
           direction: ltr;
           font-family: 'Helvetica';
           font-size: 1.4rem;
+          &:checked{
+            color:$aquamarine;
+          }
         }
       }
       &:after{
@@ -667,11 +670,11 @@
     color: $aquamarine;
   }
   .or-text{
-    margin: 4.2rem 2rem 2rem 0;
+    margin: 4.2rem 1rem 2rem 0;
   }
   .filter-text{
-    margin: 0 2rem 0 0;
-    min-width: 22%;
+    margin: 0 1rem 0 0;
+    min-width: 33%;
     position: relative;
     select{
       -webkit-appearance: none;
@@ -690,6 +693,8 @@
       font-weight: normal;
       &.disabled{
         visibility: hidden !important;
+        width: 10px;
+        height: 22px;
         //display: none !important;
       }
     }
@@ -722,6 +727,7 @@
           cursor: not-allowed;
           outline: none;
           color: $white;
+          opacity: 0.6;
         }
         &:focus{
           outline:1px solid $aquamarine !important;
@@ -749,7 +755,7 @@
         top: 1rem;
       }
     }
-    &.establishment-size{
+    &.establishment-size{      
       select{
         width: 100%;
         margin: 1rem 0;
@@ -763,6 +769,7 @@
           color: $white!important;
           outline:none!important;
           cursor: not-allowed;
+          opacity: 0.6;
         }
         &:focus{
           outline:1px solid $aquamarine !important;
@@ -773,6 +780,15 @@
         color: $aquamarine;
         right: 0;
         top: 3rem;
+      }
+      &.long1{
+        min-width: 32rem;
+      }
+      &.long2{
+        min-width: 23rem;
+      }
+      &.long3{
+        min-width: 19rem;
       }
     }
     &.establishment-size-pie-chart{
@@ -821,7 +837,8 @@
           background: $gray-light !important;
           color: $white!important;
           outline:none!important;
-          cursor: not-allowed;                    
+          cursor: not-allowed; 
+          opacity: 0.6;                   
         }
       }   
     }
@@ -943,6 +960,8 @@
       font-weight: normal;
       &.disabled{
         visibility: hidden !important;
+        width: 10px;
+        height: 22px;
         //display: none !important;
       }
     }
@@ -1001,6 +1020,7 @@
     select, select:focus{
       flex:1 1 auto;;
       //width:90%;
+      max-width:59%;
       margin: 0rem 0 0rem auto;
       padding: 0rem 3rem 0rem 1.3rem;
       background: #FFF;
@@ -1035,6 +1055,7 @@
     list-style: none;
     margin-bottom: 0;
     margin-left: auto;
+    padding: 0;
     li{
       margin: 0 0.5rem;
       cursor: pointer;
@@ -1314,27 +1335,31 @@ and (max-width : 1250px) {
 
   .detail-page{
     .block--filter--wrapper{
-
+      flex-wrap: wrap;
       &.national-comparisons-wrapper{
         flex-wrap: wrap;
         justify-content: space-between; 
       }
-      filter-text{
-        min-width: 40%;
-        width: 40%;
+      .filter-text{
+        //min-width: 40%;
+        //width: 40%;
+        //flex-basis: 38%;
+        flex-basis:10rem;
+        margin: 0 1rem 0 0;
       }
       .or-text {
-        margin: 4rem 3% 2% 0;
+        margin: 4rem 1rem 2% 0;
       }
       .filter-text-button{
         min-width:auto;
         width: auto;
-        margin-right: 2rem;
+        margin-right: 1rem;
       }
      .filter-text, .filter-text-button{
         select{
           width: 100%;
           border-radius: 0 !important;
+          max-width: 100%;
         }
       }
       .filter-national-comparisons{
@@ -1353,6 +1378,26 @@ and (max-width : 1250px) {
       .block--typechart--wrapper{
         width: calc(80% + 6rem);
       }
+      &.bg{
+        .tags{
+          width: 100%;
+          text-align: center;
+        }
+        .filter-text-button{
+          width: 100%;
+          button{
+            width: 100%;
+          }
+        }
+      }
+    }
+    .form--full--items{
+      .filter-text{
+        flex-basis: 100%;
+      }
+      .or-text {
+        margin: 1rem 1rem 1.6rem 0;
+      }
     }
     .filters--and--typechart{
       .countryComparisonWith{
@@ -1362,6 +1407,9 @@ and (max-width : 1250px) {
   }
   .european-bar-chart{
     padding: 0rem;
+  }
+  .chart--section{
+    margin-top: 2rem;
   }
 }
 
@@ -1493,9 +1541,17 @@ and (max-width : 1024px) {
   }
   .block--filter--wrapper{
     .filter-text {
-      min-width: 22%;
+      min-width: 22%;      
+    }
+   .filter-text, .filter-text-button{
+      select{
+        width: 100%;
+        border-radius: 0 !important;
+        max-width: 100%!important;
+      }
     }
   }
+
   .block--typechart--wrapper{
     .chart--selection--block {
       //padding-right: 5%;
@@ -1682,7 +1738,7 @@ and (max-width : 768px) {
        .filter-text-button{
           min-width: auto;
           width:auto;
-          margin-right: 2rem;
+          margin-right: 1rem;
        }
        .filter-text{
           min-width: auto;
@@ -1785,7 +1841,7 @@ and (max-width : 767px){
       }
       select, select:focus{
         width:100%;
-        padding: 1rem 3rem 1rem 1.3rem;
+        padding: 1rem 1rem 1rem 1.3rem;
       }
       &:after{
         top: 5rem;
@@ -1826,7 +1882,7 @@ and (max-width : 375px){
       }
     }
     .tags span {
-      padding: 1rem 1.5rem 0 0;
+      padding: 1rem 1rem 0 0;
       display: block;
       text-align: center;
     }
