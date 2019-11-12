@@ -1928,6 +1928,11 @@ and (max-width : 767px){
           margin-left: 0rem;
         }
       }
+      #btnSocial{
+        &.btn-default{
+          white-space: normal;
+        }
+      }
     } 
   }
   .block--typechart--wrapper .sort-by {
