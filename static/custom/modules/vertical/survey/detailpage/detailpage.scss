@@ -1953,9 +1953,6 @@ and (max-width : 375px){
   .block--filter--wrapper{
     .filter-text{
       &.establishment-size{
-        &:after {
-          top: 5rem;
-        }
         &.long1{
           min-width:initial;
         }
@@ -2046,13 +2043,19 @@ and (max-width : 375px){
   }
 }
 
-td.ccc-tt-dimLabel{
-  display: none;
+@media only screen 
+and (max-width : 325px){
+  .block--filter--wrapper{
+    .filter-text{
+      &.establishment-size{
+        &:after {
+          top: 5rem;
+        }        
+      }
+    }
+  }
 }
-.tipsy {
-  font-size: 1.4rem !important;
-  font-family: 'OpenSans',sans-serif !important;
-}
+
 @media only screen 
 and (max-height:767px){
   .dvt-modal-social .modal-wrapper {
@@ -2074,4 +2077,12 @@ and (max-height:767px){
       margin: 6% 0vw !important;
     }
   }
+}
+
+td.ccc-tt-dimLabel{
+  display: none;
+}
+.tipsy {
+  font-size: 1.4rem !important;
+  font-family: 'OpenSans',sans-serif !important;
 }
