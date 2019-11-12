@@ -1020,7 +1020,7 @@
     select, select:focus{
       flex:1 1 auto;;
       //width:90%;
-      max-width:59%;
+      //max-width:59%;
       margin: 0rem 0 0rem auto;
       padding: 0rem 3rem 0rem 1.3rem;
       background: #FFF;
@@ -1347,7 +1347,7 @@ and (max-width : 1250px) {
         flex-basis:10rem;
         margin: 0 1rem 0 0;
         &.country-items{
-          flex-basis: auto !important;
+          //flex-basis: auto !important;
         }
       }
       .or-text {
@@ -1356,7 +1356,7 @@ and (max-width : 1250px) {
       .filter-text-button{
         min-width:auto;
         width: auto;
-        margin-right: 1rem;
+        margin:0  0.5rem 0 0;
       }
      .filter-text, .filter-text-button{
         select{
@@ -1371,14 +1371,12 @@ and (max-width : 1250px) {
         //margin: 0;
       }
       .countryComparison{
-        width: 45%;
-        flex-basis: 45%;
-        //margin: 0;
+        flex-basis: 47% !important;
+        margin: 0;
       }
       .countryComparisonWith{
-        width: 45%;
-        flex-basis: 45%;
-        margin-left: 3rem;
+        flex-basis: 47.5% !important;
+        margin:0 0 0 4%;
         display: block;
       }
       .block--typechart--wrapper{
@@ -1396,6 +1394,9 @@ and (max-width : 1250px) {
           }
         }
       }
+      &.en_1{
+
+      }
     }
     .form--full--items{
       .filter-text{
@@ -1403,6 +1404,9 @@ and (max-width : 1250px) {
       }
       .or-text {
         margin: 1rem 1rem 1.6rem 0;
+      }
+      .countryComparisonWith {
+        margin: 0 0 0 auto;
       }
     }
     .filters--and--typechart{
@@ -1418,7 +1422,6 @@ and (max-width : 1250px) {
     margin-top: 2rem;
   }
 }
-
 
 @media only screen 
 and (max-width : 1024px) { 
@@ -1446,11 +1449,21 @@ and (max-width : 1024px) {
       }      
     }
     .block--filter--wrapper{
+      .countryComparison{
+        display: block;
+        flex-basis: 45.2% !important;
+        margin: 0;
+      }
       .countryComparisonWith{
         display: block;
+        flex-basis: 45.2% !important;
+        margin: 0 0 0 3rem;
       }
     }
-    .filters--and--typechart{
+    .filters--and--typechart{ 
+      .block--typechart--wrapper {
+        width: 100%;
+      }    
       .countryComparisonWith{
         display: none;
       }
@@ -1577,6 +1590,10 @@ and (max-width : 1024px) {
       }   
     }
   }
+  .tipsy {
+    font-size: 1.4rem !important;
+    font-family: 'OpenSans',sans-serif !important;
+  }
 }
 
 @media only screen 
@@ -1609,7 +1626,27 @@ and (max-width : 1024px)  {
     }
   }
 }
-
+@media only screen 
+and (min-width : 1024px) 
+and (max-width : 1180px) {
+  .sort-by{
+      flex-direction: column;
+      top: -2rem;
+      select, select:focus{
+        padding: 0.9rem 3rem 0.9rem 1.3rem !important;
+        margin: 0 !important;
+      }      
+      &:after{
+        top: auto !important;
+        bottom: 0.7rem;
+      }
+  }
+  .block--typechart--wrapper{
+    .chart--selection--block{
+        margin-top: 1.9rem;
+    }
+  } 
+}
 @media only screen 
 and (max-width : 768px) { 
   .detail-page{    
@@ -1639,8 +1676,17 @@ and (max-width : 768px) {
     width: 100%;
     margin: 0;
     .sort-by{
-      width: 100%;
+      width: auto;
       margin: 0 0 4rem 0;
+      justify-content: flex-start;
+      label{
+        flex: 0 0 auto;
+      }
+      select, select:focus{
+        max-width: initial !important;
+        flex: 0 0 auto;
+        margin: 0;
+      }
     }
     .chart--selection--block{
       display: block;
@@ -1723,6 +1769,7 @@ and (max-width : 768px) {
       width: 25%;
       margin-left: auto;
       margin-right: 0;
+      margin-top: 2rem;
     }
   }
   .dvt-map-tooltip{
@@ -1748,6 +1795,7 @@ and (max-width : 768px) {
        }
        .filter-text{
           min-width: auto;
+          flex-basis: auto;
           width: 100%;
           margin-right: 0rem;
        }
@@ -1780,7 +1828,7 @@ and (max-width : 768px){
         width: auto;
       }
     }
-  }  
+  }
 }
 
 @media only screen 
@@ -1840,6 +1888,7 @@ and (max-width : 767px){
     margin-left: auto;
     .filter-text{
       flex-direction: column;
+      width: 100%;
       label{
         text-align: left;
         width: 100%;
@@ -1871,6 +1920,13 @@ and (max-width : 767px){
       }
     } 
   }
+  .block--typechart--wrapper .sort-by {
+    width: 100%;
+  }
+  hr {
+    margin-top: 11px;
+    margin-bottom: 5px;
+  }
 }
 @media only screen 
 and (max-width : 375px){
@@ -1879,9 +1935,28 @@ and (max-width : 375px){
       margin: 1.5rem 0 0rem;
     }
   }
+  .block--filter--wrapper{
+    .filter-text{
+      &.establishment-size{
+        &:after {
+          top: 5rem;
+        }
+        &.long1{
+          min-width:initial;
+        }
+        &.long2{
+          min-width:initial;
+        }
+        &.long3{
+          min-width:initial;
+        }          
+      }
+    }
+  }
   .detail-page{
     .filter-text, .filter-text-button{
       margin-right: 0 !important;
+      width: 100%;
       button{
         min-width: auto;
         width: 100% !important;
