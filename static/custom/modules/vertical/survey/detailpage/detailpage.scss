@@ -709,6 +709,8 @@
       pointer-events: none;
     }
     &.disabled{
+      width: auto !important;
+      min-width: auto;
       &:after{
         content: "" !important;
       }
@@ -728,6 +730,7 @@
           outline: none;
           color: $white;
           opacity: 0.6;
+          width: 100%;
         }
         &:focus{
           outline:1px solid $aquamarine !important;
@@ -770,6 +773,7 @@
           outline:none!important;
           cursor: not-allowed;
           opacity: 0.6;
+          width: 100%;
         }
         &:focus{
           outline:1px solid $aquamarine !important;
@@ -812,7 +816,7 @@
       select{
         width: auto;
         margin: 0.9rem 0 0;
-        padding: 1.1rem 2rem;
+        padding: 1.1rem 2.8rem 1.1rem 1.2rem;
         background: $aquamarine;
         color: $white;
         position: relative;
@@ -1341,13 +1345,10 @@ and (max-width : 1250px) {
         justify-content: space-between; 
       }
       .filter-text{
-        //min-width: 40%;
-        //width: 40%;
-        //flex-basis: 38%;
-        flex-basis:10rem;
         margin: 0 1rem 0 0;
+        width: 33%;
         &.country-items{
-          //flex-basis: auto !important;
+          width: auto !important;
         }
       }
       .or-text {
@@ -1371,11 +1372,11 @@ and (max-width : 1250px) {
         //margin: 0;
       }
       .countryComparison{
-        flex-basis: 47% !important;
+        flex-basis: 46% !important;
         margin: 0;
       }
       .countryComparisonWith{
-        flex-basis: 47.5% !important;
+        flex-basis: 46.5% !important;
         margin:0 0 0 4%;
         display: block;
       }
@@ -1627,7 +1628,7 @@ and (max-width : 1024px)  {
   }
 }
 @media only screen 
-and (min-width : 1024px) 
+and (min-width : 1025px) 
 and (max-width : 1180px) {
   .sort-by{
       flex-direction: column;
@@ -1645,8 +1646,21 @@ and (max-width : 1180px) {
     .chart--selection--block{
         margin-top: 1.9rem;
     }
-  } 
+  }  
 }
+@media only screen 
+and (min-width : 1025px) 
+and (max-width : 1280px){
+  .block--filter--wrapper{
+    .filter-text-button{
+      &.country-select{
+        //width: 100%;
+      }
+    }
+  }
+}
+
+
 @media only screen 
 and (max-width : 768px) { 
   .detail-page{    

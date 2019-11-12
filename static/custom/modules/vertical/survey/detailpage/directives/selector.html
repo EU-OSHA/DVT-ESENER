@@ -218,7 +218,7 @@
                     <button data-ng-class="{'active':(filters.sectorSize == 'company-size')}" data-ng-click="updateChart('CompanyToActivity')" data-ng-bind="i18n.L100574" ui-sref="detailpage-national-bar-chart({ pTopic: topic, pChart: 'national-bar-chart', pSectorSize: 'company-size', pCountry: filters.country, pQuestion: indicator, pLanguage: pLanguage, pLocale: pLocale, pAnswer: answer})"></button>
                 </div>
                 <!-- Country -->
-                <div class="filter-text-button">
+                <div class="filter-text-button country-select">
                     <select data-ng-change="updateChart('country')" ng-model="filters.country" ng-selected="filters.country">
                         <option data-ng-repeat='country in countries' value="{{country.id}}" data-ng-bind="country.literal"></option>
                     </select>
