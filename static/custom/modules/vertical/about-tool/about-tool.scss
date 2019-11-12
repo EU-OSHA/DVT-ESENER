@@ -3,3 +3,19 @@
     color:$aquamarine;
   }
 }
+
+@media only screen 
+and (max-width : 425px){
+	.table {
+	    width: 100%;
+	    max-width: 100%;
+	    margin-bottom: 18px;
+	    margin: auto;
+	    border-collapse: collapse;
+	    overflow-x: auto;
+	    display: block;
+	    width: fit-content;
+	    max-width: 100%;
+	    box-shadow: 0 0 14px 1px rgba(0, 0, 0, .1);
+	}
+}
