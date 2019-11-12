@@ -1334,7 +1334,7 @@ ul.question--by--question {
 
 
 @media only screen 
-and (min-width : 768px)  
+and (min-width : 769px)  
 and (max-width : 1250px) {
 
   .detail-page{
@@ -1591,10 +1591,6 @@ and (max-width : 1024px) {
       }   
     }
   }
-  .tipsy {
-    font-size: 1.4rem !important;
-    font-family: 'OpenSans',sans-serif !important;
-  }
 }
 
 @media only screen 
@@ -1810,7 +1806,7 @@ and (max-width : 768px) {
        .filter-text{
           min-width: auto;
           flex-basis: auto;
-          width: 100%;
+          width: 100% !important;
           margin-right: 0rem;
        }
        .filter-text, .filter-text-button{
@@ -2048,7 +2044,10 @@ and (max-width : 375px){
 td.ccc-tt-dimLabel{
   display: none;
 }
-
+.tipsy {
+  font-size: 1.4rem !important;
+  font-family: 'OpenSans',sans-serif !important;
+}
 @media only screen 
 and (max-height:767px){
   .dvt-modal-social .modal-wrapper {
