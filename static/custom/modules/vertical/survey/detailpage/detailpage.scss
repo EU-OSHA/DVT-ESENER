@@ -1426,7 +1426,6 @@ and (max-width : 1250px) {
 
 @media only screen 
 and (max-width : 1024px) { 
-
   .detail-page{
     margin-top: 0;
     .detail--page--wrapper{
@@ -1571,7 +1570,6 @@ and (max-width : 1024px) {
       }
     }
   }
-
   .block--typechart--wrapper{
     .chart--selection--block {
       //padding-right: 5%;
@@ -1591,12 +1589,38 @@ and (max-width : 1024px) {
       }   
     }
   }
+  .detail--content--section{
+    #popUpMessage{
+      .popUpMessage--text--block {
+        width: 100%;
+        height: auto;
+        margin: 5vh 0vw;
+        padding: 5vh 0vw;
+        .social--network--modal {
+          margin-right: 0rem;
+          margin-left: 0rem;
+        }
+      }
+      .popUpMessage--exportData--text--block{
+        .export--data--modal{
+          > a{
+            display: flex;
+            text-align: left;
+          }
+        }
+      }
+      #btnSocial{
+        &.btn-default{
+          white-space: normal;
+        }
+      }
+    }
+  }
 }
 
 @media only screen 
 and (min-width : 768px) 
 and (max-width : 1024px)  {
-
   .detail-page{
     #popUpMessage{
       .dvt-modal-social {
@@ -1659,6 +1683,7 @@ and (max-width : 1280px){
 
 @media only screen 
 and (max-width : 768px) { 
+  
   .detail-page{    
     .detail--page--wrapper{
       .detail--content--section{
@@ -2085,4 +2110,12 @@ td.ccc-tt-dimLabel{
 .tipsy {
   font-size: 1.4rem !important;
   font-family: 'OpenSans',sans-serif !important;
+}
+.popUpMessage--exportData--text--block{
+  .export--data--modal{
+    > a{
+      display: flex;
+      text-align: left;
+    }
+  }
 }
