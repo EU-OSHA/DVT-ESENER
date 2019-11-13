@@ -1484,6 +1484,15 @@
     .buttons {
       display: flex;
       justify-content: flex-end;
+      > a{
+        order: 3;
+      }
+      > .accept{
+        order: 1;
+      }
+      > .decline{
+        order: 2;
+      }
     }
     button {
       color:$white;
