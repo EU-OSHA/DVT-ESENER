@@ -24,7 +24,7 @@
     }
     .buttons {
 			text-align: center;
-			padding: 3rem 0 1rem;
+			padding: 1rem 0 1rem;
 			display: flex;
 			justify-content: center;
 			> a{
@@ -79,7 +79,9 @@
 			}
 		}
 	}
-
+  #cookiesConsent {
+  	flex-direction: column;
+  }
 	footer{
 		.footer-elements{
 			text-align: left;
@@ -1230,10 +1232,12 @@ and (max-width :620px) {
   /**** COKKIES DIWSCLAIMER ****/
   #cookiesConsent {
     .text {
+    	text-align: left;
     }
     .buttons {
 			justify-content: flex-start;
 			flex-wrap: wrap;
+			width: 100%;
 			> a {
 				width: 100%;
 				display: block;
