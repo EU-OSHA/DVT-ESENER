@@ -1661,6 +1661,11 @@
         right: 5vw;
       }
     }
+    #btnSocial{
+      &.btn-default{
+        white-space: normal;
+      }
+    }
   }
 
 /** 404  **/
