@@ -777,7 +777,8 @@ define(function (require) {
 									pAnswer: scope.answer,
 									pSectorSize: scope.sectorSize,
 									pLanguage: scope.pLanguage,
-									pLocale: scope.pLocale
+									pLocale: scope.pLocale,
+									pSortBy: '0'
 								},
 								{
 									reload: true
