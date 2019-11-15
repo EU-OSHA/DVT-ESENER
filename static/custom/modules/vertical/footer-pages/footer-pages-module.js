@@ -34,7 +34,7 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "Page not found | ESENER",
+                title: "Legal notice | ESENER",
                 description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
