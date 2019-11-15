@@ -560,6 +560,8 @@ define(function (require) {
 				/* Method used to show the tooltip when changing between previous and next question */
 				function rulesForTooltip(pQuestionID){
 					$log.warn(pQuestionID);
+					$log.warn(pQuestionID == 'MM303a' && (scope.filters.country == 'CY' || scope.filters.country == 'EE' 
+							|| scope.filters.country == 'MT') && scope.chart == 'national-bar-chart');
 					//RULES ESENER 2009
 					if(scope.chart == 'national-comparisons'){
 						if((pQuestionID == 'MM303a' && (scope.filters.country == 'CY' || scope.filters.country == 'EE' 
@@ -923,11 +925,10 @@ define(function (require) {
 
 				scope.changeChart = function(chart,e){
 					var exception = false;
-					//$log.warn(scope.country);
 					//ESENER 2009
 					if(chart == 'national-bar-chart' || chart == 'national-comparisons' || chart == 'pie-chart'){
 						if(scope.indicator == 'MM303a' && (scope.country == 'CY' || scope.country == 'EE'
-							|| scope.country == 'MT')){
+							|| scope.country == 'MT') && scope.chart == 'pie-chart'){
 							alert(scope.i18n.L100576);
 							exception = true;
 						}else if(scope.indicator == 'MM350' && (scope.country == 'CY' || scope.country == 'MT'
