@@ -736,7 +736,11 @@ define(function (require) {
 				}
 			}else if($scope.pChart == 'pie-chart' && $scope.pIndicator == 2009){
 				if(pQuestionID == 'MM350' && ($scope.pCountry == 'CY' || $scope.pCountry == 'MT' 
-					|| $scope.pCountry == 'SE')){
+					|| $scope.pCountry == 'SE') 
+					|| pQuestionID == 'MM351' && ($scope.pCountry == 'AT' || $scope.pCountry == 'DE' 
+					|| $scope.pCountry == 'LU')
+					|| pQuestionID == 'MM355all' && ($scope.pCountry == 'CH')
+					|| pQuestionID == 'MM358' && ($scope.pCountry== 'LU' || $scope.pCountry == 'SI')){
 					alert($scope.i18n.L100576);
 					return true;					
 				}
