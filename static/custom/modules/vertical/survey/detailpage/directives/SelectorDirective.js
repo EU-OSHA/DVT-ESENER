@@ -415,8 +415,7 @@ define(function (require) {
 									}else if(scope.activitySector == 6){
 										if(scope.indicator === ('Q251') || (scope.indicator.match('Q252') != undefined && scope.indicator != 'Q252_2')
 											|| scope.indicator == 'Q254gr' || scope.indicator == 'Q255' || scope.indicator.match('Q256') != undefined
-											|| scope.indicator == 'Q258b' || scope.indicator == 'Q259' || scope.indicator == 'Q308_1'
-											|| scope.indicator == 'Q354'){
+											|| scope.indicator == 'Q258b' || scope.indicator == 'Q259'){
 											if(elem[0] != 'AL' && elem[0] != 'IS' && elem[0] != 'ME'
 												&& elem[0] != 'MK' && elem[0] != 'CY' && elem[0] != 'EL' 
 												&& elem[0] != 'HR' && elem[0] != 'LT' && elem[0] != 'LU' 
