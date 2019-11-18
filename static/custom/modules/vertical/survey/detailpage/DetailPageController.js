@@ -1247,7 +1247,8 @@ define(function (require) {
 					pCompanyFilter: $scope.pCompanyFilter,
 					pCountry: $scope.dashboard.parameters.pFilters.country,
 					pCountry2: $scope.dashboard.parameters.pFilters.country2,
-					pEuOnly: $scope.nonEU
+					pEuOnly: $scope.nonEU,
+					pLocale: $scope.pLocale
 				},
 				{
 					notify: false

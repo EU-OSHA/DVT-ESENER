@@ -515,10 +515,11 @@
         <Parameter default="company-size" name="pSectorSize" type="String" />
         <Parameter default="EU28" name="pCountry" type="String"/>
         <Parameter default="14" name="pIndicator" type="Numeric"/>
+        <Parameter default="en" name="pLocale" type="String"/>
       </Parameters>
       <Query>
-        SELECT sa.literal_id as Answer, v.value*100 as Value
-        FROM nuts n, profile p, value v, indicator i, split_answer sa, esener_answer_order eao
+        SELECT t.text as Answer, v.value*100 as Value
+        FROM nuts n, profile p, value v, indicator i, split_answer sa, esener_answer_order eao, translation t
         WHERE n.id = p.nuts_id
         AND i.name = ${pQuestion}
         AND v.indicator_id = i.id
@@ -527,6 +528,8 @@
         AND v.profile_id = p.id
         AND p.answer_id = sa.id
         AND sa.id = eao.answer_id
+        AND t.literal_id = sa.literal_id
+        AND t.language = ${pLocale}
         AND CASE WHEN ${pSectorSize} = 'activity-sector' 
           THEN (p.activity_sector_id = ${pIndicator} AND p.company_size_id IS NULL) 
         ELSE (p.company_size_id = ${pIndicator} AND p.activity_sector_id IS NULL) END

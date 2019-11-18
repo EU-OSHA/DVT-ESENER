@@ -867,7 +867,7 @@ define(function (require) {
 							case "country":
 								console.log("country changed");
 								//$log.warn("country changed");
-								scope.country = scope.filters.country
+								scope.country = scope.filters.country;
 								break;
 							case "country2":
 								console.log("country2 changed");
