@@ -68,6 +68,8 @@ define(function (require) {
 
 		$scope.previousQuestion = $scope.pQuestion;
 
+        $scope.axisFixedMaxLineChart = ($scope.pQuestion == 'Q256_2')?35:25;
+
         //$log.warn($scope.nonEU);
 
 		var resolution = $(window).width();
