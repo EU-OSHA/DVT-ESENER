@@ -1,7 +1,38 @@
 .methodology{
-  a{
-    color:$aquamarine;
-  }
+	text-align: justify;
+	a{
+		color:$aquamarine;
+	}
+	tr.center-text{
+		th{
+			text-align: center;
+		}
+	}
+	th.center-text{
+	text-align: center;
+	}
+	.data-table{
+		td{
+		text-align: center;
+		}
+	}
+	.table2{
+		thead{
+			th{
+			text-align: center;
+			}
+			th:nth-child(1){
+			text-align: left;
+			}
+		}
+	}
+	.table{
+		thead{
+			tr{
+				background: #f2f2f2;
+			}
+		}
+	}
 }
 
 @media only screen 
