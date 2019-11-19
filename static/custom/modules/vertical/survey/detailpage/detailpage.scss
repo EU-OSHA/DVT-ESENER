@@ -1235,8 +1235,17 @@
         display: none;
       }
       &.exception{
-        pointer-events: none;
-        cursor: default !important;
+        //pointer-events: none;
+        cursor: not-allowed !important;
+        &:hover{
+          a{            
+            border: 1px solid #B1B3B4;
+            &:before{
+              background: #FFF;
+              content:url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/bar-comparision-icon.svg);
+            }
+          }
+        }
       }
     }
   }
