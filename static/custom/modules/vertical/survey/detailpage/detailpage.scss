@@ -314,7 +314,7 @@
       background: #666;
       padding: 0;
       margin: 0;
-      min-height: 9rem;
+      min-height: 12rem;
       .input-group{
         width: 100%;
         display: block;
@@ -323,6 +323,7 @@
         margin: 0 !important;
         max-width: 100% !important;
         width: 100%;
+        
         padding:3rem;
         overflow: hidden;
         box-shadow: none;
@@ -1432,7 +1433,17 @@ and (max-width : 1250px) {
     margin-top: 2rem;
   }
 }
-
+@media only screen 
+and (min-width : 1025px)  
+and (max-width : 1400px) {
+  .filter--questions--group--wrapper{
+    .questions--tree {
+      width: 130%;
+      position: relative;
+      left: -30%;
+    }
+  } 
+}
 @media only screen 
 and (max-width : 1024px) { 
   .detail-page{
