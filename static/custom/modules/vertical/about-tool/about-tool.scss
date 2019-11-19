@@ -3,9 +3,22 @@
 	a{
 		color:$aquamarine;
 	}
-	tr.center-text{
-		th{
-			text-align: center;
+	.table{
+		thead{
+			tr{
+				background: #f2f2f2;
+				th{
+					text-align: center;
+				}
+			}
+			&.center-text{
+				th{
+					text-align: center;
+				}
+				th:nth-child(1){
+					text-align: left;
+				}
+			}
 		}
 	}
 	th.center-text{
@@ -23,13 +36,6 @@
 			}
 			th:nth-child(1){
 			text-align: left;
-			}
-		}
-	}
-	.table{
-		thead{
-			tr{
-				background: #f2f2f2;
 			}
 		}
 	}
