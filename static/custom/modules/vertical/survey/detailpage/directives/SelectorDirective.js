@@ -680,6 +680,13 @@ define(function (require) {
 						}
 					}
 
+					if(scope.chart == 'pie-chart' && scope.dataset == 2014){
+						if(pQuestionID.match('Q254gr') != undefined){
+							alert(scope.i18n.L100576);
+							return true;
+						}
+					}
+
 					return false;
 				}
 
@@ -986,6 +993,10 @@ define(function (require) {
 					if(scope.indicator.match('Q261') && chart == 'national-bar-chart'){
 						exception = true;
 						//angular.element(e.currentTarget.parentNode).addClass('exception');
+					}
+
+					if(scope.indicator == 'Q254gr' && chart == 'pie-chart'){
+						exception = true;
 					}
 
 					if(chart == 'national-comparisons' && scope.country == 'AT'){
