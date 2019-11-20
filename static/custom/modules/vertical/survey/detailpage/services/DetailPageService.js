@@ -344,7 +344,7 @@ define (function (require) {
                         name: "main",
                         dataPart: "0",
                         barSizeMax: 35,
-                        valuesAnchor: 'left',
+                        valuesAnchor: 'right',
                         bar_fillStyle: function(scene){
                             //$log.warn(this);
                             var series = scene.firstAtoms.category;
@@ -461,6 +461,27 @@ define (function (require) {
 
                             return dvtUtils.getChartLightGrayColor();
                         },
+                        label_textStyle: function(scene){
+                            var series = scene.firstAtoms.category;
+                            var value = scene.firstAtoms.value;
+                            var colors = this.sign.chart.axes.color._domainValues;
+                            var actualColors = this.sign.chart.options.colors;
+
+                            /*$log.warn(this);
+                            $log.warn(series);
+                            $log.warn(colors);
+                            $log.warn(scene);*/
+
+                            /*for(var i=0; i<colors.length; i++){
+                                if(series.value == colors[i] && actualColors[i] == "#58585A"){
+                                    if(value.value > 4){
+                                        return 'white';
+                                    }
+                                }
+                            }*/
+
+                            return 'black';
+                        },
                         label_textMargin: function(scene){
                             var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLocale);
                             var answer = scene.firstAtoms.series;
@@ -492,7 +513,7 @@ define (function (require) {
                         name: "main",
                         dataPart: "0",
                         barSizeMax: 35,
-                        valuesAnchor: 'left',
+                        valuesAnchor: 'right',
                         label_textMargin: function(scene){
                             var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($stateParams.pLocale);
                             var answer = scene.firstAtoms.series;
