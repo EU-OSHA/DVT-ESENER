@@ -14,16 +14,17 @@
         "levels":[
             {
                 "id":"overview",
-                "name":"L101007",
-                "sref":"overview",
-                "accesskey":"1",
-                "tabindex":"2"
-            },{
-                "id":"overview",
                 "name":"L101008",
                 "sref":"overview",
                 "accesskey":"2",
                 "tabindex":"3"
+            },
+            {
+                "id":"overview",
+                "name":"L101007",
+                "sref":"overview",
+                "accesskey":"1",
+                "tabindex":"2"
             }
         ]
 
