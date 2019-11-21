@@ -414,11 +414,11 @@ and (max-width : 1024px)  {
 			line-height: 4.7rem;
 			padding: 1rem 0rem;
 			img{
-				height: 7.2rem;
+				height: 5rem;
 			}
 			.main-text{
 				vertical-align: middle;
-				font-size: 5rem;
+				font-size: 3.6rem;
 			}
 		}
 		.lead-title{
@@ -655,8 +655,9 @@ and (max-width :767px)  {
 	}
 	.home-cover {
 		top: 0rem;
-		min-height: 11rem;
+		min-height: 13rem;
 		text-align: center;
+		background-size: cover;
 		.main-title{
 			line-height: 4.7rem;
 			padding: 1.5rem 0rem 1.5rem 0;
@@ -921,14 +922,6 @@ and (max-width :767px)  {
     	width: 100%;
     }
   }
-	.home-cover {
-		background-size: cover;
-	    min-height: 10.5rem;
-	    .main-title{
-	    }
-	    .lead-title{
-	    }
-	}
 	.bar-header{
 		position: fixed;
     background: $white;
