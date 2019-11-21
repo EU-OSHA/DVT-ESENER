@@ -2,7 +2,7 @@
   background: url(../img/home-header-bg-without.png) left bottom no-repeat;
   background-size: cover;
   //height:20.4rem;
-  height:16rem;
+  min-height:16rem;
   clear: both;
   text-align: center;
   cursor: pointer;
@@ -16,6 +16,8 @@
     margin: 0rem;
     color: #00309c;
     width: 100%;
+    display: flex;
+    align-items: center;
     img{
     }
     .main-text{
@@ -26,13 +28,14 @@
   .lead-title{
     font-family: Oswald-Light,sans-serif;
     font-size: 4.6rem;
-    padding: 0 0 0 2rem;
+    padding: 0.5rem 0 0.5rem 2rem;
     margin-left: 2rem;
     width: auto;
     vertical-align: middle;
-    line-height: 6rem;
+    line-height:4.6rem;
     display: inline-block;
     border-left: 1px solid;
+    text-align: left;
   }
 }
 

@@ -61,7 +61,8 @@ and (max-width : 1380px){
 		}
 		.lead-title{
 			font-size: 3.6rem;
-			line-height: 4.5rem;
+			line-height: 3.6rem;
+			padding: 0rem 0 0rem 2rem;
 		}
 	}
 }
@@ -407,7 +408,7 @@ and (max-width : 1024px)  {
 
 	.home-cover {
 		top: 0rem;
-		height: 11rem;
+		min-height: 11rem;
 		text-align: center;
 		.main-title{
 			line-height: 4.7rem;
@@ -426,7 +427,7 @@ and (max-width : 1024px)  {
 			padding: 0 1.5rem;
 			margin-left: 1.5rem;
 			display: inline-block;
-			width: 35rem;
+			width: fit-content;
 			border-left: 1px solid;
 			text-align: left;
 		}
@@ -654,11 +655,13 @@ and (max-width :767px)  {
 	}
 	.home-cover {
 		top: 0rem;
-		height: 11rem;
+		min-height: 11rem;
 		text-align: center;
 		.main-title{
 			line-height: 4.7rem;
-			padding: 1.5rem 0rem 1.5rem 0;;
+			padding: 1.5rem 0rem 1.5rem 0;
+			display: block;
+			text-align: left;
 			img{
 				height: 5.2rem;
 			}
@@ -669,13 +672,15 @@ and (max-width :767px)  {
 		}
 		.lead-title{
 			font-size: 2.2rem;
-			line-height: 2.6rem;
-			padding: 0 1.5rem;
-			margin-left: 1.5rem;
-			display: inline-block;
-			width: 29rem;
-			border-left: 1px solid;
+			line-height: initial;
+			padding: 0;
+			margin-left: 0;
+			display: block;
+			width: fit-content;
+			border-left: 0;
 			text-align: left;
+			position: relative;
+			top: 0;
 		}
 	}
 	.grid-2{
@@ -918,7 +923,7 @@ and (max-width :767px)  {
   }
 	.home-cover {
 		background-size: cover;
-	    height: 10.5rem;
+	    min-height: 10.5rem;
 	    .main-title{
 	    }
 	    .lead-title{
@@ -1295,7 +1300,7 @@ and (max-width :620px) {
 		}
 	}
 	.lead-title{
-		width:45%;
+		//width:45%;
 	}
 }
   #popUpMessage{
@@ -1412,7 +1417,7 @@ and (max-width :620px) {
 @media only screen 
 and (max-width :550px){
 	.home-cover {
-		height: 13rem;
+		min-height: 13rem;
 		text-align: left;
 		.main-title{
 			line-height: 4.7rem;
@@ -1510,7 +1515,7 @@ and (max-width :420px){
 @media only screen 
 and (max-width :380px){
 	.home-cover {
-		height: 13rem;
+		min-height: 13rem;
 		.main-title{
 			line-height: 4.7rem;
 			padding: 1rem 0rem 0.5rem 0;
