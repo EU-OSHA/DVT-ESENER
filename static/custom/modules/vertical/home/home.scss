@@ -1,29 +1,39 @@
 .home-cover {
-    background: url(../img/home-header-bg.png) left top no-repeat;
-    background-size: cover;
-    height:20.4rem;
-    clear: both;
-    cursor: pointer;
-    .main-title{
-      position: absolute;
-      top: -500rem;
-      left: -500rem;
-      font-weight: 500;
-      font-size: 4.6rem;
-      width: 27.5rem;
-      padding-top: 2rem;
-      padding-left: 6rem;
-      color: #FFF;
-      line-height: 3.6rem;
-      width: 100%;
+  background: url(../img/home-header-bg-without.png) left bottom no-repeat;
+  background-size: cover;
+  //height:20.4rem;
+  height:16rem;
+  clear: both;
+  text-align: center;
+  cursor: pointer;
+  > .container-fluid{
+    width: fit-content;
+  }
+  .main-title{
+    font-family: Oswald-light,sans-serif;
+    line-height: 4rem;
+    padding: 1.5rem 0;
+    margin: 0rem;
+    color: #00309c;
+    width: 100%;
+    img{
     }
-    .lead-title{
-      font-family: Oswald-Light,sans-serif;
-      color: $white;
-      padding-top: 0rem;
-      padding-left:1.5rem;
-      font-size: 2.6rem;
+    .main-text{
+      vertical-align: middle;
+      font-size:6rem;
     }
+  }
+  .lead-title{
+    font-family: Oswald-Light,sans-serif;
+    font-size: 4.6rem;
+    padding: 0 0 0 2rem;
+    margin-left: 2rem;
+    width: auto;
+    vertical-align: middle;
+    line-height: 6rem;
+    display: inline-block;
+    border-left: 1px solid;
+  }
 }
 
 /** ICONS */

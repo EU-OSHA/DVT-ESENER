@@ -1,23 +1,36 @@
 .methodology{
-	text-align: justify;
 	a{
 		color:$aquamarine;
 	}
+	h1{
+		color: $orange;
+		text-align: center;
+	}
+	h2{
+		color:$aquamarine;
+	}
+	h3{
+		color:$aquamarine;
+		margin-top: 4rem;
+	}
+	h4{
+		color:$aquamarine;
+		font-family: "Oswald-light", sans-serif;
+		margin: 3rem 0 1rem;
+	}
 	.table{
-		thead{
-			tr{
-				background: #f2f2f2;
-				th{
-					text-align: center;
-				}
+		tr:nth-child(1){
+			background: #f2f2f2;
+			th{
+				text-align: center;
 			}
-			&.center-text{
-				th{
-					text-align: center;
-				}
-				th:nth-child(1){
-					text-align: left;
-				}
+		}
+		tr:nth-child(1).center-text{
+			th{
+				text-align: center;
+			}
+			th:nth-child(1){
+				text-align: left;
 			}
 		}
 	}
@@ -30,12 +43,34 @@
 		}
 	}
 	.table2{
-		thead{
+		tr:nth-child(1){
 			th{
 			text-align: center;
+			background: #f2f2f2;
 			}
 			th:nth-child(1){
 			text-align: left;
+			}
+		}
+		tr:nth-child(2){
+			th{
+				text-align: center;
+				background: #f2f2f2;
+			}
+		}
+		tr{
+			td{
+				text-align: center;
+				&:nth-child(1){
+					text-align: left;	
+				}
+			}
+		}
+	}
+	.table3{
+		tr:nth-child(1){
+			th:nth-child(1){
+				text-align: left;
 			}
 		}
 	}
