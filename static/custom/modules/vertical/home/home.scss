@@ -7,35 +7,39 @@
   text-align: center;
   cursor: pointer;
   > .container-fluid{
-    width: fit-content;
+    //width: 100%;
+    //padding: 0;
   }
   .main-title{
     font-family: Oswald-light,sans-serif;
     line-height: 4rem;
     padding: 1.5rem 0;
-    margin: 0rem;
+    margin: 0rem auto;
     color: #00309c;
-    width: 100%;
+    width:fit-content;
     display: flex;
     align-items: center;
     justify-content: center;
     img{
+      height: 5.6rem;
     }
     .main-text{
-      vertical-align: middle;
-      font-size:6rem;
+      //vertical-align: middle;
+      font-size: 4.6rem;
+      line-height: initial;
+      padding: 0rem 0 0rem 0rem;
     }
   }
   .lead-title{
     font-family: Oswald-Light,sans-serif;
     font-size: 4.6rem;
-    padding: 0.5rem 0 0.5rem 2rem;
+    padding: 0rem 0 0rem 2rem;
     margin-left: 2rem;
     width: auto;
-    vertical-align: middle;
-    line-height:4.6rem;
+    //vertical-align: middle;
+    line-height: initial;
     display: inline-block;
-    border-left: 1px solid;
+    border-left: 3px solid $orange;
     text-align: left;
   }
 }
