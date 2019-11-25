@@ -1104,7 +1104,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "<ul>
 <li><a href=\"https://osha.europa.eu/mt/publications/second-european-survey-enterprises-new-and-emerging-risks-esener-2-overview-report/view\" target=\"_blank\">ESENER-2 Ħarsa ġenerali rapport</a></li>
 <li><a href=\"https://osha.europa.eu/mt/publications/first-findings-second-european-survey-enterprises-new-and-emerging-risks-esener-2/view\" target=\"_blank\">Rapport tal-ewwel riżultati</a></li>
-<li><a href=\"https://osha.europa.eu/mt/publications/summary-second-european-survey-enterprises-new-and-emerging-risks-esener-2/view<\" target=\"_blank\">Rapport ta 'sommarju</a></li>
+<li><a href=\"https://osha.europa.eu/mt/publications/summary-second-european-survey-enterprises-new-and-emerging-risks-esener-2/view\" target=\"_blank\">Rapport ta 'sommarju</a></li>
 <li>ESENER 2014:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
 </ul>
 <p>Is-sett ta&rsquo; data ta&rsquo; ESENER 2014 jista&rsquo; jiġi aċċessat permezz tas-<a href=\"http://https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=7808\" target=\"_blank\">Servizz tad-Data tar-Renju Unit tal-Universit&agrave; ta&rsquo; Essex</a>, <a href=\"https://data.europa.eu/euodp/mt/data/dataset/esener-2\" target=\"_blank\">il-portal Ewropew tad-data</a> u <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
@@ -1171,11 +1171,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<ul>
   <li>
-    <a href=\"https://osha.europa.eu/fi/publications/second-european-survey-enterprises-new-and-emerging-risks-esener-2-overview-report/view\" target=\"_blank\">ESENER-2&nbsp;</a>
-    <a href=\"https://osha.europa.eu/fi/publications/first-findings-second-european-survey-enterprises-new-and-emerging-risks-esener-2/view\" target=\"_blank\">yhteenvetokertomus</a>
+    <a href=\"https://osha.europa.eu/fi/publications/second-european-survey-enterprises-new-and-emerging-risks-esener-2-overview-report/view\" target=\"_blank\">ESENER-2 yhteenvetokertomus&nbsp;</a>
   </li>
   <li>
-    <a href=\"https://osha.europa.eu/fi/publications/summary-second-european-survey-enterprises-new-and-emerging-risks-esener-2/view\" target=\"_blank\">Kertomus alustavista tuloksista</a>
+    <a href=\"https://osha.europa.eu/fi/publications/first-findings-second-european-survey-enterprises-new-and-emerging-risks-esener-2/view\" target=\"_blank\">Kertomus alustavista tuloksista</a>
   </li>
   <li>
     <a href=\"https://osha.europa.eu/fi/publications/summary-second-european-survey-enterprises-new-and-emerging-risks-esener-2/view\" target=\"_blank\">Tiivistelmä</a>
@@ -1460,25 +1459,25 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <li>Worker participation in the management of OSH — overview report, country reports, summary report (2017) (Il-parteċipazzjoni tal-ħaddiema fil-ġestjoni tas-Saħħa u s-Sigurtà fuq il-Post tax-Xogħol -&nbsp;
     <a href=\"https://osha.europa.eu/mt/publications/worker-participation-management-occupational-safety-and-health-qualitative-evidence/view\" target=\"_blank\">rapport ġenerali</a>,&nbsp;
     <a href=\"https://osha.europa.eu/mt/publications/l_en?text=Country%20report%20%20Worker%20participation%20ESENER%202&sort_by=field_publication_date\" target=\"_blank\">rapporti tal-pajjiż</a>,&nbsp;
-    <a href=\"https://osha.europa.eu/mt/publications/summary-worker-participation-management-occupational-safety-and-health-qualitative/view\" target=\"_blank\">rapport ta' sinteżi</a> (2017))
+    <a href=\"https://osha.europa.eu/mt/publications/summary-worker-participation-management-occupational-safety-and-health-qualitative/view\" target=\"_blank\">rapport ta' sinteżi</a> (2017)
   </li>
   <li>Joint analysis of ESENER-2, the LFS 2013 ad-hoc module on accidents at work and other work-related health problems and the 6<span>th</span> European Working Conditions Survey — overview report, summary report (2017) (Analiżi konġunta tal-ESENER-2, il-moduli ad hoc tal-Istħarriġ dwar il-Forza tax-Xogħol (LFS) 2013 dwar aċċidenti fuq il-post tax-xogħol u problemi oħra ta' saħħa relatati max-xogħol u s-6 Stħarriġ Ewropew dwar il-Kundizzjonijiet tax-Xogħol -&nbsp;
     <a href=\"https://osha.europa.eu/mt/publications/health-and-safety-risks-workplace-joint-analysis-three-major-surveys/view\" target=\"_blank\">rapport ġenerali</a>,&nbsp;
-    <a href=\"https://osha.europa.eu/mt/publications/executive-summary-health-and-safety-risks-workplace-joint-analysis-three-major-surveys/view\" target=\"_blank\">rapport ta' sinteżi</a> (2017))
+    <a href=\"https://osha.europa.eu/mt/publications/executive-summary-health-and-safety-risks-workplace-joint-analysis-three-major-surveys/view\" target=\"_blank\">rapport ta' sinteżi</a> (2017)
   </li>
   <li>Psychosocial risk management — overview report, summary report (2018) (Ġestjoni ta' riskju psikosoċjali -&nbsp;
     <a href=\"https://osha.europa.eu/mt/publications/management-psychosocial-risks-european-workplaces-evidence-second-european-survey/view\" target=\"_blank\">rapport ġenerali</a>,&nbsp;
-    <a href=\"https://osha.europa.eu/mt/publications/executive-summary-management-psychosocial-risks-european-workplaces-evidence-second/view\" target=\"_blank\">rapport ta' sinteżi</a> (2018))
+    <a href=\"https://osha.europa.eu/mt/publications/executive-summary-management-psychosocial-risks-european-workplaces-evidence-second/view\" target=\"_blank\">rapport ta' sinteżi</a> (2018)
   </li>
   <li>OSH management — overview report, summary report (2018) (Ġestjoni tas-Saħħa u s-Sigurtà fuq il-Post tax-Xogħol -&nbsp;
     <a href=\"https://osha.europa.eu/mt/publications/management-occupational-health-and-safety-european-workplaces-evidence-second-european/view\" target=\"_blank\">rapport ġenerali</a>,&nbsp;
-    <a href=\"https://osha.europa.eu/mt/publications/executive-summary-management-occupational-health-and-safety-european-workplaces/view\" target=\"_blank\">rapport ta' sinteżi</a> (2018))
+    <a href=\"https://osha.europa.eu/mt/publications/executive-summary-management-occupational-health-and-safety-european-workplaces/view\" target=\"_blank\">rapport ta' sinteżi</a> (2018)
   </li>
   <li>A technical assessment of the expansion of the survey universe — overview report (2018) (Valutazzjoni teknika tal-espansjoni tal-univers ta' stħarriġ -&nbsp;
-    <a href=\"https://osha.europa.eu/mt/publications/technical-assessment-expansion-second-european-survey-enterprises-new-and-emerging/view\" target=\"_blank\">rapport ġenerali</a> (2018))
+    <a href=\"https://osha.europa.eu/mt/publications/technical-assessment-expansion-second-european-survey-enterprises-new-and-emerging/view\" target=\"_blank\">rapport ġenerali</a> (2018)
   </li>
   <li>An evaluation of ESENER-2 and its follow-up projects — overview report (2018) (Evalwazzjoni tal-ESENER-2 u l-proġetti ta' segwitu tiegħu -&nbsp;
-    <a href=\"https://osha.europa.eu/mt/publications/ex-post-evaluation-second-european-survey-enterprises-new-and-emerging-risks/view\" target=\"_blank\">rapport ġenerali</a> (2018)).
+    <a href=\"https://osha.europa.eu/mt/publications/ex-post-evaluation-second-european-survey-enterprises-new-and-emerging-risks/view\" target=\"_blank\">rapport ġenerali</a> (2018).
   </li>
 </ul>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "<ul>
@@ -9046,7 +9045,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
                   </ul>
                 </dd>
               </dl>
-              <p>Si può accedere all&rsquo;insieme dei dati ESENER 2009 tramite il <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">servizio dati del Regno Unito dell&rsquo;università di Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-1\" target=\"_blank\">il portale europeo dei dati</a> e <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
+              <p>Si può accedere all&rsquo;insieme dei dati ESENER 2009 tramite il <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">servizio dati del Regno Unito dell&rsquo;università di Essex</a>, <a href=\"https://data.europa.eu/euodp/it/data/dataset/esener-1\" target=\"_blank\">il portale europeo dei dati</a> e <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
             <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
               <dl>
                 <dt>CAPITOLATO D&rsquo;ONERI</dt>
