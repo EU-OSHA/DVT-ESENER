@@ -558,9 +558,9 @@ define(function (require) {
 
 				/* Method used to show the tooltip when changing between previous and next question */
 				function rulesForTooltip(pQuestionID){
-					//$log.warn(pQuestionID);
-					//$log.warn(pQuestionID == 'MM303a' && (scope.filters.country == 'CY' || scope.filters.country == 'EE' 
-							//|| scope.filters.country == 'MT') && scope.chart == 'national-bar-chart');
+					$log.warn(pQuestionID);
+					$log.warn(pQuestionID == 'MM303a' && (scope.filters.country == 'CY' || scope.filters.country == 'EE' 
+							|| scope.filters.country == 'MT') && scope.chart == 'national-bar-chart');
 					//RULES ESENER 2009
 					if(scope.chart == 'national-comparisons'){
 						if((pQuestionID == 'MM303a' && (scope.filters.country == 'CY' || scope.filters.country == 'EE' 
@@ -575,13 +575,8 @@ define(function (require) {
 							(pQuestionID == 'MM355all' && (scope.filters.country == 'CH' || scope.filters.country2 == 'CH')) ||
 							(pQuestionID == 'MM358' && (scope.filters.country == 'LU' || scope.filters.country == 'SI' 
 							|| scope.filters.country2 == 'LU' || scope.filters.country2 == 'SI'))){
-							if(pQuestionID == 'MM351' && scope.filters.country2 == 'AT'){
-								scope.filters.country2 = 'BE';
-								return false;
-							}else{
-								alert(scope.i18n.L100576);
-								return true;
-							}
+							alert(scope.i18n.L100576);
+							return true;
 						}
 					}else if(scope.chart == 'national-bar-chart' || scope.chart == 'pie-chart'){
 						if((pQuestionID == 'MM303a' && (scope.filters.country == 'CY' || scope.filters.country == 'EE' 
@@ -789,8 +784,6 @@ define(function (require) {
 									pQuestion: pQuestionID, //Question name,
 									pAnswer: scope.answer,
 									pSectorSize: scope.sectorSize,
-									pCountry: scope.filters.country,
-									pCountry2: scope.filters.country2,
 									pLanguage: scope.pLanguage,
 									pLocale: scope.pLocale,
 									pSortBy: '0'
@@ -971,14 +964,8 @@ define(function (require) {
 								exception = true;
 							}else if(scope.indicator == 'MM351' && (scope.country2 == 'AT' || scope.country2 == 'DE'
 								|| scope.country2 == 'LU')){
-								if(scope.country2 == 'AT'){
-									scope.country2 = 'BE';
-									scope.filters.country2 = 'BE';
-									exception = false;
-								}else{
-									alert(scope.i18n.L100576);
-									exception = true;
-								}
+								alert(scope.i18n.L100576);
+								exception = true;
 							}else if(scope.indicator == 'MM355' && (scope.country2 == 'CH')){
 								alert(scope.i18n.L100576);
 								exception = true;
