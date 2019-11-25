@@ -721,8 +721,14 @@ define(function (require) {
 					(pQuestionID == 'MM355all' && ($scope.pCountry == 'CH' || $scope.pCountry2 == 'CH')) ||
 					(pQuestionID == 'MM358' && ($scope.pCountry== 'LU' || $scope.pCountry == 'SI' 
 					|| $scope.pCountry2 == 'LU' || $scope.pCountry2 == 'SI'))){
-					alert($scope.i18n.L100576);
-					return true;
+					if(pQuestionID == 'MM351' && $scope.pCountry2 == 'AT'){
+						$scope.pCountry2 = 'BE';
+						return false;
+					}else{
+						alert($scope.i18n.L100576);
+						return true;
+					}
+					
 				}
 			}else if($scope.pChart == 'national-bar-chart' && $scope.pIndicator == 2009){
 				if((pQuestionID == 'MM303a' && ($scope.pCountry == 'CY' || $scope.pCountry == 'EE' 
