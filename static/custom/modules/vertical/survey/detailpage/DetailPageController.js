@@ -711,7 +711,7 @@ define(function (require) {
 			if(($scope.pChart == 'national-comparisons') && $scope.pIndicator == 2009){
 				if((pQuestionID == 'MM303a' && ($scope.pCountry == 'CY' || $scope.pCountry == 'EE' 
 					|| $scope.pCountry == 'MT' || $scope.pCountry2 == 'CY' || $scope.pCountry2 == 'EE' 
-					|| $scope.pCountry2 == 'MT')) ||
+					|| $scope.pCountry2 == 'MT')) /*||
 					(pQuestionID == 'MM350' && ($scope.pCountry == 'CY' || $scope.pCountry == 'MT' 
 					|| $scope.pCountry == 'SE' || $scope.pCountry2 == 'CY' || $scope.pCountry2 == 'MT' 
 					|| $scope.pCountry2 == 'SE')) ||
@@ -720,29 +720,35 @@ define(function (require) {
 					|| $scope.pCountry2 == 'LU')) ||
 					(pQuestionID == 'MM355all' && ($scope.pCountry == 'CH' || $scope.pCountry2 == 'CH')) ||
 					(pQuestionID == 'MM358' && ($scope.pCountry== 'LU' || $scope.pCountry == 'SI' 
-					|| $scope.pCountry2 == 'LU' || $scope.pCountry2 == 'SI'))){
-					alert($scope.i18n.L100576);
-					return true;
+					|| $scope.pCountry2 == 'LU' || $scope.pCountry2 == 'SI'))*/){
+					/*if(pQuestionID == 'MM351' && $scope.pCountry2 == 'AT'){
+						$scope.pCountry2 = 'BE';
+						return false;
+					}else{*/
+						alert($scope.i18n.L100576);
+						return true;
+					//}
+					
 				}
 			}else if($scope.pChart == 'national-bar-chart' && $scope.pIndicator == 2009){
 				if((pQuestionID == 'MM303a' && ($scope.pCountry == 'CY' || $scope.pCountry == 'EE' 
-					|| $scope.pCountry == 'MT')) ||
+					|| $scope.pCountry == 'MT')) /*||
 					(pQuestionID == 'MM350' && ($scope.pCountry == 'CY' || $scope.pCountry == 'MT' 
 					|| $scope.pCountry == 'SE')) ||
 					(pQuestionID == 'MM351' && ($scope.pCountry == 'AT' || $scope.pCountry == 'DE' 
 					|| $scope.pCountry == 'LU')) ||
 					(pQuestionID == 'MM355all' && ($scope.pCountry == 'CH')) ||
-					(pQuestionID == 'MM358' && ($scope.pCountry== 'LU' || $scope.pCountry == 'SI'))){
+					(pQuestionID == 'MM358' && ($scope.pCountry== 'LU' || $scope.pCountry == 'SI'))*/){
 					alert($scope.i18n.L100576);
 					return true;
 				}
 			}else if($scope.pChart == 'pie-chart' && $scope.pIndicator == 2009){
 				if(pQuestionID == 'MM350' && ($scope.pCountry == 'CY' || $scope.pCountry == 'MT' 
 					|| $scope.pCountry == 'SE') 
-					|| pQuestionID == 'MM351' && ($scope.pCountry == 'AT' || $scope.pCountry == 'DE' 
+					/*|| pQuestionID == 'MM351' && ($scope.pCountry == 'AT' || $scope.pCountry == 'DE' 
 					|| $scope.pCountry == 'LU')
 					|| pQuestionID == 'MM355all' && ($scope.pCountry == 'CH')
-					|| pQuestionID == 'MM358' && ($scope.pCountry== 'LU' || $scope.pCountry == 'SI')){
+					|| pQuestionID == 'MM358' && ($scope.pCountry== 'LU' || $scope.pCountry == 'SI')*/){
 					alert($scope.i18n.L100576);
 					return true;					
 				}
