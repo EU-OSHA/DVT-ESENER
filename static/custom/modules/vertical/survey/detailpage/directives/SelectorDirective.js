@@ -981,11 +981,18 @@ define(function (require) {
 						exception = true;
 					}
 
-					if(chart == 'national-comparisons' && scope.country == 'AT'){
-						scope.country = 'AT';
-						scope.country2 = 'EU28';
-						scope.filters.country = 'AT';
-						scope.filters.country2 = 'EU28';
+					if(chart == 'national-comparisons'){
+						if(scope.country == 'AT'){
+							scope.country = 'AT';
+							scope.country2 = 'EU28';
+							scope.filters.country = 'AT';
+							scope.filters.country2 = 'EU28';
+						}else if(scope.country2 == 'EU28' && scope.country == 'EU28'){
+							scope.country = 'EU28';
+							scope.country2 = 'AT';
+							scope.filters.country = 'EU28';
+							scope.filters.country2 = 'AT';
+						}
 					}
 
                     if(!exception){

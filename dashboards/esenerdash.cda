@@ -533,7 +533,7 @@
         AND CASE WHEN ${pSectorSize} = 'activity-sector' 
           THEN (p.activity_sector_id = ${pIndicator} AND p.company_size_id IS NULL) 
         ELSE (p.company_size_id = ${pIndicator} AND p.activity_sector_id IS NULL) END
-        AND n.country_code = ${pCountry}
+        AND n.country_code = ${pCountry} AND v.value IS NOT NULL
         ORDER BY eao.order_position DESC;
       </Query>
       <!-- THEN (CASE WHEN ${pIndicator} != 0 THEN sas.id = ${pIndicator} AND p.activity_sector_id = sas.id ELSE p.activity_sector_id = sas.id END) 
@@ -571,7 +571,7 @@
           THEN p.activity_sector_id IN (14, 15, 16, 17) ELSE p.activity_sector_id IN (1,6,3,2,4,18,11,7,14) END)
         ELSE (p.company_size_id = scs.id AND p.activity_sector_id IS NULL AND CASE WHEN ${pYear} = 2009 
           THEN p.company_size_id IN(11, 12, 13, 14, 15) ELSE scs.id IN (7,8,14,10,11) END) END
-        AND n.country_code = ${pCountry}
+        AND n.country_code = ${pCountry} AND v.value IS NOT NULL
         ORDER BY Subset Asc, eao.order_position ASC;
       </Query>
     </DataAccess>
@@ -668,7 +668,7 @@
       AND n.id = p.nuts_id
       AND n.country_code IN (${pCountry1}, ${pCountry2})
       AND t.language = ${pLocale}
-      AND v.dataset_id = ${pDataset}
+      AND v.dataset_id = ${pDataset} AND v.value IS NOT NULL
       AND CASE WHEN ${pAnswer} != 0 THEN (sa.id = ${pAnswer} AND p.answer_id=sa.id) ELSE p.answer_id=sa.id END
       ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}, 'EU28') DESC;
     </Query>
@@ -705,7 +705,7 @@
       AND n.country_code IN (${pCountry1}, ${pCountry2})
       AND sas.id = ${pActivityFilter} AND scs.id = ${pCompanyFilter}
       AND t.language = 'EN'
-      AND v.dataset_id = ${pDataset}
+      AND v.dataset_id = ${pDataset} AND v.value IS NOT NULL
       ORDER BY FIELD(n.country_code, ${pCountry1}, ${pCountry2}) DESC;
     </Query>
   </DataAccess>
@@ -735,7 +735,7 @@
       AND n.id = p.nuts_id
       AND n.country_code = ${pCountry}
       AND t.language = ${pLocale}
-      AND v.dataset_id = ${pDataset}
+      AND v.dataset_id = ${pDataset} AND v.value IS NOT NULL
       ORDER BY eao.order_position ASC;
     </Query>
   </DataAccess>
@@ -765,7 +765,7 @@
       AND n.id = p.nuts_id
       AND n.country_code = ${pCountry}
       AND t.language = ${pLocale}
-      AND v.dataset_id = ${pDataset}
+      AND v.dataset_id = ${pDataset} AND v.value IS NOT NULL
       ORDER BY eao.order_position ASC;
     </Query>
   </DataAccess>
