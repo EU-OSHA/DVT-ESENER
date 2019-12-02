@@ -982,7 +982,7 @@ define(function (require) {
 					}
 
 					if(chart == 'national-comparisons'){
-						if(scope.country == 'AT'){
+						/*if(scope.country == 'AT'){
 							scope.country = 'AT';
 							scope.country2 = 'EU28';
 							scope.filters.country = 'AT';
@@ -992,6 +992,16 @@ define(function (require) {
 							scope.country2 = 'AT';
 							scope.filters.country = 'EU28';
 							scope.filters.country2 = 'AT';
+						}*/
+						if(scope.country == scope.country2){
+							$log.warn('ENTRA');
+							if(scope.country == 'EU28'){
+								scope.country2 = 'AT';
+								scope.filters.country2 = 'AT';
+							}else{
+								scope.country2 = 'EU28';
+								scope.filters.country2 = 'EU28';
+							}
 						}
 					}
 
