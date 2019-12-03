@@ -233,7 +233,7 @@ define(function (require) {
 					});
 
 					// Load the activity sectors for the select combo
-					dataService.getActivitySectorsSelect(scope.indicator).then(function(res) {
+					dataService.getActivitySectorsSelect(scope.indicator, scope.dataset).then(function(res) {
 						scope.activitySectors = [];
 						if(res.data.resultset.length == 0){
 							scope.activitySectors.push({id:14, literal:'100573'});

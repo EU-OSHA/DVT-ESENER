@@ -326,6 +326,7 @@
     <Columns/>
     <Parameters>
       <Parameter default="MM161" name="pQuestion" type="String" />
+      <Parameter default="2009" name="pYear" type="String" />
     </Parameters>
     <Query>
       SELECT DISTINCT(a.id), a.literal_id 
@@ -334,7 +335,9 @@
       INNER JOIN value v ON p.id=v.profile_id
       INNER JOIN indicator i ON v.indicator_id=i.id
       WHERE i.name=${pQuestion}
-      ORDER BY FIELD (a.id, 14, 3, 2, 4, 18, 6, 7);
+      ORDER BY 
+      CASE WHEN ${pYear}=2009 THEN FIELD (a.id, 14, 3, 2, 4, 18, 6, 7) END DESC,  
+      CASE WHEN ${pYear}=2014 THEN FIELD (a.id, 14, 3, 2, 4, 18, 6, 7) END ASC;
     </Query>
   </DataAccess>
 
