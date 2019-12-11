@@ -15268,7 +15268,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Kif il-postijiet tax-xogħol tal-Ewropa jimmaniġġjaw is-sigurtà u s-saħħa");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Het beheer van veiligheid en gezondheid op Europese werkplekken");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Hvordan håndterer europeiske arbeidsplasser helse og sikkerhet på arbeidsplassen");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Bezpieczeństwo i&nbsp;higiena pracy w&nbsp;europejskich miejscach pracy");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Bezpieczeństwo i higiena pracy w europejskich miejscach pracy");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "De que forma os locais de trabalho da Europa gerem a segurança e a saúde");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Gestionarea securității și a sănătății la locurile de muncă din Europa");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Ako európske pracoviská riadia bezpečnosť a ochranu zdravia");
