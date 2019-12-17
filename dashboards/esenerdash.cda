@@ -72,6 +72,7 @@
       FROM esener_category ec, indicator i, profile p, value v, split_answer sa, translation t, nuts n,
       esener_answer_order eao 
       WHERE ec.year = ${pYear}
+      AND v.value IS NOT NULL
       AND ec.category = ${pQuestion}
       AND ec.category = i.name
       AND eao.indicator_id = i.id
