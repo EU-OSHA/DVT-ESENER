@@ -465,7 +465,7 @@ define(function (require) {
 				if($rootScope.nationalBarChartIndicators == undefined || questionOrFilterChanged){
 					questionOrFilterChanged = false;
 					if($scope.pSectorSize == 'activity-sector'){
-						dataService.getActivitySectorsSelect($scope.pQuestion).then(function (data) 
+						dataService.getActivitySectorsSelect($scope.pQuestion, $scope.pIndicator).then(function (data) 
 						{
 							var list = [];
 							data.data.resultset.map(function (elem) 
@@ -487,6 +487,7 @@ define(function (require) {
 
 							//$scope.indicators = $rootScope.nationalBarChartIndicators;
 							$scope.indicators.data = list;
+							$log.warn($scope.indicators.data);
 							$scope.indicators.pQuestion = $scope.pQuestion;
 							$scope.indicators.sectorsize = $scope.pSectorSize;
 							$rootScope.nationalBarChartIndicators = $scope.indicators;
@@ -533,7 +534,7 @@ define(function (require) {
 					}
 
 					if($scope.pSectorSize == 'activity-sector'){
-						dataService.getActivitySectorsSelect($scope.pQuestion).then(function (data) 
+						dataService.getActivitySectorsSelect($scope.pQuestion, $scope.pIndicator).then(function (data) 
 						{
 							var list = [];
 							data.data.resultset.map(function (elem) 
