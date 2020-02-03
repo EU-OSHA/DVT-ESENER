@@ -62,4 +62,30 @@
 </section>
 
 
+<!-- General information 2019 -->
+<section class="container" ng-if="pIndicator == '2019'">
+    <div class="container grid-2">
+        <div class="col-sm-6 col-xs-12  col-md-6 col-img">
+            <div><img src="/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/esener2019.png" class="no-hover"></div>
+        </div>
+        <div class="col-sm-6 col-xs-12  col-md-6 col-content">
+            <h1 class="title--section main-color" data-ng-bind="i18n.L101079"></h1>
+            <p data-ng-bind-html="i18n.L101085"></p>
+        </div>
+    </div>
+    <!-- Accordions section 2019 -->
+    <h2 class="text-center" data-ng-bind-html="i18n.L101011"></h2>
+    <!-- First accordion -->
+    <!-- Title of the accordion -->
+    <h3 class="title--section main-color accordion-title active" ng-click="accordion($event)" data-ng-bind-html="i18n.L101012"></h3>
+    <!-- Content of the accordion -->
+    <div class="accordion-content active" data-ng-bind-html="i18n.L101083"></div>
+
+    <!-- Second accordion -->
+    <!-- Title of the accordion -->
+    <h3 class="title--section main-color accordion-title" ng-click="accordion($event)" data-ng-bind-html="i18n.L101013"></h3>
+    <!-- Content of the accordion -->
+    <div class="accordion-content" data-ng-bind-html="i18n.L101084"></div>
+</section>
+
 </dvt-dashboard>

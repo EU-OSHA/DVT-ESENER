@@ -192,9 +192,9 @@
                 <li data-ng-class="{'active' : '2009' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
                     <a href ui-sref="overview({pLanguage: pLanguage, pIndicator: '2009'})" data-ng-click="openIndicatorsList($event);" data-ng-class="{'active' : '2009' == pIndicator }" data-ng-bind="i18n_literals.L101007"></a>
                 </li>
-                <!--<li data-ng-class="{'active' : indicator.anchor == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
-                  <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : indicator.anchor == pIndicator }" >ESENER 2019</a>
-                </li>-->
+                <li data-ng-class="{'active' : '2019' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
+                  <a href  ui-sref="overview({pLanguage: pLanguage, pIndicator: '2019'})" data-ng-click="openIndicatorsList($event);" data-ng-class="{'active' : '2019' == pIndicator }" data-ng-bind="i18n_literals.L101079" ></a>
+                </li>
               </ul>
             </div>
         </section>
@@ -226,9 +226,9 @@
                     'detailpage-national-bar-chart' == currentName || 'detailpage-national-comparisons' == currentName || 
                     'detailpage-pie-chart' == currentName}" data-ng-bind="i18n_literals.L101010"></a>
                 </li>
-                <!--<li data-ng-class="{'active' : 'comparisons' == currentName }" class="submenu--item">
-                <a href="" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'comparisons' == currentName }" >COMPARISONS</a>
-                </li>-->
+                <li data-ng-class="{'active' : 'comparisons' == currentName }" class="submenu--item">
+                    <a href="" ui-sref="overview({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'comparisons' == currentName }" data-ng-bind="i18n_literals.L101080"></a>
+                </li>
             </ul>
             </div>
         </section>
