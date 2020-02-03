@@ -177,34 +177,52 @@
   }
 
   .datavisualisation-page{
-    .card--item{
+    .card--item, .card--item.disabled{
       &:hover{
         .osh-management-icon{
-            background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/osh-management-hover.png) center 3rem no-repeat;
+          background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/osh-management-hover.png) center 3rem no-repeat;
+          -webkit-filter: unset;
+          filter: unset;
         }
         .psychosocial-risk-icon{
           background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/psychosocial-risk-hover.png) center 3rem no-repeat;
+          -webkit-filter: unset;
+          filter: unset;  
         }
         .drivers-barriers-icon{
           background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/drivers-barriers-hover.png) center 3rem no-repeat;
+          -webkit-filter: unset;
+          filter: unset;
         }
         .workers-participation-icon{
           background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/workers-participation-hover.png) center 3rem no-repeat;
+          -webkit-filter: unset;
+          filter: unset;
         }
         .european-maps-icon{
           background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/european-maps-hover.png) center 3rem no-repeat;
+          -webkit-filter: unset;
+          filter: unset;
         }
         .eu-bar-chart-icon{
           background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/eu-bar-chart-hover.png) center 3rem no-repeat;
+          -webkit-filter: unset;
+          filter: unset; 
         }
         .national-bar-chart-icon{
           background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/national-bar-chart-hover.png) center 3rem no-repeat;
+          -webkit-filter: unset;
+          filter: unset;
         }
         .national-comparision-icon{
           background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/national-comparision-hover.png) center 3rem no-repeat;
+          -webkit-filter: unset;
+          filter: unset;
         }
         .pie-chart-icon{
            background:$aquamarine-light url(/pentaho/plugin/pentaho-cdf-dd/api/resources/system/osha-dvt-esener/static/custom/img/pie-chart-hover.png) center 3rem no-repeat; 
+          -webkit-filter: unset;
+          filter: unset;
         }
       }
       &.tablet{

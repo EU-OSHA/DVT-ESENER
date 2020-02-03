@@ -390,7 +390,7 @@
           border: 0 !important;
           cursor: default !important;
           a{
-            background-color: rgba(177, 179, 180,0.2) !important;
+            background-color: rgba(177, 179, 180,0.2);
             -webkit-filter: grayscale(100%);
             filter: grayscale(100%);
           }          
