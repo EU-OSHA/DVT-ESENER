@@ -83,9 +83,9 @@
 
     <!-- Second accordion -->
     <!-- Title of the accordion -->
-    <h3 class="title--section main-color accordion-title" ng-click="accordion($event)" data-ng-bind-html="i18n.L101013"></h3>
+    <h3 class="title--section main-color accordion-title" ng-click="accordion($event)" data-ng-if="i18n.L101084 != 'null'" data-ng-bind-html="i18n.L101013"></h3>
     <!-- Content of the accordion -->
-    <div class="accordion-content" data-ng-bind-html="i18n.L101084"></div>
+    <div class="accordion-content" data-ng-bind-html="i18n.L101084" data-ng-if="i18n.L101084 != 'null'"></div>
 </section>
 
 </dvt-dashboard>
