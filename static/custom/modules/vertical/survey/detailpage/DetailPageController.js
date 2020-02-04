@@ -470,7 +470,11 @@ define(function (require) {
 							var list = [];
 							data.data.resultset.map(function (elem) 
 							{
-								if(elem[0] != 14){
+								list.push({
+									id: elem[0],
+									name: elem[1]
+								});
+								/*if(elem[0] != 14){
 									list.push({
 										id: elem[0],
 										name: elem[1]
@@ -480,10 +484,10 @@ define(function (require) {
 										id: elem[0],
 										name: elem[1]
 									};
-								}
+								}*/
 							});
 
-							list.push($scope.all);
+							//list.push($scope.all);
 
 							//$scope.indicators = $rootScope.nationalBarChartIndicators;
 							$scope.indicators.data = list;
@@ -504,7 +508,11 @@ define(function (require) {
 							var list = [];
 							data.data.resultset.map(function (elem) 
 							{
-								if(elem[0] != 11){
+								list.push({
+									id: elem[0],
+									name: elem[1]
+								});
+								/*if(elem[0] != 11){
 									list.push({
 										id: elem[0],
 										name: elem[1]
@@ -514,7 +522,7 @@ define(function (require) {
 										id: elem[0],
 										name: elem[1]
 									};
-								}
+								}*/
 							});
 
 							list.push($scope.all);
@@ -539,7 +547,11 @@ define(function (require) {
 							var list = [];
 							data.data.resultset.map(function (elem) 
 							{
-								if(elem[0] != 14){
+								list.push({
+									id: elem[0],
+									name: elem[1]
+								});
+								/*if(elem[0] != 14){
 									list.push({
 										id: elem[0],
 										name: elem[1]
@@ -549,10 +561,10 @@ define(function (require) {
 										id: elem[0],
 										name: elem[1]
 									};
-								}
+								}*/
 							});
 
-							list.push($scope.all);
+							//list.push($scope.all);
 
 							//$scope.indicators = $rootScope.nationalBarChartIndicators;
 							$scope.indicators.data = list;
@@ -572,7 +584,11 @@ define(function (require) {
 							var list = [];
 							data.data.resultset.map(function (elem) 
 							{
-								if(elem[0] != 11){
+								list.push({
+									id: elem[0],
+									name: elem[1]
+								});
+								/*if(elem[0] != 11){
 									list.push({
 										id: elem[0],
 										name: elem[1]
@@ -582,9 +598,9 @@ define(function (require) {
 										id: elem[0],
 										name: elem[1]
 									};
-								}
+								}*/
 							});
-							list.push($scope.all);
+							//list.push($scope.all);
 
 							//$scope.indicators = $rootScope.nationalBarChartIndicators;
 							$scope.indicators.data = list;
