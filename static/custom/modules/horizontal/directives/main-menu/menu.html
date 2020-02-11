@@ -108,7 +108,7 @@
                                     </li>
                                 -->
                                     <li ng-repeat="level1 in level0.levels" ng-class="isCurrentStateMenu('{{ level1.id }}')">
-                                        <a ng-if="level1.sref" ui-sref="{{level1.sref}}({pLanguage: pLanguage, pIndicator: level1.name == 'L101007' ? '2009': '2014'})" id='{{ level1.id }}' accesskey="{{level1.accesskey}}">
+                                        <a ng-if="level1.sref" ui-sref="{{level1.sref}}({pLanguage: pLanguage, pIndicator: level1.indicator})" id='{{ level1.id }}' accesskey="{{level1.accesskey}}">
                                             <span data-ng-bind-html="i18n_literals[level1.name]"></span>
                                         </a>
                                     </li>
@@ -153,6 +153,7 @@
                 <i class='fa fa-angle-right' aria-hidden='true'></i>
                 <span class='current-page' data-ng-if="year == 2009"><a ui-sref='overview({pIndicator: 2009, pLanguage: pLanguage})' data-ng-bind="i18n_literals.L101007"></a></span>
                 <span class='current-page' data-ng-if="year == 2014"><a ui-sref='overview({pIndicator: 2014, pLanguage: pLanguage})' data-ng-bind="i18n_literals.L101008"></a></span>
+                <span class='current-page' data-ng-if="year == 2019"><a ui-sref='overview({pIndicator: 2019, pLanguage: pLanguage})' data-ng-bind="i18n_literals.L101079"></a></span>
                 <i class='fa fa-angle-right' aria-hidden='true'></i>
                 <span data-ng-bind="i18n_literals[breadCrumb.name]"></span>
             </p>
@@ -186,14 +187,14 @@
             <div class="container submenu--level2">
               <ul class="submenu--items--wrapper">
                 <!-- ESENER YEAR SELECTION -->
+                <li data-ng-class="{'active' : '2019' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
+                  <a href  ui-sref="overview({pLanguage: pLanguage, pIndicator: '2019'})" data-ng-click="openIndicatorsList($event);" data-ng-class="{'active' : '2019' == pIndicator }" data-ng-bind="i18n_literals.L101079" ></a>
+                </li>
                 <li data-ng-class="{'active' : '2014' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
                     <a href ui-sref="overview({pLanguage: pLanguage, pIndicator: '2014'})" data-ng-click="openIndicatorsList($event);" data-ng-class="{'active' : '2014' == pIndicator }" data-ng-bind="i18n_literals.L101008"></a>
                 </li>
                 <li data-ng-class="{'active' : '2009' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
                     <a href ui-sref="overview({pLanguage: pLanguage, pIndicator: '2009'})" data-ng-click="openIndicatorsList($event);" data-ng-class="{'active' : '2009' == pIndicator }" data-ng-bind="i18n_literals.L101007"></a>
-                </li>
-                <li data-ng-class="{'active' : '2019' == pIndicator }" data-ng-click ="openIndicatorsList($event)" class="submenu--item">
-                  <a href  ui-sref="overview({pLanguage: pLanguage, pIndicator: '2019'})" data-ng-click="openIndicatorsList($event);" data-ng-class="{'active' : '2019' == pIndicator }" data-ng-bind="i18n_literals.L101079" ></a>
                 </li>
               </ul>
             </div>

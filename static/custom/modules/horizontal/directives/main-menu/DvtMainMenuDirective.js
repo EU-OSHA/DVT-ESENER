@@ -195,6 +195,8 @@ define(function (require) {
                                 $scope.titleShare='ESENER-1 | Safety and health at work - EU-OSHA';
                             }else if($stateParams.pIndicator == 2014){
                                 $scope.titleShare='ESENER-2 | Safety and health at work - EU-OSHA';
+                            }else if($stateParams.pIndicator == 2019){
+                                $scope.titleShare='ESENER-3 | Safety and health at work - EU-OSHA';
                             }else{
                                 $scope.titleShare='ESENER | Safety and health at work - EU-OSHA';
                             }
