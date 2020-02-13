@@ -1059,11 +1059,11 @@ and (max-width :767px)  {
 							color: $orange;
 						}
 					}
-					&:nth-child(1){
+					&.left{
 						left: 1rem;
 						top: 1rem;						
 					}
-					&:nth-child(2){
+					&.right{
 						right: 1rem;
 						top: 1rem;
 					}
@@ -1449,13 +1449,13 @@ and (max-width :420px){
 						&:hover{
 						}
 					}
-					&:nth-child(1){
-						left: 0;
-						top: 0;
+					&.left{
+						left: 0rem;
+						top: 0rem;						
 					}
-					&:nth-child(2){
-						right: 0;
-						top: 0;
+					&.right{
+						right:0rem;
+						top:0rem;
 					}
 				}
 			}

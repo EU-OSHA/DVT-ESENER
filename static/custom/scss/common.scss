@@ -10,6 +10,15 @@
     color: $gray-base;
     padding-top:11.6rem;
     overflow-x: hidden;
+    &.mobile-device{
+      min-height: 100vh;
+      position: relative;
+      dvt-footer{
+        position: absolute;
+        width: 100%;
+        //bottom: 0;
+      }
+    }
   }
   .ccc-tt-ds .ccc-tt-dimValue .ccc-tt-valuePct{
     display: none !important;
@@ -990,7 +999,7 @@
       padding:0rem;
       .submenu--items--wrapper{
         padding:0; 
-        margin: 0;
+        margin: 1rem 0 0 0;
         display: flex;
         justify-content:flex-start;
         list-style: none;
@@ -1227,6 +1236,7 @@
 }
 .see-more{
   margin: 2rem 0;
+  text-align: right;
   a.see-more{
     text-decoration: none;
     color: #529FA2;
