@@ -218,9 +218,7 @@
                     'detailpage-national-comparisons' == currentName || 'detailpage-pie-chart' == currentName }">
                     <a href="" ui-sref="datavisualisation({pLanguage: pLanguage, pIndicator: pIndicator})" title="DATA VISUALISATION"><i class="fa fa-angle-right" aria-hidden="true"></i> <span class="sr-only">Next option</span></a>
                 </li>
-                 <li class="right" data-ng-class="{'hide' : 'overview' == currentName ||  'comparisons' == currentName || 'detailpage-european-map' == currentName ||
-                    'detailpage-european-bar-chart' == currentName || 'detailpage-national-bar-chart' == currentName || 
-                    'detailpage-national-comparisons' == currentName || 'detailpage-pie-chart' == currentName }">
+                 <li class="right" data-ng-class="{'hide' : '2009' == pIndicator || 'overview' == currentName || 'comparisons' == currentName || 'detailpage-european-map' == currentName || 'detailpage-european-bar-chart' == currentName || 'detailpage-national-bar-chart' == currentName ||  'detailpage-national-comparisons' == currentName || 'detailpage-pie-chart' == currentName }">
                     <a href="" ui-sref="datavisualisation({pLanguage: pLanguage, pIndicator: pIndicator})" title="COMPARISONS"><i class="fa fa-angle-right" aria-hidden="true"></i> <span class="sr-only">Next option</span></a>
                 </li>
 
@@ -237,7 +235,7 @@
                     'detailpage-national-bar-chart' == currentName || 'detailpage-national-comparisons' == currentName || 
                     'detailpage-pie-chart' == currentName}" data-ng-bind="i18n_literals.L101010"></a>
                 </li>
-                <li data-ng-class="{'active' : 'comparisons' == currentName }" class="submenu--item">
+                <li data-ng-class="{'active' : 'comparisons' == currentName, 'hide' : '2009' == pIndicator }" class="submenu--item">
                     <a href="" ui-sref="datavisualisation({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'comparisons' == currentName }" data-ng-bind="i18n_literals.L101080"></a>
                 </li>
             </ul>
