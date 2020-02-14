@@ -11,13 +11,7 @@
     padding-top:11.6rem;
     overflow-x: hidden;
     &.mobile-device{
-      min-height: 100vh;
       position: relative;
-      dvt-footer{
-        position: absolute;
-        width: 100%;
-        //bottom: 0;
-      }
     }
   }
   .ccc-tt-ds .ccc-tt-dimValue .ccc-tt-valuePct{
