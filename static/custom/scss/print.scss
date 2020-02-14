@@ -21,7 +21,9 @@
 	.select2-drop, 
 	.questions--list--wrapper, 
 	.disabled, 
-	.content--lang--wrapper{
+	.content--lang--wrapper, 
+	.col-img, 
+	.social--network--nav{
 	  display: none !important;
 	}
 	a[href]:after {
@@ -84,6 +86,7 @@
 	.bar-header{
 		display: block;
 		position: relative !important;
+		border-bottom:0px !important;
 		.header--top{
 			display: block;
 		}
@@ -97,6 +100,9 @@
 	  padding: 0;
 	  margin: 0px auto;
 	  min-height: auto;
+	  > .item{
+	  	display: block !important;
+	  }
 	}
 	.advice--block{
 		top: 0;
@@ -126,13 +132,33 @@
 			}
 		}
 	}
+	.submenu--level2{
+		border: none;
+		.submenu--items--wrapper{
+			li{
+				margin: 1rem 0 !important;
+				a{
+					padding: 0 !important;
+					margin: 0 !important;
+					font-size: 3.2rem !important;
+    			display: block;
+				}
+			}
+		}
+	}
 	.level3--wrapper{
 		border: none;
 		.submenu--level3{
+			margin-top: 0 !important;
 			.submenu--items--wrapper{
+				display: block !important;
 				li{
 					a{
 						padding: 0 !important;
+						margin: 0 !important;
+						font-size: 2.8rem  !important;
+						text-align: left;
+						display: block;					
 					}
 				}
 			}
@@ -188,12 +214,23 @@
 			  display: block !important;
 			}	
 		}
-	} 
-	.datavisualisation-page .card--grid .card--item a span {
-		position: absolute;
-		width: 100%;
-		text-align: center;
 	}
+	.datavisualisation-page{
+		.section--page{
+			margin: 4rem 0;
+		}
+		.card--grid{
+			.card--item{
+				a{
+					span{
+						position: absolute;
+						width: 100%;
+						text-align: center;
+					}
+				}
+			}
+		}
+	} 
 	.block--typechart--wrapper{
 		margin: 0 0 2rem 0;
 		.chart--selection--block{
@@ -271,6 +308,11 @@
       zoom:0.6 !important;
     }
   }
+  .overview-page{
+  	.accordion-content{
+    	padding: 0rem 4rem !important;
+  	}
+  } 
 
 	.footer-elements{
 		text-align: center!important;

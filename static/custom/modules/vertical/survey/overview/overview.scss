@@ -60,7 +60,7 @@ div.partial-text{
   }
   .accordion-content{
     font-size: 1.4rem;
-    padding: 0rem 0;
+    padding: 0rem 2rem;
     margin: 1.5rem 0;
     max-height: 0px;
     -webkit-transition: max-height 0.8s; 
@@ -70,6 +70,9 @@ div.partial-text{
       max-height: 100rem;
       -webkit-transition: max-height 1.2s; 
       transition: max-height 1.2s;
+    }
+    p{
+
     }
   }
 }

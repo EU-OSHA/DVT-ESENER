@@ -70,8 +70,13 @@
         </div>
         <div class="col-sm-6 col-xs-12  col-md-6 col-content">
             <h1 class="title--section main-color" data-ng-bind="i18n.L101079"></h1>
-            <p data-ng-bind-html="i18n.L101081"></p>
+            <div class="complete-text" data-ng-bind-html="i18n.L101081"></div>
+            <div class="partial-text" data-ng-bind-html="trimText(i18n.L101081, maxCharacters)"></div>
         </div>
+        <p class="see-more" data-ng-if="i18n.L101081.length > maxCharacters">
+            <a href ng-click='toggleText($event)' class="see-more">{{i18n.L480}}</a> 
+            <a href ng-click='toggleText($event)' class="see-less" style="display:none">{{i18n.L481}}</a>
+        </p>
     </div>
     <!-- Accordions section 2019 -->
     <h2 class="text-center" data-ng-bind-html="i18n.L101011"></h2>
