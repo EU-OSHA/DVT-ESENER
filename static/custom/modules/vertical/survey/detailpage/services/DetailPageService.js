@@ -233,6 +233,8 @@ define (function (require) {
                                         }else{
                                             if(countryKey.label.match('(AL)')){
                                                 return 2;
+                                            } else if(countryKey.label.match('(CH)')){
+                                                return 2;
                                             }
                                         }
 
@@ -270,6 +272,10 @@ define (function (require) {
                                         }else{
                                             if(albaniaC != null){
                                                 return baseScale(albaniaC) - this.proto.width() + 2;
+                                            }
+                                            else
+                                            {
+                                                return baseScale(switzerlandC) - this.proto.width() + 4;
                                             }
                                         }
                                         /*if(baseScale('Switzerland (CH)') < 20){

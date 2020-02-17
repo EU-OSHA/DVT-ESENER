@@ -292,14 +292,14 @@
       <Parameter default="en" name="pLanguage" type="String" />
     </Parameters>
     <Query>
-      SELECT DISTINCT(n.country_code), IF(n.name REGEXP 'European Union', n.country_code, CONCAT("(", n.country_code, ") ", t.text)) as name  
+      SELECT DISTINCT(n.country_code), IF(n.name REGEXP 'European Union' OR n.name REGEXP 'EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", t.text)) as name  
       FROM nuts n
       INNER JOIN profile p ON n.id=p.nuts_id
       INNER JOIN value v ON p.id=v.profile_id
       INNER JOIN indicator i ON v.indicator_id=i.id
       INNER JOIN translation t ON n.literal_id = t.literal_id AND t.language = ${pLanguage}
       WHERE i.name=${pQuestion}
-      ORDER BY FIELD(country_code, 'EU28') DESC, country_code ASC;
+      ORDER BY FIELD(country_code, 'EU28', 'EU27_2020') DESC, country_code ASC;
     </Query>
   </DataAccess>
 
@@ -370,7 +370,7 @@
       <Parameter default="EN" name="pLocale" type="String" />
     </Parameters>
     <Query>
-      SELECT t.text as Answer, IF(n.name REGEXP 'European Union', n.country_code, CONCAT(t2.text, " (", n.country_code, ")")) as Country, v.value*100 as Value
+      SELECT t.text as Answer, IF(n.name REGEXP 'European Union' OR n.name REGEXP 'EU27_2020', n.country_code, CONCAT(t2.text, " (", n.country_code, ")")) as Country, v.value*100 as Value
       FROM nuts n, profile p, value v, translation t, translation t2, split_answer sa, indicator i, esener_answer_order eao
       WHERE n.id = p.nuts_id
       AND i.name = ${pIndicator}
@@ -382,13 +382,16 @@
       AND t.literal_id =sa.literal_id
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
       ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR')) ELSE n.id = p.nuts_id END
+      AND CASE WHEN ${pEUOnly} = 1 AND ${pDataset!=19} THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR')) ELSE n.id = p.nuts_id END
+      AND CASE WHEN ${pEUOnly} = 1 AND ${pDataset=19} THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR', 'UK')) ELSE n.id = p.nuts_id END
       AND t.language = ${pLocale}
       AND t2.literal_id = n.literal_id
       AND t2.language = ${pLocale}
       AND v.dataset_id = ${pDataset}
       ORDER BY FIELD('EU28', n.country_code) DESC,
-      CASE WHEN ${pAnswer}=0 THEN FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR') END ASC,  
+      FIELD('EU27_2020', n.country_code) DESC,
+      CASE WHEN ${pAnswer}=0 AND ${pDataset}!=19 THEN FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR') END ASC,
+      CASE WHEN ${pAnswer}=0 AND ${pDataset}=19 THEN FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR', 'UK') END ASC,  
       CASE WHEN ${pAnswer}!=0 THEN FIELD(${pAnswer}, eao.answer_id) END DESC, CASE WHEN ${pAnswer}=0 THEN n.country_code END ASC, eao.order_position ASC, 
       CASE WHEN ${pAnswer}!=0 THEN Value END DESC
     </Query>
@@ -661,7 +664,7 @@
       <Parameter default="en" name="pLocale" type="String" />
     </Parameters>
     <Query>
-      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(t.text, " (", n.country_code, ")")) as Country, v.value*100 as Value
+      SELECT IF(n.name REGEXP 'European Union' OR n.name REGEXP 'EU27_2020', n.country_code, CONCAT(t.text, " (", n.country_code, ")")) as Country, v.value*100 as Value
       FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i
       WHERE i.name = ${pQuestion}
       AND v.indicator_id = i.id
@@ -727,7 +730,7 @@
       <Parameter default="EN" name="pLocale" type="String"/>
     </Parameters>
     <Query>
-      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Answer, v.value*100 as Value
+      SELECT IF(n.name REGEXP 'European Union' OR n.name REGEXP 'EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Answer, v.value*100 as Value
       FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i, esener_answer_order eao
       WHERE n.id = p.nuts_id
       AND i.name = ${pQuestion}
@@ -757,7 +760,7 @@
       <Parameter default="EN" name="pLocale" type="String"/>
     </Parameters>
     <Query>
-      SELECT IF(n.name REGEXP 'European Union', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Answer, v.value*100 as Value
+      SELECT IF(n.name REGEXP 'European Union' OR n.name REGEXP 'EU27_2020', n.country_code, CONCAT(n.name, " (", n.country_code, ")")) as Country, t.text as Answer, v.value*100 as Value
       FROM nuts n, profile p, value v, translation t, split_answer sa, indicator i, esener_answer_order eao
       WHERE n.id = p.nuts_id
       AND i.name = ${pQuestion}
