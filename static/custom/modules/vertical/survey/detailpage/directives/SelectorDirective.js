@@ -1017,13 +1017,19 @@ define(function (require) {
 							scope.filters.country2 = 'AT';
 						}*/
 						if(scope.country == scope.country2){
-							$log.warn('ENTRA');
-							if(scope.country == 'EU28'){
+							if(scope.country == 'EU28' || scope.country == 'EU27_2020'){
 								scope.country2 = 'AT';
 								scope.filters.country2 = 'AT';
 							}else{
-								scope.country2 = 'EU28';
-								scope.filters.country2 = 'EU28';
+								if (scope.dataset == 2019)
+								{
+									scope.country2 = 'EU27_2020';
+									scope.filters.country2 = 'EU27_2020';
+								}
+								else{
+									scope.country2 = 'EU28';
+									scope.filters.country2 = 'EU28';
+								}								
 							}
 						}
 					}
