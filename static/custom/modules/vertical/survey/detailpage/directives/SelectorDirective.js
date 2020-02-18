@@ -153,7 +153,14 @@ define(function (require) {
 						var breadcrumb = "";
 						if (question.level == 2)
 						{
-							breadcrumb = '<span class="level1-bread">' + scope.i18n["L"+question.father] + '</span>' + " / " + '<span class="level2-bread">' + scope.i18n["L"+question.name3] + "</span>";
+							if (question.name2==undefined)
+							{
+								breadcrumb = '<span class="level1-bread">' + scope.i18n["L"+question.father] + '</span>' + " / " + '<span class="level2-bread">' + scope.i18n["L"+question.name3] + "</span>";	
+							}
+							else
+							{
+								breadcrumb = '<span class="level1-bread">' + scope.i18n["L"+question.father] + '</span>' + " / " + '<span class="level2-bread">' + scope.i18n["L"+question.name2] + "</span>";	
+							}							
 						}
 						else if (question.level == 3)
 						{
@@ -738,11 +745,17 @@ define(function (require) {
 							}else if(type == 'p'){
 								pQuestionID = 'MM358';
 							}
-						}else{
+						}else if (scope.dataset == 2014) {
 							if(type == 'n'){
 								pQuestionID = 'Q150_1';
 							}else if(type == 'p'){
 								pQuestionID = 'Q358';
+							}
+						} else {
+							if(type == 'n'){
+								pQuestionID = 'E3Q151_1';
+							}else if(type == 'p'){
+								pQuestionID = 'E3Q357';
 							}
 						}
 					}
