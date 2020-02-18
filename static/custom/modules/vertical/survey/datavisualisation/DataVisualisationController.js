@@ -72,19 +72,65 @@ define(function (require) {
             $scope.pTopic = topic;
 
             // Provisional because EU27 will change to EU28
-            $scope.pCountry = 'EU28';
+            $scope.pCountry = $scope.pIndicator=='2019'?'EU27_2020':'EU28';
 
             if($scope.pTopic == 'osh-management'){
-                $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM161':'Q250';
+                if ($scope.pIndicator == '2009')
+                {
+                    $scope.pQuestion = 'MM161';
+                }
+                else if ($scope.pIndicator == '2014')
+                {
+                    $scope.pQuestion = 'Q250';
+                }
+                else
+                {
+                    $scope.pQuestion = 'E3Q250';
+                }
                 $scope.pAnswer = 1;
             }else if($scope.pTopic == 'psychosocial-risks-and-their-management'){
-                $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM250':'Q300';
+                if ($scope.pIndicator == '2009')
+                {
+                    $scope.pQuestion = 'MM250';
+                }
+                else if ($scope.pIndicator == '2014')
+                {
+                    $scope.pQuestion = 'Q300';
+                }
+                else
+                {
+                    $scope.pQuestion = 'E3Q300';
+                }
                 $scope.pAnswer = 1;
             }else if($scope.pTopic == 'drivers-and-barriers'){
                 $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM171_1':'Q264_1';
+                if ($scope.pIndicator == '2009')
+                {
+                    $scope.pQuestion = 'MM171_1';
+                }
+                else if ($scope.pIndicator == '2014')
+                {
+                    $scope.pQuestion = 'Q264_1';
+                }
+                else
+                {
+                    $scope.pQuestion = 'E3Q262_1';
+                }
                 $scope.pAnswer = 44;
             }else if($scope.pTopic == 'worker-participation'){
                 $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM355all':'Q358';
+                if ($scope.pIndicator == '2009')
+                {
+                    $scope.pQuestion = 'MM355all';
+                }
+                else if ($scope.pIndicator == '2014')
+                {
+                    $scope.pQuestion = 'Q358';
+                }
+                else
+                {
+                    $scope.pQuestion = 'E3Q357';
+                }
                 $scope.pAnswer = 1;
             }
         }

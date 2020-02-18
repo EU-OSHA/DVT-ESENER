@@ -3,6 +3,7 @@
     <div class="content--intro--wrapper">
         <h1 data-ng-if="dataset == '2009'" class="title--section second-color" data-ng-bind="i18n.L101007"></h1>
         <h1 data-ng-if="dataset == '2014'" class="title--section second-color" data-ng-bind="i18n.L101008"></h1>
+        <h1 data-ng-if="dataset == '2019'" class="title--section second-color" data-ng-bind="i18n.L101079"></h1>
         <!-- Breadcrumb -->        
 		<p data-ng-bind-html="question.breadcrumb"></p>
         <ul class="question--by--question">
@@ -46,10 +47,10 @@
                             <option value="tr" data-ng-selected="pLocale == 'tr'">Türkçe</option>
                     </select>
                 </div>
-                <div data-ng-show="dataset == '2014'">
+                <div data-ng-show="dataset == '2014' || dataset == '2019'">
                     <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-change="changeLocale()" data-ng-model="pLocale">
                         <!-- Select esener 2014 languages -->
-                        <option value="al">Albania (AL)</option>
+                        <option value="al" data-ng-if="dataset=='2014'">Albania (AL)</option>
                         <option value="de_1">Austria (AT)</option>
                         <option value="fr_1">Belgium (FR)</option>
                         <option value="nl_1">Belgium (NL)</option>
@@ -78,9 +79,9 @@
                         <option value="lu">Luxembourg (LU)</option>
                         <option value="en_2">Malta (EN)</option>
                         <option value="mt">Malta (MT)</option>
-                        <option value="me">Montenegro (ME)</option>
+                        <option value="me" data-ng-if="dataset=='2014'">Montenegro (ME)</option>
                         <option value="nl">Netherlands (NL)</option>
-                        <option value="al_1">North Macedonia (AL)</option>
+                        <option value="al_1" data-ng-if="dataset=='2014'">North Macedonia (AL)</option>
                         <option value="mk">North Macedonia (MK)</option>
                         <option value="no">Norway (NO)</option>
                         <option value="pl">Poland (PL)</option>
@@ -94,7 +95,7 @@
                         <option value="de_3">Switzerland (DE)</option>
                         <option value="fr_3">Switzerland (FR)</option>
                         <option value="it_1">Switzerland (IT)</option>
-                        <option value="tr">Turkey (TR)</option>
+                        <option value="tr" data-ng-if="dataset=='2014'">Turkey (TR)</option>
                         <option value="en">United Kingdom (UK)</option>
                     </select>
                 </div>

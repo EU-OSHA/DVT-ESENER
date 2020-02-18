@@ -448,6 +448,16 @@ define(function (require) {
 										}
 									}
 								}
+								else if (scope.dataset == 2019)
+								{
+									if(elem[0] != scope.country2){
+										scope.countries.push({id:elem[0], literal:elem[1]});
+									}
+
+									if(elem[0] != scope.country){
+										scope.countriesCompareWith.push({id:elem[0], literal:elem[1]});
+									}	
+								}
 							}else if(scope.chart == 'national-bar-chart' && sector == 'cs'){
 								scope.countries.push({id:elem[0], literal:elem[1]});
 							}

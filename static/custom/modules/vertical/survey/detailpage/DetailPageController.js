@@ -25,8 +25,20 @@ define(function (require) {
 		$scope.datasetList = configService.getDatasets();
 		$scope.datasetESENER2009 = $scope.datasetList.ESENER2009;
 		$scope.datasetESENER2014 = $scope.datasetList.ESENER2014;
+		$scope.datasetESENER2019 = $scope.datasetList.ESENER2019;
 
-		$scope.actualDataset = ($stateParams.pIndicator == 2009)?$scope.datasetESENER2009:$scope.datasetESENER2014;
+		if ($stateParams.pIndicator == 2009)
+		{
+			$scope.actualDataset = $scope.datasetESENER2009;
+		}
+		else if ($stateParams.pIndicator == 2014)
+		{
+			$scope.actualDataset = $scope.datasetESENER2014;
+		}
+		else
+		{
+			$scope.actualDataset = $scope.datasetESENER2019;
+		}
 
 		// Literals / i18n
 		var i18n = ($stateParams.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($scope.pLocale);
@@ -43,6 +55,8 @@ define(function (require) {
 			$scope.titleShare='ESENER-1 | Safety and health at work - EU-OSHA';
 		}else if($stateParams.pIndicator == 2014){
 			$scope.titleShare='ESENER-2 | Safety and health at work - EU-OSHA';
+		}else if($stateParams.pIndicator == 2019){
+			$scope.titleShare='ESENER-3 | Safety and health at work - EU-OSHA';
 		}
 
 		var titleStructure = require('json!dvt/directives/title-items');
