@@ -526,17 +526,6 @@ define(function (require) {
 									id: elem[0],
 									name: elem[1]
 								});
-								/*if(elem[0] != 11){
-									list.push({
-										id: elem[0],
-										name: elem[1]
-									});
-								}else{
-									$scope.all = {
-										id: elem[0],
-										name: elem[1]
-									};
-								}*/
 							});
 
 							list.push($scope.all);
@@ -565,17 +554,6 @@ define(function (require) {
 									id: elem[0],
 									name: elem[1]
 								});
-								/*if(elem[0] != 14){
-									list.push({
-										id: elem[0],
-										name: elem[1]
-									});
-								}else{
-									$scope.all = {
-										id: elem[0],
-										name: elem[1]
-									};
-								}*/
 							});
 
 							//list.push($scope.all);

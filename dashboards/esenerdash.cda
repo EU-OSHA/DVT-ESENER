@@ -342,7 +342,7 @@
       CASE WHEN ${pYear}=2009 THEN FIELD (a.id, 14, 3, 2, 4, 18, 6, 7) END DESC,  
       CASE WHEN ${pYear}=2014 THEN FIELD (a.id, 14, 3, 2, 4, 18, 6, 7) END ASC, 
       CASE WHEN ${pYear}=2014 THEN a.id END DESC,
-      CASE WHEN ${pYear}=2019 THEN FIELD (a.id, 14, 3, 2, 4, 18, 6, 19, 20) END ASC;
+      CASE WHEN ${pYear}=2019 THEN FIELD (a.id, 14, 1, 3, 2, 4, 18, 6, 19, 20) END ASC;
     </Query>
   </DataAccess>
 
