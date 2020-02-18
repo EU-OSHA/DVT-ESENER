@@ -518,17 +518,10 @@ define(function (require) {
 							var list = [];
 							data.data.resultset.map(function (elem) 
 							{
-								if(elem[0] != 11){
-									list.push({
-										id: elem[0],
-										name: elem[1]
-									});
-								}else{
-									$scope.all = {
-										id: elem[0],
-										name: elem[1]
-									};
-								}
+								list.push({
+									id: elem[0],
+									name: elem[1]
+								});
 							});
 
 							list.push($scope.all);
@@ -553,17 +546,10 @@ define(function (require) {
 							var list = [];
 							data.data.resultset.map(function (elem) 
 							{
-								if(elem[0] != 14){
-									list.push({
-										id: elem[0],
-										name: elem[1]
-									});
-								}else{
-									$scope.all = {
-										id: elem[0],
-										name: elem[1]
-									};
-								}
+								list.push({
+									id: elem[0],
+									name: elem[1]
+								});
 							});
 
 							list.push($scope.all);
