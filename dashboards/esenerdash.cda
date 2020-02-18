@@ -41,6 +41,7 @@
         IF(ec.category IS NOT NULL,  eao.answer_id, NULL) as answer_id
       FROM esener_category ec, indicator i, esener_answer_order eao
       WHERE ec.year = ${pYear}
+      AND i.name NOT IN ("E3Q256f")
       AND (ec.category IS NULL OR ec.category = i.name)
       AND i.id = eao.indicator_id
       AND eao.order_position = 1
