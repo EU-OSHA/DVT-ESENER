@@ -11,9 +11,14 @@
                     <span data-ng-bind="i18n.L100001"></span>
                 </a>
             </li>
-            <li class="card--item">
+            <li class="card--item" data-ng-if="pIndicator!=2019">
                 <a href class="icon--card psychosocial-risk-icon" data-ng-click="changeTopic($event,'psychosocial-risks-and-their-management')">
-                    <span data-ng-bind=" pIndicator == 2019?i18n.L102017:i18n.L100009" ></span>
+                    <span data-ng-bind="i18n.L100009" ></span>
+                </a> 
+            </li>
+            <li class="card--item" data-ng-if="pIndicator==2019">
+                <a href class="icon--card psychosocial-risk-icon" data-ng-click="changeTopic($event,'emerging-risks-and-their-management')">
+                    <span data-ng-bind="i18n.L102017" ></span>
                 </a> 
             </li>
             <li class="card--item">

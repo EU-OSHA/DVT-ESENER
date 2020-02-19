@@ -384,8 +384,8 @@
       AND t.literal_id =sa.literal_id
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
       ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEUOnly} = 1 AND ${pDataset!=19} THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR')) ELSE n.id = p.nuts_id END
-      AND CASE WHEN ${pEUOnly} = 1 AND ${pDataset=19} THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR', 'UK')) ELSE n.id = p.nuts_id END
+      AND CASE WHEN ${pEUOnly} = 1 AND ${pDataset}!=19 THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR')) ELSE n.id = p.nuts_id END
+      AND CASE WHEN ${pEUOnly} = 1 AND ${pDataset}=19 THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR', 'UK')) ELSE n.id = p.nuts_id END
       AND t.language = ${pLocale}
       AND t2.literal_id = n.literal_id
       AND t2.language = ${pLocale}

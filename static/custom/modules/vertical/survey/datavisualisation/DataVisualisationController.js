@@ -97,10 +97,9 @@ define(function (require) {
                 {
                     $scope.pQuestion = 'Q300';
                 }
-                else
-                {
-                    $scope.pQuestion = 'E3Q300';
-                }
+                $scope.pAnswer = 1;
+            }else if($scope.pTopic == 'emerging-risks-and-their-management'){
+                $scope.pQuestion = "E3Q300";
                 $scope.pAnswer = 1;
             }else if($scope.pTopic == 'drivers-and-barriers'){
                 $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM171_1':'Q264_1';
