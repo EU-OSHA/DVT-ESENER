@@ -20,9 +20,7 @@ define(function (require) {
         // Literals / i18n
         var i18n = configService.getLiterals();
 
-        console.log(document.location.href.match('2009'));
-
-        // var country = document.location.href.match('2009')!=null?'EU27':'EU28';
+        var country = document.location.href.match('2019')==null?'EU28':'EU27_2020';
 
         $uiViewScrollProvider.useAnchorScroll();
 
@@ -76,122 +74,6 @@ define(function (require) {
             }
         });
 
-        /*$stateProvider.state('detailpage', {
-            url: "/:pLanguage/survey/detailpage/:pIndicator/:pTopic/:pChart/:pLocale/:pQuestion/:pActivityFilter/:pCompanyFilter/:pCountry1/:pCountry2",
-            params: {
-                pLanguage: {
-                    value: 'en',
-                    squash: 'en'
-                },
-                pIndicator: {
-                    value: '2009',
-                    squash: '2009'
-                },
-                pTopic: {
-                    value: 'osh-management',
-                    squash: 'osh-management'
-                },
-                pChart: {
-                    value: 'european-map',
-                    squash: 'european-map'
-                },
-                pLocale: {
-                    value: 'en',
-                    squash: 'en'
-                },
-                pQuestion: {
-                    value: 'MM161',
-                    squash: 'MM161'
-                },
-                pActivityFilter: {
-                    value: '8',
-                    squash: '8'
-                },
-                pCompanyFilter: {
-                    value: '0',
-                    squash: '0'
-                },
-                pCountry1: {
-                    value: 'AT',
-                    squash: true
-                },
-                pCountry2: {
-                    value: 'EU27',
-                    squash: true
-                },
-                pAnswer: {
-                    value: '1'
-                },
-                pEuOnly: {
-                    value: 0
-                }
-            },
-            views: {
-                "content-main": {
-                    templateUrl: configService.getVerticalTplPath("survey/detailpage", "detailpage"),
-                    controller: 'DetailPageController',
-                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/detailpage/DetailPageController', 'detailpage', 'DetailPageController')
-                }
-            },
-            metaTags: {
-                title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
-            }
-        });
-
-        $stateProvider.state('detailpageCountry', {
-            url: "/:pLanguage/survey/detailpagedetailpageCountry/:pIndicator/:pTopic/:pChart/:pLocale/:pQuestion/:pCountry/:pSectorSize",
-            params: {
-                pLanguage: {
-                    value: 'en',
-                    squash: 'en'
-                },
-                pIndicator: {
-                    value: '2009',
-                    squash: '2009'
-                },
-                pTopic: {
-                    value: 'osh-management',
-                    squash: 'osh-management'
-                },
-                pChart: {
-                    value: 'national-bar-chart',
-                    squash: 'national-bar-chart'
-                },
-                pLocale: {
-                    value: 'en',
-                    squash: 'en'
-                },
-                pQuestion: {
-                    value: 'MM161',
-                    squash: 'MM161'
-                },
-                pAnswer: {
-                    value: '1',
-                    squash: '1'
-                },
-                pCountry: {
-                    value: 'EU27',
-                    squash: 'EU27'
-                },
-                pSectorSize: {
-                    value: null,
-                    squash: true
-                }
-            },
-            views: {
-                "content-main": {
-                    templateUrl: configService.getVerticalTplPath("survey/detailpage", "detailpage"),
-                    controller: 'DetailPageController',
-                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/detailpage/DetailPageController', 'detailpage', 'DetailPageController')
-                }
-            },
-            metaTags: {
-                title: "Data Visualisation | ESENER",
-                //description: i18n.L4,
-            }
-        });*/
-
         $stateProvider.state('detailpage-european-map', {
             url: "/:pLanguage/survey/detailpage-european-map/:pIndicator/:pTopic/:pLocale/:pQuestion/:pSectorSize/:pActivityFilter/:pCompanyFilter/:pAnswer",
             params: {
@@ -236,8 +118,8 @@ define(function (require) {
                     squash: 'european-map'
                 },
                 pCountry: {
-                    value: 'EU28',
-                    squash: 'EU28'
+                    value: country,
+                    squash: country
                 },
                 pCountry2: {
                     value: 'AT',
@@ -300,8 +182,8 @@ define(function (require) {
                     squash: 'european-bar-chart'
                 },
                 pCountry: {
-                    value: 'EU28',
-                    squash: 'EU28'
+                    value: country,
+                    squash: country
                 },
                 pCountry2: {
                     value: 'AT',
@@ -354,8 +236,8 @@ define(function (require) {
                     squash: 'MM161'
                 },                
                 pCountry: {
-                    value: 'EU28',
-                    squash: 'EU28'
+                    value: country,
+                    squash: country
                 },                
                 pSectorSize: {
                     value: 'company-size',
@@ -433,8 +315,8 @@ define(function (require) {
                     squash: '11'
                 },
                 pCountry: {
-                    value: 'EU28',
-                    squash: 'EU28'
+                    value: country,
+                    squash: country
                 },
                 pCountry2: {
                     value: 'AT',
@@ -488,8 +370,8 @@ define(function (require) {
                     squash: 'MM161'
                 },
                 pCountry: {
-                    value: 'EU28',
-                    squash: 'EU28'
+                    value: country,
+                    squash: country
                 },
                 pChart: {
                     value: 'pie-chart',
