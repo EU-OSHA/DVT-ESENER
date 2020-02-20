@@ -60,6 +60,8 @@ define(function (require) {
                                 local = 'en';
                             }else if($scope.pIndicator == '2014' && $scope.pLanguage == 'en'){
                                 local = 'en_1';
+                            }else if($scope.pIndicator == '2019' && $scope.pLanguage == 'en'){
+                                local = 'en_1';
                             }
                             $state.go($state.current.name, {
                                 pLanguage: $scope.pLanguage,
