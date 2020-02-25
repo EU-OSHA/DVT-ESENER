@@ -1950,5 +1950,5 @@
   "L102351":"<p>Teie asutuse olukorda arvestades: kas psühhosotsiaalsete riskidega on lihtsam või keerulisem tegeleda kui muude riskidega või siin ei ole suurt erinevust? <br>1 Lihtsam  <br>2 Keerulisem  <br> 3 Ei ole suurt erinevust  <br> 8 Ei oska öelda  <br> 9 Ei vasta<br><br> Küsimus asutustele, kes teatavad psühhosotsiaalsetest riskiteguritest.</p>",
   "L102352":"Töökeskkonnavoliniku määramine",
   "L102353":"Töökeskkonnavoliniku määramine",
-  "L102354":"<p>Kas töökeskkonnavoliniku valivad töötajad või valib tööandja?<br>1 Lihtsam  <br>2 Keerulisem  <br> 3 Ei ole suurt erinevust  <br> 8 Ei oska öelda  <br> 9 Ei vasta<br><br>Küsimused asutustele, kes teatavad, et neil on töökeskkonnavolinikud.</p>"
+  "L102354":"<p>Kas töökeskkonnavoliniku valivad töötajad või valib tööandja?<br>1 Valivad töötajad  <br>2 Valib tööandja  <br> 8 Osaliselt valivad töötajad, osaliselt valib tööandja  <br> 9 Ei vasta<br><br>Küsimused asutustele, kes teatavad, et neil on töökeskkonnavolinikud.</p>"
 }
