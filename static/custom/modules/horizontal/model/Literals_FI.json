@@ -1950,5 +1950,5 @@
   "L102351":"<p>Kun ajattelette toimipaikkanne tilannetta: Onko psykososiaalisiin riskeihin puuttuminen helpompaa vai vaikeampaa kuin muihin riskeihin, vai eikö niiden välillä ole paljonkaan eroa?<br>1 Helpompaa  <br>2 Vaikeampaa  <br> 3 Ei paljonkaan eroa  <br> 8 EOS  <br> 9 Ei vastausta<br><br> Kysymys on esitetty toimipaikoille, jotka ovat ilmoittaneet psykososiaalisista riskitekijöistä.</p>",
   "L102352":"Työsuojeluvaltuutettujen nimittäminen",
   "L102353":"Työsuojeluvaltuutettujen nimittäminen",
-  "L102354":"<p>Valitsevatko työntekijät vai työnantaja työsuojeluvaltuutetun? <br>1 Helpompaa  <br>2 Vaikeampaa  <br> 3 Ei paljonkaan eroa  <br> 8 EOS  <br> 9 Ei vastausta<br><br>Kysymys on esitetty toimipaikoille, joissa on työsuojeluvaltuutettu.</p>"
+  "L102354":"<p>Valitsevatko työntekijät vai työnantaja työsuojeluvaltuutetun? <br>1 Työntekijät valitsevat  <br>2 Työnantaja valitsee  <br> 8 Osittain työntekijät valitsevat ja osittain työnantaja valitsee  <br> 9 Ei vastausta<br><br>Kysymys on esitetty toimipaikoille, joissa on työsuojeluvaltuutettu.</p>"
 }
