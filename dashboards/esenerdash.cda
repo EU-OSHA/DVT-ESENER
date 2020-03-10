@@ -86,7 +86,7 @@
       AND sa.literal_id = t.literal_id
       AND t.language = 'EN'
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
+      AND CASE WHEN ${pEUOnly} = 1 THEN (CASE WHEN ${pYear}=2019 THEN (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR', 'UK')) ELSE (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) END) ELSE ( n.country_code NOT IN ('EU28')) END
       ORDER BY country_code ASC, eao.order_position ASC;
     </Query>
   </DataAccess>
@@ -127,7 +127,7 @@
       AND t.language = 'EN'
       AND sas.id = ${pActivityFilter} AND scs.id = ${pCompanyFilter}
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'EU28', 'AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
+      AND CASE WHEN ${pEUOnly} = 1 THEN (CASE WHEN ${pYear}=2019 THEN (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR', 'UK')) ELSE (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) END) ELSE ( n.country_code NOT IN ('EU28')) END
       ORDER BY CASE WHEN ${pDataset} = 15 THEN FIELD('EU28', n.country_code) ELSE FIELD('EU28', n.country_code) END DESC, FIELD(n.country_code, 'AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR') ASC, n.country_code ASC, eao.order_position ASC;
     </Query>
   </DataAccess>
@@ -161,7 +161,7 @@
         AND v.indicator_id = i.id
         AND ROUND(v.value*100,1) = ${pMinValue}
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
+        AND CASE WHEN ${pEUOnly} = 1 THEN (CASE WHEN ${pYear}=2019 THEN (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR', 'UK')) ELSE (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) END) ELSE ( n.country_code NOT IN ('EU28')) END
         ORDER BY v.value ASC
       )UNION(
         SELECT CONCAT(ROUND(${pMinValue}+${pRange},1), '%'), COUNT(ROUND(v.value*100,1))
@@ -176,7 +176,7 @@
         AND v.indicator_id = i.id
         AND (ROUND(v.value*100,1) BETWEEN (${pMinValue} + 0.01) AND (${pMinValue} + ${pRange}))
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
+        AND CASE WHEN ${pEUOnly} = 1 THEN (CASE WHEN ${pYear}=2019 THEN (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR', 'UK')) ELSE (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) END) ELSE ( n.country_code NOT IN ('EU28')) END
         ORDER BY v.value ASC
       )UNION(
         SELECT CONCAT(ROUND(${pMinValue}+${pRange}*2, 1), '%'), COUNT(ROUND(v.value*100,1))
@@ -191,7 +191,7 @@
         AND v.indicator_id = i.id
         AND ROUND(v.value*100, 1) BETWEEN ((${pMinValue}+${pRange}) + 0.01) AND (${pMinValue}+${pRange}*2)
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
+        AND CASE WHEN ${pEUOnly} = 1 THEN (CASE WHEN ${pYear}=2019 THEN (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR', 'UK')) ELSE (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) END) ELSE ( n.country_code NOT IN ('EU28')) END
         ORDER BY v.value ASC
       )UNION(
         SELECT CONCAT(ROUND(${pMaxValue} - ${pRange},1), '%'), COUNT(ROUND(v.value*100,1))
@@ -206,7 +206,7 @@
         AND v.indicator_id = i.id
         AND ROUND(v.value*100,1) BETWEEN ((${pMinValue}+${pRange}*2) + 0.01) AND (${pMaxValue} - ${pRange})
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
+        AND CASE WHEN ${pEUOnly} = 1 THEN (CASE WHEN ${pYear}=2019 THEN (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR', 'UK')) ELSE (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) END) ELSE ( n.country_code NOT IN ('EU28')) END
         ORDER BY v.value ASC
       )UNION(
         SELECT CONCAT(ROUND(${pMaxValue},1), '%'), COUNT(ROUND(v.value*100,1))
@@ -221,7 +221,7 @@
         AND v.indicator_id = i.id
         AND ROUND(v.value*100,1) BETWEEN ((${pMaxValue} - ${pRange}) + 0.01) AND ${pMaxValue}
         AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-        AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) ELSE ( n.country_code NOT IN ('EU28')) END
+        AND CASE WHEN ${pEUOnly} = 1 THEN (CASE WHEN ${pYear}=2019 THEN (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR', 'UK')) ELSE (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) END) ELSE ( n.country_code NOT IN ('EU28')) END
         ORDER BY v.value ASC
       )
     </Query>
@@ -429,7 +429,7 @@
       AND t.literal_id =sa.literal_id
       AND CASE WHEN ${pSectorSize} = 'activity-sector' THEN (p.activity_sector_id = ${pActivityFilter} AND p.company_size_id IS NULL) 
       ELSE (p.company_size_id = ${pCompanyFilter} AND p.activity_sector_id IS NULL) END
-      AND CASE WHEN ${pEUOnly} = 1 THEN ( n.country_code NOT IN ('AL', 'CH', 'IS', 'ME', 'MK', 'NO', 'RS', 'TR')) ELSE n.id = p.nuts_id END
+      AND CASE WHEN ${pEUOnly} = 1 THEN (CASE WHEN ${pYear}=2019 THEN (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR', 'UK')) ELSE (n.country_code NOT IN ('EU28', 'CH', 'IS', 'NO', 'TR')) END) ELSE ( n.country_code NOT IN ('EU28')) END
       AND sas.id = ${pActivityFilter}
       AND scs.id = ${pCompanyFilter}
       AND t.language = ${pLocale}
