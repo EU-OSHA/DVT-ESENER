@@ -705,6 +705,13 @@ define(function (require) {
 						}
 					}
 
+					if(scope.chart == 'pie-chart' && scope.dataset == 2019){
+						if(pQuestionID.match('E3Q256gr') != undefined){
+							alert(scope.i18n.L100576);
+							return true;
+						}
+					}
+
 					return false;
 				}
 
@@ -1001,6 +1008,10 @@ define(function (require) {
 					}
 
 					if(scope.indicator == 'Q254gr' && chart == 'pie-chart'){
+						exception = true;
+					}
+
+					if(scope.indicator == 'E3Q256gr' && chart == 'pie-chart'){
 						exception = true;
 					}
 
