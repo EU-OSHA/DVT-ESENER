@@ -367,13 +367,13 @@ define(function (require) {
                         //hide underflow indicator
                         underflowMarkersVisible: false,
                         //plot background styles
-                        plotBg_fillStyle: plotsProvider.getPlotBgColor(),
+                        plotBg_fillStyle: 'white',
                         //plot grid styles
                         baseAxisBandSizeRatio: attributes.baseAxisBandSizeRatio || 0.9,
                         baseAxisGrid: attributes.baseAxisGrid || false,
                         baseAxisPosition: attributes.baseAxisPosition || "bottom",
                         orthoAxisGrid: attributes.orthoAxisGrid === "false" ? false : true, // Color axes
-                        axisGrid_strokeStyle: 'white',
+                        axisGrid_strokeStyle: 'gray',
                         axisGrid_lineWidth: 2,
                         axisBandSizeRatio: 1,
                         //show values
@@ -420,13 +420,14 @@ define(function (require) {
                         multipleLabelColors: attributes.multipleLabelColors === 'true' || false,
                         showEuroMask: attributes.showEuroMask === 'true' ? true : false,
                         leafContentOverflow: attributes.leafContentOverflow || 'auto',
-                        base_fillStyle: attributes.baseColor || "#f0f0f0",
-                        xAxis_fillStyle: attributes.axisStyle || '#f0f0f0',
+                        base_fillStyle: attributes.baseColor || "white",
+                        xAxis_fillStyle: attributes.axisStyle || 'white',
                         panel_fillStyle: attributes.panelColor || '',
                         axisLabelWordBreak: attributes.axisLabelWordBreak || 0,
                         //customTooltip: attributes.customTooltip || 0,
                         datasourceAndDates: scope.datasourceAndDates || [],
-                        customTooltip: attributes.customTooltip || 0
+                        customTooltip: attributes.customTooltip || 0,
+                        axisLabelWordBreak: attributes.axisLabelWordBreak || 0
                     }
 
                 };
@@ -497,6 +498,72 @@ define(function (require) {
                                  "<b>Country</b>: "   + atoms.category.label + "<br/>" + 
                                  "<b>Value</b>: " + atoms.value.label   + 
                                "</div>";*/
+                    }
+                }
+
+                if(definition.chartDefinition.axisLabelWordBreak == '1'){
+                    definition.chartDefinition.baseAxisTooltipFormat = function(scene){
+                        var atoms = scene.firstAtoms;
+                        var key = atoms.category.key;
+                        
+                        if(i18n['L'+key] != undefined){
+                            key = i18n['L'+key];
+                        }
+                        if(key.length > 25){
+                            return key;
+                        }                        
+                    }
+
+                    definition.chartDefinition.baseAxisLabel_call = function(){
+                        var panel = this.sign.panel;
+                        var ticks = this.sign.chart.axes.x.ticks;
+
+                        var label = '';
+                        var separator = -1;
+
+                        this.add(pv.Label)
+                            .textMargin(15)
+                            .text(function(scene) {
+                                var value = scene.firstAtoms.category.value;
+                                scope.fullText = scene.firstAtoms.category.label;
+
+                                if(i18n['L'+value] != undefined){
+                                    value = i18n['L'+value];
+                                    scene.firstAtoms.category.label = value;
+                                    scope.fullText = value;
+                                }
+                                
+                                if(scope.fullText.length > 21){ 
+                                    //var separator = scope.fullText.indexOf(' ', scope.fullText.length/2);
+                                    var separator = scope.fullText.indexOf(' ', 7);
+                                    scene.firstAtoms.category.label = scope.fullText.substring(0, separator);
+                                    scope.substring = scope.fullText.substring(separator+1);
+
+                                    //$log.warn(scope.substring.length);
+
+                                    if(scope.substring.length <= 12){
+                                        return scope.substring;
+                                    }else{
+                                        var separator2 = scope.substring.indexOf(' ', 7);
+                                        scope.substring2 = scope.substring.substring(0, 12);
+                                        return scope.substring2 + '...';
+                                    }
+                                    
+                                }else{
+                                    if(scope.fullText == value){
+                                        return ' ';
+                                    }
+                                    var index = value.indexOf(' ', 7);
+                                    //$log.warn(value.substring(index+1));
+                                    var x = value.substring(index+1);
+                                    //$log.warn(x.substring(0,10));
+                                    if(value.substring(index+1).length <= 15){
+                                        return value.substring(index+1);
+                                    }else{
+                                        return  x.substring(0,10)+'...';
+                                    }
+                                }
+                            });
                     }
                 }
 

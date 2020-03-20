@@ -412,10 +412,60 @@ define(function (require) {
                 description: 'ESENER | Safety and health at work - EU-OSHA'
             }
         });
+
+        $stateProvider.state('comparisons', {
+            url: "/:pLanguage/survey/comparisons/:pIndicator/:pTopic/:pLocale/:pSectorSize/:pQuestion/:pCountry/:pAnswer",
+            params: {
+                pLanguage: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pIndicator: {
+                    value: '2019',
+                    squash: '2019'
+                },
+                pTopic: {
+                    value: 'osh-management',
+                    squash: 'osh-management'
+                },
+                pLocale: {
+                    value: 'en',
+                    squash: 'en'
+                },
+                pQuestion: {
+                    value: 'E3Q151_1',
+                    squash: 'E3Q151_1'
+                },
+                pCountry: {
+                    value: 'EU27_2020',
+                    squash: 'EU27_2020'
+                },
+                pSectorSize: {
+                    value: 'company-size',
+                    squash: 'company-size'
+                },
+                pAnswer: {
+                    value: '1',
+                    squash: '1'
+                }
+            },
+            views: {
+                "content-main": {
+                    templateUrl: configService.getVerticalTplPath("survey/comparison", "comparison"),
+                    controller: 'ComparisonController',
+                    resolve: configService.dynamicallyRegisterController($controllerProvider, 'vertical/comparison/ComparisonController', 'comparison', 'ComparisonController')
+                }
+            },
+            metaTags: {
+                title: "Data comparison | ESENER",
+                description: 'ESENER | Safety and health at work - EU-OSHA'
+            }
+        });
     });
 
     module.directive('selector', require('vertical/detailpage/selector'));
     module.factory('DetailPageService',require('vertical/detailpage/services/DetailPageService'));
+    module.factory('ComparisonService',require('vertical/comparison/services/ComparisonService'));
     
     return module;
 });

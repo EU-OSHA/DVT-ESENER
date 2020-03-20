@@ -212,6 +212,10 @@
     requirePaths['vertical/detailpage/selector'] = verticalModules + '/survey/detailpage/directives/SelectorDirective' + suffix;
     requirePaths['vertical/detailpage/services/DetailPageService'] = verticalModules + '/survey/detailpage/services/DetailPageService'+suffix;
 
+    /* COMPARISON */
+    requirePaths['vertical/comparison/ComparisonController'] = verticalModules + '/survey/comparison/ComparisonController' + suffix;
+    requirePaths['vertical/comparison/services/ComparisonService'] = verticalModules + '/survey/comparison/services/ComparisonService'+suffix;
+
     /* ABOUT THE VISUALISATION TOOL */
     requirePaths['vertical/about-tool/AboutToolController'] = verticalModules + '/about-tool/AboutToolController' + suffix;
     requirePaths['vertical/about-tool/about-tool-module'] = verticalModules + '/about-tool/about-tool-module' + suffix;

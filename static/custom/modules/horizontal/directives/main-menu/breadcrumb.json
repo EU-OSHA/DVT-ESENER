@@ -69,5 +69,9 @@
     "detailpage-pie-chart":{
         "name":"L101077",
         "level":"2"
+    },
+    "comparisons":{
+        "name":"L101080",
+        "level":"2"
     }
 }
