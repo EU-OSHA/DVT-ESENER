@@ -60,17 +60,18 @@
         ec.father_id,
         ec.name_1_literal_id AS name_1,
         IF(ec.category IS NOT NULL, i.id, NULL) as indicator_id,
-        ec.category_order,
+        ec.comparison_category_order,
         IF(ec.category IS NOT NULL,  eao.answer_id, NULL) as answer_id
       FROM esener_category ec, indicator i, esener_answer_order eao, esener_indicator_comparison eic
       WHERE ec.year = 2019
       AND i.name NOT IN ("E3Q256gr")
       AND (ec.category IS NULL OR ec.category = i.name)
+      AND ec.comparison_category_order IS NOT NULL
       AND i.id = eao.indicator_id
       AND i.id=eic.category_2019
       AND eic.comparison=1
       AND eao.order_position = 1
-      ORDER BY ec.category_order ASC;
+      ORDER BY ec.comparison_category_order ASC;
     </Query>
   </DataAccess>
 
@@ -284,6 +285,29 @@
       LEFT JOIN esener_category ec2 ON ec1.father_id=ec2.id
       LEFT JOIN esener_category ec3 ON ec.previous_id=ec3.id
       LEFT JOIN esener_category ec4 ON ec.next_id=ec4.id
+      LEFT JOIN esener_category ec5 ON ec3.father_id = ec5.id
+      LEFT JOIN esener_category ec6 ON ec4.father_id = ec6.id
+      INNER JOIN indicator i ON i.name = ec.category
+      INNER JOIN esener_answer_order eao ON i.id = eao.indicator_id AND eao.order_position = 1
+      WHERE ec.category=${pQuestion};
+    </Query>
+  </DataAccess>
+
+  <!-- Get the information for the current category selected and the previous and next one for the question selector in the comparison page -->
+  <DataAccess access="public" connection="dvt_conn" id="getQuestionSelectorDataComparisons" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="E3Q151_1" name="pQuestion" type="String" />
+    </Parameters>
+    <Query>
+      SELECT ec.LEVEL AS LEVEL, ec3.category AS previousID, ec3.name_3_literal_id AS previousName, ec.name_2_literal_id AS NAME2, ec.name_3_literal_id AS NAME3, ec.bottom_text_literal_id AS bottomText, ec4.category AS nextID, ec4.name_3_literal_id AS nextName, ec1.name_2_literal_id AS father, ec2.name_2_literal_id AS grandfather, IF(ec3.category IS NOT NULL,  eao.answer_id, NULL) as answer_id,
+      ec5.id as previousFatherID, ec5.name_1_literal_id as previousFatherName, ec5.level as previousLevel, ec6.id as nextFatherID, ec6.name_1_literal_id as nextFatherName, ec6.level as nextLevel
+      FROM esener_category ec
+      INNER JOIN esener_category ec1 ON ec.father_id = ec1.id
+      LEFT JOIN esener_category ec2 ON ec1.father_id=ec2.id
+      LEFT JOIN esener_category ec3 ON ec.comparison_previous_id=ec3.id
+      LEFT JOIN esener_category ec4 ON ec.comparison_next_id=ec4.id
       LEFT JOIN esener_category ec5 ON ec3.father_id = ec5.id
       LEFT JOIN esener_category ec6 ON ec4.father_id = ec6.id
       INNER JOIN indicator i ON i.name = ec.category
@@ -876,7 +900,7 @@
       <Parameter default="EN" name="pLanguage" type="String"/>
     </Parameters>
     <Query>
-      SELECT IF (i.name LIKE "E3Q%", 2019, 2014) AS YEAR, t.text AS split, v.value*100 AS value
+      SELECT IF (i.name LIKE "E3Q%", 2019, 2014) AS Year, t.text AS Sector, v.value*100 AS Value
       FROM value v 
       INNER JOIN indicator i ON v.indicator_id=i.id
       INNER JOIN profile p ON v.profile_id=p.id
@@ -904,7 +928,7 @@
       <Parameter default="EN" name="pLanguage" type="String"/>
     </Parameters>
     <Query>
-      SELECT IF (i.name LIKE "E3Q%", 2019, 2014) AS YEAR, t.text AS split, v.value*100 AS value
+      SELECT IF (i.name LIKE "E3Q%", 2019, 2014) AS Year, t.text AS Size, v.value*100 AS Value
       FROM value v 
       INNER JOIN indicator i ON v.indicator_id=i.id
       INNER JOIN profile p ON v.profile_id=p.id

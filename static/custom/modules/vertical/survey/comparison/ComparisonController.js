@@ -76,7 +76,6 @@ define(function (require) {
 
 		var resolution = $(window).width();
 		//$scope.heightNationalBarChart = $scope.pQuestion == 'Q254gr' ? 250: 100;
-		$scope.angle = resolution > 768 ? 1 : 0;
 		$scope.pieChartHeight = resolution > 600 ? 600 : 400;
 		$scope.pieChartFont =  resolution > 600 ? '16px OpenSans-bold' : '14px OpenSans-bold';
 
@@ -175,7 +174,7 @@ define(function (require) {
 		});
 
 		// Load data to show texts for the selected question
-		dataService.getQuestionSelectorData($scope.pQuestion).then(function(res) {
+		dataService.getQuestionSelectorDataComparisons($scope.pQuestion).then(function(res) {
 			//Check if the number of results is 1
 			var data = res.data.resultset;
 			if (data.length == 1)
@@ -239,7 +238,6 @@ define(function (require) {
 					nextFatherName: question.nextFatherName,
 					nextLevel: question.nextLevel
 				}
-				//$log.warn(scope.question);
 			}
 		});
 		/******************************* END DATA LOAD ********************************/

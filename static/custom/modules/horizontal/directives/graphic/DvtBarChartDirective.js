@@ -426,8 +426,7 @@ define(function (require) {
                         axisLabelWordBreak: attributes.axisLabelWordBreak || 0,
                         //customTooltip: attributes.customTooltip || 0,
                         datasourceAndDates: scope.datasourceAndDates || [],
-                        customTooltip: attributes.customTooltip || 0,
-                        axisLabelWordBreak: attributes.axisLabelWordBreak || 0
+                        customTooltip: attributes.customTooltip || 0
                     }
 
                 };
@@ -503,12 +502,15 @@ define(function (require) {
 
                 if(definition.chartDefinition.axisLabelWordBreak == '1'){
                     definition.chartDefinition.baseAxisTooltipFormat = function(scene){
+                        // Get the literal ID for the tooltip
                         var atoms = scene.firstAtoms;
                         var key = atoms.category.key;
                         
+                        // Get the text correspondent to the Literal ID
                         if(i18n['L'+key] != undefined){
                             key = i18n['L'+key];
                         }
+                        // If the text's length is shorter than 25 characters, the tooltip won't be displayed
                         if(key.length > 25){
                             return key;
                         }                        
@@ -521,9 +523,20 @@ define(function (require) {
                         var label = '';
                         var separator = -1;
 
-                        this.add(pv.Label)
+                        this.text(function(scene){
+                                var current = scene.firstAtoms.category.label;
+                                var text = current;
+
+                                if (current.length > 21)
+                                {
+                                    var index = current.indexOf(' ', 7);
+                                    text = current.substring(0,index);
+                                }
+                                return text;
+                            }).add(pv.Label)
                             .textMargin(15)
                             .text(function(scene) {
+                                // Get the literal ID correspondent to the label
                                 var value = scene.firstAtoms.category.value;
                                 scope.fullText = scene.firstAtoms.category.label;
 
@@ -533,10 +546,12 @@ define(function (require) {
                                     scope.fullText = value;
                                 }
                                 
+                                // The text needs to be placed in two rows
                                 if(scope.fullText.length > 21){ 
                                     //var separator = scope.fullText.indexOf(' ', scope.fullText.length/2);
                                     var separator = scope.fullText.indexOf(' ', 7);
                                     scene.firstAtoms.category.label = scope.fullText.substring(0, separator);
+                                    scene.group.label = scope.fullText.substring(0, separator);
                                     scope.substring = scope.fullText.substring(separator+1);
 
                                     //$log.warn(scope.substring.length);
@@ -548,7 +563,7 @@ define(function (require) {
                                         scope.substring2 = scope.substring.substring(0, 12);
                                         return scope.substring2 + '...';
                                     }
-                                    
+                                // The text fits in one row
                                 }else{
                                     if(scope.fullText == value){
                                         return ' ';
@@ -560,10 +575,77 @@ define(function (require) {
                                     if(value.substring(index+1).length <= 15){
                                         return value.substring(index+1);
                                     }else{
-                                        return  x.substring(0,10)+'...';
+                                        return  x.substring(0,12)+'...';
                                     }
                                 }
                             });
+
+
+
+
+                        /*this.add(pv.Label)
+                            .textMargin(28)
+                            .text(function(scene) {
+                                var value = scene.firstAtoms.category.value;
+                                scope.fullText = scene.firstAtoms.category.label;
+
+                                if(i18n['L'+value] != undefined){
+                                    value = i18n['L'+value];
+                                    scene.firstAtoms.category.label = value;
+                                    scope.fullText = value;
+                                }
+
+                                if(scope.fullText.length >= 50){
+                                    if(scope.fullText.length > 25){ 
+                                        var separator = scope.fullText.indexOf(' ', 15);
+                                        scene.firstAtoms.category.label = scope.fullText.substring(0, separator);
+                                        scope.substring = scope.fullText.substring(separator+1);
+
+                                        if(scope.substring.length > 25){
+                                            var separator2 = scope.substring.indexOf(' ', 15);
+                                            scope.substring2 = scope.substring.substring(separator2+1);
+
+                                            if(scope.substring2.length < 25){
+                                                return scope.substring2;
+                                            }else{
+                                                var separator3 = scope.substring2.indexOf(' ', 15);
+                                                scope.substring3 = scope.substring2.substring(0, separator3);
+                                                return scope.substring3;
+                                            }                         
+                                        }
+                                    }
+                                }
+                          });
+
+                        this.add(pv.Label)
+                            .textMargin(41)
+                            .text(function(scene) {
+                                var value = scene.firstAtoms.category.value;
+                                scope.fullText = scene.firstAtoms.category.label;
+
+                                if(i18n['L'+value] != undefined){
+                                    value = i18n['L'+value];
+                                    scene.firstAtoms.category.label = value;
+                                    scope.fullText = value;
+                                }
+
+                                if(scope.fullText.length > 25){
+                                    var separator = scope.fullText.indexOf(' ', 15);
+                                    scene.firstAtoms.category.label = scope.fullText.substring(0, separator);
+                                    scope.substring = scope.fullText.substring(separator+1);
+
+                                    if(scope.substring.length > 25){
+                                        var separator2 = scope.substring.indexOf(' ', 15);
+                                        scope.substring2 = scope.substring.substring(separator2+1);
+                                        var separator3 = scope.substring2.indexOf(' ', 15);
+                                        scope.substring3 = scope.substring2.substring(separator3+1);
+                                        if(scope.fullText.length > 75){
+                                            return scope.substring3;
+                                        } 
+                                    }
+                                }
+                            });
+                        */
                     }
                 }
 
@@ -652,7 +734,7 @@ define(function (require) {
                 if (!!attributes.angle) {
                     definition.chartDefinition.baseAxisLabel_textAngle = (attributes.angle==1)?-Math.PI / 3:-Math.PI / 6.5;
 
-                    if (definition.chartDefinition.orientation == 'horizontal') {
+                    if (definition.chartDefinition.orientation == 'horizontal' || attributes.angle==0) {
                         definition.chartDefinition.baseAxisLabel_textAngle = 0;
                     }else{
                         definition.chartDefinition.baseAxisLabel_textAngle = 4.7;

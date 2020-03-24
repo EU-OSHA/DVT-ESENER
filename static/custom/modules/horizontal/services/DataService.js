@@ -97,6 +97,19 @@ define(function () {
 
             /**
              * @ngdoc method
+             * @name dvt.configModule.DataService#getQuestionSelectorDataComparisons
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns the data necessary for the question selector
+             */
+            getQuestionSelectorDataComparisons: function (pQuestion) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getQuestionSelectorDataComparisons" + "&parampQuestion=" + pQuestion;
+                $log.debug('getQuestionSelectorDataComparisons url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
              * @name dvt.configModule.DataService#getAllQuestions
              * @methodOf dvt.configModule.DataService
              * @description
