@@ -107,24 +107,20 @@ define(function (require) {
 
 		var questionOrFilterChanged = false;
 
+		// Get the exceptions based on the questions
+		$scope.pExceptions = "19;20";
+
+
+
 		//DASHBOARD PARAMETERS
 	    $scope.dashboard = {
 	      	parameters: {
 		        'pQuestion': $scope.pQuestion,
-		        'pYear': $scope.pIndicator,
-		        'pChart': $scope.pChart,
-		        'pTopic': $scope.pTopic,
+		        'pAnswer':$scope.pAnswer,
+		        'pCountry':$scope.pCountry,
 		        'pLocale': $scope.pLocale,
-		        'pFilters': {
-			        'activitySector': $scope.pActivityFilter,
-			        'establishmentSize': $scope.pCompanyFilter,
-			        'answer': $scope.answer,
-			        'country': $scope.pCountry,
-			        'sectorSize': $scope.pSectorSize,
-			        'euOnly': $scope.nonEU,
-			        'country2': $scope.pCountry2,
-			        'sortBy': $scope.sortBy
-		        }
+		        'pLanguage':$scope.pLocale,
+		        'pExceptions':$scope.pExceptions
 	      	}
 	    };
 
