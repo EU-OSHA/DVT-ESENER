@@ -108,7 +108,100 @@ define(function (require) {
 		var questionOrFilterChanged = false;
 
 		// Get the exceptions based on the questions
-		$scope.pExceptions = "19;20";
+		if ($scope.pSectorSize=="activity-sector")
+		{
+			$scope.pExceptions = "19;20";
+			// Agriculture, forestry and fishing
+			if ((["CH","MK","NO","RS","AT","BE","CY","HR","IE","LT","LU","MT","SE"].indexOf($scope.pCountry) > -1)
+				|| (["IS","EE","EL","FI","FR","SK"].indexOf($scope.pCountry) > -1 && ["E3Q251","E3Q252_1","E3Q252_3","E3Q252_4","E3Q252_5","E3Q252_6","E3Q256f","E3Q257","E3Q258"].indexOf($scope.pQuestion) > -1)
+				|| ($scope.pQuestion=="E3Q352" && ["IS","BG","DE","EE","EL","FI","FR","LV","NL","PT","SK"].indexOf($scope.pCountry) > -1)
+				|| ($scope.pQuestion=="E3Q355_2" && ["BG","DE","EE","EL","FI","FR","LV","NL","PT","SI","SK"].indexOf($scope.pCountry) > -1)
+				|| ($scope.pCountry != "EU27_2020" && ["E3Q252_2","E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4","E3Q300","E3Q301","E3Q302","E3Q354","E3Q355_4"].indexOf($scope.pQuestion) > -1))
+			{
+				$scope.pExceptions = $scope.pExceptions + ";1";
+			}
+			// Construction, waste management, water and electricity supply
+			if (($scope.pQuestion == "E3Q252_2" && ["IS","MK","BG","MT","SK"].indexOf($scope.pCountry) > -1)
+				|| (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI","MK","NO","RS","CZ","DK","EE","ES","HR","HU","IE","IT","LT","LV","MT","NL","PL","SE","SK","UK"].indexOf($scope.pCountry) > -1)
+				|| ($scope.pCountry="MT" && ["E3Q300","E3Q301","E3Q354"].indexOf($scope.pQuestion) > -1)
+				|| ($scope.pQuestion == "E3Q302" && ["IS","MK","BG","MT","SK","EL","LT","LV"].indexOf($scope.pQuestion) > -1)
+				|| ($scope.pQuestion == "E3Q355_2" && ["BG","MT","MK"].indexOf($scope.pQuestion) > -1))
+			{
+				$scope.pExceptions = $scope.pExceptions + ";3";
+			}
+			// Manufacturing
+			if ((["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI","MK","NO","RS","DK","EE","HR","IE","IT","LU","LV","MT","PL","SE"].indexOf($scope.pCountry) > -1)
+				|| ($scope.pQuestion=="E3Q302" && ["LT","LU"].indexOf($scope.pCountry) > -1))
+			{
+				$scope.pExceptions = $scope.pExceptions + ";2";
+			}
+			// Trade, transport, food/accommodation and recreation activities
+			if (($scope.pQuestion=="E3Q252_2" && ["IS","MK","BG","CY","EE","EL","LT","MT","RO","SK"].indexOf($scope.pQuestion) > -1)
+				|| (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI"].indexOf($scope.pCountry) > -1))
+			{
+				$scope.pExceptions = $scope.pExceptions + ";4";	
+			}
+			// IT, Finance, Real estate and other technichal scientific or personal service activities
+			if (($scope.pQuestion=="E3Q252_2" && ["IS","MK","BG","CY","EE","EL","LT","MT","RO","SK"].indexOf($scope.pQuestion) > -1)
+				|| (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI"].indexOf($scope.pCountry) > -1)
+				|| ($scope.pCountry=="MK" && $scope.pQuestion=="E3Q302")
+				|| ($scope.pQuestion=="E3Q355_2" && ["IS","MK","BG","CY","LT","MT"].indexOf($scope.pCountry) > -1)
+				|| ($scope.pQuestion=="E3Q355_4" && ["MK","BG","CY","RO"].indexOf($scope.pCountry) > -1))
+			{
+				$scope.pExceptions = $scope.pExceptions + ";18";
+			}
+			// Public administration
+			if ((["IS","MK","CY","EL","HR","LT","LU","MT"].indexOf($scope.pCountry) > -1 && ["E3Q251","E3Q252_1","E3Q252_2","E3Q252_3","E3Q252_4","E3Q252_5","E3Q252_6","E3Q256f","E3Q257","E3Q258"].indexOf($scope.pQuestion) > -1)
+				|| ($scope.pQuestion=="E3Q252_2" && ["RS","BG","EE","HU","LV","RO","SI","SK"].indexOf($scope.pCountry) > -1)
+				|| (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI","MK","NO","DK","EE","ES","FI","IE","IT","LV","NL","PL","SE","UK"].indexOf($scope.pCountry) > -1)
+				|| (["E3Q300","E3Q301"].indexOf($scope.pQuestion) > -1 && ["LT","MT"].indexOf($scope.pCountry) > -1)
+				|| ($scope.pQuestion=="E3Q302" && ["MK","HR","LT","LU","MT","SI"].indexOf($scope.pCountry) > -1)
+				|| ($scope.pQuestion=="E3Q354" && ["RS","EL","HR","LT","SI"].indexOf($scope.pCountry) > -1)
+				|| ($scope.pQuestion=="E3Q355_2" && ["IS","MK","RS","BG","CY","EE","HR","LT","LV","MT","RO","SI","SK"].indexOf($scope.pCountry) > -1)
+				|| ($scope.pQuestion=="E3Q355_4" && ["IS","MK","RS","BG","EE","HR","LT","MT","RO","SI","SK"].indexOf($scope.pCountry) > -1))
+			{
+				$scope.pExceptions = $scope.pExceptions + ";6";
+			}
+			// Education, human health and social work activities
+			if ((["MK","CY","MT"].indexOf($scope.pCountry) > -1 && ["E3Q252_2","E3Q355_2","E3Q355_4"].indexOf($scope.pQuestion) > -1)
+				|| ($scope.pCountry=="CY" && $scope.pQuestion=="E3Q354")
+				|| (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI","RS","DK","HR","IT","LV","MT"].indexOf($scope.pCountry) > -1))
+			{
+				$scope.pExceptions = $scope.pExceptions + ";7";
+			}	
+		}
+		else
+		{
+			$scope.pExceptions = "";
+			// 5 to 9 Employees
+			if (($scope.pQuestion == "E3Q252_2" && ["MK","BG","LU","MT","SK"].indexOf($scope.pCountry) > -1)
+				|| (["E3Q300","E3Q301","E3Q302"].indexOf($scope.pQuestion) > -1)
+				|| ($scope.pCountry == "MT" && $scope.pQuestion=="E3Q354")
+				|| ($scope.pQuestion == "E3Q355_2" && ["MT","BG"].indexOf($scope.pCountry) > -1))
+			{
+				$scope.pExceptions = "7";
+			}
+			// 10 to 49 employees
+			if (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","SI"].indexOf($scope.pCountry) > -1)
+			{
+				$scope.pExceptions = $scope.pExceptions + $scope.pExceptions.length==0?"8":";8";
+			}
+			// 50 to 249 employees
+			if (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","DK","EE","ES","HR","IT","LV","RO","SE","SI","UK"].indexOf($scope.pCountry) > -1)
+			{
+				$scope.pExceptions = $scope.pExceptions + $scope.pExceptions.length==0?"14":";14";
+			}
+			// 250 or more employees
+			if ((["MK","NO","CY"].indexOf($scope.pCountry) > -1 && "E3Q252_2" == $scope.pQuestion)
+				|| ($scope.pCountry != "EU27_2020" && ["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1)
+				|| ($scope.pQuestion == "E3Q302" && ["MK","CY"].indexOf($scope.pCountry) > -1)
+				|| (["E3Q355_2","E3Q355_4"].indexOf($scope.pQuestion) > -1 && ["CY","IS","MK"].indexOf($scope.pCountry) > -1))
+			{
+				$scope.pExceptions = $scope.pExceptions + $scope.pExceptions.length==0?"10":";10";
+			}
+		}
+		
+
 
 
 

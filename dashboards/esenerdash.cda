@@ -927,6 +927,7 @@
       <Parameter default="1" name="pAnswer" type="Numeric"/>
       <Parameter default="AT" name="pCountry" type="String"/>
       <Parameter default="EN" name="pLanguage" type="String"/>
+      <Parameter default="" name="pExceptions" type="IntegerArray"/>
     </Parameters>
     <Query>
       SELECT IF (i.name LIKE "E3Q%", 2019, 2014) AS Year, t.text AS Size, v.value*100 AS Value
@@ -939,6 +940,7 @@
       WHERE i.name IN (${pQuestion}, (SELECT i2.name FROM esener_indicator_comparison eic INNER JOIN indicator i ON eic.category_2019=i.id INNER JOIN indicator i2 ON eic.category_2014=i2.id WHERE i.name=${pQuestion}))
       AND p.answer_id=${pAnswer}
       AND n.country_code=${pCountry}
+      AND cs.id NOT IN (${pExceptions})
       AND t.language=${pLanguage}
       ORDER BY i.name ASC,
       FIELD (cs.id, 7,8,14,10,11) ASC;
