@@ -797,6 +797,7 @@
       AND ec.category = i.name
       AND ec.name_1_literal_id = t.literal_id
       AND t.language = ${pLocale}
+      AND ec.category_order IS NOT NULL
       ORDER BY ec.category_order ASC;
     </Query>
   </DataAccess>
