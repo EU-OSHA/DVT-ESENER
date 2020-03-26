@@ -4,7 +4,7 @@
 <div class="container-fluid detail--page--wrapper">
     <section class="col-content questions--list--wrapper">
       <div class="filter--questions--group--wrapper">
-        <p data-ng-click="openAccordion($index,$event)" >Select a question</p>
+        <p data-ng-click="openAccordion($index,$event)" data-ng-bind="i18n.L100663"></p>
         <div class="filter--questions--group">
           <dvt-select data-ng-cloak ng-model="pQuestion" parameter="pQuestion" params="[['pYear', 'pYear'], ['pLocale', pLocale]]"
             listen-to="['pYear', 'pQuestion']" query="getQuestions" cda="{{cdaEsenerDash}}" data-ng-change="changeToQuestion(pQuestion)" class="filter--questions--wrapper">
