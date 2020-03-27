@@ -22,7 +22,6 @@
 	.questions--list--wrapper, 
 	.disabled, 
 	.content--lang--wrapper, 
-	.col-img, 
 	.social--network--nav{
 	  display: none !important;
 	}
@@ -125,10 +124,20 @@
 		}		
 	}
 	.grid-2{
-		margin-top: 2rem;
+		margin: 1rem 0;
+		.col-img{
+			a{
+				text-align: center;
+				img{
+					//width: 50%;
+			    margin-top: 2rem;
+				}				
+			}
+		}
 		.col-content{
 			.title--section{
 				margin: 2rem 0;
+				padding-top:2rem !important;
 			}
 		}
 	}
@@ -164,10 +173,16 @@
 			}
 		}
 	}
+	.background-main-light{
+		.grid-2{
+			display: flex;
+			flex-direction: row;
+		}
+	}
 	.background-orange-light{
 		.grid-2{
 			display: flex;
-			flex-direction: column-reverse;
+			flex-direction: row;
 		}
 	}
 	.title-section{
