@@ -598,7 +598,13 @@ and (max-width : 1024px)
 and (orientation : portrait) { 
 	.grid-2{
 	  .col-img{
+	  	> div {
+	  		img{
+	  			padding-top: 2.5rem;
+	  		}
+	  	}
 	    a{
+	    	padding-top: 2rem;
 	      img{
 	        &:hover{
 	        }
