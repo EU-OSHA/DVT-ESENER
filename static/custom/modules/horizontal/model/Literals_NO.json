@@ -1950,5 +1950,7 @@
   "L102351":"<p>Med tanke på situasjonen i din avdeling: Er det enklere eller vanskeligere å ta opp psykososiale risikoer enn andre risikoer, eller er det ingen stor forskjell?<br>1 Enklere  <br>2 Vanskeligere  <br> 3 Ingen stor forskjell  <br> 8 Vet ikke  <br> 9 Intet svar<br><br> Spørsmål stilt til organisasjoner som oppgir å ha psykososiale risikofaktorer. </p>",
   "L102352":"Valg av verneombud",
   "L102353":"Valg av verneombud",
-  "L102354":"<p>Er verneombudene valgt av arbeidstakerne eller av arbeidsgiver?<br>1 Valgt av arbeidstakerne  <br>2 Valgt av arbeidsgiver  <br> 8 Delvis valgt av arbeidstakerne, delvis valgt av arbeidsgiver  <br> 9 Intet svar<br><br>Spørsmål stilt til organisasjoner som oppgir å ha verneombud.</p>"
+  "L102354":"<p>Er verneombudene valgt av arbeidstakerne eller av arbeidsgiver?<br>1 Valgt av arbeidstakerne  <br>2 Valgt av arbeidsgiver  <br> 8 Delvis valgt av arbeidstakerne, delvis valgt av arbeidsgiver  <br> 9 Intet svar<br><br>Spørsmål stilt til organisasjoner som oppgir å ha verneombud.</p>",
+  "L102355":"Det finnes forskjellige typer risikoer og farer, avhengig av typen arbeid. Angi for hver av følgende risikofaktorer om de er til stede eller ikke på arbeidsplassen din, uavhengig om de for tiden er under kontroll og uavhengig av antall arbeidstakere de rammer. Fare for ulykker med maskiner eller håndverktøy<br><br>(1) Ja <br>(2) Nei <br>(9) Intet svar ",
+  "L102356":"Hvilke av følgende typer arbeidstakerrepresentasjon har dere på arbeidsplassen? Bedriftsutvalg<br><br>(1) Ja <br>(2) Nei <br>(9) Intet svar <br><br>Spørsmål stilt til alle, størrelsen avhenger av nasjonale terskler for disse organene."
 }

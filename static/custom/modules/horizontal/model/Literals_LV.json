@@ -1950,5 +1950,7 @@
   "L102351":"<p>Ņemot vērā situāciju jūsu uzņēmumā (iestādē)/ uzņēmuma (iestādes) vienībā: vai psihosociālie riski ir vieglāk vai grūtāk novēršami nekā citi riski, vai arī nav lielas atšķirības?<br>1 Vieglāk novēršami  <br>2 Grūtāk novēršami  <br> 3 Nav lielas atšķirības  <br> 8 Nezina  <br> 9 Nav atbildes<br><br> Jautājums, kas uzdots tām iestādēm, kuras ziņo par psihosociālā riska faktoriem.</p>",
   "L102352":"Uzticības personas iecelšana",
   "L102353":"Uzticības personas iecelšana",
-  "L102354":"<p>Vai uzticības personas ievēl darbinieki vai tās izvēlas darba devējs?<br>1 Ievēl darbinieki  <br>2 Izvēlas darba devējs  <br> 8 Daļēji ievēl darbinieki, daļēji izvēlas darba devējs  <br> 9 Nav atbildes<br><br>Jautājums, kas uzdots tiem uzņēmumiem, kuri ziņo par uzticības personu esamību.</p>"
+  "L102354":"<p>Vai uzticības personas ievēl darbinieki vai tās izvēlas darba devējs?<br>1 Ievēl darbinieki  <br>2 Izvēlas darba devējs  <br> 8 Daļēji ievēl darbinieki, daļēji izvēlas darba devējs  <br> 9 Nav atbildes<br><br>Jautājums, kas uzdots tiem uzņēmumiem, kuri ziņo par uzticības personu esamību.</p>",
+  "L102355":"Atkarībā no darba veida pastāv dažāda veida riski un draudi. Lūdzu, pasakiet, kuri no tālāk nosauktajiem riska faktoriem pastāv jūsu uzņēmumā/iestādē neatkarīgi no tā, vai šie riski tiek kontrolēti, un neatkarīgi no darbinieku skaita, ko tie ietekmē. Negadījumu risks darbā ar iekārtām vai rokas instrumentiem<br><br>(1) Jā <br>(2) Nē <br>(9) Nav atbildes",
+  "L102356":"Kāda veida darbinieku pārstāvniecības formas ir jūsu uzņēmumā/iestādē? Uzņēmuma padome<br><br>(1) Jā <br>(2) Nē <br>(9) Nav atbildes<br><br>Jautājumi, kas uzdoti visiem, lielums atkarīgs no valstu robežvērtībām attiecībā uz šīm organizācijām."
 }
