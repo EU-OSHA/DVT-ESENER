@@ -1846,3 +1846,16 @@ width:auto!important;
 body{
   -ms-overflow-style: scrollbar;
 }
+svg:not(:root) {
+  overflow: visible !important; 
+}
+
+.survey--map--block .map--block .dvt--map--block svg, 
+.survey--map--block .map--block div[id^='dvt_map'] svg {
+    z-index: 100000 !important;
+    overflow: hidden !important; 
+}
+
+div[query="getNationalBarChartData"] svg{
+  overflow: visible !important; 
+}
