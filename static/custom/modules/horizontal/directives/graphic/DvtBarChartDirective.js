@@ -631,7 +631,7 @@ define(function (require) {
                      */
 
                     var fullwitdh = this.placeholder().width();
-                    this.chart.options.width = fullwitdh;
+                    this.chart.options.width = fullwitdh -90;
                     this.chart.render(true, true, false);
                 };
 
