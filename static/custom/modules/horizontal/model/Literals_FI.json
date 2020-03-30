@@ -1950,5 +1950,7 @@
   "L102351":"<p>Kun ajattelette toimipaikkanne tilannetta: Onko psykososiaalisiin riskeihin puuttuminen helpompaa vai vaikeampaa kuin muihin riskeihin, vai eikö niiden välillä ole paljonkaan eroa?<br>1 Helpompaa  <br>2 Vaikeampaa  <br> 3 Ei paljonkaan eroa  <br> 8 EOS  <br> 9 Ei vastausta<br><br> Kysymys on esitetty toimipaikoille, jotka ovat ilmoittaneet psykososiaalisista riskitekijöistä.</p>",
   "L102352":"Työsuojeluvaltuutettujen nimittäminen",
   "L102353":"Työsuojeluvaltuutettujen nimittäminen",
-  "L102354":"<p>Valitsevatko työntekijät vai työnantaja työsuojeluvaltuutetun? <br>1 Työntekijät valitsevat  <br>2 Työnantaja valitsee  <br> 8 Osittain työntekijät valitsevat ja osittain työnantaja valitsee  <br> 9 Ei vastausta<br><br>Kysymys on esitetty toimipaikoille, joissa on työsuojeluvaltuutettu.</p>"
+  "L102354":"<p>Valitsevatko työntekijät vai työnantaja työsuojeluvaltuutetun? <br>1 Työntekijät valitsevat  <br>2 Työnantaja valitsee  <br> 8 Osittain työntekijät valitsevat ja osittain työnantaja valitsee  <br> 9 Ei vastausta<br><br>Kysymys on esitetty toimipaikoille, joissa on työsuojeluvaltuutettu.</p>",
+  "L102355":"Riskit ja vaaratekijät vaihtelevat työtehtävien mukaan. Kertokaa, koskevatko seuraavat riskitekijät toimipaikkaanne. Riskille altistuvien työntekijöiden määrällä tai sillä, onko riski tällä hetkellä hallinnassa, ei ole merkitystä. Koneisiin tai käsityökaluihin liittyvä onnettomuusriski<br><br>(1) Kyllä <br>(2) Ei <br>(9) Ei vastausta",
+  "L102356":"Mitä seuraavista työntekijöiden edustusmuodoista toimipaikassanne on? YT-toimikunta/yhteinen kokous/neuvottelukunta<br><br>(1) Kyllä <br>(2) Ei <br>(9) Ei vastausta<br><br>Kysymys on esitetty kaikille; koko määräytyy kyseisten elinten kansallisten kynnysarvojen mukaan."
 }
