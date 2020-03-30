@@ -230,11 +230,14 @@ define (function (require) {
                                                     return 2;
                                                 }
                                             }
-                                        }else{
+                                        }else if (year == 2014){
                                             if(countryKey.label.match('(AL)')){
                                                 return 2;
-                                            } else if(countryKey.label.match('(CH)')){
-                                                return 2;
+                                            }
+                                        } else if (year == 2019)
+                                        {
+                                            if(countryKey.label.match('(CH)')){
+                                                return 2
                                             }
                                         }
 
