@@ -17033,36 +17033,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 
 SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000 AND l.id < 102000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
-SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="DATA_VISUALISATION");
-INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "TEXT");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Share this on:");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Споделете това във: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Sdílet na: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Del dette på: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Teilen Sie dies auf: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Jagage:");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Μοιραστείτε το στο: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Compartir en: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Partager ceci sur:");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Podijeli na: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "Deila þessu á: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Condividi su: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Kopīgot šo: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Dalytis: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Megosztás itt: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Ikkondividi dan fuq: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Deel deze pagina:");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Del dette på: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Podziel się tym na: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Partilhar no: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Distribuiți pe: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, " Zdieľať na:");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Objavi na: ");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Jaa tämä:");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Dela detta på:");
-
-SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000 AND l.id < 102000)+1, 101001));
-SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="BREADCRUMB");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "BREADCRUMB");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Comparisons");
