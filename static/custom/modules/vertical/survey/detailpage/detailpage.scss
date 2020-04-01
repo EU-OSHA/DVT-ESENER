@@ -2163,3 +2163,28 @@ td.ccc-tt-dimLabel{
     }
   }
 }
+
+.map--gauss--block{
+  svg{
+    > g{
+      > g{
+        > g:nth-child(2){
+          > g:nth-child(3){
+            > g{
+              &:nth-child(1){
+                text{
+                  text-anchor:start !important;
+                }
+              }
+              &:nth-child(5){
+                text{
+                  text-anchor:end !important;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
