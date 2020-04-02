@@ -38,250 +38,244 @@
       </div>
     </section>
     <section class="detail--content--section">
-    	<div class="">            
+    	<div class="selector--page--elements">            
 				<!-- Title and introduction -->
 			    <div class="content--intro--wrapper">
-			        <h1 class="title--section second-color" data-ng-bind="i18n.L101079"></h1>
+            <h1 class="title--section second-color" data-ng-bind="i18n.L101079"></h1>
 			        <!-- Breadcrumb -->        
-					<p data-ng-bind-html="currentQuestion.breadcrumb"></p>
-			        <ul class="question--by--question">
-			            <li><a style="position:absolute;top: 150px; left: 0px;" data-ng-click="changeQuestion(currentQuestion.previousID, 'p')" title="{{isNull(currentQuestion.previous, 'p')}}" data-ng-bind="trim(currentQuestion.previous, 'p')"></a></li>
-			            <li><a style="position:absolute;top: 150px; right: 0px;" data-ng-click="changeQuestion(currentQuestion.nextID, 'n')" title="{{isNull(currentQuestion.next, 'n')}}" data-ng-bind="trim(currentQuestion.next, 'n')"></a></li>
-			        </ul>
+            <p data-ng-bind-html="currentQuestion.breadcrumb"></p>
+            <ul class="question--by--question">
+              <li><a data-ng-click="changeQuestion(currentQuestion.previousID, 'p')" title="{{isNull(currentQuestion.previous, 'p')}}" data-ng-bind="trim(currentQuestion.previous, 'p')"></a></li>
+              <li><a data-ng-click="changeQuestion(currentQuestion.nextID, 'n')" title="{{isNull(currentQuestion.next, 'n')}}" data-ng-bind="trim(currentQuestion.next, 'n')"></a></li>
+            </ul>
 			    </div>
-
 			    <div class="content--lang--wrapper">
 			        <!-- National version select -->
 			        <div class="national-version-select">
-			            <form action="" class="compare--block--form">
-			                <label for="searchFilter" class="" data-ng-bind="i18n.L101032"></label>
-			                <div>
-			                    <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-change="changeLocale()" data-ng-model="pLocale">
-			                        <!-- Select esener 2014 languages -->
-                              <option value="de_1">Austria (AT)</option>
-                              <option value="fr_1">Belgium (FR)</option>
-                              <option value="nl_1">Belgium (NL)</option>
-                              <option value="bg">Bulgaria (BG)</option>
-                              <option value="hr">Croatia (HR)</option>
-                              <option value="el_1">Cyprus (CY)</option>
-                              <option value="cs">Czechia (CZ)</option>
-                              <option value="da">Denmark (DK)</option>
-                              <option value="et">Estonia (EE)</option>
-                              <option value="ru_1">Estonia (RU)</option>
-                              <option value="fi">Finland (FI)</option>
-                              <option value="sv_1">Finland (SE)</option>                    
-                              <option value="fr">France (FR)</option>                        
-                              <option value="de">Germany (DE)</option>
-                              <option value="el">Greece (EL)</option>
-                              <option value="hu">Hungary (HU)</option>
-                              <option value="is">Iceland (IS)</option>
-                              <option value="en_1">Ireland (IE)</option>
-                              <option value="it">Italy (IT)</option>
-                              <option value="lv">Latvia (LV)</option>
-                              <option value="ru_2">Latvia (RU)</option>
-                              <option value="lt">Lithuania (LT)</option>
-                              <option value="ru_3">Lithuania (RU)</option>
-                              <option value="de_2">Luxembourg (DE)</option>
-                              <option value="fr_2">Luxembourg (FR)</option>
-                              <option value="lu">Luxembourg (LU)</option>
-                              <option value="en_2">Malta (EN)</option>
-                              <option value="mt">Malta (MT)</option>
-                              <option value="nl">Netherlands (NL)</option>
-                              <option value="mk">North Macedonia (MK)</option>
-                              <option value="no">Norway (NO)</option>
-                              <option value="pl">Poland (PL)</option>
-                              <option value="pt">Portugal (PT)</option>
-                              <option value="ro">Romania (RO)</option>
-                              <option value="sr">Serbia (RS)</option>
-                              <option value="sk">Slovakia (SK)</option>
-                              <option value="sl">Slovenia (SL)</option>
-                              <option value="es">Spain (ES)</option>
-                              <option value="sv">Sweden (SE)</option>
-                              <option value="de_3">Switzerland (DE)</option>
-                              <option value="fr_3">Switzerland (FR)</option>
-                              <option value="it_1">Switzerland (IT)</option>
-                              <option value="en">United Kingdom (UK)</option>
-			                    </select>
-			                </div>
-			                
-			            </form>
+		            <form action="" class="compare--block--form">
+	                <label for="searchFilter" class="" data-ng-bind="i18n.L101032"></label>
+	                <div>
+	                    <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-change="changeLocale()" data-ng-model="pLocale">
+	                        <!-- Select esener 2014 languages -->
+                          <option value="de_1">Austria (AT)</option>
+                          <option value="fr_1">Belgium (FR)</option>
+                          <option value="nl_1">Belgium (NL)</option>
+                          <option value="bg">Bulgaria (BG)</option>
+                          <option value="hr">Croatia (HR)</option>
+                          <option value="el_1">Cyprus (CY)</option>
+                          <option value="cs">Czechia (CZ)</option>
+                          <option value="da">Denmark (DK)</option>
+                          <option value="et">Estonia (EE)</option>
+                          <option value="ru_1">Estonia (RU)</option>
+                          <option value="fi">Finland (FI)</option>
+                          <option value="sv_1">Finland (SE)</option>                    
+                          <option value="fr">France (FR)</option>                        
+                          <option value="de">Germany (DE)</option>
+                          <option value="el">Greece (EL)</option>
+                          <option value="hu">Hungary (HU)</option>
+                          <option value="is">Iceland (IS)</option>
+                          <option value="en_1">Ireland (IE)</option>
+                          <option value="it">Italy (IT)</option>
+                          <option value="lv">Latvia (LV)</option>
+                          <option value="ru_2">Latvia (RU)</option>
+                          <option value="lt">Lithuania (LT)</option>
+                          <option value="ru_3">Lithuania (RU)</option>
+                          <option value="de_2">Luxembourg (DE)</option>
+                          <option value="fr_2">Luxembourg (FR)</option>
+                          <option value="lu">Luxembourg (LU)</option>
+                          <option value="en_2">Malta (EN)</option>
+                          <option value="mt">Malta (MT)</option>
+                          <option value="nl">Netherlands (NL)</option>
+                          <option value="mk">North Macedonia (MK)</option>
+                          <option value="no">Norway (NO)</option>
+                          <option value="pl">Poland (PL)</option>
+                          <option value="pt">Portugal (PT)</option>
+                          <option value="ro">Romania (RO)</option>
+                          <option value="sr">Serbia (RS)</option>
+                          <option value="sk">Slovakia (SK)</option>
+                          <option value="sl">Slovenia (SL)</option>
+                          <option value="es">Spain (ES)</option>
+                          <option value="sv">Sweden (SE)</option>
+                          <option value="de_3">Switzerland (DE)</option>
+                          <option value="fr_3">Switzerland (FR)</option>
+                          <option value="it_1">Switzerland (IT)</option>
+                          <option value="en">United Kingdom (UK)</option>
+	                    </select>
+	                </div>			                
+		            </form>
 			        </div>      
 			    </div>
-
-
 			    <!-- Chart section and indicator selection -->
 			    <div class="content--introchart--wrapper">
-			        <!-- Question title -->
-			        <h2 class="title-question main-color" data-ng-bind="currentQuestion.name"></h2>
-			        <p  class="description--question" data-ng-bind-html="currentQuestion.description"></p>
+  	        <!-- Question title -->
+  	        <h2 class="title-question main-color" data-ng-bind="currentQuestion.name"></h2>
+  	        <p  class="description--question" data-ng-bind-html="currentQuestion.description"></p>
 			    </div>
 
 			    <div class="content--filter--wrapper">  
-			        <div>
-						<form class="block--filter--wrapper" data-ng-class="{ {{pLocale}} :(langSize[0].indexOf(pLocale) != -1 ) }">
-			                <p class="tags">
-			                    <span data-ng-bind="i18n.L101026"></span>
-			                </p>
-			                <!-- Activity sector -->
-			                <div class="filter-text-button">
-			                    <button data-ng-class="{'active':(pSectorSize == 'activity-sector')}" data-ng-click="updateChart()" data-ng-bind="i18n.L100573" ui-sref="comparisons({ pIndicator:'2019', pTopic:pTopic,pSectorSize: 'activity-sector', pCountry: pCountry, pQuestion: pQuestion, pLanguage: pLanguage, pLocale: pLocale, pAnswer: pAnswer})"></button>                    
-			                </div>
-			                <p class="tags">
-			                    <span data-ng-bind="i18n.L101027"></span>
-			                </p>       	
-			                <!-- Establishment size -->
-			                <div class="filter-text-button">
-			                    <button data-ng-class="{'active':(pSectorSize == 'company-size')}" data-ng-click="updateChart()" data-ng-bind="i18n.L100574" ui-sref="comparisons({ pIndicator:'2019', pTopic:pTopic,pSectorSize: 'company-size', pCountry: pCountry, pQuestion: pQuestion, pLanguage: pLanguage, pLocale: pLocale, pAnswer: pAnswer})"></button>
-			                </div>
-			                <!-- Country -->
-			                <div class="filter-text-button country-select">
-			                    <select data-ng-change="updateChart()" data-ng-model="pCountry" ng-selected="pCountry">
-			                        <option data-ng-repeat='country in countries' value="{{country.id}}" data-ng-bind="country.literal"></option>
-			                    </select>
-			                </div>
-			            </form>
-			        </div>
-			    <hr>
-			        <!-- Select split answers and charts -->
-			        <div class="filters--and--typechart">
-			            <form class="block--typechart--wrapper">
-			                <!-- Answer selection -->
-			                <div class="filter-text sort-by">
-			                    <label for="sortBy" data-ng-bind="i18n.L100588 + ': '"></label>
-			                    <select id="sortBy" class="" data-ng-model="pAnswer" data-ng-change="updateChart()" ng-selected="pAnswer">
-			                    	<option data-ng-repeat='answer in answers' value="{{answer.id}}" data-ng-bind="i18n['L'+answer.literal]"></option>
-			                    </select>
-			                </div>
-			            </form>
-			        </div>        
-			    </div>				
-			</div>
-
-
-      <!-- CHART section -->
-      <div class="chart--section">
-        <!-- EUROPEAN BAR CHART -->
-        <div class="european-bar-chart">
-          <!---------------------- EuropeanBarChart ESENER 2014 ------------------------>
-          <div class="xxs-w1 xs-w1 w1 center-text">
-              <div class="card--block--chart">
-                  <!------------ActivitySector------------>
-                  <div class="chart--block">
-                      <dvt-bar-chart
-                        data-ng-cloak
-                        query="{{query}}" cda="{{::cdaEsenerDash}}"
-                        width="330" height="660" axis-percent="1"
-                        orientation="vertical" axis-fixed-min="0"
-                        axis-fixed-max="100" step="20"
-                        params="[['pQuestion',pQuestion],['pAnswer',pAnswer],['pCountry', pCountry], ['pLanguage', pLocale], ['pInclusions',pInclusions]]"
-                        color-role="series" colors="[color1, color2]" id="1"
-                        axis-label-font="12px 'OpenSans-bold'"
-                        plots="plot"
-                        values-visible="true"
-                        values-mask="{value}"
-                        values-font="12px 'OpenSans'"
-                        multiple-label-colors="false"
-                        leaf-content-overflow='visible'
-                        legend="true" is-maximized="false"
-                        base-axis-size="50" custom-tooltip="1"
-                        base-axis-label-text-baseline="top"
-                        axis-label-word-break="1"
-                      ></dvt-bar-chart>
-                  </div>
-              </div>
-          </div>
-        </div>
-
-        <div class="export--button--wrapper">
-          <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="showSharePopUp($event)">
-            <span data-ng-bind="i18n.L101028"></span>
-            <span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
-          </button>
-          <button id="btnExport" class="btn-default btn-main-color" data-ng-click="showSharePopUp($event)"><span data-ng-bind="i18n.L101029"></span></button>
-        </div>
-
-        <section id="popUpMessage" data-ng-if="showPopUpSocialMedia" data-ng-click="ok()">
-          <div class="modal fade dvt-modal-social in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10}" ng-transclude="" modal-window="" window-class="dvt-modal" index="0" style="z-index: 1050;">
-            <div class="modal-wrapper">
-              <div class="modal-body">
-                <span class="btn pull-right" role="button" aria-hidden="true" title="Close window" data-ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
-                <div class="popUpMessage--text--block">
-                  <p class="text-center title-share" data-ng-bind="i18n.L101028"></p>
-                  <div class="social--network--modal" id="osha-menu-social">
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n.L370}}" socialshare-text="{{titleShare}}" socialshare-url="{{pathURLDVT}}">
-                      <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L370)"></span>
-                    </a>
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n.L371}}" socialshare-url="{{pathURLDVT}}" socialshare-quote="{{titleShare}}">
-                      <i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L371)"></span>
-                    </a>
-                    <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n.L372}}" socialshare-url="{{pathURLDVT}}" socialshare-text="{{titleShare}}">
-                      <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L372)"></span>
-                    </a>
-                  </div>
-                </div>
-              </div>
+			      <div>
+  						<form class="block--filter--wrapper" data-ng-class="{ {{pLocale}} :(langSize[0].indexOf(pLocale) != -1 ) }">
+  			                <p class="tags">
+  			                    <span data-ng-bind="i18n.L101026"></span>
+  			                </p>
+  			                <!-- Activity sector -->
+  			                <div class="filter-text-button">
+  			                    <button data-ng-class="{'active':(pSectorSize == 'activity-sector')}" data-ng-click="updateChart()" data-ng-bind="i18n.L100573" ui-sref="comparisons({ pIndicator:'2019', pTopic:pTopic,pSectorSize: 'activity-sector', pCountry: pCountry, pQuestion: pQuestion, pLanguage: pLanguage, pLocale: pLocale, pAnswer: pAnswer})"></button>                    
+  			                </div>
+  			                <p class="tags">
+  			                    <span data-ng-bind="i18n.L101027"></span>
+  			                </p>       	
+  			                <!-- Establishment size -->
+  			                <div class="filter-text-button">
+  			                    <button data-ng-class="{'active':(pSectorSize == 'company-size')}" data-ng-click="updateChart()" data-ng-bind="i18n.L100574" ui-sref="comparisons({ pIndicator:'2019', pTopic:pTopic,pSectorSize: 'company-size', pCountry: pCountry, pQuestion: pQuestion, pLanguage: pLanguage, pLocale: pLocale, pAnswer: pAnswer})"></button>
+  			                </div>
+  			                <!-- Country -->
+  			                <div class="filter-text-button country-select">
+  			                    <select data-ng-change="updateChart()" data-ng-model="pCountry" ng-selected="pCountry">
+  			                        <option data-ng-repeat='country in countries' value="{{country.id}}" data-ng-bind="country.literal"></option>
+  			                    </select>
+  			                </div>
+  			      </form>
             </div>
-          </div>
-        </section>
-
-        <section id="popUpMessage" data-ng-if="showPopUpExportData" data-ng-click="ok()">
-          <div class="modal fade dvt-modal-social in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10}" ng-transclude="" modal-window="" window-class="dvt-modal" index="0" style="z-index: 1050;">
-            <div class="modal-wrapper">
-              <div class="modal-body">
-                <span class="btn pull-right" role="button" aria-hidden="true" title="Close window" data-ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
-                <div class="popUpMessage--exportData--text--block">
-                  <p class="text-center" data-ng-bind="i18n.L101029"></p>
-                  <div class="export--data--modal" id="osha-menu-social">
-                    <!-- URL -->
-                    <a href class="main-color text-center" target="_blank" data-ng-class="{'active': pageUrlActive}"  data-ng-click="pageUrlActive = !pageUrlActive; pageCitationActive = false " title="{{i18n.L100662}} > {{i18n.L100660}}">
-                      <i class="fa fa-link" aria-hidden="true"></i></i> <span data-ng-bind="i18n.L100660" ></span>
-                    </a>
-                    <!-- PNG -->
-                    <a href class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100657}}" data-ng-click="exportPNG()" data-ng-if="isIE == false">
-                      <i class="fa fa-file-image-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100657" ></span>
-                    </a>
-                    <!-- PDF -->
-                    <!--<a class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100656}}">
-                      <i class="fa fa-file-pdf-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100656" ></span>
-                    </a>-->
-                    <!-- PAGE CITATION -->
-                    <a href class="main-color text-center" data-ng-class="{'active': pageCitationActive}"  target="_blank" title="{{i18n.L100662}} > {{i18n.L100651}}" data-ng-click="pageCitationActive = !pageCitationActive; pageUrlActive = false">
-                      <i class="fa fa-file-code-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100651"></span>
-                    </a>
-                    <!-- XLS -->
-                    <a href class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100652}}" data-ng-click="exportData(1)">
-                      <i class="fa fa-file-excel-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100652" ></span>
-                    </a>
-                  </div>
-                  <div id="panel--url" data-ng-if="pageUrlActive">
-                    <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="selectTextArea()">
-                      <span  data-ng-bind="i18n.L100640" ></span>
-                    </button>
-                    <textarea id="urlTextArea" readonly="readonly" cols="80" rows="3" data-ng-bind="createURL()"></textarea>
-                    <div class="pageUrl">
-                      <p data-ng-bind="i18n.L100587 + ': ' + i18n.L100660"></p>
-                      <a id="btnSocial" class="btn-default btn-main-color" href="{{pathURLDVT}}" target="_blank">
-                        <span data-ng-bind="i18n.L100641"></span>
-                      </a>
-                      <!--<button id="btnSocial" class="btn-default" data-ng-bind="i18n.L100638" data-ng-click=""></button>-->
-                    </div>
-                  </div>
-                  <div id="panel--url" data-ng-if="pageCitationActive">
-                    <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="selectTextArea()">
-                      <span  data-ng-bind="i18n.L100640" ></span>
-                    </button>
-                    <textarea id="urlTextArea" readonly="readonly" cols="80" rows="5" data-ng-bind="createCitation()"></textarea>
-                    <div class="pageUrl">
-                      <p data-ng-bind="i18n.L100587 + ': ' + i18n.L100660"></p>
-                    </div>
-                  </div>
+            <hr>
+  	        <!-- Select split answers and charts -->
+  	        <div class="filters--and--typechart">
+              <form class="block--typechart--wrapper">
+                <!-- Answer selection -->
+                <div class="filter-text sort-by">
+                  <label for="sortBy" data-ng-bind="i18n.L100588 + ': '"></label>
+                  <select id="sortBy" class="" data-ng-model="pAnswer" data-ng-change="updateChart()" ng-selected="pAnswer">
+                  	<option data-ng-repeat='answer in answers' value="{{answer.id}}" data-ng-bind="i18n['L'+answer.literal]"></option>
+                  </select>
                 </div>
-              </div>
-            </div>
-          </div>
-        </section>
+              </form>
+  	        </div>        
+			    </div>
       </div>
+      <!-- CHART section -->
+        <div class="chart--section">
+          <!-- EUROPEAN BAR CHART -->
+          <div class="european-bar-chart">
+            <!---------------------- EuropeanBarChart ESENER 2014 ------------------------>
+            <div class="xxs-w1 xs-w1 w1 center-text">
+                <div class="card--block--chart">
+                    <!------------ActivitySector------------>
+                    <div class="chart--block">
+                        <dvt-bar-chart
+                          data-ng-cloak
+                          query="{{query}}" cda="{{::cdaEsenerDash}}"
+                          width="330" height="660" axis-percent="1"
+                          orientation="vertical" axis-fixed-min="0"
+                          axis-fixed-max="100" step="20"
+                          params="[['pQuestion',pQuestion],['pAnswer',pAnswer],['pCountry', pCountry], ['pLanguage', pLocale], ['pInclusions',pInclusions]]"
+                          color-role="series" colors="[color1, color2]" id="1"
+                          axis-label-font="12px 'OpenSans-bold'"
+                          plots="plot"
+                          values-visible="true"
+                          values-mask="{value}"
+                          values-font="12px 'OpenSans'"
+                          multiple-label-colors="false"
+                          leaf-content-overflow='visible'
+                          legend="true" is-maximized="false"
+                          base-axis-size="50" custom-tooltip="1"
+                          base-axis-label-text-baseline="top"
+                          axis-label-word-break="1"
+                        ></dvt-bar-chart>
+                    </div>
+                </div>
+            </div>
+          </div>
 
+          <div class="export--button--wrapper">
+            <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="showSharePopUp($event)">
+              <span data-ng-bind="i18n.L101028"></span>
+              <span><i class="fa fa-share-alt" aria-hidden="true"></i></span>
+            </button>
+            <button id="btnExport" class="btn-default btn-main-color" data-ng-click="showSharePopUp($event)"><span data-ng-bind="i18n.L101029"></span></button>
+          </div>
+
+          <section id="popUpMessage" data-ng-if="showPopUpSocialMedia" data-ng-click="ok()">
+            <div class="modal fade dvt-modal-social in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10}" ng-transclude="" modal-window="" window-class="dvt-modal" index="0" style="z-index: 1050;">
+              <div class="modal-wrapper">
+                <div class="modal-body">
+                  <span class="btn pull-right" role="button" aria-hidden="true" title="Close window" data-ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
+                  <div class="popUpMessage--text--block">
+                    <p class="text-center title-share" data-ng-bind="i18n.L101028"></p>
+                    <div class="social--network--modal" id="osha-menu-social">
+                      <a class="main-color" target="_blank" socialshare socialshare-provider="twitter" title ="{{i18n.L370}}" socialshare-text="{{titleShare}}" socialshare-url="{{pathURLDVT}}">
+                        <i class="fa fa-lg fa-twitter" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L370)"></span>
+                      </a>
+                      <a class="main-color" target="_blank" socialshare socialshare-provider="facebook" title="{{i18n.L371}}" socialshare-url="{{pathURLDVT}}" socialshare-quote="{{titleShare}}">
+                        <i class="fa fa-lg fa-facebook-official" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L371)"></span>
+                      </a>
+                      <a class="main-color" target="_blank" socialshare socialshare-provider="linkedin" title="{{i18n.L372}}" socialshare-url="{{pathURLDVT}}" socialshare-text="{{titleShare}}">
+                        <i class="fa fa-lg fa-linkedin" aria-hidden="true"></i><span class="sr-only" data-ng-bind="(i18n.L369) + (i18n.L372)"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section id="popUpMessage" data-ng-if="showPopUpExportData" data-ng-click="ok()">
+            <div class="modal fade dvt-modal-social in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10}" ng-transclude="" modal-window="" window-class="dvt-modal" index="0" style="z-index: 1050;">
+              <div class="modal-wrapper">
+                <div class="modal-body">
+                  <span class="btn pull-right" role="button" aria-hidden="true" title="Close window" data-ng-click="ok()"><i class="fa fa-2x fa-times" aria-hidden="true"></i></span>
+                  <div class="popUpMessage--exportData--text--block">
+                    <p class="text-center" data-ng-bind="i18n.L101029"></p>
+                    <div class="export--data--modal" id="osha-menu-social">
+                      <!-- URL -->
+                      <a href class="main-color text-center" target="_blank" data-ng-class="{'active': pageUrlActive}"  data-ng-click="pageUrlActive = !pageUrlActive; pageCitationActive = false " title="{{i18n.L100662}} > {{i18n.L100660}}">
+                        <i class="fa fa-link" aria-hidden="true"></i></i> <span data-ng-bind="i18n.L100660" ></span>
+                      </a>
+                      <!-- PNG -->
+                      <a href class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100657}}" data-ng-click="exportPNG()" data-ng-if="isIE == false">
+                        <i class="fa fa-file-image-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100657" ></span>
+                      </a>
+                      <!-- PDF -->
+                      <!--<a class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100656}}">
+                        <i class="fa fa-file-pdf-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100656" ></span>
+                      </a>-->
+                      <!-- PAGE CITATION -->
+                      <a href class="main-color text-center" data-ng-class="{'active': pageCitationActive}"  target="_blank" title="{{i18n.L100662}} > {{i18n.L100651}}" data-ng-click="pageCitationActive = !pageCitationActive; pageUrlActive = false">
+                        <i class="fa fa-file-code-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100651"></span>
+                      </a>
+                      <!-- XLS -->
+                      <a href class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100652}}" data-ng-click="exportData(1)">
+                        <i class="fa fa-file-excel-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100652" ></span>
+                      </a>
+                    </div>
+                    <div id="panel--url" data-ng-if="pageUrlActive">
+                      <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="selectTextArea()">
+                        <span  data-ng-bind="i18n.L100640" ></span>
+                      </button>
+                      <textarea id="urlTextArea" readonly="readonly" cols="80" rows="3" data-ng-bind="createURL()"></textarea>
+                      <div class="pageUrl">
+                        <p data-ng-bind="i18n.L100587 + ': ' + i18n.L100660"></p>
+                        <a id="btnSocial" class="btn-default btn-main-color" href="{{pathURLDVT}}" target="_blank">
+                          <span data-ng-bind="i18n.L100641"></span>
+                        </a>
+                        <!--<button id="btnSocial" class="btn-default" data-ng-bind="i18n.L100638" data-ng-click=""></button>-->
+                      </div>
+                    </div>
+                    <div id="panel--url" data-ng-if="pageCitationActive">
+                      <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="selectTextArea()">
+                        <span  data-ng-bind="i18n.L100640" ></span>
+                      </button>
+                      <textarea id="urlTextArea" readonly="readonly" cols="80" rows="5" data-ng-bind="createCitation()"></textarea>
+                      <div class="pageUrl">
+                        <p data-ng-bind="i18n.L100587 + ': ' + i18n.L100660"></p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      
     </section>
 </div>
 </dvt-dashboard>
