@@ -110,7 +110,7 @@ define(function (require) {
 		// Get the exceptions based on the questions
 		if ($scope.pSectorSize=="activity-sector")
 		{
-			$scope.pExceptions = "19;20";
+			$scope.pInclusions = "1;3;2;4;18;6;7;14";
 			// Agriculture, forestry and fishing
 			if ((["CH","MK","NO","RS","AT","BE","CY","HR","IE","LT","LU","MT","SE"].indexOf($scope.pCountry) > -1)
 				|| (["IS","EE","EL","FI","FR","SK"].indexOf($scope.pCountry) > -1 && ["E3Q251","E3Q252_1","E3Q252_3","E3Q252_4","E3Q252_5","E3Q252_6","E3Q256f","E3Q257","E3Q258"].indexOf($scope.pQuestion) > -1)
@@ -118,28 +118,28 @@ define(function (require) {
 				|| ($scope.pQuestion=="E3Q355_2" && ["BG","DE","EE","EL","FI","FR","LV","NL","PT","SI","SK"].indexOf($scope.pCountry) > -1)
 				|| ($scope.pCountry != "EU27_2020" && ["E3Q252_2","E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4","E3Q300","E3Q301","E3Q302","E3Q354","E3Q355_4"].indexOf($scope.pQuestion) > -1))
 			{
-				$scope.pExceptions = $scope.pExceptions + ";1";
+				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("1"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("1")+2);
 			}
 			// Construction, waste management, water and electricity supply
 			if (($scope.pQuestion == "E3Q252_2" && ["IS","MK","BG","MT","SK"].indexOf($scope.pCountry) > -1)
 				|| (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI","MK","NO","RS","CZ","DK","EE","ES","HR","HU","IE","IT","LT","LV","MT","NL","PL","SE","SK","UK"].indexOf($scope.pCountry) > -1)
-				|| ($scope.pCountry="MT" && ["E3Q300","E3Q301","E3Q354"].indexOf($scope.pQuestion) > -1)
+				|| ($scope.pCountry=="MT" && ["E3Q300","E3Q301","E3Q354"].indexOf($scope.pQuestion) > -1)
 				|| ($scope.pQuestion == "E3Q302" && ["IS","MK","BG","MT","SK","EL","LT","LV"].indexOf($scope.pQuestion) > -1)
 				|| ($scope.pQuestion == "E3Q355_2" && ["BG","MT","MK"].indexOf($scope.pQuestion) > -1))
 			{
-				$scope.pExceptions = $scope.pExceptions + ";3";
+				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("3"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("3")+2);
 			}
 			// Manufacturing
 			if ((["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI","MK","NO","RS","DK","EE","HR","IE","IT","LU","LV","MT","PL","SE"].indexOf($scope.pCountry) > -1)
 				|| ($scope.pQuestion=="E3Q302" && ["LT","LU"].indexOf($scope.pCountry) > -1))
 			{
-				$scope.pExceptions = $scope.pExceptions + ";2";
+				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("2"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("2")+2);
 			}
 			// Trade, transport, food/accommodation and recreation activities
 			if (($scope.pQuestion=="E3Q252_2" && ["IS","MK","BG","CY","EE","EL","LT","MT","RO","SK"].indexOf($scope.pQuestion) > -1)
 				|| (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI"].indexOf($scope.pCountry) > -1))
 			{
-				$scope.pExceptions = $scope.pExceptions + ";4";	
+				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("4"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("4")+2);
 			}
 			// IT, Finance, Real estate and other technichal scientific or personal service activities
 			if (($scope.pQuestion=="E3Q252_2" && ["IS","MK","BG","CY","EE","EL","LT","MT","RO","SK"].indexOf($scope.pQuestion) > -1)
@@ -148,7 +148,7 @@ define(function (require) {
 				|| ($scope.pQuestion=="E3Q355_2" && ["IS","MK","BG","CY","LT","MT"].indexOf($scope.pCountry) > -1)
 				|| ($scope.pQuestion=="E3Q355_4" && ["MK","BG","CY","RO"].indexOf($scope.pCountry) > -1))
 			{
-				$scope.pExceptions = $scope.pExceptions + ";18";
+				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("18"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("18")+3);
 			}
 			// Public administration
 			if ((["IS","MK","CY","EL","HR","LT","LU","MT"].indexOf($scope.pCountry) > -1 && ["E3Q251","E3Q252_1","E3Q252_2","E3Q252_3","E3Q252_4","E3Q252_5","E3Q252_6","E3Q256f","E3Q257","E3Q258"].indexOf($scope.pQuestion) > -1)
@@ -160,36 +160,36 @@ define(function (require) {
 				|| ($scope.pQuestion=="E3Q355_2" && ["IS","MK","RS","BG","CY","EE","HR","LT","LV","MT","RO","SI","SK"].indexOf($scope.pCountry) > -1)
 				|| ($scope.pQuestion=="E3Q355_4" && ["IS","MK","RS","BG","EE","HR","LT","MT","RO","SI","SK"].indexOf($scope.pCountry) > -1))
 			{
-				$scope.pExceptions = $scope.pExceptions + ";6";
+				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("6"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("6")+2);
 			}
 			// Education, human health and social work activities
 			if ((["MK","CY","MT"].indexOf($scope.pCountry) > -1 && ["E3Q252_2","E3Q355_2","E3Q355_4"].indexOf($scope.pQuestion) > -1)
 				|| ($scope.pCountry=="CY" && $scope.pQuestion=="E3Q354")
 				|| (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI","RS","DK","HR","IT","LV","MT"].indexOf($scope.pCountry) > -1))
 			{
-				$scope.pExceptions = $scope.pExceptions + ";7";
+				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("7"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("7")+2);
 			}	
 		}
 		else
 		{
-			$scope.pExceptions = "";
+			$scope.pInclusions = "7;8;14;10;11";
 			// 5 to 9 Employees
 			if (($scope.pQuestion == "E3Q252_2" && ["MK","BG","LU","MT","SK"].indexOf($scope.pCountry) > -1)
 				|| (["E3Q300","E3Q301","E3Q302"].indexOf($scope.pQuestion) > -1)
 				|| ($scope.pCountry == "MT" && $scope.pQuestion=="E3Q354")
 				|| ($scope.pQuestion == "E3Q355_2" && ["MT","BG"].indexOf($scope.pCountry) > -1))
 			{
-				$scope.pExceptions = "7";
+				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("7"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("7")+2);
 			}
 			// 10 to 49 employees
 			if (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","SI"].indexOf($scope.pCountry) > -1)
 			{
-				$scope.pExceptions = $scope.pExceptions + $scope.pExceptions.length==0?"8":";8";
+				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("8"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("8")+2);
 			}
 			// 50 to 249 employees
 			if (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","DK","EE","ES","HR","IT","LV","RO","SE","SI","UK"].indexOf($scope.pCountry) > -1)
 			{
-				$scope.pExceptions = $scope.pExceptions + $scope.pExceptions.length==0?"14":";14";
+				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("14"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("14")+3);
 			}
 			// 250 or more employees
 			if ((["MK","NO","CY"].indexOf($scope.pCountry) > -1 && "E3Q252_2" == $scope.pQuestion)
@@ -197,13 +197,10 @@ define(function (require) {
 				|| ($scope.pQuestion == "E3Q302" && ["MK","CY"].indexOf($scope.pCountry) > -1)
 				|| (["E3Q355_2","E3Q355_4"].indexOf($scope.pQuestion) > -1 && ["CY","IS","MK"].indexOf($scope.pCountry) > -1))
 			{
-				$scope.pExceptions = $scope.pExceptions + $scope.pExceptions.length==0?"10":";10";
+				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("10"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("10")+3);
 			}
+			//$scope.pInclusions = $scope.pInclusions.toString();
 		}
-		
-
-
-
 
 		//DASHBOARD PARAMETERS
 	    $scope.dashboard = {
@@ -213,7 +210,7 @@ define(function (require) {
 		        'pCountry':$scope.pCountry,
 		        'pLocale': $scope.pLocale,
 		        'pLanguage':$scope.pLocale,
-		        'pExceptions':$scope.pExceptions
+		        'pInclusions':$scope.pInclusions
 	      	}
 	    };
 
@@ -250,7 +247,31 @@ define(function (require) {
 		dataService.getCountriesSelectComparisons($scope.pQuestion, $scope.pLocale).then(function(res) {
 			$scope.countries = [];
 			res.data.resultset.map(function(elem) {
-				$scope.countries.push({id:elem[0], literal:elem[1]});
+				if ($scope.pQuestion == "E3Q350_1")
+				{
+					if (elem[0] != "MK" && elem[0] != "CY" && elem[0] != "EE" && elem[0] != "SE")
+					{
+						$scope.countries.push({id:elem[0], literal:elem[1]});
+					}
+				}
+				else if ($scope.pQuestion == "E3Q350_2")
+				{
+					if (elem[0] != "AT" && elem[0] != "DE" && elem[0] != "LU")
+					{
+						$scope.countries.push({id:elem[0], literal:elem[1]});
+					}
+				}
+				else if ($scope.pQuestion == "E3Q350_3")
+				{
+					if (elem[0] != "MK" && elem[0] != "SI")
+					{
+						$scope.countries.push({id:elem[0], literal:elem[1]});
+					}
+				}
+				else
+				{
+					$scope.countries.push({id:elem[0], literal:elem[1]});
+				}
 			});
 		});
 
@@ -387,49 +408,77 @@ define(function (require) {
 			});
 		}
 
-		$scope.changeToQuestion = function(question, anchor){
-			var topic = '';
+		function rulesForTooltip(pQuestionID){
+			if (pQuestionID == "E3Q350_1")
+			{
+				if ($scope.pCountry == "MK" || $scope.pCountry == "CY" || $scope.pCountry == "EE" || $scope.pCountry == "SE")
+				{
+					alert($scope.i18n.L100576);
+					return true;
+				}
+			}
+			else if (pQuestionID == "E3Q350_2")
+			{
+				if ($scope.pCountry == "AT" || $scope.pCountry == "DE" || $scope.pCountry == "LU")
+				{
+					alert($scope.i18n.L100576);
+					return true;
+				}
+			}
+			else if (pQuestionID == "E3Q350_3")
+			{
+				if ($scope.pCountry == "MK" || $scope.pCountry == "SI")
+				{
+					alert($scope.i18n.L100576);
+					return true;
+				}
+			}
+			return false;
+		}
+
+		$scope.changeQuestion = function (pQuestionID, type){
+			var topic = $scope.pTopic;
 
 			var answer = $scope.answer;
-			var questionName = (question.category != undefined)?question.category:question;
 
-			console.log("DVT DEV");
-			console.log(questionName);
-			console.log($scope.previousQuestion);
-
-			$state.transitionTo($state.current.name, {
-				pIndicator: $scope.pIndicator, //Year
-				pTopic: $scope.pTopic, //Category
-				pQuestion: questionName, //Question name
-                pAnswer: $scope.pAnswer, //Split answer
-				pSectorSize: $scope.pSectorSize,
-				pCountry: $scope.pCountry,
-				pLanguage: $scope.pLanguage,
-				pLocale: $scope.pLocale
-			},
+			if (pQuestionID == null)
 			{
-				reload: true
-			});
+				if (type=='n')
+				{
+					pQuestionID = "E3Q151_1";
+				}
+				else if (type == 'p')
+				{
+					pQuestionID= "E3Q354";
+				}
+			}
 
-			/*if(!exception){
+			dataService.getQuestionSelectorDataComparisons(pQuestionID).then(function(res) {
+				var data = res.data.resultset;
+				if (data.length == 1)
+				{
+					var question = {
+						father: data[0][8],
+						grandfather: data[0][9],
+						answer_id: data[0][10]
+					}
+					if(question.grandfather != null){
+						topic = i18nEN['L'+question.grandfather].toLowerCase().replace(/[\,\ ]/g, '-');
+					}else{
+						topic = i18nEN['L'+question.father].toLowerCase().replace(/[\,\ ]/g, '-');
+					}
 
-				$scope.pQuestion = question.category;
-				if(anchor != undefined){
-					answer = question.answer_id;
-					$scope.pTopic = anchor;
-					if(question.category != null){
-						$rootScope.answer = question.answer_id;
+					var answer = question.answer_id;
+
+					if (!rulesForTooltip(pQuestionID))
+					{
 						$state.transitionTo($state.current.name, {
 							pIndicator: $scope.pIndicator, //Year
-							pTopic: $scope.pTopic, //Category
-							pChart: $scope.pChart, //Type of chart
-							pQuestion: $scope.pQuestion, //Question name
-	                        pAnswer: question.answer_id, //Split answer
+							pTopic: topic, //Category
+							pQuestion: pQuestionID, //Question name
+				            pAnswer: $scope.pAnswer, //Split answer
 							pSectorSize: $scope.pSectorSize,
-							pActivityFilter: $scope.pActivityFilter,
-							pCompanyFilter: $scope.pCompanyFilter,
-							pCountry: $scope.dashboard.parameters.pFilters.country,
-							pCountry2: $scope.pCountry2,
+							pCountry: $scope.pCountry,
 							pLanguage: $scope.pLanguage,
 							pLocale: $scope.pLocale
 						},
@@ -437,60 +486,55 @@ define(function (require) {
 							reload: true
 						});
 					}
-				}else{
-					dataService.getQuestionSelectorData(question).then(function(res) {
-						var data = res.data.resultset;
-						if (data.length == 1)
-						{
-							var questionObj = {
-								father: data[0][8],
-								grandfather: data[0][9],
-								answer_id: data[0][10]
-							}
-							if(questionObj.grandfather != null){
-								topic = i18nEN['L'+questionObj.grandfather].toLowerCase().replace(/[\,\ ]/g, '-');
-							}else{
-								topic = i18nEN['L'+questionObj.father].toLowerCase().replace(/[\,\ ]/g, '-');
-							}
-
-							$scope.answer = questionObj.answer_id;
-							$rootScope.answer = questionObj.answer_id;
-
-							$state.go($state.current.name, {
-								pTopic : topic,
-								pQuestion: question, //Question name,
-								pAnswer: $scope.answer
-							},
-							{
-								reload: true
-							})
-						}
-					})
 				}
-			}else{
-				$state.transitionTo($state.current.name, {
-					pIndicator: $scope.pIndicator, //Year
-					pTopic: $scope.pTopic, //Category
-					pQuestion: $scope.previousQuestion, //Question name
-                    pAnswer: question.answer_id, //Split answer
-					pSectorSize: $scope.pSectorSize,
-					pActivityFilter: $scope.pActivityFilter,
-					pCompanyFilter: $scope.pCompanyFilter,
-					pCountry: $scope.dashboard.parameters.pFilters.country,
-					pCountry2: $scope.pCountry2,
-					pLanguage: $scope.pLanguage,
-					pLocale: $scope.pLocale
-				},
+			});			
+		}
+
+		$scope.changeToQuestion = function(question, anchor){
+			var topic = '';
+
+			var answer = $scope.answer;
+			var questionName = (question.category != undefined)?question.category:question;
+
+			dataService.getQuestionSelectorDataComparisons(questionName).then(function(res) {
+				var data = res.data.resultset;
+				if (data.length == 1)
 				{
-					reload: true
-				});
-			}*/
+					var question = {
+						father: data[0][8],
+						grandfather: data[0][9],
+						answer_id: data[0][10]
+					}
+					if(question.grandfather != null){
+						topic = i18nEN['L'+question.grandfather].toLowerCase().replace(/[\,\ ]/g, '-');
+					}else{
+						topic = i18nEN['L'+question.father].toLowerCase().replace(/[\,\ ]/g, '-');
+					}
+
+					var answer = question.answer_id;
+
+					if (!rulesForTooltip(questionName))
+					{
+						$state.transitionTo($state.current.name, {
+							pIndicator: $scope.pIndicator, //Year
+							pTopic: topic, //Category
+							pQuestion: questionName, //Question name
+				            pAnswer: $scope.pAnswer, //Split answer
+							pSectorSize: $scope.pSectorSize,
+							pCountry: $scope.pCountry,
+							pLanguage: $scope.pLanguage,
+							pLocale: $scope.pLocale
+						},
+						{
+							reload: true
+						});
+					}
+				}
+			});
 		}
 
 		$scope.updateChart = function()
-		{	
-			console.log("DVT DEV");
-			console.log("IN UPDATECHART");
+		{
 			$stateParams.pAnswer = $scope.pAnswer;
 			$stateParams.pCountry = $scope.pCountry;
 			$stateParams.pSectorSize = $scope.pSectorSize;
@@ -510,9 +554,52 @@ define(function (require) {
 			});
 		}
 
-		$scope.openAccordion = function(i,e) {
-			//$log.warn('Abrir accordion');
+		$scope.trim = function(text, type){
+			var trimText = '';
+			if($scope.currentQuestion != null){
+				if($scope.currentQuestion.next == null && type == 'n'){
+					text = i18n.L496; //'An occupational health doctor'
+				}
+
+				if($scope.currentQuestion.previous == null && type == 'p'){
+					text = i18n.L775; //'Are the health and safety representatives or representatives of employee safety provided with any training during work time to help them perform their health and safety duties?';
+				}
+			}
 			
+			if(text != null){
+				
+				if(text.length > 10){
+					trimText = text.substring(0,10) + '...';
+					return trimText;
+				}else{
+					return text;
+				}
+			}
+		}
+
+		$scope.isNull = function(text, type){
+			if($scope.currentQuestion != null){
+				if($scope.currentQuestion.previousLevel != 1 && type == 'p'){
+					//$log.warn('scope.question.previousLevel != 1 && type == p');
+					if($scope.currentQuestion.previous == null){
+						text = i18n.L775; //'Are the health and safety representatives or representatives of employee safety provided with any training during work time to help them perform their health and safety duties?';
+					}else{
+						return $scope.i18n['L'+$scope.currentQuestion.previousFatherName] + ': ' + text;
+					}
+				}else if($scope.currentQuestion.nextLevel != 1 && type == 'n'){
+					if($scope.currentQuestion.next == null && type == 'n'){
+						//text = 'Use of health and safety services: An occupational health doctor';
+						text = i18n.L100003 + ': ' + i18n.L496;
+					}else{
+						return $scope.i18n['L'+$scope.currentQuestion.nextFatherName] + ': ' + text;
+					}
+					//$log.warn('scope.question.nextLevel != 1 && type == n');
+				}
+			}
+			return text;
+		}
+
+		$scope.openAccordion = function(i,e) {			
 		 	var parentNode = e.target.parentElement.parentElement;
 		 	if(angular.element(parentNode).hasClass("open")){
 		 		angular.element(parentNode).removeClass('open');
@@ -529,8 +616,6 @@ define(function (require) {
 		}
 
 		$scope.showSharePopUp = function(e){
-			//console.log('EVENTO SHOW SHARE POPUP');
-			//console.log(e);
 			if(e.currentTarget.id == 'btnSocial')
 				$scope.showPopUpSocialMedia = true;
 			else
@@ -637,71 +722,6 @@ define(function (require) {
         	}else{
         		$scope.pExcelFileName = "";
         	}
-
-        	if($scope.pChart == 'european-map'){
-				$scope.chartCitation = 'L100623';
-				$scope.promiseToExport = dataService.getMapExportData($scope.pIndicator, $scope.pQuestion, $scope.answer, 
-					$scope.actualDataset, $scope.pSectorSize, $scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU);
-				$scope.pExcelFileName = $scope.pExcelFileName + "heatMap-";
-			}else if($scope.pChart == 'european-bar-chart'){
-				$scope.chartCitation = 'L100622';
-				$scope.promiseToExport = dataService.getEuropeanBarCharExportData($scope.actualDataset, $scope.pQuestion, 
-					$scope.pActivityFilter, $scope.pCompanyFilter, $scope.nonEU, $scope.pSectorSize, $scope.pLocale);
-				$scope.pExcelFileName = $scope.pExcelFileName + "euBars-";
-			}else if($scope.pChart == 'national-bar-chart'){
-				$scope.chartCitation = 'L100624';
-				$scope.promiseToExport = dataService.getNationalBarChartExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
-					$scope.pSectorSize, $scope.dashboard.parameters.pFilters.country, 0);
-				$scope.pExcelFileName = $scope.pExcelFileName + "inCountry-";
-			}else if($scope.pChart == 'national-comparisons'){
-				$scope.chartCitation = 'L100621';
-				$scope.promiseToExport = dataService.getNationalComparisonsExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator,
-					$scope.pActivityFilter, $scope.pCompanyFilter, $scope.pCountry, $scope.pCountry2, $scope.pSectorSize);			
-				$scope.pExcelFileName = $scope.pExcelFileName + "crossCountry-";
-			}else if($scope.pChart == 'pie-chart'){
-				$scope.chartCitation = 'L101033';
-				$scope.promiseToExport = dataService.getPieChartExportData($scope.actualDataset, $scope.pQuestion, $scope.pIndicator, 
-					$scope.pCountry);
-				$scope.pExcelFileName = $scope.pExcelFileName + "pieChart-";
-			}
-
-			if ($scope.pIndicator == 2009)
-			{
-				$scope.pExcelFileName = $scope.pExcelFileName + "esener1-";
-			}
-			else if ($scope.pIndicator == 2014)
-			{
-				$scope.pExcelFileName = $scope.pExcelFileName + "esener2-";
-			}
-
-			if($scope.pChart != "pie-chart"){
-				$scope.pExcelFileName = $scope.pExcelFileName + $scope.pSectorSize + "-";
-			}
-
-			if ($scope.pSectorSize == "activity-sector" && $scope.pChart != "national-bar-chart" && $scope.pChart != "pie-chart")
-			{
-				$scope.pExcelFileName = $scope.pExcelFileName + $scope.pActivityFilter + "-";
-			}
-			else if ($scope.pChart != "national-bar-chart" && $scope.pChart != "pie-chart")
-			{
-				$scope.pExcelFileName = $scope.pExcelFileName + $scope.pCompanyFilter + "-";
-			}
-
-			$scope.pExcelFileName = $scope.pExcelFileName + $scope.pQuestion;
-
-			if ($scope.pChart == "european-map")
-			{
-				$scope.pExcelFileName = $scope.pExcelFileName + "-" + $scope.answer;
-			}
-			else if ($scope.pChart == "national-bar-chart")
-			{
-				$scope.pExcelFileName = $scope.pExcelFileName + "-" + $scope.pCountry;
-			}
-			else if ($scope.pChart == "national-comparisons")
-			{
-				$scope.pExcelFileName = $scope.pExcelFileName + "-" + $scope.pCountry + "-" +$scope.pCountry2;
-			}
-
         }
 
         $scope.exportData = function(id){
@@ -721,94 +741,6 @@ define(function (require) {
 		    angular.element('.submenu--items--wrapper').removeClass('open'); 
 		  }
 		});
-
-		/* Method to show or hide sectors or sizes for national bar chart */
-		$scope.rulesForSelects = function($index, id){
-			if ($scope.pIndicator == 2019)
-			{		
-				if($index != undefined && id == 1 && $scope.pSectorSize == 'activity-sector'){
-					if($scope.pQuestion.match('Q261') != undefined){
-						return false;
-					}
-
-					if($scope.pCountry == 'AL' || $scope.pCountry == 'CH'
-					|| $scope.pCountry == 'ME' || $scope.pCountry == 'MK' || $scope.pCountry == 'NO'
-					|| $scope.pCountry == 'RS' || $scope.pCountry == 'AT' || $scope.pCountry == 'BE'
-					|| $scope.pCountry == 'CY' || $scope.pCountry == 'HR' || $scope.pCountry == 'IE'
-					|| $scope.pCountry == 'LT' || $scope.pCountry == 'LU' || $scope.pCountry == 'MT' 
-					|| $scope.pCountry == 'SE'){
-						return false;
-					}else if($scope.pQuestion.match('Q202') != undefined && $scope.pQuestion != 'Q202_1'
-						&& ($scope.pCountry == 'EE' || $scope.pCountry == 'EL' || $scope.pCountry == 'FI' 
-							|| $scope.pCountry == 'FR' || $scope.pCountry == 'SK')){
-						return false;
-					}else if(($scope.pQuestion == 'Q251' || ($scope.pQuestion.match('Q252') != undefined && $scope.pQuestion != 'Q252_2')
-						|| $scope.pQuestion == 'Q254gr' || $scope.pQuestion == 'Q255' || $scope.pQuestion.match('Q256') 
-						||$scope.pQuestion == 'Q258b'	|| $scope.pQuestion == 'Q259') && ($scope.pCountry == 'EE' 
-						|| $scope.pCountry == 'EL' || $scope.pCountry == 'FI' || $scope.pCountry == 'FR' || $scope.pCountry == 'SK'
-						|| $scope.pCountry == 'IS')){
-						return false;
-					}
-				}else if($index != undefined && id == 6 && $scope.pSectorSize == 'activity-sector'){
-					if($scope.pQuestion.match('Q261') != undefined){
-						return false;
-					}
-					if(($scope.pQuestion == 'Q251' || ($scope.pQuestion.match('Q252') != undefined && $scope.pQuestion != 'Q252_2')
-						|| $scope.pQuestion == 'Q254gr' || $scope.pQuestion == 'Q255' || $scope.pQuestion.match('Q256') 
-						|| $scope.pQuestion == 'Q258b' || $scope.pQuestion == 'Q259') && ($scope.pCountry == 'AL' 
-						|| $scope.pCountry == 'IS' || $scope.pCountry == 'ME' || $scope.pCountry == 'MK' || $scope.pCountry == 'CY'
-						|| $scope.pCountry == 'EL' || $scope.pCountry == 'HR' || $scope.pCountry == 'LT' || $scope.pCountry == 'LU'
-						|| $scope.pCountry == 'MT')){
-						return false;
-					}
-					
-				}
-
-				if($index != undefined && $scope.pSectorSize == 'company-size'){
-					if(id == 10 && $scope.pQuestion.match('Q261') != undefined){
-						return false;
-					}else if(id == 14 && $scope.pQuestion.match('Q261') != undefined){
-						return false;
-					}
-				}
-			}
-			return true;
-		}
-		
-		var firstLoad = true;
-		$scope.$watch("dashboard.parameters.pFilters", function(){
-			if (firstLoad == false)
-			{
-				$scope.pActivityFilter = $scope.dashboard.parameters.pFilters.activitySector == null ? 0 : $scope.dashboard.parameters.pFilters.activitySector;
-				$scope.pCompanyFilter = $scope.dashboard.parameters.pFilters.establishmentSize == null ? 0 : $scope.dashboard.parameters.pFilters.establishmentSize;
-				
-				$scope.pCountry = $scope.dashboard.parameters.pFilters.country;
-				//$log.warn('Cambia algo: '+$scope.pCountry);
-
-				$state.transitionTo($state.current.name, {
-					pIndicator: $scope.pIndicator, //Year
-					pTopic: $scope.pTopic, //Category
-					pChart: $scope.pChart, //Type of chart
-					pQuestion: $scope.pQuestion, //Question name
-					pAnswer: $scope.answer, //Split answer
-					pSectorSize: $scope.pSectorSize,
-					pActivityFilter: $scope.pActivityFilter,
-					pCompanyFilter: $scope.pCompanyFilter,
-					pCountry: $scope.dashboard.parameters.pFilters.country,
-					pCountry2: $scope.dashboard.parameters.pFilters.country2,
-					pEuOnly: $scope.nonEU,
-					pLocale: $scope.pLocale
-				},
-				{
-					notify: false
-				});
-			}
-			else
-			{
-				firstLoad = false;
-			}
-		}, true);
-
 		/********************************************* END FILTERS ************************************************/
 	}
 

@@ -45,8 +45,8 @@
 			        <!-- Breadcrumb -->        
 					<p data-ng-bind-html="currentQuestion.breadcrumb"></p>
 			        <ul class="question--by--question">
-			            <li><a data-ng-click="changeQuestion(currentQuestion.previousID, 'p')" title="{{isNull(currentQuestion.previous, 'p')}}" data-ng-bind="trim(currentQuestion.previous, 'p')"></a></li>
-			            <li><a data-ng-click="changeQuestion(currentQuestion.nextID, 'n')" title="{{isNull(currentQuestion.next, 'n')}}" data-ng-bind="trim(currentQuestion.next, 'n')"></a></li>
+			            <li><a style="position:absolute;top: 150px; left: 0px;" data-ng-click="changeQuestion(currentQuestion.previousID, 'p')" title="{{isNull(currentQuestion.previous, 'p')}}" data-ng-bind="trim(currentQuestion.previous, 'p')"></a></li>
+			            <li><a style="position:absolute;top: 150px; right: 0px;" data-ng-click="changeQuestion(currentQuestion.nextID, 'n')" title="{{isNull(currentQuestion.next, 'n')}}" data-ng-bind="trim(currentQuestion.next, 'n')"></a></li>
 			        </ul>
 			    </div>
 
@@ -58,49 +58,49 @@
 			                <div>
 			                    <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-change="changeLocale()" data-ng-model="pLocale">
 			                        <!-- Select esener 2014 languages -->
-			                        <option value="de_1">Austria (AT)</option>
-			                        <option value="fr_1">Belgium (FR)</option>
-			                        <option value="nl_1">Belgium (NL)</option>
-			                        <option value="bg">Bulgaria (BG)</option>
-			                        <option value="hr">Croatia (HR)</option>
-			                        <option value="el_1">Cyprus (CY)</option>
-			                        <option value="cs">Czechia (CZ)</option>
-			                        <option value="da">Denmark (DK)</option>
-			                        <option value="et">Estonia (EE)</option>
-			                        <option value="ru_1">Estonia (RU)</option>
-			                        <option value="fi">Finland (FI)</option>
-			                        <option value="sv_1">Finland (SE)</option>                    
-			                        <option value="fr">France (FR)</option>                        
-			                        <option value="de">Germany (DE)</option>
-			                        <option value="el">Greece (EL)</option>
-			                        <option value="hu">Hungary (HU)</option>
-			                        <option value="is">Iceland (IS)</option>
-			                        <option value="en_1">Ireland (IE)</option>
-			                        <option value="it">Italy (IT)</option>
-			                        <option value="lv">Latvia (LV)</option>
-			                        <option value="ru_2">Latvia (RU)</option>
-			                        <option value="lt">Lithuania (LT)</option>
-			                        <option value="ru_3">Lithuania (RU)</option>
-			                        <option value="de_2">Luxembourg (DE)</option>
-			                        <option value="fr_2">Luxembourg (FR)</option>
-			                        <option value="lu">Luxembourg (LU)</option>
-			                        <option value="en_2">Malta (EN)</option>
-			                        <option value="mt">Malta (MT)</option>
-			                        <option value="nl">Netherlands (NL)</option>
-			                        <option value="mk">North Macedonia (MK)</option>
-			                        <option value="no">Norway (NO)</option>
-			                        <option value="pl">Poland (PL)</option>
-			                        <option value="pt">Portugal (PT)</option>
-			                        <option value="ro">Romania (RO)</option>
-			                        <option value="sr">Serbia (RS)</option>
-			                        <option value="sk">Slovakia (SK)</option>
-			                        <option value="sl">Slovenia (SL)</option>
-			                        <option value="es">Spain (ES)</option>
-			                        <option value="sv">Sweden (SE)</option>
-			                        <option value="de_3">Switzerland (DE)</option>
-			                        <option value="fr_3">Switzerland (FR)</option>
-			                        <option value="it_1">Switzerland (IT)</option>
-			                        <option value="en">United Kingdom (UK)</option>
+                              <option value="de_1">Austria (AT)</option>
+                              <option value="fr_1">Belgium (FR)</option>
+                              <option value="nl_1">Belgium (NL)</option>
+                              <option value="bg">Bulgaria (BG)</option>
+                              <option value="hr">Croatia (HR)</option>
+                              <option value="el_1">Cyprus (CY)</option>
+                              <option value="cs">Czechia (CZ)</option>
+                              <option value="da">Denmark (DK)</option>
+                              <option value="et">Estonia (EE)</option>
+                              <option value="ru_1">Estonia (RU)</option>
+                              <option value="fi">Finland (FI)</option>
+                              <option value="sv_1">Finland (SE)</option>                    
+                              <option value="fr">France (FR)</option>                        
+                              <option value="de">Germany (DE)</option>
+                              <option value="el">Greece (EL)</option>
+                              <option value="hu">Hungary (HU)</option>
+                              <option value="is">Iceland (IS)</option>
+                              <option value="en_1">Ireland (IE)</option>
+                              <option value="it">Italy (IT)</option>
+                              <option value="lv">Latvia (LV)</option>
+                              <option value="ru_2">Latvia (RU)</option>
+                              <option value="lt">Lithuania (LT)</option>
+                              <option value="ru_3">Lithuania (RU)</option>
+                              <option value="de_2">Luxembourg (DE)</option>
+                              <option value="fr_2">Luxembourg (FR)</option>
+                              <option value="lu">Luxembourg (LU)</option>
+                              <option value="en_2">Malta (EN)</option>
+                              <option value="mt">Malta (MT)</option>
+                              <option value="nl">Netherlands (NL)</option>
+                              <option value="mk">North Macedonia (MK)</option>
+                              <option value="no">Norway (NO)</option>
+                              <option value="pl">Poland (PL)</option>
+                              <option value="pt">Portugal (PT)</option>
+                              <option value="ro">Romania (RO)</option>
+                              <option value="sr">Serbia (RS)</option>
+                              <option value="sk">Slovakia (SK)</option>
+                              <option value="sl">Slovenia (SL)</option>
+                              <option value="es">Spain (ES)</option>
+                              <option value="sv">Sweden (SE)</option>
+                              <option value="de_3">Switzerland (DE)</option>
+                              <option value="fr_3">Switzerland (FR)</option>
+                              <option value="it_1">Switzerland (IT)</option>
+                              <option value="en">United Kingdom (UK)</option>
 			                    </select>
 			                </div>
 			                
@@ -124,14 +124,14 @@
 			                </p>
 			                <!-- Activity sector -->
 			                <div class="filter-text-button">
-			                    <button data-ng-class="{'active':(pSectorSize == 'activity-sector')}" data-ng-click="updateChart()"data-ng-bind="i18n.L100573" ui-sref="comparisons({ pIndicator:'2019', pTopic:pTopic,pSectorSize: 'activity-sector', pCountry: filters.country, pQuestion: pQuestion, pLanguage: pLanguage, pLocale: pLocale, pAnswer: pAnswer})"></button>                    
+			                    <button data-ng-class="{'active':(pSectorSize == 'activity-sector')}" data-ng-click="updateChart()" data-ng-bind="i18n.L100573" ui-sref="comparisons({ pIndicator:'2019', pTopic:pTopic,pSectorSize: 'activity-sector', pCountry: pCountry, pQuestion: pQuestion, pLanguage: pLanguage, pLocale: pLocale, pAnswer: pAnswer})"></button>                    
 			                </div>
 			                <p class="tags">
 			                    <span data-ng-bind="i18n.L101027"></span>
 			                </p>       	
 			                <!-- Establishment size -->
 			                <div class="filter-text-button">
-			                    <button data-ng-class="{'active':(pSectorSize == 'company-size')}" data-ng-click="updateChart()" data-ng-bind="i18n.L100574" ui-sref="comparisons({ pIndicator:'2019', pTopic:pTopic,pSectorSize: 'company-size', pCountry: filters.country, pQuestion: pQuestion, pLanguage: pLanguage, pLocale: pLocale, pAnswer: pAnswer})"></button>
+			                    <button data-ng-class="{'active':(pSectorSize == 'company-size')}" data-ng-click="updateChart()" data-ng-bind="i18n.L100574" ui-sref="comparisons({ pIndicator:'2019', pTopic:pTopic,pSectorSize: 'company-size', pCountry: pCountry, pQuestion: pQuestion, pLanguage: pLanguage, pLocale: pLocale, pAnswer: pAnswer})"></button>
 			                </div>
 			                <!-- Country -->
 			                <div class="filter-text-button country-select">
@@ -173,7 +173,7 @@
                         width="330" height="660" axis-percent="1"
                         orientation="vertical" axis-fixed-min="0"
                         axis-fixed-max="100" step="20"
-                        params="[['pQuestion',pQuestion],['pAnswer',pAnswer],['pCountry', pCountry], ['pLanguage', pLocale], ['pExceptions',pExceptions]]"
+                        params="[['pQuestion',pQuestion],['pAnswer',pAnswer],['pCountry', pCountry], ['pLanguage', pLocale], ['pInclusions',pInclusions]]"
                         color-role="series" colors="[color1, color2]" id="1"
                         axis-label-font="12px 'OpenSans-bold'"
                         plots="plot"
