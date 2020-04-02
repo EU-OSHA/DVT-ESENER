@@ -614,6 +614,7 @@ define(function (require) {
 
 		  //angular.element(parentNode).toggleClass('open');
 		}
+		$('.questions--list--wrapper').addClass('open');
 
 		$scope.showSharePopUp = function(e){
 			if(e.currentTarget.id == 'btnSocial')
