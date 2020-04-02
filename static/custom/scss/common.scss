@@ -1028,9 +1028,34 @@
             }
           }
         }
+        &.de, &.bg, &.da, &.et{
+          li{
+            a{
+              font-size: 2rem;
+              padding: 0.5rem 1.2rem 0 !important;
+            }
+          }
+        }
+        &.lv, &.lt, &.mt, &.pl, &.pt, &.sl, &.sv{
+          li{
+            a{
+              font-size: 2.4rem;
+              padding: 0.5rem 2rem 0 !important;
+            }
+          }
+        }
+        &.es, &.fr{
+          li{
+            a{
+              font-size: 2.4rem;
+              padding: 0.5rem 1.6rem 0 !important;
+            }
+          }
+        }
       }
     }    
   }
+
 
 
   .filter--indicator--block{
