@@ -373,8 +373,8 @@ define(function (require) {
                         baseAxisGrid: attributes.baseAxisGrid || false,
                         baseAxisPosition: attributes.baseAxisPosition || "bottom",
                         orthoAxisGrid: attributes.orthoAxisGrid === "false" ? false : true, // Color axes
-                        axisGrid_strokeStyle: 'gray',
-                        axisGrid_lineWidth: 2,
+                        axisGrid_strokeStyle: 'lightgray',
+                        axisGrid_lineWidth: 1,
                         axisBandSizeRatio: 1,
                         //show values
                         valuesVisible: attributes.valuesVisible === 'true'?true:false,

@@ -10,19 +10,8 @@ define (function (require) {
                         name: "main",
                         dataPart: "0",
                         barSizeMax: 35,
-                        label_textMargin: 7,
                         label_textBaseline: 'bottom',
-                        valuesAnchor: 'top',
                         valuesOptimizeLegibility: true,
-                        label_textStyle: function(scene){
-                            var year = scene.firstAtoms.series.value;
-
-                            if(!scene.firstAtoms.value.label.match('%')){
-                                scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
-                            }
-                            
-                            return 'gray';
-                        },
                         visualRoles:{
                             series: 'series',
                             category:'category',
