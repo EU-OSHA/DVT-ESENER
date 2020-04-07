@@ -698,10 +698,10 @@ define(function (require) {
                 if (attributes.type=='pie') {
                     definition.chartDefinition.valuesVisible = true;
                     definition.chartDefinition.legend = true;
-                    definition.chartDefinition.valuesAnchor = 'center';
+                    //definition.chartDefinition.valuesAnchor = 'center';
                     definition.chartDefinition.valuesLabelStyle = 'outside';
                     definition.chartDefinition.label_textAlign = 'center';
-                    definition.chartDefinition.label_textBaseline = function(scene){
+                    /*definition.chartDefinition.label_textBaseline = function(scene){
                         var value = scene.firstAtoms.value;
 
                         if(scene.nextSibling == null){
@@ -718,7 +718,7 @@ define(function (require) {
                         }
 
                         return 'bottom';
-                    };
+                    };*/
 
                     //definition.chartDefinition.valuesFont= '14px OpenSans-bold';
                     
