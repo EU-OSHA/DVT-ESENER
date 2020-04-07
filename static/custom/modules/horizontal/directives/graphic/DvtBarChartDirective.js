@@ -699,7 +699,7 @@ define(function (require) {
                     definition.chartDefinition.valuesVisible = true;
                     definition.chartDefinition.legend = true;
                     definition.chartDefinition.valuesAnchor = 'center';
-                    definition.chartDefinition.valuesLabelStyle = 'inside';
+                    definition.chartDefinition.valuesLabelStyle = 'outside';
                     definition.chartDefinition.label_textAlign = 'center';
                     definition.chartDefinition.label_textBaseline = function(scene){
                         var value = scene.firstAtoms.value;

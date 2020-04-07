@@ -588,7 +588,7 @@ define (function (require) {
                             if(!scene.firstAtoms.value.label.match('%')){
                                 scene.firstAtoms.value.label = scene.firstAtoms.value.label + '%';
                             }
-                            return 10;
+                            return 15;
                         },
                         label_textStyle: function(scene) {
                             var series = scene.firstAtoms.category;
@@ -602,7 +602,7 @@ define (function (require) {
                                 colors.length == 7 && series.value == colors[3]){
                                 return 'black';
                             }   
-                            return 'white';
+                            return 'black';
                         },
                         
                         valuesOptimizeLegibility: false,
