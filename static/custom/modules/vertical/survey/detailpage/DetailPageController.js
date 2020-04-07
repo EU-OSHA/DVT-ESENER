@@ -489,7 +489,6 @@ define(function (require) {
 									name: elem[1]
 								});
 							});
-
 							//$scope.indicators = $rootScope.nationalBarChartIndicators;
 							$scope.indicators.data = list;
 							$log.warn($scope.indicators.data);
@@ -564,7 +563,7 @@ define(function (require) {
 									name: elem[1]
 								});
 							});
-
+							
 							//$scope.indicators = $rootScope.nationalBarChartIndicators;
 							$scope.indicators.data = list;
 							$scope.indicators.pQuestion = $scope.pQuestion;
