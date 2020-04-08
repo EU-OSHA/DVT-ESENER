@@ -5,11 +5,12 @@ define (function (require) {
     var ComparisonService = function (dvtUtils, $log) {
         return {
             getComparisonsPlot: function() {
+                var screenWidth = window.innerWidth;
                 return [
                     {
                         name: "main",
                         dataPart: "0",
-                        barSizeMax: 35,
+                        barSizeMax: window.innerWidth>1500?35:25,
                         label_textBaseline: 'bottom',
                         valuesOptimizeLegibility: true,
                         visualRoles:{
