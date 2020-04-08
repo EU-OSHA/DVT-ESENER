@@ -1,4 +1,4 @@
-.detail-page{
+.detail-page, .comparisons{
   position: relative;
   width: 100%;
   display: block;
@@ -1371,7 +1371,7 @@ ul.question--by--question {
 and (min-width : 769px)  
 and (max-width : 1250px) {
 
-  .detail-page{
+  .detail-page, .comparisons{
     .block--filter--wrapper{
       flex-wrap: wrap;
       &.national-comparisons-wrapper{
@@ -1470,7 +1470,7 @@ and (max-width : 1400px) {
 }
 @media only screen 
 and (max-width : 1024px) { 
-  .detail-page{
+  .detail-page, .comparisons{
     margin-top: 0;
     .detail--page--wrapper{
       width: 100%;
@@ -1665,7 +1665,7 @@ and (max-width : 1024px) {
 @media only screen 
 and (min-width : 768px) 
 and (max-width : 1024px)  {
-  .detail-page{
+  .detail-page, .comparisons{
     #popUpMessage{
       .dvt-modal-social {
         display: block;
@@ -1728,7 +1728,7 @@ and (max-width : 1280px){
 @media only screen 
 and (max-width : 768px) { 
   
-  .detail-page{    
+  .detail-page, .comparisons{    
     .detail--page--wrapper{
       .detail--content--section{
         .selector--page--elements{
@@ -2034,7 +2034,7 @@ and (max-width : 375px){
       }
     }
   }
-  .detail-page{
+  .detail-page, .comparisons{
     .filter-text, .filter-text-button{
       margin-right: 0 !important;
       width: 100%;

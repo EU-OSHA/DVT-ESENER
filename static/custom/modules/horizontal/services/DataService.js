@@ -58,6 +58,19 @@ define(function () {
 
             /**
              * @ngdoc method
+             * @name dvt.configModule.DataService#getCountriesSelectComparisons
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns the countries list for the select combo
+             */
+            getCountriesSelectComparisons: function (pQuestion, pLanguage) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getCountriesSelectComparisons" + "&parampQuestion=" + pQuestion + "&parampLanguage=" + pLanguage;
+                $log.debug('getCountriesSelectComparisons url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
              * @name dvt.configModule.DataService#getQuestionAnswerOrder
              * @methodOf dvt.configModule.DataService
              * @description
@@ -84,6 +97,19 @@ define(function () {
 
             /**
              * @ngdoc method
+             * @name dvt.configModule.DataService#getQuestionSelectorDataComparisons
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns the data necessary for the question selector
+             */
+            getQuestionSelectorDataComparisons: function (pQuestion) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getQuestionSelectorDataComparisons" + "&parampQuestion=" + pQuestion;
+                $log.debug('getQuestionSelectorDataComparisons url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
              * @name dvt.configModule.DataService#getAllQuestions
              * @methodOf dvt.configModule.DataService
              * @description
@@ -92,6 +118,20 @@ define(function () {
             getAllQuestions: function (pYear) {
                 var year = parseInt(pYear);
                 var url = configService.getEsenerDataPath() + "&dataAccessId=getAllQuestions" + "&parampYear=" + year;
+                $log.debug('getAllQuestions url:' + url);
+                return promise(url);
+            },
+            
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getAllQuestionsComparisons
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns all questions with the level hierarchy
+             */
+            getAllQuestionsComparisons: function (pYear) {
+                var year = parseInt(pYear);
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getAllQuestionsComparisons";
                 $log.debug('getAllQuestions url:' + url);
                 return promise(url);
             },

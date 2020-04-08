@@ -49,6 +49,32 @@
     </Query>
   </DataAccess>
 
+  <!-- Get all questions -->
+  <DataAccess access="public" connection="dvt_conn" id="getAllQuestionsComparisons" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Query>
+      SELECT DISTINCT(ec.id),
+        ec.category,
+        ec.level,
+        ec.father_id,
+        ec.name_1_literal_id AS name_1,
+        IF(ec.category IS NOT NULL, i.id, NULL) as indicator_id,
+        ec.comparison_category_order,
+        IF(ec.category IS NOT NULL,  eao.answer_id, NULL) as answer_id
+      FROM esener_category ec, indicator i, esener_answer_order eao, esener_indicator_comparison eic
+      WHERE ec.year = 2019
+      AND i.name NOT IN ("E3Q256gr")
+      AND (ec.category IS NULL OR ec.category = i.name)
+      AND ec.comparison_category_order IS NOT NULL
+      AND i.id = eao.indicator_id
+      AND i.id=eic.category_2019
+      AND eic.comparison=1
+      AND eao.order_position = 1
+      ORDER BY ec.comparison_category_order ASC;
+    </Query>
+  </DataAccess>
+
   <!-- Get data of a particular question -->
   <DataAccess access="public" connection="dvt_conn" id="getMapData" type="sql">
     <Cache duration="3600" enabled="true"/>
@@ -267,6 +293,29 @@
     </Query>
   </DataAccess>
 
+  <!-- Get the information for the current category selected and the previous and next one for the question selector in the comparison page -->
+  <DataAccess access="public" connection="dvt_conn" id="getQuestionSelectorDataComparisons" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="E3Q151_1" name="pQuestion" type="String" />
+    </Parameters>
+    <Query>
+      SELECT ec.LEVEL AS LEVEL, ec3.category AS previousID, ec3.name_3_literal_id AS previousName, ec.name_2_literal_id AS NAME2, ec.name_3_literal_id AS NAME3, ec.bottom_text_literal_id AS bottomText, ec4.category AS nextID, ec4.name_3_literal_id AS nextName, ec1.name_2_literal_id AS father, ec2.name_2_literal_id AS grandfather, IF(ec3.category IS NOT NULL,  eao.answer_id, NULL) as answer_id,
+      ec5.id as previousFatherID, ec5.name_1_literal_id as previousFatherName, ec5.level as previousLevel, ec6.id as nextFatherID, ec6.name_1_literal_id as nextFatherName, ec6.level as nextLevel
+      FROM esener_category ec
+      INNER JOIN esener_category ec1 ON ec.father_id = ec1.id
+      LEFT JOIN esener_category ec2 ON ec1.father_id=ec2.id
+      LEFT JOIN esener_category ec3 ON ec.comparison_previous_id=ec3.id
+      LEFT JOIN esener_category ec4 ON ec.comparison_next_id=ec4.id
+      LEFT JOIN esener_category ec5 ON ec3.father_id = ec5.id
+      LEFT JOIN esener_category ec6 ON ec4.father_id = ec6.id
+      INNER JOIN indicator i ON i.name = ec.category
+      INNER JOIN esener_answer_order eao ON i.id = eao.indicator_id AND eao.order_position = 1
+      WHERE ec.category=${pQuestion};
+    </Query>
+  </DataAccess>
+
   <!-- Get the answer order  -->
   <DataAccess access="public" connection="dvt_conn" id="getQuestionAnswerOrder" type="sql">
     <Cache duration="3600" enabled="true"/>
@@ -300,6 +349,27 @@
       INNER JOIN indicator i ON v.indicator_id=i.id
       INNER JOIN translation t ON n.literal_id = t.literal_id AND t.language = ${pLanguage}
       WHERE i.name=${pQuestion}
+      ORDER BY FIELD(country_code, 'EU28', 'EU27_2020') DESC, country_code ASC;
+    </Query>
+  </DataAccess>
+
+  <!-- Get the countries for the filter  -->
+  <DataAccess access="public" connection="dvt_conn" id="getCountriesSelectComparisons" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="E3Q151_1" name="pQuestion" type="String" />
+      <Parameter default="en" name="pLanguage" type="String" />
+    </Parameters>
+    <Query>
+      SELECT DISTINCT(n.country_code), IF(n.name REGEXP 'European Union' OR n.name REGEXP 'EU27_2020', n.country_code, CONCAT("(", n.country_code, ") ", t.text)) as name  
+      FROM nuts n
+      INNER JOIN profile p ON n.id=p.nuts_id
+      INNER JOIN value v ON p.id=v.profile_id
+      INNER JOIN indicator i ON v.indicator_id=i.id
+      INNER JOIN translation t ON n.literal_id = t.literal_id AND t.language = ${pLanguage}
+      WHERE i.name IN (${pQuestion}, (SELECT i2.name FROM esener_indicator_comparison eic INNER JOIN indicator i ON eic.category_2019=i.id INNER JOIN indicator i2 ON eic.category_2014=i2.id WHERE i.name=${pQuestion}))
+      AND n.country_code!="EU28"
       ORDER BY FIELD(country_code, 'EU28', 'EU27_2020') DESC, country_code ASC;
     </Query>
   </DataAccess>
@@ -800,6 +870,82 @@
       AND t.language = ${pLocale}
       AND ec.category_order IS NOT NULL
       ORDER BY ec.category_order ASC;
+    </Query>
+  </DataAccess>
+
+  <!-- Get all questions for Comparisons Page -->
+  <DataAccess access="public" connection="dvt_conn" id="getQuestionsComparison" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="en" name="pLocale" type="String" />
+    </Parameters>
+    <Query>
+      SELECT i.name AS category, t.text AS name_1, ec.category_order
+      FROM esener_indicator_comparison eic
+      INNER JOIN indicator i ON eic.category_2019=i.id
+      INNER JOIN translation t ON i.literal_id=t.literal_id
+      INNER JOIN esener_category ec ON i.name=ec.category
+      WHERE eic.comparison=1 AND t.language=${pLocale}
+      ORDER BY ec.category_order ASC
+    </Query>
+  </DataAccess>
+
+  <!-- Get data for comparison page chart for Activity Sector -->
+  <DataAccess access="public" connection="dvt_conn" id="getComparisonDataActivitySector" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="E3Q151_1" name="pQuestion" type="String"/>
+      <Parameter default="1" name="pAnswer" type="Numeric"/>
+      <Parameter default="AT" name="pCountry" type="String"/>
+      <Parameter default="EN" name="pLanguage" type="String"/>
+      <Parameter default="1;3;2;4;18;6;7;14" name="pInclusions" type="IntegerArray"/>
+    </Parameters>
+    <Query>
+      SELECT IF (i.name LIKE "E3Q%", 2019, 2014) AS Year, t.text AS Sector, v.value*100 AS Value
+      FROM value v 
+      INNER JOIN indicator i ON v.indicator_id=i.id
+      INNER JOIN profile p ON v.profile_id=p.id
+      INNER JOIN split_activity_sector a ON p.activity_sector_id=a.id
+      INNER JOIN translation t ON a.literal_id=t.literal_id
+      INNER JOIN nuts n ON p.nuts_id=n.id
+      WHERE i.name IN (${pQuestion}, (SELECT i2.name FROM esener_indicator_comparison eic INNER JOIN indicator i ON eic.category_2019=i.id INNER JOIN indicator i2 ON eic.category_2014=i2.id WHERE i.name=${pQuestion}))
+      AND p.answer_id=${pAnswer}
+      AND n.country_code=${pCountry}
+      AND a.id IN (${pInclusions})
+      AND t.language=${pLanguage}
+      ORDER BY i.name ASC,
+      FIELD (a.id, 1, 3, 2, 4, 18, 6, 7, 14) ASC;
+    </Query>
+  </DataAccess>
+
+  <!-- Get data for comparison page chart for Company Size -->
+  <DataAccess access="public" connection="dvt_conn" id="getComparisonDataCompanySize" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="E3Q151_1" name="pQuestion" type="String"/>
+      <Parameter default="1" name="pAnswer" type="Numeric"/>
+      <Parameter default="AT" name="pCountry" type="String"/>
+      <Parameter default="EN" name="pLanguage" type="String"/>
+      <Parameter default="7;8;14;10;11" name="pInclusions" type="IntegerArray"/>
+    </Parameters>
+    <Query>
+      SELECT IF (i.name LIKE "E3Q%", 2019, 2014) AS Year, t.text AS Size, v.value*100 AS Value
+      FROM value v 
+      INNER JOIN indicator i ON v.indicator_id=i.id
+      INNER JOIN profile p ON v.profile_id=p.id
+      INNER JOIN split_company_size cs ON p.company_size_id=cs.id
+      INNER JOIN translation t ON cs.literal_id=t.literal_id
+      INNER JOIN nuts n ON p.nuts_id=n.id
+      WHERE i.name IN (${pQuestion}, (SELECT i2.name FROM esener_indicator_comparison eic INNER JOIN indicator i ON eic.category_2019=i.id INNER JOIN indicator i2 ON eic.category_2014=i2.id WHERE i.name=${pQuestion}))
+      AND p.answer_id=${pAnswer}
+      AND n.country_code=${pCountry}
+      AND cs.id IN (${pInclusions})
+      AND t.language=${pLanguage}
+      ORDER BY i.name ASC,
+      FIELD (cs.id, 7,8,14,10,11) ASC;
     </Query>
   </DataAccess>
 </CDADescriptor>
