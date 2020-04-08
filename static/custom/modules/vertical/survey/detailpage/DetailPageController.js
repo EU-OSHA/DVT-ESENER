@@ -834,19 +834,6 @@ define(function (require) {
 						return true;
 					}
 				}
-			}else if($scope.pChart == 'pie-chart' && $scope.pIndicator == 2014){
-				if(pQuestionID == 'Q254gr'){
-					alert($scope.i18n.L100576);
-					return true;
-				}
-			}
-
-			// RULES ESENER 2019
-			if($scope.pChart == 'pie-chart' && $scope.pIndicator == 2019){
-				if(pQuestionID == 'E3Q256gr'){
-					alert($scope.i18n.L100576);
-					return true;
-				}
 			}
 
 			return false;
