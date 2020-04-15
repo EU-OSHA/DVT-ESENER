@@ -298,6 +298,25 @@ define(function () {
                 return promise(url);
             },
 
+            /**
+             * @ngdoc method
+             * @name dvt.configModule.DataService#getComparisonExportData
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns data of a particular question
+             */
+            getComparisonExportData: function (pSectorSize, pQuestion, pAnswer, pCountry, pLanguage, pInclusions) {
+                var dataAccess = "getComparisonExportDataActivitySector";
+                if (pSectorSize == "company-size")
+                {
+                    dataAccess = "getComparisonExportDataCompanySize";
+                }
+                var url = configService.getEsenerDataPath() + "&dataAccessId=" + dataAccess + "&parampQuestion=" + pQuestion + "&parampAnswer=" + pAnswer 
+                + "&parampCountry=" + pCountry + "&parampLanguage=" + pLanguage + "&parampInclusions=" + pInclusions;
+                $log.debug('getPieChartExportData url:' + url);
+                return promise(url);
+            },
+
             /***************************************** HOME *******************************************/
 
             getStrategiesCountries: function(){

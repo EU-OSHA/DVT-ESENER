@@ -44,7 +44,7 @@ define(function (require) {
 		//Social network and export data modals
 		$scope.showPopUpSocialMedia = false;
 		$scope.showPopUpExportData = false;
-		// $scope.pathURLDVT=$location.absUrl();
+		$scope.pathURLDVT=$location.absUrl();
 
 		if($stateParams.pIndicator == 2014){
 			$scope.titleShare='ESENER-2 | Safety and health at work - EU-OSHA';
@@ -401,8 +401,12 @@ define(function (require) {
 		$scope.changeLocale = function(){
 			i18n = ($scope.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($scope.pLocale);
 			$state.transitionTo($state.current.name, {
-				pLocale: $scope.pLocale
-			}, 
+				pLanguage: $scope.pLanguage,
+				pLocale: $scope.pLocale,
+				pQuestion: $scope.pQuestion,
+		        pAnswer:$scope.pAnswer,
+		        pCountry:$scope.pCountry
+		   	},
 			{
 				reload: true
 			});
@@ -723,10 +727,13 @@ define(function (require) {
         	}else{
         		$scope.pExcelFileName = "";
         	}
+
+        	$scope.pExcelFileName = "comparisons_" + $scope.pSectorSize + "_" + $scope.pQuestion + "_" + $scope.pCountry;
         }
 
         $scope.exportData = function(id){
         	createFileName('xls');
+			$scope.promiseToExport = dataService.getComparisonExportData($scope.pSectorSize, $scope.pQuestion, $scope.pAnswer, $scope.pCountry, $scope.pLocale, $scope.pInclusions);
 
         	exportService.exportDataManually($scope.promiseToExport, $scope.pExcelFileName, id);
         }
