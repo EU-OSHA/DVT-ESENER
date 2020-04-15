@@ -403,6 +403,7 @@ define(function (require) {
 		$scope.changeLocale = function(){
 			i18n = ($scope.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($scope.pLocale);
 			$state.transitionTo($state.current.name, {
+				pIndicator: $scope.pIndicator,
 				pLanguage: $scope.pLanguage,
 				pLocale: $scope.pLocale,
 				pQuestion: $scope.pQuestion,
@@ -546,7 +547,7 @@ define(function (require) {
 			$stateParams.pSectorSize = $scope.pSectorSize;
 
 			$state.transitionTo('comparisons', {
-				pIndicator: $scope.pYear, //Year
+				pIndicator: $scope.pIndicator, //Year
 				pLanguage: $scope.pLanguage,
 				pLocale: $scope.pLocale,
 				pTopic: $scope.pTopic,
