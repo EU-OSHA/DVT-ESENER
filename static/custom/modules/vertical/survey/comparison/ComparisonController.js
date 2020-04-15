@@ -346,7 +346,9 @@ define(function (require) {
 					previousLevel: question.previousLevel,
 					nextFatherID: question.nextFatherID,
 					nextFatherName: question.nextFatherName,
-					nextLevel: question.nextLevel
+					nextLevel: question.nextLevel,
+					name2: question.name2,
+					name3: question.name3
 				}
 			}
 		});
@@ -640,74 +642,35 @@ define(function (require) {
         }
 
         $scope.createCitation = function(){
-        	var type = ($scope.pIndicator == '2009')?1:2;
         	$scope.currentDate = new Date();
 
         	var url = $state.current.url;
-        	//$log.warn(url);
-        	var paramsUsed = url.substring(url.indexOf('pQuestion')+9);
         	var textParams = '';
 
         	var title = '';
-        	if($scope.question.grandfather == undefined){
-        		title = $scope.i18n['L'+$scope.question.name3]+' ('+$scope.i18n['L'+$scope.question.father]+')';
+
+        	if($scope.currentQuestion.grandfather == undefined){
+        		title = $scope.i18n['L'+$scope.currentQuestion.name3]+' ('+$scope.i18n['L'+$scope.currentQuestion.father]+')';
         	}else{
-        		title = $scope.i18n['L'+$scope.question.name2] + ': ' + $scope.i18n['L'+$scope.question.name3]+' ('+$scope.i18n['L'+$scope.question.grandfather]+')';
+        		title = $scope.i18n['L'+$scope.currentQuestion.father] + ': ' + $scope.i18n['L'+$scope.currentQuestion.name3]+' ('+$scope.i18n['L'+$scope.currentQuestion.grandfather]+')';
         	}
 
-        	if(paramsUsed.match('pSectorSize')){
-        		if($scope.pSectorSize == 'activity-sector'){
-        			textParams = textParams + 'Activity sector ';
-        		}else{
-        			textParams = textParams + 'Establishment size ';
-        		}
-        	}
+    		if($scope.pSectorSize == 'activity-sector'){
+    			textParams = textParams + 'Activity sector ';
+    		}else{
+    			textParams = textParams + 'Establishment size ';
+    		}
 
-        	if(paramsUsed.match('pActivityFilter')){
-        		if($scope.pSectorSize == 'activity-sector'){
-        			textParams = textParams + ', ' + $scope.pActivityFilter + ' ';
-        		}
-        	}
+    		textParams = textParams + ', country : ' + $scope.pCountry + ' ' ;
+    		textParams = textParams + ', answer : ' + $scope.pAnswer + ' ';
 
-        	if(paramsUsed.match('pActivityFilter')){
-        		if($scope.pSectorSize != 'activity-sector'){
-        			textParams = textParams + ', ' + $scope.pCompanyFilter + ' ';
-        		}
-        	}
-
-        	if(paramsUsed.match('pCountry')){
-        		if($scope.pChart == 'pie-chart'){
-        			textParams = textParams + 'country : ' + $scope.pCountry + ' ';
-        		}else{
-        			textParams = textParams + ', country : ' + $scope.pCountry + ' ';
-        		}
-        	}
-
-        	if(paramsUsed.match('pCountry2')){
-        		textParams = textParams + ', compare with : ' + $scope.pCountry2 + ' ';
-        	}
-
-        	if(paramsUsed.match('pAnswer')){
-        		textParams = textParams + ', answer : ' + $scope.answer + ' ';
-        	}
-
-        	if($scope.pChart == 'european-map'){
-				$scope.chartCitation = 'L100623';
-			}else if($scope.pChart == 'european-bar-chart'){
-				$scope.chartCitation = 'L100622';
-			}else if($scope.pChart == 'national-bar-chart'){
-				$scope.chartCitation = 'L100624';
-			}else if($scope.pChart == 'national-comparisons'){
-				$scope.chartCitation = 'L100621';
-			}else if($scope.pChart == 'pie-chart'){
-				$scope.chartCitation = 'L101033';
-			}
+    		$scope.chartCitation = 'L101087';
 
         	var text = '@ONLINE{OSHA:'+ $scope.currentDate.getFullYear() +':Online,\n' +
 				'author = {},\n' +
 				'title = {'+title+' '+$scope.i18n.L100591 +' : '+
 				' '+$scope.i18n[$scope.chartCitation]+' '+ $scope.i18n.L100593 + ' : ' + textParams +
-				'- ESENER-'+type+
+				'- ESENER-2019'+
 				'},\n' +
 				'year = {2012},\n' +
 				'url = {'+$scope.pathURLDVT+'}' +
