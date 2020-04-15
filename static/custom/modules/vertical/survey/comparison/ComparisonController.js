@@ -476,7 +476,7 @@ define(function (require) {
 							pIndicator: $scope.pIndicator, //Year
 							pTopic: topic, //Category
 							pQuestion: pQuestionID, //Question name
-				            pAnswer: $scope.pAnswer, //Split answer
+				            pAnswer: answer, //Split answer
 							pSectorSize: $scope.pSectorSize,
 							pCountry: $scope.pCountry,
 							pLanguage: $scope.pLanguage,
