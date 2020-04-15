@@ -429,12 +429,12 @@ define(function (require) {
                     squash: 'osh-management'
                 },
                 pLocale: {
-                    value: 'en',
-                    squash: 'en'
+                    value: 'en_1',
+                    squash: 'en_1'
                 },
                 pQuestion: {
-                    value: 'E3Q151_1',
-                    squash: 'E3Q151_1'
+                    value: 'E3Q250',
+                    squash: 'E3Q250'
                 },
                 pCountry: {
                     value: 'EU27_2020',
