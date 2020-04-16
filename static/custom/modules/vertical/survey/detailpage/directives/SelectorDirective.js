@@ -13,7 +13,7 @@ define(function (require) {
 		var scope = this;
 	}
 
-	function SelectorDirective($log, dataService, $state, $stateParams) {
+	function SelectorDirective($log, dataService, $state, $stateParams, $rootScope) {
 		return {
 			restrict: 'E',
 			transclude: true,
@@ -707,6 +707,7 @@ define(function (require) {
 					//$log.warn(dashboard.dashboard);
 					//dashboard.dashboard.fireChange('pFilters', scope.filters);
 					i18n = (scope.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(scope.pLocale);
+					$rootScope.locale = scope.pLocale;
 					$state.transitionTo($state.current.name, {
 						pLanguage: scope.pLanguage,
 						pLocale: scope.pLocale,
@@ -1067,7 +1068,7 @@ define(function (require) {
 		}
 	}
 
-	SelectorDirective.$inject = ['$log', 'dataService', '$state', '$stateParams'];
+	SelectorDirective.$inject = ['$log', 'dataService', '$state', '$stateParams', '$rootScope'];
 
 	return SelectorDirective;
 });

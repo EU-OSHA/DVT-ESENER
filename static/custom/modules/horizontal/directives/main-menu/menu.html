@@ -233,7 +233,7 @@
                     'detailpage-pie-chart' == currentName}" data-ng-bind="i18n_literals.L101010"></a>
                 </li>
                 <li data-ng-class="{'active' : 'comparisons' == currentName, 'hide' : '2009' == pIndicator }" class="submenu--item">
-                    <a href="" ui-sref="comparisons({pLanguage: pLanguage, pIndicator: pIndicator})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'comparisons' == currentName }" data-ng-bind="i18n_literals.L101080"></a>
+                    <a href="" ui-sref="comparisons({pLanguage: pLanguage, pIndicator: pIndicator, pLocale: locale})" data-ng-click="changeIndicator($event,indicator.anchor);" data-ng-class="{'active' : 'comparisons' == currentName }" data-ng-bind="i18n_literals.L101080"></a>
                 </li>
             </ul>
             </div>

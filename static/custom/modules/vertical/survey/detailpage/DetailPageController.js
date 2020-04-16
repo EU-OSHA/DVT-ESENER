@@ -676,6 +676,7 @@ define(function (require) {
 
 		$scope.changeLocale = function(){
 			i18n = ($scope.pLocale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals($scope.pLocale);
+			$rootScope.locale = $scope.pLocale;
 			$state.transitionTo($state.current.name, {
 				pLocale: $scope.pLocale
 			}, 

@@ -51,7 +51,7 @@ define(function (require) {
             controller: ['$rootScope', '$scope', '$state', '$window' , 'configService', '$http', '$log','dataService', '$compile', '$sce', '$stateParams',
                 function ($rootScope, $scope, $state, $window, configService, $http, $log, dataService, $compile, $sce, $stateParams) {
                     // Load google translate element
-                    //new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');                   
+                    //new google.translate.TranslateElement({pageLanguage: 'en', autoDisplay: false, layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
 
                     $scope.changeLanguage = function(){
                         var local = $scope.pLanguage;
@@ -284,6 +284,22 @@ define(function (require) {
                         console.warn("unfoundState.to: " + unfoundState.to);
                         console.warn("unfoundState.to: " + unfoundState.to);
                         console.warn("unfoundState.options: " + unfoundState.options );
+                    });
+
+                    $rootScope.$watch('locale', function(newValue, oldValue)
+                    {
+                        if (newValue == "al_1")
+                        {
+                            $scope.locale = "mk";
+                        }
+                        else if (newValue == "al" || newValue == "me" || newValue == "tr")
+                        {
+                            $scope.locale = "en_1";
+                        }
+                        else
+                        {
+                            $scope.locale = newValue;    
+                        }                        
                     });
                     
 
