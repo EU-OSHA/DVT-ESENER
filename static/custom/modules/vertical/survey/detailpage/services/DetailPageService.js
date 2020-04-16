@@ -546,13 +546,13 @@ define (function (require) {
                         bar_fillStyle: function(scene){
                             var country = scene.firstAtoms.category;
                             if(country.label.match('('+pCountry1+')')){
-                                if(pCountry1 == 'EU28'){
+                                if(pCountry1 == 'EU28' || pCountry1 == 'EU27_2020'){
                                     return dvtUtils.getColorCountry();
                                 }else{
                                     return dvtUtils.getColorCountry(1);
                                 }
                             }else if(country.label.match('('+pCountry2+')')){
-                                if(pCountry2 == 'EU28'){
+                                if(pCountry2 == 'EU28' || pCountry2 == 'EU27_2020'){
                                     return dvtUtils.getColorCountry();
                                 }else{
                                     return dvtUtils.getColorCountry(2);
