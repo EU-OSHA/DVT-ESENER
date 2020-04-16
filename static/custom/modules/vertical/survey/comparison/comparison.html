@@ -41,8 +41,24 @@
     	<div class="selector--page--elements">            
 				<!-- Title and introduction -->
 			    <div class="content--intro--wrapper">
-            <h1 class="title--section second-color" data-ng-bind="pIndicator == 2019 ? i18n.L101079 : i18n.L101008"></h1>
-			        <!-- Breadcrumb -->        
+            <h1 class="title--section second-color outleft" data-ng-bind="i18n_literals.L101080"></h1>
+            <!-- DATA FOR -->
+            <div class="datafor--dropdown--wrapper" >
+              <div class="datafor--dropdown--list">
+                <p class="option-title" ng-click="openSelect($event)">DATA FOR</p>
+                <ul class="datafor--dropdown--options">
+                  <li>
+                    <input id='2014' type="checkbox" ng-click="openSelect($event)" checked="checked" disabled="disabled" tabindex="-1"/>
+                    <label for='2014' data-ng-bind="2014"></label>
+                  </li>
+                  <li>
+                    <input id='2019' type="checkbox" ng-click="openSelect($event)" checked="checked" disabled="disabled" tabindex="-1"/>
+                    <label for='2019' data-ng-bind="2019"></label>
+                  </li>
+                </ul>
+              </div>
+            </div> 
+			      <!-- Breadcrumb -->        
             <p data-ng-bind-html="currentQuestion.breadcrumb"></p>
             <ul class="question--by--question">
               <li><a data-ng-click="changeQuestion(currentQuestion.previousID, 'p')" title="{{isNull(currentQuestion.previous, 'p')}}" data-ng-bind="trim(currentQuestion.previous, 'p')"></a></li>
@@ -55,7 +71,7 @@
 		            <form action="" class="compare--block--form">
 	                <label for="searchFilter" class="" data-ng-bind="i18n.L101032"></label>
 	                <div>
-	                    <select style="width:140px" class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-change="changeLocale()" data-ng-model="pLocale">
+	                    <select class="lang-dropdown-select-element form-select" id="lang-dropdown-select-language_content" accesskey="8" title="Language" name="lang_dropdown_select" data-ng-change="changeLocale()" data-ng-model="pLocale">
 	                        <!-- Select esener 2014 languages -->
                           <option value="de_1">(AT) Österreich</option>
                           <option value="fr_1">(BE) Belgique</option>

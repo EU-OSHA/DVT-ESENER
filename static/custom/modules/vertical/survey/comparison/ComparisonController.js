@@ -708,10 +708,43 @@ define(function (require) {
         	exportService.exportImageAction($scope, $scope.pExcelFileName);
         }
 
+		// Open/Hide checkbox dropdown list
+		$scope.openSelect = function($event){
+	  		var currentSelect = $event.target; 
+	  		var nodename = currentSelect.nodeName;	  		
+	  		if( nodename == 'LABEL' || nodename == 'INPUT' ){
+					currentSelect = $event.target.offsetParent.offsetParent; 
+					angular.element(currentSelect).addClass('viewOptions');		
+	  		} else {
+					currentSelect = $event.target.offsetParent.offsetParent;
+					$scope.checkSelect(currentSelect); 
+	  		}
+		};
+		$scope.checkSelect = function(elem){
+	  		if( elem.className.indexOf('viewOptions') > 0 ){
+					angular.element(elem).removeClass('viewOptions'); 
+	  		} else {
+					angular.element('.datafor--dropdown--wrapper').removeClass('viewOptions');         
+					angular.element(elem).addClass('viewOptions');
+	  		}
+		};
+
 		angular.element('body').mouseup(function(e){
 		  var container = angular.element('.submenu--items--wrapper');
 		  if (!container.is(e.target) && container.has(e.target).length === 0){
 		    angular.element('.submenu--items--wrapper').removeClass('open'); 
+		  }
+		  //var datafor = angular.element('.datafor--dropdown--wrapper');
+		  var dataforP = angular.element('.datafor--dropdown--wrapper p');
+		  var dataforUL = angular.element('.datafor--dropdown--wrapper ul');
+		  var dataforLI = angular.element('.datafor--dropdown--wrapper li');
+		  var dataforLABEL = angular.element('.datafor--dropdown--wrapper label');
+		  if (!dataforP.is(e.target) && 
+		  		!dataforUL.is(e.target) && 
+		  		!dataforLI.is(e.target) && 
+		  		!dataforLABEL.is(e.target) && 
+		  		container.has(e.target).length === 0){
+		    angular.element('.datafor--dropdown--wrapper').removeClass('viewOptions');
 		  }
 		});
 		/********************************************* END FILTERS ************************************************/
