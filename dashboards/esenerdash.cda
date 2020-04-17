@@ -1010,4 +1010,21 @@
       FIELD (cs.id, 7,8,14,10,11) ASC;
     </Query>
   </DataAccess>
+
+  <!-- Get question ID for comparison -->
+  <DataAccess access="public" connection="dvt_conn" id="getComparisonQuestionID" type="sql">
+    <Cache duration="3600" enabled="true"/>
+    <Columns/>
+    <Parameters>
+      <Parameter default="E3Q151_1" name="pQuestion" type="String"/>
+    </Parameters>
+    <Query>
+      SELECT i2.name
+      FROM esener_indicator_comparison eic
+      INNER JOIN indicator i ON eic.category_2014=i.id
+      INNER JOIN indicator i2 ON eic.category_2019=i2.id
+      WHERE (i.name=${pQuestion} OR i2.name=${pQuestion})
+      AND eic.comparison=1
+    </Query>
+  </DataAccess>
 </CDADescriptor>

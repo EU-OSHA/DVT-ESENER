@@ -301,6 +301,22 @@ define(function (require) {
                             $scope.locale = newValue;    
                         }                        
                     });
+
+                    $rootScope.$watch('question', function(newValue, oldValue)
+                    {
+                        dataService.getComparisonQuestionID(newValue).then(function(res)
+                        {
+                            var data = res.data.resultset;
+                            if (data.length == 1)
+                            {
+                                $scope.question = data[0][0];
+                            }
+                            else 
+                            {
+                                $scope.question = "E3Q250";
+                            }
+                        });
+                    });
                     
 
                     var buttonToggle = angular.element( "button.navbar-toggle" );
