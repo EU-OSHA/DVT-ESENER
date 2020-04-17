@@ -850,6 +850,11 @@ define(function (require) {
 			var questionName = (question.category != undefined)?question.category:question;
 			var exception = rulesForTooltip(questionName);
 
+			if ($scope.pIndicator != 2009)
+			{
+				$rootScope.question = question.category;
+			}
+
 			if(!exception){
 
 				if($scope.pChart == 'european-bar-chart'){

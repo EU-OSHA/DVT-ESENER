@@ -138,6 +138,19 @@ define(function () {
 
             /**
              * @ngdoc method
+             * @name dvt.configModule.DataService#getComparisonQuestionID
+             * @methodOf dvt.configModule.DataService
+             * @description
+             * Returns all questions with the level hierarchy
+             */
+            getComparisonQuestionID: function (pQuestion) {
+                var url = configService.getEsenerDataPath() + "&dataAccessId=getComparisonQuestionID" + "&parampQuestion=" + pQuestion;
+                $log.debug('getComparisonQuestionID url:' + url);
+                return promise(url);
+            },
+
+            /**
+             * @ngdoc method
              * @name dvt.configModule.DataService#getMapData
              * @methodOf dvt.configModule.DataService
              * @description
