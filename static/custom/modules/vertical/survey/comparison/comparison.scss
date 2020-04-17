@@ -11,8 +11,9 @@
     .datafor--dropdown--list{
       position: absolute;
       height: 4rem;
-      border: 1px solid $gray;
+      border: 1px solid $gray-light;
       background: $white;
+      color:$gray;
       overflow: hidden;
       width: auto;
       padding: 0rem;
