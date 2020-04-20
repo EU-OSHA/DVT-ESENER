@@ -138,7 +138,6 @@ define(function (require) {
             angular.element('.section-chart .card--item').removeClass('selected');
             angular.element('.section-chart .card--item').removeClass('tablet');
             angular.element('.section-chart .card--item').addClass('disabled');
-            console.log( $event.target.nodeName );
             if( $event.target.nodeName == "SPAN" ){
                 $event.target.parentElement.parentElement.classList.remove('disabled');
                 $event.target.parentElement.parentElement.classList.add('selected');
