@@ -379,34 +379,6 @@
         flex-direction: column;
         padding: 1.5rem;
         margin: 0;
-        &.min-height{
-          .title--card{
-            min-height: 10rem;
-          }
-        }
-        &.selected{
-          a{
-            outline: 0.5rem solid #00a1a3 !important;
-          }          
-        }
-        &.disabled{
-          border: 0 !important;
-          cursor: default !important;
-          a{
-            background-color: rgba(177, 179, 180,0.2);
-            -webkit-filter: grayscale(100%);
-            filter: grayscale(100%);
-          }
-          .text-center{
-            color: rgba(177, 179, 180,1);
-          }          
-        }
-        &.tablet{
-          a{
-            color: $orange !important;
-            background-color: #FDEDCC !important;           
-          }
-        }
         a{
           font-size: 1.4rem;
           font-family: 'OpenSans-bold';
@@ -443,6 +415,11 @@
           color: $gray-light;
           margin: 0.5rem 0;
         }
+        &.min-height{
+          .title--card{
+            min-height: 10rem;
+          }
+        }
         &:hover{
           cursor: pointer;
           .icon--card{
@@ -451,6 +428,39 @@
           }
           p{
             color: $black;
+            cursor: pointer;
+          }
+        }
+        &.selected{
+          a{
+            outline: 0.5rem solid #00a1a3 !important;
+          }
+          p{
+            color: $black;
+          }          
+        }
+        &.disabled{
+          border: 0 !important;
+          cursor: default !important;          
+          a{
+            background-color: rgba(177, 179, 180,0.2);
+            -webkit-filter: grayscale(100%);
+            filter: grayscale(100%);
+          }
+          .text-center{
+            color: rgba(177, 179, 180,1);
+          }
+          &:hover{
+            .icon--card{
+              color: $aquamarine;
+              background-color:$aquamarine-light;
+            }
+          }         
+        }
+        &.tablet{
+          a{
+            color: $orange !important;
+            background-color: #FDEDCC !important;           
           }
         }
       }

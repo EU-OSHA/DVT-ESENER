@@ -138,7 +138,7 @@ define(function (require) {
             angular.element('.section-chart .card--item').removeClass('selected');
             angular.element('.section-chart .card--item').removeClass('tablet');
             angular.element('.section-chart .card--item').addClass('disabled');
-            
+            console.log( $event.target.nodeName );
             if( $event.target.nodeName == "SPAN" ){
                 $event.target.parentElement.parentElement.classList.remove('disabled');
                 $event.target.parentElement.parentElement.classList.add('selected');
@@ -148,12 +148,18 @@ define(function (require) {
                     }
 
             } else {
-                $event.target.parentElement.classList.remove('disabled');
-                $event.target.parentElement.classList.add('selected');
+                if( $event.target.nodeName == "LI" ){
+                    $event.target.classList.remove('disabled');
+                    $event.target.classList.add('selected');
+                }
+                else{
+                    $event.target.parentElement.classList.remove('disabled');
+                    $event.target.parentElement.classList.add('selected');
+                }
 
-                    if(configService.isMobile()) {
-                        $event.target.parentElement.classList.add('tablet');
-                    }
+                if(configService.isMobile()) {
+                    $event.target.parentElement.classList.add('tablet');
+                }
             }
 
             $scope.pChart = chart;
