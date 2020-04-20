@@ -440,7 +440,7 @@
         }
         p{
           font-size: 1.2rem;
-          //color: $gray-light;
+          color: $gray-light;
           margin: 0.5rem 0;
         }
         &:hover{
@@ -448,6 +448,9 @@
           .icon--card{
             color: $aquamarine;
             background-color:$aquamarine-light;
+          }
+          p{
+            color: $black;
           }
         }
       }
