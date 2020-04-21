@@ -136,8 +136,8 @@ define(function (require) {
 				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("2"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("2")+2);
 			}
 			// Trade, transport, food/accommodation and recreation activities
-			if (($scope.pQuestion=="E3Q252_2" && ["IS","MK","BG","CY","EE","EL","LT","MT","RO","SK"].indexOf($scope.pCountry) > -1)
-				|| (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI"].indexOf($scope.pCountry) > -1))
+			if (/*($scope.pQuestion=="E3Q252_2" && ["IS","MK","BG","CY","EE","EL","LT","MT","RO","SK"].indexOf($scope.pCountry) > -1)
+				|| */(["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI"].indexOf($scope.pCountry) > -1))
 			{
 				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("4"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("4")+2);
 			}
@@ -175,7 +175,7 @@ define(function (require) {
 			$scope.pInclusions = "7;8;14;10;11";
 			// 5 to 9 Employees
 			if (($scope.pQuestion == "E3Q252_2" && ["MK","BG","LU","MT","SK"].indexOf($scope.pCountry) > -1)
-				|| (["E3Q300","E3Q301","E3Q302"].indexOf($scope.pQuestion) > -1)
+				/*|| (["E3Q300","E3Q301","E3Q302"].indexOf($scope.pQuestion) > -1)*/
 				|| ($scope.pCountry == "MT" && $scope.pQuestion=="E3Q354")
 				|| ($scope.pQuestion == "E3Q355_2" && ["MT","BG"].indexOf($scope.pCountry) > -1))
 			{
