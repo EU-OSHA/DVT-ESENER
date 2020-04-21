@@ -745,15 +745,18 @@ define(function (require) {
 							}else if(type == 'p'){
 								pQuestionID = 'Q358';
 							}
-							$rootScope.question = pQuestionID;
 						} else {
 							if(type == 'n'){
 								pQuestionID = 'E3Q151_1';
 							}else if(type == 'p'){
 								pQuestionID = 'E3Q357';
 							}
-							$rootScope.question = pQuestionID;
 						}
+					}
+
+					if (scope.dataset != 2009)
+					{
+						$rootScope.question = pQuestionID;
 					}
 
 					var topic = '';

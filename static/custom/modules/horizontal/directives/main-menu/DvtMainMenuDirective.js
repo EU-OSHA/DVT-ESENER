@@ -316,6 +316,7 @@ define(function (require) {
                                     $scope.topic = data[0][2];
                                 }
                                 $scope.topic = i18n_literals['L'+$scope.topic].toLowerCase().replace(/[\,\ ]/g, '-');
+                                $scope.answer = data[0][3];
                             }
                             else 
                             {
@@ -327,7 +328,7 @@ define(function (require) {
                     $rootScope.$watch('country', function(newValue, oldValue)
                     {
                         $scope.country = newValue;
-                    });                    
+                    });
 
                     var buttonToggle = angular.element( "button.navbar-toggle" );
                     var navMainMenu = angular.element( "nav.bar-main-menu" );

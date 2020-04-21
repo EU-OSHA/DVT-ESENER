@@ -279,7 +279,11 @@ define(function (require) {
 		dataService.getQuestionAnswerOrder($scope.pQuestion).then(function(res) {
 			$scope.answers = [];
 			res.data.resultset.map(function(elem) {
-				$scope.answers.push({id:elem[0], literal:elem[1]});
+				// For question E3Q352, only "On a regular basis" answer will appear
+				if ($scope.pQuestion != "E3Q352" || elem[0]==3)
+				{
+					$scope.answers.push({id:elem[0], literal:elem[1]});
+				}				
 			});
 		});
 
