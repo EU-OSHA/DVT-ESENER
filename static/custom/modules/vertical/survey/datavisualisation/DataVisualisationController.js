@@ -11,7 +11,7 @@
 define(function (require) {
     'use strict';
 
-    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, dataService, $event) {
+    function controller(configService, dvtUtils, $scope, $stateParams, $state, $document, $log, dataService, $rootScope, $event) {
 
         $scope.pLanguage = $stateParams.pLanguage;
         
@@ -38,6 +38,8 @@ define(function (require) {
         }else if(($scope.pIndicator == '2014' || $scope.pIndicator == '2019') && $scope.pLanguage == 'en'){
             $scope.pLocale = 'en_1';
         }
+
+        $rootScope.locale = $scope.pLocale;
 
         $(window).on("resize",function(e){
             if( !configService.isMobile()) {
@@ -167,6 +169,6 @@ define(function (require) {
         $scope.status = 'ready';
     }
 
-    controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log', 'dataService'];
+    controller.$inject = ['configService', 'dvtUtils', '$scope', '$stateParams', '$state','$document', '$log', 'dataService', '$rootScope'];
     return controller;
 });

@@ -840,6 +840,8 @@ define(function (require) {
 							reload: true
 						});
 					}else if(scope.chart == 'national-comparisons'){
+						$rootScope.country = scope.filters.country;
+
 						$state.transitionTo('detailpage-national-comparisons', {
 							pIndicator: scope.dataset, //Year
 							pLanguage: scope.pLanguage,
@@ -875,6 +877,7 @@ define(function (require) {
 							case "country":
 								console.log("country changed");
 								//$log.warn("country changed");
+								$rootScope.country = scope.filters.country;
 								scope.country = scope.filters.country;
 								break;
 							case "country2":

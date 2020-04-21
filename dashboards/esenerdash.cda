@@ -1016,13 +1016,16 @@
     <Cache duration="3600" enabled="true"/>
     <Columns/>
     <Parameters>
-      <Parameter default="E3Q151_1" name="pQuestion" type="String"/>
+      <Parameter default="E3Q250" name="pQuestion" type="String"/>
     </Parameters>
     <Query>
-      SELECT i2.name
+      SELECT i2.name, ec1.name_2_literal_id AS father, ec2.name_2_literal_id AS grandfather
       FROM esener_indicator_comparison eic
       INNER JOIN indicator i ON eic.category_2014=i.id
       INNER JOIN indicator i2 ON eic.category_2019=i2.id
+      INNER JOIN esener_category ec ON i2.name=ec.category
+      INNER JOIN esener_category ec1 ON ec.father_id = ec1.id
+      LEFT JOIN esener_category ec2 ON ec1.father_id=ec2.id
       WHERE (i.name=${pQuestion} OR i2.name=${pQuestion})
       AND eic.comparison=1
     </Query>
