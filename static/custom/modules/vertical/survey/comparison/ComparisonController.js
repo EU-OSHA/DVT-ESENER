@@ -124,8 +124,8 @@ define(function (require) {
 			if (($scope.pQuestion == "E3Q252_2" && ["IS","MK","BG","MT","SK"].indexOf($scope.pCountry) > -1)
 				|| (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI","MK","NO","RS","CZ","DK","EE","ES","HR","HU","IE","IT","LT","LV","MT","NL","PL","SE","SK","UK"].indexOf($scope.pCountry) > -1)
 				|| ($scope.pCountry=="MT" && ["E3Q300","E3Q301","E3Q354"].indexOf($scope.pQuestion) > -1)
-				|| ($scope.pQuestion == "E3Q302" && ["IS","MK","BG","MT","SK","EL","LT","LV"].indexOf($scope.pQuestion) > -1)
-				|| ($scope.pQuestion == "E3Q355_2" && ["BG","MT","MK"].indexOf($scope.pQuestion) > -1))
+				|| ($scope.pQuestion == "E3Q302" && ["IS","MK","BG","MT","SK","EL","LT","LV"].indexOf($scope.pCountry) > -1)
+				|| ($scope.pQuestion == "E3Q355_2" && ["BG","MT","MK"].indexOf($scope.pCountry) > -1))
 			{
 				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("3"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("3")+2);
 			}
@@ -136,13 +136,13 @@ define(function (require) {
 				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("2"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("2")+2);
 			}
 			// Trade, transport, food/accommodation and recreation activities
-			if (($scope.pQuestion=="E3Q252_2" && ["IS","MK","BG","CY","EE","EL","LT","MT","RO","SK"].indexOf($scope.pQuestion) > -1)
+			if (($scope.pQuestion=="E3Q252_2" && ["IS","MK","BG","CY","EE","EL","LT","MT","RO","SK"].indexOf($scope.pCountry) > -1)
 				|| (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI"].indexOf($scope.pCountry) > -1))
 			{
 				$scope.pInclusions = $scope.pInclusions.substring(0, $scope.pInclusions.indexOf("4"))+$scope.pInclusions.substring($scope.pInclusions.indexOf("4")+2);
 			}
 			// IT, Finance, Real estate and other technichal scientific or personal service activities
-			if (($scope.pQuestion=="E3Q252_2" && ["IS","MK","BG","CY","EE","EL","LT","MT","RO","SK"].indexOf($scope.pQuestion) > -1)
+			if (($scope.pQuestion=="E3Q252_2" && ["IS","MK","BG","CY","EE","EL","LT","MT","RO","SK"].indexOf($scope.pCountry) > -1)
 				|| (["E3Q260_1","E3Q260_2","E3Q260_3","E3Q260_4"].indexOf($scope.pQuestion) > -1 && ["BG","RO","SI"].indexOf($scope.pCountry) > -1)
 				|| ($scope.pCountry=="MK" && $scope.pQuestion=="E3Q302")
 				|| ($scope.pQuestion=="E3Q355_2" && ["IS","MK","BG","CY","LT","MT"].indexOf($scope.pCountry) > -1)
