@@ -455,6 +455,10 @@
               color: $aquamarine;
               background-color:$aquamarine-light;
             }
+            p{
+              color: $black;
+              cursor: pointer;
+            }
           }         
         }
         &.tablet{
