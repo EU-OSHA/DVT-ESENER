@@ -349,6 +349,7 @@
       INNER JOIN indicator i ON v.indicator_id=i.id
       INNER JOIN translation t ON n.literal_id = t.literal_id AND t.language = ${pLanguage}
       WHERE i.name=${pQuestion}
+      AND CASE WHEN ${pQuestion} NOT LIKE "E3Q%" THEN country_code!="EU27_2020" END
       ORDER BY FIELD(country_code, 'EU28', 'EU27_2020') DESC, country_code ASC;
     </Query>
   </DataAccess>
@@ -369,7 +370,7 @@
       INNER JOIN indicator i ON v.indicator_id=i.id
       INNER JOIN translation t ON n.literal_id = t.literal_id AND t.language = ${pLanguage}
       WHERE i.name IN (${pQuestion}, (SELECT i2.name FROM esener_indicator_comparison eic INNER JOIN indicator i ON eic.category_2019=i.id INNER JOIN indicator i2 ON eic.category_2014=i2.id WHERE i.name=${pQuestion}))
-      AND n.country_code!="EU28"
+      AND n.country_code NOT IN ("EU28", "AL", "ME", "TR")
       ORDER BY FIELD(country_code, 'EU28', 'EU27_2020') DESC, country_code ASC;
     </Query>
   </DataAccess>

@@ -328,6 +328,11 @@ define(function (require) {
                     $rootScope.$watch('country', function(newValue, oldValue)
                     {
                         $scope.country = newValue;
+                        // For some countries there is no data in ESENER-2019, so the country needs to be other one
+                        if (newValue == "EU28" || newValue == "AL" || newValue == "ME" || newValue == "TR")
+                        {
+                            $scope.country = "EU27_2020";
+                        }
                     });
 
                     var buttonToggle = angular.element( "button.navbar-toggle" );
