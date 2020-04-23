@@ -46,6 +46,10 @@ define(function (require) {
 
 		var i18nEN = configService.getLiterals();
 
+		// Questionnaire names
+		var questionnaireNames = require('json!vertical/detailpage/questionnaire_name');
+		$scope.questionnaires = questionnaireNames;
+
 		//Social network and export data modals
 		$scope.showPopUpSocialMedia = false;
 		$scope.showPopUpExportData = false;
