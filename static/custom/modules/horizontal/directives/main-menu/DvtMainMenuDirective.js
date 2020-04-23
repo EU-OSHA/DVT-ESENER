@@ -321,6 +321,8 @@ define(function (require) {
                             else 
                             {
                                 $scope.question = "E3Q250";
+                                $scope.topic = "osh-management";
+                                $scope.answer = 1;
                             }
                         });
                     });
