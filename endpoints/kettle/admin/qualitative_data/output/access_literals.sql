@@ -89,106 +89,31 @@ SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="HOMEPAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "ESENER_GENERAL_INFORMATION");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "<p>The third European Survey of Enterprises on New and Emerging Risks (ESENER) has been carried out in 2019, fieldwork covering over 45,000 establishments across all business size classes and activity sectors in 33 European countries.</p>
-<p>
-  <a href=\"https://osha.europa.eu/en/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">First results</a> are now available. Further reports and a Data Visualisation will follow in 2020 and beyond.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "<p>През 2019 г. беше проведено Третото европейско проучване сред предприятията относно новите и възникващите рискове (ESENER), като бяха обхванати над 45 000 предприятия от всички категории по размер и сектор на дейност в 33 европейски държави.&nbsp;</p>
-<p>Вече са публикувани 
-  <a href=\"https://osha.europa.eu/bg/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">първите резултати.</a> Още доклади и инструментът за визуализация на данни ще излязат през 2020 г. и след това.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "<p>V roce 2019 se uskutečnil třetí Evropský průzkum podniků na téma nových a vznikajících rizik (ESENER). Práce v terénu zahrnovaly více než 45 000 podniků všech velikostí a ze všech odvětví v 33 evropských zemích.&nbsp;</p>
-<p>
-  <a href=\"https://osha.europa.eu/cs/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">První výsledky</a> jsou již k dispozici. Další zprávy a vizualizace dat budou k dispozici v roce 2020 a v následujících letech.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "<p>Den tredje europæiske virksomhedsundersøgelse om nye risici og risici i fremvækst (ESENER) er blevet gennemført i 2019. Feltarbejdet omfatter over 45 000 virksomheder inden for alle størrelseskategorier og brancher i 33 europæiske lande.&nbsp;</p>
-<p>De 
-  <a href=\"https://osha.europa.eu/da/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">første resultater</a> er nu tilgængelige. Yderligere rapporter og en datavisualisering følger i 2020 og derefter.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "<p>Im Jahr 2019 wurde die dritte Europäische Unternehmenserhebung über neue und aufkommende Risiken (ESENER) durchgeführt. Die Feldforschung deckte mehr als 45 000 Unternehmen aller Größenklassen und Tätigkeitsbereiche in 33 europäischen Ländern ab.&nbsp;</p>
-<p>
-  <a href=\"https://osha.europa.eu/de/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">Die ersten Ergebnisse</a> liegen nun vor. Weitere Berichte und eine Datenvisualisierung werden im Jahr 2020 und danach folgen.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "<p>Kolmas Euroopa ettevõtete uute ja tekkivate riskide uuring (ESENER) toimus 2019. aastal. Uuring hõlmas üle 45 000 iga suurusega ja igast sektorist pärit ettevõtte 33 Euroopa riigist.&nbsp;</p>
-<p>Nüüd on avaldatud 
-  <a href=\"https://osha.europa.eu/et/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">esimesed tulemused</a>. 2020. aastast on kättesaadavad ka täiendavad aruanded ja andmete visualiseerimisvahend.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "<p>Το 2019, πραγματοποιήθηκε η τρίτη ευρωπαϊκή έρευνα για τις επιχειρήσεις σχετικά με τους νέους και αναδυόμενους κινδύνους (ESENER). Η επιτόπια έρευνα καλύπτει πάνω από 45 000 επιχειρήσεις κάθε κατηγορίας μεγέθους σε όλους τους τομείς δραστηριότητας σε 33 ευρωπαϊκές χώρες.&nbsp;</p>
-<p>Τα 
-  <a href=\"https://osha.europa.eu/el/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">πρώτα αποτελέσματα</a> είναι τώρα διαθέσιμα. Περισσότερες εκθέσεις και η απεικόνιση δεδομένων θα ακολουθήσουν από το 2020 και μετά.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<p>Se ha llevado a cabo en 2019 la tercera Encuesta europea de empresas sobre riesgos nuevos y emergentes (ESENER), que abarca más de 45.000 establecimientos de empresas de todo tipo de tamaño y sectores de actividad en 33 países europeos.&nbsp;</p>
-<p>Los 
-  <a href=\"https://osha.europa.eu/es/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">primeros resultados</a> ya están disponibles. En 2020 y años sucesivos se publicarán otros informes y una visualización de datos.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "<p>La troisième enquête européenne des entreprises sur les risques nouveaux et émergents (ESENER) a été réalisée en 2019, le travail de terrain couvrant plus de 45 000 établissements dans toutes les classes de taille d’entreprise et tous les secteurs d’activité dans 33 pays européens.&nbsp;</p>
-<p>Les 
-  <a href=\"https://osha.europa.eu/fr/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">premiers résultats</a> sont à présent disponibles. Des rapports supplémentaires et une visualisation des données suivront en 2020 et au-delà.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "<p>U 2019. u tijeku je treće europsko istraživanje poduzeća o novim rizicima i onima u nastajanju (ESENER), koje na terenu obuhvaća preko 45 000 poduzeća svih veličina u svim područjima djelatnosti u 33 europske zemlje.&nbsp;</p>
-<p>Sada su dostupni i 
-  <a href=\"https://osha.europa.eu/hr/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">prvi rezultati</a>. Daljnja izvješća i vizualizacija podataka uslijedit će 2020. i kasnije.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "<p>Þriðja fyrirtækjakönnun Evrópu um nýjar og aðsteðjandi hættur (ESENER) hefur verið framkvæmd árið 2019, unnið er á vettvangi í meira en 45.000 fyrirtækjum, sem ná yfir allar stærðir, gerðir og starfsemi í 33 Evrópulöndum.&nbsp;</p>
-<p>
-  <a href=\"https://osha.europa.eu/is/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">Fyrstu niðurtöður</a> eru nú aðgengilegar. Frekari skýrslur og gagnabirtingar munu fylgja í kjölfarið árið 2020 og eftir það.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "<p>La terza indagine europea fra le imprese sui rischi nuovi ed emergenti (ESENER) è stata condotta nel 2019, con una copertura di oltre 45 000 stabilimenti di tutte le classi di dimensione economica e settori di attività in 33 paesi europei.&nbsp;</p>
-<p>Sono ora disponibili 
-  <a href=\"https://osha.europa.eu/it/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">i primi risultati</a>. Ulteriori relazioni e una visualizzazione dei dati seguiranno a partire dal 2020.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "<p>Trešā Eiropas uzņēmumu aptauja par jaunajiem un nākotnes riskiem (ESENER) ir uzsākta 2019. gadā, un tā aptver vairāk nekā 45 000 uzņēmumu visās uzņēmējdarbības izmēra klasēs un darbības nozarēs 33 Eiropas valstīs.&nbsp;</p>
-<p>Tagad ir pieejami 
-  <a href=\"https://osha.europa.eu/lv/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">pirmie rezultāti.</a> Turpmākie ziņojumi un datu vizualizācija notiks 2020. gadā un vēlāk.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "<p>2019 m. atlikta trečioji Europos įmonių apklausa apie naują ir kylančią riziką (ESENER). Apklausta daugiau kaip 45 tūkst. įmonių, priklausančių visų dydžių kategorijoms ir visiems veiklos sektoriams 33-ose Europos šalyse.&nbsp;</p>
-<p>Jau gauti 
-  <a href=\"https://osha.europa.eu/lt/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">pirmieji rezultatai</a>. Daugiau ataskaitų ir duomenų vizualizacija bus pateikta 2020 m. ir vėliau.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "<p>Az új és újonnan felmerülő kockázatokról szóló harmadik európai vállalati felmérésre (ESENER) 2019-ben kerül sor. A terepmunka során több mint 45 000, különféle méretű létesítményt vizsgálnak különböző tevékenységi területeken, 33 európai országban.&nbsp;</p>
-<p>
-  <a href=\"https://osha.europa.eu/hu/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">Az első eredmények</a> már elérhetők. 2020-ban és azt követően további jelentések és adatvizualizáció várható.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "<p>Fl-2019 twettaq it-tielet Stħarriġ Ewropew ta’ Intrapriżi dwar Riskji Ġodda u Emerġenti (ESENER), ħidma fuq il-post li tkopri iktar minn 45,000 stabbiliment tul il-klassijiet tad-daqs tan-negozju u s-setturi ta’ attività kollha fi 33 pajjiż Ewropew. &nbsp;</p>
-<p>
-  <a href=\"https://osha.europa.eu/mt/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">L-ewwel riżultati</a> issa huma disponibbli. Aktar rapporti u Viżwalizzazzjoni tad-Data se jsegwu fl-2020 u lil hinn.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "<p>De derde Europese bedrijvenenquête naar nieuwe en opkomende risico’s (ESENER) is in 2019 uitgevoerd met veldwerk in meer dan 45 000 bedrijfsvestigingen van allerlei omvang en in alle economische sectoren in 33 Europese landen.&nbsp;</p>
-<p>De 
-  <a href=\"https://osha.europa.eu/nl/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">eerste resultaten</a> zijn nu beschikbaar. Vanaf 2020 volgen verdere rapporten en een visualisatie van de gegevens.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "<p>Den tredje europeiske bedriftsundersøkelsen om nye og framvoksende risikoer (ESENER) har blitt gjennomført i 2019. Feltarbeidet omfatter over 45 000 virksomheter i alle størrelsesklasser og bransjer i 33 land i Europa.&nbsp;</p>
-<p>
-  <a href=\"https://osha.europa.eu/no/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">De første resultatene</a> er nå tilgjengelige. Flere rapporter og en datavisualisering følger i 2020 og senere.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "<p>W 2019 r. przeprowadzono trzecie europejskie badanie przedsiębiorstw na temat nowych i pojawiających się zagrożeń (ESENER) obejmujące ponad 45 tys. różnej wielkości przedsiębiorstw prowadzących działalność w rozmaitych sektorach w 33 państwach europejskich.&nbsp;</p>
-<p>Dostępne są już 
-  <a href=\"https://osha.europa.eu/pl/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">pierwsze wyniki</a>. Kolejne sprawozdania i wizualizacja danych zostaną udostępnione w 2020 r. i kolejnych latach.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "<p>O terceiro Inquérito Europeu às Empresas sobre Riscos Novos e Emergentes (ESENER) está em curso em 2019, sendo que o trabalho no terreno abrange mais de 45 000 empresas de todas as classes de dimensão económica e setores de atividade em 33 países europeus.&nbsp;</p>
-<p>Os 
-  <a href=\"https://osha.europa.eu/pt/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">primeiros resultados</a> estão agora disponíveis. Em 2020 e nos anos seguintes, seguir-se-ão outros relatórios e uma visualização de dados.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "<p>Al treilea Sondaj european în rândul întreprinderilor privind riscurile noi și emergente (ESENER) s-a desfășurat în 2019, iar activitățile desfășurate pe teren au cuprins peste 45 000 de întreprinderi din toate categoriile de mărime și sectoare de activitate, din 33 de țări europene.&nbsp;</p>
-<p>
-  <a href=\"https://osha.europa.eu/ro/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">Primele rezultate</a> sunt acum disponibile. În 2020 și în anii următori vor urma alte rapoarte și vizualizarea datelor.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "<p>V roku 2019 prebieha tretí Európsky prieskum podnikov o nových a vznikajúcich rizikách (ESENER), pričom práca v teréne sa týka viac ako 45 000 organizácií vo všetkých triedach veľkosti podnikov a odvetviach činnosti v 33 európskych krajinách.&nbsp;</p>
-<p>K dispozícii sú už 
-  <a href=\"https://osha.europa.eu/sk/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">prvé výsledky</a>. Ďalšie správy a vizualizácia údajov budú nasledovať v roku 2020 a v neskoršom období.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "<p>Leta 2019 je bila izvedena tretja evropska raziskava podjetij o novih in nastajajočih tveganjih (ESENER). V 33 evropskih državah je na terenu zajela več kot 45 000 podjetij vseh velikosti iz vseh sektorjev dejavnosti.&nbsp;</p>
-<p>
-  <a href=\"https://osha.europa.eu/sl/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">Prvi izsledki</a> so sedaj na voljo. Nadaljnja poročila in prikaz podatkov bodo sledili v letu 2020 in pozneje.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<p>Kolmas kyselytutkimus Euroopan yrityksille uusista ja kehittyvistä riskeistä (ESENER) toteutettiin vuonna 2019. Siihen liittyvä kenttätyö kattaa yli 45 000 yritystä eri kokoluokista ja kaikilta toiminnan aloilta 33 Euroopan maasta.&nbsp;</p>
-<p>
-  <a href=\"https://osha.europa.eu/fi/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">Ensimmäisiä tuloksia</a> on nyt saatavissa. Lisää raportteja ja graafista tietoa saadaan vuonna 2020 ja sen jälkeen.
-</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<p>Den tredje europeiska företagsundersökningen om nya och framväxande risker (ESENER) har genomförts under 2019. Fältarbetet har omfattat över 45 000 företag i alla storleksklasser och verksamhetssektorer i 33 europeiska länder.&nbsp;</p>
-<p>
-  <a href=\"https://osha.europa.eu/sv/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" rel=\"noopener noreferrer\" target=\"_blank\">De första resultaten</a> är nu tillgängliga. Ytterligare rapporter och en datavisualisering kommer att offentliggöras från 2020 och framåt.
-</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "<p>The third European Survey of Enterprises on New and Emerging Risks (ESENER) has been carried out in 2019, fieldwork covering over 45,000 establishments across all business size classes and activity sectors in 33 European countries.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "<p>През 2019 г. беше проведено Третото европейско проучване сред предприятията относно новите и възникващите рискове (ESENER), като бяха обхванати над 45 000 предприятия от всички категории по размер и сектор на дейност в 33 европейски държави.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "<p>V roce 2019 se uskutečnil třetí Evropský průzkum podniků na téma nových a vznikajících rizik (ESENER). Práce v terénu zahrnovaly více než 45 000 podniků všech velikostí a ze všech odvětví v 33 evropských zemích.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "<p>Den tredje europæiske virksomhedsundersøgelse om nye risici og risici i fremvækst (ESENER) er blevet gennemført i 2019. Feltarbejdet omfatter over 45 000 virksomheder inden for alle størrelseskategorier og brancher i 33 europæiske lande.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "<p>Im Jahr 2019 wurde die dritte Europäische Unternehmenserhebung über neue und aufkommende Risiken (ESENER) durchgeführt. Die Feldforschung deckte mehr als 45 000 Unternehmen aller Größenklassen und Tätigkeitsbereiche in 33 europäischen Ländern ab.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "<p>Kolmas Euroopa ettevõtete uute ja tekkivate riskide uuring (ESENER) toimus 2019. aastal. Uuring hõlmas üle 45 000 iga suurusega ja igast sektorist pärit ettevõtte 33 Euroopa riigist.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "<p>Το 2019, πραγματοποιήθηκε η τρίτη ευρωπαϊκή έρευνα για τις επιχειρήσεις σχετικά με τους νέους και αναδυόμενους κινδύνους (ESENER). Η επιτόπια έρευνα καλύπτει πάνω από 45 000 επιχειρήσεις κάθε κατηγορίας μεγέθους σε όλους τους τομείς δραστηριότητας σε 33 ευρωπαϊκές χώρες.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<p>Se ha llevado a cabo en 2019 la tercera Encuesta europea de empresas sobre riesgos nuevos y emergentes (ESENER), que abarca más de 45.000 establecimientos de empresas de todo tipo de tamaño y sectores de actividad en 33 países europeos.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "<p>La troisième enquête européenne des entreprises sur les risques nouveaux et émergents (ESENER) a été réalisée en 2019, le travail de terrain couvrant plus de 45 000 établissements dans toutes les classes de taille d’entreprise et tous les secteurs d’activité dans 33 pays européens.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "<p>U 2019. u tijeku je treće europsko istraživanje poduzeća o novim rizicima i onima u nastajanju (ESENER), koje na terenu obuhvaća preko 45 000 poduzeća svih veličina u svim područjima djelatnosti u 33 europske zemlje.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "<p>Þriðja fyrirtækjakönnun Evrópu um nýjar og aðsteðjandi hættur (ESENER) hefur verið framkvæmd árið 2019, unnið er á vettvangi í meira en 45.000 fyrirtækjum, sem ná yfir allar stærðir, gerðir og starfsemi í 33 Evrópulöndum.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "<p>La terza indagine europea fra le imprese sui rischi nuovi ed emergenti (ESENER) è stata condotta nel 2019, con una copertura di oltre 45 000 stabilimenti di tutte le classi di dimensione economica e settori di attività in 33 paesi europei.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "<p>Trešā Eiropas uzņēmumu aptauja par jaunajiem un nākotnes riskiem (ESENER) ir uzsākta 2019. gadā, un tā aptver vairāk nekā 45 000 uzņēmumu visās uzņēmējdarbības izmēra klasēs un darbības nozarēs 33 Eiropas valstīs.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "<p>2019 m. atlikta trečioji Europos įmonių apklausa apie naują ir kylančią riziką (ESENER). Apklausta daugiau kaip 45 tūkst. įmonių, priklausančių visų dydžių kategorijoms ir visiems veiklos sektoriams 33-ose Europos šalyse.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "<p>Az új és újonnan felmerülő kockázatokról szóló harmadik európai vállalati felmérésre (ESENER) 2019-ben kerül sor. A terepmunka során több mint 45 000, különféle méretű létesítményt vizsgálnak különböző tevékenységi területeken, 33 európai országban.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "<p>Fl-2019 twettaq it-tielet Stħarriġ Ewropew ta’ Intrapriżi dwar Riskji Ġodda u Emerġenti (ESENER), ħidma fuq il-post li tkopri iktar minn 45,000 stabbiliment tul il-klassijiet tad-daqs tan-negozju u s-setturi ta’ attività kollha fi 33 pajjiż Ewropew.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "<p>De derde Europese bedrijvenenquête naar nieuwe en opkomende risico’s (ESENER) is in 2019 uitgevoerd met veldwerk in meer dan 45 000 bedrijfsvestigingen van allerlei omvang en in alle economische sectoren in 33 Europese landen.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "<p>Den tredje europeiske bedriftsundersøkelsen om nye og framvoksende risikoer (ESENER) har blitt gjennomført i 2019. Feltarbeidet omfatter over 45 000 virksomheter i alle størrelsesklasser og bransjer i 33 land i Europa.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "<p>W 2019 r. przeprowadzono trzecie europejskie badanie przedsiębiorstw na temat nowych i pojawiających się zagrożeń (ESENER) obejmujące ponad 45 tys. różnej wielkości przedsiębiorstw prowadzących działalność w rozmaitych sektorach w 33 państwach europejskich.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "<p>O terceiro Inquérito Europeu às Empresas sobre Riscos Novos e Emergentes (ESENER) está em curso em 2019, sendo que o trabalho no terreno abrange mais de 45 000 empresas de todas as classes de dimensão económica e setores de atividade em 33 países europeus.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "<p>Al treilea Sondaj european în rândul întreprinderilor privind riscurile noi și emergente (ESENER) s-a desfășurat în 2019, iar activitățile desfășurate pe teren au cuprins peste 45 000 de întreprinderi din toate categoriile de mărime și sectoare de activitate, din 33 de țări europene.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "<p>V roku 2019 prebieha tretí Európsky prieskum podnikov o nových a vznikajúcich rizikách (ESENER), pričom práca v teréne sa týka viac ako 45 000 organizácií vo všetkých triedach veľkosti podnikov a odvetviach činnosti v 33 európskych krajinách.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "<p>Leta 2019 je bila izvedena tretja evropska raziskava podjetij o novih in nastajajočih tveganjih (ESENER). V 33 evropskih državah je na terenu zajela več kot 45 000 podjetij vseh velikosti iz vseh sektorjev dejavnosti.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<p>Kolmas kyselytutkimus Euroopan yrityksille uusista ja kehittyvistä riskeistä (ESENER) toteutettiin vuonna 2019. Siihen liittyvä kenttätyö kattaa yli 45 000 yritystä eri kokoluokista ja kaikilta toiminnan aloilta 33 Euroopan maasta.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<p>Den tredje europeiska företagsundersökningen om nya och framväxande risker (ESENER) har genomförts under 2019. Fältarbetet har omfattat över 45 000 företag i alla storleksklasser och verksamhetssektorer i 33 europeiska länder.</p>");
 
 SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000 AND l.id < 102000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
@@ -3091,575 +3016,472 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>The participating countries comprise all European Union Member States at the time of each edition, as well as Norway and Switzerland. Turkey and Croatia were covered in ESENER 2009. Turkey, Albania and Montenegro were covered in ESENER 2014 and Iceland, North Macedonia and Serbia were covered in ESENER 2014 and 2019.</p>
 <h3>Country coverage in ESENER</h3>
 <table class=\"table table1\">
-  <thead>
-    <tr class=\"center-text\">
-      <th>&nbsp;</th>
-      <th>ESENER 2009</th>
-      <th>ESENER 2014</th>
-      <th>ESENER 2019</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class=\"data-table\">
-      <th>European Union (*)</th>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Norway</th>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Switzerland</th>
-      <td>X</td>
-      <td>X</td>
-      <td>X</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Iceland</th>
-      <td>&nbsp;</td>
-      <td>X</td>
-      <td>X</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>North Macedonia</th>
-      <td>&nbsp;</td>
-      <td>X</td>
-      <td>X</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Serbia</th>
-      <td>&nbsp;</td>
-      <td>X</td>
-      <td>X</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Turkey</th>
-      <td>X</td>
-      <td>X</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Albania</th>
-      <td>&nbsp;</td>
-      <td>X</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Montenegro</th>
-      <td>&nbsp;</td>
-      <td>X</td>
-      <td>&nbsp;</td>
-    </tr>
-  </tbody>
+    <thead>
+        <tr class=\"center-text\">
+            <th>&nbsp;</th>
+            <th>ESENER 2009</th>
+            <th>ESENER 2014</th>
+            <th>ESENER 2019</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class=\"data-table\">
+            <th>European Union (*)</th>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Norway</th>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Switzerland</th>
+            <td>X</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Iceland</th>
+            <td>&nbsp;</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>North Macedonia</th>
+            <td>&nbsp;</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Serbia</th>
+            <td>&nbsp;</td>
+            <td>X</td>
+            <td>X</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Turkey</th>
+            <td>X</td>
+            <td>X</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Albania</th>
+            <td>&nbsp;</td>
+            <td>X</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Montenegro</th>
+            <td>&nbsp;</td>
+            <td>X</td>
+            <td>&nbsp;</td>
+        </tr>
+    </tbody>
 </table>
 <p class=\"footer-note\">(*) Including Croatia and the United Kingdom</p>
 <h2>Respondents</h2>
-<p>In each establishment surveyed, <em>'the person who knows best about the way safety and health risks are managed at their workplace'</em> is interviewed. This is different from ESENER 2009 where <em>'the most senior manager who coordinates safety and health activities in this establishment'</em> was targeted. Additionally, in ESENER 2009, an interview with the workers' health and safety representative was aimed in those establishments where (1) a management interview was completed; (2) a formally designated representative with specific responsibility for the safety and health of workers existed; and (3) the management respondent had granted permission for the interview.</p>
+<p>In each establishment surveyed, <em>&#39;the person who knows best about the way safety and health risks are managed at their workplace&#39;</em> is interviewed. This is different from ESENER 2009 where <em>&#39;the most senior manager who coordinates safety and health activities in this establishment&#39;</em> was targeted. Additionally, in ESENER 2009, an interview with the workers&#39; health and safety representative was aimed in those establishments where (1) a management interview was completed; (2) a formally designated representative with specific responsibility for the safety and health of workers existed; and (3) the management respondent had granted permission for the interview.</p>
 <p>The main reason for the change was to get to the person who has the best knowledge about all health and safety issues, including details on risk assessment and other particular measures, regardless of their function or role in the establishment - which is asked anyway in a follow-up question.</p>
 <h2>Sampling strategy</h2>
 <p>In order to ensure that the survey results are comparable cross-nationally, it is essential that the sampling strategy result in the same type of units being surveyed in each country. The quality of the available address registers varies across the participating countries in terms of:</p>
 <ul>
-  <li>coverage (especially the sectors of activity included);</li>
-  <li>the availability and accuracy of the necessary background information (such as the sector of activity and number of employees).</li>
+    <li>coverage (especially the sectors of activity included);</li>
+    <li>the availability and accuracy of the necessary background information (such as the sector of activity and number of employees).</li>
 </ul>
 <p>Existing address registers are not comparable among countries and therefore considerable efforts have been made to build samples that provide the necessary quality and ensure cross-national comparability. These efforts have required a screening procedure in those countries where the available address registers provide information at company rather than at establishment level.</p>
-<p>Stratification of the sample is based on a matrix of four size classes and eight groups of sectors. While the general approach to sampling in the first two waves of ESENER was largely the same, there have been some changes over the years, particularly with respect to ESENER 2009. The details are available at 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> and 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.
-</p>
+<p>Stratification of the sample is based on a matrix of four size classes and eight groups of sectors. While the general approach to sampling in the first two waves of ESENER was largely the same, there have been some changes over the years, particularly with respect to ESENER 2009. The details are available at <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> and <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
 <h3>ESENER 2019 Sampling matrix</h3>
 <table class=\"table table2\">
-  <thead>
-    <tr>
-      <th>5-9</th>
-      <th>10-49</th>
-      <th>50-249</th>
-      <th>250+</th>
-    </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Sector group - NACE Rev. 2 sections</th>
-      <th class=\"center-text\" colspan=\"4\">Size - number of employees</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><strong>A</strong>: Agriculture, forestry and fishing.</td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>B, D, E, F</strong>: Construction, waste management, water and electricity supply</td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>C</strong>: Manufacturing</td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>G, H, I, R</strong>: Trade, transport, food/accommodation and recreation activities</td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>J, K, L, M, N, S</strong>: IT, Finance, Real estate and other technical scientific or personal service activities</td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>O</strong>: Public administration</td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>P</strong>: Education</td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-    </tr>
-    <tr>
-      <td><strong>Q:&nbsp;</strong>Human health and social work activities</td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-      <td>
-        <br>
-      </td>
-    </tr>
-  </tbody>
+    <thead>
+        <tr>
+            <th>5-9</th>
+            <th>10-49</th>
+            <th>50-249</th>
+            <th>250+</th>
+        </tr>
+    </thead>
+    <thead>
+        <tr>
+            <th rowspan=\"2\">Sector group - NACE Rev. 2 sections</th>
+            <th class=\"center-text\" colspan=\"4\">Size - number of employees</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>A</strong>: Agriculture, forestry and fishing.</td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td><strong>B, D, E, F</strong>: Construction, waste management, water and electricity supply</td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td><strong>C</strong>: Manufacturing</td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td><strong>G, H, I, R</strong>: Trade, transport, food/accommodation and recreation activities</td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td><strong>J, K, L, M, N, S</strong>: IT, Finance, Real estate and other technical scientific or personal service activities</td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td><strong>O</strong>: Public administration</td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td><strong>P</strong>: Education</td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+        <tr>
+            <td><strong>Q:&nbsp;</strong>Human health and social work activities</td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+            <td><br></td>
+        </tr>
+    </tbody>
 </table>
 <h2>Questionnaire development</h2>
 <p>The ESENER 2019 questionnaire is largely the same to the one used in the previous wave (ESENER 2014), which was itself originally based on the structure of the management version of the ESENER 2009 questionnaire. However, almost all questions were modified between 2009 and 2014 and hence, trend analyses are possible from ESENER 2014 onwards. The development and revision of the ESENER questionnaire is done in close cooperation between EU-OSHA, the main ESENER contractor and a group of researchers on occupational health and safety from different countries, as well as EU-OSHA stakeholders.</p>
 <p>The ESENER questionnaires have been subject to several tests:</p>
 <ol type=\"a\">
-  <li>A <strong>cognitive pre-test</strong> in Germany, Latvia and the Netherlands, with around 40 in-depth face-to-face interviews. The main aim of the cognitive pre-test is to check the understanding and clarity of the questions. There are also a number of cognitive questions aimed at testing whether respondents from different countries and different types of organisations interpret the standardised questions in the intended way and whether they are relevant to them. The cognitive pre-test usually leads to a number of modifications to the questionnaire.</li>
-  <li>A <strong>translatability assessment</strong> of the English master questionnaire version. Experienced translators from different language families elaborate rough translations of the draft master questionnaire in order to identify any ambiguities or other difficulties for translation. Where such difficulties are identified translators make proposals for alternative formulations for the master version, which is revised accordingly.</li>
-  <li>A <strong>pilot field test</strong> is carried out in all countries, with around 50 interviews per country. Using the same infrastructure as the main survey, this pilot test is done in the CATI mode (Computer Assisted Telephone Interviewing) but the option to participate online (CAWI: Computer Assisted Web Interviewing) is offered to those refusing to carry out the interview over the phone. The pilot field test results in a number of changes to the master questionnaire and to the individual national versions of the questionnaire.</li>
+    <li>A <strong>cognitive pre-test</strong> in Germany, Latvia and the Netherlands, with around 40 in-depth face-to-face interviews. The main aim of the cognitive pre-test is to check the understanding and clarity of the questions. There are also a number of cognitive questions aimed at testing whether respondents from different countries and different types of organisations interpret the standardised questions in the intended way and whether they are relevant to them. The cognitive pre-test usually leads to a number of modifications to the questionnaire.</li>
+    <li>A <strong>translatability assessment</strong> of the English master questionnaire version. Experienced translators from different language families elaborate rough translations of the draft master questionnaire in order to identify any ambiguities or other difficulties for translation. Where such difficulties are identified translators make proposals for alternative formulations for the master version, which is revised accordingly.</li>
+    <li>A <strong>pilot field test</strong> is carried out in all countries, with around 50 interviews per country. Using the same infrastructure as the main survey, this pilot test is done in the CATI mode (Computer Assisted Telephone Interviewing) but the option to participate online (CAWI: Computer Assisted Web Interviewing) is offered to those refusing to carry out the interview over the phone. The pilot field test results in a number of changes to the master questionnaire and to the individual national versions of the questionnaire.</li>
 </ol>
 <h2>Translation</h2>
-<p>Different national versions of the questionnaire are developed for the countries covered by the survey (available here: 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> and ESENER 2019). An optimal translation strategy is essential to ensure that each national version of the questionnaire comprises high-quality questions that can be directed at all types of enterprise within the country concerned and generates information that can be compared cross-nationally. The translation of the ESENER questionnaire follows the TRAPD approach, an acronym for <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), except for the first wave (available here: 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
-</p>
-<p>For languages shared by two or more countries, different national versions are developed, taking into account work-related practices such as worker representation or labour inspection, which require different questions and terminology. More details on the translation process can be found in the 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report</a> - see below.
-</p>
+<p>Different national versions of the questionnaire are developed for the countries covered by the survey (available here: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> and <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). An optimal translation strategy is essential to ensure that each national version of the questionnaire comprises high-quality questions that can be directed at all types of enterprise within the country concerned and generates information that can be compared cross-nationally. The translation of the ESENER questionnaire follows the TRAPD approach, an acronym for <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), except for the first wave (available here: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+<p>For languages shared by two or more countries, different national versions are developed, taking into account work-related practices such as worker representation or labour inspection, which require different questions and terminology. More details on the translation process can be found in the <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Translation Report</a> - see below.</p>
 <p>The basic steps included in the translation of ESENER are:</p>
 <ol type=\"1\">
-  <li>Two independent translations into each of the languages carried out by professional translators - native speakers of the target language - who were not in contact with each other while producing their translation.</li>
-  <li>Review of the independent translations by an adjudicator, who drafts a new version.</li>
-  <li>Review meetings between the adjudicator and the two translators in order to jointly discuss the new draft and agree on a final adjudicated version.</li>
-  <li>Check of the adjudicated versions by EU-OSHA's 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">network of Focal Points</a>, with a specific focus on the national occupational safety and health (OSH) terminology, including the questions related to bodies of worker representation.
-  </li>
+    <li>Two independent translations into each of the languages carried out by professional translators - native speakers of the target language - who were not in contact with each other while producing their translation.</li>
+    <li>Review of the independent translations by an adjudicator, who drafts a new version.</li>
+    <li>Review meetings between the adjudicator and the two translators in order to jointly discuss the new draft and agree on a final adjudicated version.</li>
+    <li>Check of the adjudicated versions by EU-OSHA&#39;s <a href=\"https://osha.europa.eu/en/about-eu-osha/national-focal-points/focal-points-index\" target=\"_blank\">network of Focal Points</a>, with a specific focus on the national occupational safety and health (OSH) terminology, including the questions related to bodies of worker representation.</li>
 </ol>
 <h2>National sample sizes</h2>
 <p>For the first time in ESENER 2014, national authorities were offered the possibility to fund an expansion of their national sample sizes. Spain, Slovenia and the United Kingdom took up the offer to boost their respective sample sizes. In ESENER 2019, three countries accepted this offer (Ireland, Norway and Slovenia), which this time included as well the possibility to add two to three questions of national interest to their respective questionnaires. Switzerland has fully funded all waves of ESENER.</p>
 <h3>Achieved sample sizes in ESENER</h3>
 <table class=\"table table3\">
-  <thead>
-    <tr>
-      <th>Country</th>
-      <th class=\"center-text\">ESENER 2009 (management interviews)</th>
-      <th class=\"center-text\">ESENER 2014</th>
-      <th>ESENER 2019</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class=\"data-table\">
-      <th>Austria</th>
-      <td>1034</td>
-      <td>1503</td>
-      <td>1503</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Belgium</th>
-      <td>1069</td>
-      <td>1504</td>
-      <td>1506</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Bulgaria</th>
-      <td>501</td>
-      <td>750</td>
-      <td>755</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Croatia</th>
-      <td>500</td>
-      <td>751</td>
-      <td>740</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Cyprus</th>
-      <td>500</td>
-      <td>751</td>
-      <td>757</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Czechia</th>
-      <td>1015</td>
-      <td>1508</td>
-      <td>1552</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Denmark</th>
-      <td>1005</td>
-      <td>1508</td>
-      <td>1513</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Estonia</th>
-      <td>501</td>
-      <td>750</td>
-      <td>758</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Finland</th>
-      <td>1000</td>
-      <td>1511</td>
-      <td>1505</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>France</th>
-      <td>1497</td>
-      <td>2256</td>
-      <td>2251</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Germany</th>
-      <td>1510</td>
-      <td>2261</td>
-      <td>2264</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Greece</th>
-      <td>1000</td>
-      <td>1503</td>
-      <td>1501</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Hungary</th>
-      <td>1031</td>
-      <td>1514</td>
-      <td>1504</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Ireland</th>
-      <td>506</td>
-      <td>750</td>
-      <td><em>1999</em></td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Italy</th>
-      <td>1501</td>
-      <td>2254</td>
-      <td>2251</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Latvia</th>
-      <td>506</td>
-      <td>753</td>
-      <td>756</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Lithuania</th>
-      <td>520</td>
-      <td>774</td>
-      <td>754</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Luxembourg</th>
-      <td>500</td>
-      <td>752</td>
-      <td>773</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Malta</th>
-      <td>343</td>
-      <td>452</td>
-      <td>453</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Netherlands</th>
-      <td>1009</td>
-      <td>1519</td>
-      <td>1521</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Poland</th>
-      <td>1500</td>
-      <td>2257</td>
-      <td>2250</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Portugal</th>
-      <td>1005</td>
-      <td>1513</td>
-      <td>1493</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Romania</th>
-      <td>518</td>
-      <td>756</td>
-      <td>1500</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Slovakia</th>
-      <td>503</td>
-      <td>750</td>
-      <td>756</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Slovenia</th>
-      <td>529</td>
-      <td><em>1051</em></td>
-      <td><em>1067</em></td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Spain</th>
-      <td>1566</td>
-      <td><em>3 162</em></td>
-      <td>2266</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Sweden</th>
-      <td>1000</td>
-      <td>1521</td>
-      <td>1512</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>United Kingdom</th>
-      <td>1500</td>
-      <td><em>4 250</em></td>
-      <td>2251</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Norway</th>
-      <td>951</td>
-      <td>1513</td>
-      <td><em>1951</em></td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Switzerland</th>
-      <td>1019</td>
-      <td>1511</td>
-      <td>1502</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Iceland</th>
-      <td>-</td>
-      <td>757</td>
-      <td>753</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Serbia</th>
-      <td>-</td>
-      <td>752</td>
-      <td>751</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>North Macedonia</th>
-      <td>-</td>
-      <td>750</td>
-      <td>752</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Turkey</th>
-      <td>1500</td>
-      <td>2251</td>
-      <td>-</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Albania</th>
-      <td>-</td>
-      <td>750</td>
-      <td>-</td>
-    </tr>
-    <tr class=\"data-table\">
-      <th>Montenegro</th>
-      <td>-</td>
-      <td>452</td>
-      <td>-</td>
-    </tr>
-    <tr class=\"data-table Total\">
-      <th>Total</th>
-      <td><strong>28649</strong></td>
-      <td><strong>49320</strong></td>
-      <td><strong>45420</strong></td>
-    </tr>
-  </tbody>
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th class=\"center-text\">ESENER 2009 (management interviews)</th>
+            <th class=\"center-text\">ESENER 2014</th>
+            <th>ESENER 2019</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class=\"data-table\">
+            <th>Austria</th>
+            <td>1034</td>
+            <td>1503</td>
+            <td>1503</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Belgium</th>
+            <td>1069</td>
+            <td>1504</td>
+            <td>1506</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Bulgaria</th>
+            <td>501</td>
+            <td>750</td>
+            <td>755</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Croatia</th>
+            <td>500</td>
+            <td>751</td>
+            <td>740</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Cyprus</th>
+            <td>500</td>
+            <td>751</td>
+            <td>757</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Czechia</th>
+            <td>1015</td>
+            <td>1508</td>
+            <td>1552</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Denmark</th>
+            <td>1005</td>
+            <td>1508</td>
+            <td>1513</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Estonia</th>
+            <td>501</td>
+            <td>750</td>
+            <td>758</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Finland</th>
+            <td>1000</td>
+            <td>1511</td>
+            <td>1505</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>France</th>
+            <td>1497</td>
+            <td>2256</td>
+            <td>2251</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Germany</th>
+            <td>1510</td>
+            <td>2261</td>
+            <td>2264</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Greece</th>
+            <td>1000</td>
+            <td>1503</td>
+            <td>1501</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Hungary</th>
+            <td>1031</td>
+            <td>1514</td>
+            <td>1504</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Ireland</th>
+            <td>506</td>
+            <td>750</td>
+            <td><em>1999</em></td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Italy</th>
+            <td>1501</td>
+            <td>2254</td>
+            <td>2251</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Latvia</th>
+            <td>506</td>
+            <td>753</td>
+            <td>756</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Lithuania</th>
+            <td>520</td>
+            <td>774</td>
+            <td>754</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Luxembourg</th>
+            <td>500</td>
+            <td>752</td>
+            <td>773</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Malta</th>
+            <td>343</td>
+            <td>452</td>
+            <td>453</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Netherlands</th>
+            <td>1009</td>
+            <td>1519</td>
+            <td>1521</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Poland</th>
+            <td>1500</td>
+            <td>2257</td>
+            <td>2250</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Portugal</th>
+            <td>1005</td>
+            <td>1513</td>
+            <td>1493</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Romania</th>
+            <td>518</td>
+            <td>756</td>
+            <td>1500</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Slovakia</th>
+            <td>503</td>
+            <td>750</td>
+            <td>756</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Slovenia</th>
+            <td>529</td>
+            <td><em>1051</em></td>
+            <td><em>1067</em></td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Spain</th>
+            <td>1566</td>
+            <td><em>3 162</em></td>
+            <td>2266</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Sweden</th>
+            <td>1000</td>
+            <td>1521</td>
+            <td>1512</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>United Kingdom</th>
+            <td>1500</td>
+            <td><em>4 250</em></td>
+            <td>2251</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Norway</th>
+            <td>951</td>
+            <td>1513</td>
+            <td><em>1951</em></td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Switzerland</th>
+            <td>1019</td>
+            <td>1511</td>
+            <td>1502</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Iceland</th>
+            <td>-</td>
+            <td>757</td>
+            <td>753</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Serbia</th>
+            <td>-</td>
+            <td>752</td>
+            <td>751</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>North Macedonia</th>
+            <td>-</td>
+            <td>750</td>
+            <td>752</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Turkey</th>
+            <td>1500</td>
+            <td>2251</td>
+            <td>-</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Albania</th>
+            <td>-</td>
+            <td>750</td>
+            <td>-</td>
+        </tr>
+        <tr class=\"data-table\">
+            <th>Montenegro</th>
+            <td>-</td>
+            <td>452</td>
+            <td>-</td>
+        </tr>
+        <tr class=\"data-table Total\">
+            <th>Total</th>
+            <td><strong>28649</strong></td>
+            <td><strong>49320</strong></td>
+            <td><strong>45420</strong></td>
+        </tr>
+    </tbody>
 </table>
 <h3>Documents and further information for researchers</h3>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
-</h4>
+<h4> <a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
 <dl>
-  <dt>Tender specifications:</dt>
-  <dd>Open call published on 21<sup>st</sup> August 2007: 
-    <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a>
-  </dd>
-  <dt>Support letter:</dt>
-  <dd>Letters setting out the background and aims of the survey and the support from social partners were produced in all survey languages with the aim to encourage participation in the survey.</dd>
-  <dt>Master questionnaires:</dt>
-  <dd>
-    <ul>
-      <li>Management Representative Questionnaire: 
-        <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a>
-      </li>
-      <li>Worker Representative Questionnaire: 
-        <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a>
-      </li>
-    </ul>
-  </dd>
-  <dt>Technical reports:</dt>
-  <dd>
-    <ul>
-      <li>European Survey on New and Emerging Risks - Psychosocial Risks (ESENER-PSR 2009) - Technical Report: 
-        <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a>
-      </li>
-      <li>Ex-post evaluation of the European Survey of Enterprises on New and Emerging Risks: 
-        <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a>
-      </li>
-      <li>ESENER Sampling Report 2009: 
-        <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a>
-      </li>
-    </ul>
-  </dd>
+    <dt>Tender specifications:</dt>
+    <dd>Open call published on 5<sup>th</sup> January 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+    <dt>Support letter</dt>
+    <dd>Letters setting out the background and aims of the survey and the support from social partners were produced in all survey languages with the aim to encourage participation in the survey.</dd>
+        <dt>Master questionnaire:</dt>
+    <dd><a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a></dd>
+    <dt>Technical reports:</dt>
+    <dd>
+        <ul>
+            <li>Technical report: <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a></li>
+            <li>Quality report: <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a></li>
+            <li>Translation report: <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a></li>
+        </ul>
+    </dd>
 </dl>
-<p>ESENER 2009 dataset can be accessed via the 
-  <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, 
-  <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-1\" target=\"_blank\">the European data portal</a> and 
-  <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
-</h4>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
 <dl>
-  <dt>Tender specifications:</dt>
-  <dd>Open call published on 5<sup>th</sup> December 2012: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Support letter:</dt>
-  <dd>Letters setting out the background and aims of the survey and the support from social partners were produced in all survey languages with the aim to encourage participation in the survey.</dd>
-  <dt>Master questionnaire:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Technical reports:</dt>
-  <dd>
-    <ul>
-      <li>Technical report: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Quality report: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Translation report: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
+    <dt>Tender specifications:</dt>
+    <dd>Open call published on 5<sup>th</sup> December 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+    <dt>Support letter:</dt>
+    <dd>Letters setting out the background and aims of the survey and the support from social partners were produced in all survey languages with the aim to encourage participation in the survey.</dd>
+    <dt>Master questionnaire:</dt>
+    <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+    <dt>Technical reports:</dt>
+    <dd>
+        <ul>
+            <li>Technical report: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+            <li>Quality report: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+            <li>Translation report: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+        </ul>
+    </dd>
 </dl>
-<p>ESENER 2014 dataset can be accessed via the 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, 
-  <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-2\" target=\"_blank\">the European data portal</a> and 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>ESENER 2019</h4>
+<p>ESENER 2014 dataset can be accessed via the <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-2\" target=\"_blank\">the European data portal</a> and <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
 <dl>
-  <dt>Tender specifications:</dt>
-  <dd>Open call published on 5<sup>th</sup> January 2018: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Support letter</dt>
-  <dd>Letters setting out the background and aims of the survey and the support from social partners were produced in all survey languages with the aim to encourage participation in the survey.</dd>
-  <dt>Master questionnaire</dt>
-  <dt>Technical reports</dt>
+    <dt>Tender specifications:</dt>
+    <dd>Open call published on 21<sup>st</sup> August 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
+    <dt>Support letter:</dt>
+    <dd>Letters setting out the background and aims of the survey and the support from social partners were produced in all survey languages with the aim to encourage participation in the survey.</dd>
+    <dt>Master questionnaires:</dt>
+    <dd>
+        <ul>
+            <li>Management Representative Questionnaire: <a href=\"https://oshwiki.eu/images/2/23/ESENER_MM_final_20090219.pdf\" target=\"_blank\">ESENER MM final 20090219.pdf</a></li>
+            <li>Worker Representative Questionnaire: <a href=\"https://oshwiki.eu/images/5/5d/ESENER_ER_final_20090219.pdf\" target=\"_blank\">ESENER ER final 20090219.pdf</a></li>
+        </ul>
+    </dd>
+    <dt>Technical reports:</dt>
+    <dd>
+        <ul>
+            <li>European Survey on New and Emerging Risks - Psychosocial Risks (ESENER-PSR 2009) - Technical Report: <a href=\"https://oshwiki.eu/images/7/79/Technical_Report_EUOSHA.pdf\" target=\"_blank\">Technical Report EUOSHA.pdf</a></li>
+            <li>Ex-post evaluation of the European Survey of Enterprises on New and Emerging Risks: <a href=\"https://oshwiki.eu/images/4/42/Ex-post_evaluation_of_Esener.pdf\" target=\"_blank\">Ex-post evaluation of Esener.pdf</a></li>
+            <li>ESENER Sampling Report 2009: <a href=\"https://oshwiki.eu/images/d/d1/ESENER-Sampling-Report-2009.pdf\" target=\"_blank\">ESENER-Sampling-Report-2009.pdf</a></li>
+        </ul>
+    </dd>
 </dl>
+<p>ESENER 2009 dataset can be accessed via the <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-1\" target=\"_blank\">the European data portal</a> and <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
 <p>Please note that all works using or referring to ESENER should acknowledge its source by means of bibliographic citation in footnotes or in the reference section of publications. Similarly, any publication, whether printed, electronic, or broadcast, based wholly or partly on ESENER should acknowledge the European Agency for Safety and Health at Work (EU-OSHA). It should also carry a statement that EU-OSHA bear no responsibility for their further analysis or interpretation.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "<h1>Методология на ESENER</h1>
 <h2>Обхват и единица на анализ</h2>
@@ -3897,11 +3719,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Писмен превод</h2>
 <p>Разработват се различни национални версии на въпросника за държавите, обхванати от проучването (достъпно тук: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> и ESENER 2019). Важно е да има оптимална стратегия за писмен превод, за да се гарантира, че всяка национална версия на въпросника съдържа ясно формулирани въпроси, които могат да бъдат зададени на всички видове предприятия в съответната държава, и че генерира информация, която може да бъде сравнявана между отделните държави. Преводът на въпросника на ESENER е в съответствие с подхода TRAPD — съкращение на <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> („превод, редакция, оценка, предварителен тест и документиране“) (Harkness, J. A. (2003). „Превод на въпросника“. В публикация на J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (стр. 35—56). Hoboken, NJ: John Wiley &amp; Sons) — с изключение на първото издание (достъпно тук: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> и <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Важно е да има оптимална стратегия за писмен превод, за да се гарантира, че всяка национална версия на въпросника съдържа ясно формулирани въпроси, които могат да бъдат зададени на всички видове предприятия в съответната държава, и че генерира информация, която може да бъде сравнявана между отделните държави. Преводът на въпросника на ESENER е в съответствие с подхода TRAPD — съкращение на <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> („превод, редакция, оценка, предварителен тест и документиране“) (Harkness, J. A. (2003). „Превод на въпросника“. В публикация на J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (стр. 35—56). Hoboken, NJ: John Wiley &amp; Sons) — с изключение на първото издание (достъпно тук: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>За езиците, които са общи за две или повече държави, се разработват отделни национални версии, като се отчитат свързаните с работата практики, например представителство на работниците или инспекции на труда, които изискват различни въпроси и терминология. Повече подробности за процеса на превод могат да се намерят в 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report</a> (Доклад за писмените преводи) — вж. по-долу.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Translation Report</a> (Доклад за писмените преводи) — вж. по-долу.
 </p>
 <p>Основните стъпки в превода на ESENER са:</p>
 <ol type=\"1\">
@@ -4152,6 +3974,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Документи и допълнителна информация за изследователи</h3>
+<h4> <a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Тръжни спецификации:</dt>
+  <dd>Открита покана за предложения, публикувана на 5 януари 2018 г.: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Писмо за подкрепа</dt>
+  <dd>Писма, в които се излагат основна информация и целите на проучването, както и подкрепата от страна на социалните партньори, бяха съставени на всички езици на проучването с цел да се насърчи участието.</dd>
+  <dt>Основен въпросник:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire2019.pdf</a>
+  </dd>
+  <dt>Технически доклади:</dt>
+  <dd>
+    <ul>
+      <li>Технически доклад: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Доклад за качеството: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Доклад за писмените преводи: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
+</h4>
+<dl>
+  <dt>Тръжни спецификации:</dt>
+  <dd>Открита покана за предложения, публикувана на 5 декември 2012 г.: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Писмо за подкрепа:</dt>
+  <dd>Писма, в които се излагат основна информация и целите на проучването, както и подкрепата от страна на социалните партньори, бяха съставени на всички езици на проучването с цел да се насърчи участието.</dd>
+  <dt>Основен въпросник:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Технически доклади:</dt>
+  <dd>
+    <ul>
+      <li>Технически доклад: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Доклад за качеството: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Доклад за писмените преводи: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>Наборът от данни от ESENER 2014 е достъпен чрез 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Службата за данни на Обединеното кралство към Университета в Есекс</a>, 
+  <a href=\"https://data.europa.eu/euodp/bg/data/dataset/esener-2\" target=\"_blank\">Европейския портал за данни</a> и 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
 </h4>
@@ -4193,51 +4076,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/bg/data/dataset/esener-1\" target=\"_blank\">Европейския портал за данни</a> и 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
-</h4>
-<dl>
-  <dt>Тръжни спецификации:</dt>
-  <dd>Открита покана за предложения, публикувана на 5 декември 2012 г.: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Писмо за подкрепа:</dt>
-  <dd>Писма, в които се излагат основна информация и целите на проучването, както и подкрепата от страна на социалните партньори, бяха съставени на всички езици на проучването с цел да се насърчи участието.</dd>
-  <dt>Основен въпросник:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Технически доклади:</dt>
-  <dd>
-    <ul>
-      <li>Технически доклад: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Доклад за качеството: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Доклад за писмените преводи: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>Наборът от данни от ESENER 2014 е достъпен чрез 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Службата за данни на Обединеното кралство към Университета в Есекс</a>, 
-  <a href=\"https://data.europa.eu/euodp/bg/data/dataset/esener-2\" target=\"_blank\">Европейския портал за данни</a> и 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>ESENER 2019</h4>
-<dl>
-  <dt>Тръжни спецификации:</dt>
-  <dd>Открита покана за предложения, публикувана на 5 януари 2018 г.: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Писмо за подкрепа</dt>
-  <dd>Писма, в които се излагат основна информация и целите на проучването, както и подкрепата от страна на социалните партньори, бяха съставени на всички езици на проучването с цел да се насърчи участието.</dd>
-  <dt>Основен въпросник</dt>
-  <dt>Технически доклади</dt>
-</dl>
 <p>Имайте предвид, че всички публикации, които използват или се позовават на ESENER, следва да посочат източника си посредством библиографско позоваване в бележки под линия или в раздела с източници на публикациите. Също така всяка публикация — независимо дали е печатна, електронна или излъчена в ефир — базирана изцяло или частично на ESENER, трябва да посочи като източник Европейската агенция за безопасност и здраве при работа (EU-OSHA). В публикацията трябва също да се съдържа отказ от отговорност, че EU-OSHA не носи отговорност за по-нататъшни анализи или тълкувания, съдържащи се в публикацията.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "<h1>Metodika průzkumu ESENER</h1>
 <h2>Statistický soubor a analyzovaná jednotka</h2>
@@ -4475,11 +4313,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Překlad</h2>
 <p>Vypracují se jednotlivé národní verze dotazníku pro země účastnící se průzkumu (dostupné zde: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> a ESENER 2019). K zajištění toho, aby každá národní verze dotazníku obsahovala kvalitně formulované otázky, které mohou být použity ve všech typech podniků v příslušné zemi, a aby generovala informace, které umožní porovnání mezi jednotlivými zeměmi, je nezbytná optimální strategie pro překlady. Překlad dotazníku z průzkumu ESENER se řídí přístupem TRAPD, což je zkratka pro <em><em>Translation, Review, Adjudication, Pre-testing and Documentation</em></em> (Harkness, J. A., 2003). Překlad dotazníku. J. A. Harkness, F. van de Vijver a P. Ph. Mohler (Eds.), Cross-cultural survey methods (s. 35–56). Hoboken, NJ: John Wiley &amp; Sons), s výjimkou první vlny (k dispozici zde: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> a <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). K zajištění toho, aby každá národní verze dotazníku obsahovala kvalitně formulované otázky, které mohou být použity ve všech typech podniků v příslušné zemi, a aby generovala informace, které umožní porovnání mezi jednotlivými zeměmi, je nezbytná optimální strategie pro překlady. Překlad dotazníku z průzkumu ESENER se řídí přístupem TRAPD, což je zkratka pro <em><em>Translation, Review, Adjudication, Pre-testing and Documentation</em></em> (Harkness, J. A., 2003). Překlad dotazníku. J. A. Harkness, F. van de Vijver a P. Ph. Mohler (Eds.), Cross-cultural survey methods (s. 35–56). Hoboken, NJ: John Wiley &amp; Sons), s výjimkou první vlny (k dispozici zde: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>V případě jazyků, které se používají ve dvou či více zemích, se pro jednotlivé země vypracovávají národní verze, které zohledňují postupy týkající se práce, jako je zastoupení pracovníků nebo inspekce práce, které vyžadují odlišné otázky a terminologii. Více podrobností o procesu překladu lze nalézt ve 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">zprávě o překladu</a> – viz níže.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">zprávě o překladu</a> – viz níže.
 </p>
 <p>Základní kroky v&nbsp;rámci překladu dotazníku průzkumu ESENER jsou:</p>
 <ol type=\"1\">
@@ -4730,6 +4568,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Dokumenty a další informace pro výzkumné pracovníky</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Specifikace pro nabídky:</dt>
+  <dd>Otevřená výzva zveřejněná dne 5. ledna 2018: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Podpůrný dopis</dt>
+  <dd>Za účelem podpory účasti v&nbsp;průzkumu byly ve všech jazycích průzkumu vypracovány dopisy obsahující základní informace o průzkumu a popisující jeho cíle a podporu ze strany sociálních partnerů.</dd>
+  <dt>Výchozí hlavní dotazník:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a>
+  </dd>
+  <dt>Technické zprávy:</dt>
+  <dd>
+    <ul>
+      <li>Technická zpráva: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Zpráva o kvalitě: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Zpráva o překladu: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
+</h4>
+<dl>
+  <dt>Specifikace pro nabídky:</dt>
+  <dd>Otevřená výzva zveřejněná dne 5. prosince 2012: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Podpůrný dopis:</dt>
+  <dd>Za účelem podpory účasti v&nbsp;průzkumu byly ve všech jazycích průzkumu vypracovány dopisy obsahující základní informace o průzkumu a popisující jeho cíle a podporu ze strany sociálních partnerů.</dd>
+  <dt>Výchozí hlavní dotazník:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Technické zprávy:</dt>
+  <dd>
+    <ul>
+      <li>Technická zpráva: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Zpráva o kvalitě: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Zpráva o překladu: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>Datový soubor průzkumu ESENER 2014 je dostupný prostřednictvím 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">datové služby Spojeného království při University of Essex</a>, 
+  <a href=\"https://data.europa.eu/euodp/cs/data/dataset/esener-2\" target=\"_blank\">evropského datového portálu</a> a 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
 </h4>
@@ -4771,51 +4670,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/cs/data/dataset/esener-1\" target=\"_blank\">evropského datového portálu</a> a 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
-</h4>
-<dl>
-  <dt>Specifikace pro nabídky:</dt>
-  <dd>Otevřená výzva zveřejněná dne 5. prosince 2012: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Podpůrný dopis:</dt>
-  <dd>Za účelem podpory účasti v&nbsp;průzkumu byly ve všech jazycích průzkumu vypracovány dopisy obsahující základní informace o průzkumu a popisující jeho cíle a podporu ze strany sociálních partnerů.</dd>
-  <dt>Výchozí hlavní dotazník:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Technické zprávy:</dt>
-  <dd>
-    <ul>
-      <li>Technická zpráva: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Zpráva o kvalitě: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Zpráva o překladu: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>Datový soubor průzkumu ESENER 2014 je dostupný prostřednictvím 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">datové služby Spojeného království při University of Essex</a>, 
-  <a href=\"https://data.europa.eu/euodp/cs/data/dataset/esener-2\" target=\"_blank\">evropského datového portálu</a> a 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>ESENER 2019</h4>
-<dl>
-  <dt>Specifikace pro nabídky:</dt>
-  <dd>Otevřená výzva zveřejněná dne 5. ledna 2018: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Podpůrný dopis</dt>
-  <dd>Za účelem podpory účasti v&nbsp;průzkumu byly ve všech jazycích průzkumu vypracovány dopisy obsahující základní informace o průzkumu a popisující jeho cíle a podporu ze strany sociálních partnerů.</dd>
-  <dt>Výchozí hlavní dotazník</dt>
-  <dt>Technické zprávy</dt>
-</dl>
 <p>Upozorňujeme, že veškerá díla, která využívají nebo odkazují na&nbsp;průzkum ESENER, by měla uvádět zdroj prostřednictvím bibliografických odkazů v&nbsp;poznámkách pod&nbsp;čarou nebo v&nbsp;referenčním oddíle publikací. Obdobně by každá publikace, ať již tištěná, elektronická nebo vysílaná, která zcela nebo částečně vychází z průzkumu ESENER, měla uvádět Evropskou agenturu pro bezpečnost a&nbsp;ochranu zdraví při práci (EU-OSHA). Rovněž by měla obsahovat prohlášení, že agentura EU-OSHA nenese žádnou odpovědnost za následné analýzy nebo interpretaci průzkumů ESENER.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "<h1>ESENER-metodologien</h1>
 <h2>Univers og analyseenhed</h2>
@@ -5053,11 +4907,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Oversættelse</h2>
 <p>Der udarbejdes forskellige nationale versioner af spørgeskemaet for de lande, der er omfattet af undersøgelsen (findes her: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> og ESENER 2019). En optimal oversættelsesstrategi er afgørende for at sikre, at hver nationale version af spørgeskemaet både indeholder spørgsmål af høj kvalitet, der kan rettes mod alle typer af virksomheder i det pågældende land, og genererer information, der kan sammenlignes tværnationalt. Oversættelsen af ESENER-spørgeskemaet følger TRAPD-tilgangen, et akronym for <em>Translation, Review, Adjudication, Pre-testing og Documentation</em> (Harkness, J. A. (2003). Questionnaire translation. I J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), bortset fra første runde (findes her: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> og <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). En optimal oversættelsesstrategi er afgørende for at sikre, at hver nationale version af spørgeskemaet både indeholder spørgsmål af høj kvalitet, der kan rettes mod alle typer af virksomheder i det pågældende land, og genererer information, der kan sammenlignes tværnationalt. Oversættelsen af ESENER-spørgeskemaet følger TRAPD-tilgangen, et akronym for <em>Translation, Review, Adjudication, Pre-testing og Documentation</em> (Harkness, J. A. (2003). Questionnaire translation. I J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), bortset fra første runde (findes her: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>For sprog, der tales i to eller flere lande, udarbejdes der forskellige nationale versioner, hvor der tages hensyn til arbejdsrelaterede praksisser, f.eks. for medarbejderrepræsentation eller arbejdstilsyn, som kræver forskellige spørgsmål og terminologier. Yderligere oplysninger om oversættelsesprocessen findes i 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">oversættelsesrapporten</a> — se nedenfor.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">oversættelsesrapporten</a> — se nedenfor.
 </p>
 <p>De grundlæggende trin ved oversættelsen af ESENER er:</p>
 <ol type=\"1\">
@@ -5306,6 +5160,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Dokumenter og yderligere information til forskere</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Udbudsmateriale:</dt>
+  <dd>Åben indkaldelse offentliggjort den 5. januar 2018: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Støtteskrivelse</dt>
+  <dd>Skrivelser om baggrunden og formålet med undersøgelsen og med støtteerklæringer fra arbejdsmarkedets parter på alle undersøgelsessprog blev udfærdiget for at opfordre til deltagelse i undersøgelsen.</dd>
+  <dt>Originalversion af spørgeskema:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a>
+  </dd>
+  <dt>Tekniske rapporter:</dt>
+  <dd>
+    <ul>
+      <li>Teknisk rapport: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Kvalitetsrapport: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Oversættelsesrapport: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
+</h4>
+<dl>
+  <dt>Udbudsmateriale:</dt>
+  <dd>Åben indkaldelse offentliggjort den 5. december 2012: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Støtteskrivelse:</dt>
+  <dd>Skrivelser om baggrunden og formålet med undersøgelsen og med støtteerklæringer fra arbejdsmarkedets parter på alle undersøgelsessprog blev udfærdiget for at opfordre til deltagelse i undersøgelsen.</dd>
+  <dt>Originalversion af spørgeskema:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Tekniske rapporter:</dt>
+  <dd>
+    <ul>
+      <li>Teknisk rapport: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Kvalitetsrapport: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Oversættelsesrapport: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>Der er adgang til ESENER 2014-datasættet via 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Det Forenede Kongeriges datatjeneste ved University of Essex</a>, 
+  <a href=\"https://data.europa.eu/euodp/da/data/dataset/esener-2\" target=\"_blank\">Den Europæiske Dataportal</a> og 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
 </h4>
@@ -5347,51 +5262,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/DA/data/dataset/esener-1\" target=\"_blank\">Den Europæiske Dataportal</a> og 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
-</h4>
-<dl>
-  <dt>Udbudsmateriale:</dt>
-  <dd>Åben indkaldelse offentliggjort den 5. december 2012: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Støtteskrivelse:</dt>
-  <dd>Skrivelser om baggrunden og formålet med undersøgelsen og med støtteerklæringer fra arbejdsmarkedets parter på alle undersøgelsessprog blev udfærdiget for at opfordre til deltagelse i undersøgelsen.</dd>
-  <dt>Originalversion af spørgeskema:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Tekniske rapporter:</dt>
-  <dd>
-    <ul>
-      <li>Teknisk rapport: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Kvalitetsrapport: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Oversættelsesrapport: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>Der er adgang til ESENER 2014-datasættet via 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Det Forenede Kongeriges datatjeneste ved University of Essex</a>, 
-  <a href=\"https://data.europa.eu/euodp/da/data/dataset/esener-2\" target=\"_blank\">Den Europæiske Dataportal</a> og 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>ESENER 2019</h4>
-<dl>
-  <dt>Udbudsmateriale:</dt>
-  <dd>Åben indkaldelse offentliggjort den 5. januar 2018: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Støtteskrivelse</dt>
-  <dd>Skrivelser om baggrunden og formålet med undersøgelsen og med støtteerklæringer fra arbejdsmarkedets parter på alle undersøgelsessprog blev udfærdiget for at opfordre til deltagelse i undersøgelsen.</dd>
-  <dt>Originalversion af spørgeskema</dt>
-  <dt>Tekniske rapporter</dt>
-</dl>
 <p>Bemærk venligst, at der i alle værker, hvor der gøres brug af eller refereres til ESENER, skal henvises til kilden ved hjælp af bibliografisk citering i fodnoter eller i referenceafsnittet af publikationer. På samme måde bør enhver publikation, trykt, elektronisk eller transmitteret, der helt eller delvis er baseret på ESENER, indeholde en anerkendelse af Det Europæiske Arbejdsmiljøagentur (EU-OSHA). Den bør også indeholde en erklæring om, at EU-OSHA ikke er ansvarlig for yderligere analyser eller fortolkninger indeholdt deri.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "<h1>Die ESENER-Methodik</h1>
 <h2>Erhebungsumgebung und Analyseeinheit</h2>
@@ -5629,11 +5499,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Übersetzung</h2>
 <p>Für die Länder, die Gegenstand der Erhebung sind, werden verschiedene nationale Fassungen des Fragebogens entwickelt (abrufbar unter: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER&nbsp;2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER&nbsp;2014</a> und ESENER 2019). Eine optimale Übersetzungsstrategie ist unerlässlich, um sicherzustellen, dass jede nationale Fassung des Fragebogens qualitativ hochwertige Fragen enthält, die an alle Unternehmensarten innerhalb des betreffenden Landes gerichtet werden können und die Informationen generieren, die länderübergreifend miteinander verglichen werden können. Die Übersetzung des ESENER-Fragebogens folgt dem TRAPD-Konzept, einem Akronym für <em>Übersetzung, Überprüfung, Klärung, Pretest und Dokumentation</em> (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Hrsg.), Cross-cultural survey methods (S. 35-56). Hoboken, NJ: John Wiley &amp; Sons), ausgenommen bei der ersten Welle (abrufbar unter: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER&nbsp;2014</a> und <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Eine optimale Übersetzungsstrategie ist unerlässlich, um sicherzustellen, dass jede nationale Fassung des Fragebogens qualitativ hochwertige Fragen enthält, die an alle Unternehmensarten innerhalb des betreffenden Landes gerichtet werden können und die Informationen generieren, die länderübergreifend miteinander verglichen werden können. Die Übersetzung des ESENER-Fragebogens folgt dem TRAPD-Konzept, einem Akronym für <em>Übersetzung, Überprüfung, Klärung, Pretest und Dokumentation</em> (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Hrsg.), Cross-cultural survey methods (S. 35-56). Hoboken, NJ: John Wiley &amp; Sons), ausgenommen bei der ersten Welle (abrufbar unter: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER&nbsp;2009</a>).
 </p>
 <p>Für Sprachen, die in zwei oder mehr Ländern gesprochen werden, werden unterschiedliche nationale Fassungen entwickelt, bei denen arbeitsbezogene Praktiken wie Arbeitnehmervertretung oder Arbeitsaufsicht berücksichtigt werden, die unterschiedliche Fragen und Terminologien erfordern. Weitere Einzelheiten zum Übersetzungsprozess finden sich im 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Übersetzungsbericht</a> – siehe unten.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Übersetzungsbericht</a> – siehe unten.
 </p>
 <p>Folgende grundlegende Schritte wurden in die Übersetzung von ESENER aufgenommen:</p>
 <ol type=\"1\">
@@ -5884,6 +5754,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Dokumente und weitere Informationen für Forscher</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Leistungsbeschreibung:</dt>
+  <dd>Am 5. Januar 2018 veröffentlichte Aufforderung zur Einreichung von Vorschlägen: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/de/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Unterstützungsschreiben</dt>
+  <dd>In allen Erhebungssprachen wurden Schreiben zum Hintergrund und zu den Zielen der Erhebung sowie zur Unterstützung durch die Sozialpartner mit dem Ziel erstellt, zur Teilnahme an der Erhebung zu ermuntern.</dd>
+  <dt>Masterfragebogen</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Masterfragebogen2019.pdf</a>
+  </dd>
+  <dt>Technische Berichte:</dt>
+  <dd>
+    <ul>
+      <li>Technischer Bericht: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technischer Bericht.pdf</a>
+      </li>
+      <li>Qualitätsbericht: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Qualitätsbericht.pdf</a>
+      </li>
+      <li>Übersetzungsbericht: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Übersetzungsbericht.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER&nbsp;2014</a>
+</h4>
+<dl>
+  <dt>Leistungsbeschreibung:</dt>
+  <dd>Am 5. Dezember 2012 veröffentlichte Aufforderung zur Einreichung von Vorschlägen: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-Leistungsbeschreibung.pdf</a>
+  </dd>
+  <dt>Unterstützungsschreiben:</dt>
+  <dd>In allen Erhebungssprachen wurden Schreiben zum Hintergrund und zu den Zielen der Erhebung sowie zur Unterstützung durch die Sozialpartner mit dem Ziel erstellt, zur Teilnahme an der Erhebung zu ermuntern.</dd>
+  <dt>Masterfragebogen</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Masterfragebogen2.pdf</a>
+  </dd>
+  <dt>Technische Berichte:</dt>
+  <dd>
+    <ul>
+      <li>Technischer Bericht: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technischer Bericht.pdf</a>
+      </li>
+      <li>Qualitätsbericht: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Qualitätsbericht.pdf</a>
+      </li>
+      <li>Übersetzungsbericht: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Übersetzungsbericht.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>Der Datensatz ESENER 2014 ist über 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">den Datendienst des Vereinigten Königreichs der Universität Essex</a>, 
+  <a href=\"https://data.europa.eu/euodp/de/data/dataset/esener-2\" target=\"_blank\">das Europäische Datenportal</a> und 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a> abrufbar.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER&nbsp;2009</a>
 </h4>
@@ -5925,51 +5856,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/de/data/dataset/esener-1\" target=\"_blank\">das Europäische Datenportal</a> und 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a> abrufbar.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER&nbsp;2014</a>
-</h4>
-<dl>
-  <dt>Leistungsbeschreibung:</dt>
-  <dd>Am 5. Dezember 2012 veröffentlichte Aufforderung zur Einreichung von Vorschlägen: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-Leistungsbeschreibung.pdf</a>
-  </dd>
-  <dt>Unterstützungsschreiben:</dt>
-  <dd>In allen Erhebungssprachen wurden Schreiben zum Hintergrund und zu den Zielen der Erhebung sowie zur Unterstützung durch die Sozialpartner mit dem Ziel erstellt, zur Teilnahme an der Erhebung zu ermuntern.</dd>
-  <dt>Masterfragebogen</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Masterfragebogen2.pdf</a>
-  </dd>
-  <dt>Technische Berichte:</dt>
-  <dd>
-    <ul>
-      <li>Technischer Bericht: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technischer Bericht.pdf</a>
-      </li>
-      <li>Qualitätsbericht: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Qualitätsbericht.pdf</a>
-      </li>
-      <li>Übersetzungsbericht: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Übersetzungsbericht.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>Der Datensatz ESENER 2014 ist über 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">den Datendienst des Vereinigten Königreichs der Universität Essex</a>, 
-  <a href=\"https://data.europa.eu/euodp/de/data/dataset/esener-2\" target=\"_blank\">das Europäische Datenportal</a> und 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a> abrufbar.
-</p>
-<h4>ESENER 2019</h4>
-<dl>
-  <dt>Leistungsbeschreibung:</dt>
-  <dd>Am 5. Januar 2018 veröffentlichte Aufforderung zur Einreichung von Vorschlägen: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/de/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Unterstützungsschreiben</dt>
-  <dd>In allen Erhebungssprachen wurden Schreiben zum Hintergrund und zu den Zielen der Erhebung sowie zur Unterstützung durch die Sozialpartner mit dem Ziel erstellt, zur Teilnahme an der Erhebung zu ermuntern.</dd>
-  <dt>Masterfragebogen</dt>
-  <dt>Technische Berichte</dt>
-</dl>
 <p>Bitte beachten Sie, dass alle Werke, die ESENER verwenden oder sich darauf beziehen, die Quelle durch bibliografische Angaben in Fußnoten oder im Literaturverzeichnis angeben sollten. Ebenso sollte jede Veröffentlichung&nbsp;– unabhängig davon, ob sie in gedruckter oder elektronischer Form oder im Rundfunk verbreitet wird und sich vollständig oder teilweise auf ESENER stützt&nbsp;– die Europäische Agentur für Sicherheit und Gesundheitsschutz am Arbeitsplatz (EU-OSHA) als Quelle angeben. Sie sollte auch eine Erklärung enthalten, wonach die EU-OSHA keine Haftung für jedwede weitere Analyse oder Auslegung übernimmt.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "<h1>Uuringu ESENER metoodika</h1>
 <h2>Uuringu hõlmavus ja analüüsiüksus</h2>
@@ -6207,11 +6093,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Tõlkimine</h2>
 <p>Uuringus osalevate riikide jaoks koostatakse küsimustiku riiklikud versioonid (vt 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> ja ESENER 2019). Optimaalne tõlkestrateegia aitab tagada, et küsimustiku riiklikud versioonid sisaldavad kvaliteetseid küsimusi, mida saab esitada asjaomase riigi igat liiki ettevõtetele ja mis annavad tulemuseks riikide vahel võrreldavad andmed. ESENERi küsimustiku tõlkestrateegia järgib TRAPD-meetodit (tõlkimine, läbivaatamine, hindamine, eeltestimine ja dokumenteerimine – <em><em>Translation, Review, Adjudication, Pre-testing and Documentation</em></em> (Harkness, J. A. (2003). „Questionnaire translation“ teoses: J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), „Cross-cultural survey methods“ (lk 35–56). Hoboken, NJ: John Wiley &amp; Sons), v.a esimeses uuringus (vt 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> ja <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Optimaalne tõlkestrateegia aitab tagada, et küsimustiku riiklikud versioonid sisaldavad kvaliteetseid küsimusi, mida saab esitada asjaomase riigi igat liiki ettevõtetele ja mis annavad tulemuseks riikide vahel võrreldavad andmed. ESENERi küsimustiku tõlkestrateegia järgib TRAPD-meetodit (tõlkimine, läbivaatamine, hindamine, eeltestimine ja dokumenteerimine – <em><em>Translation, Review, Adjudication, Pre-testing and Documentation</em></em> (Harkness, J. A. (2003). „Questionnaire translation“ teoses: J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), „Cross-cultural survey methods“ (lk 35–56). Hoboken, NJ: John Wiley &amp; Sons), v.a esimeses uuringus (vt 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>Kahes või enamas riigis kõneldavate keelte jaoks koostatakse erinevad riiklikud versioonid, milles võetakse arvesse tööga seotud tavasid, nagu töötajate esindatus või tööinspektsioon, mis nõuavad erinevaid küsimusi ja terminoloogiat. Tõlkeprotsessi lisateave on 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">tõlkearuandes</a> – vt allpool.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">tõlkearuandes</a> – vt allpool.
 </p>
 <p>Uuringu ESENER tõlkimise põhietapid on järgmised:</p>
 <ol type=\"1\">
@@ -6462,6 +6348,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Dokumendid ja lisateave teaduritele</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Hanke tehniline kirjeldus:</dt>
+  <dd>5. jaanuaril 2018 avaldatud avaliku hanke kutse: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Kaaskiri</dt>
+  <dd>Uuringus osalemise soodustamiseks koostati kõigis küsitluskeeltes kirjad, milles selgitatakse uuringu tausta ja eesmärke ning rõhutatakse sotsiaalpartnerite toetust.</dd>
+  <dt>Põhiküsimustik:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire2019.pdf</a>
+  </dd>
+  <dt>Tehnilised aruanded:</dt>
+  <dd>
+    <ul>
+      <li>Tehniline aruanne: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Kvaliteediaruanne: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Tõlkearuanne: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
+</h4>
+<dl>
+  <dt>Hanke tehniline kirjeldus:</dt>
+  <dd>5. detsembril 2012 avaldatud avaliku hanke kutse: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Kaaskiri:</dt>
+  <dd>Uuringus osalemise soodustamiseks koostati kõigis küsitluskeeltes kirjad, milles selgitatakse uuringu tausta ja eesmärke ning rõhutatakse sotsiaalpartnerite toetust.</dd>
+  <dt>Põhiküsimustik:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Tehnilised aruanded:</dt>
+  <dd>
+    <ul>
+      <li>Tehniline aruanne: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Kvaliteediaruanne: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Tõlkearuanne: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>Uuringu ESENER 2014 andmekogumile pääseb ligi 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Essexi ülikooli hallatava Ühendkuningriigi andmearhiivi</a>, 
+  <a href=\"https://data.europa.eu/euodp/et/data/dataset/esener-2\" target=\"_blank\">Euroopa andmeportaali</a> ja 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESISe</a> kaudu.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
 </h4>
@@ -6503,51 +6450,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/et/data/dataset/esener-1\" target=\"_blank\">Euroopa andmeportaali</a> ja 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESISe</a> kaudu.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
-</h4>
-<dl>
-  <dt>Hanke tehniline kirjeldus:</dt>
-  <dd>5. detsembril 2012 avaldatud avaliku hanke kutse: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Kaaskiri:</dt>
-  <dd>Uuringus osalemise soodustamiseks koostati kõigis küsitluskeeltes kirjad, milles selgitatakse uuringu tausta ja eesmärke ning rõhutatakse sotsiaalpartnerite toetust.</dd>
-  <dt>Põhiküsimustik:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Tehnilised aruanded:</dt>
-  <dd>
-    <ul>
-      <li>Tehniline aruanne: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Kvaliteediaruanne: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Tõlkearuanne: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>Uuringu ESENER 2014 andmekogumile pääseb ligi 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Essexi ülikooli hallatava Ühendkuningriigi andmearhiivi</a>, 
-  <a href=\"https://data.europa.eu/euodp/et/data/dataset/esener-2\" target=\"_blank\">Euroopa andmeportaali</a> ja 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESISe</a> kaudu.
-</p>
-<h4>ESENER 2019</h4>
-<dl>
-  <dt>Hanke tehniline kirjeldus:</dt>
-  <dd>5. jaanuaril 2018 avaldatud avaliku hanke kutse: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Kaaskiri</dt>
-  <dd>Uuringus osalemise soodustamiseks koostati kõigis küsitluskeeltes kirjad, milles selgitatakse uuringu tausta ja eesmärke ning rõhutatakse sotsiaalpartnerite toetust.</dd>
-  <dt>Põhiküsimustik</dt>
-  <dt>Tehnilised aruanded</dt>
-</dl>
 <p>NB! Kõigis uuringut ESENER kasutavates või sellele viitavates tekstides tuleks mainida allikat, lisades joonealusesse märkusesse või väljaande viidete jaotisse bibliograafilise viite. Samamoodi tuleks igas trükitud, elektroonilises või levindatud väljaandes, mis põhineb täielikult või osaliselt uuringul ESENER, mainida Euroopa Tööohutuse ja Töötervishoiu Ametit (EU-OSHA). Lisama peaks ka avalduse, et EU-OSHA ei vastuta järelanalüüside ega -tõlgenduste eest.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "<h1>Μεθοδολογία ESENER</h1>
 <h2>Σύνολο δεδομένων και μονάδα ανάλυσης</h2>
@@ -6785,11 +6687,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Μετάφραση</h2>
 <p>Το ερωτηματολόγιο έχει διαφορετική μορφή σε κάθε μία από τις χώρες που καλύπτονται από την έρευνα (βλ. τους δικτυακούς τόπους: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> και ESENER 2019). Η εφαρμογή της καλύτερης δυνατής στρατηγικής για τη μετάφραση του ερωτηματολογίου έχει καίρια σημασία προκειμένου να διασφαλιστεί ότι τα εθνικά διαφορετικά ερωτηματολόγια περιλαμβάνουν ερωτήσεις υψηλής ποιότητας, οι οποίες αφορούν όλα τα είδη των επιχειρήσεων της εκάστοτε χώρας, παρέχοντας πληροφορίες που μπορούν να συγκριθούν σε διακρατικό επίπεδο. Η μετάφραση του ερωτηματολογίου ESENER ακολουθεί την προσέγγιση TRAPD, αγγλικό ακρωνύμιο των όρων <em>Μετάφραση, Αναθεώρηση, Έγκριση, Προκαταρκτική Δοκιμή και Τεκμηρίωση</em> (Harkness, J. A. (2003). Questionnaire translation. Κεφάλαιο του πονήματος των J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (σσ. 35-56). Hoboken, NJ: John Wiley &amp; Sons), με εξαίρεση το πρώτο κύμα (παρουσιάζεται στον εξής δικτυακό τόπο: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> και <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Η εφαρμογή της καλύτερης δυνατής στρατηγικής για τη μετάφραση του ερωτηματολογίου έχει καίρια σημασία προκειμένου να διασφαλιστεί ότι τα εθνικά διαφορετικά ερωτηματολόγια περιλαμβάνουν ερωτήσεις υψηλής ποιότητας, οι οποίες αφορούν όλα τα είδη των επιχειρήσεων της εκάστοτε χώρας, παρέχοντας πληροφορίες που μπορούν να συγκριθούν σε διακρατικό επίπεδο. Η μετάφραση του ερωτηματολογίου ESENER ακολουθεί την προσέγγιση TRAPD, αγγλικό ακρωνύμιο των όρων <em>Μετάφραση, Αναθεώρηση, Έγκριση, Προκαταρκτική Δοκιμή και Τεκμηρίωση</em> (Harkness, J. A. (2003). Questionnaire translation. Κεφάλαιο του πονήματος των J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (σσ. 35-56). Hoboken, NJ: John Wiley &amp; Sons), με εξαίρεση το πρώτο κύμα (παρουσιάζεται στον εξής δικτυακό τόπο: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>Όσον αφορά τις γλώσσες που είναι κοινές σε δύο ή περισσότερες χώρες, συντάσσονται διαφορετικά εθνικά ερωτηματολόγια με βάση τις πρακτικές που ακολουθούνται στους χώρους εργασίας, όπως π.χ. η εκπροσώπηση των εργαζομένων ή η επιθεώρηση εργασίας, οι οποίες επιβάλλουν τη διατύπωση διαφορετικών ερωτήσεων και τη χρήση διαφορετικής ορολογίας. Περισσότερες λεπτομέρειες για τη διαδικασία της μετάφρασης περιλαμβάνονται στην 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Έκθεση για τη μετάφραση</a> - βλέπε κατωτέρω.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Έκθεση για τη μετάφραση</a> - βλέπε κατωτέρω.
 </p>
 <p>Τα βασικά στάδια που περιλαμβάνει η μετάφραση του ESENER είναι τα εξής:</p>
 <ol type=\"1\">
@@ -7040,6 +6942,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Έγγραφα και περαιτέρω πληροφορίες για τους ερευνητές</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Συγγραφή υποχρεώσεων:</dt>
+  <dd>Ανοιχτή πρόσκληση υποβολής προσφορών που δημοσιεύθηκε στις 5 Ιανουαρίου 2018: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/el/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Υποστηρικτική επιστολή</dt>
+  <dd>Για να ενθαρρυνθεί η συμμετοχή των ενδιαφερόμενων φορέων στην έρευνα, εκπονήθηκαν επιστολές σε όλες τις γλώσσες της έρευνας, οι οποίες παρουσιάζουν το πλαίσιο και τους σκοπούς της έρευνας, καθώς και τη στήριξη που παρέχεται από τους κοινωνικούς εταίρους.</dd>
+  <dt>Πρωτότυπο ερωτηματολόγιο:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire2019.pdf</a>
+  </dd>
+  <dt>Τεχνικές εκθέσεις:</dt>
+  <dd>
+    <ul>
+      <li>Τεχνική έκθεση: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Έκθεση για την ποιότητα: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Έκθεση για τη μετάφραση: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
+</h4>
+<dl>
+  <dt>Συγγραφή υποχρεώσεων:</dt>
+  <dd>Ανοιχτή πρόσκληση υποβολής προσφορών που δημοσιεύθηκε στις 5 Δεκεμβρίου 2012: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Υποστηρικτική επιστολή:</dt>
+  <dd>Για να ενθαρρυνθεί η συμμετοχή των ενδιαφερόμενων φορέων στην έρευνα, εκπονήθηκαν επιστολές σε όλες τις γλώσσες της έρευνας, οι οποίες παρουσιάζουν το πλαίσιο και τους σκοπούς της έρευνας, καθώς και τη στήριξη που παρέχεται από τους κοινωνικούς εταίρους.</dd>
+  <dt>Πρωτότυπο ερωτηματολόγιο:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Τεχνικές εκθέσεις:</dt>
+  <dd>
+    <ul>
+      <li>Τεχνική έκθεση: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Έκθεση για την ποιότητα: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Έκθεση για τη μετάφραση: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>Το σύνολο δεδομένων της έρευνας ESENER 2014 διατίθεται μέσω της 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Υπηρεσίας Δεδομένων του Πανεπιστημίου Essex του Ηνωμένου Βασιλείου</a>, 
+  <a href=\"https://data.europa.eu/euodp/el/data/dataset/esener-2\" target=\"_blank\">της ευρωπαϊκής δικτυακής πύλης δεδομένων</a> και του 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">Ινστιτούτου GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
 </h4>
@@ -7081,51 +7044,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/el/data/dataset/esener-1\" target=\"_blank\">της ευρωπαϊκής δικτυακής πύλης δεδομένων</a> και του 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">Ινστιτούτου GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
-</h4>
-<dl>
-  <dt>Συγγραφή υποχρεώσεων:</dt>
-  <dd>Ανοιχτή πρόσκληση υποβολής προσφορών που δημοσιεύθηκε στις 5 Δεκεμβρίου 2012: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Υποστηρικτική επιστολή:</dt>
-  <dd>Για να ενθαρρυνθεί η συμμετοχή των ενδιαφερόμενων φορέων στην έρευνα, εκπονήθηκαν επιστολές σε όλες τις γλώσσες της έρευνας, οι οποίες παρουσιάζουν το πλαίσιο και τους σκοπούς της έρευνας, καθώς και τη στήριξη που παρέχεται από τους κοινωνικούς εταίρους.</dd>
-  <dt>Πρωτότυπο ερωτηματολόγιο:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Τεχνικές εκθέσεις:</dt>
-  <dd>
-    <ul>
-      <li>Τεχνική έκθεση: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Έκθεση για την ποιότητα: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Έκθεση για τη μετάφραση: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>Το σύνολο δεδομένων της έρευνας ESENER 2014 διατίθεται μέσω της 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Υπηρεσίας Δεδομένων του Πανεπιστημίου Essex του Ηνωμένου Βασιλείου</a>, 
-  <a href=\"https://data.europa.eu/euodp/el/data/dataset/esener-2\" target=\"_blank\">της ευρωπαϊκής δικτυακής πύλης δεδομένων</a> και του 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">Ινστιτούτου GESIS</a>.
-</p>
-<h4>ESENER 2019</h4>
-<dl>
-  <dt>Συγγραφή υποχρεώσεων:</dt>
-  <dd>Ανοιχτή πρόσκληση υποβολής προσφορών που δημοσιεύθηκε στις 5 Ιανουαρίου 2018: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/el/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Υποστηρικτική επιστολή</dt>
-  <dd>Για να ενθαρρυνθεί η συμμετοχή των ενδιαφερόμενων φορέων στην έρευνα, εκπονήθηκαν επιστολές σε όλες τις γλώσσες της έρευνας, οι οποίες παρουσιάζουν το πλαίσιο και τους σκοπούς της έρευνας, καθώς και τη στήριξη που παρέχεται από τους κοινωνικούς εταίρους.</dd>
-  <dt>Πρωτότυπο ερωτηματολόγιο</dt>
-  <dt>Τεχνικές εκθέσεις</dt>
-</dl>
 <p>Σημειώνεται ότι σε όλα τα έργα που χρησιμοποιούν την έρευνα ESENER ή παραπέμπουν σε αυτήν, πρέπει να αναφέρεται η έρευνα ESENER ως πηγή μέσω της παράθεσης της σχετικής βιβλιογραφίας είτε στις υποσημειώσεις είτε στην ενότητα των παραπομπών. Ομοίως, σε οποιοδήποτε υλικό που δημοσιεύεται με έντυπα ή ηλεκτρονικά μέσα ή μεταδίδεται ραδιοτηλεοπτικά και βασίζεται συνολικά ή εν μέρει στην έρευνα ESENER, θα πρέπει να αναφέρεται ο Ευρωπαϊκός Οργανισμός για την Ασφάλεια και την Υγεία στην Εργασία (EU-OSHA). Θα πρέπει επίσης να περιλαμβάνεται δήλωση στην οποία θα αναφέρεται ότι ο EU-OSHA δεν φέρει καμία ευθύνη για την περαιτέρω ανάλυση ή ερμηνεία των δεδομένων.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<h1>Metodología de ESENER</h1>
 <h2>Población de interés y unidad de análisis</h2>
@@ -7363,11 +7281,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Traducción</h2>
 <p>Se redactan distintas versiones nacionales del cuestionario teniendo en cuenta la idiosincrasia de los países objeto de la encuesta (consulte aquí las encuestas 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> y ESENER 2019). Para garantizar que cada versión nacional del cuestionario incluya preguntas de elevada calidad que puedan dirigirse a todos los tipos de empresas del país en cuestión y ofrezca información comparable entre los países es fundamental seguir una estrategia óptima de traducción. La traducción del cuestionario de la encuesta ESENER sigue el enfoque TRAPD, acrónimo de <em>Translation, Review, Adjudication, Pre-testing y Documentation (Traducción, Revisión, Adjudicación, Pruebas preliminares y Documentación)&nbsp;</em> (Harkness, J. A. (2003). Traducción del cuestionario. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), excepto la primera edición (consulte la encuesta aquí: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> y <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Para garantizar que cada versión nacional del cuestionario incluya preguntas de elevada calidad que puedan dirigirse a todos los tipos de empresas del país en cuestión y ofrezca información comparable entre los países es fundamental seguir una estrategia óptima de traducción. La traducción del cuestionario de la encuesta ESENER sigue el enfoque TRAPD, acrónimo de <em>Translation, Review, Adjudication, Pre-testing y Documentation (Traducción, Revisión, Adjudicación, Pruebas preliminares y Documentación)&nbsp;</em> (Harkness, J. A. (2003). Traducción del cuestionario. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), excepto la primera edición (consulte la encuesta aquí: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>En el caso de las lenguas compartidas por dos o más países, se elaboran distintas versiones nacionales teniendo en cuenta las prácticas laborales, como la representación de los trabajadores o la inspección de trabajo, que requieren preguntas y terminología diferentes. El 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Informe de Traducción</a> ofrece más información sobre el proceso de traducción (véase a continuación).
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Informe de Traducción</a> ofrece más información sobre el proceso de traducción (véase a continuación).
 </p>
 <p>Las etapas básicas que comprende la traducción de ESENER son las siguientes:</p>
 <ol type=\"1\">
@@ -7616,6 +7534,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Documentos e información adicional para los investigadores</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Pliego de condiciones:</dt>
+  <dd>Convocatoria abierta publicada el 5 de enero de 2018: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Carta de apoyo</dt>
+  <dd>En todas las lenguas de la encuesta se han redactado cartas en las que se expone el contexto y los objetivos de la encuesta, así como el apoyo recibido de los interlocutores sociales, con el fin de fomentar la participación en la encuesta.</dd>
+  <dt>Cuestionario principal:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire2019.pdf</a>
+  </dd>
+  <dt>Informes técnicos:</dt>
+  <dd>
+    <ul>
+      <li>Informe técnico: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Informe de calidad: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Informe de traducción: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
+</h4>
+<dl>
+  <dt>Pliego de condiciones:</dt>
+  <dd>Convocatoria abierta publicada el 5 de diciembre de 2012: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Carta de apoyo:</dt>
+  <dd>En todas las lenguas de la encuesta se han redactado cartas en las que se expone el contexto y los objetivos de la encuesta, así como el apoyo recibido de los interlocutores sociales, con el fin de fomentar la participación en la encuesta.</dd>
+  <dt>Cuestionario principal:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Informes técnicos:</dt>
+  <dd>
+    <ul>
+      <li>Informe técnico: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Informe de calidad: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Informe de traducción: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>Se puede acceder al conjunto de datos de ESENER 2014 a través del 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Servicio de Datos del Reino Unido de la Universidad de Essex</a>, 
+  <a href=\"https://data.europa.eu/euodp/es/data/dataset/esener-2\" target=\"_blank\">el Portal Europeo de Datos</a> y 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
 </h4>
@@ -7657,51 +7636,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/es/data/dataset/esener-1\" target=\"_blank\">el Portal Europeo de Datos</a> y 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
-</h4>
-<dl>
-  <dt>Pliego de condiciones:</dt>
-  <dd>Convocatoria abierta publicada el 5 de diciembre de 2012: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Carta de apoyo:</dt>
-  <dd>En todas las lenguas de la encuesta se han redactado cartas en las que se expone el contexto y los objetivos de la encuesta, así como el apoyo recibido de los interlocutores sociales, con el fin de fomentar la participación en la encuesta.</dd>
-  <dt>Cuestionario principal:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Informes técnicos:</dt>
-  <dd>
-    <ul>
-      <li>Informe técnico: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Informe de calidad: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Informe de traducción: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>Se puede acceder al conjunto de datos de ESENER 2014 a través del 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Servicio de Datos del Reino Unido de la Universidad de Essex</a>, 
-  <a href=\"https://data.europa.eu/euodp/es/data/dataset/esener-2\" target=\"_blank\">el Portal Europeo de Datos</a> y 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>ESENER 2019</h4>
-<dl>
-  <dt>Pliego de condiciones:</dt>
-  <dd>Convocatoria abierta publicada el 5 de enero de 2018: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Carta de apoyo</dt>
-  <dd>En todas las lenguas de la encuesta se han redactado cartas en las que se expone el contexto y los objetivos de la encuesta, así como el apoyo recibido de los interlocutores sociales, con el fin de fomentar la participación en la encuesta.</dd>
-  <dt>Cuestionario principal</dt>
-  <dt>Informes técnicos:</dt>
-</dl>
 <p>Téngase en cuenta que todas las obras que utilizan o hacen referencia a ESENER deben reconocer su fuente mediante una cita bibliográfica en la nota a pie de página o en la sección de referencia de las publicaciones. Del mismo modo, la producción, impresión y difusión de toda publicación, basada total o parcialmente en la encuesta ESENER, debe mencionar a la Agencia Europea para la Seguridad y la Salud en el Trabajo (EU-OSHA). También debe incluir una declaración que especifique que la EU-OSHA no asume ninguna responsabilidad por su posterior análisis o interpretación.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "<h1>Méthodologie ESENER</h1>
 <h2>Univers et unité d’analyse</h2>
@@ -7939,11 +7873,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Traduction</h2>
 <p>Différentes versions nationales du questionnaire sont élaborées pour les pays couverts par l’enquête (disponibles ici: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> et ESENER 2019). Une stratégie de traduction optimale est essentielle pour garantir que chaque version nationale du questionnaire comporte des questions de qualité qu’il est possible d’adresser à tous les types d’entreprises dans le pays concerné, et que ce questionnaire génère des informations qui peuvent être comparées entre les pays. La traduction du questionnaire de l’enquête ESENER suit l’approche TRAPD, acronyme de <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> (traduction, révision, compromis, test préalable et documentation) [Harkness, J. A. (2003). Questionnaire translation. dans J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (p. 35-56). Hoboken, NJ: John Wiley &amp; Sons], sauf pour la première vague (disponible ici: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> et <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Une stratégie de traduction optimale est essentielle pour garantir que chaque version nationale du questionnaire comporte des questions de qualité qu’il est possible d’adresser à tous les types d’entreprises dans le pays concerné, et que ce questionnaire génère des informations qui peuvent être comparées entre les pays. La traduction du questionnaire de l’enquête ESENER suit l’approche TRAPD, acronyme de <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> (traduction, révision, compromis, test préalable et documentation) [Harkness, J. A. (2003). Questionnaire translation. dans J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (p. 35-56). Hoboken, NJ: John Wiley &amp; Sons], sauf pour la première vague (disponible ici: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>Pour les langues communes à deux pays ou plus, des versions nationales différentes sont élaborées en tenant compte des pratiques liées au travail, telles que la représentation des travailleurs ou l’inspection du travail, qui requièrent des questions et une terminologie différentes. Davantage de détails sur le processus de traduction sont disponibles dans le 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">rapport relatif à la traduction</a> - voir ci-dessous.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">rapport relatif à la traduction</a> - voir ci-dessous.
 </p>
 <p>Les étapes de base qui jalonnent la traduction de l’enquête ESENER sont les suivantes:</p>
 <ol type=\"1\">
@@ -8194,8 +8128,69 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Documents et informations complémentaires à l’intention des chercheurs</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Cahier des charges:</dt>
+  <dd>Appel ouvert publié le 5 janvier 2018: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/fr/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Lettre d’accompagnement</dt>
+  <dd>Des lettres décrivant le contexte et les objectifs de l’enquête, ainsi que le soutien reçu des partenaires sociaux, ont été préparées dans toutes les langues de l’enquête dans le but d’encourager la participation à cette dernière.</dd>
+  <dt>Questionnaire principal:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire2019.pdf</a>
+  </dd>
+  <dt>Rapports techniques:</dt>
+  <dd>
+    <ul>
+      <li>Rapport technique: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Rapport relatif à la qualité: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Rapport relatif à la traduction: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
 <h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER&nbsp;2009</a>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
+</h4>
+<dl>
+  <dt>Cahier des charges:</dt>
+  <dd>Appel ouvert publié le 5 décembre 2012: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Lettre d’accompagnement:</dt>
+  <dd>Des lettres décrivant le contexte et les objectifs de l’enquête, ainsi que le soutien reçu des partenaires sociaux, ont été préparées dans toutes les langues de l’enquête dans le but d’encourager la participation à cette dernière.</dd>
+  <dt>Questionnaire principal:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Rapports techniques:</dt>
+  <dd>
+    <ul>
+      <li>Rapport technique: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Rapport relatif à la qualité: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Rapport relatif à la traduction: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>L’ensemble de données de l’édition 2014 de l’enquête ESENER est accessible via le 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">service de données du Royaume-Uni de l’université d’Essex</a>, 
+  <a href=\"https://data.europa.eu/euodp/fr/data/dataset/esener-2\" target=\"_blank\">le portail de données européen</a> et 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
 </h4>
 <dl>
   <dt>Cahier des charges:</dt>
@@ -8235,51 +8230,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/fr/data/dataset/esener-1\" target=\"_blank\">le portail de données européen</a> et 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER&nbsp;2014</a>
-</h4>
-<dl>
-  <dt>Cahier des charges:</dt>
-  <dd>Appel ouvert publié le 5 décembre 2012: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Lettre d’accompagnement:</dt>
-  <dd>Des lettres décrivant le contexte et les objectifs de l’enquête, ainsi que le soutien reçu des partenaires sociaux, ont été préparées dans toutes les langues de l’enquête dans le but d’encourager la participation à cette dernière.</dd>
-  <dt>Questionnaire principal:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Rapports techniques:</dt>
-  <dd>
-    <ul>
-      <li>Rapport technique: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Rapport relatif à la qualité: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Rapport relatif à la traduction: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>L’ensemble de données de l’édition 2014 de l’enquête ESENER est accessible via le 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">service de données du Royaume-Uni de l’université d’Essex</a>, 
-  <a href=\"https://data.europa.eu/euodp/fr/data/dataset/esener-2\" target=\"_blank\">le portail de données européen</a> et 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>ESENER&nbsp;2019</h4>
-<dl>
-  <dt>Cahier des charges:</dt>
-  <dd>Appel ouvert publié le 5 janvier 2018: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/fr/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Lettre d’accompagnement</dt>
-  <dd>Des lettres décrivant le contexte et les objectifs de l’enquête, ainsi que le soutien reçu des partenaires sociaux, ont été préparées dans toutes les langues de l’enquête dans le but d’encourager la participation à cette dernière.</dd>
-  <dt>Questionnaire principal</dt>
-  <dt>Rapports techniques</dt>
-</dl>
 <p>Veuillez noter que tous les travaux se fondant sur l’enquête ESENER ou s’y référant doivent la mentionner au moyen d’une référence bibliographique dans des notes de bas de pages ou dans la section des publications qui est consacrée aux références. De même, toutes les publications, qu’elles soient sous forme imprimée ou électronique, ou qu’elles fassent l’objet d’une radiodiffusion, basées en tout ou en partie sur l’enquête ESENER, doivent faire mention de l’Agence européenne pour la sécurité et la santé au travail (EU‑OSHA). Elles doivent également comporter une déclaration indiquant que l’EU‑OSHA n’est nullement responsable de leur analyse ou interprétation ultérieures.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "<h1>Metodologija istraživanja ESENER</h1>
 <h2>Statistički skup i jedinica analize</h2>
@@ -8516,9 +8466,9 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </ol>
 <h2>Prijevod</h2>
 <p>Izrađuju se nacionalne inačice upitnika za zemlje obuhvaćene istraživanjem (dostupno ovdje: 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER&nbsp;2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER&nbsp;2014</a> i ESENER 2019. Nužna je optimalna strategija prevođenja kako bi svaka nacionalna inačica upitnika sadržavala visokokvalitetna pitanja koja se mogu postaviti u svim vrstama poduzeća unutar pojedine zemlje i kako bi se prikupile informacije koje su usporedive na međunarodnoj razini. Prilikom prijevoda upitnika za istraživanje ESENER primjenjuje se pristup TRAPD, što je na engleskom jeziku pokrata za <em>prijevod, reviziju, odlučivanje, prethodno testiranje i dokumentaciju</em> (Harkness, J. A. (2003)). Prijevod upitnika. Vidjeti: J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (ured.), Cross-cultural survey methods (str. 35.–56.). Hoboken, NJ: John Wiley &amp; Sons), osim u prvom valu (dostupno ovdje: 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
+  <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> i <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Nužna je optimalna strategija prevođenja kako bi svaka nacionalna inačica upitnika sadržavala visokokvalitetna pitanja koja se mogu postaviti u svim vrstama poduzeća unutar pojedine zemlje i kako bi se prikupile informacije koje su usporedive na međunarodnoj razini. Prilikom prijevoda upitnika za istraživanje ESENER primjenjuje se pristup TRAPD, što je na engleskom jeziku pokrata za <em>prijevod, reviziju, odlučivanje, prethodno testiranje i dokumentaciju</em> (Harkness, J. A. (2003)). Prijevod upitnika. Vidjeti: J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (ured.), Cross-cultural survey methods (str. 35.–56.). Hoboken, NJ: John Wiley &amp; Sons), osim u prvom valu (dostupno ovdje: 
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>Izrađene su različite nacionalne inačice za one jezike koji se upotrebljavaju u više zemalja, uzimajući u obzir prakse povezane s radom, kao što su predstavljanje radnika ili inspekcija rada, koji zahtijevaju različita pitanja i terminologiju. Više pojedinosti o postupku prevođenja možete pronaći u 
   <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Izvješću o prevođenju</a> – vidjeti u nastavku.
@@ -8770,6 +8720,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Dokumenti i dodatne informacije za istraživače</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Specifikacija natječaja:</dt>
+  <dd>Otvoreni poziv objavljen 5. siječnja 2018.: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Pismo podrške</dt>
+  <dd>Pisma u kojima se opisuju kontekst i ciljevi istraživanja te podrška socijalnih partnera sastavljena su na svim jezicima istraživanja s ciljem poticanja sudjelovanja u istraživanju.</dd>
+  <dt>Osnovni upitnik:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire2019.pdf</a>
+  </dd>
+  <dt>Tehnička izvješća:</dt>
+  <dd>
+    <ul>
+      <li>Tehničko izvješće: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Izvješće o kvaliteti: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Izvješće o prijevodu: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER&nbsp;2014</a>
+</h4>
+<dl>
+  <dt>Specifikacija natječaja:</dt>
+  <dd>Otvoreni poziv objavljen 5. prosinca 2012.: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Pismo podrške:</dt>
+  <dd>Pisma u kojima se opisuju kontekst i ciljevi istraživanja te podrška socijalnih partnera sastavljena su na svim jezicima istraživanja s ciljem poticanja sudjelovanja u istraživanju.</dd>
+  <dt>Osnovni upitnik:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Tehnička izvješća:</dt>
+  <dd>
+    <ul>
+      <li>Tehničko izvješće: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Izvješće o kvaliteti: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Izvješće o prijevodu: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>Skupu podataka iz istraživanja ESENER 2014 moguće je pristupiti putem 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Podatkovne arhive UK‑a Sveučilišta u Essexu</a>, 
+  <a href=\"https://data.europa.eu/euodp/hr/data/dataset/esener-2\" target=\"_blank\">Europskog portala podataka</a> i baze podataka 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER&nbsp;2009</a>
 </h4>
@@ -8811,51 +8822,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/hr/data/dataset/esener-1\" target=\"_blank\">Europskog portala podataka</a> i baze podataka 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER&nbsp;2014</a>
-</h4>
-<dl>
-  <dt>Specifikacija natječaja:</dt>
-  <dd>Otvoreni poziv objavljen 5. prosinca 2012.: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Pismo podrške:</dt>
-  <dd>Pisma u kojima se opisuju kontekst i ciljevi istraživanja te podrška socijalnih partnera sastavljena su na svim jezicima istraživanja s ciljem poticanja sudjelovanja u istraživanju.</dd>
-  <dt>Osnovni upitnik:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Tehnička izvješća:</dt>
-  <dd>
-    <ul>
-      <li>Tehničko izvješće: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Izvješće o kvaliteti: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Izvješće o prijevodu: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>Skupu podataka iz istraživanja ESENER 2014 moguće je pristupiti putem 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Podatkovne arhive UK‑a Sveučilišta u Essexu</a>, 
-  <a href=\"https://data.europa.eu/euodp/hr/data/dataset/esener-2\" target=\"_blank\">Europskog portala podataka</a> i baze podataka 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>ESENER&nbsp;2019</h4>
-<dl>
-  <dt>Specifikacija natječaja:</dt>
-  <dd>Otvoreni poziv objavljen 5. siječnja 2018.: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Pismo podrške</dt>
-  <dd>Pisma u kojima se opisuju kontekst i ciljevi istraživanja te podrška socijalnih partnera sastavljena su na svim jezicima istraživanja s ciljem poticanja sudjelovanja u istraživanju.</dd>
-  <dt>Osnovni upitnik</dt>
-  <dt>Tehnička izvješća</dt>
-</dl>
 <p>Napominjemo da u svim radovima koji upotrebljavaju istraživanje ESENER ili na njega upućuju treba navesti izvor u fusnoti ili u popisu literature. Nadalje, u svakom tiskanom, elektroničkom ili emitiranom radu koji se djelomično ili potpuno temelji na istraživanju ESENER treba navesti Europsku agenciju za sigurnost i zdravlje na radu (EU-OSHA). Također, ti radovi moraju sadržavati izjavu da agencija EU OSHA ne snosi nikakvu odgovornost za njihovu daljnju analizu i interpretaciju.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "<h1>Aðferðafræði ESENER</h1>
 <h2>Almengi og greiningareining</h2>
@@ -9093,11 +9059,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Þýðing</h2>
 <p>Mismunandi landsútgáfur af spurningalistanum eru þróaðar fyrir löndin sem könnunin nær til (tiltækar hér: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> og ESENER 2019). Góð stefna í þýðingarmálum er mjög mikilvæg til þess að tryggja að hver landsútgáfa spurningalistans búi yfir spurningum af miklum gæðum sem er hægt að beina að öllum hugsanlegum gerðum fyrirtækja í viðkomandi landi og nái fram upplýsingum sem hægt er að bera saman á milli landa. Þýðingin á ESENER spurningalistanum fylgir TRAPD aðferðinni, sem er skammstöfun á <em>Translation (þýðing), Review (endurskoðun), Adjudication (dómur), Pre-testing (forprófun) og Documentation (skjalfesting)</em> (Harkness, J. A. (2003). Þýðing á spurningalista. Í J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (bls. 35-56). Hoboken, NJ: John Wiley &amp; Sons), fyrir utan fyrstu könnunarbylgjuna (tiltæk hér: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> og <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Góð stefna í þýðingarmálum er mjög mikilvæg til þess að tryggja að hver landsútgáfa spurningalistans búi yfir spurningum af miklum gæðum sem er hægt að beina að öllum hugsanlegum gerðum fyrirtækja í viðkomandi landi og nái fram upplýsingum sem hægt er að bera saman á milli landa. Þýðingin á ESENER spurningalistanum fylgir TRAPD aðferðinni, sem er skammstöfun á <em>Translation (þýðing), Review (endurskoðun), Adjudication (dómur), Pre-testing (forprófun) og Documentation (skjalfesting)</em> (Harkness, J. A. (2003). Þýðing á spurningalista. Í J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (bls. 35-56). Hoboken, NJ: John Wiley &amp; Sons), fyrir utan fyrstu könnunarbylgjuna (tiltæk hér: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>Fyrir tungumál sem tvö eða fleiri lönd deila eru mismunandi landsútgáfur þróaðar, sem taka tillit til vinnutengdra aðferða eins og hver er í forsvari fyrir starfsfólk eða vinnueftirlits, sem krefjast mismunandi spurninga og íðorðaforða. Frekari upplýsingar um þýðingarferlið er hægt að finna í 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Þýðingarskýrslunni</a> - sjá að neðan.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Þýðingarskýrslunni</a> - sjá að neðan.
 </p>
 <p>Grunnskrefin sem eru tekin í þýðingunni á ESENER eru:</p>
 <ol type=\"1\">
@@ -9346,6 +9312,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Skjöl og frekari upplýsingar fyrir rannsóknarfólk</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Útboðsskilmálar:</dt>
+  <dd>Opið útboð birt þann 5<sup>ta</sup> janúar 2018: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Stuðningsbréf</dt>
+  <dd>Bréf þar sem forsaga og markmið könnunarinnar koma fram auk upplýsinga um stuðning aðila vinnumarkaðarins voru gerð á öllum tungumálum könnunarinnar með það markmiði að hvetja til þátttöku í könnuninni.</dd>
+  <dt>Aðalspurningalisti:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Aðalspurningalisti2019.pdf</a>
+  </dd>
+  <dt>Fræðilegar skýrslur:</dt>
+  <dd>
+    <ul>
+      <li>Fræðileg skýrsla: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Fræðileg skýrsla.pdf</a>
+      </li>
+      <li>Gæðaskýrsla: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Gæðaskýrsla.pdf</a>
+      </li>
+      <li>Þýðingarskýrsla: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Þýðingarskýrsla.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
+</h4>
+<dl>
+  <dt>Útboðsskilmálar:</dt>
+  <dd>Opið útboð birt þann 5<sup>ta</sup> desember 2012: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-útboðsskilmálar.pdf</a>
+  </dd>
+  <dt>Stuðningsbréf:</dt>
+  <dd>Bréf þar sem forsaga og markmið könnunarinnar koma fram auk upplýsinga um stuðning aðila vinnumarkaðarins voru gerð á öllum tungumálum könnunarinnar með það markmiði að hvetja til þátttöku í könnuninni.</dd>
+  <dt>Aðalspurningalisti:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Aðalspurningalisti2.pdf</a>
+  </dd>
+  <dt>Fræðilegar skýrslur:</dt>
+  <dd>
+    <ul>
+      <li>Fræðileg skýrsla: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Fræðileg skýrsla.pdf</a>
+      </li>
+      <li>Gæðaskýrsla: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Gæðaskýrsla.pdf</a>
+      </li>
+      <li>Þýðingarskýrsla: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Þýðingarskýrsla.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>ESENER 2014 gagnasafnið er hægt að nálgast í gegnum 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Gagnaþjónustu Bretlands hjá Háskólanum í Essex</a>, 
+  <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-2\" target=\"_blank\">Evrópsku gagnagáttina</a> og 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
 </h4>
@@ -9387,51 +9414,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-1\" target=\"_blank\">Evrópsku gagnagáttina</a> og 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
-</h4>
-<dl>
-  <dt>Útboðsskilmálar:</dt>
-  <dd>Opið útboð birt þann 5<sup>ta</sup> desember 2012: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-útboðsskilmálar.pdf</a>
-  </dd>
-  <dt>Stuðningsbréf:</dt>
-  <dd>Bréf þar sem forsaga og markmið könnunarinnar koma fram auk upplýsinga um stuðning aðila vinnumarkaðarins voru gerð á öllum tungumálum könnunarinnar með það markmiði að hvetja til þátttöku í könnuninni.</dd>
-  <dt>Aðalspurningalisti:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Aðalspurningalisti2.pdf</a>
-  </dd>
-  <dt>Fræðilegar skýrslur:</dt>
-  <dd>
-    <ul>
-      <li>Fræðileg skýrsla: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Fræðileg skýrsla.pdf</a>
-      </li>
-      <li>Gæðaskýrsla: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Gæðaskýrsla.pdf</a>
-      </li>
-      <li>Þýðingarskýrsla: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Þýðingarskýrsla.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>ESENER 2014 gagnasafnið er hægt að nálgast í gegnum 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Gagnaþjónustu Bretlands hjá Háskólanum í Essex</a>, 
-  <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-2\" target=\"_blank\">Evrópsku gagnagáttina</a> og 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>ESENER 2019</h4>
-<dl>
-  <dt>Útboðsskilmálar:</dt>
-  <dd>Opið útboð birt þann 5<sup>ta</sup> janúar 2018: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Stuðningsbréf</dt>
-  <dd>Bréf þar sem forsaga og markmið könnunarinnar koma fram auk upplýsinga um stuðning aðila vinnumarkaðarins voru gerð á öllum tungumálum könnunarinnar með það markmiði að hvetja til þátttöku í könnuninni.</dd>
-  <dt>Aðalspurningalisti</dt>
-  <dt>Tækniskýrslur</dt>
-</dl>
 <p>Vinsamlegast athugið að öll rit sem notast við eða vísa í ESENER ættu að geta heimilda með bókfræðilegri tilvitnun í neðanmálsgrein eða í heimildaskrá ritsins. Að sama skapi ætti allt útgefið efni, hvort sem það er prentað, rafrænt eða sent út og byggir í heild eða að hluta á ESENER að geta Evrópsku vinnuverndarstofnunarinnar (EU-OSHA). Einnig ætti að fylgja yfirlýsing um að Evrópska vinnuverndarstofnunin bera enga ábyrgð á frekari greiningu eða túlkun.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "<h1>Metodologia ESENER</h1>
 <h2>Universo e unità di analisi</h2>
@@ -9669,8 +9651,8 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Traduzione</h2>
 <p>Per i paesi oggetto dell’indagine sono state elaborate diverse versioni nazionali del questionario (disponibili qui: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> ed ESENER 2019). Una strategia di traduzione ottimale è essenziale per garantire che ogni versione nazionale del questionario comprenda domande di elevata qualità che possono essere rivolte a tutti i tipi di imprese all’interno del paese in questione e che generano informazioni confrontabili a livello transnazionale. La traduzione del questionario ESENER segue l’approccio TRAPD, acronimo di <em>traduzione, riesame, giudizio, pre-test e documentazione</em> [Harkness, J. A. (2003)]. Traduzione del questionario. In J. Hartness, F. van de Vijver, &amp; P. Mohler (Eds.), <em>Cross-cultural survey methods</em> (Metodi d’indagine transculturali) (pagg. 35-56). Hoboken, NJ: John Wiley &amp; Sons), tranne che per la prima serie (disponibile qui: 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> ed <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Una strategia di traduzione ottimale è essenziale per garantire che ogni versione nazionale del questionario comprenda domande di elevata qualità che possono essere rivolte a tutti i tipi di imprese all’interno del paese in questione e che generano informazioni confrontabili a livello transnazionale. La traduzione del questionario ESENER segue l’approccio TRAPD, acronimo di <em>traduzione, riesame, giudizio, pre-test e documentazione</em> [Harkness, J. A. (2003)]. Traduzione del questionario. In J. Hartness, F. van de Vijver, &amp; P. Mohler (Eds.), <em>Cross-cultural survey methods</em> (Metodi d’indagine transculturali) (pagg. 35-56). Hoboken, NJ: John Wiley &amp; Sons), tranne che per la prima serie (disponibile qui: 
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>Per le lingue condivise da due o più paesi sono sviluppate diverse versioni nazionali, tenendo conto delle prassi in materia occupazionale, quali la rappresentanza dei lavoratori o l’ispezione del lavoro, che richiedono domande e terminologia differenti. Maggiori dettagli sul processo di traduzione sono disponibili nella 
   <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">relazione sulla traduzione</a> - cfr. qui di seguito.
@@ -9922,6 +9904,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Documenti e ulteriori informazioni per i ricercatori</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Capitolato d’oneri</dt>
+  <dd>Bando di gara con procedura aperta pubblicato il 5 gennaio 2018: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Lettere di accompagnamento</dt>
+  <dd>Lettere che definiscono il contesto e gli obiettivi dell’indagine e il sostegno delle parti sociali sono state elaborate in tutte le lingue dell’indagine, al fine di incoraggiare la partecipazione a essa.</dd>
+  <dt>Questionario principale:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire2019.pdf</a>
+  </dd>
+  <dt>Relazioni tecniche</dt>
+  <dd>
+    <ul>
+      <li>Relazione tecnica: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Relazione sulla qualità: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Relazione sulla traduzione: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
+</h4>
+<dl>
+  <dt>CAPITOLATO D’ONERI</dt>
+  <dd>Bando di gara con procedura aperta pubblicato il 5 dicembre 2012: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Lettere di accompagnamento</dt>
+  <dd>Lettere che definiscono il contesto e gli obiettivi dell’indagine e il sostegno delle parti sociali sono state elaborate in tutte le lingue dell’indagine, al fine di incoraggiare la partecipazione.</dd>
+  <dt>Questionario principale:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Relazioni tecniche</dt>
+  <dd>
+    <ul>
+      <li>Relazione tecnica: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Relazione sulla qualità: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Relazione sulla traduzione: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>Si può accedere all’insieme dei dati ESENER 2014 tramite il 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">servizio dati del Regno Unito dell’università di Essex</a>, 
+  <a href=\"https://data.europa.eu/euodp/it/data/dataset/esener-2\" target=\"_blank\">il portale europeo dei dati</a> e 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
 </h4>
@@ -9963,51 +10006,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/it/data/dataset/esener-1\" target=\"_blank\">il portale europeo dei dati</a> e 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
-</h4>
-<dl>
-  <dt>CAPITOLATO D’ONERI</dt>
-  <dd>Bando di gara con procedura aperta pubblicato il 5 dicembre 2012: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Lettere di accompagnamento</dt>
-  <dd>Lettere che definiscono il contesto e gli obiettivi dell’indagine e il sostegno delle parti sociali sono state elaborate in tutte le lingue dell’indagine, al fine di incoraggiare la partecipazione.</dd>
-  <dt>Questionario principale:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Relazioni tecniche</dt>
-  <dd>
-    <ul>
-      <li>Relazione tecnica: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Relazione sulla qualità: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Relazione sulla traduzione: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>Si può accedere all’insieme dei dati ESENER 2014 tramite il 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">servizio dati del Regno Unito dell’università di Essex</a>, 
-  <a href=\"https://data.europa.eu/euodp/it/data/dataset/esener-2\" target=\"_blank\">il portale europeo dei dati</a> e 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>ESENER 2019</h4>
-<dl>
-  <dt>Capitolato d’oneri</dt>
-  <dd>Bando di gara con procedura aperta pubblicato il 5 gennaio 2018: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Lettere di accompagnamento</dt>
-  <dd>Lettere che definiscono il contesto e gli obiettivi dell’indagine e il sostegno delle parti sociali sono state elaborate in tutte le lingue dell’indagine, al fine di incoraggiare la partecipazione a essa.</dd>
-  <dt>Questionario principale</dt>
-  <dt>Relazioni tecniche</dt>
-</dl>
 <p>Si noti che tutti i documenti che utilizzano o fanno riferimento a ESENER dovrebbero riconoscerne la fonte tramite riferimenti bibliografici nelle note a piè di pagina o nella sezione dei riferimenti delle pubblicazioni. Analogamente, ogni pubblicazione, sia essa stampata, elettronica o trasmessa, che si basa in tutto o in parte su ESENER, dovrebbe contenere un riconoscimento all’Agenzia europea per la sicurezza e la salute sul lavoro (EU-OSHA). Dovrebbero inoltre riportare una dichiarazione secondo la quale l’EU-OSHA non si assume alcuna responsabilità per quanto riguarda la loro ulteriore analisi o interpretazione.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "<h1><i>ESENER</i> metodoloģija</h1>
         <h2>Analīzes kopums un vienība</h2>
@@ -10178,8 +10176,8 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
           </ol>
 
         <h2>Tulko&scaron;ana</h2>        
-          <p>Aptaujas aptvertajām valstīm izstrādā anketas dažādas valstu versijas (pieejamas &scaron;eit: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">2009.&nbsp;gada <i>ESENER</i></a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">2014.&nbsp;gada <i>ESENER</i></a> un 2019.&nbsp;gada <i>ESENER</i>). Būtiska ir optimāla tulko&scaron;anas stratēģija, lai nodro&scaron;inātu, ka katra anketas valstu versija ietver augstas kvalitātes jautājumus, kurus var uzdot visu veidu nodibinājumiem attiecīgajā valstī un kuri ģenerē informāciju, ko var salīdzināt starp dažādām valstīm. <i>ESENER</i> anketas tulko&scaron;anā ievēro <i>TRAPD</i> pieeju; <i>TRAPD</i> ir akronīms, ar ko apzīmē <em><i>Translation, Review, Adjudication, Pre-testing, Documentation</i></em> (tulko&scaron;ana, pārskatī&scaron;ana, lēmuma pieņem&scaron;ana, iepriek&scaron;ēja pārbaude un dokumentē&scaron;ana) (Harkness, J. A. (2003). Questionnaire translation. J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (35.-56.&nbsp;lpp.). Hoboken, NJ: John Wiley &amp; Sons), izņemot pirmo periodu (pieejams &scaron;eit: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">2009.&nbsp;gada <i>ESENER</i></a>).</p>
-          <p>Valodām, kuras ir divu vai vairāku valstu valodas, izstrādā dažādas valstu versijas, ņemot vērā ar darbu saistītu praksi, piemēram, darbinieku pārstāvību vai darba inspekciju, kam nepiecie&scaron;ami at&scaron;ķirīgi jautājumi un terminoloģija. Sīkāku informāciju par tulko&scaron;anas procesu skatīt <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Tulko&scaron;anas ziņojumā</a>&nbsp;&mdash; skatīt turpmāk.</p>
+          <p>Aptaujas aptvertajām valstīm izstrādā anketas dažādas valstu versijas (pieejamas &scaron;eit: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">2009.&nbsp;gada <i>ESENER</i></a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">2014.&nbsp;gada <i>ESENER</i></a> un <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">2019.&nbsp;gada <i>ESENER</i></a>). Būtiska ir optimāla tulko&scaron;anas stratēģija, lai nodro&scaron;inātu, ka katra anketas valstu versija ietver augstas kvalitātes jautājumus, kurus var uzdot visu veidu nodibinājumiem attiecīgajā valstī un kuri ģenerē informāciju, ko var salīdzināt starp dažādām valstīm. <i>ESENER</i> anketas tulko&scaron;anā ievēro <i>TRAPD</i> pieeju; <i>TRAPD</i> ir akronīms, ar ko apzīmē <em><i>Translation, Review, Adjudication, Pre-testing, Documentation</i></em> (tulko&scaron;ana, pārskatī&scaron;ana, lēmuma pieņem&scaron;ana, iepriek&scaron;ēja pārbaude un dokumentē&scaron;ana) (Harkness, J. A. (2003). Questionnaire translation. J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (35.-56.&nbsp;lpp.). Hoboken, NJ: John Wiley &amp; Sons), izņemot pirmo periodu (pieejams &scaron;eit: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">2009.&nbsp;gada <i>ESENER</i></a>).</p>
+          <p>Valodām, kuras ir divu vai vairāku valstu valodas, izstrādā dažādas valstu versijas, ņemot vērā ar darbu saistītu praksi, piemēram, darbinieku pārstāvību vai darba inspekciju, kam nepiecie&scaron;ami at&scaron;ķirīgi jautājumi un terminoloģija. Sīkāku informāciju par tulko&scaron;anas procesu skatīt <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Tulko&scaron;anas ziņojumā</a>&nbsp;&mdash; skatīt turpmāk.</p>
           <p><i>ESENER</i> tulko&scaron;anas pamata posmi ir &scaron;ādi:</p>
            
           <ol type=\"1\" >
@@ -10428,6 +10426,41 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
             </table>
 
           <h3>Dokumenti un papildu informācija pētniekiem</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\"><i>2019.&nbsp;gada ESENER</i></a></h4>
+              <dl>
+                <dt>Konkursa specifikācijas</dt>
+                <dd>Atklāta procedūra publicēta 2018.&nbsp;gada 5.&nbsp;janvārī: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Atbalsta vēstule</dt>
+                <dd>Lai veicinātu dalību aptaujā, visās aptaujas valodās tika sagatavotas vēstules, kurās izklāstīta pamatinformācija par aptauju un tās mērķi un sniegta informācija par atbalstu no sociālajiem partneriem.</dd>
+                <dt>Galvenā anketa</dt>
+                <dd><a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire2019.pdf</a></dd>
+                <dt>Tehniskie ziņojumi</dt>
+                <dd>
+                  <ul>
+                    <li>Tehniskais ziņojums: <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a></li>
+                    <li>Kvalitātes ziņojums: <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a></li>
+                    <li>Tulko&scaron;anas ziņojums: <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\"><i>2014.&nbsp;gada ESENER</i></a></h4>
+              <dl>
+                <dt>Konkursa specifikācijas</dt>
+                <dd>Atklāta procedūra publicēta 2012.&nbsp;gada 5.&nbsp;decembrī: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Atbalsta vēstule</dt>
+                <dd>Lai veicinātu dalību aptaujā, visās aptaujas valodās tika sagatavotas vēstules, kurās izklāstīta pamatinformācija par aptauju un tās mērķi un sniegta informācija par atbalstu no sociālajiem partneriem.</dd>
+                <dt>Galvenā anketa</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Tehniskie ziņojumi</dt>
+                <dd>
+                  <ul>
+                    <li>Tehniskais ziņojums: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Kvalitātes ziņojums: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Tulko&scaron;anas ziņojums: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>2014.&nbsp;gada <i>ESENER</i> datu kopai var piekļūt, ejot uz <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Apvienotās Karalistes Eseksas Universitātes datu dienesta mājas lapu</a>, <a href=\"https://data.europa.eu/euodp/lv/data/dataset/esener-2\" target=\"_blank\">Eiropas datu portālu</a> un <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\"><i>GESIS</i> mājas lapu</a>.</p>
             <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\"><i>2009.&nbsp;gada ESENER</i></a></h4>
               <dl>
                 <dt>Konkursa specifikācijas</dt>
@@ -10451,32 +10484,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
                 </dd>
               </dl>
               <p>2009.&nbsp;gada <i>ESENER</i> datu kopai var piekļūt, ejot uz <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Apvienotās Karalistes Eseksas Universitātes datu dienesta mājas lapu</a>, <a href=\"https://data.europa.eu/euodp/lv/data/dataset/esener-1\" target=\"_blank\">Eiropas datu portālu</a> un <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\"><i>GESIS</i> mājas lapu</a>.</p>
-            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\"><i>2014.&nbsp;gada ESENER</i></a></h4>
-              <dl>
-                <dt>Konkursa specifikācijas</dt>
-                <dd>Atklāta procedūra publicēta 2012.&nbsp;gada 5.&nbsp;decembrī: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
-                <dt>Atbalsta vēstule</dt>
-                <dd>Lai veicinātu dalību aptaujā, visās aptaujas valodās tika sagatavotas vēstules, kurās izklāstīta pamatinformācija par aptauju un tās mērķi un sniegta informācija par atbalstu no sociālajiem partneriem.</dd>
-                <dt>Galvenā anketa</dt>
-                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
-                <dt>Tehniskie ziņojumi</dt>
-                <dd>
-                  <ul>
-                    <li>Tehniskais ziņojums: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
-                    <li>Kvalitātes ziņojums: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
-                    <li>Tulko&scaron;anas ziņojums: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
-                </dd>
-              </dl>
-              <p>2014.&nbsp;gada <i>ESENER</i> datu kopai var piekļūt, ejot uz <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Apvienotās Karalistes Eseksas Universitātes datu dienesta mājas lapu</a>, <a href=\"https://data.europa.eu/euodp/lv/data/dataset/esener-2\" target=\"_blank\">Eiropas datu portālu</a> un <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\"><i>GESIS</i> mājas lapu</a>.</p>
-            <h4><i>2019.&nbsp;gada ESENER</i></h4>
-              <dl>
-                <dt>Konkursa specifikācijas</dt>
-                <dd>Atklāta procedūra publicēta 2018.&nbsp;gada 5.&nbsp;janvārī: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
-                <dt>Atbalsta vēstule</dt>
-                <dd>Lai veicinātu dalību aptaujā, visās aptaujas valodās tika sagatavotas vēstules, kurās izklāstīta pamatinformācija par aptauju un tās mērķi un sniegta informācija par atbalstu no sociālajiem partneriem.</dd>
-                <dt>Galvenā anketa</dt>
-                <dt>Tehniskie ziņojumi</dt>
-              </dl>
               <p>Lūdzam ņemt vērā, ka visos darbos, kuros izmanto <i>ESENER</i> vai atsaucas uz to, jānorāda tās avots, zemsvītras piezīmē vai publikāciju atsauču sadaļā sniedzot bibliogrāfisku atsauci. Tāpat arī jebkurā publikācijā&nbsp;&mdash; drukātā, elektroniskā vai pārraidītā&nbsp;&mdash;, kura daļēji vai pilnībā ir balstīta uz <i>ESENER</i>, ir jāatsaucas uz Eiropas Darba dro&scaron;ības un veselības aizsardzības aģentūru (<i>EU-OSHA</i>). Tajā arī jānorāda, ka <i>EU-OSHA</i> neuzņemas nekādu atbildību par &scaron;o publikāciju turpmāku analīzi vai interpretāciju.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "<h1>ESENER metodika</h1>
         <h2>Apimtis ir analizės vienetas</h2>
@@ -10647,8 +10654,8 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
           </ol>
 
         <h2>Vertimas</h2>        
-          <p>Kiekvienai apklausoje dalyvaujančiai &scaron;aliai parengiama jai skirta klausimyno versija (pateikiama čia: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> ir ESENER 2019). Kad kiekvienai &scaron;aliai skirto klausimyno klausimai būtų tikslūs, juos būtų galima pateikti visų rū&scaron;ių atitinkamos &scaron;alies įmonėms ir i&scaron; atskirų &scaron;alių gautą informaciją būtų galima palyginti, būtina pasirinkti teisingą vertimo strategiją. Verčiant ESENER klausimyną vadovautasi TRAPD metodu (angl. <em>Translation, Review, Adjudication, Pre-testing and Documentation</em>): klausimai i&scaron;verčiami, vertimas tikrinamas, derinamas, i&scaron;bandomas ir įforminamas (Harkness, J. A. (2003). Questionnaire translation. J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), i&scaron;skyrus pirmą apklausą (daugiau informacijos: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
-          <p>Kai ta pačia kalba kalbama dviejose ar daugiau &scaron;alių, kiekvienai &scaron;aliai rengiamos atskiros klausimyno versijos, atsižvelgiant į skirtingas darbo praktikas, kaip antai darbuotojų atstovavimą arba patikrinimus darbo vietoje, pagal kurias derinami klausimai ir terminija. Daugiau informacijos apie vertimo procesą galima rasti <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Vertimo ataskaitoje</a>, žr. toliau.</p>
+          <p>Kiekvienai apklausoje dalyvaujančiai &scaron;aliai parengiama jai skirta klausimyno versija (pateikiama čia: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> ir <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Kad kiekvienai &scaron;aliai skirto klausimyno klausimai būtų tikslūs, juos būtų galima pateikti visų rū&scaron;ių atitinkamos &scaron;alies įmonėms ir i&scaron; atskirų &scaron;alių gautą informaciją būtų galima palyginti, būtina pasirinkti teisingą vertimo strategiją. Verčiant ESENER klausimyną vadovautasi TRAPD metodu (angl. <em>Translation, Review, Adjudication, Pre-testing and Documentation</em>): klausimai i&scaron;verčiami, vertimas tikrinamas, derinamas, i&scaron;bandomas ir įforminamas (Harkness, J. A. (2003). Questionnaire translation. J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), i&scaron;skyrus pirmą apklausą (daugiau informacijos: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Kai ta pačia kalba kalbama dviejose ar daugiau &scaron;alių, kiekvienai &scaron;aliai rengiamos atskiros klausimyno versijos, atsižvelgiant į skirtingas darbo praktikas, kaip antai darbuotojų atstovavimą arba patikrinimus darbo vietoje, pagal kurias derinami klausimai ir terminija. Daugiau informacijos apie vertimo procesą galima rasti <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Vertimo ataskaitoje</a>, žr. toliau.</p>
           <p>ESENER klausimyno vertimas susideda i&scaron; &scaron;ių pagrindinių etapų:</p>
            
           <ol type=\"1\" >
@@ -10897,7 +10904,42 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
             </table>
 
           <h3>Tyrėjams skirti dokumentai ir papildoma informacija</h3>
-            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
+           <h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+              <dl>
+                <dt>Konkurso specifikacija</dt>
+                <dd>Atviras kvietimas teikti parai&scaron;kas paskelbtas 2018 m. sausio mėn. 5 d.: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Paramos ra&scaron;tas</dt>
+                <dd>Siekiant paskatinti dalyvavimą apklausoje, ra&scaron;tai, kuriuose i&scaron;dėstyta pagrindinė apklausos informacija ir tikslai, bei nurodyta socialinių partnerių parama, buvo parengti visomis apklausoje dalyvaujančių &scaron;alių kalbomis.</dd>
+                <dt>Pagrindinis klausimynas:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a></dd>
+                <dt>Techninės ataskaitos:</dt>
+                <dd>
+                  <ul>
+                    <li>Techninė ataskaita: <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a></li>
+                    <li>Kokybės ataskaita: <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a></li>
+                    <li>Vertimo ataskaita: <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl> 
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Konkurso specifikacija</dt>
+                <dd>Atviras kvietimas teikti parai&scaron;kas paskelbtas 2012 m. gruodžio 5 d.: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Paramos ra&scaron;tas:</dt>
+                <dd>Siekiant paskatinti dalyvavimą apklausoje, ra&scaron;tai, kuriuose i&scaron;dėstyta pagrindinė apklausos informacija ir tikslai, bei nurodyta socialinių partnerių parama, buvo parengti visomis apklausoje dalyvaujančių &scaron;alių kalbomis.</dd>
+                <dt>Pagrindinis klausimynas:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Techninės ataskaitos:</dt>
+                <dd>
+                  <ul>
+                    <li>Techninė ataskaita: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Kokybės ataskaita: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Vertimo ataskaita: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>ESENER 2014 duomenų rinkinį galima rasti <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Jungtinės Karalystės Esekso universiteto duomenų tarnyboje</a>, <a href=\"https://data.europa.eu/euodp/lt/data/dataset/esener-2\" target=\"_blank\">Europos duomenų portale</a> ir <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
+           <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
               <dl>
                 <dt>Konkurso specifikacija</dt>
                 <dd>Atviras kvietimas teikti parai&scaron;kas paskelbtas 2007 m. rugpjūčio 21 d.: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
@@ -10919,33 +10961,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
                   </ul>
                 </dd>
               </dl>
-              <p>ESENER 2009 duomenų rinkinį galima rasti <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Jungtinės Karalystės Esekso universiteto duomenų tarnyboje</a>, <a href=\"https://data.europa.eu/euodp/lt/data/dataset/esener-1\" target=\"_blank\">Europos duomenų portale</a> ir <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
-            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
-              <dl>
-                <dt>Konkurso specifikacija</dt>
-                <dd>Atviras kvietimas teikti parai&scaron;kas paskelbtas 2012 m. gruodžio 5 d.: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
-                <dt>Paramos ra&scaron;tas:</dt>
-                <dd>Siekiant paskatinti dalyvavimą apklausoje, ra&scaron;tai, kuriuose i&scaron;dėstyta pagrindinė apklausos informacija ir tikslai, bei nurodyta socialinių partnerių parama, buvo parengti visomis apklausoje dalyvaujančių &scaron;alių kalbomis.</dd>
-                <dt>Pagrindinis klausimynas:</dt>
-                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
-                <dt>Techninės ataskaitos:</dt>
-                <dd>
-                  <ul>
-                    <li>Techninė ataskaita: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
-                    <li>Kokybės ataskaita: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
-                    <li>Vertimo ataskaita: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
-                </dd>
-              </dl>
-              <p>ESENER 2014 duomenų rinkinį galima rasti <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Jungtinės Karalystės Esekso universiteto duomenų tarnyboje</a>, <a href=\"https://data.europa.eu/euodp/lt/data/dataset/esener-2\" target=\"_blank\">Europos duomenų portale</a> ir <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
-            <h4>ESENER 2019</h4>
-              <dl>
-                <dt>Konkurso specifikacija</dt>
-                <dd>Atviras kvietimas teikti parai&scaron;kas paskelbtas 2018 m. sausio mėn. 5 d.: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
-                <dt>Paramos ra&scaron;tas</dt>
-                <dd>Siekiant paskatinti dalyvavimą apklausoje, ra&scaron;tai, kuriuose i&scaron;dėstyta pagrindinė apklausos informacija ir tikslai, bei nurodyta socialinių partnerių parama, buvo parengti visomis apklausoje dalyvaujančių &scaron;alių kalbomis.</dd>
-                <dt>Pagrindinis klausimynas</dt>
-                <dt>Techninės ataskaitos</dt>
-              </dl>
+              <p>ESENER 2009 duomenų rinkinį galima rasti <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Jungtinės Karalystės Esekso universiteto duomenų tarnyboje</a>, <a href=\"https://data.europa.eu/euodp/lt/data/dataset/esener-1\" target=\"_blank\">Europos duomenų portale</a> ir <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p> 
               <p>Atkreipiame dėmesį, kad visuose darbuose, kuriuose naudojami arba minimi ESENER duomenys, &scaron;altinis turėtų būti nurodytas pateikiant bibliografinę nuorodą i&scaron;na&scaron;ose arba pagalbinės literatūros skiltyje. Lygiai taip pat bet kokiame spausdintiniame, elektroniniame ar transliuojamame leidinyje, kuriame panaudoti visi ar kai kurie ESENER duomenys, turėtų būti pateikta nuoroda į Europos darbuotojų saugos ir sveikatos agentūrą (EU-OSHA). Jame taip pat turėtų būti nurodyta, kad EU-OSHA neprisiima atsakomybės už tolesnę duomenų analizę ar ai&scaron;kinimą.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "<h1>Az ESENER módszertana</h1>
 <h2>Az elemzés hatóköre és egysége</h2>
@@ -11183,11 +11199,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Fordítás</h2>
 <p>A felmérésbe bevont országok számára kidolgozzák a kérdőív (megtalálható itt: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">2009.&nbsp;évi ESENER</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">2014.&nbsp;évi ESENER</a> és 2019. évi ESENER) különböző nemzeti változatait. Alapvető fontosságú egy optimális fordítási stratégia kialakítása annak biztosítása érdekében, hogy a kérdőív minden nyelvi változata olyan, szigorú minőségi követelményeknek megfelelő kérdéseket tartalmazzon, amelyek az érintett országban minden vállalkozástípusra elfogadható módon alkalmazhatók, és általuk olyan információk nyerhetők, amelyeket nemzetközi szinten össze lehet hasonlítani. Az ESENER-kérdőív fordítása a TRAPD-megközelítést követi (a TRAPD rövidítés megfelelője: <em>Translation, Review, Adjudication, Pre-testing, Documentation</em>; fordítás, felülvizsgálat, döntés, előzetes tesztelés, dokumentáció) (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (szerk.), Cross-cultural survey methods (35–56. o.). Hoboken, NJ: John Wiley &amp; Sons), az első hullám kivételével (amely megtalálható itt: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">2014.&nbsp;évi ESENER</a> és <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">2019. évi ESENER</a>) különböző nemzeti változatait. Alapvető fontosságú egy optimális fordítási stratégia kialakítása annak biztosítása érdekében, hogy a kérdőív minden nyelvi változata olyan, szigorú minőségi követelményeknek megfelelő kérdéseket tartalmazzon, amelyek az érintett országban minden vállalkozástípusra elfogadható módon alkalmazhatók, és általuk olyan információk nyerhetők, amelyeket nemzetközi szinten össze lehet hasonlítani. Az ESENER-kérdőív fordítása a TRAPD-megközelítést követi (a TRAPD rövidítés megfelelője: <em>Translation, Review, Adjudication, Pre-testing, Documentation</em>; fordítás, felülvizsgálat, döntés, előzetes tesztelés, dokumentáció) (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (szerk.), Cross-cultural survey methods (35–56. o.). Hoboken, NJ: John Wiley &amp; Sons), az első hullám kivételével (amely megtalálható itt: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">2009.&nbsp;évi ESENER</a>).
 </p>
 <p>Egy vagy több ország közös nyelve esetén különböző nemzeti változatok kidolgozására kerül sor a munkával összefüggő gyakorlatok, például a munkavállalók képviselete vagy a munkaügyi felügyelet figyelembevételével, amelyekhez eltérő kérdések és terminusok szükségesek. A fordítási folyamattal kapcsolatos további részletek a 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">fordítási jelentésben</a> találhatók, lásd alább.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">fordítási jelentésben</a> találhatók, lásd alább.
 </p>
 <p>Az ESENER fordítása során követendő alapvető lépések a következők:</p>
 <ol type=\"1\">
@@ -11438,6 +11454,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Kutatóknak szánt dokumentumok és további információk</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">2019.&nbsp;évi ESENER</a></h4>
+<dl>
+  <dt>Ajánlattételhez szükséges dokumentáció:</dt>
+  <dd>2018. január 5-én közzétett nyílt ajánlattételi felhívás: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Kísérőlevél</dt>
+  <dd>A felmérésben való részvétel ösztönzése érdekében a felmérés hátterét és céljait, valamint a szociális partnerek által nyújtott támogatást ismertető levelek készültek a felmérés összes nyelvén.</dd>
+  <dt>Törzskérdőív:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a>
+  </dd>
+  <dt>Technikai jelentések:</dt>
+  <dd>
+    <ul>
+      <li>Technikai jelentés: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Minőségjelentés: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Fordítási jelentés: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">2014.&nbsp;évi ESENER</a>
+</h4>
+<dl>
+  <dt>Ajánlattételhez szükséges dokumentáció:</dt>
+  <dd>2012. december 5-én közzétett nyílt ajánlattételi felhívás: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Kísérőlevél:</dt>
+  <dd>A felmérésben való részvétel ösztönzése érdekében a felmérés hátterét és céljait, valamint a szociális partnerek által nyújtott támogatást ismertető levelek készültek a felmérés összes nyelvén.</dd>
+  <dt>Törzskérdőív:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Technikai jelentések:</dt>
+  <dd>
+    <ul>
+      <li>Technikai jelentés: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Minőségjelentés: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Fordítási jelentés: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>A 2014. évi ESENER adatkészletének hozzáférhetősége: 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">az Essexi Egyetem egyesült királysági adatarchívuma</a>, 
+  <a href=\"https://data.europa.eu/euodp/hu/data/dataset/esener-2\" target=\"_blank\">az Európai Adatportál</a> és a 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">2009.&nbsp;évi ESENER</a>
 </h4>
@@ -11479,51 +11556,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/hu/data/dataset/esener-1\" target=\"_blank\">az Európai Adatportál</a> és a 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">2014.&nbsp;évi ESENER</a>
-</h4>
-<dl>
-  <dt>Ajánlattételhez szükséges dokumentáció:</dt>
-  <dd>2012. december 5-én közzétett nyílt ajánlattételi felhívás: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Kísérőlevél:</dt>
-  <dd>A felmérésben való részvétel ösztönzése érdekében a felmérés hátterét és céljait, valamint a szociális partnerek által nyújtott támogatást ismertető levelek készültek a felmérés összes nyelvén.</dd>
-  <dt>Törzskérdőív:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Technikai jelentések:</dt>
-  <dd>
-    <ul>
-      <li>Technikai jelentés: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Minőségjelentés: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Fordítási jelentés: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>A 2014. évi ESENER adatkészletének hozzáférhetősége: 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">az Essexi Egyetem egyesült királysági adatarchívuma</a>, 
-  <a href=\"https://data.europa.eu/euodp/hu/data/dataset/esener-2\" target=\"_blank\">az Európai Adatportál</a> és a 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>2019.&nbsp;évi ESENER</h4>
-<dl>
-  <dt>Ajánlattételhez szükséges dokumentáció:</dt>
-  <dd>2018. január 5-én közzétett nyílt ajánlattételi felhívás: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Kísérőlevél</dt>
-  <dd>A felmérésben való részvétel ösztönzése érdekében a felmérés hátterét és céljait, valamint a szociális partnerek által nyújtott támogatást ismertető levelek készültek a felmérés összes nyelvén.</dd>
-  <dt>Törzskérdőív</dt>
-  <dt>Technikai jelentések</dt>
-</dl>
 <p>Felhívjuk figyelmét, hogy minden olyan mű esetében, amely az ESENER felhasználásával készül vagy arra hivatkozik, lábjegyzet formájában vagy a kiadvány referenciákat tartalmazó szakaszában fel kell tüntetni az információk bibliográfiai forrását. Hasonlóképpen, bármely nyomtatott, elektronikus vagy műsorszórás keretében közvetített, teljes egészében vagy részben az ESENER-en alapuló kiadványban köszönetet kell mondani az Európai Munkahelyi Biztonsági és Egészségvédelmi Ügynökségnek (EU-OSHA). A kiadványoknak továbbá tartalmazniuk kell arra vonatkozó nyilatkozatot, hogy az EU-OSHA nem vállal felelősséget az elemzésükért vagy az értelmezésükért.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "<h1>Metodoloġija ESENER</h1>
 <h2>Univers u unità tal-analiżi</h2>
@@ -11761,11 +11793,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Traduzzjoni</h2>
 <p>Verżjonijiet nazzjonali differenti tal-kwestjonarju huma żviluppati għall-pajjiżi koperti mill-istħarriġ (disponibbli hawnhekk: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> u ESENER 2019). Strateġija ottimali ta’ traduzzjoni hija essenzjali biex tiżgura li kull verżjoni nazzjonali tal-kwestjonarju tinkludi mistoqsijiet ta’ kwalità għolja li jistgħu jiġu diretti lejn kull tip ta’ intrapriża fil-pajjiż ikkonċernat u tiġġenera informazzjoni li tista’ titqabbel b’mod transnazzjonali. It-traduzzjoni tal-kwestjonarju ta’ ESENER ssegwi l-approċċ TRAPD, akronimu għal<em>Translation, Review, Adjudication, Pre-testing and Documentation (Traduzzjoni, Rieżami, Aġġudikazzjoni, Ittestjar minn qabel u Dokumentazzjoni)</em> (Harkoness, J. A. (2003). Traduzzjoni tal-kwestjonarju. F’J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), metodi ta’ stħarriġ transkulturali (pp. 35–56). Hoboken, NJ: John Wiley &amp; Sons), ħlief għall-ewwel grupp (disponibbli hawnhekk: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> u <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Strateġija ottimali ta’ traduzzjoni hija essenzjali biex tiżgura li kull verżjoni nazzjonali tal-kwestjonarju tinkludi mistoqsijiet ta’ kwalità għolja li jistgħu jiġu diretti lejn kull tip ta’ intrapriża fil-pajjiż ikkonċernat u tiġġenera informazzjoni li tista’ titqabbel b’mod transnazzjonali. It-traduzzjoni tal-kwestjonarju ta’ ESENER ssegwi l-approċċ TRAPD, akronimu għal<em>Translation, Review, Adjudication, Pre-testing and Documentation (Traduzzjoni, Rieżami, Aġġudikazzjoni, Ittestjar minn qabel u Dokumentazzjoni)</em> (Harkoness, J. A. (2003). Traduzzjoni tal-kwestjonarju. F’J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), metodi ta’ stħarriġ transkulturali (pp. 35–56). Hoboken, NJ: John Wiley &amp; Sons), ħlief għall-ewwel grupp (disponibbli hawnhekk: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>Għal-lingwi kondiviżi minn żewġ pajjiżi jew aktar, jiġu żviluppati verżjonijiet nazzjonali differenti, filwaqt li jitqiesu prattiki relatati max-xogħol bħar-rappreżentazzjoni tal-ħaddiema jew l-ispezzjoni tax-xogħol, li jeħtieġu mistoqsijiet u terminoloġija differenti. Aktar dettalji dwar il-proċess tat-traduzzjoni jistgħu jinstabu fir-
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Rapport tat-Traduzzjoni</a> - ara hawn taħt.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Rapport tat-Traduzzjoni</a> - ara hawn taħt.
 </p>
 <p>Il-passi bażiċi inklużi fit-traduzzjoni ta’ ESENER huma:</p>
 <ol type=\"1\">
@@ -12016,6 +12048,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Dokumenti u aktar informazzjoni għar-riċerkaturi</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Speċifikazzjonijiet tal-offerta:</dt>
+  <dd>Sejħa miftuħa ppubblikata fil-5 ta’ Jannar 2018: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Ittra ta’ appoġġ:</dt>
+  <dd>Ġew prodotti ittri li jistabbilixxu l-isfond u l-għanijiet tal-istħarriġ u l-appoġġ mill-imsieħba soċjali fil-lingwi kollha tal-istħarriġ bil-għan li titħeġġeġ il-parteċipazzjoni fl-istħarriġ.</dd>
+  <dt>Kwestjonarju prinċipali:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a>
+  </dd>
+  <dt>Rapporti tekniċi:</dt>
+  <dd>
+    <ul>
+      <li>Rapport tekniku: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Kwalità tar-rapport: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Rapport tat-traduzzjoni: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
+</h4>
+<dl>
+  <dt>Speċifikazzjonijiet tal-offerta:</dt>
+  <dd>Sejħa miftuħa ppubblikata fil-5 ta’ Diċembru 2012: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Ittra ta’ appoġġ:</dt>
+  <dd>Ġew prodotti ittri li jistabbilixxu l-isfond u l-għanijiet tal-istħarriġ u l-appoġġ mill-imsieħba soċjali fil-lingwi kollha tal-istħarriġ bil-għan li titħeġġeġ il-parteċipazzjoni fl-istħarriġ.</dd>
+  <dt>Kwestjonarju prinċipali:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Rapporti tekniċi:</dt>
+  <dd>
+    <ul>
+      <li>Rapport tekniku: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Kwalità tar-rapport: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Rapport tat-traduzzjoni: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>Is-sett ta’ data ta’ ESENER 2014 jista’ jiġi aċċessat permezz tas-
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Servizz tad-Data tar-Renju Unit tal-Università ta’ Essex</a>, 
+  <a href=\"https://data.europa.eu/euodp/mt/data/dataset/esener-2\" target=\"_blank\">il-portal Ewropew tad-data</a> u 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
 </h4>
@@ -12057,51 +12150,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/mt/data/dataset/esener-1\" target=\"_blank\">il-portal Ewropew tad-data</a> u 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
-</h4>
-<dl>
-  <dt>Speċifikazzjonijiet tal-offerta:</dt>
-  <dd>Sejħa miftuħa ppubblikata fil-5 ta’ Diċembru 2012: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Ittra ta’ appoġġ:</dt>
-  <dd>Ġew prodotti ittri li jistabbilixxu l-isfond u l-għanijiet tal-istħarriġ u l-appoġġ mill-imsieħba soċjali fil-lingwi kollha tal-istħarriġ bil-għan li titħeġġeġ il-parteċipazzjoni fl-istħarriġ.</dd>
-  <dt>Kwestjonarju prinċipali:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Rapporti tekniċi:</dt>
-  <dd>
-    <ul>
-      <li>Rapport tekniku: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Kwalità tar-rapport: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Rapport tat-traduzzjoni: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>Is-sett ta’ data ta’ ESENER 2014 jista’ jiġi aċċessat permezz tas-
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Servizz tad-Data tar-Renju Unit tal-Università ta’ Essex</a>, 
-  <a href=\"https://data.europa.eu/euodp/mt/data/dataset/esener-2\" target=\"_blank\">il-portal Ewropew tad-data</a> u 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>ESENER 2019</h4>
-<dl>
-  <dt>Speċifikazzjonijiet tal-offerta:</dt>
-  <dd>Sejħa miftuħa ppubblikata fil-5 ta’ Jannar 2018: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Ittra ta’ appoġġ:</dt>
-  <dd>Ġew prodotti ittri li jistabbilixxu l-isfond u l-għanijiet tal-istħarriġ u l-appoġġ mill-imsieħba soċjali fil-lingwi kollha tal-istħarriġ bil-għan li titħeġġeġ il-parteċipazzjoni fl-istħarriġ.</dd>
-  <dt>Kwestjonarju prinċipali</dt>
-  <dt>Rapporti tekniċi</dt>
-</dl>
 <p>Jekk jogħġbok innota li x-xogħlijiet kollha li jużaw jew li jirreferu għal ESENER għandhom jirrikonoxxu s-sors tiegħu permezz ta’ ċitazzjoni bibljografika fin-noti ta’ qiegħ il-paġna jew fit-taqsima ta’ referenza tal-pubblikazzjonijiet. B’mod simili, kwalunkwe pubblikazzjoni, kemm jekk stampata, elettronika, jew imxandra, ibbażata kompletament jew parzjalment fuq ESENER għandha tirrikonoxxi l-Aġenzija Ewropea għas-Sigurtà u s-Saħħa fuq il-Post tax-Xogħol (EU-OSHA). Għandu wkoll ikollha dikjarazzjoni li l-EU-OSHA ma tkunx responsabbli għall-analiżi jew l-interpretazzjoni ulterjuri tagħhom.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "<h1>Methodologie van Esener</h1>
 <h2>Universum en analyse-eenheid</h2>
@@ -12339,11 +12387,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Vertaling</h2>
 <p>Voor de landen die door de enquête worden bestreken, worden verschillende nationale versies van de vragenlijst ontwikkeld (hier beschikbaar: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">Esener&nbsp;2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">Esener&nbsp;2014</a> en Esener&nbsp;2019). Een optimale vertaalstrategie is essentieel om te waarborgen dat elke nationale versie van de vragenlijst bestaat uit kwalitatief goede vragen die aan alle soorten bedrijven in het betreffende land kunnen worden gesteld, en informatie oplevert die transnationaal vergeleken kan worden. Bij de vertaling van de Esener-vragenlijst wordt de TRAPD-benadering gevolgd, een afkorting van <em>Translation, Review, Adjudication, Pre-testing, Documentation</em> (vertaling, revisie, definitieve vaststelling, pretesten en documentatie) (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), behalve voor de eerste ronde (hier beschikbaar: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">Esener&nbsp;2014</a> en <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">Esener&nbsp;2019</a>). Een optimale vertaalstrategie is essentieel om te waarborgen dat elke nationale versie van de vragenlijst bestaat uit kwalitatief goede vragen die aan alle soorten bedrijven in het betreffende land kunnen worden gesteld, en informatie oplevert die transnationaal vergeleken kan worden. Bij de vertaling van de Esener-vragenlijst wordt de TRAPD-benadering gevolgd, een afkorting van <em>Translation, Review, Adjudication, Pre-testing, Documentation</em> (vertaling, revisie, definitieve vaststelling, pretesten en documentatie) (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), behalve voor de eerste ronde (hier beschikbaar: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">Esener&nbsp;2009</a>).
 </p>
 <p>Voor talen die in twee of meer landen worden gesproken, worden verschillende nationale versies ontwikkeld, waarbij rekening wordt gehouden met praktijken op de werkvloer zoals werknemersvertegenwoordiging of arbeidsinspectie, die verschillende vragen en terminologie vereisen. Bijzonderheden over het vertaalproces zijn te vinden in het 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report</a> – zie onder.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Translation Report</a> – zie onder.
 </p>
 <p>In de vertaling van Esener kunnen de volgende stappen worden onderscheiden:</p>
 <ol type=\"1\">
@@ -12592,6 +12640,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Documenten en nadere informatie voor onderzoekers</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">Esener&nbsp;2019</a></h4>
+<dl>
+  <dt>Aanbestedingsspecificaties:</dt>
+  <dd>Open oproep gepubliceerd op 5&nbsp;januari 2018: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/nl/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Begeleidende brief:</dt>
+  <dd>In alle onderzoekstalen werden brieven opgesteld waarin de achtergrond en de doelen van de enquête en de steun van de sociale partners uiteen werden gezet, teneinde de deelname aan de enquête te stimuleren.</dd>
+  <dt>Hoofdversie van de vragenlijst:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a>
+  </dd>
+  <dt>Technische verslagen:</dt>
+  <dd>
+    <ul>
+      <li>Technisch verslag: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Kwaliteitsverslag: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Vertalingsverslag: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">Esener&nbsp;2014</a>
+</h4>
+<dl>
+  <dt>Aanbestedingsspecificaties:</dt>
+  <dd>Open oproep gepubliceerd op 5 december 2012: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Begeleidende brief:</dt>
+  <dd>In alle onderzoekstalen werden brieven opgesteld waarin de achtergrond en de doelen van de enquête en de steun van de sociale partners uiteen werden gezet, teneinde de deelname aan de enquête te stimuleren.</dd>
+  <dt>Hoofdversie van de vragenlijst:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Technische verslagen:</dt>
+  <dd>
+    <ul>
+      <li>Technisch verslag: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Kwaliteitsverslag: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Vertalingsverslag: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>De gegevensset van Esener&nbsp;2014 is toegankelijk via de 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service van de Universiteit van Essex</a>, 
+  <a href=\"https://data.europa.eu/euodp/nl/data/dataset/esener-2\" target=\"_blank\">het opendataportaal van de EU</a> en 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">Esener&nbsp;2009</a>
 </h4>
@@ -12633,51 +12742,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/nl/data/dataset/esener-1\" target=\"_blank\">het opendataportaal van de EU</a> en 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">Esener&nbsp;2014</a>
-</h4>
-<dl>
-  <dt>Aanbestedingsspecificaties:</dt>
-  <dd>Open oproep gepubliceerd op 5 december 2012: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Begeleidende brief:</dt>
-  <dd>In alle onderzoekstalen werden brieven opgesteld waarin de achtergrond en de doelen van de enquête en de steun van de sociale partners uiteen werden gezet, teneinde de deelname aan de enquête te stimuleren.</dd>
-  <dt>Hoofdversie van de vragenlijst:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Technische verslagen:</dt>
-  <dd>
-    <ul>
-      <li>Technisch verslag: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Kwaliteitsverslag: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Vertalingsverslag: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>De gegevensset van Esener&nbsp;2014 is toegankelijk via de 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service van de Universiteit van Essex</a>, 
-  <a href=\"https://data.europa.eu/euodp/nl/data/dataset/esener-2\" target=\"_blank\">het opendataportaal van de EU</a> en 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>Esener&nbsp;2019</h4>
-<dl>
-  <dt>Aanbestedingsspecificaties:</dt>
-  <dd>Open oproep gepubliceerd op 5&nbsp;januari 2018: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/nl/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Begeleidende brief:</dt>
-  <dd>In alle onderzoekstalen werden brieven opgesteld waarin de achtergrond en de doelen van de enquête en de steun van de sociale partners uiteen werden gezet, teneinde de deelname aan de enquête te stimuleren.</dd>
-  <dt>Hoofdversie van de vragenlijst</dt>
-  <dt>Technische verslagen</dt>
-</dl>
 <p>Er zij op gewezen dat in alle publicaties die gebruikmaken van of verwijzen naar Esener, deze bron moet worden vermeld door middel van een bibliografische verwijzing in voetnoten of in de referentielijst van de publicatie. Evenzo moet elke publicatie, op papier, elektronisch of uitgezonden, die geheel of gedeeltelijk op Esener gebaseerd is, het Europees Agentschap voor de veiligheid en de gezondheid op het werk (EU-OSHA) vermelden. Ook moet er een verklaring worden opgenomen dat EU-OSHA niet aansprakelijk is voor de verdere analyse of interpretatie van de gegevens.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "<h1>Metodikk for ESENER</h1>
         <h2>Univers og analyseenhet</h2>
@@ -12848,8 +12912,8 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
           </ol>
 
         <h2>Oversettelse</h2>        
-          <p>Ulike nasjonale versjoner av spørreskjemaet er utarbeidet for landene som omfattes av undersøkelsen (tilgjengelig her: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> og ESENER 2019). En optimal oversettelsesstrategi er viktig for å sikre at hver nasjonale versjon av spørreskjemaet inneholder spørsmål av høy kvalitet som kan rettes mot alle typer foretak i det aktuelle landet og generere informasjon som kan sammenlignes tverrnasjonalt. Oversettelsen av ESENER-spørreskjemaet følger tilnærmingen, TRAPD, et akronym for <em>Translation (oversettelse), Review (gjennomgang), Adjudication (bedømmelse), Pre-testing (forhåndstesting) og Documentation (dokumentasjon)</em> (Harkness, J.A. (2003). Oversettelse av spørreskjema. I J. A. Harkness, F. van de Vijver og P. Ph. Mohler (Red.), Cross-cultural survey methods (s. 35&ndash;56). Hoboken, NJ: John Wiley &amp; Sons), bortsett fra den første bølgen (tilgjengelig her: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
-          <p>For språk som deles av to eller flere land utarbeides forskjellige nasjonale versjoner som tar hensyn til arbeidsrelaterte praksiser, slik som arbeidstakerrepresentasjon eller arbeidskontroll, som krever ulike spørsmål og terminologi. Flere detaljer om oversettelsesprosessen finnes i <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">oversettelsesrapporten</a> &ndash; se nedenfor.</p>
+          <p>Ulike nasjonale versjoner av spørreskjemaet er utarbeidet for landene som omfattes av undersøkelsen (tilgjengelig her: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> og <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). En optimal oversettelsesstrategi er viktig for å sikre at hver nasjonale versjon av spørreskjemaet inneholder spørsmål av høy kvalitet som kan rettes mot alle typer foretak i det aktuelle landet og generere informasjon som kan sammenlignes tverrnasjonalt. Oversettelsen av ESENER-spørreskjemaet følger tilnærmingen, TRAPD, et akronym for <em>Translation (oversettelse), Review (gjennomgang), Adjudication (bedømmelse), Pre-testing (forhåndstesting) og Documentation (dokumentasjon)</em> (Harkness, J.A. (2003). Oversettelse av spørreskjema. I J. A. Harkness, F. van de Vijver og P. Ph. Mohler (Red.), Cross-cultural survey methods (s. 35&ndash;56). Hoboken, NJ: John Wiley &amp; Sons), bortsett fra den første bølgen (tilgjengelig her: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>For språk som deles av to eller flere land utarbeides forskjellige nasjonale versjoner som tar hensyn til arbeidsrelaterte praksiser, slik som arbeidstakerrepresentasjon eller arbeidskontroll, som krever ulike spørsmål og terminologi. Flere detaljer om oversettelsesprosessen finnes i <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">oversettelsesrapporten</a> &ndash; se nedenfor.</p>
           <p>De grunnleggende trinnene som er inkludert i oversettelsen av ESENER er:</p>
            
           <ol type=\"1\" >
@@ -13098,6 +13162,41 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
             </table>
 
           <h3>Dokumenter og ytterligere informasjon for forskere</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+              <dl>
+                <dt>Anbudsspesifikasjoner:</dt>
+                <dd>Åpen invitasjon publisert 5. januar 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Støttebrev</dt>
+                <dd>Brev som redegjorde for bakgrunnen og målene for undersøkelsen, og støtten fra sosiale partere, ble produsert på alle undersøkelsesspråkene med formål om å oppmuntre til deltakelse i undersøkelsen.</dd>
+                <dt>Masterkopi av spørreskjema:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a></dd>
+                <dt>Tekniske rapporter:</dt>
+                <dd>
+                  <ul>
+                    <li>Teknisk rapport: <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a></li>
+                    <li>Kvalitetsrapport: <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a></li>
+                    <li>Oversettelsesrapport: <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Anbudsspesifikasjoner:</dt>
+                <dd>Åpen invitasjon publisert 5. desember 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Støttebrev:</dt>
+                <dd>Brev som redegjorde for bakgrunnen og målene for undersøkelsen, og støtten fra sosiale partere, ble produsert på alle undersøkelsesspråkene med formål om å oppmuntre til deltakelse i undersøkelsen.</dd>
+                <dt>Masterkopi av spørreskjema:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Tekniske rapporter:</dt>
+                <dd>
+                  <ul>
+                    <li>Teknisk rapport: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Kvalitetsrapport: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Oversettelsesrapport: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Datasettet for ESENER 2014 er tilgjengelig via <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-2\" target=\"_blank\">the European data portal</a> og <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
             <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
               <dl>
                 <dt>Anbudsspesifikasjoner:</dt>
@@ -13121,32 +13220,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
                 </dd>
               </dl>
               <p>Datasettet for ESENER 2009 er tilgjengelig via <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-1\" target=\"_blank\">the European data portal</a> og <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
-            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
-              <dl>
-                <dt>Anbudsspesifikasjoner:</dt>
-                <dd>Åpen invitasjon publisert 5. desember 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
-                <dt>Støttebrev:</dt>
-                <dd>Brev som redegjorde for bakgrunnen og målene for undersøkelsen, og støtten fra sosiale partere, ble produsert på alle undersøkelsesspråkene med formål om å oppmuntre til deltakelse i undersøkelsen.</dd>
-                <dt>Masterkopi av spørreskjema:</dt>
-                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
-                <dt>Tekniske rapporter:</dt>
-                <dd>
-                  <ul>
-                    <li>Teknisk rapport: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
-                    <li>Kvalitetsrapport: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
-                    <li>Oversettelsesrapport: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
-                </dd>
-              </dl>
-              <p>Datasettet for ESENER 2014 er tilgjengelig via <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/en/data/dataset/esener-2\" target=\"_blank\">the European data portal</a> og <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
-            <h4>ESENER 2019</h4>
-              <dl>
-                <dt>Anbudsspesifikasjoner:</dt>
-                <dd>Åpen invitasjon publisert 5. januar 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
-                <dt>Støttebrev</dt>
-                <dd>Brev som redegjorde for bakgrunnen og målene for undersøkelsen, og støtten fra sosiale partere, ble produsert på alle undersøkelsesspråkene med formål om å oppmuntre til deltakelse i undersøkelsen.</dd>
-                <dt>Masterkopi av spørreskjema</dt>
-                <dt>Tekniske rapporter</dt>
-              </dl>
               <p>Vær oppmerksom på at alle verk som bruker eller henviser til ESENER, skal anerkjenne kilden med bibliografiske sitater i fotnotene eller i referansedelen av publikasjonen. Likeledes skal enhver publisering, uansett om den er trykt, elektronisk eller kringkastet, som er basert helt eller delvis på ESENER, anerkjenne Det europeiske arbeidsmiljøorganet (EU-OSHA). Den skal også omfatte en uttalelse om at EU-OSHA ikke har noe ansvar for deres videre analyse eller tolkning.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "<h1>Metodyka ESENER</h1>
         <h2>Ogół i jednostka analizy</h2>
@@ -13317,8 +13390,8 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
           </ol>
 
         <h2>Tłumaczenie</h2>        
-          <p>Opracowywane są różne wersje krajowe dla krajów objętych badaniem (dostępne tutaj: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> i ESENER 2019). Optymalna strategia w zakresie tłumaczeń ma zasadnicze znaczenie dla zapewnienia, aby każda wersja krajowa kwestionariusza zawierała wysokiej jakości pytania, które mogą być skierowane do wszystkich rodzajów przedsiębiorstw w danym kraju i generować informacje, które można porównać pomiędzy krajami. Tłumaczenie kwestionariusza ESENER jest zgodne z podejściem TRAPD (ang. Translation, Review, Adjudication, Pre-testing and Documentation &ndash; tłumaczenie, weryfikacja, redakcja, wstępne testowanie i dokumentacja) (Harkness, J. A. (2003). Questionnaire translation. w J. A. Harkness, F. van de Vijver, i P. Ph. Mohler (red.), Cross-cultural survey methods (s. 35-56). Hoboken, NJ: John Wiley &amp; Sons), z wyjątkiem pierwszej fali (dostępnej tutaj: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
-          <p>W przypadku języków stosowanych w więcej niż jednym kraju opracowywane są różne wersje krajowe, z uwzględnieniem praktyk związanych z pracą, takich jak reprezentacja pracowników czy inspekcja pracy, które wymagają różnych pytań i terminologii. Więcej szczegółów na temat procesu tłumaczenia można znaleźć w <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">sprawozdaniu dotyczącym tłumaczenia</a> &ndash; zob. poniżej.</p>
+          <p>Opracowywane są różne wersje krajowe dla krajów objętych badaniem (dostępne tutaj: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> i <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Optymalna strategia w zakresie tłumaczeń ma zasadnicze znaczenie dla zapewnienia, aby każda wersja krajowa kwestionariusza zawierała wysokiej jakości pytania, które mogą być skierowane do wszystkich rodzajów przedsiębiorstw w danym kraju i generować informacje, które można porównać pomiędzy krajami. Tłumaczenie kwestionariusza ESENER jest zgodne z podejściem TRAPD (ang. Translation, Review, Adjudication, Pre-testing and Documentation &ndash; tłumaczenie, weryfikacja, redakcja, wstępne testowanie i dokumentacja) (Harkness, J. A. (2003). Questionnaire translation. w J. A. Harkness, F. van de Vijver, i P. Ph. Mohler (red.), Cross-cultural survey methods (s. 35-56). Hoboken, NJ: John Wiley &amp; Sons), z wyjątkiem pierwszej fali (dostępnej tutaj: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>W przypadku języków stosowanych w więcej niż jednym kraju opracowywane są różne wersje krajowe, z uwzględnieniem praktyk związanych z pracą, takich jak reprezentacja pracowników czy inspekcja pracy, które wymagają różnych pytań i terminologii. Więcej szczegółów na temat procesu tłumaczenia można znaleźć w <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">sprawozdaniu dotyczącym tłumaczenia</a> &ndash; zob. poniżej.</p>
           <p>Podstawowe etapy tłumaczenia ESENER są następujące:</p>
            
           <ol type=\"1\" >
@@ -13567,6 +13640,41 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
             </table>
 
           <h3>Dokumenty i dalsze informacje dla badaczy</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+              <dl>
+                <dt>Specyfikacja przetargowa:</dt>
+                <dd>Otwarte zaproszenie do składania wniosków opublikowane dnia 5 stycznia 2018 r.: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Pismo towarzyszące</dt>
+                <dd>Aby zachęcić do uczestnictwa w badaniu, we wszystkich językach badania sporządzono pisma, w których przedstawiono jego kontekst i cele oraz poparcie partnerów społecznych.</dd>
+                <dt>Kwestionariusz podstawowy:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a></dd>
+                <dt>Sprawozdania techniczne:</dt>
+                <dd>
+                  <ul>
+                    <li>Sprawozdanie techniczne: <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a></li>
+                    <li>Sprawozdanie dotyczące jakości: <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a></li>
+                    <li>Sprawozdanie dotyczące tłumaczenia: <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Specyfikacja przetargowa:</dt>
+                <dd>Otwarte zaproszenie do składania wniosków opublikowane w dniu 5 grudnia 2012 r.: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Pismo towarzyszące:</dt>
+                <dd>Aby zachęcić do uczestnictwa w badaniu, we wszystkich językach badania sporządzono pisma, w których przedstawiono jego kontekst i cele oraz poparcie partnerów społecznych.</dd>
+                <dt>Kwestionariusz podstawowy:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Sprawozdania techniczne:</dt>
+                <dd>
+                  <ul>
+                    <li>Sprawozdanie techniczne: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Sprawozdanie dotyczące jakości: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Sprawozdanie dotyczące tłumaczenia: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Dostęp do zbioru danych ESENER 2014 można uzyskać za pośrednictwem <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">portalu UK Data Service prowadzonego przez Uniwersytet w Essex</a>, <a href=\"https://data.europa.eu/euodp/pl/data/dataset/esener-2\" target=\"_blank\">portalu danych UE</a> i <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
             <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
               <dl>
                 <dt>Specyfikacja przetargowa:</dt>
@@ -13590,32 +13698,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
                 </dd>
               </dl>
               <p>Dostęp do zbioru danych ESENER 2009 można uzyskać za pośrednictwem <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">portalu UK Data Service prowadzonego przez Uniwersytet w Essex</a>, <a href=\"https://data.europa.eu/euodp/pl/data/dataset/esener-1\" target=\"_blank\">portalu danych UE</a> i <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
-            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
-              <dl>
-                <dt>Specyfikacja przetargowa:</dt>
-                <dd>Otwarte zaproszenie do składania wniosków opublikowane w dniu 5 grudnia 2012 r.: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
-                <dt>Pismo towarzyszące:</dt>
-                <dd>Aby zachęcić do uczestnictwa w badaniu, we wszystkich językach badania sporządzono pisma, w których przedstawiono jego kontekst i cele oraz poparcie partnerów społecznych.</dd>
-                <dt>Kwestionariusz podstawowy:</dt>
-                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
-                <dt>Sprawozdania techniczne:</dt>
-                <dd>
-                  <ul>
-                    <li>Sprawozdanie techniczne: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
-                    <li>Sprawozdanie dotyczące jakości: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
-                    <li>Sprawozdanie dotyczące tłumaczenia: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
-                </dd>
-              </dl>
-              <p>Dostęp do zbioru danych ESENER 2014 można uzyskać za pośrednictwem <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">portalu UK Data Service prowadzonego przez Uniwersytet w Essex</a>, <a href=\"https://data.europa.eu/euodp/pl/data/dataset/esener-2\" target=\"_blank\">portalu danych UE</a> i <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
-            <h4>ESENER 2019</h4>
-              <dl>
-                <dt>Specyfikacja przetargowa:</dt>
-                <dd>Otwarte zaproszenie do składania wniosków opublikowane dnia 5 stycznia 2018 r.: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
-                <dt>Pismo towarzyszące</dt>
-                <dd>Aby zachęcić do uczestnictwa w badaniu, we wszystkich językach badania sporządzono pisma, w których przedstawiono jego kontekst i cele oraz poparcie partnerów społecznych.</dd>
-                <dt>Podstawowy kwestionariusz</dt>
-                <dt>Sprawozdania techniczne</dt>
-              </dl>
               <p>Należy zauważyć, że we wszystkich pracach wykorzystujących lub odnoszących się do ESENER należy wskazać źródło za pomocą cytatu bibliograficznego w przypisach lub w sekcji odniesień w publikacji. Podobnie w każdej publikacji, drukowanej, elektronicznej lub nadawanej, opartej w całości lub częściowo na ESENER, należy wskazać Europejską Agencję ds. Bezpieczeństwa i Zdrowia w Pracy (EU-OSHA) jako źródło. Należy także zawrzeć stwierdzenie, że EU-OSHA nie ponosi odpowiedzialności za ich dalszą analizę lub interpretację.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "<h1>Metodologia do ESENER</h1>
 <h2>Universo e unidade de análise</h2>
@@ -13853,11 +13935,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Tradução</h2>
 <p>São desenvolvidas diferentes versões nacionais do questionário para os países abrangidos pelo inquérito (disponíveis aqui: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> e ESENER 2019). É essencial uma estratégia de tradução otimizada para garantir que cada versão nacional do questionário contenha perguntas de elevada qualidade que possam ser dirigidas a todos os tipos de empresas no país em causa e que gira informações comparáveis a nível transnacional. A tradução do questionário ESENER segue a metodologia TRAPD, o acrónimo de <em><em>Translation, Review, Adjudication, Pre-testing and Documentation</em></em> (Tradução, Revisão, Aprovação, Pré-teste e Documentação) (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (EE.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), exceto na primeira edição (disponível aqui: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> e <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). É essencial uma estratégia de tradução otimizada para garantir que cada versão nacional do questionário contenha perguntas de elevada qualidade que possam ser dirigidas a todos os tipos de empresas no país em causa e que gira informações comparáveis a nível transnacional. A tradução do questionário ESENER segue a metodologia TRAPD, o acrónimo de <em><em>Translation, Review, Adjudication, Pre-testing and Documentation</em></em> (Tradução, Revisão, Aprovação, Pré-teste e Documentação) (Harkness, J. A. (2003). Questionnaire translation. In J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (EE.), Cross-cultural survey methods (pp. 35-56). Hoboken, NJ: John Wiley &amp; Sons), exceto na primeira edição (disponível aqui: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>Para as línguas partilhadas por dois ou mais países, são desenvolvidas diferentes versões nacionais, tendo em conta práticas relacionadas com o trabalho, tais como a representação dos trabalhadores ou a inspeção do trabalho, que exigem perguntas e terminologia diferentes. Estão disponíveis mais informações sobre o processo de tradução no 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Relatório de Tradução</a> - ver adiante.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Relatório de Tradução</a> - ver adiante.
 </p>
 <p>As etapas básicas do processo de tradução do ESENER são as seguintes:</p>
 <ol type=\"1\">
@@ -14108,6 +14190,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Documentos e informações complementares para os investigadores</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Caderno de encargos:</dt>
+  <dd>Anúncio do concurso público publicado em 5 de janeiro de 2018: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Carta de apoio</dt>
+  <dd>Foram elaboradas cartas que descreviam os antecedentes e os objetivos do inquérito, bem como o apoio dos parceiros sociais, em todas as línguas dos inquéritos, com o objetivo de incentivar a participação no inquérito.</dd>
+  <dt>Questionário principal:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a>
+  </dd>
+  <dt>Relatórios técnicos:</dt>
+  <dd>
+    <ul>
+      <li>Relatório técnico: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Relatório de qualidade: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Relatório de tradução: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
+</h4>
+<dl>
+  <dt>Caderno de encargos:</dt>
+  <dd>Anúncio do concurso público publicado em 5 de dezembro de 2012: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Carta de apoio:</dt>
+  <dd>Foram elaboradas cartas que descreviam os antecedentes e os objetivos do inquérito, bem como o apoio dos parceiros sociais, em todas as línguas dos inquéritos, com o objetivo de incentivar a participação no inquérito.</dd>
+  <dt>Questionário principal:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Relatórios técnicos:</dt>
+  <dd>
+    <ul>
+      <li>Relatório técnico: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Relatório de qualidade: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Relatório de tradução: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>O conjunto de dados do ESENER 2014 está disponível no 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service da Universidade de Essex</a>, no 
+  <a href=\"https://data.europa.eu/euodp/pt/data/dataset/esener-2\" target=\"_blank\">Portal Europeu de Dados</a> e no 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
 </h4>
@@ -14149,51 +14292,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/pt/data/dataset/esener-1\" target=\"_blank\">Portal Europeu de Dados</a> e no 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
-</h4>
-<dl>
-  <dt>Caderno de encargos:</dt>
-  <dd>Anúncio do concurso público publicado em 5 de dezembro de 2012: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Carta de apoio:</dt>
-  <dd>Foram elaboradas cartas que descreviam os antecedentes e os objetivos do inquérito, bem como o apoio dos parceiros sociais, em todas as línguas dos inquéritos, com o objetivo de incentivar a participação no inquérito.</dd>
-  <dt>Questionário principal:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Relatórios técnicos:</dt>
-  <dd>
-    <ul>
-      <li>Relatório técnico: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Relatório de qualidade: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Relatório de tradução: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>O conjunto de dados do ESENER 2014 está disponível no 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service da Universidade de Essex</a>, no 
-  <a href=\"https://data.europa.eu/euodp/pt/data/dataset/esener-2\" target=\"_blank\">Portal Europeu de Dados</a> e no 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>ESENER 2019</h4>
-<dl>
-  <dt>Caderno de encargos:</dt>
-  <dd>Anúncio do concurso público publicado em 5 de janeiro de 2018: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Carta de apoio</dt>
-  <dd>Foram elaboradas cartas que descreviam os antecedentes e os objetivos do inquérito, bem como o apoio dos parceiros sociais, em todas as línguas dos inquéritos, com o objetivo de incentivar a participação no inquérito.</dd>
-  <dt>Questionário principal</dt>
-  <dt>Relatórios técnicos</dt>
-</dl>
 <p>Chama-se a atenção para o facto de todas as obras que utilizem ou façam referência ao ESENER deverem mencionar a sua fonte através de citação bibliográfica nas notas de rodapé ou na secção de referências das publicações. Do mesmo modo, qualquer publicação, seja impressa, eletrónica ou difundida, que se baseie total ou parcialmente no ESENER, deverá mencionar a Agência Europeia para a Segurança e Saúde no Trabalho (EU-OSHA). Deverá também incluir uma declaração de que a EU-OSHA não assume qualquer responsabilidade por qualquer outra análise ou interpretação dos seus resultados.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "<h1>Metodologia ESENER</h1>
 <h2>Universul și unitatea de analiză</h2>
@@ -14431,11 +14529,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Traducerea</h2>
 <p>Pentru țările cuprinse în sondaj se elaborează diferite versiuni naționale (disponibile aici: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> și ESENER 2019). Este esențială folosirea unei strategii optime de traducere, astfel încât fiecare versiune națională a chestionarului să cuprindă întrebări de înaltă calitate, care să poată fi adresate tuturor tipurilor de întreprinderi din țara vizată și care să genereze informații comparabile la nivel transnațional. Traducerea chestionarului ESENER se face conform metodei TRAPD, un acronim pentru <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> (traducere, revizie, adjudecare, testare prealabilă și documentare) [Harkness, J. A. (2003). Questionnaire translation (Traducerea chestionarelor) în J. A. Harkness, F. van de Vijver și P. Ph. Mohler (editori), Cross-cultural survey methods (Metode utilizate în sondaje transnaționale) (p. 35-56). Hoboken, NJ: John Wiley &amp; Sons)], cu excepția primei runde (disponibilă aici: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> și <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Este esențială folosirea unei strategii optime de traducere, astfel încât fiecare versiune națională a chestionarului să cuprindă întrebări de înaltă calitate, care să poată fi adresate tuturor tipurilor de întreprinderi din țara vizată și care să genereze informații comparabile la nivel transnațional. Traducerea chestionarului ESENER se face conform metodei TRAPD, un acronim pentru <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> (traducere, revizie, adjudecare, testare prealabilă și documentare) [Harkness, J. A. (2003). Questionnaire translation (Traducerea chestionarelor) în J. A. Harkness, F. van de Vijver și P. Ph. Mohler (editori), Cross-cultural survey methods (Metode utilizate în sondaje transnaționale) (p. 35-56). Hoboken, NJ: John Wiley &amp; Sons)], cu excepția primei runde (disponibilă aici: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>În cazul limbilor care sunt oficiale în două sau mai multe țări, se elaborează versiuni naționale diferite, care țin cont de practicile legate de muncă, precum reprezentarea lucrătorilor sau inspecția muncii, care necesită întrebări și terminologie diferite. Mai multe detalii referitoare la procesul de traducere se găsesc în 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Raportul privind traducerea</a> – vezi mai jos.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Raportul privind traducerea</a> – vezi mai jos.
 </p>
 <p>Etapele de bază ale traducerii ESENER sunt următoarele:</p>
 <ol type=\"1\">
@@ -14686,6 +14784,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Documente și informații suplimentare pentru cercetători</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Caiet de sarcini:</dt>
+  <dd>Procedură deschisă publicată la 5 ianuarie 2018: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/ro/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Scrisoare de asistență</dt>
+  <dd>Scrisori care stabilesc contextul și obiectivele sondajului, precum și asistența oferită din partea partenerilor sociali. Acestea au fost întocmite în toate limbile sondajului, cu scopul de a încuraja participarea la sondaj.</dd>
+  <dt>Chestionar principal:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a>
+  </dd>
+  <dt>Rapoarte tehnice:</dt>
+  <dd>
+    <ul>
+      <li>Raport tehnic: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Raport privind calitatea: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Raport privind traducerea: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
+</h4>
+<dl>
+  <dt>Caiet de sarcini:</dt>
+  <dd>Procedură deschisă publicată la 5 decembrie 2012: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Scrisoare de asistență:</dt>
+  <dd>Scrisori care stabilesc contextul și obiectivele sondajului, precum și asistența oferită din partea partenerilor sociali. Acestea au fost întocmite în toate limbile sondajului, cu scopul de a încuraja participarea la sondaj.</dd>
+  <dt>Chestionar principal:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Rapoarte tehnice:</dt>
+  <dd>
+    <ul>
+      <li>Raport tehnic: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Raport privind calitatea: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Raport privind traducerea: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>Setul de date ESENER 2014 poate fi accesat prin intermediul platformelor 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a> (Serviciul de date din Regatul Unit al Universității Essex), 
+  <a href=\"https://data.europa.eu/euodp/ro/data/dataset/esener-2\" target=\"_blank\">European data portal</a> (Portalul european de date) și 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
 </h4>
@@ -14727,51 +14886,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/ro/data/dataset/esener-1\" target=\"_blank\">European data portal</a> (Portalul european de date) și 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
-</h4>
-<dl>
-  <dt>Caiet de sarcini:</dt>
-  <dd>Procedură deschisă publicată la 5 decembrie 2012: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Scrisoare de asistență:</dt>
-  <dd>Scrisori care stabilesc contextul și obiectivele sondajului, precum și asistența oferită din partea partenerilor sociali. Acestea au fost întocmite în toate limbile sondajului, cu scopul de a încuraja participarea la sondaj.</dd>
-  <dt>Chestionar principal:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Rapoarte tehnice:</dt>
-  <dd>
-    <ul>
-      <li>Raport tehnic: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Raport privind calitatea: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Raport privind traducerea: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>Setul de date ESENER 2014 poate fi accesat prin intermediul platformelor 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a> (Serviciul de date din Regatul Unit al Universității Essex), 
-  <a href=\"https://data.europa.eu/euodp/ro/data/dataset/esener-2\" target=\"_blank\">European data portal</a> (Portalul european de date) și 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>ESENER 2019</h4>
-<dl>
-  <dt>Caiet de sarcini:</dt>
-  <dd>Procedură deschisă publicată la 5 ianuarie 2018: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/ro/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Scrisoare de asistență</dt>
-  <dd>Scrisori care stabilesc contextul și obiectivele sondajului, precum și asistența oferită din partea partenerilor sociali. Acestea au fost întocmite în toate limbile sondajului, cu scopul de a încuraja participarea la sondaj.</dd>
-  <dt>Chestionar principal</dt>
-  <dt>Rapoarte tehnice</dt>
-</dl>
 <p>Vă rugăm să rețineți că toate lucrările care utilizează sondajul ESENER sau fac referire la acesta trebuie să menționeze sursa prin citare bibliografică în note de subsol sau în secțiunea de referințe a publicației. În mod similar, orice publicație apărută în format tipărit sau electronic sau difuzată, care se bazează în întregime sau parțial pe sondajul ESENER, trebuie să menționeze ca sursă Agenția Europeană pentru Securitate și Sănătate în Muncă (EU-OSHA). De asemenea, aceasta trebuie să fie însoțită de mențiunea că EU-OSHA nu poartă nicio răspundere pentru analizele sau interpretările ulterioare ale acestora.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "<h1>Metodika ESENER</h1>
 <h2>Svet a&nbsp;jednotka analýzy</h2>
@@ -15009,11 +15123,11 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <h2>Preklad</h2>
 <p>Pre krajiny zahrnuté do zisťovania sa vytvorili rôzne vnútroštátne verzie dotazníka (dostupné tu: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, 
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> a ESENER 2019). Ideálna stratégia prekladu je základom na zaistenie toho, aby každá vnútroštátna verzia dotazníka obsahovala vysoko kvalitné otázky, ktoré je možné adresovať všetkým druhom podnikov v predmetnej krajine a ktorá vytvára informácie, ktoré je možné porovnávať medzinárodne. Preklad dotazníka ESENER dodržiava prístup TRAPD, čo je skratka anglických pojmov <em>Translation, Review, Adjudication, Pre-testing and Documentation (preklad, revízia, posúdenie, predbežné testovanie a&nbsp;dokumentácia)</em> (Harkness, J. A. (2003). Questionnaire translation. V J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (s. 35–56). Hoboken, NJ: John Wiley &amp; Sons) s výnimkou prvej vlny (dostupné tu: 
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> a <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Ideálna stratégia prekladu je základom na zaistenie toho, aby každá vnútroštátna verzia dotazníka obsahovala vysoko kvalitné otázky, ktoré je možné adresovať všetkým druhom podnikov v predmetnej krajine a ktorá vytvára informácie, ktoré je možné porovnávať medzinárodne. Preklad dotazníka ESENER dodržiava prístup TRAPD, čo je skratka anglických pojmov <em>Translation, Review, Adjudication, Pre-testing and Documentation (preklad, revízia, posúdenie, predbežné testovanie a&nbsp;dokumentácia)</em> (Harkness, J. A. (2003). Questionnaire translation. V J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (Eds.), Cross-cultural survey methods (s. 35–56). Hoboken, NJ: John Wiley &amp; Sons) s výnimkou prvej vlny (dostupné tu: 
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).
 </p>
 <p>Pri jazykoch, ktoré používajú dva alebo viaceré krajiny, sa vytvorili rôzne vnútroštátne verzie pri zohľadnení pracovných postupov, ako sú zastúpenie pracovníkov alebo inšpekcia práce, ktoré si vyžadujú iné otázky a terminológiu. Viac podrobností o procese prekladu nájdete v 
-  <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Správe k&nbsp;prekladu</a> – pozri nižšie.
+  <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Správe k&nbsp;prekladu</a> – pozri nižšie.
 </p>
 <p>Základné kroky zahrnuté do prekladu ESENER sú:</p>
 <ol type=\"1\">
@@ -15264,6 +15378,67 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   </tbody>
 </table>
 <h3>Dokumenty a&nbsp;ďalšie informácie pre výskumných pracovníkov</h3>
+<h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+<dl>
+  <dt>Špecifikácie ponuky:</dt>
+  <dd>Verejná výzva na súťaž z 5. januára 2018: 
+    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/sk/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
+  </dd>
+  <dt>Sprievodný list</dt>
+  <dd>Listy, v&nbsp;ktorých sa stanovujú základné informácie a&nbsp;ciele prieskumu, a&nbsp;podpora od sociálnych partnerov sa poskytla pri&nbsp;všetkých jazykoch prieskumu s&nbsp;cieľom podporiť účasť na&nbsp;prieskume.</dd>
+  <dt>Hlavný dotazník:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a>
+  </dd>
+  <dt>Technické správy:</dt>
+  <dd>
+    <ul>
+      <li>Technická správa: 
+        <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a>
+      </li>
+      <li>Správa o kvalite: 
+        <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a>
+      </li>
+      <li>Správa o preklade: 
+        <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<h4>
+  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
+</h4>
+<dl>
+  <dt>Špecifikácie ponuky:</dt>
+  <dd>Verejná výzva na súťaž z 5. decembra 2012: 
+    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
+  </dd>
+  <dt>Sprievodný list:</dt>
+  <dd>Listy, v&nbsp;ktorých sa stanovujú základné informácie a&nbsp;ciele prieskumu, a&nbsp;podpora od sociálnych partnerov sa poskytla pri&nbsp;všetkých jazykoch prieskumu s&nbsp;cieľom podporiť účasť na&nbsp;prieskume.</dd>
+  <dt>Hlavný dotazník:</dt>
+  <dd>
+    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
+  </dd>
+  <dt>Technické správy:</dt>
+  <dd>
+    <ul>
+      <li>Technická správa: 
+        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
+      </li>
+      <li>Správa o kvalite: 
+        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
+      </li>
+      <li>Správa o preklade: 
+        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
+      </li>
+    </ul>
+  </dd>
+</dl>
+<p>Dátový súbor ESENER 2014 môžete nájsť prostredníctvom 
+  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, 
+  <a href=\"https://data.europa.eu/euodp/sk/data/dataset/esener-2\" target=\"_blank\">Európskeho dátového portálu</a> a 
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>
 <h4>
   <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a>
 </h4>
@@ -15305,51 +15480,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
   <a href=\"https://data.europa.eu/euodp/sk/data/dataset/esener-1\" target=\"_blank\">Európskeho dátového portálu</a> a 
   <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.
 </p>
-<h4>
-  <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a>
-</h4>
-<dl>
-  <dt>Špecifikácie ponuky:</dt>
-  <dd>Verejná výzva na súťaž z 5. decembra 2012: 
-    <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a>
-  </dd>
-  <dt>Sprievodný list:</dt>
-  <dd>Listy, v&nbsp;ktorých sa stanovujú základné informácie a&nbsp;ciele prieskumu, a&nbsp;podpora od sociálnych partnerov sa poskytla pri&nbsp;všetkých jazykoch prieskumu s&nbsp;cieľom podporiť účasť na&nbsp;prieskume.</dd>
-  <dt>Hlavný dotazník:</dt>
-  <dd>
-    <a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a>
-  </dd>
-  <dt>Technické správy:</dt>
-  <dd>
-    <ul>
-      <li>Technická správa: 
-        <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a>
-      </li>
-      <li>Správa o kvalite: 
-        <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a>
-      </li>
-      <li>Správa o preklade: 
-        <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a>
-      </li>
-    </ul>
-  </dd>
-</dl>
-<p>Dátový súbor ESENER 2014 môžete nájsť prostredníctvom 
-  <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, 
-  <a href=\"https://data.europa.eu/euodp/sk/data/dataset/esener-2\" target=\"_blank\">Európskeho dátového portálu</a> a 
-  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
-</p>
-<h4>ESENER 2019</h4>
-<dl>
-  <dt>Špecifikácie ponuky:</dt>
-  <dd>Verejná výzva na súťaž z 5. januára 2018: 
-    <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/sk/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a>
-  </dd>
-  <dt>Sprievodný list</dt>
-  <dd>Listy, v&nbsp;ktorých sa stanovujú základné informácie a&nbsp;ciele prieskumu, a&nbsp;podpora od sociálnych partnerov sa poskytla pri&nbsp;všetkých jazykoch prieskumu s&nbsp;cieľom podporiť účasť na&nbsp;prieskume.</dd>
-  <dt>Hlavný dotazník</dt>
-  <dt>Technické správy</dt>
-</dl>
 <p>Upozorňujeme, že vo&nbsp;všetkých prácach, ktoré využívajú alebo odkazujú na ESENER, sa musí uviesť zdroj prostredníctvom bibliografických citácií v&nbsp;poznámkach pod čiarou alebo v&nbsp;časti s&nbsp;odkazmi na publikácie. Podobne všetky publikácie v&nbsp;tlačenej, elektronickej alebo vysielanej forme založené úplne alebo čiastočne na ESENER musia uviesť Európsku agentúru pre bezpečnosť a&nbsp;ochranu zdravia pri práci (EU-OSHA). Zároveň musia zahrnúť vyhlásenie, že EU-OSHA nenesie žiadnu zodpovednosť za ich ďalšiu analýzu alebo interpretáciu.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "<h1>Metodologija raziskave&nbsp;ESENER</h1>
         <h2>Celotna množica in enota analize</h2>
@@ -15520,8 +15650,8 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
           </ol>
 
         <h2>Prevod</h2>        
-          <p>Za države, ki jih raziskava zajema, se pripravijo različne nacionalne različice vpra&scaron;alnika (na voljo tukaj: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER&nbsp;2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER&nbsp;2014</a> in ESENER&nbsp;2019). Optimalna prevodna strategija je ključnega pomena za zagotovitev, da vsaka nacionalna različica vpra&scaron;alnika vključuje kakovostna vpra&scaron;anja, namenjena vsem vrstam podjetij v zadevni državi, s katerimi se pridobijo informacije, ki jih je mogoče primerjati med državami. Prevod vpra&scaron;alnika ESENER sledi pristopu TRAPD, tj.&nbsp;okraj&scaron;ava za <em>prevod, pregled, presojo, predpreizku&scaron;anje in dokumentiranje</em> (<i>translation, review, adjudication, pre-testing and documentation</i>) (Harkness, J. A. (2003). Questionnaire translation. V J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (ur.), Cross-cultural survey methods (str. 35&ndash;56). Hoboken, NJ: John Wiley &amp; Sons), razen za prvi val (na voljo tukaj: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER&nbsp;2009</a>).</p>
-          <p>Pri jezikih, ki so skupni več državam, se pripravijo različne nacionalne različice, in sicer z upo&scaron;tevanjem z delom povezanih praks, kot sta zastopanje delavcev in delovna in&scaron;pekcija, pri čemer so potrebna drugačna vpra&scaron;anja in terminologija. Več podrobnosti o postopku prevajanja je na voljo v <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Poročilu o prevajanju</a> &ndash; glejte spodaj.</p>
+          <p>Za države, ki jih raziskava zajema, se pripravijo različne nacionalne različice vpra&scaron;alnika (na voljo tukaj: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER&nbsp;2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER&nbsp;2014</a> in <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER&nbsp;2019</a>). Optimalna prevodna strategija je ključnega pomena za zagotovitev, da vsaka nacionalna različica vpra&scaron;alnika vključuje kakovostna vpra&scaron;anja, namenjena vsem vrstam podjetij v zadevni državi, s katerimi se pridobijo informacije, ki jih je mogoče primerjati med državami. Prevod vpra&scaron;alnika ESENER sledi pristopu TRAPD, tj.&nbsp;okraj&scaron;ava za <em>prevod, pregled, presojo, predpreizku&scaron;anje in dokumentiranje</em> (<i>translation, review, adjudication, pre-testing and documentation</i>) (Harkness, J. A. (2003). Questionnaire translation. V J. A. Harkness, F. van de Vijver, &amp; P. Ph. Mohler (ur.), Cross-cultural survey methods (str. 35&ndash;56). Hoboken, NJ: John Wiley &amp; Sons), razen za prvi val (na voljo tukaj: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER&nbsp;2009</a>).</p>
+          <p>Pri jezikih, ki so skupni več državam, se pripravijo različne nacionalne različice, in sicer z upo&scaron;tevanjem z delom povezanih praks, kot sta zastopanje delavcev in delovna in&scaron;pekcija, pri čemer so potrebna drugačna vpra&scaron;anja in terminologija. Več podrobnosti o postopku prevajanja je na voljo v <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Poročilu o prevajanju</a> &ndash; glejte spodaj.</p>
           <p>Osnovni koraki pri prevajanju raziskave ESENER so naslednji:</p>
            
           <ol type=\"1\" >
@@ -15770,6 +15900,41 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
             </table>
 
           <h3>Dokumenti in nadaljnje informacije za raziskovalce</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER&nbsp;2019</a></h4>
+              <dl>
+                <dt>Razpisna dokumentacija:</dt>
+                <dd>Objava javnega razpisa 5.&nbsp;januarja&nbsp;2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/sl/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Spremni dopis</dt>
+                <dd>Dopisi, ki navajajo ozadje in cilje raziskave ter podporo socialnih partnerjev, so bili pripravljeni v vseh jezikih raziskave, da bi s tem spodbudili sodelovanje v raziskavi.</dd>
+                <dt>Vzorčni vpra&scaron;alnik:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a></dd>
+                <dt>Tehnična poročila:</dt>
+                <dd>
+                  <ul>
+                    <li>Tehnično poročilo: <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a></li>
+                    <li>Poročilo o kakovosti: <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a></li>
+                    <li>Poročilo o prevodu: <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER&nbsp;2014</a></h4>
+              <dl>
+                <dt>Razpisna dokumentacija:</dt>
+                <dd>Objava javnega razpisa 5.&nbsp;decembra&nbsp;2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Spremni dopis:</dt>
+                <dd>Dopisi, ki navajajo ozadje in cilje raziskave ter podporo socialnih partnerjev, so bili pripravljeni v vseh jezikih raziskave, da bi s tem spodbudili sodelovanje v raziskavi.</dd>
+                <dt>Vzorčni vpra&scaron;alnik:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Tehnična poročila:</dt>
+                <dd>
+                  <ul>
+                    <li>Tehnično poročilo: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Poročilo o kakovosti: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Poročilo o prevodu: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Nabor podatkov za raziskavo ESENER&nbsp;2014 je na voljo prek <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Podatkovnih storitev za Združeno kraljestvo Univerze v Essexu</a>, <a href=\"https://data.europa.eu/euodp/sl/data/dataset/esener-2\" target=\"_blank\">Evropskega podatkovnega portala</a> in zbirke podatkov <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
             <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER&nbsp;2009</a></h4>
               <dl>
                 <dt>Razpisna dokumentacija:</dt>
@@ -15793,32 +15958,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
                 </dd>
               </dl>
               <p>Nabor podatkov za raziskavo ESENER&nbsp;2009 je na voljo prek <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Podatkovnih storitev za Združeno kraljestvo Univerze v Essexu</a>, <a href=\"https://data.europa.eu/euodp/sl/data/dataset/esener-1\" target=\"_blank\">Evropskega podatkovnega portala</a> in zbirke podatkov <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>.</p>
-            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER&nbsp;2014</a></h4>
-              <dl>
-                <dt>Razpisna dokumentacija:</dt>
-                <dd>Objava javnega razpisa 5.&nbsp;decembra&nbsp;2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
-                <dt>Spremni dopis:</dt>
-                <dd>Dopisi, ki navajajo ozadje in cilje raziskave ter podporo socialnih partnerjev, so bili pripravljeni v vseh jezikih raziskave, da bi s tem spodbudili sodelovanje v raziskavi.</dd>
-                <dt>Vzorčni vpra&scaron;alnik:</dt>
-                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
-                <dt>Tehnična poročila:</dt>
-                <dd>
-                  <ul>
-                    <li>Tehnično poročilo: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
-                    <li>Poročilo o kakovosti: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
-                    <li>Poročilo o prevodu: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
-                </dd>
-              </dl>
-              <p>Nabor podatkov za raziskavo ESENER&nbsp;2014 je na voljo prek <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Podatkovnih storitev za Združeno kraljestvo Univerze v Essexu</a>, <a href=\"https://data.europa.eu/euodp/sl/data/dataset/esener-2\" target=\"_blank\">Evropskega podatkovnega portala</a> in zbirke podatkov <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>
-            <h4>ESENER&nbsp;2019</h4>
-              <dl>
-                <dt>Razpisna dokumentacija:</dt>
-                <dd>Objava javnega razpisa 5.&nbsp;januarja&nbsp;2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/sl/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
-                <dt>Spremni dopis</dt>
-                <dd>Dopisi, ki navajajo ozadje in cilje raziskave ter podporo socialnih partnerjev, so bili pripravljeni v vseh jezikih raziskave, da bi s tem spodbudili sodelovanje v raziskavi.</dd>
-                <dt>Vzorčni vpra&scaron;alnik</dt>
-                <dt>Tehnična poročila</dt>
-              </dl>
               <p>Upo&scaron;tevajte, da je treba v vseh delih, ki uporabljajo raziskavo ESENER ali se nana&scaron;ajo nanjo, navesti vir z bibliografskim navedkom v opombah ali v oddelku z referencami. Prav tako je treba pri vsaki objavi, tiskani, elektronski ali predvajani, ki v celoti ali deloma temelji na raziskavi ESENER, navesti Evropsko agencijo za varnost in zdravje pri delu (EU-OSHA). Tak&scaron;na objava mora vsebovati tudi izjavo, da agencija&nbsp;EU-OSHA ni odgovorna za njeno nadaljnjo analizo ali razlago.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<h1>Menetelmä ESENER-kyselytutkimuksessa</h1>
         <h2>Analysointi kokonaisuudessaan ja analyysiyksiköittäin</h2>
@@ -15989,8 +16128,8 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
           </ol>
 
         <h2>Kääntäminen</h2>        
-          <p>Kyselylomakkeesta on laadittu erilaiset kansalliset versiot tutkimukseen sisältyville maille (saatavissa täältä: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> ja ESENER 2019). Hyvää käännösstrategiaa tarvitaan varmistamaan kunkin kansallisen version kysymysten laadukkuus, jotta ne sopisivat asianomaisen maan kaikille yrityksille ja laitoksille ja että saataisiin tietoja, jotka ovat kansainvälisesti vertailukelpoisia. ESENER-kyselytutkimuksen kääntämisessä noudatetaan TRAPD-metodia, jossa teksti <em> käännetään, tarkistetaan, hyväksytään, testataan ja dokumentoidaan</em> (Harkness, J. A. (2003). Questionnaire translation. Teoksessa J. A. Harkness, F. van de Vijver ja P. Ph. Mohler (toim.), Cross-cultural survey methods (s. 35&ndash;56). Hoboken, NJ: John Wiley &amp; Sons), paitsi ensimmäinen kyselytutkimus (saatavissa täältä: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
-          <p>Kielestä, jota puhutaan yhdessä tai useammassa maassa, laaditaan erilaiset kansalliset versiot. Niissä otetaan huomioon työhön liittyvät käytännöt, kuten työntekijöiden edustus tai työsuojelutarkastukset, jotka vaativat erilaisia kysymyksiä ja erilaista terminologiaa. Lisätietoja kääntämisestä on <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">käännöskertomuksessa</a>  jäljempänä.</p>
+          <p>Kyselylomakkeesta on laadittu erilaiset kansalliset versiot tutkimukseen sisältyville maille (saatavissa täältä: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2014</a> ja <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">ESENER 2019</a>). Hyvää käännösstrategiaa tarvitaan varmistamaan kunkin kansallisen version kysymysten laadukkuus, jotta ne sopisivat asianomaisen maan kaikille yrityksille ja laitoksille ja että saataisiin tietoja, jotka ovat kansainvälisesti vertailukelpoisia. ESENER-kyselytutkimuksen kääntämisessä noudatetaan TRAPD-metodia, jossa teksti <em> käännetään, tarkistetaan, hyväksytään, testataan ja dokumentoidaan</em> (Harkness, J. A. (2003). Questionnaire translation. Teoksessa J. A. Harkness, F. van de Vijver ja P. Ph. Mohler (toim.), Cross-cultural survey methods (s. 35&ndash;56). Hoboken, NJ: John Wiley &amp; Sons), paitsi ensimmäinen kyselytutkimus (saatavissa täältä: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">ESENER 2009</a>).</p>
+          <p>Kielestä, jota puhutaan yhdessä tai useammassa maassa, laaditaan erilaiset kansalliset versiot. Niissä otetaan huomioon työhön liittyvät käytännöt, kuten työntekijöiden edustus tai työsuojelutarkastukset, jotka vaativat erilaisia kysymyksiä ja erilaista terminologiaa. Lisätietoja kääntämisestä on <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">käännöskertomuksessa</a>  jäljempänä.</p>
           <p>ESENER-kyselytutkimuksen kääntämisen vaiheet ovat seuraavat:</p>
            
           <ol type=\"1\" >
@@ -16239,6 +16378,41 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
             </table>
 
           <h3>Asiakirjoja ja lisätietoja tutkijoille</h3>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">ESENER 2019</a></h4>
+              <dl>
+                <dt>Tarjouseritelmä:</dt>
+                <dd>Avoin tarjouspyyntö julkaistiin 5<sup></sup>. tammikuuta 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Taustatietoa sisältävä kirje</dt>
+                <dd>Kirje, jossa selostetaan tutkimuksen tausta, tavoitteet ja sen työmarkkinaosapuolilta saama tuki, laadittiin kaikilla tutkimuksen kielillä. Sen tarkoituksena oli kannustaa osallistumaan tutkimukseen.</dd>
+                <dt>Kyselylomakkeet:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pd\" target=\"_blank\">Kyselylomake 2019.pdf</a></dd>
+                <dt>Tekniset raportit:</dt>
+                <dd>
+                  <ul>
+                    <li>Tekninen raportti: <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3, tekninen raportti.pdf</a></li>
+                    <li>Laatuselvitys: <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3, laaturaportti.pdf</a></li>
+                    <li>Käännöskertomus: <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3, Käännöskertomus.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
+              <dl>
+                <dt>Tarjouseritelmä:</dt>
+                <dd>Avoin tarjouspyyntö julkaistiin 5.<sup></sup> joulukuuta 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tarjouseritelmä.pdf</a></dd>
+                <dt>Taustatietoa sisältävä kirje:</dt>
+                <dd>Kirje, jossa selostetaan tutkimuksen tausta, tavoitteet ja sen työmarkkinaosapuolilta saama tuki, laadittiin kaikilla tutkimuksen kielillä. Sen tarkoituksena oli kannustaa osallistumaan tutkimukseen.</dd>
+                <dt>Kyselylomakkeet:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Kyselylomake2.pdf</a></dd>
+                <dt>Tekniset raportit:</dt>
+                <dd>
+                  <ul>
+                    <li>Tekninen raportti: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2, tekninen raportti.pdf</a></li>
+                    <li>Laatuselvitys: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2, laaturaportti.pdf</a></li>
+                    <li>Käännöskertomus: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Käännöskertomus.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>ESENER 2014:n tiedostot saa nähtäväksi <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Yhdistyneen kuningaskunnan datapalvelun (Essexin yliopisto)</a>, <a href=\"https://data.europa.eu/euodp/fi/data/dataset/esener-2\" target=\"_blank\">Euroopan dataportaalin</a> ja <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>-tietoportaalin kautta.</p>
             <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">ESENER 2009</a></h4>
               <dl>
                 <dt>Tarjouseritelmä:</dt>
@@ -16262,32 +16436,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
                 </dd>
               </dl>
               <p>ESENER 2009:n tiedostot saa nähtäväksi <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Yhdistyneen kuningaskunnan datapalvelun (Essexin yliopisto)</a>, <a href=\"https://data.europa.eu/euodp/fi/data/dataset/esener-1\" target=\"_blank\">Euroopan dataportaalin</a> ja <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESIS</a>-tietoportaalin kautta.</p>
-            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">ESENER 2014</a></h4>
-              <dl>
-                <dt>Tarjouseritelmä:</dt>
-                <dd>Avoin tarjouspyyntö julkaistiin 5.<sup></sup> joulukuuta 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tarjouseritelmä.pdf</a></dd>
-                <dt>Taustatietoa sisältävä kirje:</dt>
-                <dd>Kirje, jossa selostetaan tutkimuksen tausta, tavoitteet ja sen työmarkkinaosapuolilta saama tuki, laadittiin kaikilla tutkimuksen kielillä. Sen tarkoituksena oli kannustaa osallistumaan tutkimukseen.</dd>
-                <dt>Kyselylomakkeet:</dt>
-                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Kyselylomake2.pdf</a></dd>
-                <dt>Tekniset raportit:</dt>
-                <dd>
-                  <ul>
-                    <li>Tekninen raportti: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2, tekninen raportti.pdf</a></li>
-                    <li>Laatuselvitys: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2, laaturaportti.pdf</a></li>
-                    <li>Käännöskertomus: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Käännöskertomus.pdf</a></li>
-                </dd>
-              </dl>
-              <p>ESENER 2014:n tiedostot saa nähtäväksi <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">Yhdistyneen kuningaskunnan datapalvelun (Essexin yliopisto)</a>, <a href=\"https://data.europa.eu/euodp/fi/data/dataset/esener-2\" target=\"_blank\">Euroopan dataportaalin</a> ja <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>-tietoportaalin kautta.</p>
-            <h4>ESENER 2019</h4>
-              <dl>
-                <dt>Tarjouseritelmä:</dt>
-                <dd>Avoin tarjouspyyntö julkaistiin 5<sup></sup>. tammikuuta 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
-                <dt>Taustatietoa sisältävä kirje</dt>
-                <dd>Kirje, jossa selostetaan tutkimuksen tausta, tavoitteet ja sen työmarkkinaosapuolilta saama tuki, laadittiin kaikilla tutkimuksen kielillä. Sen tarkoituksena oli kannustaa osallistumaan tutkimukseen.</dd>
-                <dt>Kyselylomake</dt>
-                <dt>Tekniset selvitykset</dt>
-              </dl>
               <p>On syytä huomata, että kaikissa ESENER-kyselytutkimusta käyttävissä tai siihen viittaavissa teoksissa on mainittava lähde käyttämällä bibliografisia viittauksia alaviitteissä tai julkaisujen lähteissä. Vastaavasti kaikissa kokonaan tai osittain ESENER-kyselytutkimusten tietoihin perustuvissa julkaisuissa &ndash; painetuissa, sähköisissä tai yleisölle lähetetyissä julkaisuissa &ndash; tulee mainita Euroopan työterveys- ja työturvallisuusvirasto (EU-OSHA). Niissä tulee myös mainita, ettei EU-OSHA vastaa tietojen myöhemmästä analysoinnista tai tulkinnasta.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<h1>Esener-undersökningens metod</h1>
         <h2>Analys av sammanhang och enhet</h2>
@@ -16458,8 +16606,8 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
           </ol>
 
         <h2>Översättning</h2>        
-          <p>De olika nationella versionerna av frågeformuläret tas fram för de länder som ska ingå i undersökningen (de finns tillgängliga här: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">Esener 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">Esener 2014</a> och Esener 2019). Översättningsstrategin måste vara optimal för att man ska kunna säkerställa att alla språkversioner innehåller högkvalitativa frågor som kan ställas till alla typer av företag i landet i fråga och att dessa frågor genererar information som kan jämföras mellan olika länder. Översättningen av Esener-frågeformuläret följer strategin TRAPD, en akronym för engelskans <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> (översättning, granskning, bedömning, förhandstestning och dokumentation) (Harkness, J. A., (2003), Questionnaire translation, ingår i Cross-Cultural survey methods (s.&nbsp;35&ndash;56), J. A. Harkness, F. van de Vijver och P. Ph. Mohler (red.). Hoboken, NJ: John Wiley &amp; Sons), utom för den första omgången av undersökningen (som finns här: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">Esener 2009</a>).</p>
-          <p>För språk som är gemensamma för två eller fler länder tas nationella versioner fram för varje land med hänsyn till nationell arbetsrelaterad praxis på områden som arbetstagarrepresentation eller yrkesinspektion, som kräver en anpassning av frågorna och terminologin. Mer information om översättningsprocessen finns i översättningsrapporten (<a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report</a>) nedan.</p>
+          <p>De olika nationella versionerna av frågeformuläret tas fram för de länder som ska ingå i undersökningen (de finns tillgängliga här: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">Esener 2009</a>, <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">Esener 2014</a> och <a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology#Sample_sizes_and_questionnaire_language_versions\" target=\"_blank\">Esener 2019</a>). Översättningsstrategin måste vara optimal för att man ska kunna säkerställa att alla språkversioner innehåller högkvalitativa frågor som kan ställas till alla typer av företag i landet i fråga och att dessa frågor genererar information som kan jämföras mellan olika länder. Översättningen av Esener-frågeformuläret följer strategin TRAPD, en akronym för engelskans <em>Translation, Review, Adjudication, Pre-testing and Documentation</em> (översättning, granskning, bedömning, förhandstestning och dokumentation) (Harkness, J. A., (2003), Questionnaire translation, ingår i Cross-Cultural survey methods (s.&nbsp;35&ndash;56), J. A. Harkness, F. van de Vijver och P. Ph. Mohler (red.). Hoboken, NJ: John Wiley &amp; Sons), utom för den första omgången av undersökningen (som finns här: <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Translation\" target=\"_blank\">Esener 2009</a>).</p>
+          <p>För språk som är gemensamma för två eller fler länder tas nationella versioner fram för varje land med hänsyn till nationell arbetsrelaterad praxis på områden som arbetstagarrepresentation eller yrkesinspektion, som kräver en anpassning av frågorna och terminologin. Mer information om översättningsprocessen finns i översättningsrapporten (<a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Translation Report</a>) nedan.</p>
           <p>De viktigaste stegen i Esener-översättningsprocessen är följande:</p>
            
           <ol type=\"1\" >
@@ -16708,7 +16856,42 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
             </table>
 
           <h3>Dokument och mer information för forskare</h3>
-            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">Esener 2009</a></h4>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-3_Methodology\" target=\"_blank\">Esener 2019</a></h4>
+              <dl>
+                <dt>Kravspecifikationer:</dt>
+                <dd>Öppen anbudsinfordran offentliggjord den 5&nbsp;januari 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
+                <dt>Stödjande brev:</dt>
+                <dd>Ett brev som uppmuntrar till deltagande i undersökningen skrevs och översattes till alla undersökningens språk. Där förklaras undersökningens bakgrund och syfte och där nämns även stödet från arbetsmarknadens parter.</dd>
+               <dt>Huvudfrågeformulär:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/d/d1/Master_questionnaire_2019.pdf\" target=\"_blank\">Master questionnaire 2019.pdf</a></dd>
+                <dt>Tekniska rapporter:</dt>
+                <dd>
+                  <ul>
+                    <li>Teknisk rapport: <a href=\"https://oshwiki.eu/images/a/aa/Technical_Report_ESENER3_Final.pdf\" target=\"_blank\">Esener3 Technical Report.pdf</a></li>
+                    <li>Kvalitetsrapport: <a href=\"https://oshwiki.eu/images/8/8d/ESENER_2019_Quality_Report.pdf\" target=\"_blank\">Esener3 Quality Report.pdf</a></li>
+                    <li>Översättningsrapport: <a href=\"https://oshwiki.eu/images/5/5e/ESENER3-translation_report_EUOSHA.pdf\" target=\"_blank\">Esener3 Translation Report.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">Esener 2014</a></h4>
+              <dl>
+                <dt>Kravspecifikationer:</dt>
+                <dd>Öppen anbudsinfordran offentliggjord den 5&nbsp;december 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
+                <dt>Stödjande brev:</dt>
+                <dd>Ett brev som uppmuntrar till deltagande i undersökningen skrevs och översattes till alla undersökningens språk. Där förklaras undersökningens bakgrund och syfte och där nämns även stödet från arbetsmarknadens parter.</dd>
+                <dt>Huvudfrågeformulär:</dt>
+                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
+                <dt>Tekniska rapporter:</dt>
+                <dd>
+                  <ul>
+                    <li>Teknisk rapport: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
+                    <li>Kvalitetsrapport: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
+                    <li>Översättningsrapport: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
+                  </ul>
+                </dd>
+              </dl>
+              <p>Datauppsättningen från Esener 2014 kan nås via <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sv/data/dataset/esener-2\" target=\"_blank\">europeiska dataportalen</a> och <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">Gesis</a>.</p>
+         <h4><a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">Esener 2009</a></h4>
               <dl>
                 <dt>Kravspecifikationer:</dt>
                 <dd>Öppen anbudsinfordran offentliggjord den 21&nbsp;augusti 2007: <a href=\"https://oshwiki.eu/images/4/42/Tender_specifications_ESENER.pdf\" target=\"_blank\">Tender specifications ESENER.pdf</a></dd>
@@ -16730,33 +16913,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
                   </ul>
                 </dd>
               </dl>
-              <p>Datauppsättningen från Esener 2009 kan nås via <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sv/data/dataset/esener-1\" target=\"_blank\">europeiska dataportalen</a> och <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">Gesis</a>.</p>
-            <h4><a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">Esener 2014</a></h4>
-              <dl>
-                <dt>Kravspecifikationer:</dt>
-                <dd>Öppen anbudsinfordran offentliggjord den 5&nbsp;december 2012: <a href=\"https://oshwiki.eu/images/8/82/Esener-2-tender-specifications.pdf\" target=\"_blank\">Esener-2-tender-specifications.pdf</a></dd>
-                <dt>Stödjande brev:</dt>
-                <dd>Ett brev som uppmuntrar till deltagande i undersökningen skrevs och översattes till alla undersökningens språk. Där förklaras undersökningens bakgrund och syfte och där nämns även stödet från arbetsmarknadens parter.</dd>
-                <dt>Huvudfrågeformulär:</dt>
-                <dd><a href=\"https://oshwiki.eu/images/c/c3/Master_questionnaire2.pdf\" target=\"_blank\">Master questionnaire2.pdf</a></dd>
-                <dt>Tekniska rapporter:</dt>
-                <dd>
-                  <ul>
-                    <li>Teknisk rapport: <a href=\"https://oshwiki.eu/images/7/77/Esener2_Technical_Report.pdf\" target=\"_blank\">Esener2 Technical Report.pdf</a></li>
-                    <li>Kvalitetsrapport: <a href=\"https://oshwiki.eu/images/1/11/Esener2_Quality_Report.pdf\" target=\"_blank\">Esener2 Quality Report.pdf</a></li>
-                    <li>Översättningsrapport: <a href=\"https://oshwiki.eu/images/0/01/Translation_Report.pdf\" target=\"_blank\">Translation Report.pdf</a></li>
-                </dd>
-              </dl>
-              <p>Datauppsättningen från Esener 2014 kan nås via <a href=\"http://discover.ukdataservice.ac.uk/catalogue/?sn=7808&amp;type=Data%20catalogue\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sv/data/dataset/esener-2\" target=\"_blank\">europeiska dataportalen</a> och <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">Gesis</a>.</p>
-            <h4>Esener 2019</h4>
-              <dl>
-                <dt>Kravspecifikationer:</dt>
-                <dd>Öppen anbudsinfordran offentliggjord den 5&nbsp;januari 2018: <a href=\"https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks\" target=\"_blank\">https://osha.europa.eu/en/about-eu-osha/procurement/euoshaopfse0048-third-european-survey-enterprises-new-and-emerging-risks</a></dd>
-                <dt>Stödjande brev:</dt>
-                <dd>Ett brev som uppmuntrar till deltagande i undersökningen skrevs och översattes till alla undersökningens språk. Där förklaras undersökningens bakgrund och syfte och där nämns även stödet från arbetsmarknadens parter.</dd>
-                <dt>Huvudfrågeformulär</dt>
-                <dt>Tekniska rapporter</dt>
-              </dl>
+              <p>Datauppsättningen från Esener 2009 kan nås via <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sv/data/dataset/esener-1\" target=\"_blank\">europeiska dataportalen</a> och <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">Gesis</a>.</p>   
               <p>Observera att alla verk som använder sig av eller hänvisar till Esener ska ange källan genom bibliografiska hänvisningar i fotnoter eller i dokumentets referensavsnitt. På samma sätt bör alla typer av publikationer som helt eller delvis bygger på uppgifter från Esener, oavsett om de är tryckta, elektroniska eller sprids av sändningsmedier, hänvisa till Europeiska arbetsmiljöbyrån (EU-Osha). Det ska också ingå en förklaring om att EU-Osha inte ansvarar för Esener-uppgifternas vidare analys eller tolkning.</p>");
 
 SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000 AND l.id < 102000)+1, 101001));
@@ -16938,31 +17095,81 @@ SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="OVERVIEW_PAGE");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "Publication_Group1_ESENER_2019");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "<li><a href=\"https://osha.europa.eu/en/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">A first findings report</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "< li><a href=\"https://osha.europa.eu/bg/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Доклад с първоначални резултати</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "< li><a href=\"https://osha.europa.eu/cs/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">zpráva o prvních zjištěních</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "< li><a href=\"https://osha.europa.eu/da/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Rapport om første resultater</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "< li><a href=\"https://osha.europa.eu/de/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Ein Bericht mit ersten Ergebnissen</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "< li><a href=\"https://osha.europa.eu/et/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Aruanne esimeste järelduste kohta</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "< li><a href=\"https://osha.europa.eu/el/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Πρώτα πορίσματα</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<li><a href=\"https://osha.europa.eu/es/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Un primer informe de resultados</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "<li><a href=\"https://osha.europa.eu/fr/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Un rapport sur les premières conclusions</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "<li><a href=\"https://osha.europa.eu/hr/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Izvješće o prvim zaključcima</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "< li><a href=\"https://osha.europa.eu/is/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Skýrsla með fyrstu niðurstöðum</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "<li><a href=\"https://osha.europa.eu/it/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Relazione sui “primi risultati”</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "<li><a href=\"https://osha.europa.eu/lv/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Ziņojums par pirmajiem secinājumiem</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "<li><a href=\"https://osha.europa.eu/lt/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">pirmųjų išvadų ataskaita;</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "<li><a href=\"https://osha.europa.eu/hu/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Jelentés az első eredményekről</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "<li><a href=\"https://osha.europa.eu/mt/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Rapport tal-ewwel riżultati</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "<li><a href=\"https://osha.europa.eu/nl/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">een rapport met de eerste bevindingen</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "<li><a href=\"https://osha.europa.eu/no/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">En rapport med de første funnene fra undersøkelsen</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "<li><a href=\"https://osha.europa.eu/pl/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Sprawozdanie zawierające wstępne ustalenia</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "<li><a href=\"https://osha.europa.eu/pt/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Um relatório dos primeiros resultados</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "<li><a href=\"https://osha.europa.eu/ro/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Un raport al primelor constatări</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "<li><a href=\"https://osha.europa.eu/sk/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">prvé zistenia</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "<li><a href=\"https://osha.europa.eu/sl/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">poročilo o prvih ugotovitvah;</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<li><a href=\"https://osha.europa.eu/fi/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Kertomus alustavista tuloksista</a></li>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<li><a href=\"https://osha.europa.eu/sv/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">En första resultatrapport</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "<li><a href=\"https://osha.europa.eu/en/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">A first findings report</a></li>
+<li><a href=\"https://osha.europa.eu/en/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 Policy brief</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "<li><a href=\"https://osha.europa.eu/bg/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Доклад с първоначални резултати</a></li>
+<li><a href=\"https://osha.europa.eu/bg/publications/esener-2019-policy-brief/view\" target=\"_blank\">Информационен документ за ESENER 2019</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "<li><a href=\"https://osha.europa.eu/cs/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">zpráva o prvních zjištěních</a></li>
+<li><a href=\"https://osha.europa.eu/cs/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 Politická zpráva</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "<li><a href=\"https://osha.europa.eu/da/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Rapport om første resultater</a></li>
+<li><a href=\"https://osha.europa.eu/da/publications/esener-2019-policy-brief/view\" target=\"_blank\">Kortfattet rapport om ESENER 2019</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "<li><a href=\"https://osha.europa.eu/de/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Ein Bericht mit ersten Ergebnissen</a></li>
+<li><a href=\"https://osha.europa.eu/de/publications/esener-2019-policy-brief/view\" target=\"_blank\">Kurzbericht zu ESENER 2019</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "<li><a href=\"https://osha.europa.eu/et/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Aruanne esimeste järelduste kohta</a></li>
+<li><a href=\"https://osha.europa.eu/et/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 poliitikaülevaade</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "<li><a href=\"https://osha.europa.eu/el/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Πρώτα πορίσματα</a></li>
+<li><a href=\"https://osha.europa.eu/el/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 Σύνοψη πολιτικής</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<li><a href=\"https://osha.europa.eu/es/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Un primer informe de resultados</a></li>
+<li><a href=\"https://osha.europa.eu/es/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 - Informe de política</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "<li><a href=\"https://osha.europa.eu/fr/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Un rapport sur les premières conclusions</a></li>
+<li><a href=\"https://osha.europa.eu/fr/publications/esener-2019-policy-brief/view\" target=\"_blank\">Note d’orientation ESENER 2019</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "<li><a href=\"https://osha.europa.eu/hr/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Izvješće o prvim zaključcima</a></li>
+<li><a href=\"https://osha.europa.eu/hr/publications/esener-2019-policy-brief/view\" target=\"_blank\">Izvješće o politikama ESENER 2019.</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "<li><a href=\"https://osha.europa.eu/is/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Skýrsla með fyrstu niðurstöðum</a></li>
+<li><a href=\"https://osha.europa.eu/is/publications/esener-2019-policy-brief/view\" target=\"_blank\">Stefnuágrip ESENER 2019</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "<li><a href=\"https://osha.europa.eu/it/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Relazione sui “primi risultati”</a></li>
+<li><a href=\"https://osha.europa.eu/it/publications/esener-2019-policy-brief/view\" target=\"_blank\">Sintesi programmatica su ESENER 2019</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "<li><a href=\"https://osha.europa.eu/lv/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Ziņojums par pirmajiem secinājumiem</a></li>
+<li><a href=\"https://osha.europa.eu/lv/publications/esener-2019-policy-brief/view\" target=\"_blank\">2019. gada ESENER politikas kopsavilkums</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "<li><a href=\"https://osha.europa.eu/lt/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">pirmųjų išvadų ataskaita;</a></li>
+<li><a href=\"https://osha.europa.eu/lt/publications/esener-2019-policy-brief/view\" target=\"_blank\">Apklausa ESENER. Politikos apžvalga</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "<li><a href=\"https://osha.europa.eu/hu/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Jelentés az első eredményekről</a></li>
+<li><a href=\"https://osha.europa.eu/hu/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 szakpolitikai összefoglaló</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "<li><a href=\"https://osha.europa.eu/mt/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Rapport tal-ewwel riżultati</a></li>
+<li><a href=\"https://osha.europa.eu/mt/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 Nota ta’ informazzjoni dwar il-politika</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "<li><a href=\"https://osha.europa.eu/nl/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">een rapport met de eerste bevindingen</a></li>
+<li><a href=\"https://osha.europa.eu/nl/publications/esener-2019-policy-brief/view\" target=\"_blank\">Esener 2019-beleidsnota</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "<li><a href=\"https://osha.europa.eu/no/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">En rapport med de første funnene fra undersøkelsen</a></li>
+<li><a href=\"https://osha.europa.eu/no/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 policydokument</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "<li><a href=\"https://osha.europa.eu/pl/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Sprawozdanie zawierające wstępne ustalenia</a></li>
+<li><a href=\"https://osha.europa.eu/pl/publications/esener-2019-policy-brief/view\" target=\"_blank\">Przegląd polityki ESENER 2019</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "<li><a href=\"https://osha.europa.eu/pt/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Um relatório dos primeiros resultados</a></li>
+<li><a href=\"https://osha.europa.eu/pt/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 — Resumo de políticas</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "<li><a href=\"https://osha.europa.eu/ro/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Un raport al primelor constatări</a></li>
+<li><a href=\"https://osha.europa.eu/ro/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 - Sinteză politică</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "<li><a href=\"https://osha.europa.eu/sk/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">prvé zistenia</a></li>
+<li><a href=\"https://osha.europa.eu/sk/publications/esener-2019-policy-brief/view\" target=\"_blank\">Politická správa o ESENER 2019</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "<li><a href=\"https://osha.europa.eu/sl/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">poročilo o prvih ugotovitvah;</a></li>
+<li><a href=\"https://osha.europa.eu/sl/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 – Poročilo o politikah</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<li><a href=\"https://osha.europa.eu/fi/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Kertomus alustavista tuloksista</a></li>
+<li><a href=\"https://osha.europa.eu/fi/publications/esener-2019-policy-brief/view\" target=\"_blank\">Raportti ESENER 2019 -tutkimuksesta</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "<li><a href=\"https://osha.europa.eu/sv/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">En första resultatrapport</a></li>
+<li><a href=\"https://osha.europa.eu/sv/publications/esener-2019-policy-brief/view\" target=\"_blank\">Policygenomgång av Esener 2019</a></li>
+<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>");
 
 SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000 AND l.id < 102000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
