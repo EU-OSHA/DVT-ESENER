@@ -39,8 +39,8 @@ define(function (require) {
                 }
             },
             metaTags: {
-                title: "ESENER | Home",
-                description: "ESENER | Home"
+                title: "European Survey of Enterprises on New and Emerging Risks (ESENER) results visualisation - Safety and health at work - EU - OSHA",
+                description: "EU-OSHA's European Survey of Enterprises on New and Emerging Risks (ESENER) is an extensive survey that looks at how European workplaces manage safety and health risks in practice."
             }
         });
     });
