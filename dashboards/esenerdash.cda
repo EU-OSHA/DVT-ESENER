@@ -41,7 +41,7 @@
         IF(ec.category IS NOT NULL,  eao.answer_id, NULL) as answer_id
       FROM esener_category ec, indicator i, esener_answer_order eao
       WHERE ec.year = ${pYear}
-      AND i.name NOT IN ("E3Q256f")
+      AND i.name NOT IN ("E3Q256f", "E3Q200_34")
       AND (ec.category IS NULL OR ec.category = i.name)
       AND i.id = eao.indicator_id
       AND eao.order_position = 1
@@ -349,7 +349,7 @@
       INNER JOIN indicator i ON v.indicator_id=i.id
       INNER JOIN translation t ON n.literal_id = t.literal_id AND t.language = ${pLanguage}
       WHERE i.name=${pQuestion}
-      AND CASE WHEN ${pQuestion} NOT LIKE "E3Q%" THEN country_code!="EU27_2020" ELSE t.language="EN_1" END
+      AND CASE WHEN ${pQuestion} NOT LIKE "E3Q%" THEN country_code!="EU27_2020" ELSE t.language=${pLanguage} END
       ORDER BY FIELD(country_code, 'EU28', 'EU27_2020') DESC, country_code ASC;
     </Query>
   </DataAccess>
