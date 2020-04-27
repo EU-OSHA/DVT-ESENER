@@ -349,7 +349,7 @@
       INNER JOIN indicator i ON v.indicator_id=i.id
       INNER JOIN translation t ON n.literal_id = t.literal_id AND t.language = ${pLanguage}
       WHERE i.name=${pQuestion}
-      AND CASE WHEN ${pQuestion} NOT LIKE "E3Q%" THEN country_code!="EU27_2020" ELSE t.language="EN_1" END
+      AND CASE WHEN ${pQuestion} NOT LIKE "E3Q%" THEN country_code!="EU27_2020" ELSE t.language=${pLanguage} END
       ORDER BY FIELD(country_code, 'EU28', 'EU27_2020') DESC, country_code ASC;
     </Query>
   </DataAccess>
