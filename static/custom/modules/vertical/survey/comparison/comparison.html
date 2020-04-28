@@ -2,7 +2,7 @@
 <div class="container-fluid detail--page--wrapper">
     <section class="col-content questions--list--wrapper">
       <div class="filter--questions--group--wrapper">
-        <p data-ng-click="openAccordion($index,$event)" >Select a question</p>
+        <p data-ng-click="openAccordion($index,$event)" data-ng-bind="i18n.L100663"></p>
         <div class="filter--questions--group">
           <dvt-select data-ng-cloak ng-model="pQuestion" parameter="pQuestion" params="[['pYear', 'pYear'], ['pLocale', pLocale]]"
             listen-to="['pYear', 'pQuestion']" query="getQuestionsComparison" cda="{{cdaEsenerDash}}" data-ng-change="changeToQuestion(pQuestion)" class="filter--questions--wrapper">
@@ -45,7 +45,7 @@
             <!-- DATA FOR -->
             <div class="datafor--dropdown--wrapper" >
               <div class="datafor--dropdown--list">
-                <p class="option-title" ng-click="openSelect($event)">DATA FOR</p>
+                <p class="option-title" ng-click="openSelect($event)" data-ng-bind="i18n.L101086"></p>
                 <ul class="datafor--dropdown--options">
                   <li>
                     <input id='2014' type="checkbox" ng-click="openSelect($event)" checked="checked" disabled="disabled" tabindex="-1"/>
