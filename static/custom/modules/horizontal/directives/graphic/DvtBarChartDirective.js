@@ -572,7 +572,7 @@ define(function (require) {
                                     //$log.warn(value.substring(index+1));
                                     var x = value.substring(index+1);
                                     //$log.warn(x.substring(0,10));
-                                    if(value.substring(index+1).length <= 15){
+                                    if(value.substring(index+1).length <= 16){
                                         return value.substring(index+1);
                                     }else{
                                         return  x.substring(0,12)+'...';
