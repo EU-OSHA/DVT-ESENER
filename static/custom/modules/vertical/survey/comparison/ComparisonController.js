@@ -280,7 +280,7 @@ define(function (require) {
 			$scope.answers = [];
 			res.data.resultset.map(function(elem) {
 				// For question E3Q352, only "On a regular basis" answer will appear
-				if ($scope.pQuestion != "E3Q352" || elem[0]==3)
+				if ($scope.pQuestion != "E3Q352" || elem[0]==97)
 				{
 					$scope.answers.push({id:elem[0], literal:elem[1]});
 				}				

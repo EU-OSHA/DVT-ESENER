@@ -912,7 +912,7 @@
       INNER JOIN translation t ON a.literal_id=t.literal_id
       INNER JOIN nuts n ON p.nuts_id=n.id
       WHERE i.name IN (${pQuestion}, (SELECT i2.name FROM esener_indicator_comparison eic INNER JOIN indicator i ON eic.category_2019=i.id INNER JOIN indicator i2 ON eic.category_2014=i2.id WHERE i.name=${pQuestion}))
-      AND p.answer_id=${pAnswer}
+      AND CASE WHEN ${pAnswer}=97 THEN p.answer_id IN (3,97) ELSE p.answer_id=${pAnswer} END
       AND n.country_code=${pCountry}
       AND a.id IN (${pInclusions})
       AND t.language=${pLanguage}
@@ -943,7 +943,7 @@
       INNER JOIN split_answer an ON p.answer_id=an.id
       INNER JOIN translation t1 ON an.literal_id=t1.literal_id
       WHERE i.name IN (${pQuestion}, (SELECT i2.name FROM esener_indicator_comparison eic INNER JOIN indicator i ON eic.category_2019=i.id INNER JOIN indicator i2 ON eic.category_2014=i2.id WHERE i.name=${pQuestion}))
-      AND p.answer_id=${pAnswer}
+      AND CASE WHEN ${pAnswer}=97 THEN p.answer_id IN (3,97) ELSE p.answer_id=${pAnswer} END
       AND n.country_code=${pCountry}
       AND a.id IN (${pInclusions})
       AND t.language=${pLanguage} AND t1.language=${pLanguage}
@@ -972,7 +972,7 @@
       INNER JOIN translation t ON cs.literal_id=t.literal_id
       INNER JOIN nuts n ON p.nuts_id=n.id
       WHERE i.name IN (${pQuestion}, (SELECT i2.name FROM esener_indicator_comparison eic INNER JOIN indicator i ON eic.category_2019=i.id INNER JOIN indicator i2 ON eic.category_2014=i2.id WHERE i.name=${pQuestion}))
-      AND p.answer_id=${pAnswer}
+      AND CASE WHEN ${pAnswer}=97 THEN p.answer_id IN (3,97) ELSE p.answer_id=${pAnswer} END
       AND n.country_code=${pCountry}
       AND cs.id IN (${pInclusions})
       AND t.language=${pLanguage}
@@ -1003,7 +1003,7 @@
       INNER JOIN split_answer an ON p.answer_id=an.id
       INNER JOIN translation t1 ON an.literal_id=t1.literal_id
       WHERE i.name IN (${pQuestion}, (SELECT i2.name FROM esener_indicator_comparison eic INNER JOIN indicator i ON eic.category_2019=i.id INNER JOIN indicator i2 ON eic.category_2014=i2.id WHERE i.name=${pQuestion}))
-      AND p.answer_id=${pAnswer}
+      AND CASE WHEN ${pAnswer}=97 THEN p.answer_id IN (3,97) ELSE p.answer_id=${pAnswer} END
       AND n.country_code=${pCountry}
       AND cs.id IN (${pInclusions})
       AND t.language=${pLanguage} AND t1.language=${pLanguage}
