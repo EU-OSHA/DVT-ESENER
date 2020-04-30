@@ -3016,15 +3016,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>The participating countries comprise all European Union Member States at the time of each edition, as well as Norway and Switzerland. Turkey and Croatia were covered in ESENER 2009. Turkey, Albania and Montenegro were covered in ESENER 2014 and Iceland, North Macedonia and Serbia were covered in ESENER 2014 and 2019.</p>
 <h3>Country coverage in ESENER</h3>
 <table class=\"table table1\">
-    <thead>
-        <tr class=\"center-text\">
+  <tbody>
+            <tr class=\"center-text\">
             <th>&nbsp;</th>
             <th>ESENER 2009</th>
             <th>ESENER 2014</th>
             <th>ESENER 2019</th>
         </tr>
-    </thead>
-    <tbody>
         <tr class=\"data-table\">
             <th>European Union (*)</th>
             <td>X</td>
@@ -3095,21 +3093,18 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Stratification of the sample is based on a matrix of four size classes and eight groups of sectors. While the general approach to sampling in the first two waves of ESENER was largely the same, there have been some changes over the years, particularly with respect to ESENER 2009. The details are available at <a href=\"https://oshwiki.eu/wiki/ESENER-1_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2009</a> and <a href=\"https://oshwiki.eu/wiki/ESENER-2_Methodology#Sampling_strategy\" target=\"_blank\">ESENER 2014</a>.</p>
 <h3>ESENER 2019 Sampling matrix</h3>
 <table class=\"table table2\">
-    <thead>
+    <tbody> 
+        <tr>
+            <th rowspan=\"2\">Sector group - NACE Rev. 2 sections</th>
+            <th class=\"center-text\" colspan=\"4\">Size - number of employees</th>
+        </tr>
+
         <tr>
             <th>5-9</th>
             <th>10-49</th>
             <th>50-249</th>
             <th>250+</th>
         </tr>
-    </thead>
-    <thead>
-        <tr>
-            <th rowspan=\"2\">Sector group - NACE Rev. 2 sections</th>
-            <th class=\"center-text\" colspan=\"4\">Size - number of employees</th>
-        </tr>
-    </thead>
-    <tbody>
         <tr>
             <td><strong>A</strong>: Agriculture, forestry and fishing.</td>
             <td><br></td>
@@ -3190,15 +3185,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>For the first time in ESENER 2014, national authorities were offered the possibility to fund an expansion of their national sample sizes. Spain, Slovenia and the United Kingdom took up the offer to boost their respective sample sizes. In ESENER 2019, three countries accepted this offer (Ireland, Norway and Slovenia), which this time included as well the possibility to add two to three questions of national interest to their respective questionnaires. Switzerland has fully funded all waves of ESENER.</p>
 <h3>Achieved sample sizes in ESENER</h3>
 <table class=\"table table3\">
-    <thead>
+      <tbody>
         <tr>
             <th>Country</th>
             <th class=\"center-text\">ESENER 2009 (management interviews)</th>
             <th class=\"center-text\">ESENER 2014</th>
             <th>ESENER 2019</th>
         </tr>
-    </thead>
-    <tbody>
         <tr class=\"data-table\">
             <th>Austria</th>
             <td>1034</td>
@@ -3489,15 +3482,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Участват всички държави — членки на Европейския съюз, към момента на конкурса, както и Норвегия и Швейцария. Турция и Хърватия бяха обхванати от ESENER 2009. Турция, Албания и Черна гора бяха включени в ESENER 2014, а Исландия, Северна Македония и Сърбия — в ESENER 2014 и 2019.</p>
 <h3>Обхват на държавите в ESENER</h3>
 <table class=\"table table1\">
-  <thead>
+   <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER 2009</th>
       <th>ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Европейски съюз (*)</th>
       <td>X</td>
@@ -3571,21 +3562,17 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>Матрица за съставяне на извадки в ESENER 2019</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+        <tr>
+      <th rowspan=\"2\">Секторна група — раздели по NACE Rev. 2</th>
+      <th class=\"center-text\" colspan=\"4\">Размер — брой на служителите</th>
+    </tr>
     <tr>
       <th>5—9</th>
       <th>10—49</th>
       <th>50—249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Секторна група — раздели по NACE Rev. 2</th>
-      <th class=\"center-text\" colspan=\"4\">Размер — брой на служителите</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><strong>А</strong>: Селско стопанство, горско стопанство и риболов.</td>
       <td>
@@ -3738,15 +3725,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>За първи път в ESENER 2014 националните органи получиха възможността да финансират разширяването на националните извадки. Испания, Словения и Обединеното кралство се възползваха от предложението да увеличат обема на извадките. В ESENER 2019 три държави приеха това предложение (Ирландия, Норвегия и Словения), като този път предложението включваше и възможността да се добавят два до три въпроса от национален интерес към националните въпросници. Швейцария финансира изцяло всички издания на ESENER.</p>
 <h3>Обеми на извадките, постигнати в ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>Държава</th>
       <th class=\"center-text\">ESENER 2009 (анкети с ръководството)</th>
       <th class=\"center-text\">ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Австрия</th>
       <td>1034</td>
@@ -4083,15 +4068,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Každého kola průzkumu se účastní všechny členské státy EU, jakož i Norsko a Švýcarsko. Turecko a Chorvatsko se zapojily do průzkumu ESENER v roce 2009, přičemž Turecko, Albánie a Černá Hora byly do průzkumu ESENER zahrnuty v roce 2014 a Island, Severní Makedonie a Srbsko v letech 2014 a 2019.</p>
 <h3>Zapojení zemí do průzkumu ESENER</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER 2009</th>
       <th>ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Evropská unie (*)</th>
       <td>X</td>
@@ -4165,21 +4148,17 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>Matice výběru vzorků pro průzkum ESENER 2019</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+        <tr>
+      <th rowspan=\"2\">Skupina odvětví – sekce NACE Rev. 2</th>
+      <th class=\"center-text\" colspan=\"4\">Velikost – počet zaměstnanců</th>
+    </tr>
     <tr>
       <th>5-9</th>
       <th>10-49</th>
       <th>50-249</th>
       <th>nad 250</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Skupina odvětví – sekce NACE Rev. 2</th>
-      <th class=\"center-text\" colspan=\"4\">Velikost – počet zaměstnanců</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><strong>A</strong>: Zemědělství, lesnictví a&nbsp;rybářství</td>
       <td>
@@ -4332,15 +4311,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Počínaje průzkumem ESENER 2014 bylo vnitrostátním orgánům nabídnuta možnost financování rozšíření rozsahu jejich národních vzorků. Této možnosti k&nbsp;rozšíření počtu zkoumaných podniků ve své zemi využilo Slovinsko, Spojené království a Španělsko. V&nbsp;rámci průzkumu ESENER 2019 tuto nabídku, která tentokrát zahrnovala i možnost přidat do národní verze dotazníku dvě až tři otázky národního zájmu, přijaly tři země (Irsko, Norsko a Slovinsko). Švýcarsko si všechny vlny průzkumu ESENER kompletně financovalo samo.</p>
 <h3>Dosažená velikost vzorků v rámci průzkumu ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>Země</th>
       <th class=\"center-text\">ESENER 2009 (rozhovory s&nbsp;vedoucími pracovníky)</th>
       <th class=\"center-text\">ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Rakousko</th>
       <td>1034</td>
@@ -4677,15 +4654,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>De deltagende lande omfatter alle EU-medlemsstaterne på tidspunktet for hver udgave samt Norge og Schweiz. Tyrkiet og Kroatien var omfattet af ESENER 2009. Tyrkiet, Albanien og Montenegro var omfattet af ESENER 2014, og Island, Nordmakedonien og Serbien af ESENER 2014 og 2019.</p>
 <h3>Landedækning i ESENER</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER 2009</th>
       <th>ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Den Europæiske Union (*)</th>
       <td>X</td>
@@ -4759,21 +4734,18 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>Stikprøvematrix i ESENER 2019</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+    <tr>
+      <th rowspan=\"2\">Sektorgruppe — hovedafdelinger i NACE rev. 2</th>
+      <th class=\"center-text\" colspan=\"4\">Størrelse — antal ansatte</th>
+    </tr>
     <tr>
       <th>5-9</th>
       <th>10-49</th>
       <th>50-249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Sektorgruppe — hovedafdelinger i NACE rev. 2</th>
-      <th class=\"center-text\" colspan=\"4\">Størrelse — antal ansatte</th>
-    </tr>
-  </thead>
-  <tbody>
+
     <tr>
       <td><strong>A</strong>: Landbrug, skovbrug og fiskeri</td>
       <td>
@@ -4926,15 +4898,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Med ESENER 2014 fik de nationale myndigheder for første gang mulighed for at finansiere en udvidelse af antallet af nationale stikprøver. Spanien, Slovenien og Det Forenede Kongerige tog imod tilbuddet om at øge antallet af deres respektive stikprøver. I ESENER 2019 takkede tre lande ja til dette tilbud (Irland, Norge og Slovenien), som i denne omgang også inkluderede muligheden for at føje to til tre spørgsmål af national interesse til de respektive spørgeskemaer. Schweiz har fuldt ud finansieret alle runder af ESENER.</p>
 <h3>Opnået antal stikprøver i ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>Land</th>
       <th class=\"center-text\">ESENER 2009 (ledelsessamtaler)</th>
       <th class=\"center-text\">ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Østrig</th>
       <td>1&nbsp;034</td>
@@ -5269,15 +5239,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Zu den teilnehmenden Ländern gehören alle Länder, die zum Zeitpunkt der jeweiligen Ausgabe Mitgliedstaaten der Europäischen Union sind, sowie Norwegen und die Schweiz. ESENER 2009 umfasste die Türkei und Kroatien. ESENER 2014 umfasste die Türkei, Albanien und Montenegro, und in den ESENER-Erhebungen 2014 und 2019 wurden Island, Nordmazedonien und Serbien erfasst.</p>
 <h3>In ESENER erfasste Länder</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER&nbsp;2009</th>
       <th>ESENER&nbsp;2014</th>
       <th>ESENER&nbsp;2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Europäische Union (*)</th>
       <td>X</td>
@@ -5351,22 +5319,18 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>ESENER&nbsp;2019 Stichprobenmatrix</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+       <tr>
+      <th rowspan=\"2\">Sektorgruppe – NACE Rev.&nbsp;2 Abschnitte</th>
+      <th class=\"center-text\" colspan=\"4\">Größe – Zahl der Beschäftigten</th>
+    </tr>
+    <tr>
     <tr>
       <th>5-9</th>
       <th>10-49</th>
       <th>50-249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Sektorgruppe – NACE Rev.&nbsp;2 Abschnitte</th>
-      <th class=\"center-text\" colspan=\"4\">Größe – Zahl der Beschäftigten</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
       <td><strong>A</strong>: Land- und Forstwirtschaft, Fischerei</td>
       <td>
         <br>
@@ -5518,15 +5482,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Zum ersten Mal erhielten nationale Behörden bei ESENER&nbsp;2014 die Möglichkeit, eine Ausweitung ihrer nationalen Stichprobenumfänge zu finanzieren. Spanien, Slowenien und das Vereinigte Königreich nahmen das Angebot an, um ihren jeweiligen Stichprobenumfang zu erhöhen. In ESENER&nbsp;2019 nahmen drei Länder (Irland, Norwegen und Slowenien) dieses Angebot an, was diesmal die Möglichkeit einschloss, zwei bis drei Fragen von nationalem Interesse zum Fragebogen hinzuzufügen. Die Schweiz hat alle Wellen von ESENER vollständig finanziert.</p>
 <h3>In ESENER erzielte Stichprobenumfänge</h3>
 <table class=\"table table3\">
-  <thead>
+    <tbody>
     <tr>
       <th>Land</th>
       <th class=\"center-text\">ESENER&nbsp;2009 (Befragungen der Betriebsleitung)</th>
       <th class=\"center-text\">ESENER&nbsp;2014</th>
       <th>ESENER&nbsp;2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Österreich</th>
       <td>1&nbsp;034</td>
@@ -5863,15 +5825,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Osalevad riigid on kõik uuringuaegsed Euroopa Liidu liikmesriigid ning Norra ja Šveits. Uuring ESENER 2009 hõlmas Türgit ja Horvaatiat. Uuring ESENER 2014 hõlmas Türgit, Albaaniat ja Montenegrot ning uuringud ESENER 2014 ja 2019 hõlmasid Islandit, Põhja-Makedooniat ja Serbiat.</p>
 <h3>Uuringus ESENER osalevad riigid</h3>
 <table class=\"table table1\">
-  <thead>
-    <tr class=\"center-text\">
+    <tbody>  
+  <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER 2009</th>
       <th>ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Euroopa Liit (*)</th>
       <td>X</td>
@@ -5945,21 +5905,17 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>ESENER 2019: valimimaatriks</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+    <tr>
+      <th rowspan=\"2\">Sektorirühm – NACE Rev.&nbsp;2 jaod</th>
+      <th class=\"center-text\" colspan=\"4\">Suurus – töötajate arv</th>
+    </tr>
     <tr>
       <th>5–9</th>
       <th>10–49</th>
       <th>50–249</th>
       <th>Üle 250</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Sektorirühm – NACE Rev.&nbsp;2 jaod</th>
-      <th class=\"center-text\" colspan=\"4\">Suurus – töötajate arv</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><strong>A</strong>: põllumajandus, metsamajandus ja kalandus</td>
       <td>
@@ -6112,15 +6068,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Uuringus ESENER&nbsp;2014 pakuti riiklikele ametiasutusele esimest korda võimalust rahastada riiklike valimite laiendamist. Hispaania, Sloveenia ja Ühendkuningriik laiendasidki oma valimeid. Uuringus ESENER&nbsp;2019 kasutasid kolm riiki (Iirimaa, Norra ja Sloveenia) seda valikut, millega kaasnes seekord võimalus lisada küsimustikele 2–3 riigi seisukohast olulist küsimust. Šveits on täielikult rahastanud kõik senised ESENERi uuringud.</p>
 <h3>Valimite suurused uuringus ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>Riik</th>
       <th class=\"center-text\">ESENER 2009 (intervjuud juhtkonnaga)</th>
       <th class=\"center-text\">ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Austria</th>
       <td>1034</td>
@@ -6457,15 +6411,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Στις συμμετέχουσες χώρες περιλαμβάνονται όλα τα κράτη μέλη της Ευρωπαϊκής Ένωσης την περίοδο κάθε έκδοσης, καθώς και η Νορβηγία και η Ελβετία. Η Τουρκία και η Κροατία συμμετείχαν στην έρευνα ESENER 2009. Η Τουρκία, η Αλβανία και το Μαυροβούνιο συμμετείχαν στην έρευνα ESENER 2014 και η Ισλανδία, η Βόρεια Μακεδονία και η Σερβία συμμετείχαν στις έρευνες ESENER 2014 και 2019.</p>
 <h3>Γεωγραφική κάλυψη ESENER</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER 2009</th>
       <th>ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Ευρωπαϊκή Ένωση (*)</th>
       <td>X</td>
@@ -6539,21 +6491,18 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>Υπόδειγμα δειγματοληψίας ESENER 2019</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+      <tr>
+      <th rowspan=\"2\">Ομάδα κλάδου - τομείς NACE αναθ. 2</th>
+      <th class=\"center-text\" colspan=\"4\">Μέγεθος - αριθμός υπαλλήλων</th>
+    </tr>
     <tr>
       <th>5-9</th>
       <th>10-49</th>
       <th>50-249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Ομάδα κλάδου - τομείς NACE αναθ. 2</th>
-      <th class=\"center-text\" colspan=\"4\">Μέγεθος - αριθμός υπαλλήλων</th>
-    </tr>
-  </thead>
-  <tbody>
+
     <tr>
       <td><strong>A</strong>: Γεωργία, δασοκομία και αλιεία</td>
       <td>
@@ -6706,15 +6655,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Στην έρευνα ESENER 2014, προσφέρθηκε για πρώτη φορά η δυνατότητα στις εθνικές αρχές να χρηματοδοτήσουν την επέκταση του μεγέθους των δειγμάτων που χρησιμοποιούνται σε εθνικό επίπεδο. Η Ισπανία, η Σλοβενία και το Ηνωμένο Βασίλειο αξιοποίησαν αυτήν την ευκαιρία και αύξησαν το μέγεθος του δείγματός τους. Στην έρευνα ESENER 2019, τρεις χώρες αποδέχθηκαν την πρόταση αυτή (Ιρλανδία, Νορβηγία και Σλοβενία), η οποία εν προκειμένω παρείχε στις ενδιαφερόμενες χώρες τη δυνατότητα να προσθέσουν δύο ή τρεις ερωτήσεις εθνικού ενδιαφέροντος στα ερωτηματολόγιά τους. Η Ελβετία χρηματοδότησε πλήρως όλα τα κύματα των ερευνών ESENER.</p>
 <h3>Μεγέθη δειγμάτων στις έρευνες ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>Χώρα</th>
       <th class=\"center-text\">ESENER 2009 (συνεντεύξεις με διοικητικά στελέχη)</th>
       <th class=\"center-text\">ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Αυστρία</th>
       <td>1034</td>
@@ -7051,15 +6998,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Los países participantes comprenden todos los Estados miembros de la Unión Europea en el momento de cada edición, así como Noruega y Suiza. Turquía y Croacia se incluyeron en la encuesta ESENER de 2009. Turquía, Albania y Montenegro se incluyeron en ESENER de 2014 e Islandia, Macedonia del Norte y Serbia en ESENER de 2014 y de 2019.</p>
 <h3>Cobertura geográfica de la encuesta ESENER</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER 2009</th>
       <th>ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Unión Europea (*)</th>
       <td>X</td>
@@ -7133,21 +7078,17 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>Matriz de muestreo de ESENER 2019</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+    <tr>
+      <th rowspan=\"2\">Grupo de sectores - Secciones de la NACE Rev. 2</th>
+      <th class=\"center-text\" colspan=\"4\">Tamaño — Número de empleados</th>
+    </tr>
     <tr>
       <th>5-9</th>
       <th>10-49</th>
       <th>50-249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Grupo de sectores - Secciones de la NACE Rev. 2</th>
-      <th class=\"center-text\" colspan=\"4\">Tamaño — Número de empleados</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><strong>A</strong>: Agricultura, silvicultura y pesca</td>
       <td>
@@ -7300,15 +7241,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>En ESENER 2014 se ofreció por primera vez a las autoridades nacionales la posibilidad de financiar una ampliación de sus muestras nacionales. España, Eslovenia y el Reino Unido aceptaron la oferta de aumentar el tamaño respectivo de sus muestras. En ESENER 2019, tres países aceptaron esta oferta (Irlanda, Noruega y Eslovenia). En esta ocasión existía también la posibilidad de añadir dos a tres preguntas más de interés nacional a sus cuestionarios respectivos. Suiza ha financiado plenamente todas las ediciones de ESENER.</p>
 <h3>Tamaños de muestra obtenidos en el marco de la encuesta ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>País</th>
       <th class=\"center-text\">ESENER 2009 (entrevistas con el personal directivo)</th>
       <th class=\"center-text\">ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Austria</th>
       <td>1034</td>
@@ -7643,15 +7582,12 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Les pays participants comprennent tous les États membres de l'Union européenne au moment de chaque édition, ainsi que la Norvège et la Suisse. La Turquie et la Croatie étaient couvertes par l'enquête ESENER 2009. La Turquie, l'Albanie et le Monténégro étaient couverts dans l'édition 2014 de l'enquête ESENER, et l'Islande, la Macédoine du Nord et la Serbie dans les éditions 2014 et 2019.</p>
 <h3>Couverture par pays dans l’enquête ESENER</h3>
 <table class=\"table table1\">
-  <thead>
-    <tr class=\"center-text\">
-      <th>&nbsp;</th>
-      <th>ESENER&nbsp;2009</th>
-      <th>ESENER&nbsp;2014</th>
-      <th>ESENER&nbsp;2019</th>
-    </tr>
-  </thead>
   <tbody>
+    <tr class=\"center-text\">
+      <th>ESENER 2009</th>
+      <th>ESENER 2014</th>
+      <th>ESENER 2019</th>
+    </tr>
     <tr class=\"data-table\">
       <th>Union européenne (*)</th>
       <td>X</td>
@@ -7725,21 +7661,18 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>Matrice d’échantillonnage de l’édition&nbsp;2019</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+    <tr>
+      <th rowspan=\"2\">Groupe de secteurs&nbsp;- Sections de la NACE&nbsp;Rév.&nbsp;2</th>
+      <th class=\"center-text\" colspan=\"4\">Taille - nombre d’employés</th>
+    </tr>
     <tr>
       <th>5-9</th>
       <th>10-49</th>
       <th>50-249</th>
       <th>+250</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Groupe de secteurs&nbsp;- Sections de la NACE&nbsp;Rév.&nbsp;2</th>
-      <th class=\"center-text\" colspan=\"4\">Taille - nombre d’employés</th>
-    </tr>
-  </thead>
-  <tbody>
+
     <tr>
       <td><strong>A</strong>: Agriculture, sylviculture et pêche</td>
       <td>
@@ -7892,26 +7825,24 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>C’est lors de l’édition&nbsp;2014 de l’enquête ESENER que les autorités nationales ont eu pour la première fois la possibilité de financer une expansion de la taille de leurs échantillons nationaux. L’Espagne, la Slovénie et le Royaume-Uni ont saisi cette occasion pour accroître la taille de leurs échantillons respectifs. Pour l’édition&nbsp;2019 de l’enquête ESENER, trois pays ont accepté cette possibilité (l’Irlande, la Norvège et la Slovénie), qui, cette fois, leur permettait également d’ajouter deux à trois questions présentant un intérêt national à leurs questionnaires respectifs. La Suisse a financé entièrement toutes les vagues de l’enquête ESENER.</p>
 <h3>Tailles des échantillons obtenues dans le cadre de l’enquête ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>Pays</th>
       <th class=\"center-text\">ESENER 2009 (entretiens avec le personnel d’encadrement)</th>
       <th class=\"center-text\">ESENER&nbsp;2014</th>
-      <th>ESENER&nbsp;2019</th>
+      <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Autriche</th>
-      <td>1&nbsp;034</td>
-      <td>1&nbsp;503</td>
-      <td>1&nbsp;503</td>
+      <td>1 034</td>
+      <td>1 503</td>
+      <td>1 503</td>
     </tr>
     <tr class=\"data-table\">
       <th>Belgique</th>
-      <td>1&nbsp;069</td>
-      <td>1&nbsp;504</td>
-      <td>1&nbsp;506</td>
+      <td>1 069</td>
+      <td>1 504</td>
+      <td>1 506</td>
     </tr>
     <tr class=\"data-table\">
       <th>Bulgarie</th>
@@ -7935,15 +7866,15 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
       <th>Tchéquie
         <br>
       </th>
-      <td>1&nbsp;015</td>
-      <td>1&nbsp;508</td>
-      <td>1&nbsp;552</td>
+      <td>1 015</td>
+      <td>1 508</td>
+      <td>1 552</td>
     </tr>
     <tr class=\"data-table\">
       <th>Danemark</th>
-      <td>1&nbsp;005</td>
-      <td>1&nbsp;508</td>
-      <td>1&nbsp;513</td>
+      <td>1 005</td>
+      <td>1 508</td>
+      <td>1 513</td>
     </tr>
     <tr class=\"data-table\">
       <th>Estonie</th>
@@ -7953,45 +7884,45 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
     </tr>
     <tr class=\"data-table\">
       <th>Finlande</th>
-      <td>1&nbsp;000</td>
-      <td>1&nbsp;511</td>
-      <td>1&nbsp;505</td>
+      <td>1 000</td>
+      <td>1 511</td>
+      <td>1 505</td>
     </tr>
     <tr class=\"data-table\">
       <th>France</th>
-      <td>1&nbsp;497</td>
-      <td>2&nbsp;256</td>
-      <td>2&nbsp;251</td>
+      <td>1 497</td>
+      <td>2 256</td>
+      <td>2 251</td>
     </tr>
     <tr class=\"data-table\">
       <th>Allemagne</th>
-      <td>1&nbsp;510</td>
-      <td>2&nbsp;261</td>
-      <td>2&nbsp;264</td>
+      <td>1 510</td>
+      <td>2 261</td>
+      <td>2 264</td>
     </tr>
     <tr class=\"data-table\">
       <th>Grèce</th>
-      <td>1&nbsp;000</td>
-      <td>1&nbsp;503</td>
-      <td>1&nbsp;501</td>
+      <td>1 000</td>
+      <td>1 503</td>
+      <td>1 501</td>
     </tr>
     <tr class=\"data-table\">
       <th>Hongrie</th>
-      <td>1&nbsp;031</td>
-      <td>1&nbsp;514</td>
-      <td>1&nbsp;504</td>
+      <td>1 031</td>
+      <td>1 514</td>
+      <td>1 504</td>
     </tr>
     <tr class=\"data-table\">
       <th>Irlande</th>
       <td>506</td>
       <td>750</td>
-      <td><em>1&nbsp;999</em></td>
+      <td><em>1 999</em></td>
     </tr>
     <tr class=\"data-table\">
       <th>Italie</th>
-      <td>1&nbsp;501</td>
-      <td>2&nbsp;254</td>
-      <td>2&nbsp;251</td>
+      <td>1 501</td>
+      <td>2 254</td>
+      <td>2 251</td>
     </tr>
     <tr class=\"data-table\">
       <th>Lettonie</th>
@@ -8019,27 +7950,27 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
     </tr>
     <tr class=\"data-table\">
       <th>Pays-Bas</th>
-      <td>1&nbsp;009</td>
-      <td>1&nbsp;519</td>
-      <td>1&nbsp;521</td>
+      <td>1 009</td>
+      <td>1 519</td>
+      <td>1 521</td>
     </tr>
     <tr class=\"data-table\">
       <th>Pologne</th>
-      <td>1&nbsp;500</td>
-      <td>2&nbsp;257</td>
-      <td>2&nbsp;250</td>
+      <td>1 500</td>
+      <td>2 257</td>
+      <td>2 250</td>
     </tr>
     <tr class=\"data-table\">
       <th>Portugal</th>
-      <td>1&nbsp;005</td>
-      <td>1&nbsp;513</td>
-      <td>1&nbsp;493</td>
+      <td>1 005</td>
+      <td>1 513</td>
+      <td>1 493</td>
     </tr>
     <tr class=\"data-table\">
       <th>Roumanie</th>
       <td>518</td>
       <td>756</td>
-      <td>1&nbsp;500</td>
+      <td>1 500</td>
     </tr>
     <tr class=\"data-table\">
       <th>Slovaquie</th>
@@ -8050,38 +7981,38 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
     <tr class=\"data-table\">
       <th>Slovénie</th>
       <td>529</td>
-      <td><em>1&nbsp;051</em></td>
-      <td><em>1&nbsp;067</em></td>
+      <td><em>1 051</em></td>
+      <td><em>1 067</em></td>
     </tr>
     <tr class=\"data-table\">
       <th>Espagne</th>
-      <td>1&nbsp;566</td>
-      <td><em>3&nbsp;162</em></td>
-      <td>2&nbsp;266</td>
+      <td>1 566</td>
+      <td><em>3 162</em></td>
+      <td>2 266</td>
     </tr>
     <tr class=\"data-table\">
       <th>Suède</th>
-      <td>1&nbsp;000</td>
-      <td>1&nbsp;521</td>
-      <td>1&nbsp;512</td>
+      <td>1 000</td>
+      <td>1 521</td>
+      <td>1 512</td>
     </tr>
     <tr class=\"data-table\">
       <th>Royaume-Uni</th>
-      <td>1&nbsp;500</td>
-      <td><em>4&nbsp;250</em></td>
-      <td>2&nbsp;251</td>
+      <td>1 500</td>
+      <td><em>4 250</em></td>
+      <td>2 251</td>
     </tr>
     <tr class=\"data-table\">
       <th>Norvège</th>
       <td>951</td>
-      <td>1&nbsp;513</td>
-      <td><em>1&nbsp;951</em></td>
+      <td>1 513</td>
+      <td><em>1 951</em></td>
     </tr>
     <tr class=\"data-table\">
       <th>Suisse</th>
-      <td>1&nbsp;019</td>
-      <td>1&nbsp;511</td>
-      <td>1&nbsp;502</td>
+      <td>1 019</td>
+      <td>1 511</td>
+      <td>1 502</td>
     </tr>
     <tr class=\"data-table\">
       <th>Islande</th>
@@ -8237,15 +8168,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Sudjeluju sve države članice Europske unije u trenutku provedbe pojedinog istraživanja te Norveška i Švicarska. Turska i Hrvatska bile su obuhvaćene istraživanjem ESENER 2009. Turska, Albanija i Crna Gora bile su obuhvaćene istraživanjima ESENER 2014., a Island, Sjeverna Makedonija i Srbija istraživanjima ESENER 2014. i ESENER 2019.</p>
 <h3>Zemlje obuhvaćene istraživanjem ESENER</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER&nbsp;2009</th>
       <th>ESENER&nbsp;2014</th>
       <th>ESENER&nbsp;2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Europska unija (*)</th>
       <td>X</td>
@@ -8319,21 +8248,17 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>Matrica uzorkovanja istraživanja ESENER&nbsp;2019</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+    <tr>
+      <th rowspan=\"2\">Sektorska skupina – područja u klasifikaciji NACE Rev. 2</th>
+      <th class=\"center-text\" colspan=\"4\">Veličina – broj zaposlenika</th>
+    </tr>
     <tr>
       <th>5–9</th>
       <th>10–49</th>
       <th>50–249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Sektorska skupina – područja u klasifikaciji NACE Rev. 2</th>
-      <th class=\"center-text\" colspan=\"4\">Veličina – broj zaposlenika</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><strong>A</strong>: Poljoprivreda, šumarstvo i ribarstvo</td>
       <td>
@@ -8486,16 +8411,14 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>U istraživanju ESENER&nbsp;2014 nacionalnim nadležnim tijelima ponuđena je mogućnost financiranja proširenja svojih nacionalnih uzoraka. Španjolska, Slovenija i Ujedinjena Kraljevina prihvatile su tu ponudu za povećavanje veličina svojih uzoraka. U istraživanju ESENER&nbsp;2019 tri su zemlje prihvatile tu ponudu (Irska, Norveška i Slovenija), što je ovaj put uključivalo i mogućnost dodavanja dvaju ili triju pitanja od nacionalnog interesa u upitnike za te države. Švicarska je u potpunosti financirala sve valove istraživanja ESENER.</p>
 <h3>Postignute veličine uzoraka u istraživanju ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>Zemlja</th>
       <th class=\"center-text\">ESENER&nbsp;2009 (razgovori s upravom)</th>
       <th class=\"center-text\">ESENER&nbsp;2014</th>
       <th>ESENER&nbsp;2019</th>
     </tr>
-  </thead>
-  <tbody>
-    <tr class=\"data-table\">
+     <tr class=\"data-table\">
       <th>Austrija</th>
       <td>1034</td>
       <td>1503</td>
@@ -8829,15 +8752,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Þátttökulöndin samanstanda af öllum aðildarríkjum Evrópusambandsins, sem og Noregi og Sviss. Tyrkland og Króatía voru tilgreind í ESENER 2009. Tyrkland, Albanía og Svartfjallaland voru tilgreind í ESENER 2014 og Ísland, Norður Makedónía og Serbía voru tilgreind í ESENER 2014 og 2019.</p>
 <h3>Lönd sem ESENER hefur náð yfir</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER 2009</th>
       <th>ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Evrópusambandið (*)</th>
       <td>X</td>
@@ -8911,21 +8832,17 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>ESENER 2019 Úrtaksfylki</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+    <tr>
+      <th rowspan=\"2\">Atvinnugreinahópur - NACE Rev. 2 hlutar</th>
+      <th class=\"center-text\" colspan=\"4\">Stærð - fjöldi starfsmanna</th>
+    </tr>
     <tr>
       <th>5-9</th>
       <th>10-49</th>
       <th>50-249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Atvinnugreinahópur - NACE Rev. 2 hlutar</th>
-      <th class=\"center-text\" colspan=\"4\">Stærð - fjöldi starfsmanna</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><strong>A</strong>: Landbúnaður, skógrækt og fiskveiðar</td>
       <td>
@@ -9078,15 +8995,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Í ESENER 2014 var innlendum yfirvöldum í fyrsta sinn boðinn sá möguleiki að fjármagna stækkun á úrtakinu í sínu landi. Spánn, Slóvenía og Bretland nýttu sér það til að stækka viðkomandi úrtök. Í ESENER 2019 nýttu þrjú lönd sér þetta (Írland, Noregur og Slóvenía), sem að þessu sinni bauð einnig upp á þann möguleika að bæta við tveimur til þremur spurningum sem vörðuðu þjóðarhag við viðkomandi spurningalista. Sviss hefur fjármagnað að fullu allar könnunarbylgjur ESENER.</p>
 <h3>Úrtaksstærðir sem hafa náðst í ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+    <tbody>
     <tr>
       <th>Land</th>
       <th class=\"center-text\">ESENER 2009 (stjórnendaviðtöl)</th>
       <th class=\"center-text\">ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Austurríki</th>
       <td>1034</td>
@@ -9421,15 +9336,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>I paesi partecipanti comprendono tutti gli Stati che, al momento di ciascuna edizione, fanno parte dell'Unione europea, nonché la Norvegia e la Svizzera. A questi sono stati aggiunti la Turchia e la Croazia nell&amp;rsquo;indagine ESENER 2009, la Turchia, l'Albania e il Montenegro nel l'indagine del 2014 e l'Islanda, la Macedonia del Nord e la Serbia nelle indagini del 2014 e del 2019.</p>
 <h3>Copertura geografica in ESENER</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER 2009</th>
       <th>ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Unione europea (*)</th>
       <td>X</td>
@@ -9503,21 +9416,18 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>Matrice di campionamento ESENER 2019</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+    <tr>
+      <th rowspan=\"2\">Gruppi di settore - sezioni NACE Rev. 2</th>
+      <th class=\"center-text\" colspan=\"4\">Dimensioni - numero di dipendenti</th>
+    </tr>
     <tr>
       <th>5-9</th>
       <th>10-49</th>
       <th>50-249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Gruppi di settore - sezioni NACE Rev. 2</th>
-      <th class=\"center-text\" colspan=\"4\">Dimensioni - numero di dipendenti</th>
-    </tr>
-  </thead>
-  <tbody>
+    
     <tr>
       <td><strong>A</strong>: agricoltura, silvicoltura e pesca</td>
       <td>
@@ -9670,15 +9580,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Per la prima volta, nell’ambito di ESENER 2014, alle autorità nazionali è stata offerta la possibilità di finanziare un ampliamento delle dimensioni dei loro campioni nazionali. La Spagna, la Slovenia e il Regno Unito hanno accettato l’offerta di incrementare le dimensioni dei rispettivi campioni. In ESENER 2019, tre paesi hanno accettato questa offerta (Irlanda, Norvegia e Slovenia), che annoverava anche la possibilità di aggiungere da due a tre domande di interesse nazionale nei rispettivi questionari. La Svizzera ha finanziato integralmente tutte le serie di ESENER.</p>
 <h3>Dimensioni del campione portato a compimento in ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+    <tbody>
     <tr>
       <th>Paese</th>
       <th class=\"center-text\">ESENER 2009 (colloqui con la dirigenza)</th>
       <th class=\"center-text\">ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Austria</th>
       <td>1&nbsp;034</td>
@@ -10969,15 +10877,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>A résztvevő országok magukban foglalják az Európai Unió összes tagállamát az egyes kiadások időpontjában, valamint Norvégiát és Svájcot. Törökországgal és Horvátországgal a 2009. évi ESENER foglalkozott. Törökországra, Albániára és Montenegróra a 2014. évi ESENER, Izlandra, Észak-Macedóniára és Szerbiára pedig a 2014. és a 2019. évi ESENER tért ki.</p>
 <h3>Az országok lefedettsége az ESENER-ben</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>2009.&nbsp;évi ESENER</th>
       <th>2014.&nbsp;évi ESENER</th>
       <th>2019.&nbsp;évi ESENER</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Európai Unió (*)</th>
       <td>X</td>
@@ -11051,21 +10957,18 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>A 2019.&nbsp;évi ESENER mintavételi mátrixa</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+    
+    <tr>
+      <th rowspan=\"2\">Ágazatcsoport – NACE Rev.&nbsp;2 nemzetgazdasági ágak</th>
+      <th class=\"center-text\" colspan=\"4\">Méret – alkalmazottak száma</th>
+    </tr>
     <tr>
       <th>5–9</th>
       <th>10–49</th>
       <th>50–249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Ágazatcsoport – NACE Rev.&nbsp;2 nemzetgazdasági ágak</th>
-      <th class=\"center-text\" colspan=\"4\">Méret – alkalmazottak száma</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><strong>A</strong>: Mezőgazdaság, erdőgazdálkodás és halászat</td>
       <td>
@@ -11218,15 +11121,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>A 2014.&nbsp;évi ESENER keretében a nemzeti hatóságok számára első alkalommal ajánlották fel nemzeti mintaméretük bővítésének finanszírozhatóságát. Spanyolország, Szlovénia és az Egyesült Királyság elfogadta a felajánlást a mintamérete növeléséhez. A 2019.&nbsp;évi ESENER keretében három ország (Írország, Norvégia és Szlovénia) elfogadta ezt a felajánlást, amely ezúttal magában foglalta azt a lehetőséget, hogy a kérdőívüket két vagy három, nemzeti szinten érdeklődésre számot tartó kérdéssel egészítsék ki. Svájc az ESENER mindegyik hullámát teljes egészében finanszírozta.</p>
 <h3>Az ESENER során elért mintaméretek</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>Ország</th>
       <th class=\"center-text\">2009.&nbsp;évi ESENER</th>
       <th class=\"center-text\">2014.&nbsp;évi ESENER</th>
       <th>2019.&nbsp;évi ESENER</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Ausztria</th>
       <td>1034</td>
@@ -11563,15 +11464,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Il-pajjiżi parteċipanti jinkludu l-Istati Membri kollha tal-Unjoni Ewropea fil-ħin ta&rsquo; kull edizzjoni, kif ukoll in-Norveġja u l-Iżvizzera. It-Turkija u l-Kroazja kienu koperti f&rsquo;ESENER 2009. It-Turkija, l-Albanija u l-Montenegro kienu koperti f&rsquo;ESENER 2014 u l-Iżlanda, il-Maċedonja ta&rsquo; Fuq u s-Serbja kienu koperti f&rsquo;ESENER 2014 u 2019.</p>
 <h3>Il-kopertura tal-pajjiżi f’ESENER</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER 2009</th>
       <th>ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Unjoni Ewropea (*)</th>
       <td>X</td>
@@ -11645,22 +11544,18 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>ESENER 2019 Matriċi ta’ teħid ta’ kampjuni</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+       <tr>
+      <th rowspan=\"2\">Grupp settorjali — it-taqsimiet tan-NACE Rev. 2</th>
+      <th class=\"center-text\" colspan=\"4\">Daqs — għadd ta’ impjegati</th>
+    </tr>
     <tr>
       <th>5-9</th>
       <th>10-49</th>
       <th>50-249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Grupp settorjali — it-taqsimiet tan-NACE Rev. 2</th>
-      <th class=\"center-text\" colspan=\"4\">Daqs — għadd ta’ impjegati</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
+     <tr>
       <td><strong>A</strong>: Agrikoltura, forestrija u sajd</td>
       <td>
         <br>
@@ -11812,15 +11707,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Għall-ewwel darba f’ESENER 2014, l-awtoritajiet nazzjonali ġew offruti l-possibbiltà li jiffinanzjaw espansjoni tad-daqsijiet tal-kampjuni nazzjonali tagħhom. Spanja, is-Slovenja u r-Renju Unit aċċettaw l-offerta biex jagħtu spinta lid-daqsijiet tal-kampjuni rispettivi tagħhom. F’ESENER 2019, tliet pajjiżi aċċettaw din l-offerta (l-Irlanda, in-Norveġja u s-Slovenja), li din id-darba inkludew ukoll il-possibbiltà li jiżdiedu żewġ jew tliet mistoqsijiet ta’ interess nazzjonali għall-kwestjonarji rispettivi tagħhom. L-Iżvizzera ffinanzjat bis-sħiħ il-mewġiet kollha ta’ ESENER.</p>
 <h3>Daqsijiet ta’ kampjuni miksuba f’ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>Pajjiż</th>
       <th class=\"center-text\">ESENER 2009 (intervisti tal-maniġment)</th>
       <th class=\"center-text\">ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>L-Awstrija</th>
       <td>1034</td>
@@ -12157,15 +12050,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Tot de deelnemende landen behoren alle lidstaten van de Europese Unie ten tijde van elke editie, alsmede Noorwegen en Zwitserland. Turkije en Kroatië namen deel aan Esener 2009. Turkije, Albanië en Montenegro namen deel aan Esener 2014 en IJsland, Noord-Macedonië en Servië namen deel aan Esener 2014 en 2019.</p>
 <h3>Deelnemende landen in Esener</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>Esener&nbsp;2009</th>
       <th>Esener&nbsp;2014</th>
       <th>Esener&nbsp;2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Europese Unie (*)</th>
       <td>X</td>
@@ -12239,21 +12130,17 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>Steekproefmatrix Esener&nbsp;2019</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+        <tr>
+      <th rowspan=\"2\">Sectorgroep – NACE Rev. 2 secties</th>
+      <th class=\"center-text\" colspan=\"4\">Omvang – aantal werknemers</th>
+    </tr>
     <tr>
       <th>5-9</th>
       <th>10-49</th>
       <th>50-249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Sectorgroep – NACE Rev. 2 secties</th>
-      <th class=\"center-text\" colspan=\"4\">Omvang – aantal werknemers</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><strong>A</strong>: Landbouw, bosbouw en visserij</td>
       <td>
@@ -12406,15 +12293,14 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Vanaf Esener&nbsp;2014 kregen de nationale instanties de mogelijkheid om voor eigen rekening hun nationale steekproef uit te breiden. Spanje, Slovenië en het Verenigd Koninkrijk hebben toen van deze mogelijkheid gebruikgemaakt om hun steekproeven te vergroten. Ook in Esener&nbsp;2019 hebben drie landen van deze mogelijkheid gebruikgemaakt (Ierland, Noorwegen en Slovenië), waarbij zij ditmaal ook twee of drie vragen van nationaal belang aan hun vragenlijsten konden toevoegen. Zwitserland heeft alle ronden van Esener volledig zelf gefinancierd.</p>
 <h3>Verkregen steekproefgrootten in Esener</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>Land</th>
       <th class=\"center-text\">Esener&nbsp;2009 (managementinterviews)</th>
       <th class=\"center-text\">Esener&nbsp;2014</th>
       <th>Esener&nbsp;2019</th>
     </tr>
-  </thead>
-  <tbody>
+
     <tr class=\"data-table\">
       <th>Oostenrijk</th>
       <td>1&nbsp;034</td>
@@ -13705,15 +13591,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Os países participantes incluem todos os Estados-Membros da União Europeia no momento de cada edição, bem como a Noruega e a Suíça. A Turquia e a Croácia foram abrangidas pelo ESENER 2009. A Turquia, a Albânia e o Montenegro foram abrangidos pelo ESENER 2014 e a Islândia, a Macedónia do Norte e a Sérvia foram abrangidas pelo ESENER 2014 e 2019.</p>
 <h3>Países abrangidos pelo ESENER</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER 2009</th>
       <th>ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>União Europeia (*)</th>
       <td>X</td>
@@ -13787,21 +13671,17 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>Matriz de amostragem do ESENER 2019</h3>
 <table class=\"table table2\">
-  <thead>
+    <tbody> 
+  <tr>
+      <th rowspan=\"2\">Grupo do setor - seções da NACE Rev. 2</th>
+      <th class=\"center-text\" colspan=\"4\">Dimensão - número de trabalhadores</th>
+    </tr>
     <tr>
       <th>5-9</th>
       <th>10-49</th>
       <th>50-249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Grupo do setor - seções da NACE Rev. 2</th>
-      <th class=\"center-text\" colspan=\"4\">Dimensão - número de trabalhadores</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><strong>A</strong>: Agricultura, silvicultura e pesca</td>
       <td>
@@ -13954,15 +13834,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Pela primeira vez no ESENER 2014, foi oferecida às autoridades nacionais a possibilidade de financiarem uma expansão das suas amostras nacionais. A Espanha, a Eslovénia e o Reino Unido aceitaram a proposta de aumentar a dimensão das respetivas amostras. No ESENER 2019, três países aceitaram esta proposta (Irlanda, Noruega e Eslovénia), que, desta vez, contemplava também a possibilidade de acrescentar duas a três perguntas de interesse nacional aos respetivos questionários. A Suíça financiou integralmente todas as edições do ESENER.</p>
 <h3>Dimensão das amostras no ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>País</th>
       <th class=\"center-text\">ESENER 2009 (entrevistas com a direção)</th>
       <th class=\"center-text\">ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Áustria</th>
       <td>1034</td>
@@ -14299,15 +14177,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>La sondaj participă toate statele membre ale Uniunii Europene de la momentul fiecărei ediții, precum și Norvegia și Elveția. Turcia și Croația au fost incluse în ESENER 2009. Turcia, Albania și Muntenegru au fost incluse în ESENER 2014, iar Islanda, Macedonia de Nord și Serbia au fost incluse în ESENER 2014 și 2019.</p>
 <h3>Țări vizate de ESENER</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER 2009</th>
       <th>ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Uniunea Europeană (*)</th>
       <td>X</td>
@@ -14381,21 +14257,17 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>Matricea de eșantionare pentru ESENER 2019</h3>
 <table class=\"table table2\">
-  <thead>
+    <tbody> 
+  <tr>
+      <th rowspan=\"2\">Grupuri de sectoare – secțiuni NACE Rev.&nbsp;2</th>
+      <th class=\"center-text\" colspan=\"4\">Dimensiune – număr de angajați</th>
+    </tr>
     <tr>
       <th>5-9</th>
       <th>10-49</th>
       <th>50-249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Grupuri de sectoare – secțiuni NACE Rev.&nbsp;2</th>
-      <th class=\"center-text\" colspan=\"4\">Dimensiune – număr de angajați</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><strong>A</strong>: Agricultură, silvicultură și pescuit</td>
       <td>
@@ -14548,15 +14420,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>În cadrul ESENER 2014, autorităților naționale li s-a oferit pentru prima dată posibilitatea de a finanța o extindere a dimensiunii eșantioanelor naționale. Spania, Slovenia și Regatul Unit au profitat de ofertă pentru a mări dimensiunea eșantioanelor respective. Trei țări (Irlanda, Norvegia și Slovenia) au acceptat pentru ESENER 2019 această ofertă, care de această dată a inclus și posibilitatea de a se adăuga două-trei întrebări de interes național la chestionarele respective. Elveția a finanțat integral toate rundele ESENER.</p>
 <h3>Dimensiunile eșantioanelor obținute în ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>Țară</th>
       <th class=\"center-text\">ESENER 2009 (interviuri adresate managerilor)</th>
       <th class=\"center-text\">ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Austria</th>
       <td>1&nbsp;034</td>
@@ -14893,15 +14763,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Zúčastnené krajiny zahŕňajú všetky členské štáty Európskej únie k dátumu vydania prieskumu, ako aj Nórsko a Švajčiarsko. Turecko a Chorvátsko sa na prieskume ESENER zúčastnili v roku 2009. Turecko, Albánsko a Čierna Hora boli zahrnuté do prieskumu ESENER 2014 a Island, Severné Macedónsko a Srbsko do prieskumov ESENER 2014 a 2019.</p>
 <h3>Pokrytie krajín v&nbsp;ESENER</h3>
 <table class=\"table table1\">
-  <thead>
+  <tbody>
     <tr class=\"center-text\">
       <th>&nbsp;</th>
       <th>ESENER 2009</th>
       <th>ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Európska únia (*)</th>
       <td>X</td>
@@ -14975,21 +14843,17 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </p>
 <h3>Matica výberu vzorky ESENER 2019</h3>
 <table class=\"table table2\">
-  <thead>
+  <tbody>
+        <tr>
+      <th rowspan=\"2\">Skupina sektorov – sekcie NACE Rev. 2</th>
+      <th class=\"center-text\" colspan=\"4\">Veľkosť – počet zamestnancov</th>
+    </tr>
     <tr>
       <th>5&nbsp;–&nbsp;9</th>
       <th>10&nbsp;–&nbsp;49</th>
       <th>50&nbsp;–&nbsp;249</th>
       <th>250+</th>
     </tr>
-  </thead>
-  <thead>
-    <tr>
-      <th rowspan=\"2\">Skupina sektorov – sekcie NACE Rev. 2</th>
-      <th class=\"center-text\" colspan=\"4\">Veľkosť – počet zamestnancov</th>
-    </tr>
-  </thead>
-  <tbody>
     <tr>
       <td><strong>A</strong>: Poľnohospodárstvo, lesníctvo a&nbsp;rybolov</td>
       <td>
@@ -15142,15 +15006,13 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <p>Vnútroštátnym orgánom bola v&nbsp;ESENER 2014 po prvýkrát ponúknutá možnosť financovať rozšírenie veľkosti ich vnútroštátnej vzorky. Španielsko, Slovinsko a&nbsp;Spojené kráľovstvo prijali ponuku na&nbsp;posilnenie veľkostí svojich vlastných vzoriek. Pri ESENER 2019 tri krajiny prijali túto ponuku (Írsko, Nórsko a&nbsp;Slovinsko), ktorá tentokrát zahŕňala aj možnosť pridať do ich príslušných dotazníkov dve až tri otázky vnútroštátneho záujmu. Švajčiarsko plne financovalo všetky vlny ESENER.</p>
 <h3>Dosiahnuté veľkosti vzoriek v&nbsp;ESENER</h3>
 <table class=\"table table3\">
-  <thead>
+  <tbody>
     <tr>
       <th>Krajina</th>
       <th class=\"center-text\">ESENER 2009 (pohovory riadenia)</th>
       <th class=\"center-text\">ESENER 2014</th>
       <th>ESENER 2019</th>
     </tr>
-  </thead>
-  <tbody>
     <tr class=\"data-table\">
       <th>Rakúsko</th>
       <td>1&nbsp;034</td>
