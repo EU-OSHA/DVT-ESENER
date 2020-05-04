@@ -13,6 +13,14 @@ define (function (require) {
                         barSizeMax: window.innerWidth>1500?35:25,
                         label_textBaseline: 'bottom',
                         valuesOptimizeLegibility: true,
+                        bar_fillStyle: function (scene)
+                        {
+                            if (scene.firstAtoms.series.value==2019)
+                            {
+                                return dvtUtils.getColorCountry(22);
+                            }
+                            return dvtUtils.getColorCountry(1);
+                        },
                         visualRoles:{
                             series: 'series',
                             category:'category',

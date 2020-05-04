@@ -899,8 +899,22 @@ define(function (require) {
 
                 // custom legend dot background color
                 if (!!attributes.legendDotFillStyle) {
-                    definition.chartDefinition.legendDot_fillStyle = attributes.legendDotFillStyle;
-                    definition.chartDefinition.legendDot_strokeStyle = attributes.legendDotFillStyle;
+                    definition.chartDefinition.legendDot_fillStyle = function(scene)
+                    {
+                        if (scene.atoms.series.value==2019)
+                        {
+                            return dvtUtils.getColorCountry(22);
+                        }
+                        return dvtUtils.getColorCountry(1);
+                    }
+                    definition.chartDefinition.legendDot_strokeStyle = function(scene)
+                    {
+                        if (scene.atoms.series.value==2019)
+                        {
+                            return dvtUtils.getColorCountry(22);
+                        }
+                        return dvtUtils.getColorCountry(1);
+                    };
                 }
 
                 // multichart
