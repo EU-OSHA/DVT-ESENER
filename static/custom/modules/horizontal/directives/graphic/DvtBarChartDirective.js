@@ -530,7 +530,10 @@ define(function (require) {
                                 if (current.length > 21)
                                 {
                                     var index = current.indexOf(' ', 7);
-                                    text = current.substring(0,index);
+                                    if (index != -1)
+                                    {
+                                        text = current.substring(0,index);    
+                                    }
                                 }
                                 return text;
                             }).add(pv.Label)
@@ -550,9 +553,18 @@ define(function (require) {
                                 if(scope.fullText.length > 21){ 
                                     //var separator = scope.fullText.indexOf(' ', scope.fullText.length/2);
                                     var separator = scope.fullText.indexOf(' ', 7);
-                                    scene.firstAtoms.category.label = scope.fullText.substring(0, separator);
-                                    scene.group.label = scope.fullText.substring(0, separator);
-                                    scope.substring = scope.fullText.substring(separator+1);
+                                    if (separator != -1)
+                                    {
+                                        scene.firstAtoms.category.label = scope.fullText.substring(0, separator);
+                                        scene.group.label = scope.fullText.substring(0, separator);
+                                        scope.substring = scope.fullText.substring(separator+1);
+                                    }
+                                    else
+                                    {
+                                        scene.firstAtoms.category.label = scope.fullText;
+                                        scene.group.label = scope.fullText;
+                                    }
+                                    
 
                                     //$log.warn(scope.substring.length);
 
