@@ -413,7 +413,8 @@ define(function (require) {
 				pLocale: $scope.pLocale,
 				pQuestion: $scope.pQuestion,
 		        pAnswer:$scope.pAnswer,
-		        pCountry:$scope.pCountry
+		        pCountry:$scope.pCountry,
+		        pTopic: $scope.pTopic
 		   	},
 			{
 				reload: true
