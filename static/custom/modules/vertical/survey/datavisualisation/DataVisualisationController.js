@@ -84,10 +84,12 @@ define(function (require) {
                 else if ($scope.pIndicator == '2014')
                 {
                     $scope.pQuestion = 'Q250';
+                    $rootScope.question = 'E3Q250';
                 }
                 else
                 {
                     $scope.pQuestion = 'E3Q250';
+                    $rootScope.question = 'E3Q250';
                 }
                 $scope.pAnswer = 1;
             }else if($scope.pTopic == 'psychosocial-risks-and-their-management'){
@@ -98,10 +100,12 @@ define(function (require) {
                 else if ($scope.pIndicator == '2014')
                 {
                     $scope.pQuestion = 'Q300';
+                    $rootScope.question = 'E3Q300';
                 }
                 $scope.pAnswer = 1;
             }else if($scope.pTopic == 'emerging-risks-and-their-management'){
                 $scope.pQuestion = "E3Q300";
+                $rootScope.question = 'E3Q300';
                 $scope.pAnswer = 1;
             }else if($scope.pTopic == 'drivers-and-barriers'){
                 $scope.pQuestion = $scope.pIndicator == '2009' ? 'MM171_1':'Q264_1';
@@ -112,10 +116,12 @@ define(function (require) {
                 else if ($scope.pIndicator == '2014')
                 {
                     $scope.pQuestion = 'Q264_1';
+                    $rootScope.question = 'E3Q262_1';
                 }
                 else
                 {
                     $scope.pQuestion = 'E3Q262_1';
+                    $rootScope.question = 'E3Q262_1';
                 }
                 $scope.pAnswer = 44;
             }else if($scope.pTopic == 'worker-participation'){
