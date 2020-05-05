@@ -414,7 +414,8 @@ define(function (require) {
 				pQuestion: $scope.pQuestion,
 		        pAnswer:$scope.pAnswer,
 		        pCountry:$scope.pCountry,
-		        pTopic: $scope.pTopic
+		        pTopic: $scope.pTopic,
+		        pSectorSize: $scope.pSectorSize
 		   	},
 			{
 				reload: true
