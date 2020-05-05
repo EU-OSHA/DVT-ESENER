@@ -85,7 +85,22 @@
       }
     }      
   }
+  .comparisons-filter{
+    .block--typechart--wrapper{
+      .filter-text{
+        label{
 
+        }
+        select, select:focus{
+          max-width: 100%;
+          width: auto;
+          option{
+            font-size: 1.6rem;
+          }
+        }
+      }
+    }
+  }
 /** TAGS */
   .selected--tags-wrapper{
     min-height: 0px;
