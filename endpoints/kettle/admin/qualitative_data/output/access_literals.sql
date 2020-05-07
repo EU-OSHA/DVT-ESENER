@@ -9333,7 +9333,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "<h1>Metodologia ESENER</h1>
 <h2>Universo e unità di analisi</h2>
 <p>La popolazione dell’indagine comprende tutti gli stabilimenti con cinque o più dipendenti nei paesi partecipanti, in rappresentanza di tutti i settori di attività economica, ad eccezione delle abitazioni private (NACE T) e delle organizzazioni extraterritoriali (NACE U). L’agricoltura, la silvicoltura e la pesca (NACE A) nonché gli stabilimenti che danno lavoro a meno di 10 lavoratori non rientravano in ESENER 2009. Ai fini dell’indagine, uno stabilimento è definito come comprendente le attività di un solo datore di lavoro in un’unica serie di locali (ad esempio, un’unica filiale di una banca, una fabbrica di automobili o una scuola).</p>
-<p>I paesi partecipanti comprendono tutti gli Stati che, al momento di ciascuna edizione, fanno parte dell'Unione europea, nonché la Norvegia e la Svizzera. A questi sono stati aggiunti la Turchia e la Croazia nell&amp;rsquo;indagine ESENER 2009, la Turchia, l'Albania e il Montenegro nel l'indagine del 2014 e l'Islanda, la Macedonia del Nord e la Serbia nelle indagini del 2014 e del 2019.</p>
+<p>I paesi partecipanti comprendono tutti gli Stati che, al momento di ciascuna edizione, fanno parte dell'Unione europea, nonché la Norvegia e la Svizzera. A questi sono stati aggiunti la Turchia e la Croazia nel l'indagine ESENER 2009, la Turchia, l'Albania e il Montenegro nel l'indagine del 2014 e l'Islanda, la Macedonia del Nord e la Serbia nelle indagini del 2014 e del 2019.</p>
 <h3>Copertura geografica in ESENER</h3>
 <table class=\"table table1\">
   <tbody>
