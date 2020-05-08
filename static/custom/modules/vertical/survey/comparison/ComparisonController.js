@@ -446,6 +446,13 @@ define(function (require) {
 					alert($scope.i18n.L100576);
 					return true;
 				}
+			} else if (['E3Q260_1','E3Q260_2','E3Q260_3','E3Q260_4'].indexOf(pQuestionID)>-1)
+			{
+				if ($scope.pSectorSize == 'activity-sector')
+				{
+					alert($scope.i18n.L100576);
+					return true;
+				}
 			}
 			return false;
 		}
@@ -549,23 +556,26 @@ define(function (require) {
 
 		$scope.updateChart = function()
 		{
-			$stateParams.pAnswer = $scope.pAnswer;
-			$stateParams.pCountry = $scope.pCountry;
-			$stateParams.pSectorSize = $scope.pSectorSize;
-
-			$state.transitionTo('comparisons', {
-				pIndicator: $scope.pIndicator, //Year
-				pLanguage: $scope.pLanguage,
-				pLocale: $scope.pLocale,
-				pTopic: $scope.pTopic,
-				pQuestion: $scope.pQuestion, //Question name
-				pAnswer: $scope.pAnswer, //Split answer
-				pSectorSize: $scope.pSectorSize,
-				pCountry: $scope.pCountry
-			},
+			if (['E3Q260_1','E3Q260_2','E3Q260_3','E3Q260_4'].indexOf($scope.pQuestion)>-1)
 			{
-				reload: true
-			});
+				$stateParams.pAnswer = $scope.pAnswer;
+				$stateParams.pCountry = $scope.pCountry;
+				$stateParams.pSectorSize = $scope.pSectorSize;
+
+				$state.transitionTo('comparisons', {
+					pIndicator: $scope.pIndicator, //Year
+					pLanguage: $scope.pLanguage,
+					pLocale: $scope.pLocale,
+					pTopic: $scope.pTopic,
+					pQuestion: $scope.pQuestion, //Question name
+					pAnswer: $scope.pAnswer, //Split answer
+					pSectorSize: $scope.pSectorSize,
+					pCountry: $scope.pCountry
+				},
+				{
+					reload: true
+				});
+			}
 		}
 
 		$scope.trim = function(text, type){

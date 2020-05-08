@@ -139,8 +139,8 @@
   			                    <span data-ng-bind="i18n.L101026"></span>
   			                </p>
   			                <!-- Activity sector -->
-  			                <div class="filter-text-button">
-  			                    <button data-ng-class="{'active':(pSectorSize == 'activity-sector')}" data-ng-click="updateChart()" data-ng-bind="i18n.L100573" ui-sref="comparisons({ pIndicator:pIndicator, pTopic:pTopic,pSectorSize: 'activity-sector', pCountry: pCountry, pQuestion: pQuestion, pLanguage: pLanguage, pLocale: pLocale, pAnswer: pAnswer})"></button>                    
+  			                <div class="filter-text-button" data-ng-class="{'exception':['E3Q260_1','E3Q260_2','E3Q260_3','E3Q260_4'].indexOf(pQuestion)>-1}">
+  			                    <button data-ng-class="{'active':(pSectorSize == 'activity-sector')}" data-ng-click="updateChart()" data-ng-bind="i18n.L100573" ui-sref="comparisons({ pIndicator:pIndicator, pTopic:pTopic,pSectorSize: 'activity-sector', pCountry: pCountry, pQuestion: pQuestion, pLanguage: pLanguage, pLocale: pLocale, pAnswer: pAnswer})" data-ng-disabled="['E3Q260_1','E3Q260_2','E3Q260_3','E3Q260_4'].indexOf(pQuestion)>-1"></button>                    
   			                </div>
   			                <p class="tags">
   			                    <span data-ng-bind="i18n.L101027"></span>
