@@ -153,7 +153,7 @@ define(function (require) {
                         $log.debug("isCurrentStateMenu and menu variable  |  path: " + path + "  |  " + "lPath[2]: " + lPath[2]);
                         return (path === lPath[2]
                             || (lPath[2] == undefined && path == "home")
-                            || (lPath[2] == "about" && path == "about-tool")) ? 'main-menu-selected' : '';
+                            || (lPath[2] == "methodology" && path == "about-tool")) ? 'main-menu-selected' : '';
 
                         //return (path === lPath[1] || (lPath[1] == "" && path == "home")) ? 'main-menu-selected' : '';
                     };

@@ -19,7 +19,7 @@ define(function (require) {
         $uiViewScrollProvider.useAnchorScroll();
 
         $stateProvider.state('about-tool', {
-            url: "/:pLanguage/about",
+            url: "/:pLanguage/methodology",
             params: {
                 pLanguage: {
                     value: 'en',
