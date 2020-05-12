@@ -1,6 +1,5 @@
 define(function (require) {
 	'use strict';
-
 	var sequence = 1;
 	var configService = require('horizontal/config/configService');
 

@@ -1174,7 +1174,7 @@ define(function (require) {
 
 		/* Method to show or hide sectors or sizes for national bar chart */
 		$scope.rulesForSelects = function($index, id){
-			if ($scope.pIndicator == 2019)
+			if ($scope.pIndicator != 2019)
 			{		
 				if($index != undefined && id == 1 && $scope.pSectorSize == 'activity-sector'){
 					if($scope.pQuestion.match('Q261') != undefined){
