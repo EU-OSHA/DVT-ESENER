@@ -1724,7 +1724,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LU", 0, "Auswielen");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN_2", 0, "Select");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ME", 0, "Izaberi");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "Изабери");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "Izaberi");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE_3", 0, "Auswählen");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR_3", 0, "Sélectionner");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT_1", 0, "Seleziona");
@@ -1776,7 +1776,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LU", 0, "oder");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN_2", 0, "or");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ME", 0, "ili");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "или");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "ili");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE_3", 0, "oder");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR_3", 0, "ou");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT_1", 0, "o");
@@ -1828,7 +1828,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LU", 0, "Deelen");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN_2", 0, "Share");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ME", 0, "Podijeli");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "Подели");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "Podeli");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE_3", 0, "Teilen");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR_3", 0, "Partager");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT_1", 0, "Condividi");
@@ -1880,7 +1880,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LU", 0, "Daten exportéieren");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN_2", 0, "Export data");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ME", 0, "Izvezi podatke");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "Извези податке");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "Izvezi podatke");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE_3", 0, "Daten exportieren");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR_3", 0, "Exporter les données");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT_1", 0, "Esporta dati");
@@ -1932,7 +1932,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LU", 0, "Zortéieren no");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN_2", 0, "Sort by");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ME", 0, "Sortiraj prema");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "Сортирај према");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "Sortiraj prema");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE_3", 0, "Sortieren nach");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR_3", 0, "Trier par");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT_1", 0, "Ordina per");
@@ -1984,7 +1984,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LU", 0, "Lännercode");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN_2", 0, "Country code");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ME", 0, "Šifra zemlje");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "Шифра земље");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "Šifra zemlje");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE_3", 0, "Ländercodes");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR_3", 0, "Code pays");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT_1", 0, "Codice paese");
@@ -2066,7 +2066,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LU", 0, "Kreesdiagramm");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN_2", 0, "Pie chart");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ME", 0, "Tortni grafikon");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "Тортни графикон");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "Tortni grafikon");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE_3", 0, "Kreisdiagramm");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR_3", 0, "Diagramme circulaire");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT_1", 0, "Grafico a torta");
