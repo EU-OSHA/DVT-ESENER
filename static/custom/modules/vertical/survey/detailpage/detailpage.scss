@@ -919,6 +919,11 @@
         background: $white;
         color: $gray;
       }
+      &:disabled{
+        background:#B1B3B4 !important;
+        outline:1px solid #B1B3B4 !important;
+        cursor: not-allowed;
+      }
     }
     &.country-select:after{
       content: "\f107";

@@ -464,7 +464,7 @@ define(function (require) {
 					alert($scope.i18n.L100576);
 					return true;
 				}
-			} else if (['E3Q260_1','E3Q260_2','E3Q260_3','E3Q260_4'].indexOf(pQuestionID)>-1)
+			} else if (['E3Q260_1','E3Q260_2','E3Q260_3','E3Q260_4'].indexOf(pQuestionID)>-1  && $scope.pCountry!='EU27_2020')
 			{
 				if ($scope.pSectorSize == 'activity-sector')
 				{
