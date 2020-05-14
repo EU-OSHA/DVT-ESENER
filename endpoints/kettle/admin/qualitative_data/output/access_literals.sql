@@ -85,6 +85,12 @@
 
 
 
+SET @toolId = (SELECT id FROM tool WHERE name="osha_dvt_esener");
+INSERT INTO section (tool_id, name) VALUES (@toolId, "EXPORT_DATA");
+
+
+
+
 SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000 AND l.id < 102000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
 SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="HOMEPAGE");
@@ -17129,4 +17135,92 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Primerjave");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Vertailut");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Jämförelser");
+
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000 AND l.id < 102000)+1, 101001));
+SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
+SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="EXPORT_DATA");
+INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "TEXT");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Data (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Данни (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Data (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Data (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Daten (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Andmed (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Δεδομένα (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Datos (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Données (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Podaci (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "Gögn (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Dati (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Dati (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Duomenys (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Adat (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Dejta (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Gegevens (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Data (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Dane (wartości oddzielone średnikami)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Dados (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Date (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Údaje (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Podatki (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Data (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Data (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "AL", 0, "Të dhënat (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE_1", 0, "Daten (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR_1", 0, "Données (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL_1", 0, "Gegevens (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL_1", 0, "Δεδομένα (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RU_1", 0, "Данные (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV_1", 0, "Data (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "AL_1", 0, "Të dhënat (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MK", 0, "Податоци (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN_1", 0, "Data (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RU_2", 0, "Данные (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RU_3", 0, "Данные (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE_2", 0, "Daten (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR_2", 0, "Données (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LU", 0, "Daten (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN_2", 0, "Data (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ME", 0, "Podaci (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SR", 0, "Podaci (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE_3", 0, "Daten (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR_3", 0, "Données (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT_1", 0, "Dati (CSV)");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "TR", 0, "Data (CSV)");
+
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000 AND l.id < 102000)+1, 101001));
+SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
+SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="EXPORT_DATA");
+INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "TEXT");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.");
+
+SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000 AND l.id < 102000)+1, 101001));
+SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
+SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="EXPORT_DATA");
+INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "TEXT");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "Download");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "Изтегляне");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "Stáhnout");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "Download");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DE", 0, "Herunterladen");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ET", 0, "Laadi alla");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "Μεταφόρτωση");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "Descargar");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FR", 0, "Télécharger");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HR", 0, "Preuzimanje");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IS", 0, "Sækja");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "IT", 0, "Scarica");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LV", 0, "Lejupielādēt");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "LT", 0, "Atsisiųsti");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "HU", 0, "Letöltés");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "MT", 0, "Niżżel");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NL", 0, "Downloaden");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "NO", 0, "Last ned");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PL", 0, "Pobierz");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "PT", 0, "Descarregar");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "RO", 0, "Descărcare");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SK", 0, "Prevziať");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "Prenesi");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "Lataa");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SV", 0, "Ladda ner");
 
