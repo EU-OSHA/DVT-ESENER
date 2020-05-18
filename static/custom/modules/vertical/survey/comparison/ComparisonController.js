@@ -56,6 +56,7 @@ define(function (require) {
 		$scope.title = titleStructure[$state.current.name];
 		$scope.pageUrlActive = false;
 		$scope.pageCitationActive = false;
+		$scope.pageDownloadCSVActive = false;
 		$scope.chartCitation = '';
 		
 		//Parameters
@@ -721,8 +722,8 @@ define(function (require) {
 
         function createFileName(type){
 
-        	if(type == 'xls'){
-        		$scope.pExcelFileName = "xls_";
+        	if(type == 'csv'){
+        		$scope.pExcelFileName = "csv_";
         	}else{
         		$scope.pExcelFileName = "";
         	}
@@ -731,7 +732,7 @@ define(function (require) {
         }
 
         $scope.exportData = function(id){
-        	createFileName('xls');
+        	createFileName('csv');
 			$scope.promiseToExport = dataService.getComparisonExportData($scope.pSectorSize, $scope.pQuestion, $scope.pAnswer, $scope.pCountry, $scope.pLocale, $scope.pInclusions);
 
         	exportService.exportDataManually($scope.promiseToExport, $scope.pExcelFileName, id);

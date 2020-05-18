@@ -279,7 +279,7 @@
                   <p class="text-center" data-ng-bind="i18n.L101029"></p>
                   <div class="export--data--modal" id="osha-menu-social">
                     <!-- URL -->
-                    <a href class="main-color text-center" target="_blank" data-ng-class="{'active': pageUrlActive}"  data-ng-click="pageUrlActive = !pageUrlActive; pageCitationActive = false " title="{{i18n.L100662}} > {{i18n.L100660}}">
+                    <a href class="main-color text-center" target="_blank" data-ng-class="{'active': pageUrlActive}"  data-ng-click="pageUrlActive = !pageUrlActive; pageCitationActive = false;pageDownloadCSVActive=false " title="{{i18n.L100662}} > {{i18n.L100660}}">
                       <i class="fa fa-link" aria-hidden="true"></i></i> <span data-ng-bind="i18n.L100660" ></span>
                     </a>
                     <!-- PNG -->
@@ -291,12 +291,12 @@
                       <i class="fa fa-file-pdf-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100656" ></span>
                     </a>-->
                     <!-- PAGE CITATION -->
-                    <a href class="main-color text-center" data-ng-class="{'active': pageCitationActive}"  target="_blank" title="{{i18n.L100662}} > {{i18n.L100651}}" data-ng-click="pageCitationActive = !pageCitationActive; pageUrlActive = false">
+                    <a href class="main-color text-center" data-ng-class="{'active': pageCitationActive}"  target="_blank" title="{{i18n.L100662}} > {{i18n.L100651}}" data-ng-click="pageCitationActive = !pageCitationActive; pageUrlActive = false;pageDownloadCSVActive=false">
                       <i class="fa fa-file-code-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100651"></span>
                     </a>
                     <!-- XLS -->
-                    <a href class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L100652}}" data-ng-click="exportData(1)">
-                      <i class="fa fa-file-excel-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100652" ></span>
+                    <a href class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L101088}}" data-ng-click="pageDownloadCSVActive=!pageDownloadCSVActive;pageCitationActive=false;pageUrlActive=false">
+                      <i class="fa fa-file-excel-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L101088" ></span>
                     </a>
                   </div>
                   <div id="panel--url" data-ng-if="pageUrlActive">
@@ -319,6 +319,14 @@
                     <textarea id="urlTextArea" readonly="readonly" cols="80" rows="5" data-ng-bind="createCitation()"></textarea>
                     <div class="pageUrl">
                       <p data-ng-bind="i18n.L100587 + ': ' + i18n.L100660"></p>
+                    </div>
+                  </div>
+                  <div id="panel--url" data-ng-if="pageDownloadCSVActive">
+                    <button id="btnSocial" class="btn-default btn-main-color" data-ng-click="exportData(1)">
+                      <span  data-ng-bind="i18n.L101090" ></span>
+                    </button>
+                    <div class="pageUrl">
+                      <p data-ng-bind="i18n.L101089"></p>
                     </div>
                   </div>
                 </div>

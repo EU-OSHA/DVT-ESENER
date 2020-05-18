@@ -352,9 +352,11 @@ define(function(require){
            //exportComponent.exportData();
         };
 
-        var exportRadarChartData = function(promises, titleChart, id){
+        var exportRadarChartData = function(promises, titleChart, id, locale){
             //$log.warn(promises);
             var list = [];
+
+            var i18nExport = (locale == 'en') ? configService.getLiterals() : configService.getSpecificLanguageLiterals(locale);
 
             Promise.all([promises]).then(function(res)
             {
@@ -403,8 +405,8 @@ define(function(require){
 
                             var value=exportComponent.dataComponent[j].data.resultset[i][a];
 
-                            if(i18n['L'+value] != undefined && value > 100){
-                                value = i18n['L'+value];
+                            if(i18nExport['L'+value] != undefined && value > 100){
+                                value = i18nExport['L'+value];
                             }
 
                             if(!isNaN(value) && (value<-1 || (value>-1 && value<0))) {
@@ -424,12 +426,12 @@ define(function(require){
                             }
                         }
                         data=data.substring(0, data.length - 1)+"\n";
-                    }
+                    }                  
                 }
 
                 // Insert empty line and line with how to visualize it in Excel
-                //data += "\n\n";
-                //data += i18n.L20387;
+                data += "\n\n";
+                data += '"' + i18nExport.L101089 + '"';
 
                 var downloadCSV = function() {
                     var BOM = "\uFEFF";
@@ -437,7 +439,7 @@ define(function(require){
                    // var csv =columns+"\n"+data;
 
                     var blob = new Blob([ csv ], { type: "text/csv;charset=UTF-8" });
-                    saveAs(blob, title+".xls");
+                    saveAs(blob, title+".csv");
                 };
 
                 downloadCSV();
