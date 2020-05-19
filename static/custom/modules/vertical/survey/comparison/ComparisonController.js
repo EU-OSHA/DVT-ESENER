@@ -536,25 +536,27 @@ define(function (require) {
 			var answer = $scope.answer;
 			var questionName = (question.category != undefined)?question.category:question;
 
-			dataService.getQuestionSelectorDataComparisons(questionName).then(function(res) {
-				var data = res.data.resultset;
-				if (data.length == 1)
-				{
-					var question = {
-						father: data[0][8],
-						grandfather: data[0][9],
-						answer_id: data[0][10]
-					}
-					if(question.grandfather != null){
-						topic = i18nEN['L'+question.grandfather].toLowerCase().replace(/[\,\ ]/g, '-');
-					}else{
-						topic = i18nEN['L'+question.father].toLowerCase().replace(/[\,\ ]/g, '-');
-					}
+			var exception = rulesForTooltip(questionName);
 
-					var answer = question.answer_id;
-
-					if (!rulesForTooltip(questionName))
+			if (!exception)
+			{
+				dataService.getQuestionSelectorDataComparisons(questionName).then(function(res) {
+					var data = res.data.resultset;
+					if (data.length == 1)
 					{
+						var question = {
+							father: data[0][8],
+							grandfather: data[0][9],
+							answer_id: data[0][10]
+						}
+						if(question.grandfather != null){
+							topic = i18nEN['L'+question.grandfather].toLowerCase().replace(/[\,\ ]/g, '-');
+						}else{
+							topic = i18nEN['L'+question.father].toLowerCase().replace(/[\,\ ]/g, '-');
+						}
+
+						var answer = question.answer_id;
+
 						$state.transitionTo($state.current.name, {
 							pIndicator: $scope.pIndicator, //Year
 							pTopic: topic, //Category
@@ -569,13 +571,28 @@ define(function (require) {
 							reload: true
 						});
 					}
-				}
-			});
+				});	
+			}
+			else{
+				$state.transitionTo($state.current.name, {
+					pIndicator: $scope.pIndicator, //Year
+					pTopic: $scope.pTopic, //Category
+					pQuestion: $scope.pQuestion, //Question name
+		            pAnswer: $scope.pAnswer, //Split answer
+					pSectorSize: $scope.pSectorSize,
+					pCountry: $scope.pCountry,
+					pLanguage: $scope.pLanguage,
+					pLocale: $scope.pLocale
+				},
+				{
+					reload: true
+				});
+			}		
 		}
 
 		$scope.updateChart = function()
 		{
-			if (['E3Q260_1','E3Q260_2','E3Q260_3','E3Q260_4'].indexOf($scope.pQuestion)>-1)
+			if (['E3Q260_1','E3Q260_2','E3Q260_3','E3Q260_4'].indexOf($scope.pQuestion)==-1 || $scope.pCountry=="EU27_2020" || $scope.pSectorSize=="company-size")
 			{
 				$stateParams.pAnswer = $scope.pAnswer;
 				$stateParams.pCountry = $scope.pCountry;
