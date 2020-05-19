@@ -74,7 +74,7 @@ define(function (require) {
 		$scope.pIndicator = $stateParams.pIndicator; //Year
 		$scope.pTopic = $stateParams.pTopic; //Category
 		$scope.pChart = $stateParams.pChart; //Type of chart
-		$scope.pQuestion = $stateParams.pQuestion; //Question (name)        
+		$scope.pQuestion = $stateParams.pQuestion; //Question (name)
 		$scope.pCompanyFilter = $stateParams.pCompanyFilter; //Company size
 		$scope.pActivityFilter = $stateParams.pActivityFilter; //Activity sector
 		$scope.answer = $stateParams.pAnswer; //Answer
@@ -89,7 +89,10 @@ define(function (require) {
 
         $scope.axisFixedMaxLineChart = ($scope.pQuestion == 'Q256_2')?35:25;
 
-        //$log.warn($scope.nonEU);
+        // Parameters for the change to Comparison
+        $rootScope.question = $scope.pQuestion;
+        $rootScope.locale = $stateParams.pLocale;
+        $rootScope.country = $scope.pCountry;
 
 		var resolution = $(window).width();
 		//$scope.heightNationalBarChart = $scope.pQuestion == 'Q254gr' ? 250: 100;

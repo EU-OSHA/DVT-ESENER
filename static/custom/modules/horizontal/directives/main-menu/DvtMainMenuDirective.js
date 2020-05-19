@@ -306,6 +306,7 @@ define(function (require) {
                     {
                         dataService.getComparisonQuestionID(newValue).then(function(res)
                         {
+                            var i18n_english = configService.getSpecificLanguageLiterals("en_1")
                             var data = res.data.resultset;
                             if (data.length == 1)
                             {
@@ -315,7 +316,7 @@ define(function (require) {
                                 {
                                     $scope.topic = data[0][2];
                                 }
-                                $scope.topic = i18n_literals['L'+$scope.topic].toLowerCase().replace(/[\,\ ]/g, '-');
+                                $scope.topic = i18n_english['L'+$scope.topic].toLowerCase().replace(/[\,\ ]/g, '-');
                                 $scope.answer = data[0][3];
                             }
                             else 
