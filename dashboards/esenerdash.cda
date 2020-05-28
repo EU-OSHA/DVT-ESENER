@@ -650,8 +650,10 @@
         AND p.answer_id = sa.id
         AND sa.id = eao.answer_id
         AND CASE WHEN ${pSectorSize} = 'activity-sector' 
-        THEN (p.activity_sector_id = sas.id AND p.company_size_id IS NULL AND CASE WHEN ${pYear} = 2009 
-          THEN p.activity_sector_id IN (14, 15, 16, 17) ELSE p.activity_sector_id IN (1,6,3,2,4,18,11,7,14) END)
+        THEN (p.activity_sector_id = sas.id AND p.company_size_id IS NULL AND 
+          CASE WHEN ${pYear} = 2009 THEN p.activity_sector_id IN (14, 15, 16, 17) ELSE CASE 
+          WHEN ${pYear}=2014 THEN p.activity_sector_id IN (1,6,3,2,4,18,11,7,14) 
+          ELSE p.activity_sector_id IN (1,6,3,2,4,18,11,19,20,14) END END)
         ELSE (p.company_size_id = scs.id AND p.activity_sector_id IS NULL AND CASE WHEN ${pYear} = 2009 
           THEN p.company_size_id IN(11, 12, 13, 14, 15) ELSE scs.id IN (7,8,14,10,11) END) END
         AND n.country_code = ${pCountry} AND v.value IS NOT NULL
