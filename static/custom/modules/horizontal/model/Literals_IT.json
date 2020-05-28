@@ -1608,7 +1608,7 @@
   "L101086":"DATI PER",
   "L101087":"Confronti",
   "L101088":"Dati (CSV)",
-  "L101089":"<p>Nota: i dati sono esportati separati da un punto e virgola (;). Per importarli correttamente in Excel, importare da file di testo dalla scheda «Dati» nel menu. Selezionare poi il punto e virgola (;) come separatore e indicare che i dati contengono intestazioni.</p>",
+  "L101089":"Nota: i dati sono esportati separati da un punto e virgola (;). Per importarli correttamente in Excel, importare da file di testo dalla scheda «Dati» nel menu. Selezionare poi il punto e virgola (;) come separatore e indicare che i dati contengono intestazioni.",
   "L101090":"Scarica",
   "L102001":"Gestione della SSL",
   "L102002":"Gestione della SSL",

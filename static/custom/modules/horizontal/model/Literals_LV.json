@@ -1608,7 +1608,7 @@
   "L101086":"DATI",
   "L101087":"Salīdzinājumi",
   "L101088":"Dati (CSV)",
-  "L101089":"<p>PIEZĪME: dati ir eksportēti un atdalīti ar semikolu (;). Lai pareizi importētu <i>Excel</i> vidē, lūdzu, izvēlnē ejiet uz &ldquo;Dati&rdquo; un importējiet no teksta datnes. Tad izvēlieties semikolu (;) kā atdalītāju un norādiet, ka dati satur virsrakstus.</p>",
+  "L101089":"PIEZĪME: dati ir eksportēti un atdalīti ar semikolu (;). Lai pareizi importētu Excel vidē, lūdzu, izvēlnē ejiet uz “Dati” un importējiet no teksta datnes. Tad izvēlieties semikolu (;) kā atdalītāju un norādiet, ka dati satur virsrakstus.",
   "L101090":"Lejupielādēt",
   "L102001":"DDVA pārvaldība",
   "L102002":"DDVA pārvaldība",

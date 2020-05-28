@@ -1608,7 +1608,7 @@
   "L101086":"DATA FÖR",
   "L101087":"Comparisons",
   "L101088":"Data (CSV)",
-  "L101089":"<p>Obs: uppgifterna som exporteras ska åtskiljas med semikolon (;) För import i Excel, gå till &rdquo;uppgifter&rdquo; i menyn och importera från textfilen. Välj sedan semikolon (;) som åtskiljande tecken och ange att uppgifterna innehåller sidhuvud.</p>",
+  "L101089":"Obs: uppgifterna som exporteras ska åtskiljas med semikolon (;) För import i Excel, gå till ”uppgifter” i menyn och importera från textfilen. Välj sedan semikolon (;) som åtskiljande tecken och ange att uppgifterna innehåller sidhuvud.",
   "L101090":"Ladda ner",
   "L102001":"Hantering av arbetarskydd",
   "L102002":"Hantering av arbetarskydd",

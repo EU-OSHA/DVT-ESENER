@@ -1608,7 +1608,7 @@
   "L101086":"DATOS PARA",
   "L101087":"Comparaciones",
   "L101088":"Datos (CSV)",
-  "L101089":"<p>NOTA: los datos se exportan separándolos mediante punto y coma (;). Para una importación correcta en Excel, en el menú vaya a «datos» y proceda a la importación desde el archivo de texto. A continuación elija un punto y coma (;) como separador, e indique que los datos contienen encabezamientos.</p>",
+  "L101089":"NOTA: los datos se exportan separándolos mediante punto y coma (;). Para una importación correcta en Excel, en el menú vaya a «datos» y proceda a la importación desde el archivo de texto. A continuación elija un punto y coma (;) como separador, e indique que los datos contienen encabezamientos.",
   "L101090":"Descargar",
   "L102001":"Gestión de la SST",
   "L102002":"Gestión de la SST",

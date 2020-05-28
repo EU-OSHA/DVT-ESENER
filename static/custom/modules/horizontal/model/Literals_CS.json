@@ -1608,7 +1608,7 @@
   "L101086":"ÚDAJE PRO",
   "L101087":"Srovnání",
   "L101088":"Data (CSV)",
-  "L101089":"<p>POZNÁMKA: exportovaná data jsou oddělena středníkem (;). Pokud chcete správně importovat do Excelu, zvolte možnost &bdquo;data&ldquo; v nabídce a proveďte import z textového souboru. Jako oddělovací znaménko poté vyberte středník (;) a uveďte, že data obsahují hlavičky.</p>",
+  "L101089":"POZNÁMKA: exportovaná data jsou oddělena středníkem (;). Pokud chcete správně importovat do Excelu, zvolte možnost „data“ v nabídce a proveďte import z textového souboru. Jako oddělovací znaménko poté vyberte středník (;) a uveďte, že data obsahují hlavičky.",
   "L101090":"Stáhnout",
   "L102001":"Řízení BOZP",
   "L102002":"Řízení BOZP",

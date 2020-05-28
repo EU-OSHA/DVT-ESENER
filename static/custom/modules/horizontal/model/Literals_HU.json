@@ -1608,7 +1608,7 @@
   "L101086":"ADATOK",
   "L101087":"Összehasonlítás",
   "L101088":"Adat (CSV)",
-  "L101089":"<p>MEGJEGYZÉS: az adatok pontosvesszővel (;) tagolva kerülnek exportálásra. Az Excelben a megfelelő importhoz navigáljon az &bdquo;adatok&rdquo; menüponthoz és importáljon a szövegfájlból. Majd határoló jelként válassza a pontosvesszőt (;) és jelölje be, hogy az adatok fejléceket tartalmaznak.</p>",
+  "L101089":"MEGJEGYZÉS: az adatok pontosvesszővel (;) tagolva kerülnek exportálásra. Az Excelben a megfelelő importhoz navigáljon az „adatok” menüponthoz és importáljon a szövegfájlból. Majd határoló jelként válassza a pontosvesszőt (;) és jelölje be, hogy az adatok fejléceket tartalmaznak.",
   "L101090":"Letöltés",
   "L102001":"A munkahelyi biztonság és egészségvédelem kezelése",
   "L102002":"A munkahelyi biztonság és egészségvédelem kezelése",

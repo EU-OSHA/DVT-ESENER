@@ -1608,7 +1608,7 @@
   "L101086":"DUOMENYS",
   "L101087":"Palyginimai",
   "L101088":"Duomenys (CSV)",
-  "L101089":"<p>PASTABA: duomenys eksportuojami juos atskiriant kabliataškiu (;). Norėdami teisingai importuoti duomenis &bdquo;Excel&ldquo; formatu, meniu juostoje pasirinkite &bdquo;duomenys&ldquo; (angl. &bdquo;data&ldquo;) ir juos importuokite iš tekstinio failo. Tada duomenims atskirti pasirinkite kabliataškį (;) ir nurodykite, kad duomenys apima antraštes.</p>",
+  "L101089":"PASTABA: duomenys eksportuojami juos atskiriant kabliataškiu (;). Norėdami teisingai importuoti duomenis „Excel“ formatu, meniu juostoje pasirinkite „duomenys“ (angl. „data“) ir juos importuokite iš tekstinio failo. Tada duomenims atskirti pasirinkite kabliataškį (;) ir nurodykite, kad duomenys apima antraštes.",
   "L101090":"Atsisiųsti",
   "L102001":"DSS valdymas",
   "L102002":"DSS valdymas",
