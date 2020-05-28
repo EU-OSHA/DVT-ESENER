@@ -1608,7 +1608,7 @@
   "L101086":"DATI",
   "L101087":"Salīdzinājumi",
   "L101088":"Dati (CSV)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>PIEZĪME: dati ir eksportēti un atdalīti ar semikolu (;). Lai pareizi importētu <i>Excel</i> vidē, lūdzu, izvēlnē ejiet uz &ldquo;Dati&rdquo; un importējiet no teksta datnes. Tad izvēlieties semikolu (;) kā atdalītāju un norādiet, ka dati satur virsrakstus.</p>",
   "L101090":"Lejupielādēt",
   "L102001":"DDVA pārvaldība",
   "L102002":"DDVA pārvaldība",

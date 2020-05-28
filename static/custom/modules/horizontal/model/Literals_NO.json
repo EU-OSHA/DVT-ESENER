@@ -1608,7 +1608,7 @@
   "L101086":"DATA FOR",
   "L101087":"Sammenligninger",
   "L101088":"Data (CSV)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>MERK: Dataene blir eksportert med semikolon (;) som skilletegn. For riktig import i Excel, gå til «Data» i menyen og importer fra tekstfil. Velg så semikolon (;) som separator og angi at dataene inneholder overskrifter.</p>",
   "L101090":"Last ned",
   "L102001":"HMS-styring",
   "L102002":"HMS-styring",

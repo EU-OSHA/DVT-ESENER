@@ -1608,7 +1608,7 @@
   "L101086":"ÚDAJE PRE",
   "L101087":"Porovnanie",
   "L101088":"Údaje (CSV)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>POZNÁMKA: údaje sa exportujú oddelené bodkočiarkou (;). Ak ich chcete správne vložiť do programu Excel, v ponuke choďte na &bdquo;údaje&ldquo; a importujte ich z textového súboru. Ako oddeľovací znak vyberte bodkočiarku (;) a uveďte, že údaje obsahujú záhlavia.</p>",
   "L101090":"Prevziať",
   "L102001":"Riadenie BOZP",
   "L102002":"Riadenie BOZP",

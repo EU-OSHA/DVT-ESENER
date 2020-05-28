@@ -1608,7 +1608,7 @@
   "L101086":"DUOMENYS",
   "L101087":"Palyginimai",
   "L101088":"Duomenys (CSV)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>PASTABA: duomenys eksportuojami juos atskiriant kabliataškiu (;). Norėdami teisingai importuoti duomenis &bdquo;Excel&ldquo; formatu, meniu juostoje pasirinkite &bdquo;duomenys&ldquo; (angl. &bdquo;data&ldquo;) ir juos importuokite iš tekstinio failo. Tada duomenims atskirti pasirinkite kabliataškį (;) ir nurodykite, kad duomenys apima antraštes.</p>",
   "L101090":"Atsisiųsti",
   "L102001":"DSS valdymas",
   "L102002":"DSS valdymas",

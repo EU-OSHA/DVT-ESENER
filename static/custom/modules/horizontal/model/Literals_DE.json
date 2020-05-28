@@ -1608,7 +1608,7 @@
   "L101086":"DATEN FÜR",
   "L101087":"Gegenüberstellungen",
   "L101088":"Daten (CSV)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>HINWEIS: Die Daten werden getrennt durch Semikolons (;) exportiert. Um die Daten in Excel korrekt zu importieren, gehen Sie zu &bdquo;data&ldquo; im Menü und importieren Sie die Daten aus der Textdatei. Wählen Sie dann Semikolon (;) als Trennzeichen und geben Sie an, dass die Daten Kopfzeilen enthalten.</p>",
   "L101090":"Herunterladen",
   "L102001":"Sicherheits- und Gesundheitsschutzmanagement",
   "L102002":"Sicherheits- und Gesundheitsschutzmanagement",

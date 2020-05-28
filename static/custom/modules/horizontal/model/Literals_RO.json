@@ -1608,7 +1608,7 @@
   "L101086":"DATE PENTRU",
   "L101087":"Comparații",
   "L101088":"Date (CSV)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>NOTĂ: datele se exportă, separate prin punct și virgulă (;). Pentru o importare corectă în Excel, mergeți în meniu la &bdquo;date&rdquo; și importați din fișierul text. Apoi alegeți ca separator punct și virgulă (;) și indicați că datele conțin capete de tabel.</p>",
   "L101090":"Descărcare",
   "L102001":"Gestionarea SSM",
   "L102002":"Gestionarea SSM",

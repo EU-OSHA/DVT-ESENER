@@ -1608,7 +1608,7 @@
   "L101086":"TIETOA",
   "L101087":"Vertailut",
   "L101088":"Data (CSV)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>HUOMAA: Tuodut tiedot erotetaan puolipistein (;). Viedäksesi tiedot Excel-taulukkoon oikein, valitse Tiedot-välilehti ja valitse tietojen tuominen tekstitiedostosta. Valitse erottimeksi puolipiste (;) ja merkitse, että tiedot sisältävät otsikoita.</p>",
   "L101090":"Lataa",
   "L102001":"Työsuojelun hallinta",
   "L102002":"Keskeiset havainnot",

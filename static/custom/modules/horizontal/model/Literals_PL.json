@@ -1608,7 +1608,7 @@
   "L101086":"DANE DLA",
   "L101087":"Porównania",
   "L101088":"Dane (wartości oddzielone średnikami)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>UWAGA: dane są eksportowane, oddzielone średnikiem (;). W celu prawidłowego importu w Excelu należy kliknąć na &bdquo;dane&rdquo; w menu i importować w pliku tekstowym. Następnie do oddzielenia należy wybrać średnik (;) i wskazać, że dane zawierają nagłówki.</p>",
   "L101090":"Pobierz",
   "L102001":"Zarządzanie BHP",
   "L102002":"Kluczowe ustalenia",

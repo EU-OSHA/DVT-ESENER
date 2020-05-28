@@ -1608,7 +1608,7 @@
   "L101086":"DATA FOR",
   "L101087":"Sammenligninger",
   "L101088":"Data (CSV)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>NB: Oplysninger, der eksporteres, skal adskilles med semikolon (;). For at importere oplysninger korrekt i Excel, skal du gå til &quot;data&quot; i menuen og importere oplysningerne fra tekstfilen. Vælg så semikolon (;) som adskillende tegn, og angiv, at oplysningerne indeholder sidehoveder.</p>",
   "L101090":"Download",
   "L102001":"Håndtering af arbejdsmiljø",
   "L102002":"Håndtering af arbejdsmiljø",
