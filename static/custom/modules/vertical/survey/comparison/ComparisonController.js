@@ -752,7 +752,7 @@ define(function (require) {
         	createFileName('csv');
 			$scope.promiseToExport = dataService.getComparisonExportData($scope.pSectorSize, $scope.pQuestion, $scope.pAnswer, $scope.pCountry, $scope.pLocale, $scope.pInclusions);
 
-        	exportService.exportDataManually($scope.promiseToExport, $scope.pExcelFileName, id);
+        	exportService.exportDataManually($scope.promiseToExport, $scope.pExcelFileName, id, $scope.pLocale);
         }
 
         $scope.exportPNG = function(){
