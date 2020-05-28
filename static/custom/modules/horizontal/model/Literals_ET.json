@@ -1608,7 +1608,7 @@
   "L101086":"ANDMED",
   "L101087":"Võrdlused",
   "L101088":"Andmed (CSV)",
-  "L101089":"<p>NB! Andmed eksporditakse semikoolonitega (;) eraldatud kujul. Excelist õigeks importimiseks minge menüü jaotisse &bdquo;Andmed&ldquo; ja importige tekstifailist. Seejärel valige separaatoriks semikoolon (;) ja märkige, et andmed sisaldavad päiseid.</p>",
+  "L101089":"NB! Andmed eksporditakse semikoolonitega (;) eraldatud kujul. Excelist õigeks importimiseks minge menüü jaotisse „Andmed“ ja importige tekstifailist. Seejärel valige separaatoriks semikoolon (;) ja märkige, et andmed sisaldavad päiseid.",
   "L101090":"Laadi alla",
   "L102001":"Töötervishoiu ja tööohutuse juhtimine",
   "L102002":"Töötervishoiu ja tööohutuse juhtimine",

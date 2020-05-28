@@ -1608,7 +1608,7 @@
   "L101086":"DONNÉES POUR",
   "L101087":"Comparisons",
   "L101088":"Données (CSV)",
-  "L101089":"<p>REMARQUE: les données exportées sont séparées par des points-virgules (;). Pour une importation correcte dans Excel, veuillez vous rendre dans les «données» («data») du menu et les importer à partir du fichier texte. Ensuite, choisissez le point-virgule (;) comme séparateur et indiquez que les données contiennent des en-têtes.</p>",
+  "L101089":"REMARQUE: les données exportées sont séparées par des points-virgules (;). Pour une importation correcte dans Excel, veuillez vous rendre dans les «données» («data») du menu et les importer à partir du fichier texte. Ensuite, choisissez le point-virgule (;) comme séparateur et indiquez que les données contiennent des en-têtes.",
   "L101090":"Télécharger",
   "L102001":"Gestion de la santé et de la sécurité sur le lieu de travail",
   "L102002":"Gestion de la santé et de la sécurité sur le lieu de travail",

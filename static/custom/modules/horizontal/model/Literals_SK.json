@@ -1608,7 +1608,7 @@
   "L101086":"ÚDAJE PRE",
   "L101087":"Porovnanie",
   "L101088":"Údaje (CSV)",
-  "L101089":"<p>POZNÁMKA: údaje sa exportujú oddelené bodkočiarkou (;). Ak ich chcete správne vložiť do programu Excel, v ponuke choďte na &bdquo;údaje&ldquo; a importujte ich z textového súboru. Ako oddeľovací znak vyberte bodkočiarku (;) a uveďte, že údaje obsahujú záhlavia.</p>",
+  "L101089":"POZNÁMKA: údaje sa exportujú oddelené bodkočiarkou (;). Ak ich chcete správne vložiť do programu Excel, v ponuke choďte na „údaje“ a importujte ich z textového súboru. Ako oddeľovací znak vyberte bodkočiarku (;) a uveďte, že údaje obsahujú záhlavia.",
   "L101090":"Prevziať",
   "L102001":"Riadenie BOZP",
   "L102002":"Riadenie BOZP",
