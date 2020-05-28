@@ -295,7 +295,7 @@
                       <i class="fa fa-file-code-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L100651"></span>
                     </a>
                     <!-- CSV -->
-                    <a href class="main-color text-center" target="_blank" title="{{i18n.L100662}} > {{i18n.L101088}}" data-ng-click="pageDownloadCSVActive=!pageDownloadCSVActive;pageCitationActive=false;pageUrlActive=false">
+                    <a href class="main-color text-center" data-ng-class="{'active': pageDownloadCSVActive}" target="_blank" title="{{i18n.L100662}} > {{i18n.L101088}}" data-ng-click="pageDownloadCSVActive=!pageDownloadCSVActive;pageCitationActive=false;pageUrlActive=false">
                       <i class="fa fa-file-excel-o" aria-hidden="true"></i> <span data-ng-bind="i18n.L101088" ></span>
                     </a>
                   </div>
