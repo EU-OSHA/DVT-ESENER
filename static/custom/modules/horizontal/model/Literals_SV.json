@@ -1608,7 +1608,7 @@
   "L101086":"DATA FÖR",
   "L101087":"Jämförelser",
   "L101088":"Data (CSV)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>Obs: uppgifterna som exporteras ska åtskiljas med semikolon (;) För import i Excel, gå till &rdquo;uppgifter&rdquo; i menyn och importera från textfilen. Välj sedan semikolon (;) som åtskiljande tecken och ange att uppgifterna innehåller sidhuvud.</p>",
   "L101090":"Ladda ner",
   "L102001":"Hantering av arbetarskydd",
   "L102002":"Arbetsmiljöstyrning",

@@ -1608,7 +1608,7 @@
   "L101086":"PODATCI ZA",
   "L101087":"Usporedbe",
   "L101088":"Podaci (CSV)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>NAPOMENA: podatci se izvoze odvojeni točkom sa zarezom (;) Za pravilno preuzimanje u Excel formatu na izborniku odaberite opciju &bdquo;podatci&ldquo; i preuzmite ih iz tekstovne datoteke. Zatim odaberite točku sa zarezom (;) za razdvajanje i naznačite da podatci sadrže zaglavlja.</p>",
   "L101090":"Preuzimanje",
   "L102001":"Upravljanje sigurnošću i zdravljem na radu",
   "L102002":"Upravljanje sigurnošću i zdravljem na radu",

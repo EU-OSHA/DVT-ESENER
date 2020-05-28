@@ -1608,7 +1608,7 @@
   "L101086":"PODATKI ZA",
   "L101087":"Primerjave",
   "L101088":"Podatki (CSV)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>OPOMBA: izvoženi podatki so ločeni s podpičji (;). Za pravilen uvoz v Excel v meniju poiščite rubriko &bdquo;podatki&ldquo; in uvozite podatke iz besedilne datoteke. Nato kot ločilo izberite podpičje (;) ter označite, da podatki vsebujejo glavo.</p>",
   "L101090":"Prenesi",
   "L102001":"Upravljanje varnosti in zdravja pri delu",
   "L102002":"Upravljanje varnosti in zdravja pri delu",

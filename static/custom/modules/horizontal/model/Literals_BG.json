@@ -1608,7 +1608,7 @@
   "L101086":"ДАННИ ЗА",
   "L101087":"Сравнения",
   "L101088":"Данни (CSV)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>ЗАБЕЛЕЖКА: данните се отделят с точка и запетая (;) при експортиране. За правилно импортиране в Excel изберете &bdquo;Данни&ldquo; от менюто и импортирайте от текстовия файл. След това изберете точка и запетая (;) като разделител и посочете, че данните съдържат заглавни редове.</p>",
   "L101090":"Изтегляне",
   "L102001":"Управление на БЗР",
   "L102002":"Управление на БЗР",

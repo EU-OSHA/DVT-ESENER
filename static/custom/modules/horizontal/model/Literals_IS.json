@@ -1608,7 +1608,7 @@
   "L101086":"GÖGN FYRIR",
   "L101087":"Samanburður",
   "L101088":"Gögn (CSV)",
-  "L101089":"NOTE: the data is exported separated by semicolons (;). For a correct import in Excel, please go to “data” in the menu and import from text file. Then choose semicolon (;) as separator and indicate that the data contains headers.",
+  "L101089":"<p>ATHUGASEMD: gögnin eru flutt út með afmörkuðum hætti með semíkommum (;). Til að flytja þau með réttum hætti inn í Excel skal fara í &bdquo;gögn&ldquo; í valmyndinni og flytja inn í textaskrá. Veldu síðan semíkommu (;) sem afmarkara og veldu að gögnin innihaldi fyrirsagnir.</p>",
   "L101090":"Sækja",
   "L102001":"Vinnuverndarstjórnun",
   "L102002":"Vinnuverndarstjórnun",
