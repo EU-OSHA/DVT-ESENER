@@ -18,6 +18,8 @@ define(function (require) {
 
         $uiViewScrollProvider.useAnchorScroll();
 
+        $urlRouterProvider.when('/:pLanguage/about','/:pLanguage/methodology');
+
         $stateProvider.state('about-tool', {
             url: "/:pLanguage/methodology",
             params: {
