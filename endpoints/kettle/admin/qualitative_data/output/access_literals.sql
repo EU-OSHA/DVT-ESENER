@@ -2339,9 +2339,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 - Methodology</li>
+<li>4 - Methodology</li>
 <li>M - Site map</li>
 <li>C - Contact Us</li>
 <li>K - Accessibility</li>
@@ -2355,9 +2356,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Методика</li>
+<li>4 -&nbsp;Методика</li>
 <li>M -&nbsp;Карта на сайта</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;За контакти</div>
@@ -2373,9 +2375,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodika</li>
+<li>4 -&nbsp;Metodika</li>
 <li>M -&nbsp;Mapa str&aacute;nek</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Kontaktujte n&aacute;s</div>
@@ -2391,9 +2394,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodologi</li>
+<li>4 -&nbsp;Metodologi</li>
 <li>M -&nbsp;Sitemap</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Kontakt os</div>
@@ -2409,9 +2413,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Methode</li>
+<li>4 -&nbsp;Methode</li>
 <li>M -&nbsp;Strukturkarte</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Kontaktieren Sie uns</div>
@@ -2427,9 +2432,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodoloogia</li>
+<li>4 -&nbsp;Metodoloogia</li>
 <li>M -&nbsp;Sisukaart</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Kontaktandmed</div>
@@ -2445,9 +2451,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;&Mu;&epsilon;&theta;&omicron;&delta;&omicron;&lambda;&omicron;&gamma;ί&alpha;</li>
+<li>4 -&nbsp;&Mu;&epsilon;&theta;&omicron;&delta;&omicron;&lambda;&omicron;&gamma;ί&alpha;</li>
 <li>M -&nbsp;&Chi;ά&rho;&tau;&eta;&sigmaf; &Iota;&sigma;&tau;&omicron;&chi;ώ&rho;&omicron;&upsilon;</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;E&pi;&iota;&kappa;&omicron;&iota;&nu;&omega;&nu;ή&sigma;&tau;&epsilon; &mu;&alpha;&zeta;ί &mu;&alpha;&sigmaf;</div>
@@ -2463,9 +2470,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodolog&iacute;a</li>
+<li>4 -&nbsp;Metodolog&iacute;a</li>
 <li>M -&nbsp;Mapa del sitio</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Contacto</div>
@@ -2481,9 +2489,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;M&eacute;thodologie</li>
+<li>4 -&nbsp;M&eacute;thodologie</li>
 <li>M -&nbsp;Plan du site</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Nous contacter</div>
@@ -2499,9 +2508,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodologija</li>
+<li>4 -&nbsp;Metodologija</li>
 <li>M -&nbsp;Mapa mjesta</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Obratite nam se</div>
@@ -2517,9 +2527,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;A&eth;fer&eth;arfr&aelig;&eth;i</li>
+<li>4 -&nbsp;A&eth;fer&eth;arfr&aelig;&eth;i</li>
 <li>M -&nbsp;S&iacute;&eth;u kort</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Hafa samband vi&eth; okkur</div>
@@ -2535,9 +2546,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodologia</li>
+<li>4 -&nbsp;Metodologia</li>
 <li>M -&nbsp;Mappa del sito</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Contatti</div>
@@ -2552,9 +2564,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodoloģija</li>
+<li>4 -&nbsp;Metodoloģija</li>
 <li>M -&nbsp;Vietnes karte</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Sazināties ar mums</div>
@@ -2570,9 +2583,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodologija</li>
+<li>4 -&nbsp;Metodologija</li>
 
 <li>M -&nbsp;Interneto svetainės žemėlapis</li>
 <li>
@@ -2589,9 +2603,9 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
-</li>
-<li>3 -&nbsp;M&oacute;dszertan</li>
+<li>4 -&nbsp;M&oacute;dszertan</li>
 <li>M -&nbsp;Oldalt&eacute;rk&eacute;p</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Kapcsolat</div>
@@ -2607,9 +2621,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodoloġija</li>
+<li>4 -&nbsp;Metodoloġija</li>
 <li>M -&nbsp;Mappa tas-sit</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Ikkuntattjana</div>
@@ -2625,9 +2640,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 - Methodologie</li>
+<li>4 - Methodologie</li>
 <li>M -&nbsp;Site map</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Contact</div>
@@ -2643,9 +2659,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodikk</li>
+<li>4 -&nbsp;Metodikk</li>
 <li>M -&nbsp;Kart over nettstedet</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Kontakt oss</div>
@@ -2661,9 +2678,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodyka</li>
+<li>4 -&nbsp;Metodyka</li>
 <li>M -&nbsp;Mapa witryny</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Skontaktuj się z nami</div>
@@ -2679,9 +2697,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodologua</li>
+<li>4 -&nbsp;Metodologua</li>
 <li>M -&nbsp;Mapa do S&iacute;tio</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Contacte-nos</div>
@@ -2697,9 +2716,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodologie</li>
+<li>4 -&nbsp;Metodologie</li>
 <li>M -&nbsp;Harta site-ului</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Contactați-ne</div>
@@ -2715,9 +2735,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodika</li>
+<li>4 -&nbsp;Metodika</li>
 <li>M -&nbsp;Mapa str&aacute;nky</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Spojte sa s nami</div>
@@ -2733,9 +2754,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodologija</li>
+<li>4 -&nbsp;Metodologija</li>
 <li>M -&nbsp;Načrt spleti&scaron;ča</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Kontakt</div>
@@ -2751,9 +2773,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metodologia</li>
+<li>4 -&nbsp;Metodologia</li>
 <li>M -&nbsp;Sivukartta</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Ota meihin yhteytt&auml;</div>
@@ -2769,9 +2792,10 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <ul>
 <li>1 - ESENER 2009</li>
 <li>2 - ESENER 2014</li>
+<li>3 - ESENER 2019</li>
 </ul>
 </li>
-<li>3 -&nbsp;Metod</li>
+<li>4 -&nbsp;Metod</li>
 <li>M -&nbsp;Webbplats&ouml;versikt</li>
 <li>
 <div style=\"display: inline !important;\">C -&nbsp;Kontakta oss</div>
@@ -2813,7 +2837,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 
 SET @literalId=(SELECT IFNULL((SELECT MAX(l.id) AS maxID FROM literal l WHERE l.id > 101000 AND l.id < 102000)+1, 101001));
 SET @toolId=(SELECT id FROM tool WHERE name="osha_dvt_esener");
-SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="ACESSIBILITY");
+SET @sectionId=(SELECT id FROM section WHERE tool_id=@toolId AND name="ACCESSIBILITY");
 INSERT INTO literal (id, chart_id, section_id, type) VALUES (@literalId, null, @sectionId, "TABLE");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EN", 1, "<table><thead><tr><th>Browser</th><th>Windows</th><th>Linux</th><th>Mac</th></tr></thead><tbody><tr><td>Internet explorer</td><td>[Alt] + accesskey</td><td>N/A</td><td>&nbsp;</td></tr><tr><td>Chrome</td><td>[Alt] + accesskey</td><td>[Alt] + accesskey</td><td>[Control] [Alt] + accesskey</td></tr><tr><td>Firefox</td><td>[Alt][Shift] + accesskey</td><td>[Alt][Shift] + accesskey</td><td>[Control] [Alt] + accesskey</td></tr><tr><td>Safari</td><td>[Alt] + accesskey</td><td>N/A</td><td>[Control] [Alt] + accesskey</td></tr><tr><td>Opera</td><td colspan=\"3\"><p>Opera 15 or newer: [Alt] + accesskey</p><p>Opera 12.1 or older: [Shift] [Esc] + accesskey</p></td></tr></tbody></table>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "BG", 0, "<table><thead><tr><th>Браузър</th><th>Windows</th><th>Linux</th><th>Mac</th></tr></thead><tbody><tr><td>Internet explorer</td><td>[Alt] +&nbsp;<span>клавиш за достъп</span></td><td> Неприложимо</td><td>&nbsp;</td></tr><tr><td>Chrome</td><td>[Alt] +&nbsp;<span>клавиш за достъп</span></td><td>[Alt] +&nbsp;<span>клавиш за достъп</span></td><td>[Control] [Alt] +&nbsp;<span>клавиш за достъп</span></td></tr><tr><td>Firefox</td><td>[Alt][Shift] +&nbsp;<span>клавиш за достъп</span></td><td>[Alt][Shift] +&nbsp;<span>клавиш за достъп</span></td><td>[Control] [Alt] +&nbsp;<span>клавиш за достъп</span></td></tr><tr><td>Safari</td><td>[Alt] +&nbsp;<span>клавиш за достъп</span></td><td> Неприложимо</td><td>[Control] [Alt] +&nbsp;<span>клавиш за достъп</span></td></tr><tr><td>Opera</td><td colspan=\"3\"><p>Opera 15 <span>или по-нов:</span>&nbsp;[Alt] +&nbsp;<span>клавиш за достъп</span></p><p>Opera 12.1 <span>или по-стар</span>: [Shift] [Esc] +&nbsp;<span>клавиш за достъп</span></p></td></tr></tbody></table>");
