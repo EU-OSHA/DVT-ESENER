@@ -8,7 +8,7 @@
             <ul ng-if="level0.levels">
                 <li ng-repeat="level1 in level0.levels">
                     <a ng-if="level1.target" data-ng-bind-html="i18n_literals[level1.name]"></a>
-                    <a ng-if="level1.sref" ui-sref='{{ level1.sref }}({pLanguage: pLanguage})' data-ng-bind-html="i18n_literals[level1.name]"></a>
+                    <a ng-if="level1.sref" ui-sref='{{ level1.sref }}({pLanguage: pLanguage, pIndicator: level1.indicator})' data-ng-bind-html="i18n_literals[level1.name]"></a>
                 </li>
             </ul>
 
