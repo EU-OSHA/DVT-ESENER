@@ -23,7 +23,8 @@
 	.disabled, 
 	.content--lang--wrapper, 
 	.social--network--nav, 
-	.go-to{
+	.go-to, 
+	#cookiesConsent{
 	  display: none !important;
 	}
 	a[href]:after {
