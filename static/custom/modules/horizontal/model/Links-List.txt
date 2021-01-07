@@ -79,4 +79,5 @@
 1083-https://osha.europa.eu/en/publications/esener-2019-policy-brief/view
 1083-https://oshwiki.eu/wiki/ESENER_2019_Methodology
 1083-https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8690
+1083-https://search.gesis.org/research_data/ZA7735
 
