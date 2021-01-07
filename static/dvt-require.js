@@ -211,7 +211,7 @@
     requirePaths['vertical/detailpage/DetailPageController'] = verticalModules + '/survey/detailpage/DetailPageController' + suffix;
     requirePaths['vertical/detailpage/selector'] = verticalModules + '/survey/detailpage/directives/SelectorDirective' + suffix;
     requirePaths['vertical/detailpage/services/DetailPageService'] = verticalModules + '/survey/detailpage/services/DetailPageService'+suffix;
-    requirePaths['vertical/detailpage/questionnaire_name'] = verticalModules + '/survey/detailpage/questionnaries/2019/questionnaire_name'+suffix+'.json';
+    requirePaths['vertical/detailpage/questionnaire_name'] = verticalModules + '/survey/detailpage/questionnaries/questionnaire_name'+suffix+'.json';
 
     /* COMPARISON */
     requirePaths['vertical/comparison/ComparisonController'] = verticalModules + '/survey/comparison/ComparisonController' + suffix;
