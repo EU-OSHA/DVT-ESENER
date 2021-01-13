@@ -490,12 +490,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li>
 </ul>
 <p>Uuringu ESENER 2009 andmekogumile p&auml;&auml;seb ligi <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Essexi &uuml;likooli hallatava &Uuml;hendkuningriigi andmearhiivi</a>, <a href=\"https://data.europa.eu/euodp/et/data/dataset/esener-1\" target=\"_blank\">Euroopa andmeportaali</a> ja <a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">GESISe</a> kaudu.</p>");
-INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "<ul>
-<li><a href=\"https://osha.europa.eu/el/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Πρώτα πορίσματα</a></li>
-<li><a href=\"https://osha.europa.eu/el/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 Σύνοψη πολιτικής</a></li>
-<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>
-</ul>
-<p>Το σύνολο δεδομένων της έρευνας ESENER 2019 διατίθεται μέσω της&nbsp;<a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8690\" target=\"_blank\">Υπηρεσίας Δεδομένων του Πανεπιστημίου Essex του Ηνωμένου Βασιλείου</a>,της ευρωπαϊκής δικτυακής πύλης δεδομένων και του&nbsp;<a href=\"https://search.gesis.org/research_data/ZA7735\" target=\"_blank\">Ινστιτούτου GESIS</a>.</p>");
+INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "EL", 0, "<ul type=\"disc\"><li>Ευρωπαϊκή έρευνα για τις επιχειρήσεις σχετικά με τους νέους και τους αναδυόμενους κινδύνους (ESENER) - Διαχείριση της υγείας και της ασφάλειας στον χώρο εργασίας (2010):&nbsp;<a href=\"https://osha.europa.eu/el/publications/european-survey-enterprises-new-and-emerging-risks-managing-safety-and-health-work/view\" target=\"_blank\">Έκθεση επισκόπησης</a>&nbsp;<em>στα αγγλικά&nbsp;</em>και&nbsp;<a href=\"https://osha.europa.eu/el/publications/european-survey-enterprises-new-and-emerging-risks-summary/view\" target=\"_blank\">Περίληψη</a>&nbsp;<em>σε 24 γλώσσες</em></li></ul><ul><li><a href=\"https://osha.europa.eu/sites/default/files/files/en/publications/reports/esener1-summary_data/SEP%20ESENER%20presentation%202009.pptx\" target=\"_blank\">Παρουσίαση Powerpoint</a>: ανασκόπηση των αποτελεσμάτων του 2009</li><li>ESENER 2009:&nbsp;<a href=\"http://oshwiki.eu/wiki/ESENER-1_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-1_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a></li></ul><p>Το σύνολο δεδομένων της έρευνας ESENER 2009 διατίθεται μέσω της&nbsp;<a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=6446\" target=\"_blank\">Υπηρεσίας Δεδομένων του Πανεπιστημίου Essex του Ηνωμένου Βασιλείου</a>,&nbsp;<a href=\"https://data.europa.eu/euodp/el/data/dataset/esener-1\" target=\"_blank\">της ευρωπαϊκής δικτυακής πύλης δεδομένων</a>και του&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6864\" target=\"_blank\">Ινστιτούτου GESIS<span class=\"osha_target_external_link\">&nbsp;</span></a>.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<ul type=\"disc\">
   <li>Encuesta europea de empresas sobre riesgos nuevos y emergentes (ESENER) – Gestión de la salud y la seguridad en el trabajo (2010): 
     <a href=\"https://osha.europa.eu/es/publications/european-survey-enterprises-new-and-emerging-risks-managing-safety-and-health-work/view\" target=\"_blank\">Informe general</a> <em>en inglés&nbsp;</em>y 
@@ -16988,14 +16983,14 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
     <li><a href=\"https://osha.europa.eu/bg/publications/esener-2019-policy-brief/view\" target=\"_blank\">Информационен документ за ESENER 2019</a></li>
     <li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>
 </ul>
-<p>Наборът от данни от ESENER 2019 е достъпен чрез<a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8690\" target=\"_blank\"> Службата за данни на Обединеното кралство към Университета в Есекс</a>, Европейския портал за данни и <a href=\"_blank\" target=\"https://search.gesis.org/research_data/ZA7735\">GESIS</a>.</p>");
+<p>Наборът от данни от ESENER 2019 е достъпен чрез<a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8690\" target=\"_blank\"> Службата за данни на Обединеното кралство към Университета в Есекс</a>, Европейския портал за данни и <a href=\"https://search.gesis.org/research_data/ZA7735\" target=\"_blank\">GESIS</a>.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "CS", 0, "<ul>
     <li><a href=\"https://osha.europa.eu/cs/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">zpr&aacute;va o prvn&iacute;ch zji&scaron;těn&iacute;ch</a></li>
     <li><a href=\"https://osha.europa.eu/cs/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 Politick&aacute; zpr&aacute;va</a></li>
     <li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>
 </ul>
 
-<p><span class=\"osha_target_external_link\">Datov&yacute; soubor průzkumu ESENER 2019 je dostupn&yacute; prostřednictv&iacute;m <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8690\" target=\"_blank\">datov&eacute; služby Spojen&eacute;ho kr&aacute;lovstv&iacute; při University of Essex</a>, evropsk&eacute;ho datov&eacute;ho port&aacute;lu a <a href=\"_blank\" target=\"https://search.gesis.org/research_data/ZA7735\">GESIS</a>.</span></p>");
+<p><span class=\"osha_target_external_link\">Datov&yacute; soubor průzkumu ESENER 2019 je dostupn&yacute; prostřednictv&iacute;m <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8690\" target=\"_blank\">datov&eacute; služby Spojen&eacute;ho kr&aacute;lovstv&iacute; při University of Essex</a>, evropsk&eacute;ho datov&eacute;ho port&aacute;lu a <a href=\"https://search.gesis.org/research_data/ZA7735\" target=\"_blank\">GESIS</a>.</span></p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "DA", 0, "<ul>
 <li><a href=\"https://osha.europa.eu/da/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Rapport om første resultater</a></li>
 <li><a href=\"https://osha.europa.eu/da/publications/esener-2019-policy-brief/view\" target=\"_blank\">Kortfattet rapport om ESENER 2019</a></li>
@@ -17020,7 +17015,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <li><a href=\"https://osha.europa.eu/el/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 Σύνοψη πολιτικής</a></li>
 <li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>
 </ul>
-<p>Το σύνολο δεδομένων της έρευνας ESENER 2019 διατίθεται μέσω της&nbsp;<a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8690\" target=\"_blank\">Υπηρεσίας Δεδομένων του Πανεπιστημίου Essex του Ηνωμένου Βασιλείου</a>.</p>");
+<p>Το σύνολο δεδομένων της έρευνας ESENER 2019 διατίθεται μέσω της&nbsp;<a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8690\" target=\"_blank\">Υπηρεσίας Δεδομένων του Πανεπιστημίου Essex του Ηνωμένου Βασιλείου</a>,της ευρωπαϊκής δικτυακής πύλης δεδομένων και του&nbsp;<a href=\"https://search.gesis.org/research_data/ZA7735\" target=\"_blank\">Ινστιτούτου GESIS</a>.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "ES", 0, "<ul>
 <li><a href=\"https://osha.europa.eu/es/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Un primer informe de resultados</a></li>
 <li><a href=\"https://osha.europa.eu/es/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 - Informe de política</a></li>
@@ -17116,8 +17111,7 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 <li><a href=\"https://osha.europa.eu/sl/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 – Poročilo o politikah</a></li>
 <li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>
 </ul>
-<p>Dátový súbor ESENER 2019 môžete nájsť prostredníctvom <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8690\" target=\"_blank\">UK Data Service of the University of Essex</a>.
-</p>");
+<p>Dátový súbor ESENER 2019 môžete nájsť prostredníctvom <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8690\" target=\"_blank\">UK Data Service of the University of Essex</a>, Európskeho dátového portálu a <a href=\"https://search.gesis.org/research_data/ZA7735\" target=\"_blank\">GESIS</a>.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<ul>
 <li><a href=\"https://osha.europa.eu/fi/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">Kertomus alustavista tuloksista</a></li>
 <li><a href=\"https://osha.europa.eu/fi/publications/esener-2019-policy-brief/view\" target=\"_blank\">Raportti ESENER 2019 -tutkimuksesta</a></li>
