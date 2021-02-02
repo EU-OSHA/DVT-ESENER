@@ -1089,11 +1089,24 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
 </ul>
 <p>D&aacute;tov&yacute; s&uacute;bor ESENER 2014 m&ocirc;žete n&aacute;jsť prostredn&iacute;ctvom <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=7808\" target=\"_blank\">UK Data Service of the University of Essex</a>, <a href=\"https://data.europa.eu/euodp/sk/data/dataset/esener-2\" target=\"_blank\">Eur&oacute;pskeho d&aacute;tov&eacute;ho port&aacute;lu</a> a&nbsp;<a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "SL", 0, "<ul>
-<li><a href=\"https://osha.europa.eu/sl/publications/third-european-survey-enterprises-new-and-emerging-risks-esener-3/view\" target=\"_blank\">poročilo o prvih ugotovitvah;</a></li>
-<li><a href=\"https://osha.europa.eu/sl/publications/esener-2019-policy-brief/view\" target=\"_blank\">ESENER 2019 – Poročilo o politikah</a></li>
-<li><a href=\"https://oshwiki.eu/wiki/ESENER_2019_Methodology\" target=\"_blank\">ESENER 2019: https://oshwiki.eu/wiki/ESENER_2019_Methodology</a></li>
+  <li>
+    <a href=\"https://osha.europa.eu/sl/publications/second-european-survey-enterprises-new-and-emerging-risks-esener-2-overview-report/view\" target=\"_blank\">ESENER-2 Pregledno poročilo</a>
+  </li>
+  <li>
+    <a href=\"https://osha.europa.eu/sl/publications/first-findings-second-european-survey-enterprises-new-and-emerging-risks-esener-2/view\" target=\"_blank\">poročilo o prvih ugotovitvah;</a>
+  </li>
+  <li>
+    <a href=\"https://osha.europa.eu/sl/publications/summary-second-european-survey-enterprises-new-and-emerging-risks-esener-2/view\" target=\"_blank\">povzetek poročila.</a>
+  </li>
+  <li>ESENER 2014:&nbsp;
+    <a href=\"http://oshwiki.eu/wiki/ESENER-2_Methodology\" target=\"_blank\">http://oshwiki.eu/wiki/ESENER-2_Methodology<span class=\"osha_target_external_link\">&nbsp;</span></a>
+  </li>
 </ul>
-<p>Dátový súbor ESENER 2019 môžete nájsť prostredníctvom <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=8690\" target=\"_blank\">UK Data Service of the University of Essex</a>, Eur&oacute;pskeho d&aacute;tov&eacute;ho port&aacute;lu a <a href=\"https://search.gesis.org/research_data/ZA7735\" target=\"_blank\">GESIS</a>.</p>");
+<p>Dátový súbor ESENER 2014 môžete nájsť prostredníctvom 
+  <a href=\"https://beta.ukdataservice.ac.uk/datacatalogue/studies/study?id=7808\" target=\"_blank\">UK Data Service of the University of Essex</a>, 
+  <a href=\"https://data.europa.eu/euodp/sl/data/dataset/esener-2\" target=\"_blank\">Európskeho dátového portálu</a> a&nbsp;
+  <a href=\"https://search.gesis.org/research_data/ZA6865\" target=\"_blank\">GESIS</a>.
+</p>");
 INSERT INTO translation (literal_id, language, is_default, text) VALUES (@literalId, "FI", 0, "<ul>
   <li>
     <a href=\"https://osha.europa.eu/fi/publications/second-european-survey-enterprises-new-and-emerging-risks-esener-2-overview-report/view\" target=\"_blank\">ESENER-2 yhteenvetokertomus&nbsp;</a>
