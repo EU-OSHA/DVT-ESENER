@@ -5352,7 +5352,6 @@ INSERT INTO translation (literal_id, language, is_default, text) VALUES (@litera
       <th class=\"center-text\" colspan=\"4\">Größe – Zahl der Beschäftigten</th>
     </tr>
     <tr>
-    <tr>
       <th>5-9</th>
       <th>10-49</th>
       <th>50-249</th>
